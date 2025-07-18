@@ -1,0 +1,21 @@
+From;To;Type;Through;start_x;start_y;stop_x;stop_y;Comment
+1812;1813;sea;115;-1;-1;-1;-1;MI Peninsulas
+699;867;sea;121;-1;-1;-1;-1;VT Grande Isle to NY
+868;867;sea;121;-1;-1;-1;-1;VT Grande Isle to VT
+474;475;sea;45;-1;-1;-1;-1;Martha's Vineyard-Cape Cod
+474;476;sea;45;-1;-1;-1;-1;Nantucket-Cape Cod
+756;757;sea;43;-1;-1;-1;-1;Staten Island-Queens
+496;486;sea;41;-1;-1;-1;-1;MD Chesapeake Bridge
+604;593;sea;41;-1;-1;-1;-1;Newport News-Suffolk
+604;670;sea;41;-1;-1;-1;-1;Newport-Norfolk
+604;607;sea;41;-1;-1;-1;-1;Newport-Glouchester
+613;608;sea;41;-1;-1;-1;-1;Middlesex VA-Lancaster VA
+766;817;sea;28;-1;-1;-1;-1;NC Chesapeake Bridge
+595;661;sea;40;-1;-1;-1;-1;VA Chesapeake Bridge
+1923;1936;sea;11;-1;-1;-1;-1;St Petersburg Bridge
+2400;2401;sea;3454;-1;-1;-1;-1;Golden Gate
+2405;2401;sea;3454;-1;-1;-1;-1;SF-Oakland Bridge
+2406;2400;sea;3454;-1;-1;-1;-1;Richmond-San Rafael Bridge
+2406;2399;sea;3454;-1;-1;-1;-1;Zampa Bridge (Contra Costa-Solano)
+2517;3087;sea;3449;-1;-1;-1;-1;Astoria-Megler
+-1;-1;;-1;-1;-1;-1;-1;-1;

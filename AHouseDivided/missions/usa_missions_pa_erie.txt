@@ -1,0 +1,477 @@
+missions_pa_erie_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = NCA
+			tag = OIL
+			tag = EIE
+			tag = MEA
+			tag = WRN
+		}
+	}
+
+	mission_pa_erie_taming_the_wilds = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_pa_erie_a_respectable_state }
+		trigger = {
+			area_pa_west_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_central = { add_permanent_claim = ROOT }
+			area_pa_north_pittsburgh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_west_wilds
+				area = area_pa_central_wilds
+				area = area_pa_east_wilds
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_pittsburgh_showdown = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_pa_erie_taming_the_wilds }
+		trigger = {
+			area_pa_north_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_pittsburgh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_accept_pittsburgher = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_pa_erie_pittsburgh_showdown }
+		trigger = {
+			accepted_culture = culture_phittsburgher
+ 		}
+		effect = {
+			area_pa_pittsburgh = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_erie_the_fate_of_steel_city = {
+		icon = mission_pit
+		position = 7
+		required_missions = { mission_pa_erie_accept_pittsburgher }
+		trigger = {
+			area_pa_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_incorporate_pittsburgh = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_pa_erie_the_fate_of_steel_city }
+		trigger = {
+			area_pa_pittsburgh = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_steel_city_foundries
+				duration = 5475  # 15 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_erie_building_up_the_west = {
+		icon = mission_early_game_buildings
+		position = 9
+		required_missions = { mission_pa_erie_incorporate_pittsburgh }
+		trigger = {
+			224 = { num_of_times_improved_by_owner = 5 }
+			area_pa_erie = { type = all  num_of_times_improved_by_owner = 3 }
+ 		}
+		effect = {
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+			area_pa_philly = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 224
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+				AND = {
+					area = area_pa_erie
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+			}
+		}
+	}
+
+	mission_pa_erie_the_city_of_brotherly_love = {
+		icon = mission_phl
+		position = 10
+		required_missions = { mission_pa_erie_building_up_the_west mission_pa_erie_retaking_the_old_capital }
+		trigger = {
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_pa_erie_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = NCA
+			tag = OIL
+			tag = EIE
+			tag = MEA
+			tag = WRN
+		}
+	}
+
+	mission_pa_erie_raise_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_pa_erie = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_erie_control_erie = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_pa_erie_raise_an_army }
+		trigger = {
+			area_pa_erie = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_erie
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_pa_erie_control_erie }
+		trigger = {
+			area_pa_erie = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_pa_west_wilds = { add_permanent_claim = ROOT }
+			area_pa_central_wilds = { add_permanent_claim = ROOT }
+			area_pa_east_wilds = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_erie
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_erie_the_lion_of_nittany = {
+		icon = mission_lion_of_the_north
+		position = 5
+		required_missions = { mission_pa_erie_taming_the_wilds }
+		trigger = {
+			area_pa_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_central
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_administer_the_centre = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_pa_erie_the_lion_of_nittany }
+		trigger = {
+			area_pa_central = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_allegheny_mts = { add_permanent_claim = ROOT }
+			area_pa_susquehanna_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_central
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_erie_into_the_mountains = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_pa_erie_administer_the_centre }
+		trigger = {
+			area_pa_allegheny_mts = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_allegheny_mts
+				area = area_pa_susquehanna_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_pacifying_the_penn_dutch = {
+		icon = settle_north_america
+		position = 8
+		required_missions = { mission_pa_erie_into_the_mountains }
+		trigger = {
+			accepted_culture = culture_penn_dutch
+ 		}
+		effect = {
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_erie_retaking_the_old_capital = {
+		icon = develop_our_capital
+		position = 9
+		required_missions = { mission_pa_erie_pacifying_the_penn_dutch }
+		trigger = {
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_pa_erie_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = NCA
+			tag = OIL
+			tag = EIE
+			tag = MEA
+			tag = WRN
+		}
+	}
+
+	mission_pa_erie_the_erie_harbor = {
+		icon = toulon_dockyards
+		position = 4
+		required_missions = { mission_pa_erie_a_respectable_state }
+		trigger = {
+            215 = {
+                province_has_center_of_trade_of_level = 2
+                has_building = shipyard
+                has_building = marketplace
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_shipbuilding_boom
+				duration = 5475  # 15 years
+			}
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+            province_id = 215
+		}
+	}
+
+	mission_pa_erie_build_a_naval_fleet = {
+		icon = mission_establish_high_seas_navy
+		position = 5
+		required_missions = { mission_pa_erie_the_erie_harbor }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+			area_ny_buffalo = { add_permanent_claim = ROOT }
+			area_oh_youngstown = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_erie_dominate_east_lake_erie = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_erie_build_a_naval_fleet }
+		trigger = {
+			area_ny_buffalo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_youngstown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_buffalo
+				area = area_oh_youngstown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_erie_reincorporate_harrisburg = {
+		icon = mission_alliances
+		position = 10
+		required_missions = { mission_pa_erie_retaking_the_old_capital }
+		trigger = {
+			area_pa_north_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

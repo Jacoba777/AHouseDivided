@@ -1,0 +1,117 @@
+mayo_clinic = {
+	start = 2500
+	date = 1444.1.1
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+		culture_group = culture_group_upper_midwestern
+		province_is_or_accepts_culture = yes
+	}
+
+	on_built = {
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+		culture_group = culture_group_upper_midwestern
+		province_is_or_accepts_culture = yes
+	}
+
+	can_upgrade_trigger = {
+		culture_group = culture_group_upper_midwestern
+		province_is_or_accepts_culture = yes
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			
+		}
+		area_modifier = {
+			
+		}
+		country_modifiers = {
+			reinforce_speed = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			
+		}
+		area_modifier = {
+			
+		}
+		region_modifier = { 
+			
+		}
+		country_modifiers = {
+			innovativeness_gain = 0.2
+			reinforce_speed = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+			
+		}
+		country_modifiers = {
+			innovativeness_gain = 0.33
+			reinforce_speed = 0.25
+		}
+		on_upgraded = {
+			custom_tooltip = fewer_plagues_tt
+			owner = { set_country_flag = has_competent_doctors }
+		}
+	}
+}

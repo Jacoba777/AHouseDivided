@@ -1,0 +1,29 @@
+capital="Peru"
+discovered_by = great_lakes
+discovered_by = appalachia
+hre = no
+base_tax=1
+base_production=1
+base_manpower=2
+native_size=40
+native_ferocity=5
+native_hostileness=6
+religion=methodist
+culture=culture_north_hoosier
+is_city = yes
+owner=KKM
+add_core=KKM
+controller=KKM
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XIN
+	add_core=XIN
+	controller=XIN
+}

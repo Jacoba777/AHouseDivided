@@ -1,0 +1,115 @@
+missions_nh_south_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RKH
+			tag = STF
+			tag = LCN
+			tag = CCD
+			tag = MCR
+			tag = KEE
+			tag = BLN
+		}
+	}
+
+	mission_nh_south_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_nh_south_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_nh_south_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nh_south_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_nh_south_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			area_nh_concord = { add_permanent_claim = ROOT }
+			area_nh_manchester = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nh_south_uniting_the_south = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nh_south_a_respectable_state }
+		trigger = {
+			area_nh_concord = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nh_manchester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nh_concord
+				area = area_nh_manchester
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

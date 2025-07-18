@@ -1,0 +1,30 @@
+capital="Boston"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=9
+base_production=11
+base_manpower=9
+native_size=290
+native_ferocity=6
+native_hostileness=3
+religion=catholic
+culture=culture_bostonian
+center_of_trade=2
+is_city = yes
+owner=BTO
+add_core=BTO
+controller=BTO
+trade_goods=naval_supplies
+
+1444.11.12 = {
+	base_tax=24
+	base_production=57
+	base_manpower=19
+}
+
+1444.11.13 = {
+	owner=XMA
+	add_core=XMA
+	controller=XMA
+}

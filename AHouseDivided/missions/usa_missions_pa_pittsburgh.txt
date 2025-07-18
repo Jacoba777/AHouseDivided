@@ -1,0 +1,450 @@
+missions_pa_pittsburgh_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = PIT }
+
+	mission_pa_pittsburgh_allegheny_alliances = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { mission_pa_pittsburgh_consolidate_pittsburgh }
+		trigger = {
+			accepted_culture = culture_allegheny
+ 		}
+		effect = {
+			area_pa_johnstown = { add_permanent_claim = ROOT }
+			area_pa_allegheny_mts = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_pittsburgh_into_the_mountains = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_pa_pittsburgh_allegheny_alliances }
+		trigger = {
+			area_pa_johnstown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_allegheny_mts = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_johnstown
+				area = area_pa_allegheny_mts
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_steward_the_alleghenies = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_pa_pittsburgh_into_the_mountains }
+		trigger = {
+			area_pa_johnstown = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_pa_allegheny_mts = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_erie = { add_permanent_claim = ROOT }
+			area_pa_central = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_johnstown
+				area = area_pa_allegheny_mts
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_pittsburgh_lakefront_property = {
+		icon = mission_ne_great_lakes_conquest
+		position = 5
+		required_missions = { mission_pa_pittsburgh_steward_the_alleghenies }
+		trigger = {
+			area_pa_erie = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_west_wilds = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_erie
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_taming_the_wilds = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_pittsburgh_lakefront_property mission_pa_pittsburgh_the_lion_of_nittany }
+		trigger = {
+			area_pa_west_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_west_wilds
+				area = area_pa_central_wilds
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_pa_pittsburgh_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = PIT }
+
+	mission_pa_pittsburgh_consolidate_pittsburgh = {
+		icon = mission_pf_map_table
+		position = 1
+		required_missions = {  }
+		trigger = {
+            custom_trigger_tooltip = {
+                tooltip = "tooltip_own_all_provs_primary_culture"
+                NOT = {
+                    any_known_country = {
+                        num_of_owned_provinces_with = {
+                            value = 1
+                            culture = ROOT
+                        }
+                        NOT = { tag = ROOT }
+                    }
+                }
+            }
+            NOT = { num_of_subjects = 1 }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+            region_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+            culture = ROOT
+		}
+	}
+
+	mission_pa_pittsburgh_the_lion_of_nittany = {
+		icon = mission_lion_of_the_north
+		position = 5
+		required_missions = { mission_pa_pittsburgh_steward_the_alleghenies }
+		trigger = {
+			area_pa_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_central_wilds = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_central
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_brotherly_conflict = {
+		icon = mission_phl
+		position = 8
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = PHL
+				AND = {
+					exists = PHL
+					military_strength = {
+						who = PHL
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = PHL
+			}
+			OR = {
+				PHL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				PHL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = PHL }
+				tag = PHL
+			}
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_pittsburgh_fratricide = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_pa_pittsburgh_brotherly_conflict }
+		trigger = {
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_years_of_income = 0.5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_pa_pittsburgh_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = PIT }
+
+	mission_pa_pittsburgh_appease_morgantonians = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { mission_pa_pittsburgh_consolidate_pittsburgh }
+		trigger = {
+			accepted_culture = culture_morgantonian
+ 		}
+		effect = {
+			area_wv_morgantown = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_pittsburgh_march_to_morgantown = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_pa_pittsburgh_appease_morgantonians }
+		trigger = {
+			area_wv_morgantown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_morgantown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_steel_city = {
+		icon = the_london_steelyard
+		position = 4
+		required_missions = {  }
+		trigger = {
+            224 = {
+                base_production = 12
+                has_building = workshop
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_steel_city_foundries
+				duration = 10950  # 30 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 224
+		}
+	}
+
+	mission_pa_pittsburgh_west_pennsylvania_trade = {
+		icon = mission_war_chest
+		position = 5
+		required_missions = { mission_pa_pittsburgh_steel_city }
+		trigger = {
+            trade_income_percentage = 0.25
+            224 = { trade_share = { country = ROOT  share = 40 } }  # Pittsburgh
+ 		}
+		effect = {
+			add_years_of_income = 1
+		}
+
+	}
+
+	mission_pa_pittsburgh_prepare_for_harrisburg = {
+		icon = mission_assemble_an_army
+		position = 6
+		required_missions = { mission_pa_pittsburgh_pacifying_the_penn_dutch mission_pa_pittsburgh_the_lion_of_nittany mission_pa_pittsburgh_west_pennsylvania_trade }
+		trigger = {
+
+ 		}
+		effect = {
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_pittsburgh_retaking_the_old_capital = {
+		icon = develop_our_capital
+		position = 7
+		required_missions = { mission_pa_pittsburgh_prepare_for_harrisburg }
+		trigger = {
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_reincorporate_harrisburg = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_pa_pittsburgh_retaking_the_old_capital }
+		trigger = {
+			area_pa_north_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_pittsburgh_king_of_lancaster = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_pa_pittsburgh_reincorporate_harrisburg }
+		trigger = {
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_south_dutch
+				area = area_pa_east_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_pittsburgh_the_paris_of_appalachia = {
+		icon = mission_pit
+		position = 10
+		required_missions = { mission_pa_pittsburgh_fratricide mission_pa_pittsburgh_king_of_lancaster }
+		trigger = {
+			224 = { num_of_times_improved_by_owner = 10 }
+			area_pa_pittsburgh = { type = all  num_of_times_improved_by_owner = 3 }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_paris_of_appalachia
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 224
+					NOT = { num_of_times_improved_by_owner =  10}
+				}
+				AND = {
+					area = area_pa_pittsburgh
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+			}
+		}
+	}
+}
+
+missions_pa_pittsburgh_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = PIT }
+
+	mission_pa_pittsburgh_pacifying_the_penn_dutch = {
+		icon = settle_north_america
+		position = 5
+		required_missions = {  }
+		trigger = {
+			accepted_culture = culture_penn_dutch
+ 		}
+		effect = {
+
+		}
+
+	}
+}

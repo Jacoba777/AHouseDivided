@@ -1,0 +1,1159 @@
+missions_tn_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XTN }
+
+	mission_tn_the_spirit_of_davy_crockett = {
+		icon = mission_davy_crockett
+		position = 6
+		required_missions = {  }
+		trigger = {
+            has_institution = new_world_i
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_spirit_of_davy_crockett
+				duration = 10950  # 30 years
+			}
+		}
+
+	}
+
+	mission_tn_the_grand_ole_opry = {
+		icon = mission_grand_ole_opry
+		position = 7
+		required_missions = { mission_tn_the_spirit_of_davy_crockett }
+		trigger = {
+            1055 = {
+                has_great_project = {
+                    type = grand_ole_opry
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            1055 = { change_trade_goods = gems }
+    
+			add_country_modifier = {
+				name = country_modifier_the_grand_ole_opry
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 1055
+		}
+	}
+
+	mission_tn_rocking_in_memphis = {
+		icon = mission_elvis
+		position = 8
+		required_missions = { mission_tn_the_grand_ole_opry }
+		trigger = {
+            1022 = {
+                has_great_project = {
+                    type = graceland
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_jailhouse_rock
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 1022
+		}
+	}
+
+	mission_tn_the_smoky_mountains = {
+		icon = mission_smoky_mountains
+		position = 9
+		required_missions = { mission_tn_rocking_in_memphis }
+		trigger = {
+            1038 = {
+                num_of_times_expanded_infrastructure = 1
+                is_prosperous = yes
+            }
+			area_tn_smoky_mountains = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_smoky_mountains_tourism
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+
+				AND = {
+					area = area_tn_smoky_mountains
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_tn_enable_moonshining = {
+		icon = mission_moonshine
+		position = 10
+		required_missions = { mission_tn_the_smoky_mountains }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                has_building = farm_estate
+                has_building = workshop
+                OR = {
+                    trade_goods = grain
+                    trade_goods = corn
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_moonshine_exports
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_tn_bible_belt_resolution = {
+		icon = wars_of_religion
+		position = 11
+		required_missions = { mission_tn_enable_moonshining }
+		trigger = {
+            religious_unity = 0.99
+            temple = 50
+            cathedral = 25
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_religious_peace
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_tn_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XTN }
+
+	mission_tn_assail_south_kentucky = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_tn_the_middle_division }
+		trigger = {
+			area_ky_logan = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_bowling_green = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_logan
+				area = area_ky_southern
+				area = area_ky_bowling_green
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_stabilize_bowling_green = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_tn_assail_south_kentucky }
+		trigger = {
+			area_ky_bowling_green = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ky_fort_knox = { add_permanent_claim = ROOT }
+			area_ky_grayson = { add_permanent_claim = ROOT }
+			area_ky_central = { add_permanent_claim = ROOT }
+			area_ky_danville = { add_permanent_claim = ROOT }
+			area_ky_hopkinsville = { add_permanent_claim = ROOT }
+			area_ky_western = { add_permanent_claim = ROOT }
+			area_ky_owensboro = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_bowling_green
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_take_west_pennyroyal = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_tn_stabilize_bowling_green }
+		trigger = {
+			area_ky_hopkinsville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_owensboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_hopkinsville
+				area = area_ky_western
+				area = area_ky_owensboro
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_incorporate_owensboro = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_tn_take_west_pennyroyal }
+		trigger = {
+			area_ky_owensboro = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ky_south_purchase = { add_permanent_claim = ROOT }
+			area_ky_north_purchase = { add_permanent_claim = ROOT }
+			area_il_southern_tip = { add_permanent_claim = ROOT }
+			area_il_carbondale = { add_permanent_claim = ROOT }
+			area_il_south_central = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_owensboro
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_claiming_our_purchase = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_tn_incorporate_owensboro }
+		trigger = {
+			area_ky_south_purchase = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_north_purchase = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southern_tip = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_carbondale = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_south_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_mo_wayne = { add_permanent_claim = ROOT }
+			area_mo_poplar_bluff = { add_permanent_claim = ROOT }
+			area_mo_cape_girardeau = { add_permanent_claim = ROOT }
+			area_mo_bootheel = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_purchase
+				area = area_ky_north_purchase
+				area = area_il_southern_tip
+				area = area_il_carbondale
+				area = area_il_south_central
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_the_boot_comes_down = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_tn_claiming_our_purchase }
+		trigger = {
+			area_mo_wayne = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_poplar_bluff = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_cape_girardeau = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_bootheel = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_wayne
+				area = area_mo_poplar_bluff
+				area = area_mo_cape_girardeau
+				area = area_mo_bootheel
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_developing_the_bootheel = {
+		icon = mission_early_game_buildings
+		position = 10
+		required_missions = { mission_tn_the_boot_comes_down }
+		trigger = {
+			area_mo_bootheel = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_ar_northeast = { add_permanent_claim = ROOT }
+			area_ar_jonesboro = { add_permanent_claim = ROOT }
+			1743 = { add_permanent_claim = ROOT }
+			1759 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_mo_bootheel
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_tn_fight_for_jonesboro = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { mission_tn_developing_the_bootheel }
+		trigger = {
+			area_ar_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_jonesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			1743 = { country_or_non_sovereign_subject_holds = ROOT }
+			1759 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ar_northeast
+				area = area_ar_jonesboro
+				province_id = 1743
+				province_id = 1759
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_tenn_valley_authority = {
+		icon = mission_tva
+		position = 12
+		required_missions = { mission_tn_bible_belt_resolution }
+		trigger = {
+            region_tn = {
+                type = all
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_tennessee_valley_projects
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+            region = region_tn
+            is_prosperous = no
+		}
+	}
+}
+
+missions_tn_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XTN }
+
+	mission_tn_the_middle_division = {
+		icon = mission_nsh
+		position = 3
+		required_missions = { mission_tn_centralize_tennessee }
+		trigger = {
+			accepted_culture = culture_nashvillian
+ 		}
+		effect = {
+			area_ky_logan = { add_permanent_claim = ROOT }
+			area_ky_southern = { add_permanent_claim = ROOT }
+			area_ky_bowling_green = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_take_east_pennyroyal = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_tn_stabilize_bowling_green }
+		trigger = {
+			area_ky_fort_knox = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_grayson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_danville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_fort_knox
+				area = area_ky_grayson
+				area = area_ky_central
+				area = area_ky_danville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_embrace_louisvillian = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_tn_take_east_pennyroyal }
+		trigger = {
+			accepted_culture = culture_louisvillian
+ 		}
+		effect = {
+			area_ky_south_louisville = { add_permanent_claim = ROOT }
+			area_ky_west_louisvillle = { add_permanent_claim = ROOT }
+			area_in_north_louisville = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_the_fate_of_louisville = {
+		icon = mission_lvl
+		position = 8
+		required_missions = { mission_tn_embrace_louisvillian }
+		trigger = {
+			area_ky_south_louisville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_west_louisvillle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_north_louisville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_louisville
+				area = area_ky_west_louisvillle
+				area = area_in_north_louisville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_peace_in_louisville = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_tn_the_fate_of_louisville }
+		trigger = {
+			area_ky_south_louisville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ky_west_louisvillle = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_north_louisville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_louisville
+				area = area_ky_west_louisvillle
+				area = area_in_north_louisville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_the_fate_of_atlanta = {
+		icon = mission_atl
+		position = 10
+		required_missions = { mission_tn_sweep_lower_appalachia }
+		trigger = {
+			area_ga_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_north_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_west_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_north_atlanta
+				area = area_ga_west_atlanta
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_annexing_atlanta = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { mission_tn_the_fate_of_atlanta }
+		trigger = {
+			area_ga_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_north_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_west_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_north_atlanta
+				area = area_ga_west_atlanta
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_volunteer_victories = {
+		icon = mission_end_civil_war
+		position = 12
+		required_missions = { mission_tn_the_bourbon_conquest mission_tn_fight_for_jonesboro mission_tn_annexing_atlanta }
+		trigger = {
+
+ 		}
+		effect = {
+			change_government_reform_progress = 50
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+
+	}
+
+	mission_tn_the_volunteer_state = {
+		icon = mission_tn
+		position = 13
+		required_missions = { mission_tn_tenn_valley_authority mission_tn_volunteer_victories }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_volunteer_state
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_tn_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XTN }
+
+	mission_tn_restore_our_rightful_lands = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_tn = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_tn
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_centralize_tennessee = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_tn_restore_our_rightful_lands }
+		trigger = {
+			region_tn = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_tn
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_the_west_division = {
+		icon = mission_mps
+		position = 3
+		required_missions = { mission_tn_centralize_tennessee }
+		trigger = {
+			accepted_culture = culture_memphian
+ 		}
+		effect = {
+			area_ar_forest_city = { add_permanent_claim = ROOT }
+			area_ms_south_memphis = { add_permanent_claim = ROOT }
+			area_ms_northeast = { add_permanent_claim = ROOT }
+			area_ms_tupelo = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_invade_mississippi = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_tn_the_west_division }
+		trigger = {
+			area_ar_forest_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ms_south_memphis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ms_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ms_tupelo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_al_northwest = { add_permanent_claim = ROOT }
+			area_al_huntsville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ar_forest_city
+				area = area_ms_south_memphis
+				area = area_ms_northeast
+				area = area_ms_tupelo
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_into_huntsville = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_tn_invade_mississippi }
+		trigger = {
+			area_al_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_al_huntsville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_northwest
+				area = area_al_huntsville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_annex_huntsville = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_tn_into_huntsville }
+		trigger = {
+			area_al_huntsville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_al_northeast = { add_permanent_claim = ROOT }
+			area_ga_northwest = { add_permanent_claim = ROOT }
+			area_ga_dalton = { add_permanent_claim = ROOT }
+			area_ga_west_high_country = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_huntsville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_into_northern_georgia = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_tn_annex_huntsville }
+		trigger = {
+			area_al_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_dalton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_northeast
+				area = area_ga_northwest
+				area = area_ga_dalton
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_develop_dalton = {
+		icon = mission_early_game_buildings
+		position = 8
+		required_missions = { mission_tn_into_northern_georgia }
+		trigger = {
+			area_ga_dalton = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_ga_central_high_country = { add_permanent_claim = ROOT }
+			area_ga_north = { add_permanent_claim = ROOT }
+			area_ga_northeast = { add_permanent_claim = ROOT }
+			area_sc_greenville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_ga_dalton
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_tn_sweep_lower_appalachia = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_tn_develop_dalton }
+		trigger = {
+			area_ga_central_high_country = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_north = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ga_atlanta = { add_permanent_claim = ROOT }
+			area_ga_north_atlanta = { add_permanent_claim = ROOT }
+			area_ga_west_atlanta = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_central_high_country
+				area = area_ga_north
+				area = area_ga_northeast
+				area = area_sc_greenville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_a_promise_to_kentucky = {
+		icon = mission_bluegrass
+		position = 10
+		required_missions = { mission_tn_cumberland_campaign }
+		trigger = {
+            calc_true_if = {
+                amount = 2
+                accept_culture = culture_bluegrass
+                accept_culture = culture_bowling_green
+                accept_culture = culture_cumberland
+                accept_culture = culture_louisvillian
+                accept_culture = culture_pennyroyal
+                accept_culture = culture_purchase
+            }
+ 		}
+		effect = {
+			region_ky = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_the_bourbon_conquest = {
+		icon = mission_ky
+		position = 11
+		required_missions = { mission_tn_a_promise_to_kentucky }
+		trigger = {
+			region_ky = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ky
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_tn_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XTN }
+
+	mission_tn_the_east_division = {
+		icon = mission_knx
+		position = 3
+		required_missions = { mission_tn_centralize_tennessee }
+		trigger = {
+			accepted_culture = culture_knoxvillian
+ 		}
+		effect = {
+			area_nc_asheville = { add_permanent_claim = ROOT }
+			area_nc_cullowhee = { add_permanent_claim = ROOT }
+			area_nc_western = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_crossing_the_smokies = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_tn_the_east_division }
+		trigger = {
+			area_nc_asheville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_cullowhee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_asheville
+				area = area_nc_cullowhee
+				area = area_nc_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_stabilize_asheville = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_tn_crossing_the_smokies }
+		trigger = {
+			area_nc_asheville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nc_southwestern = { add_permanent_claim = ROOT }
+			area_nc_north_wilkesboro = { add_permanent_claim = ROOT }
+			area_nc_hickory = { add_permanent_claim = ROOT }
+			area_nc_northwestern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_asheville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_control_the_blue_ridge = {
+		icon = mission_expand_into_the_forest
+		position = 6
+		required_missions = { mission_tn_stabilize_asheville }
+		trigger = {
+			area_nc_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_north_wilkesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_hickory = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_va_western = { add_permanent_claim = ROOT }
+			area_va_bristol = { add_permanent_claim = ROOT }
+			area_va_blue_ridge = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_southwestern
+				area = area_nc_north_wilkesboro
+				area = area_nc_hickory
+				area = area_nc_northwestern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_enter_virginia = {
+		icon = mission_va
+		position = 7
+		required_missions = { mission_tn_control_the_blue_ridge }
+		trigger = {
+			area_va_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_bristol = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_blue_ridge = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_western
+				area = area_va_bristol
+				area = area_va_blue_ridge
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_develop_blue_ridge = {
+		icon = mission_early_game_buildings
+		position = 8
+		required_missions = { mission_tn_enter_virginia }
+		trigger = {
+			area_va_blue_ridge = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_ky_somerset = { add_permanent_claim = ROOT }
+			area_ky_london = { add_permanent_claim = ROOT }
+			area_ky_southeastern = { add_permanent_claim = ROOT }
+			area_ky_eastern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_va_blue_ridge
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_tn_cumberland_campaign = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_tn_develop_blue_ridge }
+		trigger = {
+			area_ky_somerset = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_london = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_wv_southwestern = { add_permanent_claim = ROOT }
+			area_wv_south_charleston = { add_permanent_claim = ROOT }
+			area_wv_charleston = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_somerset
+				area = area_ky_london
+				area = area_ky_southeastern
+				area = area_ky_eastern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_capture_charleston = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_tn_cumberland_campaign }
+		trigger = {
+			area_wv_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_dip_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_southwestern
+				area = area_wv_south_charleston
+				area = area_wv_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_integrate_charleston = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { mission_tn_capture_charleston }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

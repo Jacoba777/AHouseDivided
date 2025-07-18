@@ -1,0 +1,30 @@
+capital="Panama City"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_panhandle
+center_of_trade=1
+is_city = yes
+owner=PNM
+add_core=PNM
+controller=PNM
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=4
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

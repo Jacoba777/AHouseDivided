@@ -1,0 +1,29 @@
+capital="Honolulu"
+discovered_by = hawaii
+hre = no
+base_tax=10
+base_production=9
+base_manpower=9
+native_size=280
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_hawaiian
+center_of_trade=2
+is_city = yes
+owner=OAU
+add_core=OAU
+controller=OAU
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=32
+	base_production=24
+	base_manpower=24
+}
+
+1444.11.13 = {
+	owner=XHI
+	add_core=XHI
+	controller=XHI
+}

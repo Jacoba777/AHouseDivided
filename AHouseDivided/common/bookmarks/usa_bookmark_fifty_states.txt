@@ -1,0 +1,22 @@
+bookmark = {
+	name = bookmark_fifty_states
+	desc = bookmark_fifty_states_desc
+	date = 1444.11.13
+	
+	center = 505
+	
+	country = XCA
+	country = XTX
+	country = XNY
+	country = WDC
+	country = XFL
+	country = XIL
+	country = XGA
+	country = XPA
+	country = XVA
+	country = XMA
+	
+	easy_country = XCA
+	easy_country = XTX
+	easy_country = XNY
+}

@@ -1,0 +1,31 @@
+capital="Nashville"
+discovered_by = appalachia
+discovered_by = southeast
+discovered_by = central_plains
+discovered_by = miss_delta
+hre = no
+base_tax=8
+base_production=10
+base_manpower=9
+native_size=270
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_nashvillian
+center_of_trade=2
+is_city = yes
+owner=NSH
+add_core=NSH
+controller=NSH
+
+1444.11.12 = {
+	base_tax=13
+	base_production=32
+	base_manpower=17
+}
+
+1444.11.13 = {
+	owner=XTN
+	add_core=XTN
+	controller=XTN
+}

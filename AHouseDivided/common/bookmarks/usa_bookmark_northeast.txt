@@ -1,0 +1,22 @@
+bookmark = {
+	name = bookmark_northeast
+	desc = bookmark_northeast_desc
+	date = 1444.11.11
+	default = yes
+	
+	center = 755
+	
+	country = PHL
+	country = NYC
+	country = PIT
+	country = WDC
+	country = PVD
+	country = BTO
+	country = HFD
+	country = NWK
+	country = BLR
+	
+	easy_country = NYC
+	easy_country = PHL
+	easy_country = PIT
+}

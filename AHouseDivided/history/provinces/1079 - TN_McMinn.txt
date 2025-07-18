@@ -1,0 +1,30 @@
+capital="Athens"
+discovered_by = appalachia
+discovered_by = southeast
+discovered_by = central_plains
+discovered_by = miss_delta
+hre = no
+base_tax=1
+base_production=3
+base_manpower=3
+native_size=70
+native_ferocity=10
+native_hostileness=5
+religion=baptist
+culture=culture_chattanoogan
+is_city = yes
+owner=BDY
+add_core=BDY
+controller=BDY
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XTN
+	add_core=XTN
+	controller=XTN
+}

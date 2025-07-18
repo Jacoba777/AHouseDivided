@@ -1,0 +1,30 @@
+capital="Atlanta"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=11
+base_production=12
+base_manpower=10
+native_size=330
+native_ferocity=5
+native_hostileness=3
+religion=baptist
+culture=culture_atlantan
+center_of_trade=2
+is_city = yes
+owner=ATL
+add_core=ATL
+controller=ATL
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=50
+	base_production=74
+	base_manpower=26
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

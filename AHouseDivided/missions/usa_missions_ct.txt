@@ -1,0 +1,758 @@
+missions_ct_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XCT }
+
+	mission_ct_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 6
+		required_missions = {  }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+            if = {
+                limit = { NOT = { navy_tradition = 40 } }
+                create_admiral = { tradition = 40 }
+            }
+            else_if = {
+                limit = { NOT = { navy_tradition = 60 } }
+                create_admiral = { tradition = 60 }
+            }
+            else_if = {
+                limit = { NOT = { navy_tradition = 80 } }
+                create_admiral = { tradition = 80 }
+            }
+            else = {
+                create_admiral = { tradition = 100 }
+            }
+			add_country_modifier = {
+				name = country_modifier_naval_enthusiasm
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_ct_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XCT }
+
+	mission_ct_embrace_nutmegger = {
+		icon = mission_diplomatic_relation
+		position = 1
+		required_missions = {  }
+		trigger = {
+			accepted_culture = culture_connecticuter
+ 		}
+		effect = {
+			add_dip_power = 50
+		}
+
+	}
+
+	mission_ct_connecticut_reunification = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ct_embrace_nutmegger }
+		trigger = {
+			region_ct = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ct
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_connecting_connecticut = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ct_connecticut_reunification }
+		trigger = {
+			region_ct = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			area_ma_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ct
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_pacifying_killingly = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_ct_connecting_connecticut }
+		trigger = {
+			accepted_culture = culture_providencial
+ 		}
+		effect = {
+			region_ri = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ct_dominate_rhode_island = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ct_pacifying_killingly }
+		trigger = {
+			region_ri = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ri
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_prince_of_providence = {
+		icon = mission_ri
+		position = 6
+		required_missions = { mission_ct_dominate_rhode_island }
+		trigger = {
+			region_ri = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ma_south_shore = { add_permanent_claim = ROOT }
+			area_ma_cape_cod = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ri
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_island_hopping = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_ct_build_a_navy mission_ct_prince_of_providence }
+		trigger = {
+			area_ma_south_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ma_cape_cod = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_south_shore
+				area = area_ma_cape_cod
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_incorporating_cape_cod = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_ct_island_hopping }
+		trigger = {
+			area_ma_south_shore = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ma_cape_cod = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_south_shore
+				area = area_ma_cape_cod
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_welcome_bostonians = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_ct_incorporating_cape_cod }
+		trigger = {
+			accepted_culture = culture_bostonian
+ 		}
+		effect = {
+			area_ma_boston = { add_permanent_claim = ROOT }
+			area_nh_manchester = { add_permanent_claim = ROOT }
+			area_nh_concord = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ct_the_city_on_a_hill = {
+		icon = mission_bto
+		position = 10
+		required_missions = { mission_ct_welcome_bostonians }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nh_manchester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+				area = area_nh_manchester
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_integrating_boston = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { mission_ct_the_city_on_a_hill }
+		trigger = {
+			area_ma_boston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_me_portland = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_the_last_lighthouse = {
+		icon = mission_unite_home_region
+		position = 12
+		required_missions = { mission_ct_integrating_boston }
+		trigger = {
+			area_me_portland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_me_portland
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ct_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XCT }
+
+	mission_ct_going_upstream = {
+		icon = mission_se_along_the_river
+		position = 4
+		required_missions = { mission_ct_connecting_connecticut }
+		trigger = {
+			area_ma_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_harmonizing_springfield = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_ct_going_upstream }
+		trigger = {
+			area_ma_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nh_concord = { add_permanent_claim = ROOT }
+			area_vt_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_woodlands_campaign = {
+		icon = mission_forest
+		position = 6
+		required_missions = { mission_ct_harmonizing_springfield }
+		trigger = {
+			area_vt_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			558 = { country_or_non_sovereign_subject_holds = ROOT }
+			559 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			724 = { add_permanent_claim = ROOT }
+			725 = { add_permanent_claim = ROOT }
+			726 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_southern
+				province_id = 558
+				province_id = 559
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_develop_the_woodlands = {
+		icon = mission_early_game_buildings
+		position = 7
+		required_missions = { mission_ct_woodlands_campaign }
+		trigger = {
+			area_vt_southern = { type = all  num_of_times_improved_by_owner = 3 }
+			558 = { num_of_times_improved_by_owner = 3 }
+			559 = { num_of_times_improved_by_owner = 3 }
+ 		}
+		effect = {
+			area_vt_central = { add_permanent_claim = ROOT }
+			area_vt_northeastern = { add_permanent_claim = ROOT }
+			area_nh_northern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_vt_southern
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+				AND = {
+					province_id = 558
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+				AND = {
+					province_id = 559
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+			}
+		}
+	}
+
+	mission_ct_the_green_mountains = {
+		icon = mission_expand_into_the_forest
+		position = 8
+		required_missions = { mission_ct_develop_the_woodlands }
+		trigger = {
+			area_vt_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_vt_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_central
+				area = area_vt_northeastern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_placating_the_vermonters = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_ct_the_green_mountains }
+		trigger = {
+			accepted_culture = culture_vermonter
+ 		}
+		effect = {
+			area_vt_burlington = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ct_the_fate_of_burlington = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_ct_placating_the_vermonters }
+		trigger = {
+			area_vt_burlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_burlington
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_peace_in_vermont = {
+		icon = mission_vt
+		position = 11
+		required_missions = { mission_ct_the_fate_of_burlington }
+		trigger = {
+			area_vt_burlington = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_burlington
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_crossing_lake_champlain = {
+		icon = mission_ne_great_lakes_conquest
+		position = 12
+		required_missions = { mission_ct_peace_in_vermont }
+		trigger = {
+			area_ny_glens_falls = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			699 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_glens_falls
+				province_id = 699
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_the_constitution_state = {
+		icon = mission_ct
+		position = 13
+		required_missions = { mission_ct_urbanize_connecticut mission_ct_the_last_lighthouse mission_ct_crossing_lake_champlain }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_constitution_state
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_ct_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XCT }
+
+	mission_ct_along_the_hudson = {
+		icon = mission_se_along_the_river
+		position = 7
+		required_missions = { mission_ct_woodlands_campaign }
+		trigger = {
+			721 = { country_or_non_sovereign_subject_holds = ROOT }
+			722 = { country_or_non_sovereign_subject_holds = ROOT }
+			723 = { country_or_non_sovereign_subject_holds = ROOT }
+			724 = { country_or_non_sovereign_subject_holds = ROOT }
+			725 = { country_or_non_sovereign_subject_holds = ROOT }
+			726 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 721
+				province_id = 722
+				province_id = 723
+				province_id = 724
+				province_id = 725
+				province_id = 726
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_fortify_the_hudson = {
+		icon = mission_fortify_rajputana
+		position = 8
+		required_missions = { mission_ct_along_the_hudson }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 2
+                owned_by = ROOT
+                has_building = fort_15th
+                OR = {
+                    province_id = 721
+                    province_id = 722
+                    province_id = 723
+                    province_id = 724
+                    province_id = 725
+                    province_id = 726
+                }
+            }
+ 		}
+		effect = {
+            724 = { change_culture = culture_west_new_englander }
+            725 = { change_culture = culture_west_new_englander }
+            726 = { change_culture = culture_west_new_englander }
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 721
+                province_id = 722
+                province_id = 723
+                province_id = 724
+                province_id = 725
+                province_id = 726
+            }
+            NOT = {
+                owned_by = ROOT
+                has_building = fort_15th
+            }
+		}
+	}
+
+	mission_ct_the_fundamental_orders = {
+		icon = mission_constitution
+		position = 9
+		required_missions = {  }
+		trigger = {
+            legitimacy_equivalent = 95
+            464 = { has_building = courthouse }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_country_modifier = {
+				name = country_modifier_the_fundamental_orders
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 464
+		}
+	}
+
+	mission_ct_arsenal_of_democracy = {
+		icon = mission_landsknecht_soldier
+		position = 10
+		required_missions = { mission_ct_the_fundamental_orders }
+		trigger = {
+            barracks = 9
+            army_size_percentage = 1
+            manpower_percentage = 0.95
+ 		}
+		effect = {
+            464 = { change_trade_goods = copper }
+            466 = { change_trade_goods = copper }
+		}
+
+	}
+
+	mission_ct_improvements_at_yale = {
+		icon = mission_early_modern_university
+		position = 11
+		required_missions = { mission_ct_arsenal_of_democracy }
+		trigger = {
+            466 = {
+                has_great_project = {
+                    type = univ_yale
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            change_innovativeness = 3
+			add_country_modifier = {
+				name = country_modifier_the_ivy_league
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 466
+		}
+	}
+
+	mission_ct_urbanize_connecticut = {
+		icon = mission_early_game_buildings
+		position = 12
+		required_missions = { mission_ct_improvements_at_yale }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 20
+                owned_by = ROOT
+                development = 30
+            }
+            region_ct = {
+                type = all
+                development = 30
+                has_building = town_hall
+            }
+            town_hall = 40
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_connecticut_megalopolis
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+
+
+			}
+		}
+	}
+}

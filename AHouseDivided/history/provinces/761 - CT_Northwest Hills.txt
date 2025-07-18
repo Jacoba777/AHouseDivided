@@ -1,0 +1,28 @@
+capital="Torrington"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=6
+base_production=6
+base_manpower=5
+native_size=170
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_connecticuter
+is_city = yes
+owner=TRR
+add_core=TRR
+controller=TRR
+
+1444.11.12 = {
+	base_tax=3
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XCT
+	add_core=XCT
+	controller=XCT
+}

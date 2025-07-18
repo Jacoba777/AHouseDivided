@@ -1,0 +1,30 @@
+capital="Cleveland"
+discovered_by = appalachia
+discovered_by = southeast
+discovered_by = central_plains
+discovered_by = miss_delta
+hre = no
+base_tax=3
+base_production=4
+base_manpower=5
+native_size=120
+native_ferocity=6
+native_hostileness=5
+religion=baptist
+culture=culture_chattanoogan
+is_city = yes
+owner=BDY
+add_core=BDY
+controller=BDY
+
+1444.11.12 = {
+	base_tax=1
+	base_production=2
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XTN
+	add_core=XTN
+	controller=XTN
+}

@@ -1,0 +1,219 @@
+missions_nj_philadelphian_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = VIN
+			tag = ALC
+			tag = OCA
+			tag = BLT
+			tag = CDN
+			tag = WBY
+			tag = JSM
+			tag = OCN
+		}
+	}
+
+	mission_nj_philadelphian_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_nj_philadelphian_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_nj_philadelphian_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_philadelphian_merciful_masters = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_nj_philadelphian_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			area_nj_south_jersey = { add_permanent_claim = ROOT }
+			area_nj_jersey_shore = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_philadelphian_south_jersey_reunification = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nj_philadelphian_merciful_masters }
+		trigger = {
+			area_nj_south_jersey = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nj_jersey_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nj_south_jersey
+				area = area_nj_jersey_shore
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_philadelphian_the_rise_of_south_jersey = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_nj_philadelphian_south_jersey_reunification }
+		trigger = {
+			area_nj_south_jersey = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_nj_jersey_shore = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_our_growing_capital
+				duration = 3650  # 10 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nj_south_jersey
+				area = area_nj_jersey_shore
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_philadelphian_develop_our_capital = {
+		icon = mission_early_game_buildings
+		position = 6
+		required_missions = { mission_nj_philadelphian_the_rise_of_south_jersey }
+		trigger = {
+            capital_scope = { num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_nj_central_jersey = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+		}
+	}
+
+	mission_nj_philadelphian_taking_trenton = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_nj_philadelphian_develop_our_capital }
+		trigger = {
+			292 = { country_or_non_sovereign_subject_holds = ROOT }
+			293 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nj_newark = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 292
+				province_id = 293
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_philadelphian_conquer_brick_city = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_nj_philadelphian_taking_trenton }
+		trigger = {
+			291 = { country_or_non_sovereign_subject_holds = ROOT }
+			286 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 291
+				province_id = 286
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,29 @@
+capital="Beaufort"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=7
+base_production=6
+base_manpower=6
+native_size=190
+native_ferocity=4
+native_hostileness=4
+religion=nondenominational
+culture=culture_charlestonian
+is_city = yes
+owner=HIL
+add_core=HIL
+controller=HIL
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=7
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

@@ -1,0 +1,29 @@
+capital="Redding"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=6
+base_production=5
+base_manpower=6
+native_size=170
+native_ferocity=4
+native_hostileness=4
+religion=nondenominational
+culture=culture_shasta
+is_city = yes
+owner=RED
+add_core=RED
+controller=RED
+
+1444.11.12 = {
+	base_tax=4
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

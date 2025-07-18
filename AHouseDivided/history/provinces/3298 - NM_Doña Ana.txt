@@ -1,0 +1,30 @@
+capital="Las Cruces"
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = texas
+hre = no
+base_tax=5
+base_production=5
+base_manpower=6
+native_size=160
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_el_pasoan
+center_of_trade=1
+is_city = yes
+owner=LCU
+add_core=LCU
+controller=LCU
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XNM
+	add_core=XNM
+	controller=XNM
+}

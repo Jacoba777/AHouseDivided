@@ -1,0 +1,30 @@
+capital="Akron"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+discovered_by = appalachia
+hre = no
+base_tax=7
+base_production=8
+base_manpower=8
+native_size=230
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_clevelander
+center_of_trade=1
+is_city = yes
+owner=AKR
+add_core=AKR
+controller=AKR
+
+1444.11.12 = {
+	base_tax=8
+	base_production=12
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XOH
+	add_core=XOH
+	controller=XOH
+}

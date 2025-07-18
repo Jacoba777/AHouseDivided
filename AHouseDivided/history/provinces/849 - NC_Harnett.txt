@@ -1,0 +1,28 @@
+capital="Lillington"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=4
+base_production=3
+base_manpower=5
+native_size=120
+native_ferocity=4
+native_hostileness=5
+religion=baptist
+culture=culture_raleighite
+is_city = yes
+owner=FYV
+add_core=FYV
+controller=FYV
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

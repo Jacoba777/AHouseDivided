@@ -1,0 +1,30 @@
+capital="Ventura"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=11
+base_production=9
+base_manpower=9
+native_size=290
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_angelino
+is_city = yes
+owner=VTR
+add_core=VTR
+controller=VTR
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=44
+	base_production=20
+	base_manpower=20
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

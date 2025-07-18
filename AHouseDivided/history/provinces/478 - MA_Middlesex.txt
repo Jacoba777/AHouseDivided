@@ -1,0 +1,30 @@
+capital="Lowell"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=11
+base_production=12
+base_manpower=11
+native_size=340
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_bostonian
+is_city = yes
+owner=CBG
+add_core=CBG
+add_core=BTO
+controller=CBG
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=75
+	base_production=72
+	base_manpower=39
+}
+
+1444.11.13 = {
+	owner=XMA
+	add_core=XMA
+	controller=XMA
+}

@@ -1,0 +1,29 @@
+capital="Carmel Hamlet"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=7
+base_production=4
+base_manpower=4
+native_size=150
+native_ferocity=3
+native_hostileness=3
+religion=catholic
+culture=culture_hudsonian
+is_city = yes
+owner=PUT
+add_core=PUT
+add_core=NYC
+controller=PUT
+
+1444.11.12 = {
+	base_tax=5
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

@@ -1,0 +1,30 @@
+capital="Salem"
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = upper_rockies
+hre = no
+base_tax=8
+base_production=7
+base_manpower=7
+native_size=220
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_portland_salemite
+center_of_trade=1
+is_city = yes
+owner=OSM
+add_core=OSM
+controller=OSM
+
+1444.11.12 = {
+	base_tax=9
+	base_production=7
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XOR
+	add_core=XOR
+	controller=XOR
+}

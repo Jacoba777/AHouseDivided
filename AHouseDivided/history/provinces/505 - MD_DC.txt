@@ -1,0 +1,31 @@
+capital="DC"
+discovered_by = mid_atlantic
+discovered_by = appalachia
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=11
+base_manpower=9
+native_size=300
+native_ferocity=5
+native_hostileness=3
+religion=methodist
+culture=culture_potomac
+center_of_trade=2
+is_city = yes
+owner=WDC
+add_core=WDC
+controller=WDC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=40
+	base_production=54
+	base_manpower=16
+}
+
+1444.11.13 = {
+	owner=WDC
+	add_core=WDC
+	controller=WDC
+}

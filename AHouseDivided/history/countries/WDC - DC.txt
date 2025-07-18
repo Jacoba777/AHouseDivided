@@ -1,0 +1,18 @@
+technology_group = mid_atlantic
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = methodist
+primary_culture = culture_potomac
+capital = 505
+elector = yes
+
+1444.11.11 = {
+	monarch = {
+		name = "Abraham"
+		dynasty = "Washington"
+		adm = 5
+		dip = 3
+		mil = 4
+	}
+}

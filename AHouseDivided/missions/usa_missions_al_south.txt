@@ -1,0 +1,334 @@
+missions_al_south_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = MOB
+			tag = DOT
+		}
+	}
+
+	mission_al_south_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_al_mobile = { add_permanent_claim = ROOT }
+			1588 = { add_permanent_claim = ROOT }
+			1589 = { add_permanent_claim = ROOT }
+			area_fl_emerald_coast = { add_permanent_claim = ROOT }
+			area_al_southeast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_al_south_the_real_south = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_al_south_fielding_an_army }
+		trigger = {
+			area_al_mobile = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			1588 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			1589 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_al_southeast = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_mobile
+				province_id = 1588
+				province_id = 1589
+				area = area_al_southeast
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_al_south_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_al_south_the_real_south }
+		trigger = {
+			area_al_mobile = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			1588 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			1589 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_al_southeast = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+            1582 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+    
+			area_al_birmingham = { add_permanent_claim = ROOT }
+			area_al_north_birmingham = { add_permanent_claim = ROOT }
+			area_al_central = { add_permanent_claim = ROOT }
+			area_al_east_central = { add_permanent_claim = ROOT }
+			area_al_montgomery = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_mobile
+				province_id = 1588
+				province_id = 1589
+				area = area_al_southeast
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_al_south_blood_in_the_coosa_river = {
+		icon = mission_bmh
+		position = 4
+		required_missions = { mission_al_south_a_respectable_state }
+		trigger = {
+			area_al_birmingham = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_al_north_birmingham = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_al_central = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_al_east_central = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_al_montgomery = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_birmingham
+				area = area_al_north_birmingham
+				area = area_al_central
+				area = area_al_east_central
+				area = area_al_montgomery
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_al_south_credible_statecraft = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_al_south_blood_in_the_coosa_river }
+		trigger = {
+			area_al_birmingham = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_al_north_birmingham = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_al_central = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_al_east_central = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_al_montgomery = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_al_northwest = { add_permanent_claim = ROOT }
+			area_al_huntsville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_birmingham
+				area = area_al_north_birmingham
+				area = area_al_central
+				area = area_al_east_central
+				area = area_al_montgomery
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_al_south_invade_huntsville = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_al_south_credible_statecraft }
+		trigger = {
+			area_al_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_al_huntsville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_northwest
+				area = area_al_huntsville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

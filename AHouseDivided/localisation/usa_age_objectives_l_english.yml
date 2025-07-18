@@ -1,0 +1,9 @@
+﻿l_english:
+ obj_christian_convert:0 "Break from the Religious Mainstream"
+ obj_christian_convert_desc:0 "Do not have Mormon, Catholic, Lutheran, Nondenominational, Methodist, or Baptist as your primary religion."
+ obj_colonial_empire:0 "Create a Colonial Empire"
+ obj_colonial_empire_desc:0 "Have at least two colonists, and at least 2 active colonies."
+ obj_asian_trade:0 "Rare Wares"
+ obj_asian_trade_desc:0 "Gain the trade bonus from steel, sunflowers, gems, coal, or sugar."
+ obj_win_religious_war:0 "A Professional Army"
+ obj_win_religious_war_desc:0 "Have at least 60 army professionalism."

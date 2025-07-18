@@ -1,0 +1,29 @@
+capital="Augusta"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=6
+base_production=6
+base_manpower=6
+native_size=180
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_augustan
+center_of_trade=2
+is_city = yes
+owner=AGA
+add_core=AGA
+controller=AGA
+
+1444.11.12 = {
+	base_tax=3
+	base_production=5
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

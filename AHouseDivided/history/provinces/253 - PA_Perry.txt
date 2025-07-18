@@ -1,0 +1,30 @@
+capital="New Bloomfield"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=2
+base_production=1
+base_manpower=3
+native_size=60
+native_ferocity=3
+native_hostileness=6
+religion=methodist
+culture=culture_penn_dutch
+is_city = yes
+owner=HSB
+add_core=HSB
+controller=HSB
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

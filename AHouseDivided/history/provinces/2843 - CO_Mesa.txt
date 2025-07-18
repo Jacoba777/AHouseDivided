@@ -1,0 +1,31 @@
+capital="Grand Junction"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_junction
+center_of_trade=1
+is_city = yes
+owner=GJT
+add_core=GJT
+controller=GJT
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

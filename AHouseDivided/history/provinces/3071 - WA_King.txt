@@ -1,0 +1,29 @@
+capital="Seattle"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=12
+base_production=13
+base_manpower=11
+native_size=360
+native_ferocity=5
+native_hostileness=3
+religion=atheist
+culture=culture_puget
+center_of_trade=2
+is_city = yes
+owner=SEA
+add_core=SEA
+controller=SEA
+
+1444.11.12 = {
+	base_tax=105
+	base_production=138
+	base_manpower=55
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

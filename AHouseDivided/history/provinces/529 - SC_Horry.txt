@@ -1,0 +1,29 @@
+capital="Conway"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=7
+base_production=7
+base_manpower=7
+native_size=210
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_myrtle
+center_of_trade=1
+is_city = yes
+owner=MYT
+add_core=MYT
+controller=MYT
+
+1444.11.12 = {
+	base_tax=5
+	base_production=6
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

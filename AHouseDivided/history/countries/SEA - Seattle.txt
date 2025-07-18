@@ -1,0 +1,7 @@
+technology_group = pacific_nw
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = atheist
+primary_culture = culture_puget
+capital = 3071

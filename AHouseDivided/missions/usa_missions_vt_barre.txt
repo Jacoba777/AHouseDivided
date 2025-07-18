@@ -1,0 +1,88 @@
+missions_vt_barre_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = VTB }
+
+	mission_vt_barre_two_houses_both_alike = {
+		icon = mission_luther_theses
+		position = 1
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = BTV
+				AND = {
+					exists = BTV
+					military_strength = {
+						who = BTV
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = BTV
+			}
+			OR = {
+				BTV = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				BTV = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = BTV }
+				tag = BTV
+			}
+ 		}
+		effect = {
+			add_manpower = 3
+
+		}
+
+	}
+
+	mission_vt_barre_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 2
+		required_missions = { mission_vt_barre_two_houses_both_alike }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_vt_central = { add_permanent_claim = ROOT }
+			area_vt_northeastern = { add_permanent_claim = ROOT }
+			area_vt_burlington = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_barre_conquer_burlington = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_vt_barre_fielding_an_army }
+		trigger = {
+			area_vt_burlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			869 = { country_or_non_sovereign_subject_holds = ROOT }
+			877 = { country_or_non_sovereign_subject_holds = ROOT }
+			879 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_burlington
+				province_id = 869
+				province_id = 877
+				province_id = 879
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

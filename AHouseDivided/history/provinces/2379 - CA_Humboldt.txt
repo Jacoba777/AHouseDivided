@@ -1,0 +1,29 @@
+capital="Eureka"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=atheist
+culture=culture_north_coast
+is_city = yes
+owner=ERK
+add_core=ERK
+controller=ERK
+
+1444.11.12 = {
+	base_tax=2
+	base_production=2
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

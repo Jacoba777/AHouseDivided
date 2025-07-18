@@ -1,0 +1,30 @@
+capital="Fairfield"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=9
+base_production=8
+base_manpower=8
+native_size=250
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_bay_area
+is_city = yes
+owner=VLJ
+add_core=VLJ
+controller=VLJ
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=20
+	base_production=11
+	base_manpower=11
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

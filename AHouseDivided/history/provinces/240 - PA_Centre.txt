@@ -1,0 +1,30 @@
+capital="Bellefonte"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=5
+base_production=6
+base_manpower=5
+native_size=160
+native_ferocity=6
+native_hostileness=3
+religion=methodist
+culture=culture_allegheny
+is_city = yes
+owner=SCG
+add_core=SCG
+controller=SCG
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

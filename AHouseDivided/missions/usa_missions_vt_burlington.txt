@@ -1,0 +1,83 @@
+missions_vt_burlington_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = BTV }
+
+	mission_vt_burlington_two_houses_both_alike = {
+		icon = mission_luther_theses
+		position = 1
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = VTB
+				AND = {
+					exists = VTB
+					military_strength = {
+						who = VTB
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = VTB
+			}
+			OR = {
+				VTB = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				VTB = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = VTB }
+				tag = VTB
+			}
+ 		}
+		effect = {
+			add_manpower = 3
+
+		}
+
+	}
+
+	mission_vt_burlington_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 2
+		required_missions = { mission_vt_burlington_two_houses_both_alike }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_vt_central = { add_permanent_claim = ROOT }
+			area_vt_northeastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_burlington_conquer_montpelier = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_vt_burlington_fielding_an_army }
+		trigger = {
+			880 = { country_or_non_sovereign_subject_holds = ROOT }
+			871 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 880
+				province_id = 871
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

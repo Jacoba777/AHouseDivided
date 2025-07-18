@@ -1,0 +1,31 @@
+capital="Mt. Clemens"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=8
+base_production=9
+base_manpower=9
+native_size=260
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_detroiter
+is_city = yes
+owner=DTW
+add_core=DTW
+add_core=DTW
+controller=DTW
+fort_15th=yes
+trade_goods=steel
+
+1444.11.12 = {
+	base_tax=14
+	base_production=16
+	base_manpower=21
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

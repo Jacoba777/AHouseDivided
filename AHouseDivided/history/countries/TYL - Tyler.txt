@@ -1,0 +1,7 @@
+technology_group = texas
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = baptist
+primary_culture = culture_longview
+capital = 2043

@@ -1,0 +1,30 @@
+capital="Hartford"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=10
+base_production=10
+base_manpower=9
+native_size=290
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_connecticuter
+center_of_trade=2
+is_city = yes
+owner=HFD
+add_core=HFD
+controller=HFD
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=28
+	base_production=34
+	base_manpower=24
+}
+
+1444.11.13 = {
+	owner=XCT
+	add_core=XCT
+	controller=XCT
+}

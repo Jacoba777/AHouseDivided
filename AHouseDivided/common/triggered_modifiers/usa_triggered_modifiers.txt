@@ -1,0 +1,17 @@
+# In my testing, the AI only seems to colonize if they have an income of at least 10 ducats.
+# This modifier intends to trick the AI into thinking its income is higher.
+triggered_modifier_ai_colonization_incentive = {
+    potential = {
+        ai = yes
+    }
+    
+	# Grant the bonus if the country is AI, has a colonist but no active colony, and has no neighbors
+    trigger = {
+        ai = yes
+		NOT = { any_owned_province = { is_colony = yes } }
+		NOT = { any_neighbor_country = { exists = yes } }
+		num_of_colonists = 1
+    }
+    
+    global_tax_income = 120
+}

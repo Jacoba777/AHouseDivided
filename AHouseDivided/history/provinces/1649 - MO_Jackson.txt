@@ -1,0 +1,32 @@
+capital="Independence"
+discovered_by = central_plains
+discovered_by = great_lakes
+discovered_by = miss_delta
+discovered_by = appalachia
+hre = no
+base_tax=8
+base_production=9
+base_manpower=9
+native_size=260
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_kc_kansan
+center_of_trade=2
+is_city = yes
+owner=KSC
+add_core=KSC
+controller=KSC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=12
+	base_production=19
+	base_manpower=17
+}
+
+1444.11.13 = {
+	owner=XMO
+	add_core=XMO
+	controller=XMO
+}

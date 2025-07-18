@@ -1,0 +1,900 @@
+missions_va_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVA }
+
+	mission_va_accept_ridge_virginian = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_va_our_great_virginia }
+		trigger = {
+			accepted_culture = culture_ridge_virginian
+ 		}
+		effect = {
+			area_wv_beckley = { add_permanent_claim = ROOT }
+			area_wv_southern = { add_permanent_claim = ROOT }
+			area_wv_southwestern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_invade_west_virginia = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_accept_ridge_virginian }
+		trigger = {
+			area_wv_beckley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_beckley
+				area = area_wv_southern
+				area = area_wv_southwestern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_develop_beckley = {
+		icon = mission_early_game_buildings
+		position = 5
+		required_missions = { mission_va_invade_west_virginia }
+		trigger = {
+			area_wv_beckley = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_wv_charleston = { add_permanent_claim = ROOT }
+			area_wv_south_charleston = { add_permanent_claim = ROOT }
+			area_wv_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_wv_beckley
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_va_capture_charleston = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_develop_beckley }
+		trigger = {
+			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+				area = area_wv_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_incorporating_charleston = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_va_capture_charleston }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wv_south_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+			add_years_of_income = 0.5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_embrace_kanawha = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_va_incorporating_charleston }
+		trigger = {
+			accepted_culture = culture_kanahwa
+ 		}
+		effect = {
+			region_wv = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_virginia_ham_exports = {
+		icon = mission_pigs
+		position = 9
+		required_missions = {  }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                trade_goods = livestock
+                has_building = farm_estate
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_virginia_ham
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            trade_goods = livestock
+            NOT = { has_building = farm_estate }
+		}
+	}
+
+	mission_va_rebuilding_jamestown = {
+		icon = mission_jamestown
+		position = 10
+		required_missions = { mission_va_virginia_ham_exports }
+		trigger = {
+            602 = {
+                has_great_project = {
+                    type = jamestown
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            602 = { change_trade_goods = tobacco }
+    
+		}
+		provinces_to_highlight = {
+            province_id = 602
+		}
+	}
+
+	mission_va_the_house_of_burgesses = {
+		icon = mission_house_of_burgesses
+		position = 11
+		required_missions = { mission_va_rebuilding_jamestown }
+		trigger = {
+            town_hall = 40
+ 		}
+		effect = {
+			change_government_reform_progress = 50
+
+			add_legitimacy = 25
+			add_meritocracy = 25
+			add_republican_tradition = 12
+			add_devotion = 25
+			add_horde_unity = 25
+		}
+
+	}
+
+	mission_va_mother_of_presidents = {
+		icon = mission_monticello
+		position = 12
+		required_missions = { mission_va_the_house_of_burgesses }
+		trigger = {
+            624 = {
+                has_great_project = {
+                    type = monticello
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_mother_of_presidents
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 624
+		}
+	}
+
+	mission_va_virginia_is_for_lovers = {
+		icon = mission_va_lovers
+		position = 13
+		required_missions = { mission_va_mother_of_presidents }
+		trigger = {
+            num_of_trusted_allies = 3
+            num_accepted_cultures = 4
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_virginia_is_for_lovers
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_va_king_of_tobacco = {
+		icon = mission_tobacco
+		position = 14
+		required_missions = { mission_va_virginia_is_for_lovers }
+		trigger = {
+            production_leader = { trade_goods = tobacco }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+
+	}
+}
+
+missions_va_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVA }
+
+	mission_va_reunite_old_dominion = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_va = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_va
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_our_great_virginia = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_va_reunite_old_dominion }
+		trigger = {
+			region_va = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_va
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_unleash_nova = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_va_our_great_virginia }
+		trigger = {
+			accepted_culture = culture_potomac
+ 		}
+		effect = {
+			area_md_capital = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_take_washington = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_unleash_nova }
+		trigger = {
+			area_md_capital = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_capital
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_administering_washington = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_va_take_washington }
+		trigger = {
+			area_md_capital = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_md_baltimore = { add_permanent_claim = ROOT }
+			area_md_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_capital
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_the_maryland_campaign = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_administering_washington }
+		trigger = {
+			area_md_baltimore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_baltimore
+				area = area_md_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_improve_south_maryland = {
+		icon = mission_early_game_buildings
+		position = 7
+		required_missions = { mission_va_the_maryland_campaign }
+		trigger = {
+			area_md_southern = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			region_md = { add_permanent_claim = ROOT }
+			region_de = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_md_southern
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_va_capture_delmarva = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_va_improve_south_maryland }
+		trigger = {
+			region_md = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_md
+				region = region_de
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_there_can_only_be_one = {
+		icon = mission_wv
+		position = 9
+		required_missions = { mission_va_embrace_kanawha mission_va_capture_delmarva }
+		trigger = {
+			region_wv = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_tn_morristown = { add_permanent_claim = ROOT }
+			area_tn_kingsport = { add_permanent_claim = ROOT }
+			area_tn_johnson_city = { add_permanent_claim = ROOT }
+			area_tn_smoky_mountains = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_wv
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_enter_the_smokies = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_va_there_can_only_be_one }
+		trigger = {
+			area_tn_morristown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_kingsport = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_johnson_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_smoky_mountains = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nc_north_wilkesboro = { add_permanent_claim = ROOT }
+			area_nc_northwestern = { add_permanent_claim = ROOT }
+			area_nc_asheville = { add_permanent_claim = ROOT }
+			area_nc_cullowhee = { add_permanent_claim = ROOT }
+			area_nc_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_morristown
+				area = area_tn_kingsport
+				area = area_tn_johnson_city
+				area = area_tn_smoky_mountains
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_control_the_blue_ridge = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { mission_va_enter_the_smokies }
+		trigger = {
+			area_nc_north_wilkesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_asheville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_cullowhee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_north_wilkesboro
+				area = area_nc_northwestern
+				area = area_nc_asheville
+				area = area_nc_cullowhee
+				area = area_nc_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_stabilize_asheville = {
+		icon = mission_alliances
+		position = 12
+		required_missions = { mission_va_control_the_blue_ridge }
+		trigger = {
+			area_nc_asheville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_asheville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_prepare_for_charlotte = {
+		icon = mission_clt
+		position = 13
+		required_missions = { mission_va_peace_in_fayetteville mission_va_stabilize_asheville }
+		trigger = {
+
+ 		}
+		effect = {
+			region_nc = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_operation_tar_heel = {
+		icon = mission_nc
+		position = 14
+		required_missions = { mission_va_prepare_for_charlotte }
+		trigger = {
+			region_nc = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nc
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_sic_semper_tyrannis = {
+		icon = mission_va
+		position = 15
+		required_missions = { mission_va_king_of_tobacco mission_va_operation_tar_heel }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_sic_semper_tyrannis
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_va_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVA }
+
+	mission_va_tidewater_traditions = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_va_our_great_virginia }
+		trigger = {
+			accepted_culture = culture_upper_tidewater
+ 		}
+		effect = {
+			area_nc_northern_coast = { add_permanent_claim = ROOT }
+			area_nc_northeast = { add_permanent_claim = ROOT }
+			area_nc_elizabeth_city = { add_permanent_claim = ROOT }
+			area_nc_central_coast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_tidewater_escapades = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_tidewater_traditions }
+		trigger = {
+			area_nc_northern_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_elizabeth_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_central_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nc_greenville = { add_permanent_claim = ROOT }
+			area_nc_new_bern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_northern_coast
+				area = area_nc_northeast
+				area = area_nc_elizabeth_city
+				area = area_nc_central_coast
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_high_tide = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_va_tidewater_escapades }
+		trigger = {
+			area_nc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_new_bern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_greenville
+				area = area_nc_new_bern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_integrate_greenville = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_va_high_tide }
+		trigger = {
+			area_nc_greenville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nc_rocky_mount = { add_permanent_claim = ROOT }
+			area_nc_goldsboro = { add_permanent_claim = ROOT }
+			area_nc_south_coast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_greenville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_pushing_southward = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_va_integrate_greenville }
+		trigger = {
+			area_nc_rocky_mount = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_goldsboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_south_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nc_north_research_triangle = { add_permanent_claim = ROOT }
+			area_nc_raleigh = { add_permanent_claim = ROOT }
+			area_nc_west_research_triangle = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_rocky_mount
+				area = area_nc_goldsboro
+				area = area_nc_south_coast
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_the_research_triangle = {
+		icon = mission_ral
+		position = 8
+		required_missions = { mission_va_pushing_southward }
+		trigger = {
+			area_nc_north_research_triangle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_raleigh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_west_research_triangle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_north_research_triangle
+				area = area_nc_raleigh
+				area = area_nc_west_research_triangle
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_administering_raleigh = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_va_the_research_triangle }
+		trigger = {
+			area_nc_raleigh = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_nc_west_research_triangle = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nc_greensboro = { add_permanent_claim = ROOT }
+			area_nc_mount_airy = { add_permanent_claim = ROOT }
+			area_nc_winstone = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_raleigh
+				area = area_nc_west_research_triangle
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_the_march_on_greensboro = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_va_administering_raleigh }
+		trigger = {
+			area_nc_greensboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_mount_airy = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_winstone = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nc_fayetteville = { add_permanent_claim = ROOT }
+			area_nc_pinehurst = { add_permanent_claim = ROOT }
+			area_nc_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_greensboro
+				area = area_nc_mount_airy
+				area = area_nc_winstone
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_annex_fayetteville = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { mission_va_the_march_on_greensboro }
+		trigger = {
+			area_nc_fayetteville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_pinehurst = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_fayetteville
+				area = area_nc_pinehurst
+				area = area_nc_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_peace_in_fayetteville = {
+		icon = mission_alliances
+		position = 12
+		required_missions = { mission_va_annex_fayetteville }
+		trigger = {
+			area_nc_fayetteville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_fayetteville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

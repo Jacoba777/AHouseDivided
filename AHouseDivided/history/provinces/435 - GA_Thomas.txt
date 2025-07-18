@@ -1,0 +1,28 @@
+capital="Thomasville"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=3
+base_production=3
+base_manpower=2
+native_size=80
+native_ferocity=5
+native_hostileness=3
+religion=baptist
+culture=culture_south_georgian
+is_city = yes
+owner=BBG
+add_core=BBG
+controller=BBG
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

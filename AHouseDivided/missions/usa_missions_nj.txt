@@ -1,0 +1,686 @@
+missions_nj_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNJ }
+
+	mission_nj_new_york_trade = {
+		icon = mission_dominate_home_trade_node
+		position = 3
+		required_missions = { mission_nj_administering_a_state }
+		trigger = {
+            trade_income_percentage = 0.25
+            755 = { trade_share = { country = ROOT  share = 60 } }  # NYC
+ 		}
+		effect = {
+			area_ny_nyc = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nj_biting_the_big_apple = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nj_new_york_trade }
+		trigger = {
+			area_ny_nyc = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_nyc
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_incorporate_the_boroughs = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_nj_biting_the_big_apple }
+		trigger = {
+			area_ny_nyc = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ny_hudson_valley = { add_permanent_claim = ROOT }
+			area_ny_lower_hudson_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_nyc
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_control_the_hudson = {
+		icon = mission_se_along_the_river
+		position = 6
+		required_missions = { mission_nj_incorporate_the_boroughs }
+		trigger = {
+			area_ny_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_lower_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ny_albany = { add_permanent_claim = ROOT }
+			area_ny_eastern = { add_permanent_claim = ROOT }
+			area_ct_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_hudson_valley
+				area = area_ny_lower_hudson_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_take_bridgeport = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_nj_control_the_hudson }
+		trigger = {
+			area_ct_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+            291 = { change_trade_goods = drugs }
+            292 = { change_trade_goods = drugs }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ct_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_pharmacy_with_an_army = {
+		icon = mission_mal_riches_of_trade
+		position = 8
+		required_missions = { mission_nj_take_bridgeport }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 2
+                base_production = 10
+                trade_goods = drugs
+            }
+ 		}
+		effect = {
+			add_years_of_income = 1.5
+		}
+		provinces_to_highlight = {
+            trade_goods = drugs
+		}
+	}
+
+	mission_nj_develop_the_southern_tier = {
+		icon = mission_early_game_buildings
+		position = 10
+		required_missions = { mission_nj_southern_tier_strife }
+		trigger = {
+			area_ny_southern_tier = { type = all  num_of_times_improved_by_owner = 2 }
+			742 = { num_of_times_improved_by_owner = 3 }
+			741 = { num_of_times_improved_by_owner = 3 }
+ 		}
+		effect = {
+			area_pa_east_wilds = { add_permanent_claim = ROOT }
+			area_pa_susquehanna_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_ny_southern_tier
+					NOT = { num_of_times_improved_by_owner =  2}
+				}
+				AND = {
+					province_id = 742
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+				AND = {
+					province_id = 741
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+			}
+		}
+	}
+}
+
+missions_nj_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNJ }
+
+	mission_nj_one_jersey = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_nj = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nj
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_administering_a_state = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_nj_one_jersey }
+		trigger = {
+			region_nj = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nj
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_good_to_be_an_albanian = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_nj_control_the_hudson }
+		trigger = {
+			area_ny_albany = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_albany
+				area = area_ny_eastern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_upstate_administration = {
+		icon = mission_empire
+		position = 8
+		required_missions = { mission_nj_good_to_be_an_albanian }
+		trigger = {
+            751 = {
+                has_building = courthouse
+                is_state_core = ROOT
+                base_tax = 10
+            }
+ 		}
+		effect = {
+			area_ny_southern_tier = { add_permanent_claim = ROOT }
+			area_ny_ithaca = { add_permanent_claim = ROOT }
+			area_ny_elmira = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            province_id = 751
+		}
+	}
+
+	mission_nj_southern_tier_strife = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_nj_upstate_administration mission_nj_fortify_the_susquehanna }
+		trigger = {
+			area_ny_southern_tier = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_ithaca = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_elmira = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_southern_tier
+				area = area_ny_ithaca
+				area = area_ny_elmira
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_pacifying_the_penn_dutch = {
+		icon = mission_diplomatic_relation
+		position = 10
+		required_missions = { mission_nj_stabilize_harrisburg }
+		trigger = {
+			accepted_culture = culture_penn_dutch
+ 		}
+		effect = {
+			area_pa_allegheny_mts = { add_permanent_claim = ROOT }
+			240 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nj_taming_the_wilds = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { mission_nj_pacifying_the_penn_dutch mission_nj_develop_the_southern_tier }
+		trigger = {
+			area_pa_allegheny_mts = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_allegheny_mts
+				area = area_pa_east_wilds
+				area = area_pa_susquehanna_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_the_garden_state = {
+		icon = mission_ne_agriculture
+		position = 12
+		required_missions = { mission_nj_taming_the_wilds }
+		trigger = {
+            farm_estate = 20
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_garden_state
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_nj_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNJ }
+
+	mission_nj_accept_philadelphian = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_nj_administering_a_state }
+		trigger = {
+			accepted_culture = culture_philadelphian
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nj_capture_philadelphia = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nj_accept_philadelphian }
+		trigger = {
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_the_city_of_brotherly_love = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_nj_capture_philadelphia }
+		trigger = {
+			area_pa_philly = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_de = { add_permanent_claim = ROOT }
+			area_md_northeastern = { add_permanent_claim = ROOT }
+			area_pa_stroudsburg = { add_permanent_claim = ROOT }
+			area_pa_allentown = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_living_here_in_allentown = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_nj_the_city_of_brotherly_love }
+		trigger = {
+			area_pa_stroudsburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_allentown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_scranton = { add_permanent_claim = ROOT }
+			area_pa_northeast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_stroudsburg
+				area = area_pa_allentown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_conquest_of_scranton = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_nj_living_here_in_allentown }
+		trigger = {
+			area_pa_scranton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_scranton
+				area = area_pa_northeast
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_fortify_the_susquehanna = {
+		icon = mission_fortify_rajputana
+		position = 8
+		required_missions = { mission_nj_conquest_of_scranton }
+		trigger = {
+            261 = { has_building = fort_15th }
+            263 = { has_building = fort_15th }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 261
+                province_id = 263
+            }
+            NOT = { has_building = fort_15th }
+		}
+	}
+
+	mission_nj_stabilize_harrisburg = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_nj_take_harrisburg }
+		trigger = {
+			area_pa_east_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_pa_north_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			area_md_baltimore = { add_permanent_claim = ROOT }
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+				area = area_pa_north_dutch
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nj_crossing_the_delaware = {
+		icon = mission_se_along_the_river
+		position = 10
+		required_missions = { mission_nj_stabilize_harrisburg }
+		trigger = {
+			area_md_baltimore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_baltimore
+				area = area_pa_south_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_learning_the_charm = {
+		icon = mission_diplomatic_relation
+		position = 11
+		required_missions = { mission_nj_crossing_the_delaware }
+		trigger = {
+			accepted_culture = culture_baltimorean
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_md_capital = { add_permanent_claim = ROOT }
+			area_md_southern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nj_the_maryland_campaign = {
+		icon = mission_unite_home_region
+		position = 12
+		required_missions = { mission_nj_learning_the_charm }
+		trigger = {
+			area_md_capital = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_capital
+				area = area_md_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_liberty_and_prosperity = {
+		icon = mission_nj
+		position = 13
+		required_missions = { mission_nj_the_garden_state mission_nj_the_maryland_campaign }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_liberty_and_prosperity
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_nj_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNJ }
+
+	mission_nj_pushing_into_delmarva = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_nj_the_city_of_brotherly_love }
+		trigger = {
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_de
+				area = area_md_northeastern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nj_develop_delmarva = {
+		icon = mission_early_game_buildings
+		position = 7
+		required_missions = { mission_nj_pushing_into_delmarva }
+		trigger = {
+			area_md_northeastern = { type = all  num_of_times_improved_by_owner = 2 }
+			214 = { num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_md_northeastern
+					NOT = { num_of_times_improved_by_owner =  2}
+				}
+				AND = {
+					province_id = 214
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_nj_take_harrisburg = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_nj_conquest_of_scranton mission_nj_develop_delmarva }
+		trigger = {
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+				area = area_pa_north_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

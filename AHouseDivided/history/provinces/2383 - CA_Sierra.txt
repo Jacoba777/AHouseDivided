@@ -1,0 +1,25 @@
+capital="Downieville"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=pentecostal
+culture=culture_shasta
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

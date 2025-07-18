@@ -1,0 +1,26 @@
+capital="Vernal"
+discovered_by = lower_rockies
+discovered_by = upper_rockies
+discovered_by = california
+discovered_by = southwest
+hre = no
+base_tax=2
+base_production=2
+base_manpower=2
+native_size=60
+native_ferocity=5
+native_hostileness=4
+religion=mormon
+culture=culture_upper_rocky
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XUT
+	add_core=XUT
+	controller=XUT
+}

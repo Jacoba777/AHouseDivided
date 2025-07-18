@@ -1,0 +1,30 @@
+capital="Greeley"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=7
+base_production=7
+base_manpower=7
+native_size=210
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_denverite
+is_city = yes
+owner=GLY
+add_core=GLY
+controller=GLY
+
+1444.11.12 = {
+	base_tax=8
+	base_production=7
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

@@ -1,0 +1,20 @@
+bookmark = {
+	name = bookmark_south
+	desc = bookmark_south_desc
+	date = 1444.11.11
+	
+	center = 337
+	
+	country = ATL
+	country = HTN
+	country = NSH
+	country = CLT
+	country = RCH
+	country = VAB
+	country = DLS
+	country = LXG
+	
+	easy_country = ATL
+	easy_country = HTN
+	easy_country = NSH
+}

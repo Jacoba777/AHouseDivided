@@ -1,0 +1,28 @@
+capital="Thibodaux"
+discovered_by = miss_delta
+discovered_by = texas
+hre = no
+base_tax=3
+base_production=4
+base_manpower=4
+native_size=110
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_cajun
+is_city = yes
+owner=HOU
+add_core=HOU
+controller=HOU
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XLA
+	add_core=XLA
+	controller=XLA
+}

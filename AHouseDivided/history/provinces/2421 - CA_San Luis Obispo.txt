@@ -1,0 +1,30 @@
+capital="San Luis Obispo"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=8
+base_production=7
+base_manpower=7
+native_size=220
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_central_coast
+is_city = yes
+owner=SLU
+add_core=SLU
+controller=SLU
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=13
+	base_production=7
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

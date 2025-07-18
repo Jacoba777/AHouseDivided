@@ -1,0 +1,536 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_great_project_place_holder"	
+		texturefile = "gfx//interface//great_projects//great_project_place_holder.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_white_house"	
+		texturefile = "gfx//interface//great_projects//great_project_white_house.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_national_cathedral"	
+		texturefile = "gfx//interface//great_projects//great_project_national_cathedral.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_smithsonian"	
+		texturefile = "gfx//interface//great_projects//great_project_smithsonian.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_denali"	
+		texturefile = "gfx//interface//great_projects//great_project_denali.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_trans_alaska_pipeline"	
+		texturefile = "gfx//interface//great_projects//great_project_trans_alaska_pipeline.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_rocket_space_center"	
+		texturefile = "gfx//interface//great_projects//great_project_rocket_space_center.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_sixteenth_st_baptist_church"	
+		texturefile = "gfx//interface//great_projects//great_project_sixteenth_st_baptist_church.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_little_rock_high"	
+		texturefile = "gfx//interface//great_projects//great_project_little_rock_high.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_grand_canyon"	
+		texturefile = "gfx//interface//great_projects//great_project_grand_canyon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_golden_gate_bridge"	
+		texturefile = "gfx//interface//great_projects//great_project_golden_gate_bridge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_hollywood"	
+		texturefile = "gfx//interface//great_projects//great_project_hollywood.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_silicon_valley"	
+		texturefile = "gfx//interface//great_projects//great_project_silicon_valley.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_yosemite"	
+		texturefile = "gfx//interface//great_projects//great_project_yosemite.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_redwoods"	
+		texturefile = "gfx//interface//great_projects//great_project_redwoods.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_air_force_academy"	
+		texturefile = "gfx//interface//great_projects//great_project_air_force_academy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mesa_verde"	
+		texturefile = "gfx//interface//great_projects//great_project_mesa_verde.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_yale"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_yale.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fort_delaware"	
+		texturefile = "gfx//interface//great_projects//great_project_fort_delaware.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_disneyworld"	
+		texturefile = "gfx//interface//great_projects//great_project_disneyworld.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_everglades"	
+		texturefile = "gfx//interface//great_projects//great_project_everglades.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_cape_canaveral"	
+		texturefile = "gfx//interface//great_projects//great_project_cape_canaveral.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_san_marcos"	
+		texturefile = "gfx//interface//great_projects//great_project_san_marcos.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_cdc"	
+		texturefile = "gfx//interface//great_projects//great_project_cdc.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_st_john_cathedral"	
+		texturefile = "gfx//interface//great_projects//great_project_st_john_cathedral.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_pearl_harbor"	
+		texturefile = "gfx//interface//great_projects//great_project_pearl_harbor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_volcano_national_park"	
+		texturefile = "gfx//interface//great_projects//great_project_volcano_national_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_iolani_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_iolani_palace.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_amana"	
+		texturefile = "gfx//interface//great_projects//great_project_amana.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_shoshone_falls"	
+		texturefile = "gfx//interface//great_projects//great_project_shoshone_falls.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_millenium_park"	
+		texturefile = "gfx//interface//great_projects//great_project_millenium_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_chicago"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_chicago.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_cahokia"	
+		texturefile = "gfx//interface//great_projects//great_project_cahokia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_indy500"	
+		texturefile = "gfx//interface//great_projects//great_project_indy500.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_brown_v_board"	
+		texturefile = "gfx//interface//great_projects//great_project_brown_v_board.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mammoth_cave"	
+		texturefile = "gfx//interface//great_projects//great_project_mammoth_cave.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_ark"	
+		texturefile = "gfx//interface//great_projects//great_project_ark.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fort_knox"	
+		texturefile = "gfx//interface//great_projects//great_project_fort_knox.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_french_quarter"	
+		texturefile = "gfx//interface//great_projects//great_project_french_quarter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_poverty_point"	
+		texturefile = "gfx//interface//great_projects//great_project_poverty_point.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_harvard"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_harvard.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fenway_park"	
+		texturefile = "gfx//interface//great_projects//great_project_fenway_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fort_mchenry"	
+		texturefile = "gfx//interface//great_projects//great_project_fort_mchenry.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_johns_hopkins"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_johns_hopkins.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_portland_head_light"	
+		texturefile = "gfx//interface//great_projects//great_project_portland_head_light.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_acadia_national_park"	
+		texturefile = "gfx//interface//great_projects//great_project_acadia_national_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_henry_ford_museum"	
+		texturefile = "gfx//interface//great_projects//great_project_henry_ford_museum.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_islamic_center"	
+		texturefile = "gfx//interface//great_projects//great_project_islamic_center.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mackinac_bridge"	
+		texturefile = "gfx//interface//great_projects//great_project_mackinac_bridge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mall_of_america"	
+		texturefile = "gfx//interface//great_projects//great_project_mall_of_america.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mayo_clinic"	
+		texturefile = "gfx//interface//great_projects//great_project_mayo_clinic.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_gateway_arch"	
+		texturefile = "gfx//interface//great_projects//great_project_gateway_arch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_st_louis_cathedral"	
+		texturefile = "gfx//interface//great_projects//great_project_st_louis_cathedral.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vicksburg"	
+		texturefile = "gfx//interface//great_projects//great_project_vicksburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_little_bighorn"	
+		texturefile = "gfx//interface//great_projects//great_project_little_bighorn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_glacier_national_park"	
+		texturefile = "gfx//interface//great_projects//great_project_glacier_national_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_biltmore_mansion"	
+		texturefile = "gfx//interface//great_projects//great_project_biltmore_mansion.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_wright_bros_memorial"	
+		texturefile = "gfx//interface//great_projects//great_project_wright_bros_memorial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_international_peace_garden"	
+		texturefile = "gfx//interface//great_projects//great_project_international_peace_garden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chimney_rock"	
+		texturefile = "gfx//interface//great_projects//great_project_chimney_rock.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_dartmouth"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_dartmouth.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_univ_princeton"	
+		texturefile = "gfx//interface//great_projects//great_project_univ_princeton.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_menlo_park"	
+		texturefile = "gfx//interface//great_projects//great_project_menlo_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_"	
+		texturefile = "gfx//interface//great_projects//great_project_.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_los_alamos"	
+		texturefile = "gfx//interface//great_projects//great_project_los_alamos.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_chaco_canyon"	
+		texturefile = "gfx//interface//great_projects//great_project_chaco_canyon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_hoover_dam"	
+		texturefile = "gfx//interface//great_projects//great_project_hoover_dam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_vegas_strip"	
+		texturefile = "gfx//interface//great_projects//great_project_vegas_strip.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_area51"	
+		texturefile = "gfx//interface//great_projects//great_project_area51.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_statue_of_liberty"	
+		texturefile = "gfx//interface//great_projects//great_project_statue_of_liberty.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_wall_street"	
+		texturefile = "gfx//interface//great_projects//great_project_wall_street.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_empire_state_building"	
+		texturefile = "gfx//interface//great_projects//great_project_empire_state_building.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_niagara_falls"	
+		texturefile = "gfx//interface//great_projects//great_project_niagara_falls.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_west_point"	
+		texturefile = "gfx//interface//great_projects//great_project_west_point.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_rock_n_roll"	
+		texturefile = "gfx//interface//great_projects//great_project_rock_n_roll.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_hopewell_earthworks"	
+		texturefile = "gfx//interface//great_projects//great_project_hopewell_earthworks.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_okc_memorial"	
+		texturefile = "gfx//interface//great_projects//great_project_okc_memorial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_crater_lake_national_park"	
+		texturefile = "gfx//interface//great_projects//great_project_crater_lake_national_park.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_independence_hall"	
+		texturefile = "gfx//interface//great_projects//great_project_independence_hall.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_gettysburg"	
+		texturefile = "gfx//interface//great_projects//great_project_gettysburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fallingwater"	
+		texturefile = "gfx//interface//great_projects//great_project_fallingwater.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_breakers_mansion"	
+		texturefile = "gfx//interface//great_projects//great_project_breakers_mansion.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_slater_mill"	
+		texturefile = "gfx//interface//great_projects//great_project_slater_mill.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_fort_sumter"	
+		texturefile = "gfx//interface//great_projects//great_project_fort_sumter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_charleston_hist"	
+		texturefile = "gfx//interface//great_projects//great_project_charleston.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mt_rushmore"	
+		texturefile = "gfx//interface//great_projects//great_project_mt_rushmore.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_grand_ole_opry"	
+		texturefile = "gfx//interface//great_projects//great_project_grand_ole_opry.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_smoky_mountains_np"	
+		texturefile = "gfx//interface//great_projects//great_project_smoky_mountains.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_graceland"	
+		texturefile = "gfx//interface//great_projects//great_project_graceland.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_oak_ridge_national_lab"	
+		texturefile = "gfx//interface//great_projects//great_project_oak_ridge_national_lab.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_the_alamo"	
+		texturefile = "gfx//interface//great_projects//great_project_alamo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_houston_command_center"	
+		texturefile = "gfx//interface//great_projects//great_project_houston_command_center.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_zion_np"	
+		texturefile = "gfx//interface//great_projects//great_project_zion_np.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_salt_lake_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_salt_lake_temple.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_pentagon"	
+		texturefile = "gfx//interface//great_projects//great_project_pentagon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_monticello"	
+		texturefile = "gfx//interface//great_projects//great_project_monticello.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_jamestown"	
+		texturefile = "gfx//interface//great_projects//great_project_jamestown.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_bennington_monument"	
+		texturefile = "gfx//interface//great_projects//great_project_bennington_monument.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_space_needle"	
+		texturefile = "gfx//interface//great_projects//great_project_space_needle.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_mt_rainier"	
+		texturefile = "gfx//interface//great_projects//great_project_mt_rainier.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_olympic_np"	
+		texturefile = "gfx//interface//great_projects//great_project_olympic_np.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_lambeau_field"	
+		texturefile = "gfx//interface//great_projects//great_project_lambeau_field.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_taliesin_studio"	
+		texturefile = "gfx//interface//great_projects//great_project_taliesin_studio.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_lunatic_asylum"	
+		texturefile = "gfx//interface//great_projects//great_project_lunatic_asylum.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_river_gorge_bridge"	
+		texturefile = "gfx//interface//great_projects//great_project_river_gorge_bridge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_yellowstone_np"	
+		texturefile = "gfx//interface//great_projects//great_project_yellowstone_np.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_gateway_southlake"	
+		texturefile = "gfx//interface//great_projects//great_project_gateway_southlake.dds"
+	}
+}

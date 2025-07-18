@@ -1,0 +1,393 @@
+missions_wv_western_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = PKB
+			tag = WHG
+		}
+	}
+
+	mission_wv_western_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			PKB = { every_owned_province = { add_permanent_claim = ROOT }  }
+			WHG = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_wv_western_blood_in_the_ohio_river = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wv_western_fielding_an_army }
+		trigger = {
+			2665 = { country_or_non_sovereign_subject_holds = ROOT }
+			2660 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2665
+				province_id = 2660
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_western_riverside_inroads = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_wv_western_blood_in_the_ohio_river }
+		trigger = {
+			2665 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2660 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2665
+				province_id = 2660
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wv_western_conflict_with_charleston = {
+		icon = mission_luther_theses
+		position = 4
+		required_missions = { mission_wv_western_riverside_inroads }
+		trigger = {
+			OR = {
+				is_rival = CHW
+				AND = {
+					exists = CHW
+					military_strength = {
+						who = CHW
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CHW
+			}
+			OR = {
+				CHW = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CHW = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CHW }
+				tag = CHW
+			}
+ 		}
+		effect = {
+			area_oh_southeastern = { add_permanent_claim = ROOT }
+			2666 = { add_permanent_claim = ROOT }
+			2667 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wv_western_moving_downstream = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wv_western_conflict_with_charleston }
+		trigger = {
+			area_oh_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			2666 = { country_or_non_sovereign_subject_holds = ROOT }
+			2667 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_wv_charleston = { add_permanent_claim = ROOT }
+			area_wv_south_charleston = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_southeastern
+				province_id = 2666
+				province_id = 2667
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_western_conquer_charleston = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_wv_western_moving_downstream }
+		trigger = {
+			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_western_administering_charleston = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_wv_western_conquer_charleston }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wv_south_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+			area_wv_southwestern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_wv_western_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = PKB
+			tag = WHG
+		}
+	}
+
+	mission_wv_western_morgantown_menace = {
+		icon = mission_luther_theses
+		position = 4
+		required_missions = { mission_wv_western_riverside_inroads }
+		trigger = {
+			OR = {
+				is_rival = MGT
+				AND = {
+					exists = MGT
+					military_strength = {
+						who = MGT
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MGT
+			}
+			OR = {
+				MGT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MGT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MGT }
+				tag = MGT
+			}
+ 		}
+		effect = {
+			2662 = { add_permanent_claim = ROOT }
+			area_wv_morgantown = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wv_western_sack_morgantown = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wv_western_morgantown_menace }
+		trigger = {
+			2662 = { country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_morgantown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2662
+				area = area_wv_morgantown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_western_master_of_morgantown = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_wv_western_sack_morgantown }
+		trigger = {
+			area_wv_morgantown = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			MGT = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_morgantown
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wv_western_the_northern_campaign = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_wv_western_master_of_morgantown }
+		trigger = {
+			OR = {
+				NOT = { exists = MGT }
+				tag = MGT
+			}
+			2684 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+
+				province_id = 2684
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_western_mountaineer_victories = {
+		icon = mission_expand_into_the_forest
+		position = 8
+		required_missions = { mission_wv_western_the_northern_campaign mission_wv_western_administering_charleston }
+		trigger = {
+
+ 		}
+		effect = {
+            2702 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2701 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2685 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2687 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+    
+		}
+
+	}
+}

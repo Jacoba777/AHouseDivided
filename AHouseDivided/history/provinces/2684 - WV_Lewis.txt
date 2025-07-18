@@ -1,0 +1,30 @@
+capital="Weston"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = new_england
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=methodist
+culture=culture_hollerlander
+is_city = yes
+owner=MGT
+add_core=MGT
+controller=MGT
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XWV
+	add_core=XWV
+	controller=XWV
+}

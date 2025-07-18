@@ -1,0 +1,25 @@
+capital="Sturgis"
+discovered_by = northern_plains
+discovered_by = upper_rockies
+discovered_by = central_plains
+hre = no
+base_tax=1
+base_production=1
+base_manpower=2
+native_size=40
+native_ferocity=5
+native_hostileness=6
+religion=lutheran
+culture=culture_black_hills
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XSD
+	add_core=XSD
+	controller=XSD
+}

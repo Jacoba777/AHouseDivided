@@ -1,0 +1,44 @@
+missions_de_minor_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = DOV
+			tag = WMT
+			tag = GGT
+		}
+	}
+
+	mission_de_minor_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			region_de = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_de_minor_reunifying_delaware = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_de_minor_fielding_an_army }
+		trigger = {
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_de
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

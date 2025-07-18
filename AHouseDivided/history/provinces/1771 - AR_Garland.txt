@@ -1,0 +1,31 @@
+capital="Hot Springs"
+discovered_by = miss_delta
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=4
+base_production=4
+base_manpower=4
+native_size=120
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_little_dixie
+center_of_trade=1
+is_city = yes
+owner=HOT
+add_core=HOT
+controller=HOT
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XAR
+	add_core=XAR
+	controller=XAR
+}

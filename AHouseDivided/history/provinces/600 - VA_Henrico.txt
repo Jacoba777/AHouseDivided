@@ -1,0 +1,31 @@
+capital="Laurel"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=8
+base_production=8
+base_manpower=7
+native_size=230
+native_ferocity=5
+native_hostileness=3
+religion=baptist
+culture=culture_central_virginian
+center_of_trade=1
+is_city = yes
+owner=RCH
+add_core=RCH
+controller=RCH
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=10
+	base_production=12
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

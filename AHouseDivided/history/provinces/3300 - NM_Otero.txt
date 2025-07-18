@@ -1,0 +1,25 @@
+capital="Alamogordo"
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = texas
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_el_pasoan
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XNM
+	add_core=XNM
+	controller=XNM
+}

@@ -1,0 +1,21 @@
+bookmark = {
+	name = bookmark_linear_dev
+	desc = bookmark_linear_dev_desc
+	date = 1444.11.12
+	
+	center = 2424
+	
+	country = LAX
+	country = NYC
+	country = CCG
+	country = WDC
+	country = ATL
+	country = HTN
+	country = MII
+	country = SEA
+	country = DLS
+	
+	easy_country = LAX
+	easy_country = NYC
+	easy_country = CCG
+}

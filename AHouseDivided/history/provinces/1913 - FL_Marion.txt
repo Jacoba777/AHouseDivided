@@ -1,0 +1,28 @@
+capital="Ocala"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=6
+base_production=6
+base_manpower=7
+native_size=190
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_west_floridian
+is_city = yes
+owner=OCL
+add_core=OCL
+controller=OCL
+
+1444.11.12 = {
+	base_tax=3
+	base_production=4
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

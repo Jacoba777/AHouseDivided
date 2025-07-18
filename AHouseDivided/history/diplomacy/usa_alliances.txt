@@ -1,0 +1,984 @@
+# Orlando-The Villages Vassalization
+dependency = {
+	subject_type = vassal
+	first = RLD
+	second = TVG
+	start_date = 1444.1.1
+}
+
+# Orlando-Deltona Vassalization
+dependency = {
+	subject_type = vassal
+	first = RLD
+	second = DTA
+	start_date = 1444.1.1
+}
+
+# Tampa-Wauchula Vassalization
+dependency = {
+	subject_type = vassal
+	first = TMP
+	second = WCL
+	start_date = 1444.1.1
+}
+
+# Tampa-Lakeland Vassalization
+dependency = {
+	subject_type = vassal
+	first = TMP
+	second = LLD
+	start_date = 1444.1.1
+}
+
+# Jacksonville-Palatka Vassalization
+dependency = {
+	subject_type = vassal
+	first = JSV
+	second = PLK
+	start_date = 1444.1.1
+}
+
+# Alachua-Lake Vassalization
+dependency = {
+	subject_type = vassal
+	first = ALU
+	second = LKC
+	start_date = 1444.1.1
+}
+
+# Miami-Lucie Vassalization
+dependency = {
+	subject_type = vassal
+	first = MII
+	second = LCI
+	start_date = 1444.1.1
+}
+
+# Miami-Sebastian Vassalization
+dependency = {
+	subject_type = vassal
+	first = MII
+	second = SBS
+	start_date = 1444.1.1
+}
+
+# Miami-Key West Vassalization
+dependency = {
+	subject_type = vassal
+	first = MII
+	second = KEY
+	start_date = 1444.1.1
+}
+
+# Cape Coral-Naples Vassalization
+dependency = {
+	subject_type = vassal
+	first = CCL
+	second = NPS
+	start_date = 1444.1.1
+}
+
+# Sarasota-Punta Gorda Vassalization
+dependency = {
+	subject_type = vassal
+	first = SRS
+	second = PUG
+	start_date = 1444.1.1
+}
+
+# Sarasota-Arcadia Vassalization
+dependency = {
+	subject_type = vassal
+	first = SRS
+	second = ACD
+	start_date = 1444.1.1
+}
+
+# Cape Coral-Clewiston Vassalization
+dependency = {
+	subject_type = vassal
+	first = CCL
+	second = CWS
+	start_date = 1444.1.1
+}
+
+# Atlanta-Cedartown Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = CDT
+	start_date = 1444.1.1
+}
+
+# Atlanta-Rome Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = RME
+	start_date = 1444.1.1
+}
+
+# Atlanta-Athens Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = ATN
+	start_date = 1444.1.1
+}
+
+# Atlanta-Thomaston Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = THO
+	start_date = 1444.1.1
+}
+
+# Atlanta-LaGrange Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = LGG
+	start_date = 1444.1.1
+}
+
+# Atlanta-Gainesville Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = GSV
+	start_date = 1444.1.1
+}
+
+# Atlanta-Cornelia Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = CNL
+	start_date = 1444.1.1
+}
+
+# Atlanta-Toccoa Vassalization
+dependency = {
+	subject_type = vassal
+	first = ATL
+	second = TCA
+	start_date = 1444.1.1
+}
+
+# Macon-Warner Robins Vassalization
+dependency = {
+	subject_type = vassal
+	first = MCN
+	second = WRR
+	start_date = 1444.1.1
+}
+
+# Chattanooga-Summerville Vassalization
+dependency = {
+	subject_type = vassal
+	first = CTN
+	second = SMR
+	start_date = 1444.1.1
+}
+
+# Chattanooga-Calhoun Vassalization
+dependency = {
+	subject_type = vassal
+	first = CTN
+	second = CLH
+	start_date = 1444.1.1
+}
+
+# Chattanooga-Dalton Vassalization
+dependency = {
+	subject_type = vassal
+	first = CTN
+	second = DTN
+	start_date = 1444.1.1
+}
+
+# Savannah-Jesup Vassalization
+dependency = {
+	subject_type = vassal
+	first = SVH
+	second = JSP
+	start_date = 1444.1.1
+}
+
+# Savannah-Hinesville Vassalization
+dependency = {
+	subject_type = vassal
+	first = SVH
+	second = HSV
+	start_date = 1444.1.1
+}
+
+# Savannah-Statesboro Vassalization
+dependency = {
+	subject_type = vassal
+	first = SVH
+	second = SBR
+	start_date = 1444.1.1
+}
+
+# Asheville-McDowell Vassalization
+dependency = {
+	subject_type = vassal
+	first = ASV
+	second = MRN
+	start_date = 1444.1.1
+}
+
+# Charlotte-Shelby Vassalization
+dependency = {
+	subject_type = vassal
+	first = CLT
+	second = SHB
+	start_date = 1444.1.1
+}
+
+# Fayetteville-Pinehurst Vassalization
+dependency = {
+	subject_type = vassal
+	first = FYV
+	second = PRT
+	start_date = 1444.1.1
+}
+
+# Fayetteville-Lumberton Vassalization
+dependency = {
+	subject_type = vassal
+	first = FYV
+	second = LBT
+	start_date = 1444.1.1
+}
+
+# Charlotte-Albemarle Vassalization
+dependency = {
+	subject_type = vassal
+	first = CLT
+	second = ABM
+	start_date = 1444.1.1
+}
+
+# Raleigh-Henderson Vassalization
+dependency = {
+	subject_type = vassal
+	first = RAL
+	second = HDS
+	start_date = 1444.1.1
+}
+
+# Hampton-Elizabeth Vassalization
+dependency = {
+	subject_type = vassal
+	first = VAB
+	second = EZB
+	start_date = 1444.1.1
+}
+
+# Hampton-Kill Devil Vassalization
+dependency = {
+	subject_type = vassal
+	first = VAB
+	second = KLL
+	start_date = 1444.1.1
+}
+
+# Rocky Mount-Roanoke Rapids Vassalization
+dependency = {
+	subject_type = vassal
+	first = RMT
+	second = ROR
+	start_date = 1444.1.1
+}
+
+# Pitt Greenville-New Bern Vassalization
+dependency = {
+	subject_type = vassal
+	first = GVK
+	second = NBE
+	start_date = 1444.1.1
+}
+
+# Pitt Greenville-Morehead Vassalization
+dependency = {
+	subject_type = vassal
+	first = GVK
+	second = MHD
+	start_date = 1444.1.1
+}
+
+# Rocky Mount-Wilson Vassalization
+dependency = {
+	subject_type = vassal
+	first = RMT
+	second = WIL
+	start_date = 1444.1.1
+}
+
+# Albany-Hudson Vassalization
+dependency = {
+	subject_type = vassal
+	first = ABY
+	second = HUD
+	start_date = 1444.1.1
+}
+
+# Albany-Glens Falls Vassalization
+dependency = {
+	subject_type = vassal
+	first = ABY
+	second = GSF
+	start_date = 1444.1.1
+}
+
+# Albany-Gloversville Vassalization
+dependency = {
+	subject_type = vassal
+	first = ABY
+	second = GLV
+	start_date = 1444.1.1
+}
+
+# Albany-Amsterdam Vassalization
+dependency = {
+	subject_type = vassal
+	first = ABY
+	second = AMS
+	start_date = 1444.1.1
+}
+
+# Syracuse-Auburn Vassalization
+dependency = {
+	subject_type = vassal
+	first = SYC
+	second = AUB
+	start_date = 1444.1.1
+}
+
+# Rochester-Seneca Falls Vassalization
+dependency = {
+	subject_type = vassal
+	first = RCR
+	second = SNF
+	start_date = 1444.1.1
+}
+
+# Rochester-Batavia Vassalization
+dependency = {
+	subject_type = vassal
+	first = RCR
+	second = BAT
+	start_date = 1444.1.1
+}
+
+# Buffalo-Olean Vassalization
+dependency = {
+	subject_type = vassal
+	first = BUF
+	second = OLE
+	start_date = 1444.1.1
+}
+
+# Ithaca-Cortland Vassalization
+dependency = {
+	subject_type = vassal
+	first = ITH
+	second = CLD
+	start_date = 1444.1.1
+}
+
+# Bloomsburg-Sunbury Vassalization
+dependency = {
+	subject_type = vassal
+	first = BSB
+	second = SBY
+	start_date = 1444.1.1
+}
+
+# Bloomsburg-Lewisburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = BSB
+	second = LSB
+	start_date = 1444.1.1
+}
+
+# Bloomsburg-Selinsgrove Vassalization
+dependency = {
+	subject_type = vassal
+	first = BSB
+	second = SLG
+	start_date = 1444.1.1
+}
+
+# Nittany-Du Bois Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCG
+	second = DBS
+	start_date = 1444.1.1
+}
+
+# Atloona-Huntingdon Vassalization
+dependency = {
+	subject_type = vassal
+	first = LOO
+	second = HTD
+	start_date = 1444.1.1
+}
+
+# Johnsland-Somerset Vassalization
+dependency = {
+	subject_type = vassal
+	first = JON
+	second = SMS
+	start_date = 1444.1.1
+}
+
+# Philadelphia-Reading Vassalization
+dependency = {
+	subject_type = vassal
+	first = PHL
+	second = RDG
+	start_date = 1444.1.1
+}
+
+# Harrisburg-York Vassalization
+dependency = {
+	subject_type = vassal
+	first = HSB
+	second = YRK
+	start_date = 1444.1.1
+}
+
+# Harrisburg-Gettysburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = HSB
+	second = GTY
+	start_date = 1444.1.1
+}
+
+# Harrisburg-Lebanon Vassalization
+dependency = {
+	subject_type = vassal
+	first = HSB
+	second = LBN
+	start_date = 1444.1.1
+}
+
+# Pittsburgh-New Castle Vassalization
+dependency = {
+	subject_type = vassal
+	first = PIT
+	second = NCA
+	start_date = 1444.1.1
+}
+
+# Erie-Meadville Vassalization
+dependency = {
+	subject_type = vassal
+	first = EIE
+	second = MEA
+	start_date = 1444.1.1
+}
+
+# Williamsport-Lock Haven Vassalization
+dependency = {
+	subject_type = vassal
+	first = WMP
+	second = LKH
+	start_date = 1444.1.1
+}
+
+# Pittsburgh-Penndiana Vassalization
+dependency = {
+	subject_type = vassal
+	first = PIT
+	second = PDA
+	start_date = 1444.1.1
+}
+
+# Columbia-Orangeburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = CUM
+	second = ONG
+	start_date = 1444.1.1
+}
+
+# Columbia-Newberry Vassalization
+dependency = {
+	subject_type = vassal
+	first = CUM
+	second = NBR
+	start_date = 1444.1.1
+}
+
+# Myrtle-Low Georgetown Vassalization
+dependency = {
+	subject_type = vassal
+	first = MYT
+	second = LGT
+	start_date = 1444.1.1
+}
+
+# Greenville-Greenwood Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRN
+	second = GWD
+	start_date = 1444.1.1
+}
+
+# Greenville-Seneca Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRN
+	second = SNC
+	start_date = 1444.1.1
+}
+
+# Greenville-Spartanburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRN
+	second = STB
+	start_date = 1444.1.1
+}
+
+# Greenville-Gaffney Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRN
+	second = GFY
+	start_date = 1444.1.1
+}
+
+# Greenville-Gearup Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRN
+	second = GRU
+	start_date = 1444.1.1
+}
+
+# Chattanooga-Bradley Vassalization
+dependency = {
+	subject_type = vassal
+	first = CTN
+	second = BDY
+	start_date = 1444.1.1
+}
+
+# Staunton-Harrisonburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = STN
+	second = HRS
+	start_date = 1444.1.1
+}
+
+# Detroit-Flint Vassalization
+dependency = {
+	subject_type = vassal
+	first = DTW
+	second = FNT
+	start_date = 1444.1.1
+}
+
+# Detroit-Ann Arbor Vassalization
+dependency = {
+	subject_type = vassal
+	first = DTW
+	second = WVR
+	start_date = 1444.1.1
+}
+
+# Grand Rapids-Muskegon Vassalization
+dependency = {
+	subject_type = vassal
+	first = GRR
+	second = MKG
+	start_date = 1444.1.1
+}
+
+# Kansas City-Lawrence Vassalization
+dependency = {
+	subject_type = vassal
+	first = KSC
+	second = LWC
+	start_date = 1444.1.1
+}
+
+# Kansas City-St Joseph Vassalization
+dependency = {
+	subject_type = vassal
+	first = KSC
+	second = STJ
+	start_date = 1444.1.1
+}
+
+# Youngstown-Penn Salem Vassalization
+dependency = {
+	subject_type = vassal
+	first = YGL
+	second = SLM
+	start_date = 1444.1.1
+}
+
+# Cleveland-Akron Vassalization
+dependency = {
+	subject_type = vassal
+	first = CLV
+	second = AKR
+	start_date = 1444.1.1
+}
+
+# Cleveland-Canton Vassalization
+dependency = {
+	subject_type = vassal
+	first = CLV
+	second = CNT
+	start_date = 1444.1.1
+}
+
+# Dayton-Ohio Springfield Vassalization
+dependency = {
+	subject_type = vassal
+	first = DAY
+	second = OSF
+	start_date = 1444.1.1
+}
+
+# Columbus-Zanesville Vassalization
+dependency = {
+	subject_type = vassal
+	first = CBS
+	second = ZNV
+	start_date = 1444.1.1
+}
+
+# Toledo-Findlay Vassalization
+dependency = {
+	subject_type = vassal
+	first = TLD
+	second = FDY
+	start_date = 1444.1.1
+}
+
+# Cleveland-Wooster Vassalization
+dependency = {
+	subject_type = vassal
+	first = CLV
+	second = WOO
+	start_date = 1444.1.1
+}
+
+# Columbus-Marion Vassalization
+dependency = {
+	subject_type = vassal
+	first = CBS
+	second = MAV
+	start_date = 1444.1.1
+}
+
+# Indianapolis-Muncie Vassalization
+dependency = {
+	subject_type = vassal
+	first = IDP
+	second = MCI
+	start_date = 1444.1.1
+}
+
+# South Bend-Elkhart Vassalization
+dependency = {
+	subject_type = vassal
+	first = SBD
+	second = EKT
+	start_date = 1444.1.1
+}
+
+# Chicagoland-Michigan City Vassalization
+dependency = {
+	subject_type = vassal
+	first = CCG
+	second = MIC
+	start_date = 1444.1.1
+}
+
+# Chicagoland-Kankakee Vassalization
+dependency = {
+	subject_type = vassal
+	first = CCG
+	second = KKE
+	start_date = 1444.1.1
+}
+
+# Chicagoland-Ottawa Vassalization
+dependency = {
+	subject_type = vassal
+	first = CCG
+	second = OTW
+	start_date = 1444.1.1
+}
+
+# Saint Louis-Centralia Vassalization
+dependency = {
+	subject_type = vassal
+	first = STL
+	second = CTL
+	start_date = 1444.1.1
+}
+
+# Kansas City-Warrensburg Vassalization
+dependency = {
+	subject_type = vassal
+	first = KSC
+	second = WRB
+	start_date = 1444.1.1
+}
+
+# Tulsa-Muskogee Vassalization
+dependency = {
+	subject_type = vassal
+	first = TSA
+	second = MUS
+	start_date = 1444.1.1
+}
+
+# Dallas-Sherman Vassalization
+dependency = {
+	subject_type = vassal
+	first = DLS
+	second = SMN
+	start_date = 1444.1.1
+}
+
+# Houston-Brenham Vassalization
+dependency = {
+	subject_type = vassal
+	first = HTN
+	second = BHM
+	start_date = 1444.1.1
+}
+
+# Dallas-Corsicana Vassalization
+dependency = {
+	subject_type = vassal
+	first = DLS
+	second = CSN
+	start_date = 1444.1.1
+}
+
+# Fort Worth-Granbury Vassalization
+dependency = {
+	subject_type = vassal
+	first = FWH
+	second = GNB
+	start_date = 1444.1.1
+}
+
+# Fort Worth-Cooke Vassalization
+dependency = {
+	subject_type = vassal
+	first = FWH
+	second = COK
+	start_date = 1444.1.1
+}
+
+# Dallas-Bonham Vassalization
+dependency = {
+	subject_type = vassal
+	first = DLS
+	second = TXB
+	start_date = 1444.1.1
+}
+
+# Corpus Christi-Alice Vassalization
+dependency = {
+	subject_type = vassal
+	first = CPC
+	second = ALI
+	start_date = 1444.1.1
+}
+
+# Denver-Boulder Vassalization
+dependency = {
+	subject_type = vassal
+	first = DVR
+	second = BDR
+	start_date = 1444.1.1
+}
+
+# Denver-Greeley Vassalization
+dependency = {
+	subject_type = vassal
+	first = DVR
+	second = GLY
+	start_date = 1444.1.1
+}
+
+# Pueblo-Canyon City Vassalization
+dependency = {
+	subject_type = vassal
+	first = PUB
+	second = CYC
+	start_date = 1444.1.1
+}
+
+# Phoenix-Pinal Vassalization
+dependency = {
+	subject_type = vassal
+	first = PNX
+	second = PNL
+	start_date = 1444.1.1
+}
+
+# Tucson-Nogales Vassalization
+dependency = {
+	subject_type = vassal
+	first = TSN
+	second = NGL
+	start_date = 1444.1.1
+}
+
+# Salt Lake-Heber Vassalization
+dependency = {
+	subject_type = vassal
+	first = SLC
+	second = HBR
+	start_date = 1444.1.1
+}
+
+# Reno-Carson City Vassalization
+dependency = {
+	subject_type = vassal
+	first = REN
+	second = CRS
+	start_date = 1444.1.1
+}
+
+# Los Angeles-Orange Vassalization
+dependency = {
+	subject_type = vassal
+	first = LAX
+	second = ORA
+	start_date = 1444.1.1
+}
+
+# Los Angeles-Ventura Vassalization
+dependency = {
+	subject_type = vassal
+	first = LAX
+	second = VTR
+	start_date = 1444.1.1
+}
+
+# Fresno-Hanford Vassalization
+dependency = {
+	subject_type = vassal
+	first = FSN
+	second = HFR
+	start_date = 1444.1.1
+}
+
+# Fresno-Madera Vassalization
+dependency = {
+	subject_type = vassal
+	first = FSN
+	second = MDR
+	start_date = 1444.1.1
+}
+
+# Sacramento-Truckee Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = TKE
+	start_date = 1444.1.1
+}
+
+# Sacramento-Yuba Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = YUB
+	start_date = 1444.1.1
+}
+
+# Portland-Salem Vassalization
+dependency = {
+	subject_type = vassal
+	first = PLD
+	second = OSM
+	start_date = 1444.1.1
+}
+
+# Portland-Linn Vassalization
+dependency = {
+	subject_type = vassal
+	first = PLD
+	second = LIN
+	start_date = 1444.1.1
+}
+
+# Portland-Coravallis Vassalization
+dependency = {
+	subject_type = vassal
+	first = PLD
+	second = CRV
+	start_date = 1444.1.1
+}
+
+# Medford-Grants Pass Vassalization
+dependency = {
+	subject_type = vassal
+	first = MDF
+	second = GPS
+	start_date = 1444.1.1
+}
+
+# Kennewick-Walla Walla Vassalization
+dependency = {
+	subject_type = vassal
+	first = KNW
+	second = WAW
+	start_date = 1444.1.1
+}
+
+# Seattle-Skagit Vassalization
+dependency = {
+	subject_type = vassal
+	first = SEA
+	second = SKG
+	start_date = 1444.1.1
+}
+
+# Seattle-Olympia Vassalization
+dependency = {
+	subject_type = vassal
+	first = SEA
+	second = OLY
+	start_date = 1444.1.1
+}
+
+# Seattle-Bremerton Vassalization
+dependency = {
+	subject_type = vassal
+	first = SEA
+	second = BRM
+	start_date = 1444.1.1
+}
+
+# Portland-Cowlitz Vassalization
+dependency = {
+	subject_type = vassal
+	first = PLD
+	second = CLZ
+	start_date = 1444.1.1
+}
+

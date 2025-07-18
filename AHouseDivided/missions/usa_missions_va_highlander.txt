@@ -1,0 +1,473 @@
+missions_va_highlander_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HRS
+			tag = STN
+			tag = BRY
+			tag = FRR
+			tag = WIN
+			tag = RIP
+		}
+	}
+
+	mission_va_highlander_accept_central_virginian = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_va_highlander_capture_charlottesville }
+		trigger = {
+			accepted_culture = culture_central_virginian
+ 		}
+		effect = {
+			area_va_central = { add_permanent_claim = ROOT }
+			area_va_lynchburg = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_highlander_the_piedmont_campaign = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_highlander_accept_central_virginian }
+		trigger = {
+			area_va_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_lynchburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_central
+				area = area_va_lynchburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_highlander_integrate_lynchburg = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_va_highlander_the_piedmont_campaign }
+		trigger = {
+			area_va_central = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_lynchburg = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_roanoke = { add_permanent_claim = ROOT }
+			area_va_danville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_central
+				area = area_va_lynchburg
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_highlander_the_rush_for_roanoke = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_va_highlander_integrate_lynchburg }
+		trigger = {
+			area_va_roanoke = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_danville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_roanoke
+				area = area_va_danville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_highlander_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HRS
+			tag = STN
+			tag = BRY
+			tag = FRR
+			tag = WIN
+			tag = RIP
+		}
+	}
+
+	mission_va_highlander_capture_charlottesville = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_highlander_keeper_of_the_highlands }
+		trigger = {
+			area_va_louisa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_charlottesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_louisa
+				area = area_va_charlottesville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_highlander_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HRS
+			tag = STN
+			tag = BRY
+			tag = FRR
+			tag = WIN
+			tag = RIP
+		}
+	}
+
+	mission_va_highlander_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_va_harrisonburg = { add_permanent_claim = ROOT }
+			566 = { add_permanent_claim = ROOT }
+			2710 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_highlander_highlander_conquest = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_va_highlander_fielding_an_army }
+		trigger = {
+			area_va_harrisonburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			566 = { country_or_non_sovereign_subject_holds = ROOT }
+			2710 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_harrisonburg
+				province_id = 566
+				province_id = 2710
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_highlander_keeper_of_the_highlands = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_va_highlander_highlander_conquest }
+		trigger = {
+			area_va_harrisonburg = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			566 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2710 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_louisa = { add_permanent_claim = ROOT }
+			area_va_charlottesville = { add_permanent_claim = ROOT }
+			area_va_northern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_harrisonburg
+				province_id = 566
+				province_id = 2710
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_highlander_stabilize_charlottesville = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_va_highlander_capture_charlottesville }
+		trigger = {
+			area_va_charlottesville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_richmond = { add_permanent_claim = ROOT }
+			area_va_south_richmond = { add_permanent_claim = ROOT }
+			area_va_goochland = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_charlottesville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_highlander_the_fate_of_river_city = {
+		icon = mission_rch
+		position = 6
+		required_missions = { mission_va_highlander_stabilize_charlottesville }
+		trigger = {
+			area_va_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_south_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_goochland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 0.75
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_south_richmond
+				area = area_va_goochland
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_highlander_administering_richmond = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_va_highlander_the_fate_of_river_city }
+		trigger = {
+			area_va_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_south_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_southeastern = { add_permanent_claim = ROOT }
+			area_va_virginia_beach = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_south_richmond
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_highlander_to_the_chesapeake = {
+		icon = mission_vab
+		position = 8
+		required_missions = { mission_va_highlander_administering_richmond }
+		trigger = {
+			area_va_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_virginia_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_southeastern
+				area = area_va_virginia_beach
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_highlander_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HRS
+			tag = STN
+			tag = BRY
+			tag = FRR
+			tag = WIN
+			tag = RIP
+		}
+	}
+
+	mission_va_highlander_enter_northern_virginia = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_highlander_keeper_of_the_highlands }
+		trigger = {
+			area_va_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_highlander_northern_inroads = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_va_highlander_enter_northern_virginia }
+		trigger = {
+			area_va_northern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_arlington = { add_permanent_claim = ROOT }
+			area_va_southern_nova = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_highlander_annexing_arlington = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_highlander_northern_inroads }
+		trigger = {
+			area_va_arlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_southern_nova = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			change_government_reform_progress = 25
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_arlington
+				area = area_va_southern_nova
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

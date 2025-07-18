@@ -1,0 +1,32 @@
+capital="Harrisburg"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=6
+base_production=7
+base_manpower=7
+native_size=200
+native_ferocity=6
+native_hostileness=4
+religion=methodist
+culture=culture_penn_dutch
+center_of_trade=1
+is_city = yes
+owner=HSB
+add_core=HSB
+controller=HSB
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=9
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

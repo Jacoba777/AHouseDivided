@@ -1,0 +1,2520 @@
+alabaman_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XAL
+		}
+	}
+	start = {
+		fire_damage_received = -0.10
+	}
+
+	alabaman_bible_belt_values = {
+		global_missionary_strength = 0.02
+		tolerance_own = 1.0
+	}
+
+	alabaman_steadfast_conservatives = {
+		stability_cost_modifier = -0.1
+		global_unrest = -1
+	}
+
+	alabaman_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	alabaman_king_cotton = {
+		production_efficiency = 0.05
+	}
+
+	alabaman_huntsville_logistics = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	alabaman_legacy_of_rosa_parks = {
+		prestige = 0.25
+		num_accepted_cultures = 1
+	}
+
+	alabaman_tuskegee_university = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	bonus = {
+		same_religion_advisor_cost = -0.25
+	}
+}
+
+ashevillan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = ASV
+		}
+	}
+	start = {
+		diplomatic_reputation = 1
+		defensiveness = 0.05
+	}
+
+	ashevillan_the_biltmore_estate = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	ashevillan_blue_ridge_road = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	ashevillan_the_linville_gorge = {
+		hostile_attrition = 0.5
+		max_hostile_attrition = 1
+	}
+
+	ashevillan_untokiasdiyi = {
+		envoy_travel_time = -0.25
+	}
+
+	ashevillan_grove_park = {
+		manpower_recovery_speed = 0.05
+	}
+
+	ashevillan_lake_lure = {
+		culture_conversion_cost = -0.1
+		prestige = 0.25
+	}
+
+	ashevillan_the_boojums_hootenanny = {
+		production_efficiency = 0.10
+	}
+
+	bonus = {
+		prestige_decay = -0.01
+	}
+}
+
+bay_stater_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMA
+		}
+	}
+	start = {
+		trade_efficiency = 0.1
+		development_cost = -0.05
+	}
+
+	bay_stater_pilgrim_legacy = {
+		prestige = 0.25
+		tolerance_own = 1
+	}
+
+	bay_stater_ivy_league = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	bay_stater_tea_partiers = {
+		capture_ship_chance = 0.1
+		blockade_efficiency = 0.1
+	}
+
+	bay_stater_early_abolitionists = {
+		capture_ship_chance = 0.1
+		blockade_efficiency = 0.1
+	}
+
+	bay_stater_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	bay_stater_investments_in_healthcare = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	bay_stater_mass_political_dynasties = {
+		administrative_efficiency = 0.1
+	}
+
+	bonus = {
+		idea_cost = -0.10
+	}
+}
+
+delawarean_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XDE
+		}
+	}
+	start = {
+		land_forcelimit_modifier = 0.05
+	}
+
+	delawarean_the_first_state = {
+		envoy_travel_time = -0.2
+		reform_progress_growth = 0.1
+	}
+
+	delawarean_chemical_engineering = {
+		infantry_cost = -0.10
+		artillery_cost = -0.10
+	}
+
+	delawarean_pow_prisons = {
+		defensiveness = 0.05
+		fort_maintenance_modifier = -0.05
+	}
+
+	delawarean_delaware_canals = {
+		global_trade_power = 0.1
+	}
+
+	delawarean_incorporated_in_delaware = {
+		production_efficiency = 0.10
+	}
+
+	delawarean_loyalty_to_the_union = {
+		imperial_authority = 0.025
+	}
+
+	delawarean_north_south_crossroads = {
+		relation_with_other_culture = 10
+	}
+
+	bonus = {
+		naval_morale = 0.1
+	}
+}
+
+floridian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XFL
+		}
+	}
+	start = {
+		navy_tradition = 1
+	}
+
+	floridian_florida_sunshine = {
+		development_cost = -0.15
+	}
+
+	floridian_gulf_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	floridian_kennedy_space_center = {
+		prestige = 1
+	}
+
+	floridian_the_everglades = {
+		land_attrition = -0.10
+		defensiveness = 0.15
+	}
+
+	floridian_public_education = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	floridian_retirement_communities = {
+		global_tax_modifier = 0.15
+	}
+
+	floridian_latino_wall_street = {
+		merchants = 1
+	}
+
+	bonus = {
+		years_of_nationalism = -5
+	}
+}
+
+georgian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XGA
+		}
+	}
+	start = {
+		defensiveness = 0.10
+	}
+
+	georgian_georgian_plantations = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	georgian_lessons_from_shermans_march = {
+		global_monthly_devastation = -0.2
+	}
+
+	georgian_munitions_plants = {
+		land_maintenance_modifier = -0.05
+	}
+
+	georgian_rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.15
+	}
+
+	georgian_home_of_cola = {
+		global_unrest = -1
+	}
+
+	georgian_the_legacy_of_mlk_jr = {
+		num_accepted_cultures = 1
+		prestige = 0.5
+	}
+
+	georgian_hub_of_the_south = {
+		caravan_power = 0.2
+		trade_efficiency = 0.1
+	}
+
+	bonus = {
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+}
+
+kentuckian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XKY
+		}
+	}
+	start = {
+		global_manpower_modifier = 0.10
+	}
+
+	kentuckian_bourbon = {
+		global_unrest = -1
+	}
+
+	kentuckian_bluegrass_blues = {
+		reverse_relation_with_same_religion = 25
+	}
+
+	kentuckian_appalachian_resilience = {
+		war_exhaustion = -0.05
+	}
+
+	kentuckian_legacy_of_henry_clay = {
+		core_creation = -0.1
+	}
+
+	kentuckian_moonshiner_ingenuity = {
+		caravan_power = 0.25
+		enemy_core_creation = 0.25
+	}
+
+	kentuckian_hatfields_and_mccoys = {
+		army_tradition_from_battle = 0.25
+	}
+
+	kentuckian_derby_horse_breeding = {
+		cavalry_cost = -0.25
+		cavalry_shock = 1
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+}
+
+lesser_alabaman_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BMH
+			tag = MGM
+			tag = TCL
+			tag = MSH
+			tag = HTV
+			tag = SCT
+			tag = GSD
+			tag = MOB
+			tag = DOT
+		}
+	}
+	start = {
+		fire_damage_received = -0.06
+	}
+
+	lesser_alabaman_bible_belt_values = {
+		global_missionary_strength = 0.01
+	}
+
+	lesser_alabaman_steadfast_conservatives = {
+		stability_cost_modifier = -0.06
+	}
+
+	lesser_alabaman_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.06
+	}
+
+	lesser_alabaman_king_cotton = {
+		production_efficiency = 0.03
+	}
+
+	lesser_alabaman_huntsville_logistics = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.15
+	}
+
+	lesser_alabaman_legacy_of_rosa_parks = {
+		num_accepted_cultures = 1
+	}
+
+	lesser_alabaman_tuskegee_university = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	bonus = {
+		same_religion_advisor_cost = -0.15
+	}
+}
+
+lesser_bay_stater_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BTO
+			tag = DED
+			tag = TTN
+			tag = PLY
+			tag = BRN
+			tag = MVD
+			tag = NTK
+			tag = CBG
+			tag = SWT
+			tag = PFD
+			tag = GFD
+			tag = NHT
+			tag = HPD
+			tag = WOR
+		}
+	}
+	start = {
+		trade_efficiency = 0.06
+		development_cost = -0.03
+	}
+
+	lesser_bay_stater_pilgrim_legacy = {
+		prestige = 0.15
+		tolerance_own = 1
+	}
+
+	lesser_bay_stater_ivy_league = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_bay_stater_tea_partiers = {
+		capture_ship_chance = 0.06
+		blockade_efficiency = 0.06
+	}
+
+	lesser_bay_stater_early_abolitionists = {
+		loyalty_change_on_revoked = 0.03
+	}
+
+	lesser_bay_stater_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	lesser_bay_stater_investments_in_healthcare = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_bay_stater_mass_political_dynasties = {
+		administrative_efficiency = 0.06
+	}
+
+	bonus = {
+		idea_cost = -0.06
+	}
+}
+
+lesser_delawarean_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = DOV
+			tag = WMT
+			tag = GGT
+		}
+	}
+	start = {
+		land_forcelimit_modifier = 0.03
+	}
+
+	lesser_delawarean_the_first_state = {
+		envoy_travel_time = -0.15
+		reform_progress_growth = 0.06
+	}
+
+	lesser_delawarean_chemical_engineering = {
+		infantry_cost = -0.06
+		artillery_cost = -0.06
+	}
+
+	lesser_delawarean_pow_prisons = {
+		defensiveness = 0.03
+		fort_maintenance_modifier = -0.03
+	}
+
+	lesser_delawarean_delaware_canals = {
+		global_trade_power = 0.06
+	}
+
+	lesser_delawarean_incorporated_in_delaware = {
+		production_efficiency = 0.06
+	}
+
+	lesser_delawarean_loyalty_to_the_union = {
+		imperial_authority = 0.02
+	}
+
+	lesser_delawarean_north_south_crossroads = {
+		relation_with_other_culture = 10
+	}
+
+	bonus = {
+		naval_morale = 0.06
+	}
+}
+
+lesser_floridian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = RLD
+			tag = PBY
+			tag = TVG
+			tag = DTA
+			tag = WCL
+			tag = LLD
+			tag = TMP
+			tag = CTR
+			tag = OCL
+			tag = JSV
+			tag = PLK
+			tag = LKC
+			tag = ALU
+			tag = PNC
+			tag = CSV
+			tag = PNM
+			tag = FGC
+			tag = THS
+			tag = LCI
+			tag = OKB
+			tag = SBS
+			tag = MII
+			tag = KEY
+			tag = NPS
+			tag = CCL
+			tag = PUG
+			tag = ACD
+			tag = SRS
+			tag = CWS
+			tag = SBG
+		}
+	}
+	start = {
+		navy_tradition = 0.65
+	}
+
+	lesser_floridian_florida_sunshine = {
+		development_cost = -0.1
+	}
+
+	lesser_floridian_gulf_shipping = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.15
+	}
+
+	lesser_floridian_kennedy_space_center = {
+		prestige = 0.5
+	}
+
+	lesser_floridian_the_everglades = {
+		land_attrition = -0.06
+		defensiveness = 0.1
+	}
+
+	lesser_floridian_public_education = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_floridian_retirement_communities = {
+		global_tax_modifier = 0.1
+	}
+
+	lesser_floridian_latino_wall_street = {
+		merchants = 1
+	}
+
+	bonus = {
+		years_of_nationalism = -3
+	}
+}
+
+lesser_georgian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = CDT
+			tag = RME
+			tag = ATN
+			tag = THO
+			tag = LGG
+			tag = GSV
+			tag = CNL
+			tag = TCA
+			tag = ATL
+			tag = WRR
+			tag = MGV
+			tag = AGA
+			tag = CMB
+			tag = MCN
+			tag = SMR
+			tag = CLH
+			tag = DTN
+			tag = JSP
+			tag = BCK
+			tag = CMD
+			tag = HSV
+			tag = SBR
+			tag = SVH
+			tag = AMC
+			tag = GAB
+			tag = VDT
+			tag = TFT
+			tag = FZG
+			tag = WCS
+			tag = DBN
+			tag = ERL
+			tag = BBG
+		}
+	}
+	start = {
+		defensiveness = 0.06
+	}
+
+	lesser_georgian_georgian_plantations = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_georgian_lessons_from_shermans_march = {
+		global_monthly_devastation = -0.15
+	}
+
+	lesser_georgian_munitions_plants = {
+		land_maintenance_modifier = -0.03
+	}
+
+	lesser_georgian_rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.1
+	}
+
+	lesser_georgian_home_of_cola = {
+		global_unrest = -1
+	}
+
+	lesser_georgian_the_legacy_of_mlk_jr = {
+		num_accepted_cultures = 1
+	}
+
+	lesser_georgian_hub_of_the_south = {
+		caravan_power = 0.15
+		trade_efficiency = 0.06
+	}
+
+	bonus = {
+		global_missionary_strength = 0.01
+	}
+}
+
+lesser_kentuckian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = FTK
+			tag = BWL
+			tag = PUL
+			tag = PIK
+			tag = LDN
+			tag = LXG
+			tag = LVL
+			tag = PDC
+			tag = OWB
+		}
+	}
+	start = {
+		global_manpower_modifier = 0.06
+	}
+
+	lesser_kentuckian_bourbon = {
+		global_unrest = -1
+	}
+
+	lesser_kentuckian_bluegrass_blues = {
+		reverse_relation_with_same_religion = 20
+	}
+
+	lesser_kentuckian_appalachian_resilience = {
+		war_exhaustion = -0.03
+	}
+
+	lesser_kentuckian_legacy_of_henry_clay = {
+		core_creation = -0.06
+	}
+
+	lesser_kentuckian_moonshiner_ingenuity = {
+		caravan_power = 0.15
+		enemy_core_creation = 0.15
+	}
+
+	lesser_kentuckian_hatfields_and_mccoys = {
+		army_tradition_from_battle = 0.15
+	}
+
+	lesser_kentuckian_derby_horse_breeding = {
+		cavalry_cost = -0.15
+		cavalry_shock = 1
+	}
+
+	bonus = {
+		discipline = 0.03
+	}
+}
+
+lesser_mainer_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BAG
+			tag = TPL
+			tag = LWT
+			tag = KBC
+		}
+	}
+	start = {
+		prestige_from_naval = 0.25
+	}
+
+	lesser_mainer_vacationland = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_mainer_natural_shipbuilders = {
+		global_ship_cost = -0.06
+		global_ship_recruit_speed = -0.06
+	}
+
+	lesser_mainer_gulf_of_maine_shipping_lanes = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.15
+	}
+
+	lesser_mainer_harsh_winters = {
+		land_attrition = -0.06
+		defensiveness = 0.06
+	}
+
+	lesser_mainer_maine_lumber_mills = {
+		build_cost = -0.1
+	}
+
+	lesser_mainer_maine_cuisine = {
+		culture_conversion_cost = -0.15
+		culture_conversion_time = -0.15
+	}
+
+	lesser_mainer_lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+}
+
+lesser_marylander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BLR
+			tag = BEL
+			tag = ELC
+			tag = WMS
+			tag = FDK
+			tag = QAN
+			tag = EAS
+			tag = DCR
+			tag = SLB
+			tag = SNH
+			tag = ROK
+			tag = CEC
+			tag = WGM
+			tag = PGE
+			tag = ANP
+			tag = LEO
+			tag = CHS
+			tag = CVT
+			tag = CBL
+			tag = GRT
+		}
+	}
+	start = {
+		global_unrest = -1
+	}
+
+	lesser_marylander_loyalty_to_the_union = {
+		imperial_authority = 0.02
+	}
+
+	lesser_marylander_maryland_toleration_act = {
+		tolerance_heretic = 1
+	}
+
+	lesser_marylander_worker_protections = {
+		global_prosperity_growth = 0.06
+	}
+
+	lesser_marylander_chesapeake_bay_shipyards = {
+		global_ship_cost = -0.1
+	}
+
+	lesser_marylander_legacy_of_thurgood_marshall = {
+		num_accepted_cultures = 1
+		global_institution_spread = 0.06
+	}
+
+	lesser_marylander_expert_bridge_builders = {
+		development_cost = -0.06
+	}
+
+	lesser_marylander_citizens_commissions = {
+		advisor_cost = -0.06
+	}
+
+	bonus = {
+		center_of_trade_upgrade_cost = -0.06
+	}
+}
+
+lesser_mississippian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = JSN
+			tag = MRD
+			tag = TPO
+			tag = WPT
+			tag = BLX
+			tag = HTB
+		}
+	}
+	start = {
+		production_efficiency = 0.03
+	}
+
+	lesser_mississippian_jacksonian_democracy = {
+		monthly_gold_inflation_modifier = -0.06
+		expel_minorities_cost = -0.15
+	}
+
+	lesser_mississippian_rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.1
+	}
+
+	lesser_mississippian_freedom_summer = {
+		republican_tradition = 0.15
+		legitimacy = 0.25
+		horde_unity = 0.25
+		meritocracy = 0.25
+		devotion = 0.25
+	}
+
+	lesser_mississippian_casinos = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_mississippian_mississippi_blues = {
+		culture_conversion_cost = -0.15
+		prestige = 0.15
+	}
+
+	lesser_mississippian_bible_belt_values = {
+		global_missionary_strength = 0.01
+	}
+
+	lesser_mississippian_steadfast_conservatives = {
+		stability_cost_modifier = -0.06
+	}
+
+	bonus = {
+		artillery_power = 0.06
+	}
+}
+
+lesser_new_hampshirite_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = LCT
+			tag = RKH
+			tag = STF
+			tag = LCN
+			tag = CCD
+			tag = MCR
+			tag = KEE
+			tag = BLN
+		}
+	}
+	start = {
+		land_morale = 0.06
+	}
+
+	lesser_new_hampshirite_live_free_or_die = {
+		war_exhaustion = -0.03
+	}
+
+	lesser_new_hampshirite_the_fighting_fifth = {
+		fire_damage = 0.06
+	}
+
+	lesser_new_hampshirite_defense_industry = {
+		land_maintenance_modifier = -0.03
+	}
+
+	lesser_new_hampshirite_first_primary = {
+		republican_tradition = 0.15
+		legitimacy = 0.25
+		horde_unity = 0.25
+		meritocracy = 0.25
+		devotion = 0.25
+	}
+
+	lesser_new_hampshirite_textile_manufacturers = {
+		production_efficiency = 0.03
+	}
+
+	lesser_new_hampshirite_ivy_league = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_new_hampshirite_honest_governance = {
+		yearly_corruption = -0.06
+	}
+
+	bonus = {
+		prestige_decay = -0.015
+	}
+}
+
+lesser_new_jerseyan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = TRN
+			tag = SMV
+			tag = MMH
+			tag = NBK
+			tag = FMT
+			tag = BVD
+			tag = NWK
+			tag = JYC
+			tag = HKS
+			tag = PSC
+			tag = UNI
+			tag = MRS
+			tag = NTN
+			tag = VIN
+			tag = ALC
+			tag = OCA
+			tag = BLT
+			tag = CDN
+			tag = WBY
+			tag = JSM
+			tag = OCN
+		}
+	}
+	start = {
+		papal_influence = 0.3
+	}
+
+	lesser_new_jerseyan_railroads = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.18
+	}
+
+	lesser_new_jerseyan_naval_shipyards = {
+		global_ship_cost = -0.06
+		global_ship_recruit_speed = -0.06
+	}
+
+	lesser_new_jerseyan_the_new_jersey_plan = {
+		liberty_desire = -10
+	}
+
+	lesser_new_jerseyan_menlo_park = {
+		innovativeness_gain = 0.18
+		spy_offence = 0.06
+	}
+
+	lesser_new_jerseyan_steamboats = {
+		galley_power = 0.06
+	}
+
+	lesser_new_jerseyan_equitable_schools = {
+		technology_cost = -0.03
+	}
+
+	lesser_new_jerseyan_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.06
+	}
+
+	bonus = {
+		fabricate_claims_cost = -0.15
+	}
+}
+
+lesser_new_yorker_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = HUD
+			tag = ABY
+			tag = GSF
+			tag = GLV
+			tag = AMS
+			tag = UTI
+			tag = WTR
+			tag = ODB
+			tag = MLN
+			tag = PTB
+			tag = MHT
+			tag = BRX
+			tag = QNS
+			tag = BKL
+			tag = STI
+			tag = NAS
+			tag = SUF
+			tag = YON
+			tag = PUT
+			tag = ROC
+			tag = PKS
+			tag = GSN
+			tag = KGN
+			tag = SYC
+			tag = AUB
+			tag = RCR
+			tag = SNF
+			tag = BAT
+			tag = BUF
+			tag = OLE
+			tag = JMS
+			tag = ONT
+			tag = CLD
+			tag = ITH
+			tag = BGH
+			tag = ELM
+			tag = CNG
+		}
+	}
+	start = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_new_yorker_railroads = {
+		movement_speed = 0.04
+		expand_infrastructure_cost_modifier = -0.12
+	}
+
+	lesser_new_yorker_cheap_loans = {
+		interest = -1
+	}
+
+	lesser_new_yorker_beaming_skyscrapers = {
+		global_trade_power = 0.06
+	}
+
+	lesser_new_yorker_a_strong_executive = {
+		yearly_absolutism = 0.5
+		max_absolutism = 5
+	}
+
+	lesser_new_yorker_financial_hub = {
+		merchants = 1
+	}
+
+	lesser_new_yorker_journalistic_tradition = {
+		spy_offence = 0.06
+		global_institution_spread = 0.06
+	}
+
+	lesser_new_yorker_cultural_juggernaut = {
+		culture_conversion_cost = -0.1
+		prestige = 0.3
+	}
+
+	bonus = {
+		religious_unity = 0.15
+	}
+}
+
+lesser_north_carolinan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = WKS
+			tag = BOO
+			tag = FRC
+			tag = MRN
+			tag = CLW
+			tag = CLT
+			tag = SHB
+			tag = FYV
+			tag = PRT
+			tag = LBT
+			tag = ERH
+			tag = GNR
+			tag = WSN
+			tag = HKR
+			tag = ABM
+			tag = RAL
+			tag = DUR
+			tag = HDS
+			tag = EZB
+			tag = KLL
+			tag = ROR
+			tag = NBE
+			tag = GVK
+			tag = MHD
+			tag = OSW
+			tag = PWT
+			tag = RMT
+			tag = WIL
+			tag = GLD
+		}
+	}
+	start = {
+		global_autonomy = -0.03
+	}
+
+	lesser_north_carolinan_the_research_triangle = {
+		technology_cost = -0.06
+		innovativeness_gain = 0.3
+	}
+
+	lesser_north_carolinan_tidewater_traditions = {
+		naval_forcelimit_modifier = 0.06
+		global_sailors_modifier = 0.06
+	}
+
+	lesser_north_carolinan_mennonite_tolerance = {
+		tolerance_own = 1
+		tolerance_heretic = 1
+	}
+
+	lesser_north_carolinan_textile_manufacturers = {
+		production_efficiency = 0.03
+	}
+
+	lesser_north_carolinan_first_in_flight = {
+		movement_speed = 0.15
+		envoy_travel_time = -0.15
+	}
+
+	lesser_north_carolinan_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_north_carolinan_charlotte_banking = {
+		interest = -1
+		development_cost = -0.06
+	}
+
+	bonus = {
+		core_creation = -0.06
+	}
+}
+
+lesser_nutmegger_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = SMF
+			tag = TRR
+			tag = NGT
+			tag = BPT
+			tag = HFD
+			tag = KIL
+			tag = NWC
+			tag = MDT
+			tag = NHV
+		}
+	}
+	start = {
+		trade_efficiency = 0.06
+		development_cost = -0.03
+	}
+
+	lesser_nutmegger_local_government = {
+		global_unrest = -1
+	}
+
+	lesser_nutmegger_ivy_league = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_nutmegger_industrial_powerhouse = {
+		production_efficiency = 0.06
+	}
+
+	lesser_nutmegger_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	lesser_nutmegger_a_well_funded_state = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_nutmegger_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_nutmegger_defense_industry = {
+		land_maintenance_modifier = -0.03
+	}
+
+	bonus = {
+		idea_cost = -0.06
+	}
+}
+
+lesser_pennsylvanian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BSB
+			tag = SBY
+			tag = LSB
+			tag = SLG
+			tag = LWS
+			tag = SCG
+			tag = DBS
+			tag = HTD
+			tag = LOO
+			tag = JON
+			tag = SMS
+			tag = RDG
+			tag = LCR
+			tag = PTV
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
+			tag = NCA
+			tag = OIL
+			tag = EIE
+			tag = MEA
+			tag = WRN
+			tag = PHL
+			tag = CST
+			tag = NRT
+			tag = BKS
+			tag = PIT
+			tag = WMP
+			tag = LKH
+			tag = PDA
+			tag = BDF
+			tag = ELK
+			tag = ALN
+			tag = ESB
+			tag = SCR
+			tag = SAY
+		}
+	}
+	start = {
+		production_efficiency = 0.06
+	}
+
+	lesser_pennsylvanian_tolerant_quakers = {
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+
+	lesser_pennsylvanian_pennsylvania_steel = {
+		build_cost = -0.06
+	}
+
+	lesser_pennsylvanian_birthplace_of_the_united_states = {
+		prestige = 0.3
+	}
+
+	lesser_pennsylvanian_early_abolitionists = {
+		loyalty_change_on_revoked = 0.03
+	}
+
+	lesser_pennsylvanian_railroads = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.2
+	}
+
+	lesser_pennsylvanian_valiant_troops = {
+		discipline = 0.03
+	}
+
+	lesser_pennsylvanian_investments_in_healthcare = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	bonus = {
+		republican_tradition = 0.2
+		legitimacy = 0.3
+		horde_unity = 0.3
+		meritocracy = 0.3
+		devotion = 0.3
+	}
+}
+
+lesser_rhode_islander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = PVD
+			tag = EGW
+			tag = SKT
+			tag = NPT
+		}
+	}
+	start = {
+		expand_infrastructure_cost_modifier = -0.15
+	}
+
+	lesser_rhode_islander_first_revolutionaries = {
+		envoy_travel_time = -0.15
+		reform_progress_growth = 0.06
+	}
+
+	lesser_rhode_islander_local_government = {
+		global_unrest = -1
+	}
+
+	lesser_rhode_islander_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.06
+	}
+
+	lesser_rhode_islander_birthplace_of_the_american_industrial_revolution = {
+		global_institution_spread = 0.15
+	}
+
+	lesser_rhode_islander_a_well_funded_state = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_rhode_islander_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	lesser_rhode_islander_humble_yet_mighty = {
+		naval_forcelimit_modifier = 0.05
+		land_forcelimit_modifier = 0.05
+	}
+
+	bonus = {
+		free_dip_policy = 1
+	}
+}
+
+lesser_south_carolinan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = CLS
+			tag = HIL
+			tag = CUM
+			tag = ONG
+			tag = NBR
+			tag = LGT
+			tag = MYT
+			tag = SMT
+			tag = FLT
+			tag = BNV
+			tag = GWD
+			tag = SNC
+			tag = GRN
+			tag = STB
+			tag = GFY
+			tag = GRU
+		}
+	}
+	start = {
+		drill_gain_modifier = 0.06
+	}
+
+	lesser_south_carolinan_legacy_of_john_c_calhoun = {
+		same_culture_advisor_cost = -0.15
+	}
+
+	lesser_south_carolinan_the_matchstick_of_the_civil_war = {
+		manpower_in_accepted_culture_provinces = 0.1
+	}
+
+	lesser_south_carolinan_medical_research = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_south_carolinan_agricultural_innovations = {
+		production_efficiency = 0.06
+	}
+
+	lesser_south_carolinan_organized_militias = {
+		infantry_cost = -0.06
+	}
+
+	lesser_south_carolinan_the_caning_of_charles_sumner = {
+		power_projection_from_insults = 1.0
+	}
+
+	lesser_south_carolinan_a_developers_dream = {
+		local_development_cost = -0.1
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.06
+	}
+}
+
+lesser_tennessean_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = CTN
+			tag = KNX
+			tag = BDY
+			tag = NSH
+			tag = CKE
+			tag = THM
+			tag = KGP
+			tag = JSC
+			tag = MST
+			tag = CKV
+			tag = JBV
+			tag = MPS
+		}
+	}
+	start = {
+		advisor_cost = -0.06
+	}
+
+	lesser_tennessean_tennessee_river_trade = {
+		trade_steering = 0.06
+	}
+
+	lesser_tennessean_smoky_mountains = {
+		defensiveness = 0.06
+	}
+
+	lesser_tennessean_music_city = {
+		culture_conversion_cost = -0.15
+		prestige = 0.3
+	}
+
+	lesser_tennessean_tennessee_valley_authority = {
+		great_project_upgrade_cost = -0.15
+		great_project_upgrade_time = -0.15
+		build_cost = -0.06
+	}
+
+	lesser_tennessean_defense_industry = {
+		land_maintenance_modifier = -0.03
+	}
+
+	lesser_tennessean_bible_belt_values = {
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+
+	lesser_tennessean_tennessee_volunteers = {
+		land_forcelimit_modifier = 0.2
+	}
+
+	bonus = {
+		administrative_efficiency = 0.03
+	}
+}
+
+lesser_vermonter_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = VTB
+			tag = BTV
+			tag = RUT
+			tag = BNT
+		}
+	}
+	start = {
+		rival_border_fort_maintenance = -0.15
+	}
+
+	lesser_vermonter_early_abolitionists = {
+		loyalty_change_on_revoked = 0.03
+	}
+
+	lesser_vermonter_maple_syrup_production = {
+		global_unrest = -1
+	}
+
+	lesser_vermonter_hydropower = {
+		production_efficiency = 0.06
+	}
+
+	lesser_vermonter_environmental_stewardship = {
+		discipline = 0.015
+		prestige = 0.15
+	}
+
+	lesser_vermonter_vermont_progressives = {
+		reform_progress_growth = 0.15
+		diplomatic_reputation = 1
+	}
+
+	lesser_vermonter_investments_in_healthcare = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_vermonter_green_mountains = {
+		defensiveness = 0.06
+	}
+
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.03
+	}
+}
+
+lesser_virginian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = BSE
+			tag = CTV
+			tag = LYN
+			tag = MTV
+			tag = DNV
+			tag = RCH
+			tag = VAB
+			tag = NNK
+			tag = HRS
+			tag = STN
+			tag = BRY
+			tag = FRR
+			tag = WIN
+			tag = RIP
+			tag = ARG
+			tag = FFX
+			tag = LEE
+			tag = VMA
+			tag = SFD
+			tag = SPV
+			tag = CUL
+			tag = RAP
+			tag = WRT
+			tag = ROA
+			tag = BLK
+		}
+	}
+	start = {
+		dip_advisor_cost = -0.06
+	}
+
+	lesser_virginian_virginia_planters = {
+		production_efficiency = 0.06
+	}
+
+	lesser_virginian_the_byrd_machine = {
+		same_culture_advisor_cost = -0.06
+		tolerance_own = 1
+	}
+
+	lesser_virginian_tidewater_traditions = {
+		naval_forcelimit_modifier = 0.06
+		global_sailors_modifier = 0.06
+	}
+
+	lesser_virginian_legacy_of_robert_e_lee = {
+		leader_land_shock = 1
+		leader_land_manuever = 1
+		army_tradition_decay = -0.005
+	}
+
+	lesser_virginian_information_networks = {
+		innovativeness_gain = 0.3
+	}
+
+	lesser_virginian_newport_news_shipbuilding = {
+		global_ship_cost = -0.06
+		global_ship_recruit_speed = -0.06
+	}
+
+	lesser_virginian_the_virginia_dynasty = {
+		administrative_efficiency = 0.06
+		prestige = 0.2
+	}
+
+	bonus = {
+		governing_capacity_modifier = 0.06
+	}
+}
+
+lesser_west_virginian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = MGT
+			tag = HGT
+			tag = EKS
+			tag = BLU
+			tag = BKY
+			tag = HTT
+			tag = CHW
+			tag = PKB
+			tag = WHG
+		}
+	}
+	start = {
+		fabricate_claims_cost = -0.15
+	}
+
+	lesser_west_virginian_coal_mining = {
+		production_efficiency = 0.06
+	}
+
+	lesser_west_virginian_loyalty_to_the_union = {
+		imperial_authority = 0.015
+		loyalty_change_on_revoked = 0.03
+	}
+
+	lesser_west_virginian_worker_protections = {
+		global_prosperity_growth = 0.06
+	}
+
+	lesser_west_virginian_appalachian_resilience = {
+		war_exhaustion = -0.03
+	}
+
+	lesser_west_virginian_country_roads = {
+		movement_speed = 0.06
+		envoy_travel_time = -0.15
+	}
+
+	lesser_west_virginian_military_tradition = {
+		army_tradition_decay = -0.006
+	}
+
+	lesser_west_virginian_montani_semper_liberi = {
+		defensiveness = 0.1
+		stability_cost_modifier = -0.15
+	}
+
+	bonus = {
+		artillery_cost = -0.06
+	}
+}
+
+mainer_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XME
+		}
+	}
+	start = {
+		prestige_from_naval = 0.33
+	}
+
+	mainer_vacationland = {
+		global_tax_modifier = 0.10
+	}
+
+	mainer_natural_shipbuilders = {
+		global_ship_cost = -0.1
+		global_ship_recruit_speed = -0.1
+	}
+
+	mainer_gulf_of_maine_shipping_lanes = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	mainer_harsh_winters = {
+		land_attrition = -0.10
+		defensiveness = 0.10
+	}
+
+	mainer_maine_lumber_mills = {
+		build_cost = -0.15
+	}
+
+	mainer_maine_cuisine = {
+		culture_conversion_cost = -0.25
+		culture_conversion_time = -0.25
+	}
+
+	mainer_lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+}
+
+marylander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMD
+		}
+	}
+	start = {
+		global_unrest = -1
+	}
+
+	marylander_loyalty_to_the_union = {
+		imperial_authority = 0.025
+	}
+
+	marylander_maryland_toleration_act = {
+		tolerance_heretic = 1
+	}
+
+	marylander_worker_protections = {
+		global_prosperity_growth = 0.1
+	}
+
+	marylander_chesapeake_bay_shipyards = {
+		global_ship_cost = -0.15
+	}
+
+	marylander_legacy_of_thurgood_marshall = {
+		num_accepted_cultures = 1
+		global_institution_spread = 0.1
+	}
+
+	marylander_expert_bridge_builders = {
+		development_cost = -0.1
+	}
+
+	marylander_citizens_commissions = {
+		advisor_cost = -0.10
+	}
+
+	bonus = {
+		center_of_trade_upgrade_cost = -0.1
+	}
+}
+
+mid_atlantic_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = MTL
+		}
+	}
+	start = {
+		global_tax_modifier = 0.10
+	}
+
+	mid_atlantic_railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	mid_atlantic_cultural_juggernaut = {
+		culture_conversion_cost = -0.25
+		prestige = 1
+	}
+
+	mid_atlantic_natural_shipbuilders = {
+		global_ship_cost = -0.25
+		global_ship_recruit_speed = -0.25
+	}
+
+	mid_atlantic_wall_street_loans = {
+		interest = -2
+		development_cost = -0.15
+	}
+
+	mid_atlantic_citizens_commissions = {
+		advisor_cost = -0.15
+	}
+
+	mid_atlantic_maritime_ambitions = {
+		naval_morale = 0.15
+	}
+
+	mid_atlantic_a_strong_executive = {
+		yearly_absolutism = 1
+		max_absolutism = 10
+	}
+
+	bonus = {
+		core_creation = -0.15
+	}
+}
+
+mississippian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMS
+		}
+	}
+	start = {
+		production_efficiency = 0.05
+	}
+
+	mississippian_jacksonian_democracy = {
+		monthly_gold_inflation_modifier = -0.1
+		expel_minorities_cost = -0.2
+	}
+
+	mississippian_rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.15
+	}
+
+	mississippian_freedom_summer = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	mississippian_casinos = {
+		global_tax_modifier = 0.1
+	}
+
+	mississippian_mississippi_blues = {
+		culture_conversion_cost = -0.25
+		prestige = 0.2
+	}
+
+	mississippian_bible_belt_values = {
+		global_missionary_strength = 0.02
+		tolerance_own = 1.0
+	}
+
+	mississippian_steadfast_conservatives = {
+		stability_cost_modifier = -0.1
+		global_unrest = -1
+	}
+
+	bonus = {
+		artillery_power = 0.10
+	}
+}
+
+new_englander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = NEG
+		}
+	}
+	start = {
+		idea_cost = -0.10
+	}
+
+	new_englander_ivy_league = {
+		adm_tech_cost_modifier = -0.15
+		innovativeness_gain = 0.5
+	}
+
+	new_englander_yankee_melting_pot = {
+		num_accepted_cultures = 2
+	}
+
+	new_englander_a_well_funded_state = {
+		global_tax_modifier = 0.10
+	}
+
+	new_englander_local_government = {
+		global_unrest = -2
+	}
+
+	new_englander_natural_shipbuilders = {
+		global_ship_cost = -0.25
+		global_ship_recruit_speed = -0.25
+	}
+
+	new_englander_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.1
+		land_attrition = -0.1
+	}
+
+	new_englander_lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+}
+
+new_hampshirite_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XNH
+		}
+	}
+	start = {
+		land_morale = 0.10
+	}
+
+	new_hampshirite_live_free_or_die = {
+		war_exhaustion = -0.05
+	}
+
+	new_hampshirite_the_fighting_fifth = {
+		fire_damage = 0.10
+	}
+
+	new_hampshirite_defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	new_hampshirite_first_primary = {
+		republican_tradition = 0.2
+		legitimacy = 0.4
+		horde_unity = 0.4
+		meritocracy = 0.4
+		devotion = 0.4
+	}
+
+	new_hampshirite_textile_manufacturers = {
+		production_efficiency = 0.05
+	}
+
+	new_hampshirite_ivy_league = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	new_hampshirite_honest_governance = {
+		yearly_corruption = -0.1
+	}
+
+	bonus = {
+		prestige_decay = -0.02
+	}
+}
+
+new_jerseyan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XNJ
+		}
+	}
+	start = {
+		papal_influence = 0.5
+	}
+
+	new_jerseyan_railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	new_jerseyan_naval_shipyards = {
+		global_ship_cost = -0.1
+		global_ship_recruit_speed = -0.1
+	}
+
+	new_jerseyan_the_new_jersey_plan = {
+		liberty_desire = -10
+	}
+
+	new_jerseyan_menlo_park = {
+		innovativeness_gain = 0.25
+		spy_offence = 0.1
+	}
+
+	new_jerseyan_steamboats = {
+		galley_power = 0.1
+	}
+
+	new_jerseyan_equitable_schools = {
+		technology_cost = -0.05
+	}
+
+	new_jerseyan_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	bonus = {
+		fabricate_claims_cost = -0.2
+	}
+}
+
+new_yorker_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XNY
+			tag = NYC
+		}
+	}
+	start = {
+		global_tax_modifier = 0.10
+	}
+
+	new_yorker_railroads = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.2
+	}
+
+	new_yorker_wall_street_loans = {
+		interest = -1.5
+		development_cost = -0.15
+	}
+
+	new_yorker_beaming_skyscrapers = {
+		global_trade_power = 0.1
+	}
+
+	new_yorker_a_strong_executive = {
+		yearly_absolutism = 1
+		max_absolutism = 10
+	}
+
+	new_yorker_financial_hub = {
+		merchants = 1
+	}
+
+	new_yorker_journalistic_tradition = {
+		spy_offence = 0.1
+		global_institution_spread = 0.1
+	}
+
+	new_yorker_cultural_juggernaut = {
+		culture_conversion_cost = -0.15
+		prestige = 0.5
+	}
+
+	bonus = {
+		religious_unity = 0.25
+	}
+}
+
+north_carolinan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XNC
+		}
+	}
+	start = {
+		global_autonomy = -0.05
+	}
+
+	north_carolinan_the_research_triangle = {
+		technology_cost = -0.1
+		innovativeness_gain = 0.5
+	}
+
+	north_carolinan_tidewater_traditions = {
+		naval_forcelimit_modifier = 0.1
+		global_sailors_modifier = 0.1
+	}
+
+	north_carolinan_mennonite_tolerance = {
+		tolerance_own = 1
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+
+	north_carolinan_textile_manufacturers = {
+		production_efficiency = 0.05
+	}
+
+	north_carolinan_first_in_flight = {
+		movement_speed = 0.20
+		envoy_travel_time = -0.2
+	}
+
+	north_carolinan_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	north_carolinan_charlotte_banking = {
+		interest = -1
+		development_cost = -0.1
+	}
+
+	bonus = {
+		core_creation = -0.1
+	}
+}
+
+nutmegger_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XCT
+		}
+	}
+	start = {
+		trade_efficiency = 0.1
+		development_cost = -0.05
+	}
+
+	nutmegger_local_government = {
+		global_unrest = -1
+	}
+
+	nutmegger_ivy_league = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	nutmegger_industrial_powerhouse = {
+		production_efficiency = 0.10
+	}
+
+	nutmegger_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	nutmegger_a_well_funded_state = {
+		global_tax_modifier = 0.10
+	}
+
+	nutmegger_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	nutmegger_defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	bonus = {
+		idea_cost = -0.10
+	}
+}
+
+pennsylvanian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XPA
+		}
+	}
+	start = {
+		production_efficiency = 0.10
+	}
+
+	pennsylvanian_tolerant_quakers = {
+		tolerance_heretic = 2
+		tolerance_heathen = 1
+	}
+
+	pennsylvanian_pennsylvania_steel = {
+		build_cost = -0.1
+	}
+
+	pennsylvanian_birthplace_of_the_united_states = {
+		prestige = 0.5
+	}
+
+	pennsylvanian_early_abolitionists = {
+		loyalty_change_on_revoked = 0.05
+	}
+
+	pennsylvanian_railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	pennsylvanian_valiant_troops = {
+		discipline = 0.05
+	}
+
+	pennsylvanian_investments_in_healthcare = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	bonus = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+}
+
+rhode_islander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XRI
+		}
+	}
+	start = {
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	rhode_islander_first_revolutionaries = {
+		envoy_travel_time = -0.2
+		reform_progress_growth = 0.1
+	}
+
+	rhode_islander_local_government = {
+		global_unrest = -1
+	}
+
+	rhode_islander_busy_port_cities = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	rhode_islander_birthplace_of_the_american_industrial_revolution = {
+		global_institution_spread = 0.25
+	}
+
+	rhode_islander_a_well_funded_state = {
+		global_tax_modifier = 0.10
+	}
+
+	rhode_islander_yankee_melting_pot = {
+		num_accepted_cultures = 1
+	}
+
+	rhode_islander_humble_yet_mighty = {
+		naval_forcelimit_modifier = 0.075
+		land_forcelimit_modifier = 0.075
+	}
+
+	bonus = {
+		free_dip_policy = 1
+	}
+}
+
+south_carolinan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XSC
+		}
+	}
+	start = {
+		drill_gain_modifier = 0.10
+	}
+
+	south_carolinan_legacy_of_john_c_calhoun = {
+		same_culture_advisor_cost = -0.2
+	}
+
+	south_carolinan_the_matchstick_of_the_civil_war = {
+		manpower_in_accepted_culture_provinces = 0.15
+	}
+
+	south_carolinan_medical_research = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	south_carolinan_agricultural_innovations = {
+		production_efficiency = 0.10
+	}
+
+	south_carolinan_organized_militias = {
+		infantry_cost = -0.10
+	}
+
+	south_carolinan_the_caning_of_charles_sumner = {
+		power_projection_from_insults = 1.0
+	}
+
+	south_carolinan_a_developers_dream = {
+		local_development_cost = -0.15
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.10
+	}
+}
+
+tennessean_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XTN
+		}
+	}
+	start = {
+		advisor_cost = -0.1
+	}
+
+	tennessean_tennessee_river_trade = {
+		trade_steering = 0.1
+	}
+
+	tennessean_smoky_mountains = {
+		defensiveness = 0.10
+	}
+
+	tennessean_music_city = {
+		culture_conversion_cost = -0.25
+		prestige = 0.5
+	}
+
+	tennessean_tennessee_valley_authority = {
+		great_project_upgrade_cost = -0.25
+		great_project_upgrade_time = -0.25
+		build_cost = -0.1
+	}
+
+	tennessean_defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	tennessean_bible_belt_values = {
+		global_missionary_strength = 0.02
+		tolerance_own = 1.0
+	}
+
+	tennessean_tennessee_volunteers = {
+		land_forcelimit_modifier = 0.33
+	}
+
+	bonus = {
+		administrative_efficiency = 0.05
+	}
+}
+
+vermonter_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XVT
+		}
+	}
+	start = {
+		rival_border_fort_maintenance = -0.25
+	}
+
+	vermonter_early_abolitionists = {
+		loyalty_change_on_revoked = 0.05
+	}
+
+	vermonter_maple_syrup_production = {
+		global_unrest = -1
+	}
+
+	vermonter_hydropower = {
+		production_efficiency = 0.10
+	}
+
+	vermonter_environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	vermonter_vermont_progressives = {
+		reform_progress_growth = 0.2
+		diplomatic_reputation = 1
+	}
+
+	vermonter_investments_in_healthcare = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	vermonter_green_mountains = {
+		defensiveness = 0.10
+	}
+
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+}
+
+virginian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XVA
+		}
+	}
+	start = {
+		dip_advisor_cost = -0.1
+	}
+
+	virginian_virginia_planters = {
+		production_efficiency = 0.1
+	}
+
+	virginian_the_byrd_machine = {
+		same_culture_advisor_cost = -0.1
+		tolerance_own = 1
+	}
+
+	virginian_tidewater_traditions = {
+		naval_forcelimit_modifier = 0.1
+		global_sailors_modifier = 0.1
+	}
+
+	virginian_legacy_of_robert_e_lee = {
+		leader_land_shock = 1
+		leader_land_manuever = 1
+		army_tradition_decay = -0.01
+	}
+
+	virginian_information_networks = {
+		innovativeness_gain = 0.5
+	}
+
+	virginian_newport_news_shipbuilding = {
+		global_ship_cost = -0.1
+		global_ship_recruit_speed = -0.1
+	}
+
+	virginian_the_virginia_dynasty = {
+		administrative_efficiency = 0.1
+		prestige = 0.25
+	}
+
+	bonus = {
+		governing_capacity_modifier = 0.1
+	}
+}
+
+west_virginian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XWV
+		}
+	}
+	start = {
+		fabricate_claims_cost = -0.2
+	}
+
+	west_virginian_coal_mining = {
+		production_efficiency = 0.1
+	}
+
+	west_virginian_loyalty_to_the_union = {
+		imperial_authority = 0.025
+		loyalty_change_on_revoked = 0.05
+	}
+
+	west_virginian_worker_protections = {
+		global_prosperity_growth = 0.1
+	}
+
+	west_virginian_appalachian_resilience = {
+		war_exhaustion = -0.05
+	}
+
+	west_virginian_country_roads = {
+		movement_speed = 0.1
+		envoy_travel_time = -0.2
+	}
+
+	west_virginian_military_tradition = {
+		army_tradition_decay = -0.01
+	}
+
+	west_virginian_montani_semper_liberi = {
+		defensiveness = 0.15
+		stability_cost_modifier = -0.25
+	}
+
+	bonus = {
+		artillery_cost = -0.10
+	}
+}

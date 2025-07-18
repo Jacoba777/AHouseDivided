@@ -1,0 +1,29 @@
+capital="Salem"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=4
+base_production=4
+base_manpower=3
+native_size=110
+native_ferocity=5
+native_hostileness=3
+religion=methodist
+culture=culture_philadelphian
+is_city = yes
+owner=JSM
+add_core=JSM
+add_core=PHL
+controller=JSM
+
+1444.11.12 = {
+	base_tax=1
+	base_production=2
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

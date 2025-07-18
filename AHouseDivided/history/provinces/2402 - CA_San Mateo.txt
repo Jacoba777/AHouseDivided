@@ -1,0 +1,29 @@
+capital="Redwood City"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=11
+base_production=11
+base_manpower=9
+native_size=310
+native_ferocity=5
+native_hostileness=3
+religion=atheist
+culture=culture_bay_area
+is_city = yes
+owner=FFC
+add_core=FFC
+controller=FFC
+
+1444.11.12 = {
+	base_tax=54
+	base_production=62
+	base_manpower=18
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

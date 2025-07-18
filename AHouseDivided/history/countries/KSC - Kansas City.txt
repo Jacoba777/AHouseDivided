@@ -1,0 +1,7 @@
+technology_group = central_plains
+government = republic
+add_government_reform = american_republic
+government_rank = 1
+religion = baptist
+primary_culture = culture_kc_kansan
+capital = 1649

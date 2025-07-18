@@ -1,0 +1,7 @@
+technology_group = lower_rockies
+government = republic
+add_government_reform = american_republic
+government_rank = 1
+religion = mormon
+primary_culture = culture_salt_laker
+capital = 3174

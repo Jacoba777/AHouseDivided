@@ -1,0 +1,111 @@
+missions_ma_western_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = PFD
+			tag = GFD
+			tag = NHT
+			tag = HPD
+			tag = WOR
+		}
+	}
+
+	mission_ma_western_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_ma_western_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ma_western_fielding_an_army }
+		trigger = {
+			area_ma_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ma_western_unite_the_west = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ma_western_local_feuds }
+		trigger = {
+			area_ma_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_ma_boston = { add_permanent_claim = ROOT }
+			472 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ma_western_conquer_boston = {
+		icon = mission_bto
+		position = 4
+		required_missions = { mission_ma_western_unite_the_west }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			472 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+				province_id = 472
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

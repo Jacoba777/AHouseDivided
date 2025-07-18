@@ -1,0 +1,31 @@
+capital="Columbia"
+discovered_by = central_plains
+discovered_by = great_lakes
+discovered_by = miss_delta
+discovered_by = appalachia
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_mid_missourian
+center_of_trade=1
+is_city = yes
+owner=CMY
+add_core=CMY
+controller=CMY
+
+1444.11.12 = {
+	base_tax=3
+	base_production=4
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XMO
+	add_core=XMO
+	controller=XMO
+}

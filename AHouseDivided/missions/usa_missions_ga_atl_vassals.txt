@@ -1,0 +1,435 @@
+missions_ga_atl_vassals_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CDT
+			tag = RME
+			tag = ATN
+			tag = THO
+			tag = LGG
+			tag = GSV
+			tag = CNL
+			tag = TCA
+		}
+	}
+
+	mission_ga_atl_vassals_the_peach_wars = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ga_atl_vassals_quelling_the_rebellions }
+		trigger = {
+			area_ga_north_presidential = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_central_presidental = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_columbus = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_central_heartland = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_macon = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_south_heartland = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_east_heartland = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_north_heartland = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_north_classic = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_north_presidential
+				area = area_ga_central_presidental
+				area = area_ga_columbus
+				area = area_ga_central_heartland
+				area = area_ga_macon
+				area = area_ga_south_heartland
+				area = area_ga_east_heartland
+				area = area_ga_north_heartland
+				area = area_ga_north_classic
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_ga_atl_vassals_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CDT
+			tag = RME
+			tag = ATN
+			tag = THO
+			tag = LGG
+			tag = GSV
+			tag = CNL
+			tag = TCA
+		}
+	}
+
+	mission_ga_atl_vassals_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_thriving_arms_industry
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_ga_atl_vassals_declare_independence = {
+		icon = mission_constitution
+		position = 2
+		required_missions = { mission_ga_atl_vassals_fielding_an_army }
+		trigger = {
+            is_subject = no
+ 		}
+		effect = {
+			area_ga_atlanta = { add_permanent_claim = ROOT }
+			area_ga_west_atlanta = { add_permanent_claim = ROOT }
+			area_ga_south_atlanta = { add_permanent_claim = ROOT }
+			area_ga_north_atlanta = { add_permanent_claim = ROOT }
+			ATL = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_ga_atl_vassals_david_and_goliath = {
+		icon = mission_atl
+		position = 3
+		required_missions = { mission_ga_atl_vassals_declare_independence }
+		trigger = {
+			area_ga_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_west_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_west_atlanta
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_atl_vassals_quelling_the_rebellions = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ga_atl_vassals_david_and_goliath }
+		trigger = {
+			area_ga_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_west_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ga_north_presidential = { add_permanent_claim = ROOT }
+			area_ga_central_presidental = { add_permanent_claim = ROOT }
+			area_ga_columbus = { add_permanent_claim = ROOT }
+			area_ga_central_heartland = { add_permanent_claim = ROOT }
+			area_ga_macon = { add_permanent_claim = ROOT }
+			area_ga_south_heartland = { add_permanent_claim = ROOT }
+			area_ga_east_heartland = { add_permanent_claim = ROOT }
+			area_ga_north_heartland = { add_permanent_claim = ROOT }
+			area_ga_north_classic = { add_permanent_claim = ROOT }
+			area_ga_west_high_country = { add_permanent_claim = ROOT }
+			area_ga_north = { add_permanent_claim = ROOT }
+			area_ga_northeast = { add_permanent_claim = ROOT }
+			area_ga_east_high_country = { add_permanent_claim = ROOT }
+			area_ga_far_east_high_country = { add_permanent_claim = ROOT }
+			area_ga_north_atlanta = { add_permanent_claim = ROOT }
+			area_ga_west_atlanta = { add_permanent_claim = ROOT }
+			area_ga_central_high_country = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_west_atlanta
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_ga_atl_vassals_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CDT
+			tag = RME
+			tag = ATN
+			tag = THO
+			tag = LGG
+			tag = GSV
+			tag = CNL
+			tag = TCA
+		}
+	}
+
+	mission_ga_atl_vassals_high_country_campaign = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ga_atl_vassals_quelling_the_rebellions }
+		trigger = {
+			area_ga_north = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_central_high_country = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_far_east_high_country = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_north
+				area = area_ga_northeast
+				area = area_ga_central_high_country
+				area = area_ga_far_east_high_country
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_atl_vassals_develop_the_northeast = {
+		icon = mission_early_game_buildings
+		position = 6
+		required_missions = { mission_ga_atl_vassals_high_country_campaign }
+		trigger = {
+			area_ga_far_east_high_country = { type = all  num_of_times_improved_by_owner = 4 }
+ 		}
+		effect = {
+			area_ga_augusta = { add_permanent_claim = ROOT }
+			309 = { add_permanent_claim = ROOT }
+            309 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+    
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_ga_far_east_high_country
+					NOT = { num_of_times_improved_by_owner =  4}
+				}
+			}
+		}
+	}
+
+	mission_ga_atl_vassals_invade_augusta = {
+		icon = mission_aga
+		position = 7
+		required_missions = { mission_ga_atl_vassals_develop_the_northeast }
+		trigger = {
+			area_ga_augusta = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_augusta
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_ga_atl_vassals_incorporate_augusta = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_ga_atl_vassals_invade_augusta }
+		trigger = {
+			area_ga_augusta = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_ga_savannah = { add_permanent_claim = ROOT }
+			area_ga_east_magenta = { add_permanent_claim = ROOT }
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_augusta
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_ga_atl_vassals_march_to_the_sea = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_ga_atl_vassals_incorporate_augusta }
+		trigger = {
+			area_ga_savannah = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_east_magenta = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_sc_thoroughbred = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_sc_lowcountry = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_savannah
+				area = area_ga_east_magenta
+				area = area_sc_thoroughbred
+				area = area_sc_lowcountry
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+}

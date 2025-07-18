@@ -1,0 +1,29 @@
+capital="Crown Point"
+discovered_by = great_lakes
+discovered_by = appalachia
+hre = no
+base_tax=7
+base_production=7
+base_manpower=8
+native_size=220
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_chicagolander
+center_of_trade=1
+is_city = yes
+owner=CCG
+add_core=CCG
+controller=CCG
+
+1444.11.12 = {
+	base_tax=7
+	base_production=9
+	base_manpower=12
+}
+
+1444.11.13 = {
+	owner=XIN
+	add_core=XIN
+	controller=XIN
+}

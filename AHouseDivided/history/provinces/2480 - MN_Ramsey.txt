@@ -1,0 +1,31 @@
+capital="Saint Paul"
+discovered_by = northern_plains
+discovered_by = great_lakes
+discovered_by = central_plains
+hre = no
+base_tax=8
+base_production=9
+base_manpower=8
+native_size=250
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_minnea_paulite
+center_of_trade=2
+is_city = yes
+owner=STP
+add_core=STP
+controller=STP
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=13
+	base_production=16
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XMN
+	add_core=XMN
+	controller=XMN
+}

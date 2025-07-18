@@ -1,0 +1,29 @@
+capital="Everett"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=10
+base_production=9
+base_manpower=9
+native_size=280
+native_ferocity=5
+native_hostileness=4
+religion=atheist
+culture=culture_puget
+is_city = yes
+owner=SEA
+add_core=SEA
+controller=SEA
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=27
+	base_production=18
+	base_manpower=20
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

@@ -1,0 +1,30 @@
+capital="Cripple Creek"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=3
+base_production=1
+base_manpower=1
+native_size=50
+native_ferocity=2
+native_hostileness=2
+religion=nondenominational
+culture=culture_springs_coloradan
+is_city = yes
+owner=COS
+add_core=COS
+controller=COS
+
+1444.11.12 = {
+	base_tax=1
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

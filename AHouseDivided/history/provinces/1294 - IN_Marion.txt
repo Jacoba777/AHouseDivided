@@ -1,0 +1,30 @@
+capital="Indianapolis"
+discovered_by = great_lakes
+discovered_by = appalachia
+hre = no
+base_tax=8
+base_production=10
+base_manpower=9
+native_size=270
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_indianapolitan
+center_of_trade=2
+is_city = yes
+owner=IDP
+add_core=IDP
+controller=IDP
+trade_goods=drugs
+
+1444.11.12 = {
+	base_tax=14
+	base_production=39
+	base_manpower=23
+}
+
+1444.11.13 = {
+	owner=XIN
+	add_core=XIN
+	controller=XIN
+}

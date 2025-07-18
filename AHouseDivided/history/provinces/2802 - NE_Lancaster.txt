@@ -1,0 +1,32 @@
+capital="Lincoln"
+discovered_by = central_plains
+discovered_by = upper_rockies
+discovered_by = northern_plains
+discovered_by = lower_rockies
+hre = no
+base_tax=7
+base_production=7
+base_manpower=7
+native_size=210
+native_ferocity=5
+native_hostileness=4
+religion=lutheran
+culture=culture_lincolnite
+center_of_trade=2
+is_city = yes
+owner=LNC
+add_core=LNC
+controller=LNC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=6
+	base_production=8
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XNE
+	add_core=XNE
+	controller=XNE
+}

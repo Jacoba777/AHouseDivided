@@ -1,0 +1,30 @@
+capital="Newport"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=7
+base_production=5
+base_manpower=5
+native_size=170
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_providencial
+is_city = yes
+owner=NPT
+add_core=NPT
+add_core=PVD
+controller=NPT
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XRI
+	add_core=XRI
+	controller=XRI
+}

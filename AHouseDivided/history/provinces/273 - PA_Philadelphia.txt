@@ -1,0 +1,31 @@
+capital="Philadelphia"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=10
+base_manpower=10
+native_size=300
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_philadelphian
+center_of_trade=2
+is_city = yes
+owner=PHL
+add_core=PHL
+controller=PHL
+
+1444.11.12 = {
+	base_tax=29
+	base_production=40
+	base_manpower=37
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

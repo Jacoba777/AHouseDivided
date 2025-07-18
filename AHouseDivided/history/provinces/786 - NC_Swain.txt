@@ -1,0 +1,28 @@
+capital="Bryson City"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_blue_ridge
+is_city = yes
+owner=CLW
+add_core=CLW
+controller=CLW
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

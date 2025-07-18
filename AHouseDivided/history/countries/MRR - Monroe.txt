@@ -1,0 +1,7 @@
+technology_group = miss_delta
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = baptist
+primary_culture = culture_north_louisianan
+capital = 1197

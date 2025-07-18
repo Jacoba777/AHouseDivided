@@ -1,0 +1,30 @@
+capital="Arlington"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=9
+base_manpower=7
+native_size=260
+native_ferocity=5
+native_hostileness=3
+religion=methodist
+culture=culture_potomac
+is_city = yes
+owner=ARG
+add_core=ARG
+controller=ARG
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=28
+	base_production=20
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

@@ -1,0 +1,31 @@
+capital="San Diego"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=13
+base_production=12
+base_manpower=12
+native_size=370
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_san_diegan
+center_of_trade=2
+is_city = yes
+owner=SDG
+add_core=SDG
+controller=SDG
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=153
+	base_production=97
+	base_manpower=79
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

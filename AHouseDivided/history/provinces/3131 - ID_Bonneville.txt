@@ -1,0 +1,31 @@
+capital="Idaho Falls"
+discovered_by = upper_rockies
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=mormon
+culture=culture_falls_idahoan
+center_of_trade=1
+is_city = yes
+owner=IDF
+add_core=IDF
+controller=IDF
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XID
+	add_core=XID
+	controller=XID
+}

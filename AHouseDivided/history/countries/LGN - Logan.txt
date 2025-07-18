@@ -1,0 +1,7 @@
+technology_group = lower_rockies
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = mormon
+primary_culture = culture_teton
+capital = 3169

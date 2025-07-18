@@ -1,0 +1,29 @@
+capital="Harrisonburg"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=methodist
+culture=culture_highlander
+is_city = yes
+owner=HRS
+add_core=HRS
+controller=HRS
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

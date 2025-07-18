@@ -1,0 +1,25 @@
+capital="Grants"
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = texas
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_burqueno
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XNM
+	add_core=XNM
+	controller=XNM
+}

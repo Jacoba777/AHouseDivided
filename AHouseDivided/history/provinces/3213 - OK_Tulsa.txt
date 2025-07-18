@@ -1,0 +1,32 @@
+capital="Tulsa"
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = miss_delta
+discovered_by = lower_rockies
+hre = no
+base_tax=8
+base_production=9
+base_manpower=9
+native_size=260
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_tulsan
+center_of_trade=2
+is_city = yes
+owner=TSA
+add_core=TSA
+controller=TSA
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=12
+	base_production=16
+	base_manpower=16
+}
+
+1444.11.13 = {
+	owner=XOK
+	add_core=XOK
+	controller=XOK
+}

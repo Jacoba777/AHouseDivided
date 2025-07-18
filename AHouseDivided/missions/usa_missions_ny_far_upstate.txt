@@ -1,0 +1,432 @@
+missions_ny_far_upstate_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GSF
+			tag = GLV
+			tag = AMS
+			tag = UTI
+			tag = WTR
+			tag = ODB
+			tag = MLN
+			tag = PTB
+		}
+	}
+
+	mission_ny_far_upstate_approaching_albany = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ny_far_upstate_a_respectable_state }
+		trigger = {
+
+ 		}
+		effect = {
+			area_ny_mohawk_valley = { add_permanent_claim = ROOT }
+			area_ny_glens_falls = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_far_upstate_integrating_the_albanians = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_ny_far_upstate_approaching_albany }
+		trigger = {
+			accepted_culture = culture_albanian
+ 		}
+		effect = {
+			area_ny_albany = { add_permanent_claim = ROOT }
+			area_ny_eastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_far_upstate_retaking_the_old_capital = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ny_far_upstate_integrating_the_albanians }
+		trigger = {
+			area_ny_albany = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_albany
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_far_upstate_administering_a_capital = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_ny_far_upstate_retaking_the_old_capital }
+		trigger = {
+			area_ny_albany = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_ny_hudson_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_albany
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_far_upstate_the_hudson_campaign = {
+		icon = mission_se_along_the_river
+		position = 8
+		required_missions = { mission_ny_far_upstate_administering_a_capital }
+		trigger = {
+			area_ny_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ny_lower_hudson_valley = { add_permanent_claim = ROOT }
+			755 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_hudson_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_far_upstate_biting_the_big_apple = {
+		icon = mission_statue_of_liberty
+		position = 9
+		required_missions = { mission_ny_far_upstate_the_hudson_campaign }
+		trigger = {
+			area_ny_lower_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			755 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_lower_hudson_valley
+				province_id = 755
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ny_far_upstate_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GSF
+			tag = GLV
+			tag = AMS
+			tag = UTI
+			tag = WTR
+			tag = ODB
+			tag = MLN
+			tag = PTB
+		}
+	}
+
+	mission_ny_far_upstate_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_ny_far_upstate_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ny_far_upstate_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_far_upstate_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ny_far_upstate_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_ny_north_country = { add_permanent_claim = ROOT }
+			area_ny_mohawk_valley = { add_permanent_claim = ROOT }
+			area_ny_glens_falls = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_ny_far_upstate_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GSF
+			tag = GLV
+			tag = AMS
+			tag = UTI
+			tag = WTR
+			tag = ODB
+			tag = MLN
+			tag = PTB
+		}
+	}
+
+	mission_ny_far_upstate_king_of_the_north = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ny_far_upstate_a_respectable_state }
+		trigger = {
+			area_ny_north_country = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ny_mohawk_valley = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ny_syracuse = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_north_country
+				area = area_ny_mohawk_valley
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_far_upstate_seize_syracuse = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ny_far_upstate_king_of_the_north }
+		trigger = {
+			area_ny_syracuse = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_syracuse
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_far_upstate_the_port_of_oswego = {
+		icon = toulon_dockyards
+		position = 6
+		required_missions = { mission_ny_far_upstate_seize_syracuse }
+		trigger = {
+            703 = {
+                base_production = 8
+                has_building = shipyard
+                has_building = marketplace
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_shipbuilding_boom
+				duration = 3650  # 10 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 703
+		}
+	}
+
+	mission_ny_far_upstate_an_upstate_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 7
+		required_missions = { mission_ny_far_upstate_the_port_of_oswego }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+			area_ny_rochester = { add_permanent_claim = ROOT }
+			area_ny_finger_lakes = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_far_upstate_conquer_rochester = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_ny_far_upstate_an_upstate_navy }
+		trigger = {
+			area_ny_rochester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_finger_lakes = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_rochester
+				area = area_ny_finger_lakes
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_far_upstate_of_flowers_and_flours = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_ny_far_upstate_conquer_rochester }
+		trigger = {
+			accepted_culture = culture_rochesterite
+ 		}
+		effect = {
+			area_ny_buffalo = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_far_upstate_capturing_buffalo = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_ny_far_upstate_of_flowers_and_flours }
+		trigger = {
+			area_ny_buffalo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_buffalo
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,31 @@
+capital="Virginia City"
+discovered_by = california
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = upper_rockies
+discovered_by = pacific_nw
+hre = no
+base_tax=1
+base_production=3
+base_manpower=1
+native_size=50
+native_ferocity=10
+native_hostileness=2
+religion=presbyterian
+culture=culture_renoite
+is_city = yes
+owner=REN
+add_core=REN
+controller=REN
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XNV
+	add_core=XNV
+	controller=XNV
+}

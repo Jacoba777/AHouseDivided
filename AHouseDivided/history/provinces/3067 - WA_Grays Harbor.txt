@@ -1,0 +1,28 @@
+capital="Montesano"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=3
+base_production=3
+base_manpower=4
+native_size=100
+native_ferocity=5
+native_hostileness=5
+religion=nondenominational
+culture=culture_olympic
+is_city = yes
+owner=OLY
+add_core=OLY
+controller=OLY
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

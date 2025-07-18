@@ -1,0 +1,28 @@
+capital="Jasper"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=3
+base_production=1
+base_manpower=2
+native_size=60
+native_ferocity=2
+native_hostileness=4
+religion=baptist
+culture=culture_north_georgia
+is_city = yes
+owner=ATL
+add_core=ATL
+controller=ATL
+
+1444.11.12 = {
+	base_tax=1
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

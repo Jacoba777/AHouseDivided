@@ -1,0 +1,29 @@
+capital="Jacksonville"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=4
+base_production=6
+base_manpower=6
+native_size=160
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_lowlander
+is_city = yes
+owner=OSW
+add_core=OSW
+controller=OSW
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=1
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

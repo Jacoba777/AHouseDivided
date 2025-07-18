@@ -1,0 +1,29 @@
+capital="Winston-Salem"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=7
+base_production=8
+base_manpower=7
+native_size=220
+native_ferocity=6
+native_hostileness=4
+religion=methodist
+culture=culture_greensboro
+center_of_trade=1
+is_city = yes
+owner=WSN
+add_core=WSN
+controller=WSN
+
+1444.11.12 = {
+	base_tax=7
+	base_production=10
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

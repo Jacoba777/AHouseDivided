@@ -1,0 +1,32 @@
+capital="Chattanooga"
+discovered_by = appalachia
+discovered_by = southeast
+discovered_by = central_plains
+discovered_by = miss_delta
+hre = no
+base_tax=7
+base_production=8
+base_manpower=7
+native_size=220
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_chattanoogan
+center_of_trade=2
+is_city = yes
+owner=CTN
+add_core=CTN
+controller=CTN
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=11
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XTN
+	add_core=XTN
+	controller=XTN
+}

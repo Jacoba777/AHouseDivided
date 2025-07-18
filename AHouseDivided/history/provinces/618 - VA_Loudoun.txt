@@ -1,0 +1,30 @@
+capital="Leesburg"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=8
+base_manpower=8
+native_size=260
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_potomac
+center_of_trade=1
+is_city = yes
+owner=LEE
+add_core=LEE
+controller=LEE
+
+1444.11.12 = {
+	base_tax=33
+	base_production=13
+	base_manpower=11
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

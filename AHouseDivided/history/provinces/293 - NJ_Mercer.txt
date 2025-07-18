@@ -1,0 +1,29 @@
+capital="Trenton"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=8
+base_production=9
+base_manpower=7
+native_size=240
+native_ferocity=6
+native_hostileness=3
+religion=catholic
+culture=culture_central_jersey
+center_of_trade=1
+is_city = yes
+owner=TRN
+add_core=TRN
+controller=TRN
+
+1444.11.12 = {
+	base_tax=14
+	base_production=16
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

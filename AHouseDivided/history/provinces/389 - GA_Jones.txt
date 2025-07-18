@@ -1,0 +1,28 @@
+capital="Gray"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=1
+base_manpower=1
+native_size=40
+native_ferocity=3
+native_hostileness=3
+religion=baptist
+culture=culture_maconite
+is_city = yes
+owner=MCN
+add_core=MCN
+controller=MCN
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

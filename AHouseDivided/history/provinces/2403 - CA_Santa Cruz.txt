@@ -1,0 +1,29 @@
+capital="Santa Cruz"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=8
+base_production=7
+base_manpower=6
+native_size=210
+native_ferocity=4
+native_hostileness=3
+religion=atheist
+culture=culture_bay_area
+is_city = yes
+owner=SAC
+add_core=SAC
+controller=SAC
+
+1444.11.12 = {
+	base_tax=14
+	base_production=6
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

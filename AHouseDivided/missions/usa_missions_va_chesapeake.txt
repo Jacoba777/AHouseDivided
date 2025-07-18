@@ -1,0 +1,423 @@
+missions_va_chesapeake_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RCH
+			tag = VAB
+			tag = NNK
+		}
+	}
+
+	mission_va_chesapeake_the_james_river_rivalry = {
+		icon = mission_luther_theses
+		position = 3
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = VAB
+				AND = {
+					exists = VAB
+					military_strength = {
+						who = VAB
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = VAB
+			}
+			OR = {
+				VAB = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				VAB = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = VAB }
+				tag = VAB
+			}
+			OR = {
+				is_rival = RCH
+				AND = {
+					exists = RCH
+					military_strength = {
+						who = RCH
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = RCH
+			}
+			OR = {
+				RCH = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				RCH = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = RCH }
+				tag = RCH
+			}
+ 		}
+		effect = {
+			area_va_richmond = { add_permanent_claim = ROOT }
+			area_va_south_richmond = { add_permanent_claim = ROOT }
+			area_va_southeastern = { add_permanent_claim = ROOT }
+			area_va_virginia_beach = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_chesapeake_incorporate_lynchburg = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_va_chesapeake_into_piedmont }
+		trigger = {
+			area_va_lynchburg = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_roanoke = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_lynchburg
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_chesapeake_capture_roanoke = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_va_chesapeake_incorporate_lynchburg }
+		trigger = {
+			area_va_roanoke = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_roanoke
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_chesapeake_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RCH
+			tag = VAB
+			tag = NNK
+		}
+	}
+
+	mission_va_chesapeake_unite_the_chesapeake = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_chesapeake_the_james_river_rivalry mission_va_chesapeake_build_a_navy }
+		trigger = {
+			area_va_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_south_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_virginia_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_south_richmond
+				area = area_va_southeastern
+				area = area_va_virginia_beach
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_chesapeake_peace_on_the_chesapeake = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_va_chesapeake_unite_the_chesapeake }
+		trigger = {
+			area_va_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_virginia_beach = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_goochland = { add_permanent_claim = ROOT }
+			area_va_central = { add_permanent_claim = ROOT }
+			area_va_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_virginia_beach
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_chesapeake_conquer_the_center = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_chesapeake_peace_on_the_chesapeake }
+		trigger = {
+			area_va_goochland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 0.75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_goochland
+				area = area_va_central
+				area = area_va_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_chesapeake_develop_central_virginia = {
+		icon = mission_early_game_buildings
+		position = 7
+		required_missions = { mission_va_chesapeake_conquer_the_center }
+		trigger = {
+			area_va_central = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_va_charlottesville = { add_permanent_claim = ROOT }
+			area_va_lynchburg = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_va_central
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_va_chesapeake_into_piedmont = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_va_chesapeake_develop_central_virginia }
+		trigger = {
+			area_va_charlottesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_lynchburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_charlottesville
+				area = area_va_lynchburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_chesapeake_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RCH
+			tag = VAB
+			tag = NNK
+		}
+	}
+
+	mission_va_chesapeake_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_va_northern_neck = { add_permanent_claim = ROOT }
+			area_va_middle_peninsula = { add_permanent_claim = ROOT }
+			area_va_east_richmond = { add_permanent_claim = ROOT }
+			area_va_peninsulas = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_chesapeake_peninsular_warfare = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_va_chesapeake_fielding_an_army }
+		trigger = {
+			area_va_northern_neck = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_middle_peninsula = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_east_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_peninsulas = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern_neck
+				area = area_va_middle_peninsula
+				area = area_va_east_richmond
+				area = area_va_peninsulas
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_chesapeake_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 3
+		required_missions = { mission_va_chesapeake_peninsular_warfare }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+            if = {
+                limit = { NOT = { navy_tradition = 40 } }
+                create_admiral = { tradition = 40 }
+            }
+            else_if = {
+                limit = { NOT = { navy_tradition = 60 } }
+                create_admiral = { tradition = 60 }
+            }
+            else_if = {
+                limit = { NOT = { navy_tradition = 80 } }
+                create_admiral = { tradition = 80 }
+            }
+            else = {
+                create_admiral = { tradition = 100 }
+            }
+			add_country_modifier = {
+				name = country_modifier_naval_enthusiasm
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_va_chesapeake_stabilize_charlottesville = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_va_chesapeake_into_piedmont }
+		trigger = {
+			area_va_charlottesville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_harrisonburg = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_charlottesville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_chesapeake_the_highland_campaign = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_va_chesapeake_stabilize_charlottesville }
+		trigger = {
+			area_va_harrisonburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_harrisonburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

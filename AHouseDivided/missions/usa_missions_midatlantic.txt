@@ -1,0 +1,846 @@
+missions_midatlantic_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MTL }
+
+	mission_midatlantic_conquer_connecticut = {
+		icon = mission_ct
+		position = 3
+		required_missions = { mission_midatlantic_ambitions_of_new_york }
+		trigger = {
+			region_ct = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			region_ri = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			region_ma = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ct
+				region = region_ri
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_the_fate_of_the_pilgrims = {
+		icon = mission_ma
+		position = 4
+		required_missions = { mission_midatlantic_conquer_connecticut }
+		trigger = {
+			region_ma = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ma
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_the_city_on_a_hill = {
+		icon = mission_bto
+		position = 5
+		required_missions = { mission_midatlantic_the_fate_of_the_pilgrims }
+		trigger = {
+			area_ma_boston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+            continent_northeast = {
+                limit = {
+                    culture_group = culture_group_maritime_new_england
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_the_chowder_wars = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_midatlantic_the_city_on_a_hill }
+		trigger = {
+            continent_northeast = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_group_maritime_new_england }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_midatlantic_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MTL }
+
+	mission_midatlantic_ambitions_of_new_york = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_midatlantic_stabilize_the_midatlantic }
+		trigger = {
+			region_ny = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_ct = { add_permanent_claim = ROOT }
+			region_ri = { add_permanent_claim = ROOT }
+			region_vt = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ny
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_invade_vermont = {
+		icon = mission_vt
+		position = 3
+		required_missions = { mission_midatlantic_ambitions_of_new_york }
+		trigger = {
+			region_vt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_vt
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_developing_vermont = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_midatlantic_invade_vermont }
+		trigger = {
+			area_vt_burlington = { type = all  num_of_times_improved_by_owner = 3 }
+			area_vt_central = { type = all  num_of_times_improved_by_owner = 3 }
+			area_vt_northeastern = { type = all  num_of_times_improved_by_owner = 3 }
+ 		}
+		effect = {
+            continent_northeast = {
+                limit = {
+                    culture_group = culture_group_woodlands_new_england
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_vt_burlington
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+				AND = {
+					area = area_vt_central
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+				AND = {
+					area = area_vt_northeastern
+					NOT = { num_of_times_improved_by_owner =  3}
+				}
+			}
+		}
+	}
+
+	mission_midatlantic_battling_blizzards = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_midatlantic_developing_vermont }
+		trigger = {
+            continent_northeast = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_group_woodlands_new_england }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_woodland_inroads = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_midatlantic_battling_blizzards }
+		trigger = {
+            OR = {
+                accept_culture = culture_vermonter
+                accept_culture = culture_northampshirite
+                accept_culture = culture_north_mainer
+            }
+ 		}
+		effect = {
+			add_dip_power = 50
+		}
+
+	}
+
+	mission_midatlantic_the_full_ivy_league = {
+		icon = mission_early_modern_university
+		position = 7
+		required_missions = { mission_midatlantic_woodland_inroads mission_midatlantic_the_chowder_wars }
+		trigger = {
+            864 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            742 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            755 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            557 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            478 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            466 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            293 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+            273 = {
+                has_building = university
+                is_prosperous = yes
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_complete_ivy_league
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 864
+                province_id = 742
+                province_id = 755
+                province_id = 557
+                province_id = 478
+                province_id = 466
+                province_id = 293
+                province_id = 273
+            }
+            NOT = {
+                owned_by = ROOT
+                has_building = university
+            }
+		}
+	}
+}
+
+missions_midatlantic_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MTL }
+
+	mission_midatlantic_stabilize_the_midatlantic = {
+		icon = balance_the_estates
+		position = 1
+		required_missions = {  }
+		trigger = {
+            stability = 3
+            NOT = { rebel_progress_at_least = { value = 30 } }
+            NOT = { num_of_rebel_armies = 1 }
+            NOT = { num_of_rebel_controlled_provinces = 1 }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 3650  # 10 years
+			}
+		}
+
+	}
+
+	mission_midatlantic_the_keystone_compact = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_midatlantic_stabilize_the_midatlantic }
+		trigger = {
+			region_pa = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+            region_va = {
+                limit = {
+                    culture_group = culture_group_allegheny
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            region_wv = {
+                limit = {
+                    culture_group = culture_group_allegheny
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_pa
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_symbols_of_liberty = {
+		icon = mission_statue_of_liberty
+		position = 3
+		required_missions = {  }
+		trigger = {
+            505 = {
+                has_great_project = {
+                    type = white_house
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+            755 = {
+                has_great_project = {
+                    type = statue_of_liberty
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+            273 = {
+                has_great_project = {
+                    type = independence_hall
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_symbols_of_liberty
+				duration = 10950  # 30 years
+			}
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 505
+                province_id = 755
+                province_id = 273
+            }
+		}
+	}
+
+	mission_midatlantic_connected_by_rail = {
+		icon = mission_railroad
+		position = 4
+		required_missions = { mission_midatlantic_symbols_of_liberty }
+		trigger = {
+            num_of_times_used_transfer_development = 5
+            num_of_owned_provinces_with = {
+                value = 15
+                num_of_times_expanded_infrastructure = 1
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_infrastructure_projects
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            owned_by = ROOT
+            NOT = { num_of_times_expanded_infrastructure = 1 }
+		}
+	}
+
+	mission_midatlantic_the_religious_question = {
+		icon = wars_of_religion
+		position = 5
+		required_missions = { mission_midatlantic_connected_by_rail }
+		trigger = {
+            OR = {
+                religion = secular
+                religious_unity = 0.99
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_religious_peace
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 471
+		}
+	}
+
+	mission_midatlantic_the_financial_titan = {
+		icon = mission_war_chest
+		position = 6
+		required_missions = { mission_midatlantic_the_religious_question }
+		trigger = {
+            all_country = {
+                NOT = { monthly_income = ROOT }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_financial_titan
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_midatlantic_acela_trade_empire = {
+		icon = mission_mal_riches_of_trade
+		position = 7
+		required_missions = { mission_midatlantic_the_financial_titan }
+		trigger = {
+            755 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # NYC
+            471 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Boston
+            505 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Boston
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_acela_trade_empire
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_midatlantic_the_cradle_of_democracy = {
+		icon = mission_constitution
+		position = 8
+		required_missions = { mission_midatlantic_acela_trade_empire mission_midatlantic_the_full_ivy_league mission_midatlantic_dominate_old_dominion }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_cradle_of_democracy
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_midatlantic_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MTL }
+
+	mission_midatlantic_midatlantic_promises = {
+		icon = mission_diplomatic_relation
+		position = 2
+		required_missions = { mission_midatlantic_stabilize_the_midatlantic }
+		trigger = {
+            OR = {
+                AND = {
+                    culture_group = culture_group_mid_atlantic
+                    government_rank = 3
+                }
+                AND = {
+                    accepted_culture = culture_nyc
+                    accepted_culture = culture_potomac
+                    accepted_culture = culture_philadelphian
+                }
+            }
+ 		}
+		effect = {
+            continent_northeast = {
+                limit = {
+                    culture_group = culture_group_mid_atlantic
+                    NOT = { owned_by = ROOT }
+                }
+                add_core = ROOT
+            }
+            region_va = {
+                limit = {
+                    culture_group = culture_group_mid_atlantic
+                    NOT = { owned_by = ROOT }
+                }
+                add_core = ROOT
+            }
+		}
+
+	}
+
+	mission_midatlantic_keeper_of_the_alleghenies = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_midatlantic_the_keystone_compact }
+		trigger = {
+            continent_northeast = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_allegheny }
+                    owned_by = ROOT
+                }
+            }
+            region_va = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_allegheny }
+                    owned_by = ROOT
+                }
+            }
+            region_wv = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_allegheny }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_master_of_morgantown = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_midatlantic_keeper_of_the_alleghenies }
+		trigger = {
+			area_wv_morgantown = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_wv = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_morgantown
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_appalachian_campaign = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_midatlantic_master_of_morgantown }
+		trigger = {
+			region_wv = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_wv
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_stabilize_charleston = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_midatlantic_appalachian_campaign }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_dominate_old_dominion = {
+		icon = mission_va
+		position = 7
+		required_missions = { mission_midatlantic_to_the_ridge mission_midatlantic_stabilize_charleston }
+		trigger = {
+			region_va = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_va
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_midatlantic_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MTL }
+
+	mission_midatlantic_control_the_corridor = {
+		icon = unite_the_realm
+		position = 3
+		required_missions = { mission_midatlantic_midatlantic_promises }
+		trigger = {
+            continent_northeast = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_group_mid_atlantic }
+                    owned_by = ROOT
+                }
+            }
+            region_va = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_group_mid_atlantic }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			area_va_richmond = { add_permanent_claim = ROOT }
+			area_va_east_richmond = { add_permanent_claim = ROOT }
+			area_va_south_richmond = { add_permanent_claim = ROOT }
+			area_va_virginia_beach = { add_permanent_claim = ROOT }
+			area_va_southeastern = { add_permanent_claim = ROOT }
+			area_va_peninsulas = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            culture_group = culture_group_mid_atlantic
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_the_heart_of_virginia = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_midatlantic_control_the_corridor }
+		trigger = {
+			area_va_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_east_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_south_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_east_richmond
+				area = area_va_south_richmond
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_midatlantic_incorporate_richmond = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_midatlantic_the_heart_of_virginia }
+		trigger = {
+			area_va_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+            region_va = {
+                limit = {
+                    culture = culture_central_virginian
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_midatlantic_to_the_ridge = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_midatlantic_incorporate_richmond }
+		trigger = {
+            region_va = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_central_virginian }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			region_va = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

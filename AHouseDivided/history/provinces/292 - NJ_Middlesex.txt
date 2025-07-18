@@ -1,0 +1,29 @@
+capital="New Brunswick"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=10
+base_manpower=9
+native_size=290
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_central_jersey
+is_city = yes
+owner=NBK
+add_core=NBK
+add_core=NYC
+controller=NBK
+
+1444.11.12 = {
+	base_tax=32
+	base_production=26
+	base_manpower=21
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

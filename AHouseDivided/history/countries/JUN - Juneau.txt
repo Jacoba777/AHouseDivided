@@ -1,0 +1,7 @@
+technology_group = alaska
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = atheist
+primary_culture = culture_panhandle_alaskan
+capital = 3346

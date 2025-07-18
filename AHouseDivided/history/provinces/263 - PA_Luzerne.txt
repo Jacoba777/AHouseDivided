@@ -1,0 +1,31 @@
+capital="Wilkes-Barre"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=6
+base_production=7
+base_manpower=7
+native_size=200
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_scrantonian
+is_city = yes
+owner=SCR
+add_core=SCR
+controller=SCR
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=3
+	base_production=6
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

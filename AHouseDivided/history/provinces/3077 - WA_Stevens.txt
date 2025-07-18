@@ -1,0 +1,24 @@
+capital="Colville"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=2
+base_production=1
+base_manpower=3
+native_size=60
+native_ferocity=3
+native_hostileness=6
+religion=nondenominational
+culture=culture_spokanite
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

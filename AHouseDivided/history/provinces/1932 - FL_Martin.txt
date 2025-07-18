@@ -1,0 +1,28 @@
+capital="Stuart"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=6
+base_production=6
+base_manpower=5
+native_size=170
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_lucie
+is_city = yes
+owner=LCI
+add_core=LCI
+controller=LCI
+
+1444.11.12 = {
+	base_tax=4
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

@@ -1,0 +1,7 @@
+technology_group = upper_rockies
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = nondenominational
+primary_culture = culture_cheyenne
+capital = 3167

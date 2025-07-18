@@ -1,0 +1,29 @@
+capital="Le Mars"
+discovered_by = central_plains
+discovered_by = great_lakes
+discovered_by = northern_plains
+hre = no
+base_tax=2
+base_production=2
+base_manpower=1
+native_size=50
+native_ferocity=5
+native_hostileness=2
+religion=lutheran
+culture=culture_sioux
+is_city = yes
+owner=SXC
+add_core=SXC
+controller=SXC
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XIA
+	add_core=XIA
+	controller=XIA
+}

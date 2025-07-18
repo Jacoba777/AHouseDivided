@@ -1,0 +1,29 @@
+capital="Belvidere"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=6
+base_production=4
+base_manpower=4
+native_size=140
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_hudsonian
+is_city = yes
+owner=BVD
+add_core=BVD
+add_core=ALN
+controller=BVD
+
+1444.11.12 = {
+	base_tax=4
+	base_production=2
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

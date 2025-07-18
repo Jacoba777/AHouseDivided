@@ -1,0 +1,562 @@
+culture_group_mid_atlantic = {
+	graphical_culture = westerngfx
+	
+	culture_philadelphian = { primary = PHL }
+	culture_delmarvan = { primary = XDE }
+	culture_hudsonian = { }
+	culture_nyc = { primary = NYC }
+	culture_central_jersey = { primary = TRN }
+	culture_potomac = { primary = WDC }
+	culture_baltimorean = { primary = BLR }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_appalachian = {
+	graphical_culture = westerngfx
+	
+	culture_north_georgia = { primary = GSV }
+	culture_kanahwa = { primary = CHW }
+	culture_upcountry = { primary = GRN }
+	culture_chattanoogan = { primary = CTN }
+	culture_ridge_virginian = { primary = ROA }
+	culture_cumberland = {}
+	culture_johnsonian = { primary = JSC }
+	culture_knoxvillian = { primary = KNX }
+	culture_scottsboro = { primary = SCT }
+	culture_blue_ridge = { primary = ASV }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_maritime_new_england = {
+	graphical_culture = westerngfx
+	
+	culture_providencial = { primary = XRI }
+	culture_connecticuter = { primary = XCT }
+	culture_bostonian = { primary = BTO }
+	culture_west_new_englander = {}
+	culture_portland_mainer = { primary = TPL }
+	culture_coastal_mainer = { primary = KBC }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_woodlands_new_england = {
+	graphical_culture = westerngfx
+	
+	culture_northampshirite = { primary = LCT }
+	culture_vermonter = { primary = XVT }
+	culture_north_mainer = {}
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_upstate = {
+	graphical_culture = westerngfx
+	
+	culture_upstater = { primary = UTI }
+	culture_syracusan = { primary = SYC }
+	culture_rochesterite = { primary = RCR }
+	culture_buffalonian = { primary = BUF }
+	culture_albanian = { primary = ABY }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_allegheny = {
+	graphical_culture = westerngfx
+	
+	culture_phittsburgher = { primary = PIT }
+	culture_morgantonian = { primary = MGT }
+	culture_allegheny = {}
+	culture_highlander = {}
+	culture_scrantonian = { primary = SCR }
+	culture_shanondoah = {}
+	culture_penn_dutch = { primary = HSB }
+	culture_allentonian = { primary = ALN }
+	culture_southern_tier = { primary = ITH }
+	culture_hollerlander = {}
+	culture_susquehanna = {}
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_atlantic_south = {
+	graphical_culture = westerngfx
+	
+	culture_savannahn = { primary = SVH }
+	culture_altamaha = {}
+	culture_jacksonvillian = { primary = JSV }
+	culture_charlestonian = { primary = CLS }
+	culture_myrtle = { primary = MYT }
+	culture_pee_dee = {}
+	culture_rocky_mount = { primary = RMT }
+	culture_middle_tidewater = {}
+	culture_lowlander = {}
+	culture_south_tidewater = { primary = GVK }
+	culture_upper_tidewater = { primary = VAB }
+	culture_east_chesapeake = {}
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_lower_piedmontese = {
+	graphical_culture = westerngfx
+	
+	culture_augustan = { primary = AGA }
+	culture_atlantan = { primary = ATL }
+	culture_maconite = { primary = MCN }
+	culture_birminghamian = { primary = BMH }
+	culture_columburn = { primary = CMB }
+	culture_midlander = { primary = CUM }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_upper_piedmontese = {
+	graphical_culture = westerngfx
+	
+	culture_charlottean = { primary = CLT }
+	culture_central_virginian = { primary = RCH }
+	culture_raleighite = { primary = RAL }
+	culture_fayettevillian = { primary = GSV }
+	culture_hickory = { primary = FYV }
+	culture_greensboro = { primary = GNR }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_eastern_deep_south = {
+	graphical_culture = westerngfx
+
+	culture_south_georgian = {}
+	culture_tallahassee = { primary = THS }
+	culture_memphian = { primary = MPS }
+	culture_deep_mississippian = {}
+	culture_tupeloan = { primary = TPO }
+	culture_delta_miss = {}
+	culture_jacksonian = { primary = JSN }
+	culture_north_floridian = { primary = ALU }
+	culture_hustsvillian = { primary = HTV }
+	culture_deep_alabaman = { primary = MGM }
+	culture_homochitto = { primary = NCZ }
+	culture_dothanian = { primary = DOT }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_western_deep_south = {
+	graphical_culture = westerngfx
+	
+	culture_north_louisianan = { primary = SVP }
+	culture_delta_arkansan = {}
+	culture_little_dixie = { primary = FTS }
+	culture_little_rocker = { primary = LRK }
+	culture_south_arkansan = {}
+	culture_longview = { primary = LVW }
+	culture_east_texan = { primary = BMN }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_gulf_coast = {
+	graphical_culture = westerngfx
+	
+	culture_baton_rougian = { primary = BTR }
+	culture_parishian = {}
+	culture_new_orleanian = { primary = NWO }
+	culture_biloxi-mobilian = { primary = MOB }
+	culture_panhandle = { primary = PNC }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_cajun = {
+	graphical_culture = westerngfx
+
+	culture_cajun = { primary = LFT }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_ozark = {
+	graphical_culture = westerngfx
+	
+	culture_ozark = { primary = FYT }
+	culture_springfield_ozark = { primary = MSF }
+	culture_joplin_ozark = { primary = JPN }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_floridian = {
+	graphical_culture = westerngfx
+
+	culture_west_floridian = { primary = TMP }
+	culture_east_floridian = { primary = RLD }
+	culture_lucie = { primary = LCI }
+	culture_south_floridian = { primary = SRS }
+	culture_miamian = { primary = MII }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_texas_triangle = {
+	graphical_culture = westerngfx
+
+	culture_metroplex = { primary = DLS }
+	culture_central_texan = { primary = KRR }
+	culture_mid_trianglian = { primary = WAC }
+	culture_austinite = { primary = ASN }
+	culture_houstonian = { primary = HTN }
+	culture_south_trianglian = {}
+	culture_victorian = {}
+	culture_alamo = { primary = SAN }
+	culture_corpus_christian = { primary = CPC }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_upland_south = {
+	graphical_culture = westerngfx
+	
+	culture_bluegrass = { primary = LXG }
+	culture_louisvillian = { primary = LVL }
+	culture_pennyroyal = { primary = OWB }
+	culture_purchase = { primary = PDC }
+	culture_bowling_green = { primary = BWL }
+	culture_centralseean = {}
+	culture_nashvillian = { primary = NSH }
+	culture_eastesseean = { primary = JBV }
+	culture_little_egyptian =  primary = CBD }
+	culture_bootheel = { primary = CGD }
+	culture_jonesboro = { primary = JBR }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_northwoods = {
+	graphical_culture = westerngfx
+
+	culture_yooper = { primary = MQT }
+	culture_north_michigander = { primary = TVC }
+	culture_north_highlander = {}
+	culture_wausau = { primary = WAU }
+	culture_eau_claire = { primary = EAU }
+	culture_iron_range = { primary = DTH }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_ohio_river_valley = {
+	graphical_culture = westerngfx
+	
+	culture_cincinnatian = { primary = CIN }
+	culture_liman = { primary = LIM }
+	culture_daytonian = { primary = DAY }
+	culture_cantonese = { primary = CNT }
+	culture_columbusite = { primary = CBS }
+	culture_mansfielder = { primary = MFD }
+	culture_north_hoosier = { primary = KKM }
+	culture_lafayette = { primary = LFY }
+	culture_indianapolitan = { primary = IDP }
+	culture_south_hoosier = { primary = EVN }
+	culture_bloomingtonian = { primary = BTP }
+	culture_valley_illinoisian = { primary = CPN }
+	culture_ohiolachian = { primary = ZNV }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_great_lakes = {
+	graphical_culture = westerngfx
+	
+	culture_clevelander = { primary = CLV }
+	culture_toledoan = { primary = TLD }
+	culture_fort_wayner = { primary = FTW }
+	culture_michanian = { primary = SBD }
+	culture_chicagolander = { primary = CCG }
+	culture_mid_michigander = {}
+	culture_saginaw = { primary = MBS }
+	culture_grand_rapidian = { primary = GRR }
+	culture_detroiter = { primary = DTW }
+	culture_lansingite = { primary = LSG }
+	culture_creekazoo = { primary = AZO }
+	culture_green_bay = { primary = GBY }
+	culture_fox = { primary = APT }
+	culture_milwaukeean = { primary = MWK }
+	culture_erie = { primary = EIE }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_upper_midwestern = {
+	graphical_culture = westerngfx
+
+	culture_sioux = { primary = SXF }
+	culture_north_iowan = { primary = WTL }
+	culture_davenporter = { primary = DVP }
+	culture_rockfordian = { primary = RKF }
+	culture_driftless = { primary = LCS }
+	culture_blufflander = { primary = RCA }
+	culture_minnea_paulite = { primary = MNP }
+	culture_dubuquer = {}
+	culture_bunyan = {}
+	culture_fargoan = { primary = FRG }
+	culture_south_minnesotan = {}
+	culture_corridor_iowan = { primary = CDR }
+	culture_madisonian = { primary = MDS }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_lower_midwestern = {
+	graphical_culture = westerngfx
+
+	culture_peorian = { primary = PEA }
+	culture_forgottonian = { primary = QCY }
+	culture_springfielder = { primary = SPF }
+	culture_saint_louisian = { primary = STL }
+	culture_mid_missourian = { primary = JFC }
+	culture_kc_missourian = {}
+	culture_south_iowan = { primary = BTM }
+	culture_omahan = { primary = OMH }
+	culture_kc_kansan = { primary = KSC }
+	culture_topekan = { primary = TPK }
+	culture_lincolnite = { primary = LNC }
+	culture_des_moines = { primary = DMN }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_great_plains = {
+	graphical_culture = westerngfx
+
+	culture_central_plains = {}
+	culture_dry_plains = { primary = SCB }
+	culture_south_dakotan = { primary = XSD }
+	culture_northern_plains = { primary = XND }
+	culture_black_hills = { primary = RSM }
+	culture_mid_nebraskan = { primary = GDI }
+	culture_midland_kansan = {}
+	culture_wichitan = { primary = WTA }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_southern_plains = {
+	graphical_culture = westerngfx
+
+	culture_amarillo = { primary = AML }
+	culture_south_plains = {}
+	culture_enid = { primary = END }
+	culture_tulsan = { primary = TSA }
+	culture_oklahoma_cityan = { primary = OKC }
+	culture_west_texan = { primary = MID }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_southwestern = {
+	graphical_culture = westerngfx
+
+	culture_upper_rio = {}
+	culture_lower_rio = { primary = HGD }
+	culture_el_pasoan = { primary = ELP }
+	culture_hidalgo = {}
+	culture_pueblo = {}
+	culture_burqueno = { primary = ABQ }
+	culture_phoenecian = { primary = PNX }
+	culture_rosewellian = {}
+	culture_north_arizonan = { primary = PST }
+	culture_tusconian = { primary = TSN }
+	culture_yuman = { primary = YUM }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_californian = {
+	graphical_culture = westerngfx
+
+	culture_sacramentan = { primary = SCM }
+	culture_bay_area = { primary = FFC }
+	culture_sierra = { primary = SNR }
+	culture_sonoran = {}
+	culture_north_valley = { primary = STO }
+	culture_south_valley = { primary = VSL }
+	culture_fresnoan = { primary = FSN }
+	culture_central_coast = {}
+	culture_angelino = { primary = LAX }
+	culture_san_diegan = { primary = SDG }
+	culture_bakersfielder = { primary = BKF }
+	culture_shasta = { primary = RED }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_cascadian = {
+	graphical_culture = westerngfx
+
+	culture_coast_oregonian = { primary = EUG }
+	culture_portland_salemite = { primary = PLD }
+	culture_olympic = { primary = OLY }
+	culture_puget = { primary = SEA }
+	culture_panhandle_alaskan = { primary = JUN }
+	culture_north_coast = { primary = ERK }
+	culture_jeffersonian = { primary = MDF }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_columbian = {
+	graphical_culture = westerngfx
+
+	culture_west_oregonian = {}
+	culture_bender = { primary = ORB }
+	culture_washcolumbian = { primary = YKM }
+	culture_spokanite = { primary = SPK }
+	culture_pullman = { primary = PLM }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_mormon_corridor = {
+	graphical_culture = westerngfx
+
+	culture_boise = { primary = BOI }
+	culture_east_idahoan = {}
+	culture_south_utahn = { primary = SGG }
+	culture_salt_laker = { primary = SLC }
+	culture_rocky_idahoan = {}
+	culture_falls_idahoan = { primary = IDF }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_great_basin = {
+	graphical_culture = westerngfx
+
+	culture_renoite = { primary = REN }
+	culture_great_basin = { primary = LVG }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_navajo = {
+	graphical_culture = westerngfx
+
+	culture_navajo = { primary = FMG }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_alaskan = {
+	graphical_culture = westerngfx
+
+	culture_alaskan = { primary = ANC }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_hawaiian = {
+	graphical_culture = westerngfx
+
+	culture_hawaiian = { primary = XHI }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_front_range = {
+	graphical_culture = westerngfx
+
+	culture_rocky_coloradan = { primary = FTC }
+	culture_denverite = { primary = DVR }
+	culture_cheyenne = { primary = CHN }
+	culture_springs_coloradan = { primary = COS }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_rockies = {
+	graphical_culture = westerngfx
+	
+	culture_eagle = { primary = EWD }
+	culture_junction = { primary = GJT }
+	culture_teton = { primary = LGN }
+	culture_missoulan = { primary = MSL }
+	culture_upper_rocky = { primary = BIL }
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+

@@ -1,0 +1,96 @@
+missions_vt_south_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RUT
+			tag = BNT
+		}
+	}
+
+	mission_vt_south_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_vt_southern = { add_permanent_claim = ROOT }
+			872 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_south_unite_southern_vermont = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_vt_south_fielding_an_army }
+		trigger = {
+			area_vt_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+            add_accepted_culture = culture_vermonter
+            add_accepted_culture = culture_west_new_englander
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_south_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_vt_south_unite_southern_vermont }
+		trigger = {
+			area_vt_southern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_vt_central = { add_permanent_claim = ROOT }
+			878 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_southern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_vt_south_the_heart_of_vermont = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_vt_south_a_respectable_state }
+		trigger = {
+			area_vt_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_central
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

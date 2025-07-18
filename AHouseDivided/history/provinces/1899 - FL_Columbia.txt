@@ -1,0 +1,28 @@
+capital="Lake City"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=2
+base_production=3
+base_manpower=4
+native_size=90
+native_ferocity=7
+native_hostileness=5
+religion=baptist
+culture=culture_north_floridian
+is_city = yes
+owner=LKC
+add_core=LKC
+controller=LKC
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

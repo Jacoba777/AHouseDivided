@@ -1,0 +1,29 @@
+capital="Bridgeport"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=8
+base_production=7
+base_manpower=7
+native_size=220
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_hudsonian
+is_city = yes
+owner=BPT
+add_core=BPT
+add_core=NYC
+controller=BPT
+
+1444.11.12 = {
+	base_tax=13
+	base_production=8
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XCT
+	add_core=XCT
+	controller=XCT
+}

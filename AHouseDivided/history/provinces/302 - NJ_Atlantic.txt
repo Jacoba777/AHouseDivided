@@ -1,0 +1,29 @@
+capital="Mays Landing"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=7
+base_production=6
+base_manpower=7
+native_size=200
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_philadelphian
+is_city = yes
+owner=ALC
+add_core=ALC
+controller=ALC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=7
+	base_production=5
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

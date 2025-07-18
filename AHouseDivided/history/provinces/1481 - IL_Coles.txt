@@ -1,0 +1,29 @@
+capital="Charleston"
+discovered_by = great_lakes
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=nondenominational
+culture=culture_valley_illinoisian
+is_city = yes
+owner=CLE
+add_core=CLE
+controller=CLE
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XIL
+	add_core=XIL
+	controller=XIL
+}

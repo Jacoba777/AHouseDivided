@@ -1,0 +1,2898 @@
+country_decisions = {
+	form_delaware = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = culture_delmarvan
+				primary_culture = culture_philadelphian
+			}
+			capital_scope = { region = region_de }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XDE }
+		}
+		provinces_to_highlight = {
+			region = region_de
+		}
+		allow = {
+			owns = 212
+			owns = 213
+			owns = 214
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XDE
+			set_capital = 214 # Dover
+			region_de = {
+				add_core = XDE
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	form_pennsylvania = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_allegheny
+				primary_culture = culture_philadelphian
+			}
+			capital_scope = { region = region_pa }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XPA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 224  # Pittsburgh
+				province_id = 273  # Philadelphia
+				province_id = 265  # Harrisburg
+			}
+		}
+		allow = {
+			owns_core_province = 224  # Pittsburgh
+			owns_core_province = 273  # Philadelphia
+			owns_core_province = 265  # Harrisburg
+			num_of_owned_provinces_with = {
+				region = region_pa
+				value = 41
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XPA
+			region_pa = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XPA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	form_new_jersey = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+			}
+			capital_scope = { region = region_nj }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNJ }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 293  # Trenton
+				province_id = 286  # Newark
+			}
+		}
+		allow = {
+			owns_core_province = 293  # Trenton
+			owns_core_province = 286  # Newark
+			num_of_owned_provinces_with = {
+				region = region_nj
+				value = 13
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNJ
+			set_capital = 293 # Trenton
+			region_nj = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNJ
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 20
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_georgia = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_atlantic_south
+				primary_culture = culture_south_georgian
+			}
+			capital_scope = { region = region_ga }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XGA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 377  # Atlanta
+				province_id = 384  # Marietta
+				province_id = 311  # Augusta
+				province_id = 315  # Savannah
+			}
+		}
+		allow = {
+			owns_core_province = 377  # Atlanta
+			owns_core_province = 384  # Marietta
+			owns_core_province = 311  # Augusta
+			owns_core_province = 315  # Savannah
+			num_of_owned_provinces_with = {
+				region = region_ga
+				value = 71
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XGA
+			set_capital = 377  # Atlanta
+			region_ga = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XGA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_connecticut = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				primary_culture = culture_hudsonian
+			}
+			capital_scope = { region = region_ct }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XCT }
+		}
+		provinces_to_highlight = {
+			province_id = 464  # Hartford
+		}
+		allow = {
+			owns_core_province = 464  # Hartford
+			num_of_owned_provinces_with = {
+				region = region_ct
+				value = 6
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XCT
+			set_capital = 464  # Hartford
+			region_ct = {
+				add_core = XCT
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 15
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_massachusetts = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+			}
+			capital_scope = { region = region_ma }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XMA }
+		}
+		provinces_to_highlight = {
+			province_id = 471  # Boston
+		}
+		allow = {
+			owns_core_province = 471  # Boston
+			num_of_owned_provinces_with = {
+				region = region_ma
+				value = 9
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMA
+			set_capital = 471 # Boston
+			region_ma = {
+				add_core = XMA
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 15
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_maryland = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_allegheny
+			}
+			capital_scope = { region = region_md }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMD }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 495  # Baltimore
+				province_id = 504  # Montgomery County
+				province_id = 496  # Annapolis
+			}
+		}
+		allow = {
+			owns_core_province = 495  # Baltimore
+			owns_core_province = 504  # Montgomery County
+			owns_core_province = 496  # Annapolis
+			num_of_owned_provinces_with = {
+				region = region_md
+				value = 15
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMD
+			set_capital = 496  # Annapolis
+			region_md = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XMD
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_south_carolina = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_lower_piedmontese
+				primary_culture = culture_upcountry
+			}
+			capital_scope = { region = region_sc }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XSC }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 512  # Greenville
+				province_id = 552  # Columbus
+				province_id = 526  # Charleston
+			}
+		}
+		allow = {
+			owns_core_province = 512  # Greenville
+			owns_core_province = 552  # Columbus
+			owns_core_province = 526  # Charleston
+			num_of_owned_provinces_with = {
+				region = region_sc
+				value = 26
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XSC
+			set_capital = 552  # Columbus
+			region_sc = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XSC
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_new_hampshire = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				culture_group = culture_group_woodlands_new_england
+			}
+			capital_scope = { region = region_nh }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XNH }
+		}
+		provinces_to_highlight = {
+			province_id = 565  # Concord
+		}
+		allow = {
+			owns_core_province = 565  # Concord
+			num_of_owned_provinces_with = {
+				region = region_nh
+				value = 6
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNH
+			set_capital = 565  # Concord
+			region_nh = {
+				add_core = XNH
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 15
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_virginia = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_allegheny
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_upper_piedmontese
+			}
+			capital_scope = { region = region_va }
+			NOT = { has_country_flag = formed_a_state }
+			was_never_end_game_tag_trigger = yes
+			NOT = { tag = PAP }
+			NOT = { exists = XVA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 663  # Richmond
+				province_id = 595  # Virginia Beach
+				province_id = 624  # Charlottesville
+				province_id = 629  # Roanoke
+			}
+		}
+		allow = {
+			owns_core_province = 663  # Richmond
+			owns_core_province = 595  # Virginia Beach
+			owns_core_province = 624  # Charlottesville
+			owns_core_province = 629  # Roanoke
+			num_of_owned_provinces_with = {
+				region = region_va
+				value = 61
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XVA
+			set_capital = 663  # Richmond
+			region_va = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XVA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_new_york = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_upstate
+				culture_group = culture_group_allegheny
+				primary_culture = culture_vermonter
+			}
+			capital_scope = { region = region_ny }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNY }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 709  # Buffalo
+				province_id = 706  # Rochester
+				province_id = 751  # Albany
+				province_id = 755  # Manhattan
+			}
+		}
+		allow = {
+			owns_core_province = 709  # Buffalo
+			owns_core_province = 706  # Rochester
+			owns_core_province = 751  # Albany
+			owns_core_province = 755  # Manhattan
+			num_of_owned_provinces_with = {
+				region = region_ny
+				value = 38
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNY
+			region_ny = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNY
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_north_carolina = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_upper_piedmontese
+				culture_group = culture_group_atlantic_south
+			}
+			capital_scope = { region = region_nc }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNC }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 806  # Wilmington
+				province_id = 798  # Charlotte
+				province_id = 821  # Raleigh
+				province_id = 825  # Greensboro
+			}
+		}
+		allow = {
+			owns_core_province = 806  # Wilmington
+			owns_core_province = 798  # Charlotte
+			owns_core_province = 821  # Raleigh
+			owns_core_province = 825  # Greensboro
+			num_of_owned_provinces_with = {
+				region = region_nc
+				value = 60
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNC
+			region_nc = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNC
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_rhode_island = {
+		major = yes
+		potential = {
+			primary_culture = culture_providencial
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XRI }
+		}
+		provinces_to_highlight = {
+			region = region_ri
+		}
+		allow = {
+			owns_all_provinces = { region = region_ri }
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XRI
+			region_ri = {
+				add_core = XRI
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_vermont = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				culture_group = culture_group_woodlands_new_england
+			}
+			capital_scope = { region = region_vt }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XVT }
+		}
+		provinces_to_highlight = {
+			province_id = 880  # Montpelier
+		}
+		allow = {
+			owns_core_province = 880  # Montpelier
+			num_of_owned_provinces_with = {
+				region = region_vt
+				value = 8
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XVT
+			set_capital = 880  # Montpelier
+			region_vt = {
+				add_core = XVT
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_kentucky = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_upland_south
+				primary_culture = culture_cincinnatian
+			}
+			capital_scope = { region = region_ky }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XKY }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 989  # Lexington
+				province_id = 888  # Louisville
+				province_id = 882  # Covington
+				province_id = 948  # Bowling Green
+				province_id = 971  # Frankfort
+			}
+		}
+		allow = {
+			owns_core_province = 989  # Lexington
+			owns_core_province = 888  # Louisville
+			owns_core_province = 882  # Covington
+			owns_core_province = 948  # Bowling Green
+			owns_core_province = 971  # Frankfort
+			num_of_owned_provinces_with = {
+				region = region_ky
+				value = 70
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XKY
+			region_ky = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XKY
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_tennessee = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_upland_south
+				primary_culture = culture_memphian
+			}
+			capital_scope = { region = region_tn }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XTN }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1082  # Knoxville
+				province_id = 1055  # Nashville
+				province_id = 1022  # Memphis
+				province_id = 1033  # Chattanooga
+			}
+		}
+		allow = {
+			owns_core_province = 1082  # Knoxville
+			owns_core_province = 1055  # Nashville
+			owns_core_province = 1022  # Memphis
+			owns_core_province = 1033  # Chattanooga
+			num_of_owned_provinces_with = {
+				region = region_tn
+				value = 57
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XTN
+			set_capital = 1055  # Nashville
+			region_tn = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XTN
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_ohio = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_ohio_river_valley
+				culture_group = culture_group_great_lakes
+				primary_culture = culture_erie
+			}
+			capital_scope = { region = region_oh }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XOH }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1098  # Cleveland
+				province_id = 1143  # Dayton
+				province_id = 1177  # Columbus
+				province_id = 1113  # Cincinnati
+				province_id = 1102  # Toldeo
+			}
+		}
+		allow = {
+			owns_core_province = 1098  # Cleveland
+			owns_core_province = 1143  # Dayton
+			owns_core_province = 1177  # Columbus
+			OR = {
+				owns_core_province = 1113  # Cincinnati
+				owns_core_province = 1102  # Toldeo
+			}
+			num_of_owned_provinces_with = {
+				region = region_oh
+				value = 53
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XOH
+			set_capital = 1177  # Columbus
+			region_oh = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XOH
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_louisiana = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_cajun
+				culture_group = culture_group_gulf_coast
+				primary_culture = culture_north_louisianan
+			}
+			capital_scope = { region = region_la }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XLA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1191  # Shreveport
+				province_id = 1228  # New Orleans
+				province_id = 1235  # Baton Rouge
+				province_id = 1239  # Lafayette
+			}
+		}
+		allow = {
+			owns_core_province = 1191  # Shreveport
+			owns_core_province = 1228  # New Orleans
+			owns_core_province = 1235  # Baton Rouge
+			owns_core_province = 1239  # Lafayette
+			num_of_owned_provinces_with = {
+				region = region_la
+				value = 28
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XLA
+			region_la = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XLA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_indiana = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_ohio_river_valley
+				culture_group = culture_group_great_lakes
+				primary_culture = culture_louisvillian
+			}
+			capital_scope = { region = region_in }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XIN }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1294  # Indianapolis
+				province_id = 1263  # Fort Wayne
+				province_id = 1310  # Bloomington
+				province_id = 1339  # Evansville
+			}
+		}
+		allow = {
+			owns_core_province = 1294  # Indianapolis
+			owns_core_province = 1263  # Fort Wayne
+			owns_core_province = 1310  # Bloomington
+			owns_core_province = 1339  # Evansville
+			num_of_owned_provinces_with = {
+				region = region_in
+				value = 56
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XIN
+			region_in = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XIN
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_mississippi = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_eastern_deep_south
+				culture_group = culture_group_gulf_coast
+			}
+			capital_scope = { region = region_ms }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMS }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1421  # Biloxi
+				province_id = 1384  # Jackson
+			}
+		}
+		allow = {
+			owns_core_province = 1421  # Biloxi
+			owns_core_province = 1384  # Jackson
+			num_of_owned_provinces_with = {
+				region = region_ms
+				value = 32
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMS
+			set_capital = 1421  # Biloxi
+			region_ms = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XMS
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_illinois = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_lakes
+				culture_group = culture_group_ohio_river_valley
+				culture_group = culture_group_upper_midwestern
+				culture_group = culture_group_lower_midwestern
+				primary_culture = culture_little_egyptian
+			}
+			capital_scope = { region = region_il }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XIL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1429  # Chicago
+				province_id = 1474  # Springfield
+				province_id = 1454  # Peoria
+				province_id = 1425  # Rockford
+			}
+		}
+		allow = {
+			owns_core_province = 1429  # Chicago
+			owns_core_province = 1474  # Springfield
+			owns_core_province = 1454  # Peoria
+			owns_core_province = 1425  # Rockford
+			num_of_owned_provinces_with = {
+				region = region_il
+				value = 54
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XIL
+			region_il = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XIL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_alabama = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_eastern_deep_south
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_gulf_coast
+				primary_culture = culture_scottsboro
+			}
+			capital_scope = { region = region_al }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XAL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1544  # Birmingham
+				province_id = 1591  # Mobile
+				province_id = 1526  # Huntsville
+				province_id = 1577  # Montgomery
+			}
+		}
+		allow = {
+			owns_core_province = 1544  # Birmingham
+			owns_core_province = 1591  # Mobile
+			owns_core_province = 1526  # Huntsville
+			owns_core_province = 1577  # Montgomery
+			num_of_owned_provinces_with = {
+				region = region_al
+				value = 28
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XAL
+			set_capital = 1577  # Montgomery
+			region_al = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XAL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_maine = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				culture_group = culture_group_woodlands_new_england
+			}
+			capital_scope = { region = region_me }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XME }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1598  # Portland
+				province_id = 1600  # Augusta
+			}
+		}
+		allow = {
+			owns_core_province = 1598  # Portland
+			owns_core_province = 1600  # Augusta
+			num_of_owned_provinces_with = {
+				region = region_me
+				value = 6
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XME
+			region_me = {
+				add_core = XME
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_missouri = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_ozark
+				primary_culture = culture_bootheel
+			}
+			capital_scope = {
+				OR = {
+					region = region_mo
+					area = area_ks_west_kansas_city
+					area = area_il_northeast_st_louis
+					area = area_il_southeast_st_louis
+				}
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMO }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1645  # Columbia
+				province_id = 1698  # Springfield
+				province_id = 1655  # Jefferson City
+				province_id = 1591  # St Louis
+				province_id = 1722  # Kansas City
+			}
+		}
+		allow = {
+			owns_core_province = 1645  # Columbia
+			owns_core_province = 1698  # Springfield
+			owns_core_province = 1655  # Jefferson City
+			OR = {
+				owns_core_province = 1591  # St Louis
+				owns_core_province = 1722  # Kansas City
+			}
+			num_of_owned_provinces_with = {
+				region = region_mo
+				value = 37
+			}
+			OR = {
+				accepted_culture = culture_joplin_ozark
+				accepted_culture = culture_springfield_ozark
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMO
+			region_mo = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XMO
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_arkansas = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_western_deep_south
+				primary_culture = culture_jonesboro
+			}
+			capital_scope = { region = region_ar }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XAR }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1769  # Little Rock
+				province_id = 1732  # Fayetteville
+			}
+		}
+		allow = {
+			owns_core_province = 1769  # Little Rock
+			owns_core_province = 1732  # Fayetteville
+			num_of_owned_provinces_with = {
+				region = region_ar
+				value = 17
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XAR
+			set_capital = 1769  # Little Rock
+			add_accepted_culture = delta_arkansan
+			add_accepted_culture = arkansas_ozark
+			add_accepted_culture = central_arkansan
+			add_accepted_culture = arklatexan
+			region_ar = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XAR
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_michigan = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_lakes
+				culture_group = culture_group_northwoods
+			}
+			capital_scope = { region = region_mi }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMI }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1867  # Lansing
+				province_id = 1871  # Detroit
+				province_id = 1848  # Grand Rapids
+			}
+		}
+		allow = {
+			owns_core_province = 1867  # Lansing
+			owns_core_province = 1871  # Detroit
+			owns_core_province = 1848  # Grand Rapids
+			num_of_owned_provinces_with = {
+				region = region_mi
+				value = 39
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMI
+			region_mi = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = XMI
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_florida = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_floridian
+				primary_culture = culture_north_floridian
+				primary_culture = culture_tallahassee
+				primary_culture = culture_panhandle
+				primary_culture = culture_jacksonvillian
+			}
+			capital_scope = { region = region_fl }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XFL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1924  # Tampa
+				province_id = 1927  # Orlando
+				province_id = 1946  # Miami
+				province_id = 1943  # Fort Myers
+			}
+		}
+		allow = {
+			owns_core_province = 1924  # Tampa
+			owns_core_province = 1927  # Orlando
+			owns_core_province = 1946  # Miami
+			owns_core_province = 1943  # Fort Myers
+			num_of_owned_provinces_with = {
+				region = region_fl
+				value = 37
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XFL
+			region_fl = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XFL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_texas = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_western_deep_south
+				culture_group = culture_group_texas_triangle
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_southwestern
+			}
+			capital_scope = { region = region_tx }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XTX }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2032  # Dallas
+				province_id = 2031  # Ft Worth
+				province_id = 2136  # Austin
+				province_id = 2153  # Houston
+				province_id = 2164  # San Antionio
+				province_id = 2195  # Corpus Christi
+				province_id = 1984  # Lubbock
+				province_id = 1959  # Amarillo
+				province_id = 2102  # El Paso
+				province_id = 2154  # Beaumont
+				province_id = 2086  # Waco
+			}
+		}
+		allow = {
+			owns_core_province = 2032  # Dallas
+			owns_core_province = 2031  # Ft Worth
+			owns_core_province = 2136  # Austin
+			owns_core_province = 2153  # Houston
+			owns_core_province = 2164  # San Antionio
+			owns_core_province = 2195  # Corpus Christi
+			OR = {
+				owns_core_province = 1984  # Lubbock
+				owns_core_province = 1959  # Amarillo
+			}
+			OR = {
+				owns_core_province = 2102  # El Paso
+				owns_core_province = 2154  # Beaumont
+				owns_core_province = 2086  # Waco
+			}
+			num_of_owned_provinces_with = {
+				region = region_tx
+				value = 66
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XTX
+			region_tx = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XTX
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_iowa = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_upper_midwestern
+				culture_group = culture_group_lower_midwestern
+			}
+			capital_scope = { region = region_ia }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XIA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2270  # Des Moines
+				province_id = 2238  # Cedar Rapids
+				province_id = 2262  # Davenport
+				province_id = 2248  # Sioux City
+			}
+		}
+		allow = {
+			owns_core_province = 2270  # Des Moines
+			owns_core_province = 2238  # Cedar Rapids
+			OR = {
+				owns_core_province = 2262  # Davenport
+				owns_core_province = 2248  # Sioux City
+			}
+			num_of_owned_provinces_with = {
+				region = region_ia
+				value = 27
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XIA
+			set_capital = 2270  # Des Moines
+			region_ia = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XIA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_wisconsin = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_lakes
+				culture_group = culture_group_northwoods
+				culture_group = culture_group_upper_midwestern
+			}
+			capital_scope = { region = region_wi }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XWI }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2366  # Milwaukee
+				province_id = 2363  # Madison
+				province_id = 2324  # Green Bay
+				province_id = 2368  # Kenosha
+				province_id = 2329  # Appleton
+			}
+		}
+		allow = {
+			owns_core_province = 2366  # Milwaukee
+			owns_core_province = 2363  # Madison
+			owns_core_province = 2324  # Green Bay
+			OR = {
+				owns_core_province = 2368  # Kenosha
+				owns_core_province = 2329  # Appleton
+			}
+			num_of_owned_provinces_with = {
+				region = region_wi
+				value = 32
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XWI
+			set_capital = 2363  # Madison
+			region_wi = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XWI
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_california = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_californian
+				culture_group = culture_group_cascadian
+				primary_culture = culture_yuman
+			}
+			capital_scope = { region = region_ca }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XCA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2401  # San Fran
+				province_id = 2424  # LA
+				province_id = 2426  # San Diego
+				province_id = 2398  # Sacramento
+				province_id = 2414  # Fresno
+				province_id = 2430  # Bakersfield
+				province_id = 2404  # San Jose
+				province_id = 2429  # San Bernadino
+			}
+		}
+		allow = {
+			owns_core_province = 2401  # San Fran
+			owns_core_province = 2424  # LA
+			owns_core_province = 2426  # San Diego
+			owns_core_province = 2398  # Sacramento
+			owns_core_province = 2414  # Fresno
+			owns_core_province = 2430  # Bakersfield
+			owns_core_province = 2404  # San Jose
+			owns_core_province = 2429  # San Bernadino
+			num_of_owned_provinces_with = {
+				region = region_ca
+				value = 26
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XCA
+			region_ca = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XCA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_minnesota = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_northwoods
+				culture_group = culture_group_upper_midwestern
+			}
+			capital_scope = { region = region_mn }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMN }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2479  # Minneapolis
+				province_id = 2480  # St Paul
+				province_id = 2435  # Duluth
+				province_id = 2500  # Rochester
+			}
+		}
+		allow = {
+			owns_core_province = 2479  # Minneapolis
+			owns_core_province = 2480  # St Paul
+			owns_core_province = 2435  # Duluth
+			owns_core_province = 2500  # Rochester
+			num_of_owned_provinces_with = {
+				region = region_mn
+				value = 25
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMN
+			set_capital = 2480  # St Paul
+			region_mn = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XMN
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_oregon = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_cascadian
+				culture_group = culture_group_columbian
+			}
+			capital_scope = { region = region_or }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XOR }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2519  # Portland
+				province_id = 2532  # Salem
+				province_id = 2541  # Eugene
+				province_id = 2546  # Medord
+				province_id = 2549  # Bend
+			}
+		}
+		allow = {
+			owns_core_province = 2519  # Portland
+			owns_core_province = 2532  # Salem
+			owns_core_province = 2541  # Eugene
+			OR = {
+				owns_core_province = 2546  # Medord
+				owns_core_province = 2549  # Bend
+			}
+			num_of_owned_provinces_with = {
+				region = region_or
+				value = 12
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XOR
+			region_or = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XOR
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_kansas = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_great_plains
+				culture_group = culture_group_southern_plains
+				primary_culture = culture_joplin_ozark
+				tag = KSC
+			}
+			capital_scope = { region = region_ks }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XKS }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2657  # Wichita
+				province_id = 2590  # Topeka
+				province_id = 2593  # Kansas City, KS
+			}
+		}
+		allow = {
+			owns_core_province = 2657  # Wichita
+			owns_core_province = 2590  # Topeka
+			owns_core_province = 2593  # Kansas City, KS
+			num_of_owned_provinces_with = {
+				region = region_ks
+				value = 18
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XKS
+			region_ks = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XKS
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_west_virginia = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_allegheny
+				culture_group = culture_group_appalachian
+			}
+			capital_scope = { region = region_wv }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XWV }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2672  # Charleston
+				province_id = 2668  # Huntington
+			}
+		}
+		allow = {
+			owns_core_province = 2672  # Charleston
+			owns_core_province = 2668  # Huntington
+			num_of_owned_provinces_with = {
+				region = region_wv
+				value = 24
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XWV
+			set_capital = 2672  # Charleston
+			region_wv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XWV
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_nevada = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_basin
+			}
+			capital_scope = { region = region_nv }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNV }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2713  # Reno
+				province_id = 2722  # Carson City
+				province_id = 2729  # Las Vegas
+			}
+		}
+		allow = {
+			owns_core_province = 2713  # Reno
+			owns_core_province = 2722  # Carson City
+			owns_core_province = 2729  # Las Vegas
+			num_of_owned_provinces_with = {
+				region = region_nv
+				value = 4
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNV
+			region_nv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNV
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_nebraska = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_great_plains
+			}
+			capital_scope = { region = region_ne }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNE }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2779  # Omaha
+				province_id = 2802  # Lincoln
+			}
+		}
+		allow = {
+			owns_core_province = 2779  # Omaha
+			owns_core_province = 2802  # Lincoln
+			num_of_owned_provinces_with = {
+				region = region_ne
+				value = 9
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNE
+			region_ne = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNE
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_colorado = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_rockies
+				culture_group = culture_group_front_range
+				culture_group = culture_group_navajo
+				primary_culture = culture_pueblo
+			}
+			capital_scope = { region = region_co }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XCO }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2848  # Denver
+				province_id = 2835  # Boulder
+				province_id = 2859  # Colorado Springs
+			}
+		}
+		allow = {
+			owns_core_province = 2848  # Denver
+			owns_core_province = 2835  # Boulder
+			owns_core_province = 2859  # Colorado Springs
+			num_of_owned_provinces_with = {
+				region = region_co
+				value = 11
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XCO
+			set_capital = 2848  # Denver
+			region_co = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XCO
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_north_dakota = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_plains
+				culture_group = culture_group_upper_midwestern
+			}
+			capital_scope = { region = region_nd }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XND }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2920  # Bismarck
+				province_id = 2914  # Fargo
+			}
+		}
+		allow = {
+			owns_core_province = 2920  # Bismarck
+			owns_core_province = 2914  # Fargo
+			num_of_owned_provinces_with = {
+				region = region_nd
+				value = 3
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XND
+			region_nd = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XND
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_south_dakota = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_plains
+				culture_group = culture_group_upper_midwestern
+			}
+			capital_scope = { region = region_sd }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XSD }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2964  # Pierre
+				province_id = 2961  # Rapid City
+			}
+		}
+		allow = {
+			owns_core_province = 2964  # Pierre
+			owns_core_province = 2961  # Rapid City
+			num_of_owned_provinces_with = {
+				region = region_sd
+				value = 6
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XSD
+			region_sd = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XSD
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_montana = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_plains
+				culture_group = culture_group_rockies
+			}
+			capital_scope = { region = region_mt }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XMT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3053  # Billings
+				province_id = 3038  # Great Falls
+				province_id = 3031  # Missoula
+			}
+		}
+		allow = {
+			owns_core_province = 3053  # Billings
+			owns_core_province = 3038  # Great Falls
+			owns_core_province = 3031  # Missoula
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XMT
+			region_mt = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XMT
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_washington = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_cascadian
+				culture_group = culture_group_columbian
+			}
+			capital_scope = { region = region_wa }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XWA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3071  # Seattle
+				province_id = 3070  # Tacoma
+				province_id = 3085  # Yakima
+				province_id = 3079  # Spokane
+				province_id = 3069  # Olympia
+			}
+		}
+		allow = {
+			owns_core_province = 3071  # Seattle
+			owns_core_province = 3070  # Tacoma
+			owns_core_province = 3085  # Yakima
+			owns_core_province = 3079  # Spokane
+			owns_core_province = 3069  # Olympia
+			num_of_owned_provinces_with = {
+				region = region_wa
+				value = 16
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XWA
+			region_wa = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XWA
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_idaho = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_rockies
+				culture_group = culture_group_columbian
+			}
+			capital_scope = { region = region_id }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XID }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3126  # Boise
+				province_id = 3143  # Twin Falls
+				province_id = 3136  # Pocatello
+			}
+		}
+		allow = {
+			owns_core_province = 3126  # Boise
+			owns_core_province = 3143  # Twin Falls
+			owns_core_province = 3136  # Pocatello
+			num_of_owned_provinces_with = {
+				region = region_id
+				value = 9
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XID
+			region_id = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XID
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_wyoming = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_front_range
+				primary_culture = culture_black_hills
+			}
+			capital_scope = { region = region_wy }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XWY }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3167  # Cheyenne
+				province_id = 3153  # Casper
+			}
+		}
+		allow = {
+			owns_core_province = 3167  # Cheyenne
+			owns_core_province = 3153  # Casper
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XWY
+			region_wy = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XWY
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_utah = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_rockies
+			}
+			capital_scope = { region = region_ut }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XUT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3176  # Provo
+				province_id = 3174  # Ogden
+				province_id = 3172  # Salt Lake City
+			}
+		}
+		allow = {
+			owns_core_province = 3176  # Provo
+			owns_core_province = 3174  # Ogden
+			owns_core_province = 3172  # Salt Lake City
+			num_of_owned_provinces_with = {
+				region = region_ut
+				value = 5
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XUT
+			region_ut = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XUT
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_oklahoma = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_ozark
+				primary_culture = culture_little_dixie
+			}
+			capital_scope = { region = region_ok }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XOK }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3241  # Oklahoma City
+				province_id = 3213  # Tulsa
+			}
+		}
+		allow = {
+			owns_core_province = 3241  # Oklahoma City
+			owns_core_province = 3213  # Tulsa
+			num_of_owned_provinces_with = {
+				region = region_ok
+				value = 24
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XOK
+			region_ok = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XOK
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_new_mexico = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_southwestern
+				culture_group = culture_group_navajo
+			}
+			capital_scope = { region = region_nm }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XNM }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3281  # Santa Fe
+				province_id = 3286  # Albuquerque
+			}
+		}
+		allow = {
+			owns_core_province = 3281  # Santa Fe
+			owns_core_province = 3286  # Albuquerque
+			num_of_owned_provinces_with = {
+				region = region_nm
+				value = 4
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XNM
+			region_nm = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XNM
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_arizona = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_southwestern
+				culture_group = culture_group_navajo
+			}
+			capital_scope = { region = region_az }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XAZ }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3317  # Phoenix
+				province_id = 3319  # Tuscon
+				province_id = 3308  # Flagstaff
+				province_id = 3314  # Prescott
+			}
+		}
+		allow = {
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 3319  # Tuscon
+			owns_core_province = 3308  # Flagstaff
+			owns_core_province = 3314  # Prescott
+			num_of_owned_provinces_with = {
+				region = region_az
+				value = 5
+			}
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XAZ
+			region_az = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XAZ
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_alaska = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_alaskan
+				primary_culture = culture_panhandle_alaskan
+			}
+			capital_scope = { region = region_ak }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = PAP }
+			NOT = { exists = XAK }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3346  # Juneau
+				province_id = 3335  # Fairbanks
+				province_id = 3338  # Anchorage
+			}
+		}
+		allow = {
+			owns_core_province = 3346  # Juneau
+			owns_core_province = 3335  # Fairbanks
+			owns_core_province = 3338  # Anchorage
+			adm_tech = 8
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XAK
+			region_ak = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = XAK
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_hawaii = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_hawaiian
+			}
+			capital_scope = { region = region_hi }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = XHI }
+		}
+		provinces_to_highlight = {
+			region = region_hi
+		}
+		allow = {
+			owns_all_provinces = { region = region_hi }
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XHI
+			set_capital = 3355  # Honolulu
+			region_hi = {
+				add_core = XHI
+				add_nationalism = -15
+				add_local_autonomy = -100
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_a_state
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 15
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_jefferson = {
+		major = yes
+		potential = {
+			OR = {
+				culture = culture_jeffersonian
+				culture = culture_north_coast
+				culture = culture_shasta
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = JFF }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2545  # Grants Pass
+				province_id = 2546  # Medford
+				province_id = 2377  # Redding
+				province_id = 2386  # Chico
+			}
+		}
+		allow = {
+			owns_core_province = 2545  # Grants Pass
+			owns_core_province = 2546  # Medford
+			OR = {
+				owns_core_province = 2377  # Redding
+				owns_core_province = 2386  # Chico
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = JFF
+			change_primary_culture = culture_jeffersonian
+			add_accepted_culture = culture_north_coast
+			add_accepted_culture = culture_shasta
+			every_province = {
+				limit = { 
+					OR = {
+						culture = culture_jeffersonian
+						culture = culture_north_coast
+						culture = culture_shasta
+					}
+					NOT = { owned_by = ROOT }
+				}
+				add_core = JFF
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

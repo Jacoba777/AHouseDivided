@@ -1,0 +1,31 @@
+capital="San Francisco"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=11
+base_production=12
+base_manpower=9
+native_size=320
+native_ferocity=5
+native_hostileness=3
+religion=atheist
+culture=culture_bay_area
+center_of_trade=2
+is_city = yes
+owner=FFC
+add_core=FFC
+controller=FFC
+trade_goods=gems
+
+1444.11.12 = {
+	base_tax=47
+	base_production=88
+	base_manpower=20
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

@@ -1,0 +1,136 @@
+univ_johns_hopkins = {
+	start = 495
+	date = 879.11.04
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+	}
+
+	on_built = {
+		OR = {
+			AND = {
+				culture = culture_baltimorean
+				province_is_or_accepts_culture = yes
+			}
+			province_is_or_accepts_religion = {
+				religion = methodist
+			}
+		}
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+		OR = {
+			AND = {
+				culture = culture_baltimorean
+				province_is_or_accepts_culture = yes
+			}
+			province_is_or_accepts_religion = {
+				religion = methodist
+			}
+		}
+	}
+
+	can_upgrade_trigger = {
+		OR = {
+			AND = {
+				culture = culture_baltimorean
+				province_is_or_accepts_culture = yes
+			}
+			province_is_or_accepts_religion = {
+				religion = methodist
+			}
+		}
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			
+		}
+		area_modifier = {
+			
+		}
+		country_modifiers = {
+			idea_cost = -0.025
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			
+		}
+		area_modifier = {
+			
+		}
+		region_modifier = { 
+			
+		}
+		country_modifiers = {
+			innovativeness_gain = 0.2
+			idea_cost = -0.025
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+			
+		}
+		country_modifiers = {
+			innovativeness_gain = 0.33
+			idea_cost = -0.05
+		}
+		on_upgraded = {
+		}
+	}
+}

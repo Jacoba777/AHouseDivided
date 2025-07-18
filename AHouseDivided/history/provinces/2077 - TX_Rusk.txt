@@ -1,0 +1,29 @@
+capital="Henderson"
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southwest
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_longview
+is_city = yes
+owner=LVW
+add_core=LVW
+controller=LVW
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XTX
+	add_core=XTX
+	controller=XTX
+}

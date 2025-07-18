@@ -1,0 +1,29 @@
+capital="Kankakee"
+discovered_by = great_lakes
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=4
+base_production=5
+base_manpower=4
+native_size=130
+native_ferocity=6
+native_hostileness=3
+religion=baptist
+culture=culture_chicagolander
+is_city = yes
+owner=KKE
+add_core=KKE
+controller=KKE
+
+1444.11.12 = {
+	base_tax=1
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XIL
+	add_core=XIL
+	controller=XIL
+}

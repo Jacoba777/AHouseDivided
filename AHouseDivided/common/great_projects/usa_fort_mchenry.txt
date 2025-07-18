@@ -1,0 +1,111 @@
+fort_mchenry = {
+	start = 495
+	date = 1444.01.01
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 0
+	type = monument
+
+	build_trigger = {
+	}
+
+	on_built = {
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+	}
+
+	can_upgrade_trigger = {
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_defensiveness = 0.15
+			blockade_force_required = 0.5
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			global_ship_trade_power = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_hostile_attrition = 0.5
+			blockade_force_required = 1
+			hostile_fleet_attrition = 5
+		}
+		area_modifier = {
+			local_defensiveness = 0.15
+		}
+		country_modifiers = {		
+			global_ship_trade_power = 0.2
+			prestige_from_naval = 0.5
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_hostile_attrition = 1
+			blockade_force_required = 1
+			hostile_fleet_attrition = 10
+		}
+		area_modifier = {
+			local_defensiveness = 0.25
+		}
+		country_modifiers = {
+			global_ship_trade_power = 0.3
+			prestige_from_naval = 1
+		}
+		on_upgraded = {
+		}
+	}
+}

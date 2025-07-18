@@ -1,0 +1,29 @@
+capital="Flint"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=6
+base_production=7
+base_manpower=7
+native_size=200
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_detroiter
+is_city = yes
+owner=FNT
+add_core=FNT
+add_core=FNT
+controller=FNT
+
+1444.11.12 = {
+	base_tax=4
+	base_production=6
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

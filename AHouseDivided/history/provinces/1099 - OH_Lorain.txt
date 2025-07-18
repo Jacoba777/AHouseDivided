@@ -1,0 +1,29 @@
+capital="Elyria"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+discovered_by = appalachia
+hre = no
+base_tax=6
+base_production=6
+base_manpower=7
+native_size=190
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_clevelander
+is_city = yes
+owner=CLV
+add_core=CLV
+controller=CLV
+
+1444.11.12 = {
+	base_tax=4
+	base_production=4
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XOH
+	add_core=XOH
+	controller=XOH
+}

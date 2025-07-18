@@ -1,0 +1,29 @@
+capital="Miami"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=11
+base_production=12
+base_manpower=12
+native_size=350
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_miamian
+center_of_trade=2
+is_city = yes
+owner=MII
+add_core=MII
+controller=MII
+
+1444.11.12 = {
+	base_tax=61
+	base_production=69
+	base_manpower=65
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

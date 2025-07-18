@@ -1,0 +1,29 @@
+capital="Coupeville"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=5
+base_production=4
+base_manpower=4
+native_size=130
+native_ferocity=4
+native_hostileness=3
+religion=atheist
+culture=culture_puget
+is_city = yes
+owner=SEA
+add_core=SEA
+controller=SEA
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

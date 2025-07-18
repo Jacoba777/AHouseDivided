@@ -1,0 +1,269 @@
+missions_sc_peedee_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LGT
+			tag = MYT
+			tag = SMT
+			tag = FLT
+			tag = BNV
+		}
+	}
+
+	mission_sc_peedee_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_sc_myrtle_beach = { add_permanent_claim = ROOT }
+			area_sc_olde_english_district = { add_permanent_claim = ROOT }
+			area_sc_florence = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_sc_peedee_unite_the_peedee_peoples = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_sc_peedee_fielding_an_army }
+		trigger = {
+			area_sc_myrtle_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			546 = { country_or_non_sovereign_subject_holds = ROOT }
+			555 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_myrtle_beach
+				province_id = 546
+				province_id = 555
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_peedee_peedee_peace = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_sc_peedee_unite_the_peedee_peoples }
+		trigger = {
+			area_sc_myrtle_beach = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			546 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			555 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_sc_charleston = { add_permanent_claim = ROOT }
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_myrtle_beach
+				province_id = 546
+				province_id = 555
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_sc_peedee_the_siege_of_charleston = {
+		icon = mission_cls
+		position = 4
+		required_missions = { mission_sc_peedee_peedee_peace }
+		trigger = {
+			area_sc_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_peedee_denounce_columbia = {
+		icon = mission_cum
+		position = 5
+		required_missions = { mission_sc_peedee_the_siege_of_charleston }
+		trigger = {
+			OR = {
+				is_rival = CUM
+				AND = {
+					exists = CUM
+					military_strength = {
+						who = CUM
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CUM
+			}
+			OR = {
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CUM }
+				tag = CUM
+			}
+ 		}
+		effect = {
+			area_sc_columbia = { add_permanent_claim = ROOT }
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_newberry = { add_permanent_claim = ROOT }
+			CUM = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_sc_peedee_battle_for_the_midlands = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_sc_peedee_denounce_columbia }
+		trigger = {
+			area_sc_columbia = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_peedee_administering_columbia = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_sc_peedee_battle_for_the_midlands }
+		trigger = {
+			area_sc_columbia = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_sc_greenville = { add_permanent_claim = ROOT }
+			area_sc_old_96_district = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_sc_peedee_upcountry_upheaval = {
+		icon = mission_grn
+		position = 8
+		required_missions = { mission_sc_peedee_administering_columbia }
+		trigger = {
+			area_sc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_greenville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_peedee_peace_in_greenville = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_sc_peedee_upcountry_upheaval }
+		trigger = {
+			area_sc_greenville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_greenville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

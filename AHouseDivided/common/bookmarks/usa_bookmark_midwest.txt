@@ -1,0 +1,22 @@
+bookmark = {
+	name = bookmark_midwest
+	desc = bookmark_midwest_desc
+	date = 1444.11.11
+	
+	center = 1429
+	
+	country = CCG
+	country = IDP
+	country = STL
+	country = CIN
+	country = DTW
+	country = KSC
+	country = MWK
+	country = CBS
+	country = MNP
+	country = STP
+	
+	easy_country = CCG
+	easy_country = IDP
+	easy_country = STL
+}

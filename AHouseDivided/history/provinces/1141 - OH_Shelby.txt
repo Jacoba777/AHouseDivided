@@ -1,0 +1,29 @@
+capital="Sidney"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=4
+base_manpower=3
+native_size=90
+native_ferocity=8
+native_hostileness=4
+religion=nondenominational
+culture=culture_daytonian
+is_city = yes
+owner=DAY
+add_core=DAY
+controller=DAY
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XOH
+	add_core=XOH
+	controller=XOH
+}

@@ -1,0 +1,30 @@
+capital="Columbia"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=7
+base_production=8
+base_manpower=8
+native_size=230
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_midlander
+center_of_trade=2
+is_city = yes
+owner=CUM
+add_core=CUM
+controller=CUM
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=8
+	base_production=10
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

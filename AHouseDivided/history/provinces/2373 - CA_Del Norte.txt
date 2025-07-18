@@ -1,0 +1,29 @@
+capital="Crescent City"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=2
+base_production=1
+base_manpower=1
+native_size=40
+native_ferocity=3
+native_hostileness=3
+religion=lutheran
+culture=culture_north_coast
+is_city = yes
+owner=CCC
+add_core=CCC
+controller=CCC
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

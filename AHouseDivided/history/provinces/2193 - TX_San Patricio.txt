@@ -1,0 +1,30 @@
+capital="Sinton"
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southwest
+hre = no
+base_tax=3
+base_production=3
+base_manpower=3
+native_size=90
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_corpus_christian
+is_city = yes
+owner=CPC
+add_core=CPC
+controller=CPC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XTX
+	add_core=XTX
+	controller=XTX
+}

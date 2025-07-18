@@ -1,0 +1,407 @@
+missions_ky_northern_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LXG
+			tag = LVL
+		}
+	}
+
+	mission_ky_northern_embracing_cumberland = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_ky_northern_finishing_the_job }
+		trigger = {
+			accepted_culture = culture_cumberland
+ 		}
+		effect = {
+            region_ky = {
+                limit = {
+                    culture = culture_cumberland
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+
+	}
+
+	mission_ky_northern_cumberland_reconquest = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ky_northern_embracing_cumberland }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 25
+                culture = culture_cumberland
+            }
+ 		}
+		effect = {
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ky_northern_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LXG
+			tag = LVL
+		}
+	}
+
+	mission_ky_northern_an_old_rivalry = {
+		icon = mission_luther_theses
+		position = 1
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = LXG
+				AND = {
+					exists = LXG
+					military_strength = {
+						who = LXG
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = LXG
+			}
+			OR = {
+				LXG = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				LXG = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = LXG }
+				tag = LXG
+			}
+			OR = {
+				is_rival = LVL
+				AND = {
+					exists = LVL
+					military_strength = {
+						who = LVL
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = LVL
+			}
+			OR = {
+				LVL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				LVL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = LVL }
+				tag = LVL
+			}
+ 		}
+		effect = {
+			area_ky_south_louisville = { add_permanent_claim = ROOT }
+			area_ky_west_louisvillle = { add_permanent_claim = ROOT }
+			area_ky_frankfort = { add_permanent_claim = ROOT }
+			area_ky_lexington = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ky_northern_battle_for_the_bluegrass = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ky_northern_an_old_rivalry }
+		trigger = {
+			area_ky_south_louisville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_west_louisvillle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_frankfort = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_lexington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_louisville
+				area = area_ky_west_louisvillle
+				area = area_ky_frankfort
+				area = area_ky_lexington
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ky_northern_a_tale_of_two_cities = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ky_northern_battle_for_the_bluegrass }
+		trigger = {
+			area_ky_south_louisville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ky_lexington = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			LXG = { every_owned_province = { add_permanent_claim = ROOT }  }
+			LVL = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_louisville
+				area = area_ky_lexington
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ky_northern_finishing_the_job = {
+		icon = mission_lvl
+		position = 4
+		required_missions = { mission_ky_northern_a_tale_of_two_cities }
+		trigger = {
+			OR = {
+				NOT = { exists = LXG }
+				tag = LXG
+			}
+			OR = {
+				NOT = { exists = LVL }
+				tag = LVL
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_ky_northern = { add_permanent_claim = ROOT }
+			area_ky_south_cincinnati = { add_permanent_claim = ROOT }
+			area_ky_cincinnati = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_ky_northern_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LXG
+			tag = LVL
+		}
+	}
+
+	mission_ky_northern_the_end_of_little_paris = {
+		icon = mission_cin
+		position = 5
+		required_missions = { mission_ky_northern_finishing_the_job }
+		trigger = {
+			area_ky_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_south_cincinnati = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_cincinnati = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_northern
+				area = area_ky_south_cincinnati
+				area = area_ky_cincinnati
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ky_northern_stabilize_cincinnati = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_ky_northern_the_end_of_little_paris }
+		trigger = {
+			area_ky_south_cincinnati = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ky_cincinnati = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ky_fort_knox = { add_permanent_claim = ROOT }
+			area_ky_grayson = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_cincinnati
+				area = area_ky_cincinnati
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ky_northern_break_into_fort_knox = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_ky_northern_stabilize_cincinnati }
+		trigger = {
+			area_ky_grayson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_fort_knox = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_grayson
+				area = area_ky_fort_knox
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ky_northern_holding_the_fort = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_ky_northern_break_into_fort_knox }
+		trigger = {
+			area_ky_fort_knox = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_fort_knox
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ky_northern_pacifying_the_pennyroyal = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_ky_northern_holding_the_fort }
+		trigger = {
+			accepted_culture = culture_pennyroyal
+ 		}
+		effect = {
+			area_ky_bowling_green = { add_permanent_claim = ROOT }
+			area_ky_logan = { add_permanent_claim = ROOT }
+			area_ky_southern = { add_permanent_claim = ROOT }
+			area_ky_central = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ky_northern_bowling_green_massacre = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_ky_northern_pacifying_the_pennyroyal }
+		trigger = {
+			area_ky_logan = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_bowling_green = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_logan
+				area = area_ky_bowling_green
+				area = area_ky_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

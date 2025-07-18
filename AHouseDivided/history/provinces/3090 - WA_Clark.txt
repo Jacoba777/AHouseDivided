@@ -1,0 +1,30 @@
+capital="Vancouver"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=8
+base_production=8
+base_manpower=8
+native_size=240
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_portland_salemite
+center_of_trade=2
+is_city = yes
+owner=PLD
+add_core=PLD
+controller=PLD
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=13
+	base_production=9
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

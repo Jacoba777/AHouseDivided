@@ -1,0 +1,30 @@
+capital="El Centro"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=6
+base_production=5
+base_manpower=6
+native_size=170
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_yuman
+is_city = yes
+owner=ECT
+add_core=ECT
+controller=ECT
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=3
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

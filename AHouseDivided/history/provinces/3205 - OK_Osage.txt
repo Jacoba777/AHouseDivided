@@ -1,0 +1,30 @@
+capital="Pawhuska"
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = miss_delta
+discovered_by = lower_rockies
+hre = no
+base_tax=3
+base_production=1
+base_manpower=3
+native_size=70
+native_ferocity=2
+native_hostileness=5
+religion=baptist
+culture=culture_tulsan
+is_city = yes
+owner=TSA
+add_core=TSA
+controller=TSA
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XOK
+	add_core=XOK
+	controller=XOK
+}

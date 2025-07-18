@@ -1,0 +1,30 @@
+capital="Hattiesburg"
+discovered_by = miss_delta
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=3
+base_production=4
+base_manpower=4
+native_size=110
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_deep_mississippian
+is_city = yes
+owner=HTB
+add_core=HTB
+controller=HTB
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XMS
+	add_core=XMS
+	controller=XMS
+}

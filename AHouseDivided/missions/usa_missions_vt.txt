@@ -1,0 +1,682 @@
+missions_vt_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVT }
+
+	mission_vt_courting_springfielders = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_vt_reincorporate_vermont }
+		trigger = {
+			accepted_culture = culture_west_new_englander
+ 		}
+		effect = {
+			area_ma_western = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_going_downstream = {
+		icon = mission_se_along_the_river
+		position = 4
+		required_missions = { mission_vt_courting_springfielders }
+		trigger = {
+			area_ma_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_stabilize_the_south = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_vt_going_downstream }
+		trigger = {
+			area_ma_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ct_northern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_vt_scourge_of_hartford = {
+		icon = mission_ct
+		position = 6
+		required_missions = { mission_vt_stabilize_the_south }
+		trigger = {
+			area_ct_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ct_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_vt_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVT }
+
+	mission_vt_these_green_mountains = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_vt = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_vt is_city = yes }
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_vt_reincorporate_vermont = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_vt_these_green_mountains }
+		trigger = {
+			region_vt = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			area_ny_glens_falls = { add_permanent_claim = ROOT }
+			area_nh_northern = { add_permanent_claim = ROOT }
+			699 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_vt is_city = yes }
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_vt_into_the_adirondacks = {
+		icon = mission_expand_into_the_forest
+		position = 3
+		required_missions = { mission_vt_reincorporate_vermont }
+		trigger = {
+			area_ny_glens_falls = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			699 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_glens_falls
+				province_id = 699
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_fort_ticonderoga = {
+		icon = mission_fortify_rajputana
+		position = 4
+		required_missions = { mission_vt_into_the_adirondacks }
+		trigger = {
+            728 = { has_building = fort_15th }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_mountain_fortresses
+				duration = 9125  # 25 years
+			}
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+            province_id = 728
+		}
+	}
+
+	mission_vt_take_new_hampshire = {
+		icon = mission_nh
+		position = 5
+		required_missions = { mission_vt_develop_the_woodlands mission_vt_going_downstream }
+		trigger = {
+			region_nh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_welcome_bostonians = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_vt_take_new_hampshire }
+		trigger = {
+			accepted_culture = culture_bostonian
+ 		}
+		effect = {
+			area_ma_boston = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_the_city_on_a_hill = {
+		icon = mission_bto
+		position = 7
+		required_missions = { mission_vt_welcome_bostonians }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_integrating_boston = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_vt_the_city_on_a_hill }
+		trigger = {
+			area_ma_boston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ma_south_shore = { add_permanent_claim = ROOT }
+			474 = { add_permanent_claim = ROOT }
+			864 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_vt_plight_of_the_pilgrims = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_vt_integrating_boston }
+		trigger = {
+			area_ma_south_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			474 = { country_or_non_sovereign_subject_holds = ROOT }
+			864 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_south_shore
+				province_id = 474
+				province_id = 864
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_vt_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVT }
+
+	mission_vt_battle_for_the_woodlands = {
+		icon = mission_forest
+		position = 3
+		required_missions = { mission_vt_reincorporate_vermont }
+		trigger = {
+			area_nh_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nh_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_develop_the_woodlands = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_vt_battle_for_the_woodlands }
+		trigger = {
+			area_nh_northern = { type = all  num_of_times_improved_by_owner = 4 }
+ 		}
+		effect = {
+			region_nh = { add_permanent_claim = ROOT }
+			area_me_portland = { add_permanent_claim = ROOT }
+			1596 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_nh_northern
+					NOT = { num_of_times_improved_by_owner =  4}
+				}
+			}
+		}
+	}
+
+	mission_vt_the_push_to_portland = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_vt_develop_the_woodlands }
+		trigger = {
+			area_me_portland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_me_portland
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_safeguard_portland = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_vt_the_push_to_portland }
+		trigger = {
+			area_me_portland = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_me_augusta = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_me_portland
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_vt_annex_augusta = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_vt_safeguard_portland }
+		trigger = {
+			area_me_augusta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_me_augusta
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_the_rights_of_maine = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_vt_annex_augusta }
+		trigger = {
+            OR = {
+                accepted_culture = culture_portland_mainer
+                accepted_culture = culture_coastal_mainer
+                accepted_culture = culture_north_mainer
+            }
+ 		}
+		effect = {
+			region_me = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_vt_the_fall_of_maine = {
+		icon = mission_me
+		position = 9
+		required_missions = { mission_vt_the_rights_of_maine }
+		trigger = {
+			region_me = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_me
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_freedom_and_unity = {
+		icon = mission_vt
+		position = 10
+		required_missions = { mission_vt_the_fall_of_maine mission_vt_vermont_progressivism mission_vt_plight_of_the_pilgrims }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_freedom_and_unity
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_vt_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVT }
+
+	mission_vt_improve_infrastructure = {
+		icon = mission_rb_colonise_canada
+		position = 5
+		required_missions = {  }
+		trigger = {
+            region_vt = {
+                num_of_times_expanded_infrastructure = 2
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_improved_infrastructure
+				duration = 3650  # 10 years
+			}
+		}
+
+	}
+
+	mission_vt_control_the_forests = {
+		icon = mission_forest
+		position = 6
+		required_missions = { mission_vt_improve_infrastructure }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                has_terrain = forest
+            }
+            num_of_owned_provinces_with = {
+                value = 4
+                trade_goods = tropical_wood
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_maple_syrup_export_boom
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            OR = {
+                has_terrain = forest
+                trade_goods = tropical_wood
+            }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_vt_develop_small_towns = {
+		icon = mission_early_game_buildings
+		position = 7
+		required_missions = { mission_vt_control_the_forests mission_vt_support_local_artisans }
+		trigger = {
+            region_vt = {
+                type = all
+                development = 10
+            }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			change_government_reform_progress = 100
+
+		}
+		provinces_to_highlight = {
+            region = region_vt
+            NOT = { development = 10 }
+		}
+	}
+
+	mission_vt_hold_town_halls = {
+		icon = mission_town_hall
+		position = 8
+		required_missions = { mission_vt_develop_small_towns }
+		trigger = {
+            region_vt = {
+                type = all
+                has_building = town_hall
+            }
+ 		}
+		effect = {
+			change_government_reform_progress = 50
+
+			add_legitimacy = 25
+			add_meritocracy = 25
+			add_republican_tradition = 12
+			add_devotion = 25
+			add_horde_unity = 25
+		}
+		provinces_to_highlight = {
+            region = region_vt
+            NOT = { has_building = town_hall }
+		}
+	}
+
+	mission_vt_vermont_progressivism = {
+		icon = mission_green_mountain
+		position = 9
+		required_missions = { mission_vt_hold_town_halls }
+		trigger = {
+            faction_influence = {
+                faction = faction_progressives
+                influence = 75
+            }
+            OR = {
+                religion = atheist
+                religion = secular
+                full_idea_group = humanist_ideas
+            }
+            OR = {
+                government = republic
+                has_government_mechanic = parliament
+            }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 100
+		}
+
+	}
+}
+
+missions_vt_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XVT }
+
+	mission_vt_subsidize_dairy_farming = {
+		icon = mission_high_income
+		position = 5
+		required_missions = {  }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 2
+                trade_goods = livestock
+                base_production = 5
+                has_building = workshop
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_growth_of_the_ice_cream_industry
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            trade_goods = livestock
+            NOT = {
+                has_building = workshop
+                base_production = 5
+            }
+		}
+	}
+
+	mission_vt_support_local_artisans = {
+		icon = mission_dominate_home_trade_node
+		position = 6
+		required_missions = { mission_vt_subsidize_dairy_farming }
+		trigger = {
+            num_of_estate_privileges = {
+                estate = estate_burghers
+                value = 4
+            }
+            estate_loyalty = {
+                estate = estate_burghers
+                loyalty = 60
+            }
+            estate_influence = {
+                estate = estate_burghers
+                influence = 75
+            }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_years_of_income = 0.5
+		}
+
+	}
+}

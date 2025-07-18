@@ -1,0 +1,29 @@
+capital="Los Alamos"
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = texas
+hre = no
+base_tax=3
+base_production=3
+base_manpower=1
+native_size=70
+native_ferocity=5
+native_hostileness=2
+religion=atheist
+culture=culture_burqueno
+is_city = yes
+owner=SFE
+add_core=SFE
+controller=SFE
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XNM
+	add_core=XNM
+	controller=XNM
+}

@@ -1,0 +1,28 @@
+capital="Port Angeles"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=4
+base_production=3
+base_manpower=4
+native_size=110
+native_ferocity=4
+native_hostileness=4
+religion=nondenominational
+culture=culture_olympic
+is_city = yes
+owner=BRM
+add_core=BRM
+controller=BRM
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

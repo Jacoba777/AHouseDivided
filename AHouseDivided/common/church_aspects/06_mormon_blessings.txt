@@ -1,0 +1,96 @@
+build_city_of_zion = {
+	is_blessing = yes
+
+	modifier = {
+		development_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 3
+			NOT = {
+				OR = {
+					legitimacy = 70
+					republican_tradition = 70
+					devotion = 70
+				}
+			}
+		}
+	}
+}
+
+encourage_the_eternal_family = {
+	is_blessing = yes
+
+	modifier = {
+		manpower_recovery_speed = 0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 3
+			NOT = {
+				manpower = 4
+			}
+		}
+	}
+}
+
+host_gathering = {
+	is_blessing = yes
+
+	modifier = {
+		global_missionary_strength = 0.015
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.9
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.7
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+}
+
+embrace_pioneer_spirit = {
+	is_blessing = yes
+
+	modifier = {
+		global_colonial_growth = 25
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			overextension_percentage = 0.7
+		}
+		modifier = {
+			factor = 3
+			overextension_percentage = 0.5
+		}
+	}
+}
+
+honor_word_of_wisdom = {
+	is_blessing = yes
+
+	modifier = {
+		discipline = 0.025
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}

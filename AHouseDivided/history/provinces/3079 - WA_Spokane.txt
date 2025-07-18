@@ -1,0 +1,30 @@
+capital="Spokane"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=7
+base_production=8
+base_manpower=8
+native_size=230
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_spokanite
+center_of_trade=2
+is_city = yes
+owner=SPK
+add_core=SPK
+controller=SPK
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=7
+	base_production=11
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

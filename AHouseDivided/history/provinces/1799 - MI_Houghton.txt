@@ -1,0 +1,29 @@
+capital="Houghton"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=1
+base_production=2
+base_manpower=2
+native_size=50
+native_ferocity=8
+native_hostileness=4
+religion=catholic
+culture=culture_yooper
+is_city = yes
+owner=CMX
+add_core=CMX
+add_core=CMX
+controller=CMX
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

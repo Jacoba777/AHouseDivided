@@ -1,0 +1,30 @@
+capital="Gettysburg"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=5
+base_production=4
+base_manpower=4
+native_size=130
+native_ferocity=4
+native_hostileness=3
+religion=lutheran
+culture=culture_penn_dutch
+is_city = yes
+owner=GTY
+add_core=GTY
+controller=GTY
+
+1444.11.12 = {
+	base_tax=2
+	base_production=1
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

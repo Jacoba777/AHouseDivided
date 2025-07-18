@@ -1,0 +1,322 @@
+missions_wv_southern_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HTT
+			tag = CHW
+		}
+	}
+
+	mission_wv_southern_a_decisive_victory = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_wv_southern_local_feuds }
+		trigger = {
+			OR = {
+				NOT = { exists = HTT }
+				tag = HTT
+			}
+			OR = {
+				NOT = { exists = CHW }
+				tag = CHW
+			}
+ 		}
+		effect = {
+			area_wv_parkersburg = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_southern_going_upstream = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wv_southern_a_decisive_victory }
+		trigger = {
+			area_wv_parkersburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_parkersburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_wv_southern_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HTT
+			tag = CHW
+		}
+	}
+
+	mission_wv_southern_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_thriving_arms_industry
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_wv_southern_staking_our_claims = {
+		icon = mission_luther_theses
+		position = 2
+		required_missions = { mission_wv_southern_fielding_an_army }
+		trigger = {
+			OR = {
+				is_rival = HTT
+				AND = {
+					exists = HTT
+					military_strength = {
+						who = HTT
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = HTT
+			}
+			OR = {
+				HTT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				HTT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = HTT }
+				tag = HTT
+			}
+			OR = {
+				is_rival = CHW
+				AND = {
+					exists = CHW
+					military_strength = {
+						who = CHW
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CHW
+			}
+			OR = {
+				CHW = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CHW = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CHW }
+				tag = CHW
+			}
+ 		}
+		effect = {
+			area_wv_charleston = { add_permanent_claim = ROOT }
+			area_wv_south_charleston = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wv_southern_local_feuds = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wv_southern_staking_our_claims }
+		trigger = {
+			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			HTT = { every_owned_province = { add_permanent_claim = ROOT }  }
+			CHW = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_wv_southern_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = HTT
+			tag = CHW
+		}
+	}
+
+	mission_wv_southern_a_respectable_state = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_wv_southern_local_feuds }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wv_south_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_wv_southern = { add_permanent_claim = ROOT }
+			area_wv_beckley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+				area = area_wv_south_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wv_southern_into_the_mountains = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wv_southern_a_respectable_state }
+		trigger = {
+			area_wv_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_beckley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_southern
+				area = area_wv_beckley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_southern_develop_beckley = {
+		icon = mission_early_game_buildings
+		position = 6
+		required_missions = { mission_wv_southern_into_the_mountains }
+		trigger = {
+			area_wv_beckley = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+            2702 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2701 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2685 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2687 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+    
+			area_wv_central = { add_permanent_claim = ROOT }
+			area_wv_clarksburg = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_wv_beckley
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_wv_southern_into_the_hollerlands = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_wv_southern_develop_beckley }
+		trigger = {
+			area_wv_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_clarksburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 75
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_central
+				area = area_wv_clarksburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

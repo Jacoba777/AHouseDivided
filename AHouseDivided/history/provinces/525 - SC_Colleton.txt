@@ -1,0 +1,28 @@
+capital="Walterboro"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=1
+base_manpower=2
+native_size=50
+native_ferocity=3
+native_hostileness=4
+religion=baptist
+culture=culture_charlestonian
+is_city = yes
+owner=CLS
+add_core=CLS
+controller=CLS
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

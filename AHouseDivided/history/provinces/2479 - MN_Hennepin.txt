@@ -1,0 +1,31 @@
+capital="Minneapolis"
+discovered_by = northern_plains
+discovered_by = great_lakes
+discovered_by = central_plains
+hre = no
+base_tax=11
+base_production=11
+base_manpower=10
+native_size=320
+native_ferocity=5
+native_hostileness=3
+religion=lutheran
+culture=culture_minnea_paulite
+center_of_trade=2
+is_city = yes
+owner=MNP
+add_core=MNP
+controller=MNP
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=48
+	base_production=56
+	base_manpower=30
+}
+
+1444.11.13 = {
+	owner=XMN
+	add_core=XMN
+	controller=XMN
+}

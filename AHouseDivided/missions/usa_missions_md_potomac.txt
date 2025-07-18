@@ -1,0 +1,111 @@
+missions_md_potomac_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = WGM
+			tag = PGE
+			tag = ANP
+		}
+	}
+
+	mission_md_potomac_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			500 = { add_permanent_claim = ROOT }
+			504 = { add_permanent_claim = ROOT }
+			496 = { add_permanent_claim = ROOT }
+			499 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_potomac_the_northern_suburbs = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_md_potomac_fielding_an_army }
+		trigger = {
+			500 = { country_or_non_sovereign_subject_holds = ROOT }
+			504 = { country_or_non_sovereign_subject_holds = ROOT }
+			496 = { country_or_non_sovereign_subject_holds = ROOT }
+			499 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_md_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 500
+				province_id = 504
+				province_id = 496
+				province_id = 499
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_potomac_to_southern_maryland = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_md_potomac_the_northern_suburbs }
+		trigger = {
+			area_md_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_md_capital = { add_permanent_claim = ROOT }
+			area_md_baltimore = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_potomac_the_fate_of_charm_city = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_md_potomac_to_southern_maryland }
+		trigger = {
+			area_md_baltimore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_md_northeastern = { add_permanent_claim = ROOT }
+			area_md_southeast_chesapeake = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_baltimore
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_potomac_crossing_the_chesapeake = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_md_potomac_the_fate_of_charm_city }
+		trigger = {
+			area_md_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_southeast_chesapeake = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_northeastern
+				area = area_md_southeast_chesapeake
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

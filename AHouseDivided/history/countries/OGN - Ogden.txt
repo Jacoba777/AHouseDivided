@@ -1,0 +1,7 @@
+technology_group = southwest
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = mormon
+primary_culture = culture_salt_laker
+capital = 3173

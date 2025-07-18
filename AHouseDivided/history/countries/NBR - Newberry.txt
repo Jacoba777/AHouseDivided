@@ -1,0 +1,7 @@
+technology_group = southeast
+government = republic
+add_government_reform = american_republic
+government_rank = 1
+religion = methodist
+primary_culture = culture_midlander
+capital = 551

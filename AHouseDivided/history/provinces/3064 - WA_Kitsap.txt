@@ -1,0 +1,29 @@
+capital="Port Orchard"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=7
+base_production=6
+base_manpower=7
+native_size=200
+native_ferocity=4
+native_hostileness=4
+religion=atheist
+culture=culture_puget
+is_city = yes
+owner=BRM
+add_core=BRM
+controller=BRM
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=7
+	base_production=5
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

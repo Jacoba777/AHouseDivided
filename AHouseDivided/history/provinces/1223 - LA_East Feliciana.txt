@@ -1,0 +1,28 @@
+capital="Clinton"
+discovered_by = miss_delta
+discovered_by = texas
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_baton_rougian
+is_city = yes
+owner=BTR
+add_core=BTR
+controller=BTR
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XLA
+	add_core=XLA
+	controller=XLA
+}

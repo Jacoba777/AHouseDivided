@@ -1,0 +1,29 @@
+capital="Alfred"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = no
+base_tax=7
+base_production=6
+base_manpower=6
+native_size=190
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_portland_mainer
+is_city = yes
+owner=TPL
+add_core=TPL
+controller=TPL
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=4
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XME
+	add_core=XME
+	controller=XME
+}

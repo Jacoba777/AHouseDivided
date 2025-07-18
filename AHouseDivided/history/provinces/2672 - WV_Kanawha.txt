@@ -1,0 +1,33 @@
+capital="Charleston"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = new_england
+hre = no
+base_tax=4
+base_production=6
+base_manpower=6
+native_size=160
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_kanahwa
+center_of_trade=2
+is_city = yes
+owner=CHW
+add_core=CHW
+controller=CHW
+fort_15th=yes
+trade_goods=tropical_wood
+
+1444.11.12 = {
+	base_tax=1
+	base_production=4
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XWV
+	add_core=XWV
+	controller=XWV
+}

@@ -1,0 +1,7 @@
+technology_group = appalachia
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = baptist
+primary_culture = culture_johnsonian
+capital = 1041

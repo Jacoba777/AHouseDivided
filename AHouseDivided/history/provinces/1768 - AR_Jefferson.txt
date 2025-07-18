@@ -1,0 +1,32 @@
+capital="Pine Bluff"
+discovered_by = miss_delta
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=3
+base_production=3
+base_manpower=3
+native_size=90
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_little_rocker
+center_of_trade=1
+is_city = yes
+owner=PBF
+add_core=PBF
+controller=PBF
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XAR
+	add_core=XAR
+	controller=XAR
+}

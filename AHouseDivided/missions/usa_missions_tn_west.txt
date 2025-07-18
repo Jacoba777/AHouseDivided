@@ -1,0 +1,317 @@
+missions_tn_west_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CKV
+			tag = JBV
+			tag = MPS
+		}
+	}
+
+	mission_tn_west_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_tn_carroll = { add_permanent_claim = ROOT }
+			area_tn_northwestern = { add_permanent_claim = ROOT }
+			area_tn_western = { add_permanent_claim = ROOT }
+			area_tn_southwestern = { add_permanent_claim = ROOT }
+			area_tn_jackson = { add_permanent_claim = ROOT }
+			area_tn_north_memphis = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_west_unite_western_tenn = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_tn_west_fielding_an_army }
+		trigger = {
+			area_tn_carroll = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_tn_northwestern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_tn_western = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_tn_southwestern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_tn_jackson = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_tn_north_memphis = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_carroll
+				area = area_tn_northwestern
+				area = area_tn_western
+				area = area_tn_southwestern
+				area = area_tn_jackson
+				area = area_tn_north_memphis
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_tn_west_stabilize_the_west = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_tn_west_unite_western_tenn }
+		trigger = {
+			area_tn_north_memphis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_tn_jackson = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_tn_west_nashville = { add_permanent_claim = ROOT }
+			area_tn_southern = { add_permanent_claim = ROOT }
+			area_tn_hickman = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_north_memphis
+				area = area_tn_jackson
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_west_into_middle_tenn = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_tn_west_stabilize_the_west }
+		trigger = {
+			area_tn_west_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_hickman = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_west_nashville
+				area = area_tn_southern
+				area = area_tn_hickman
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_west_embrace_nashvillian = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_tn_west_into_middle_tenn }
+		trigger = {
+			accepted_culture = culture_nashvillian
+ 		}
+		effect = {
+			area_tn_nashville = { add_permanent_claim = ROOT }
+			area_tn_south_nashville = { add_permanent_claim = ROOT }
+			area_tn_northern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_tn_west_the_fate_of_music_city = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_tn_west_embrace_nashvillian }
+		trigger = {
+			area_tn_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_south_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_nashville
+				area = area_tn_south_nashville
+				area = area_tn_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_west_annex_nashville = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_tn_west_the_fate_of_music_city }
+		trigger = {
+			area_tn_nashville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_tn_south_nashville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_tn_tullahoma = { add_permanent_claim = ROOT }
+			area_tn_east_central = { add_permanent_claim = ROOT }
+			area_tn_north_chattanooga = { add_permanent_claim = ROOT }
+			area_tn_rhea = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_nashville
+				area = area_tn_south_nashville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_tn_west_the_last_grand_division = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_tn_west_annex_nashville }
+		trigger = {
+			area_tn_tullahoma = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_east_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_north_chattanooga = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_rhea = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_tullahoma
+				area = area_tn_east_central
+				area = area_tn_north_chattanooga
+				area = area_tn_rhea
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_tn_west_improve_dayton = {
+		icon = mission_early_game_buildings
+		position = 9
+		required_missions = { mission_tn_west_the_last_grand_division }
+		trigger = {
+			area_tn_rhea = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_tn_knoxville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_tn_rhea
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_tn_west_a_hard_knox_life = {
+		icon = mission_knx
+		position = 10
+		required_missions = { mission_tn_west_improve_dayton }
+		trigger = {
+			area_tn_knoxville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_knoxville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,28 @@
+capital="Schenectady"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=6
+base_production=6
+base_manpower=5
+native_size=170
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_albanian
+is_city = yes
+owner=ABY
+add_core=ABY
+controller=ABY
+
+1444.11.12 = {
+	base_tax=3
+	base_production=4
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

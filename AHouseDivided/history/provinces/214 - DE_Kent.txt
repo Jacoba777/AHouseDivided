@@ -1,0 +1,29 @@
+capital="Dover"
+discovered_by = mid_atlantic
+discovered_by = appalachia
+discovered_by = new_england
+hre = yes
+base_tax=5
+base_production=5
+base_manpower=6
+native_size=160
+native_ferocity=5
+native_hostileness=4
+religion=methodist
+culture=culture_delmarvan
+is_city = yes
+owner=DOV
+add_core=DOV
+controller=DOV
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XDE
+	add_core=XDE
+	controller=XDE
+}

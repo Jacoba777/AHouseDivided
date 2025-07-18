@@ -1,0 +1,29 @@
+capital="Visalia"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=7
+base_production=7
+base_manpower=8
+native_size=220
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_south_valley
+is_city = yes
+owner=VSL
+add_core=VSL
+controller=VSL
+
+1444.11.12 = {
+	base_tax=8
+	base_production=7
+	base_manpower=12
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

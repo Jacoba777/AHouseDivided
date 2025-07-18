@@ -1,0 +1,26 @@
+capital="Glenwood Springs"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=4
+base_production=4
+base_manpower=3
+native_size=110
+native_ferocity=5
+native_hostileness=3
+religion=nondenominational
+culture=culture_eagle
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

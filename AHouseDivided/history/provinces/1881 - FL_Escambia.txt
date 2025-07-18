@@ -1,0 +1,30 @@
+capital="Pensacola"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=5
+base_production=7
+base_manpower=7
+native_size=190
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_panhandle
+center_of_trade=2
+is_city = yes
+owner=PNC
+add_core=PNC
+controller=PNC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=3
+	base_production=6
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

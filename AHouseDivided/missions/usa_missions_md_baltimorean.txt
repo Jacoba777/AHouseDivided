@@ -1,0 +1,97 @@
+missions_md_baltimorean_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = BLR
+			tag = BEL
+			tag = ELC
+			tag = WMS
+			tag = FDK
+		}
+	}
+
+	mission_md_baltimorean_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_md_baltimore = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_baltimorean_the_fate_of_charm_city = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_md_baltimorean_fielding_an_army }
+		trigger = {
+			502 = { country_or_non_sovereign_subject_holds = ROOT }
+			493 = { country_or_non_sovereign_subject_holds = ROOT }
+			494 = { country_or_non_sovereign_subject_holds = ROOT }
+			495 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_md_capital = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 502
+				province_id = 493
+				province_id = 494
+				province_id = 495
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_baltimorean_the_push_to_washington = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_md_baltimorean_the_fate_of_charm_city }
+		trigger = {
+			500 = { country_or_non_sovereign_subject_holds = ROOT }
+			501 = { country_or_non_sovereign_subject_holds = ROOT }
+			503 = { country_or_non_sovereign_subject_holds = ROOT }
+			504 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_md_southern = { add_permanent_claim = ROOT }
+			area_md_panhandle = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 500
+				province_id = 501
+				province_id = 503
+				province_id = 504
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_baltimorean_securing_west_maryland = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_md_baltimorean_the_push_to_washington }
+		trigger = {
+			area_md_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_southern
+				area = area_md_panhandle
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,28 @@
+capital="DeLand"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=7
+base_production=7
+base_manpower=8
+native_size=220
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_east_floridian
+is_city = yes
+owner=DTA
+add_core=DTA
+controller=DTA
+
+1444.11.12 = {
+	base_tax=6
+	base_production=8
+	base_manpower=14
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

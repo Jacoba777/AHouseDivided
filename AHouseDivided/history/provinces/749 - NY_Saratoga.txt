@@ -1,0 +1,29 @@
+capital="Ballston Spa"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=7
+base_production=6
+base_manpower=6
+native_size=190
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_albanian
+is_city = yes
+owner=ABY
+add_core=ABY
+controller=ABY
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=6
+	base_production=5
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

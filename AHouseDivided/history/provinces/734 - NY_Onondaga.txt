@@ -1,0 +1,30 @@
+capital="Syracuse"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=7
+base_production=8
+base_manpower=8
+native_size=230
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_syracusan
+center_of_trade=2
+is_city = yes
+owner=SYC
+add_core=SYC
+controller=SYC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=8
+	base_production=12
+	base_manpower=11
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

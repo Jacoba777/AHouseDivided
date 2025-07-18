@@ -1,0 +1,3 @@
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southeast

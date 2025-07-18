@@ -1,0 +1,444 @@
+missions_nc_piedmont_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SHB
+			tag = FYV
+			tag = PRT
+			tag = LBT
+			tag = ERH
+			tag = GNR
+			tag = WSN
+			tag = HKR
+			tag = ABM
+		}
+	}
+
+	mission_nc_piedmont_enemies_with_raleigh = {
+		icon = mission_ral
+		position = 3
+		required_missions = { mission_nc_piedmont_unite_our_people }
+		trigger = {
+			OR = {
+				is_rival = RAL
+				AND = {
+					exists = RAL
+					military_strength = {
+						who = RAL
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = RAL
+			}
+			OR = {
+				RAL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				RAL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = RAL }
+				tag = RAL
+			}
+ 		}
+		effect = {
+			area_nc_north_research_triangle = { add_permanent_claim = ROOT }
+			area_nc_west_research_triangle = { add_permanent_claim = ROOT }
+			area_nc_raleigh = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nc_piedmont_capture_the_old_capital = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nc_piedmont_enemies_with_raleigh }
+		trigger = {
+			area_nc_north_research_triangle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_west_research_triangle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_raleigh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_north_research_triangle
+				area = area_nc_west_research_triangle
+				area = area_nc_raleigh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nc_piedmont_embrace_raleighite = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_nc_piedmont_capture_the_old_capital }
+		trigger = {
+			accepted_culture = culture_raleighite
+ 		}
+		effect = {
+			area_nc_fayetteville = { add_permanent_claim = ROOT }
+			area_nc_pinehurst = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nc_piedmont_conquer_fayetteville = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_nc_piedmont_embrace_raleighite }
+		trigger = {
+			area_nc_pinehurst = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_fayetteville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_pinehurst
+				area = area_nc_fayetteville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nc_piedmont_incorporate_fayetteville = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_nc_piedmont_conquer_fayetteville }
+		trigger = {
+			area_nc_fayetteville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nc_goldsboro = { add_permanent_claim = ROOT }
+			area_nc_south_coast = { add_permanent_claim = ROOT }
+			area_nc_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_fayetteville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nc_piedmont_the_push_to_wilmington = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_nc_piedmont_incorporate_fayetteville }
+		trigger = {
+			area_nc_goldsboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_south_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_goldsboro
+				area = area_nc_south_coast
+				area = area_nc_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_nc_piedmont_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SHB
+			tag = FYV
+			tag = PRT
+			tag = LBT
+			tag = ERH
+			tag = GNR
+			tag = WSN
+			tag = HKR
+			tag = ABM
+		}
+	}
+
+	mission_nc_piedmont_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            custom_tooltip = "tooltip_claim_by_primary_culture"
+            hidden_effect = {
+                capital_scope = {
+                    region = {
+                        limit = {
+                            NOT = { owned_by = ROOT }
+                            culture = ROOT
+                        }
+                        add_permanent_claim = ROOT
+                    }
+                }
+            }
+		}
+
+	}
+
+	mission_nc_piedmont_unite_our_people = {
+		icon = mission_pf_map_table
+		position = 2
+		required_missions = { mission_nc_piedmont_fielding_an_army }
+		trigger = {
+            custom_trigger_tooltip = {
+                tooltip = "tooltip_own_all_provs_primary_culture"
+                NOT = {
+                    any_known_country = {
+                        num_of_owned_provinces_with = {
+                            value = 1
+                            culture = ROOT
+                        }
+                        NOT = { tag = ROOT }
+                    }
+                }
+            }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+            region_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+            culture = ROOT
+		}
+	}
+}
+
+missions_nc_piedmont_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SHB
+			tag = FYV
+			tag = PRT
+			tag = LBT
+			tag = ERH
+			tag = GNR
+			tag = WSN
+			tag = HKR
+			tag = ABM
+		}
+	}
+
+	mission_nc_piedmont_rivaling_the_queen = {
+		icon = mission_clt
+		position = 3
+		required_missions = { mission_nc_piedmont_unite_our_people }
+		trigger = {
+			OR = {
+				is_rival = CLT
+				AND = {
+					exists = CLT
+					military_strength = {
+						who = CLT
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CLT
+			}
+			OR = {
+				CLT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CLT = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CLT }
+				tag = CLT
+			}
+ 		}
+		effect = {
+			area_nc_charlotte = { add_permanent_claim = ROOT }
+			area_nc_north_charlotte = { add_permanent_claim = ROOT }
+			area_nc_east_charlotte = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nc_piedmont_the_queen_is_in_check = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_nc_piedmont_rivaling_the_queen }
+		trigger = {
+			area_nc_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_north_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_east_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_charlotte
+				area = area_nc_north_charlotte
+				area = area_nc_east_charlotte
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nc_piedmont_accept_charlottean = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_nc_piedmont_the_queen_is_in_check }
+		trigger = {
+			accepted_culture = culture_charlottean
+ 		}
+		effect = {
+			area_nc_mount_airy = { add_permanent_claim = ROOT }
+			area_nc_winstone = { add_permanent_claim = ROOT }
+			area_nc_greensboro = { add_permanent_claim = ROOT }
+			area_nc_hickory = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_nc_piedmont_invade_greensboro = {
+		icon = mission_gnr
+		position = 6
+		required_missions = { mission_nc_piedmont_accept_charlottean }
+		trigger = {
+			area_nc_mount_airy = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_winstone = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_greensboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_mount_airy
+				area = area_nc_winstone
+				area = area_nc_greensboro
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_nc_piedmont_stabilize_greensboro = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_nc_piedmont_invade_greensboro }
+		trigger = {
+			area_nc_winstone = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_nc_greensboro = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_nc_north_wilkesboro = { add_permanent_claim = ROOT }
+			area_nc_northwestern = { add_permanent_claim = ROOT }
+			area_nc_southwestern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_winstone
+				area = area_nc_greensboro
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_nc_piedmont_into_the_blue_ridge = {
+		icon = mission_smoky_mountains
+		position = 8
+		required_missions = { mission_nc_piedmont_stabilize_greensboro }
+		trigger = {
+			area_nc_hickory = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_north_wilkesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_hickory
+				area = area_nc_north_wilkesboro
+				area = area_nc_northwestern
+				area = area_nc_southwestern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

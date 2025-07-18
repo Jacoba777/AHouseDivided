@@ -1,0 +1,29 @@
+capital="New Braunfels"
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southwest
+hre = no
+base_tax=7
+base_production=5
+base_manpower=6
+native_size=180
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_alamo
+is_city = yes
+owner=SAN
+add_core=SAN
+controller=SAN
+
+1444.11.12 = {
+	base_tax=5
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XTX
+	add_core=XTX
+	controller=XTX
+}

@@ -1,0 +1,28 @@
+capital="Florence"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_pee_dee
+is_city = yes
+owner=FLT
+add_core=FLT
+controller=FLT
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

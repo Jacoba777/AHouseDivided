@@ -1,0 +1,30 @@
+capital="Owensboro"
+discovered_by = appalachia
+discovered_by = great_lakes
+discovered_by = central_plains
+hre = no
+base_tax=4
+base_production=4
+base_manpower=4
+native_size=120
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_pennyroyal
+center_of_trade=1
+is_city = yes
+owner=OWB
+add_core=OWB
+controller=OWB
+
+1444.11.12 = {
+	base_tax=1
+	base_production=2
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XKY
+	add_core=XKY
+	controller=XKY
+}

@@ -1,0 +1,29 @@
+capital="Providence"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=8
+base_production=8
+base_manpower=8
+native_size=240
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_providencial
+center_of_trade=1
+is_city = yes
+owner=PVD
+add_core=PVD
+controller=PVD
+
+1444.11.12 = {
+	base_tax=13
+	base_production=14
+	base_manpower=16
+}
+
+1444.11.13 = {
+	owner=XRI
+	add_core=XRI
+	controller=XRI
+}

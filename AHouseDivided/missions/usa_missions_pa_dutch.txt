@@ -1,0 +1,519 @@
+missions_pa_dutch_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RDG
+			tag = LCR
+			tag = PTV
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
+		}
+	}
+
+	mission_pa_dutch_uniting_the_penn_dutch = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_pa_dutch_a_respectable_state }
+		trigger = {
+			265 = { country_or_non_sovereign_subject_holds = ROOT }
+			266 = { country_or_non_sovereign_subject_holds = ROOT }
+			267 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 265
+				province_id = 266
+				province_id = 267
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_incorporate_the_west = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_pa_dutch_uniting_the_penn_dutch }
+		trigger = {
+			area_pa_north_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_pa_south_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_johnstown = { add_permanent_claim = ROOT }
+			area_pa_allegheny_mts = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+				area = area_pa_south_dutch
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_dutch_into_the_mountains = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_dutch_incorporate_the_west }
+		trigger = {
+			area_pa_johnstown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_allegheny_mts = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_johnstown
+				area = area_pa_allegheny_mts
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_develop_the_alleghenies = {
+		icon = mission_colonial
+		position = 7
+		required_missions = { mission_pa_dutch_into_the_mountains }
+		trigger = {
+            237 = { num_of_times_improved_by_owner = 2 }
+            238 = { num_of_times_improved_by_owner = 2 }
+            249 = { num_of_times_improved_by_owner = 2 }
+            250 = { num_of_times_improved_by_owner = 2 }
+            251 = { num_of_times_improved_by_owner = 2 }
+            266 = { num_of_times_improved_by_owner = 2 }
+ 		}
+		effect = {
+			area_pa_central = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 237
+                province_id = 238
+                province_id = 249
+                province_id = 250
+                province_id = 251
+                province_id = 266
+            }
+            NOT = { num_of_times_improved_by_owner = 2 }
+		}
+	}
+}
+
+missions_pa_dutch_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RDG
+			tag = LCR
+			tag = PTV
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
+		}
+	}
+
+	mission_pa_dutch_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_pa_dutch_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_pa_dutch_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_pa_dutch_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			265 = { add_permanent_claim = ROOT }
+			266 = { add_permanent_claim = ROOT }
+			267 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_dutch_incorporate_the_east = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_pa_dutch_uniting_the_penn_dutch }
+		trigger = {
+			area_pa_north_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_pa_east_dutch = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_susquehanna_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+				area = area_pa_east_dutch
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_dutch_susquehanna_campaign = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_dutch_incorporate_the_east }
+		trigger = {
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_susquehanna_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_susquehanna_inroads = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_pa_dutch_susquehanna_campaign }
+		trigger = {
+			accepted_culture = culture_susquehanna
+ 		}
+		effect = {
+			area_pa_allentown = { add_permanent_claim = ROOT }
+			area_pa_scranton = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_pa_dutch_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RDG
+			tag = LCR
+			tag = PTV
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
+		}
+	}
+
+	mission_pa_dutch_the_rise_of_harrisburg = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_pa_dutch_a_respectable_state }
+		trigger = {
+            OR = {
+                265 = {
+                    higher_development_than = 224
+                    higher_development_than = 273
+                }
+                AND = {
+                    265 = { num_of_times_improved_by_owner = 15 }
+                    total_development = PHL
+                    total_development = PIT
+                }
+            }
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+			area_pa_pittsburgh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            province_id = 265
+		}
+	}
+
+	mission_pa_dutch_the_city_of_brotherly_love = {
+		icon = mission_phl
+		position = 5
+		required_missions = { mission_pa_dutch_the_rise_of_harrisburg }
+		trigger = {
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_stabilize_philadelphia = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_pa_dutch_the_city_of_brotherly_love }
+		trigger = {
+			area_pa_philly = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_dutch_accept_philadelphian = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_pa_dutch_stabilize_philadelphia }
+		trigger = {
+			accepted_culture = culture_philadelphian
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+
+	}
+
+	mission_pa_dutch_the_keystone_custodian = {
+		icon = mission_hsb
+		position = 8
+		required_missions = { mission_pa_dutch_accept_philadelphian mission_pa_dutch_accept_pittsburgher mission_pa_dutch_susquehanna_inroads }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_keystone_custodian
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_pa_dutch_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RDG
+			tag = LCR
+			tag = PTV
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
+		}
+	}
+
+	mission_pa_dutch_the_fate_of_steel_city = {
+		icon = mission_pit
+		position = 5
+		required_missions = { mission_pa_dutch_the_rise_of_harrisburg }
+		trigger = {
+			area_pa_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_dutch_incorporate_pittsburgh = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_pa_dutch_the_fate_of_steel_city }
+		trigger = {
+			area_pa_pittsburgh = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_steel_city_foundries
+				duration = 5475  # 15 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_dutch_accept_pittsburgher = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_pa_dutch_incorporate_pittsburgh }
+		trigger = {
+			accepted_culture = culture_phittsburgher
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+
+	}
+}

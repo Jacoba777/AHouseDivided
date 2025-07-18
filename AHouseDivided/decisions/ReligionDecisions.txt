@@ -1,0 +1,22 @@
+country_decisions = {
+	change_religion_secular = {
+		potential = {
+			NOT = { religion = secular }
+		}
+		allow = {
+			faction_in_power = faction_progressives
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			change_religion = secular
+			tooltip = { add_prestige = -100 }
+			add_stability = -3
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 10
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+}

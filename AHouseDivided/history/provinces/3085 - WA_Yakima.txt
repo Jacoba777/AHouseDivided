@@ -1,0 +1,30 @@
+capital="Yakima"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_washcolumbian
+center_of_trade=1
+is_city = yes
+owner=YKM
+add_core=YKM
+controller=YKM
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=4
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

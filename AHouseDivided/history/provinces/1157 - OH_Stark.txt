@@ -1,0 +1,30 @@
+capital="Canton"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+discovered_by = appalachia
+hre = no
+base_tax=6
+base_production=7
+base_manpower=7
+native_size=200
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_cantonese
+center_of_trade=1
+is_city = yes
+owner=CNT
+add_core=CNT
+controller=CNT
+
+1444.11.12 = {
+	base_tax=4
+	base_production=6
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XOH
+	add_core=XOH
+	controller=XOH
+}

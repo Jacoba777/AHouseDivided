@@ -1,0 +1,7 @@
+technology_group = northern_plains
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+religion = lutheran
+primary_culture = culture_bunyan
+capital = 2473

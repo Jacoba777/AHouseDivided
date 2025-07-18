@@ -1,0 +1,9 @@
+﻿l_english:
+ flavor_usa.1.title:0 "Blue Crab Boom"
+ flavor_usa.1.desc:0 "As our influence across the Chesapeake expands, so does our control of the valuable blue crab fishing industry. This year, we have experienced harvests never before seen, bringing countless crustaceans to our docks and warehouses. There are many options we can take with our newfound abundance."
+ flavor_usa.1.a:0 "We should sell the surplus abroad!"
+ flavor_usa.1.b:0 "Let's slap some Old Bay on them and distribute them to our people!"
+ flavor_usa.2.title:0 "A Maryland Monarchy?"
+ flavor_usa.2.desc:0 "Forming Maryland has given us an opportunity to reconsider our form of government. Many of our cities and counties are named after the English monarchy, which features prominently in our history as well. This has lead some to propose we make $MONARCH$ a monarch."
+ flavor_usa.2.a:0 "Crown [Root.Monarch.GetName]. Long may [Root.Monarch.GetSheHe] reign!"
+ flavor_usa.2.b:0 "Don't be ridiculous, Maryland should remain a [Root.GovernmentName]."

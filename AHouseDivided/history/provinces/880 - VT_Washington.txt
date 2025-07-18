@@ -1,0 +1,28 @@
+capital="Montpelier"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = no
+base_tax=4
+base_production=4
+base_manpower=3
+native_size=110
+native_ferocity=5
+native_hostileness=3
+religion=atheist
+culture=culture_vermonter
+is_city = yes
+owner=VTB
+add_core=VTB
+controller=VTB
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XVT
+	add_core=XVT
+	controller=XVT
+}

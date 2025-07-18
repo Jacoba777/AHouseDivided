@@ -1,0 +1,29 @@
+capital="Salem"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=10
+base_production=9
+base_manpower=9
+native_size=280
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_bostonian
+is_city = yes
+owner=SWT
+add_core=SWT
+add_core=BTO
+controller=SWT
+
+1444.11.12 = {
+	base_tax=31
+	base_production=18
+	base_manpower=20
+}
+
+1444.11.13 = {
+	owner=XMA
+	add_core=XMA
+	controller=XMA
+}

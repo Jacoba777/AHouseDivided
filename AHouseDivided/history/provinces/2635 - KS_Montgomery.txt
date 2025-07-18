@@ -1,0 +1,30 @@
+capital="Independence"
+discovered_by = central_plains
+discovered_by = texas
+discovered_by = lower_rockies
+hre = no
+base_tax=1
+base_production=2
+base_manpower=2
+native_size=50
+native_ferocity=8
+native_hostileness=4
+religion=baptist
+culture=culture_joplin_ozark
+is_city = yes
+owner=TSA
+add_core=TSA
+add_core=CFE
+controller=TSA
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XKS
+	add_core=XKS
+	controller=XKS
+}

@@ -1,0 +1,30 @@
+capital="Charlottesville"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=7
+base_production=6
+base_manpower=5
+native_size=180
+native_ferocity=4
+native_hostileness=3
+religion=methodist
+culture=culture_central_virginian
+center_of_trade=1
+is_city = yes
+owner=CTV
+add_core=CTV
+controller=CTV
+
+1444.11.12 = {
+	base_tax=6
+	base_production=5
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

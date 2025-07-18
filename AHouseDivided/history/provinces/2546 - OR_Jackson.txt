@@ -1,0 +1,30 @@
+capital="Medford"
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = upper_rockies
+hre = no
+base_tax=7
+base_production=6
+base_manpower=6
+native_size=190
+native_ferocity=4
+native_hostileness=4
+religion=nondenominational
+culture=culture_jeffersonian
+center_of_trade=1
+is_city = yes
+owner=MDF
+add_core=MDF
+controller=MDF
+
+1444.11.12 = {
+	base_tax=6
+	base_production=4
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XOR
+	add_core=XOR
+	controller=XOR
+}

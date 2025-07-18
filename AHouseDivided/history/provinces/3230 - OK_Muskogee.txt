@@ -1,0 +1,31 @@
+capital="Muskogee"
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = miss_delta
+discovered_by = lower_rockies
+hre = no
+base_tax=3
+base_production=3
+base_manpower=3
+native_size=90
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_little_dixie
+is_city = yes
+owner=MUS
+add_core=MUS
+controller=MUS
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XOK
+	add_core=XOK
+	controller=XOK
+}

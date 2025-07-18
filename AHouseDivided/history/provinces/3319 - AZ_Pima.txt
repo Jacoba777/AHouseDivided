@@ -1,0 +1,31 @@
+capital="Tucson"
+discovered_by = southwest
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=9
+base_production=9
+base_manpower=10
+native_size=280
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_tusconian
+center_of_trade=2
+is_city = yes
+owner=TSN
+add_core=TSN
+controller=TSN
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=16
+	base_production=18
+	base_manpower=26
+}
+
+1444.11.13 = {
+	owner=XAZ
+	add_core=XAZ
+	controller=XAZ
+}

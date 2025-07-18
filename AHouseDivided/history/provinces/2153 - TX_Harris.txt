@@ -1,0 +1,30 @@
+capital="Houston"
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southwest
+hre = no
+base_tax=12
+base_production=13
+base_manpower=13
+native_size=380
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_houstonian
+center_of_trade=2
+is_city = yes
+owner=HTN
+add_core=HTN
+controller=HTN
+
+1444.11.12 = {
+	base_tax=88
+	base_production=151
+	base_manpower=117
+}
+
+1444.11.13 = {
+	owner=XTX
+	add_core=XTX
+	controller=XTX
+}

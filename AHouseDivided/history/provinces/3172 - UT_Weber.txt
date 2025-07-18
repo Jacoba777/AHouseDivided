@@ -1,0 +1,31 @@
+capital="Ogden"
+discovered_by = lower_rockies
+discovered_by = upper_rockies
+discovered_by = california
+discovered_by = southwest
+hre = no
+base_tax=7
+base_production=6
+base_manpower=6
+native_size=190
+native_ferocity=4
+native_hostileness=4
+religion=mormon
+culture=culture_salt_laker
+is_city = yes
+owner=OGN
+add_core=OGN
+controller=OGN
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=6
+	base_production=5
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XUT
+	add_core=XUT
+	controller=XUT
+}

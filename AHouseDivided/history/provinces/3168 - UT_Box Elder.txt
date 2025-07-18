@@ -1,0 +1,26 @@
+capital="Brigham City"
+discovered_by = lower_rockies
+discovered_by = upper_rockies
+discovered_by = california
+discovered_by = southwest
+hre = no
+base_tax=4
+base_production=3
+base_manpower=3
+native_size=100
+native_ferocity=4
+native_hostileness=3
+religion=mormon
+culture=culture_salt_laker
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XUT
+	add_core=XUT
+	controller=XUT
+}

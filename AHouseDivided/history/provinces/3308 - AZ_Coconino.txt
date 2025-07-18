@@ -1,0 +1,25 @@
+capital="Flagstaff"
+discovered_by = southwest
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=atheist
+culture=culture_north_arizonan
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XAZ
+	add_core=XAZ
+	controller=XAZ
+}

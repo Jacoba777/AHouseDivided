@@ -1,0 +1,30 @@
+capital="Shawnee"
+discovered_by = texas
+discovered_by = central_plains
+discovered_by = miss_delta
+discovered_by = lower_rockies
+hre = no
+base_tax=3
+base_production=3
+base_manpower=4
+native_size=100
+native_ferocity=5
+native_hostileness=5
+religion=baptist
+culture=culture_oklahoma_cityan
+is_city = yes
+owner=OKC
+add_core=OKC
+controller=OKC
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XOK
+	add_core=XOK
+	controller=XOK
+}

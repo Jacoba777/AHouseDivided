@@ -1,0 +1,32 @@
+capital="Knoxville"
+discovered_by = appalachia
+discovered_by = southeast
+discovered_by = central_plains
+discovered_by = miss_delta
+hre = no
+base_tax=7
+base_production=8
+base_manpower=8
+native_size=230
+native_ferocity=6
+native_hostileness=4
+religion=baptist
+culture=culture_knoxvillian
+center_of_trade=2
+is_city = yes
+owner=KNX
+add_core=KNX
+controller=KNX
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=12
+	base_manpower=12
+}
+
+1444.11.13 = {
+	owner=XTN
+	add_core=XTN
+	controller=XTN
+}

@@ -1,0 +1,29 @@
+# Order here is the priority for taking them, if trigger is true.
+
+NYC = {
+	always = yes
+}
+
+LAX = {
+	always = yes
+}
+
+CCG = {
+	always = yes
+}
+
+ATL = {
+	always = yes
+}
+
+MII = {
+	always = yes
+}
+
+HTN = {
+	always = yes
+}
+
+WDC = {
+	always = yes
+}

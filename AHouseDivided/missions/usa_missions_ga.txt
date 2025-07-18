@@ -1,0 +1,783 @@
+missions_ga_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XGA }
+
+	mission_ga_crossing_the_savannah = {
+		icon = mission_aga
+		position = 4
+		required_missions = { mission_ga_accept_augustan }
+		trigger = {
+			area_sc_thoroughbred = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sc_newberry = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_thoroughbred
+				area = area_sc_newberry
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_integrate_thoroughbred = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_ga_crossing_the_savannah }
+		trigger = {
+			area_sc_thoroughbred = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+			area_sc_charleston = { add_permanent_claim = ROOT }
+			area_sc_greenville = { add_permanent_claim = ROOT }
+			area_nc_greenville = { add_permanent_claim = ROOT }
+			area_nc_asheville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_thoroughbred
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_the_battle_of_charleston = {
+		icon = mission_cls
+		position = 6
+		required_missions = { mission_ga_integrate_thoroughbred }
+		trigger = {
+			area_sc_lowcountry = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sc_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+			region_sc = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_lowcountry
+				area = area_sc_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_conquer_south_carolina = {
+		icon = mission_sc
+		position = 7
+		required_missions = { mission_ga_the_battle_of_charleston mission_ga_into_the_blue_ridge }
+		trigger = {
+			region_sc = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_sc
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_accept_charlottean = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_ga_conquer_south_carolina }
+		trigger = {
+			accepted_culture = culture_charlottean
+ 		}
+		effect = {
+			area_nc_southwestern = { add_permanent_claim = ROOT }
+			area_nc_charlotte = { add_permanent_claim = ROOT }
+			area_nc_north_charlotte = { add_permanent_claim = ROOT }
+			area_nc_east_charlotte = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_ga_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XGA }
+
+	mission_ga_accept_augustan = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_ga_stabilize_georgia }
+		trigger = {
+			accepted_culture = culture_augustan
+ 		}
+		effect = {
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_newberry = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ga_into_the_blue_ridge = {
+		icon = mission_smoky_mountains
+		position = 6
+		required_missions = { mission_ga_integrate_thoroughbred mission_ga_tennesseean_inroads }
+		trigger = {
+			area_sc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_asheville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_greenville
+				area = area_nc_greenville
+				area = area_nc_asheville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_st_johns_cathedral = {
+		icon = mission_ga_st_johns_cathedral
+		position = 7
+		required_missions = {  }
+		trigger = {
+            315 = {
+                has_great_project = {
+                    type = st_john_cathedral
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_austere_cathedrals
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 315
+		}
+	}
+
+	mission_ga_hub_of_the_south = {
+		icon = mission_dominate_home_trade_node
+		position = 8
+		required_missions = { mission_ga_st_johns_cathedral }
+		trigger = {
+            377 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Atlanta
+            311 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Augusta
+            1888 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Tallahassee (+ South GA)
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_southern_trade
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_ga_following_the_catawba = {
+		icon = mission_clt
+		position = 9
+		required_missions = { mission_ga_accept_charlottean }
+		trigger = {
+			area_nc_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_north_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_east_charlotte = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_southwestern
+				area = area_nc_charlotte
+				area = area_nc_north_charlotte
+				area = area_nc_east_charlotte
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ga_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XGA }
+
+	mission_ga_the_peach_reunion = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_ga = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_ga is_city = yes }
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_ga_stabilize_georgia = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_ga_the_peach_reunion }
+		trigger = {
+			region_ga = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_ga is_city = yes }
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_ga_embrace_chattanoogans = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_ga_stabilize_georgia }
+		trigger = {
+			accepted_culture = culture_chattanoogan
+ 		}
+		effect = {
+			area_tn_north_chattanooga = { add_permanent_claim = ROOT }
+			area_tn_rhea = { add_permanent_claim = ROOT }
+			area_tn_cleveland = { add_permanent_claim = ROOT }
+			area_nc_western = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ga_unite_greater_chattanooga = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ga_embrace_chattanoogans }
+		trigger = {
+			area_tn_north_chattanooga = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_rhea = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_cleveland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_north_chattanooga
+				area = area_tn_rhea
+				area = area_tn_cleveland
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_tennesseean_inroads = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_ga_unite_greater_chattanooga }
+		trigger = {
+			area_tn_north_chattanooga = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_tn_knoxville = { add_permanent_claim = ROOT }
+			area_tn_campbell = { add_permanent_claim = ROOT }
+			area_tn_morristown = { add_permanent_claim = ROOT }
+			area_tn_smoky_mountains = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_north_chattanooga
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_the_humble_peanut = {
+		icon = mission_peanut_farm
+		position = 6
+		required_missions = {  }
+		trigger = {
+            production_leader = { trade_goods = nuts }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+
+	}
+
+	mission_ga_a_plantation_economy = {
+		icon = mission_plantations
+		position = 7
+		required_missions = { mission_ga_the_humble_peanut }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 50
+                has_building = plantations
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_plantation_economy
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_ga_the_promised_land = {
+		icon = wars_of_religion
+		position = 8
+		required_missions = { mission_ga_a_plantation_economy }
+		trigger = {
+            OR = {
+                religion = secular
+                religious_unity = 0.99
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_religious_peace
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_ga_fulfilling_kings_dream = {
+		icon = mission_mlk
+		position = 9
+		required_missions = { mission_ga_hub_of_the_south mission_ga_the_promised_land }
+		trigger = {
+            region_ga = {
+                type = all
+                is_prosperous = yes
+                OR = {
+                    has_owner_culture = yes
+                    has_owner_accepted_culture = yes
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_kings_dream_fulfilled
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+            region = region_ga
+            NOT = {
+                is_prosperous = yes
+                OR = {
+                    has_owner_culture = yes
+                    has_owner_accepted_culture = yes
+                }
+            }
+		}
+	}
+
+	mission_ga_georgia_on_my_mind = {
+		icon = mission_ga
+		position = 10
+		required_missions = { mission_ga_fulfilling_kings_dream mission_ga_following_the_catawba mission_ga_an_alabaman_conquest }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_georgia_on_my_mind
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_ga_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XGA }
+
+	mission_ga_resettle_our_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ga_stabilize_georgia }
+		trigger = {
+			region_ga = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			change_government_reform_progress = 100
+
+			add_years_of_income = 0.75
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ga
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_the_fate_of_marble_city = {
+		icon = mission_knx
+		position = 6
+		required_missions = { mission_ga_tennesseean_inroads }
+		trigger = {
+			area_tn_knoxville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_campbell = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_morristown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_smoky_mountains = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_al_northeast = { add_permanent_claim = ROOT }
+			area_al_gadsden = { add_permanent_claim = ROOT }
+			area_al_birmingham = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_tn_knoxville
+				area = area_tn_campbell
+				area = area_tn_morristown
+				area = area_tn_smoky_mountains
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_enter_alabama = {
+		icon = mission_bmh
+		position = 7
+		required_missions = { mission_ga_the_fate_of_marble_city }
+		trigger = {
+			area_al_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_al_gadsden = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_al_birmingham = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_northeast
+				area = area_al_gadsden
+				area = area_al_birmingham
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_sweet_home_alabama = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_ga_enter_alabama }
+		trigger = {
+			area_al_birmingham = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_al = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_al_birmingham
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_an_alabaman_conquest = {
+		icon = mission_al
+		position = 9
+		required_missions = { mission_ga_sweet_home_alabama }
+		trigger = {
+			region_al = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_al
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ga_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XGA }
+
+	mission_ga_win_over_south_georgia = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_ga_resettle_our_state }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 25
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+			area_fl_tallahassee = { add_permanent_claim = ROOT }
+			area_fl_forgotten_coast = { add_permanent_claim = ROOT }
+			area_fl_nature_coast = { add_permanent_claim = ROOT }
+			area_fl_north_central = { add_permanent_claim = ROOT }
+			area_fl_gainesville = { add_permanent_claim = ROOT }
+			area_fl_jacksonville = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ga_invade_north_florida = {
+		icon = mission_jsv
+		position = 5
+		required_missions = { mission_ga_win_over_south_georgia }
+		trigger = {
+			area_fl_tallahassee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_forgotten_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_nature_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_north_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_gainesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_jacksonville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_tallahassee
+				area = area_fl_forgotten_coast
+				area = area_fl_nature_coast
+				area = area_fl_north_central
+				area = area_fl_gainesville
+				area = area_fl_jacksonville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_hold_floridian_authority = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_ga_invade_north_florida }
+		trigger = {
+			area_fl_tallahassee = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_gainesville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_jacksonville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_fl_west = { add_permanent_claim = ROOT }
+			area_fl_emerald_coast = { add_permanent_claim = ROOT }
+			area_al_mobile = { add_permanent_claim = ROOT }
+			area_ms_north_coast = { add_permanent_claim = ROOT }
+			area_ms_coastal = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_tallahassee
+				area = area_fl_gainesville
+				area = area_fl_jacksonville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_control_the_gulf_coast = {
+		icon = mission_gulf_of_mexico
+		position = 7
+		required_missions = { mission_ga_hold_floridian_authority }
+		trigger = {
+			area_fl_west = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_emerald_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_al_mobile = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ms_north_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ms_coastal = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_dip_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_west
+				area = area_fl_emerald_coast
+				area = area_al_mobile
+				area = area_ms_north_coast
+				area = area_ms_coastal
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

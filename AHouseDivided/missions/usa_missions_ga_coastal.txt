@@ -1,0 +1,376 @@
+missions_ga_coastal_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JSP
+			tag = BCK
+			tag = CMD
+			tag = HSV
+			tag = SBR
+			tag = SVH
+		}
+	}
+
+	mission_ga_coastal_invade_augusta = {
+		icon = mission_aga
+		position = 3
+		required_missions = { mission_ga_coastal_unite_the_georgia_coast }
+		trigger = {
+			area_ga_augusta = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_east_magenta = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_sc_thoroughbred = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_sc_lowcountry = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_augusta
+				area = area_ga_east_magenta
+				area = area_sc_thoroughbred
+				area = area_sc_lowcountry
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_ga_coastal_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JSP
+			tag = BCK
+			tag = CMD
+			tag = HSV
+			tag = SBR
+			tag = SVH
+		}
+	}
+
+	mission_ga_coastal_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_ga_coastal = { add_permanent_claim = ROOT }
+			area_ga_hinesville = { add_permanent_claim = ROOT }
+			area_ga_savannah = { add_permanent_claim = ROOT }
+			area_ga_east_magenta = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ga_coastal_unite_the_georgia_coast = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ga_coastal_fielding_an_army }
+		trigger = {
+			area_ga_coastal = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_hinesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_savannah = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_ga_augusta = { add_permanent_claim = ROOT }
+			area_ga_east_magenta = { add_permanent_claim = ROOT }
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_coastal
+				area = area_ga_hinesville
+				area = area_ga_savannah
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ga_coastal_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JSP
+			tag = BCK
+			tag = CMD
+			tag = HSV
+			tag = SBR
+			tag = SVH
+		}
+	}
+
+	mission_ga_coastal_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ga_coastal_unite_the_georgia_coast }
+		trigger = {
+			area_ga_coastal = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_hinesville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_savannah = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ga_southwest_plantation = { add_permanent_claim = ROOT }
+			area_ga_south_plantation = { add_permanent_claim = ROOT }
+			area_ga_albany = { add_permanent_claim = ROOT }
+			439 = { add_permanent_claim = ROOT }
+			431 = { add_permanent_claim = ROOT }
+			area_ga_fitzgerald = { add_permanent_claim = ROOT }
+			area_ga_east_plantation = { add_permanent_claim = ROOT }
+			area_ga_valdosta = { add_permanent_claim = ROOT }
+			area_ga_southwest_magenta = { add_permanent_claim = ROOT }
+			area_ga_central_magenta = { add_permanent_claim = ROOT }
+			area_ga_southeast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_coastal
+				area = area_ga_hinesville
+				area = area_ga_savannah
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ga_coastal_sweep_the_south = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ga_coastal_a_respectable_state }
+		trigger = {
+			439 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			431 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_albany = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_fitzgerald = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ga_east_plantation = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+            448 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+            430 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+    
+			area_ga_columbus = { add_permanent_claim = ROOT }
+			area_ga_south_heartland = { add_permanent_claim = ROOT }
+			area_ga_macon = { add_permanent_claim = ROOT }
+			area_ga_east_heartland = { add_permanent_claim = ROOT }
+			area_ga_central_presidental = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 439
+				province_id = 431
+				area = area_ga_albany
+				area = area_ga_fitzgerald
+				area = area_ga_east_plantation
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_ga_coastal_conquer_central_georgia = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ga_coastal_sweep_the_south }
+		trigger = {
+			446 = { country_or_non_sovereign_subject_holds = ROOT }
+			405 = { country_or_non_sovereign_subject_holds = ROOT }
+			371 = { country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_macon = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ga_central_heartland = { add_permanent_claim = ROOT }
+			area_ga_north_presidential = { add_permanent_claim = ROOT }
+			area_ga_south_atlanta = { add_permanent_claim = ROOT }
+			area_ga_atlanta = { add_permanent_claim = ROOT }
+			area_ga_north_heartland = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 446
+				province_id = 405
+				province_id = 371
+				area = area_ga_macon
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_coastal_david_and_goliath = {
+		icon = mission_atl
+		position = 6
+		required_missions = { mission_ga_coastal_conquer_central_georgia }
+		trigger = {
+			area_ga_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_south_atlanta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_south_atlanta
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ga_coastal_quelling_the_rebellions = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_ga_coastal_david_and_goliath }
+		trigger = {
+			area_ga_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ga_south_atlanta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ga_west_atlanta = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_atlanta
+				area = area_ga_south_atlanta
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

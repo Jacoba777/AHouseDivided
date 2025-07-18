@@ -1,0 +1,275 @@
+missions_fl_south_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LCI
+			tag = OKB
+			tag = SBS
+			tag = MII
+			tag = KEY
+			tag = NPS
+			tag = CCL
+			tag = PUG
+			tag = ACD
+			tag = SRS
+			tag = CWS
+			tag = SBG
+		}
+	}
+
+	mission_fl_south_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_fl_gold_coast = { add_permanent_claim = ROOT }
+			area_fl_southwest = { add_permanent_claim = ROOT }
+			area_fl_sarasota = { add_permanent_claim = ROOT }
+			area_fl_treasure_coast = { add_permanent_claim = ROOT }
+			area_fl_heartland = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_south_dominate_south_florida = {
+		icon = mission_mii
+		position = 2
+		required_missions = { mission_fl_south_fielding_an_army }
+		trigger = {
+			area_fl_gold_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_southwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_sarasota = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_treasure_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_heartland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_gold_coast
+				area = area_fl_southwest
+				area = area_fl_sarasota
+				area = area_fl_treasure_coast
+				area = area_fl_heartland
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_fl_south_stabilize_south_florida = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_fl_south_dominate_south_florida }
+		trigger = {
+			area_fl_gold_coast = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_southwest = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_sarasota = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_treasure_coast = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_fl_heartland = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_gold_coast
+				area = area_fl_southwest
+				area = area_fl_sarasota
+				area = area_fl_treasure_coast
+				area = area_fl_heartland
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_fl_south_embrace_lucie = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_fl_south_stabilize_south_florida }
+		trigger = {
+			accepted_culture = culture_lucie
+ 		}
+		effect = {
+			area_fl_orlando = { add_permanent_claim = ROOT }
+			area_fl_space_coast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_south_going_to_disneyworld = {
+		icon = mission_rld
+		position = 5
+		required_missions = { mission_fl_south_embrace_lucie }
+		trigger = {
+			area_fl_orlando = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_space_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_orlando
+				area = area_fl_space_coast
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_fl_south_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = LCI
+			tag = OKB
+			tag = SBS
+			tag = MII
+			tag = KEY
+			tag = NPS
+			tag = CCL
+			tag = PUG
+			tag = ACD
+			tag = SRS
+			tag = CWS
+			tag = SBG
+		}
+	}
+
+	mission_fl_south_embrace_south_floridian = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_fl_south_stabilize_south_florida }
+		trigger = {
+			accepted_culture = culture_south_floridian
+ 		}
+		effect = {
+			area_fl_lakeland = { add_permanent_claim = ROOT }
+			area_fl_tampa = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_south_take_greater_tampa = {
+		icon = mission_tmp
+		position = 5
+		required_missions = { mission_fl_south_embrace_south_floridian }
+		trigger = {
+			area_fl_lakeland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_tampa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_lakeland
+				area = area_fl_tampa
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_fl_south_prepare_for_jacksonville = {
+		icon = mission_assemble_an_army
+		position = 6
+		required_missions = { mission_fl_south_take_greater_tampa mission_fl_south_going_to_disneyworld }
+		trigger = {
+
+ 		}
+		effect = {
+			area_fl_jacksonville = { add_permanent_claim = ROOT }
+			area_fl_ocala = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_south_annex_jacksonville = {
+		icon = mission_jsv
+		position = 7
+		required_missions = { mission_fl_south_prepare_for_jacksonville }
+		trigger = {
+			area_fl_jacksonville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_ocala = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_jacksonville
+				area = area_fl_ocala
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,7 @@
+technology_group = great_lakes
+government = republic
+add_government_reform = american_republic
+government_rank = 1
+religion = catholic
+primary_culture = culture_chicagolander
+capital = 1429

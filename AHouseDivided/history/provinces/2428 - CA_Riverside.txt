@@ -1,0 +1,30 @@
+capital="Riverside"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=12
+base_production=10
+base_manpower=11
+native_size=330
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_angelino
+is_city = yes
+owner=RVS
+add_core=RVS
+controller=RVS
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=93
+	base_production=36
+	base_manpower=60
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

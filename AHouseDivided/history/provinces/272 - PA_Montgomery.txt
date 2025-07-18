@@ -1,0 +1,32 @@
+capital="Norristown"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=10
+base_manpower=9
+native_size=290
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_philadelphian
+is_city = yes
+owner=NRT
+add_core=NRT
+add_core=PHL
+controller=NRT
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=34
+	base_production=33
+	base_manpower=21
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

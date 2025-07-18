@@ -1,0 +1,29 @@
+capital="Wheaton"
+discovered_by = great_lakes
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=10
+base_production=10
+base_manpower=9
+native_size=290
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_chicagolander
+is_city = yes
+owner=CCG
+add_core=CCG
+controller=CCG
+
+1444.11.12 = {
+	base_tax=37
+	base_production=37
+	base_manpower=22
+}
+
+1444.11.13 = {
+	owner=XIL
+	add_core=XIL
+	controller=XIL
+}

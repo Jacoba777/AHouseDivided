@@ -1,0 +1,29 @@
+capital="Norwich"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=7
+base_production=7
+base_manpower=7
+native_size=210
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_connecticuter
+is_city = yes
+owner=NWC
+add_core=NWC
+controller=NWC
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=7
+	base_production=7
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XCT
+	add_core=XCT
+	controller=XCT
+}

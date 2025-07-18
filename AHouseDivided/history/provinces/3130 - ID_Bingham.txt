@@ -1,0 +1,26 @@
+capital="Blackfoot"
+discovered_by = upper_rockies
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=3
+base_production=2
+base_manpower=3
+native_size=80
+native_ferocity=4
+native_hostileness=4
+religion=mormon
+culture=culture_falls_idahoan
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XID
+	add_core=XID
+	controller=XID
+}

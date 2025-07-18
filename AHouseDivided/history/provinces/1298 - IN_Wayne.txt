@@ -1,0 +1,28 @@
+capital="Richmond"
+discovered_by = great_lakes
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=nondenominational
+culture=culture_indianapolitan
+is_city = yes
+owner=MCI
+add_core=MCI
+controller=MCI
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XIN
+	add_core=XIN
+	controller=XIN
+}

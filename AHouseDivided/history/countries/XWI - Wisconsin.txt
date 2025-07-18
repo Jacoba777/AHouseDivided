@@ -1,0 +1,7 @@
+technology_group = great_lakes
+government = republic
+add_government_reform = american_republic
+government_rank = 2
+religion = lutheran
+primary_culture = culture_madisonian
+capital = 2363

@@ -1,0 +1,29 @@
+capital="Lockport"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_buffalonian
+is_city = yes
+owner=BUF
+add_core=BUF
+controller=BUF
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=4
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

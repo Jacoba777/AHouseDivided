@@ -1,0 +1,30 @@
+capital="Virginia Beach"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=8
+base_production=7
+base_manpower=8
+native_size=230
+native_ferocity=4
+native_hostileness=4
+religion=baptist
+culture=culture_upper_tidewater
+center_of_trade=2
+is_city = yes
+owner=VAB
+add_core=VAB
+controller=VAB
+
+1444.11.12 = {
+	base_tax=14
+	base_production=9
+	base_manpower=11
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

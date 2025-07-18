@@ -1,0 +1,254 @@
+missions_sc_upcountry_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GWD
+			tag = SNC
+			tag = GRN
+			tag = STB
+			tag = GFY
+			tag = GRU
+		}
+	}
+
+	mission_sc_upcountry_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_sc_greenville = { add_permanent_claim = ROOT }
+			area_sc_old_96_district = { add_permanent_claim = ROOT }
+			area_sc_spartanburg = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_sc_upcountry_unite_the_upcountry = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_sc_upcountry_fielding_an_army }
+		trigger = {
+            NOT = { num_of_subjects = 1 }
+			area_sc_greenville = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			96_district = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_sc_spartanburg = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+				area = area_sc_greenville
+				province_id = 96_district
+				area = area_sc_spartanburg
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_sc_upcountry_denounce_columbia = {
+		icon = mission_cum
+		position = 3
+		required_missions = { mission_sc_upcountry_unite_the_upcountry }
+		trigger = {
+			OR = {
+				is_rival = CUM
+				AND = {
+					exists = CUM
+					military_strength = {
+						who = CUM
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CUM
+			}
+			OR = {
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CUM }
+				tag = CUM
+			}
+ 		}
+		effect = {
+			area_sc_columbia = { add_permanent_claim = ROOT }
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_newberry = { add_permanent_claim = ROOT }
+			CUM = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_sc_upcountry_battle_for_the_midlands = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_sc_upcountry_denounce_columbia }
+		trigger = {
+			area_sc_columbia = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_upcountry_administering_columbia = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_sc_upcountry_battle_for_the_midlands }
+		trigger = {
+			area_sc_columbia = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_sc_upcountry_scourge_of_the_lowlands = {
+		icon = mission_cls
+		position = 6
+		required_missions = { mission_sc_upcountry_administering_columbia }
+		trigger = {
+			OR = {
+				is_rival = CLS
+				AND = {
+					exists = CLS
+					military_strength = {
+						who = CLS
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CLS
+			}
+			OR = {
+				CLS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CLS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CLS }
+				tag = CLS
+			}
+ 		}
+		effect = {
+			CLS = { every_owned_province = { add_permanent_claim = ROOT }  }
+			area_sc_charleston = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_sc_upcountry_the_siege_of_charleston = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_sc_upcountry_scourge_of_the_lowlands }
+		trigger = {
+			area_sc_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

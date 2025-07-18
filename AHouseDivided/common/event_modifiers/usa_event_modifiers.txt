@@ -1,0 +1,59 @@
+##################################################
+# Harmonized Modifiers
+##################################################
+
+# Religions
+harmonized_catholic = {
+	stability_cost_modifier = -0.1
+	religion = yes
+}
+
+harmonized_orthodox = {
+	global_colonial_growth = 10
+	religion = yes
+}
+
+harmonized_pentecostal = {
+	fire_damage = 0.05
+	religion = yes
+}
+
+harmonized_episcopal = {
+	diplomatic_reputation = 1
+	religion = yes
+}
+
+harmonized_nondenominational = {
+	global_unrest = -1
+	religion = yes
+}
+
+harmonized_methodist = {
+	trade_efficiency = 0.05
+	religion = yes
+}
+
+harmonized_lutheran = {
+	improve_relation_modifier = 0.15
+	religion = yes
+}
+
+harmonized_presbyterian = {
+	stability_cost_modifier = -0.1
+	religion = yes
+}
+
+harmonized_baptist = {
+	warscore_cost_vs_other_religion = -0.1
+	religion = yes
+}
+
+harmonized_mormon = {
+	siege_ability = 0.1
+	religion = yes
+}
+
+harmonized_nonreligious = {
+	technology_cost = -0.075
+	religion = yes
+}

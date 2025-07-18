@@ -1,0 +1,433 @@
+missions_oh_northeast_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CNT
+			tag = WOO
+			tag = CLV
+			tag = AKR
+			tag = YGL
+			tag = ATB
+			tag = SLM
+		}
+	}
+
+	mission_oh_northeast_denounce_toledo = {
+		icon = mission_luther_theses
+		position = 2
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = TLD
+				AND = {
+					exists = TLD
+					military_strength = {
+						who = TLD
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = TLD
+			}
+			OR = {
+				TLD = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				TLD = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = TLD }
+				tag = TLD
+			}
+ 		}
+		effect = {
+			area_oh_sandusky = { add_permanent_claim = ROOT }
+			area_oh_toledo = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_oh_northeast_dominate_dayton = {
+		icon = mission_day
+		position = 7
+		required_missions = { mission_oh_northeast_integrate_the_northwest }
+		trigger = {
+			area_oh_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_dayton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_western
+				area = area_oh_dayton
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_oh_northeast_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CNT
+			tag = WOO
+			tag = CLV
+			tag = AKR
+			tag = YGL
+			tag = ATB
+			tag = SLM
+		}
+	}
+
+	mission_oh_northeast_sweeping_the_lakefront = {
+		icon = mission_tld
+		position = 3
+		required_missions = { mission_oh_northeast_denounce_toledo mission_oh_northeast_unite_the_northeast }
+		trigger = {
+			area_oh_sandusky = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_toledo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_sandusky
+				area = area_oh_toledo
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_oh_northeast_embrace_toledoan = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_oh_northeast_sweeping_the_lakefront }
+		trigger = {
+			accepted_culture = culture_toledoan
+ 		}
+		effect = {
+			area_oh_bellefontaine = { add_permanent_claim = ROOT }
+			area_oh_northwestern = { add_permanent_claim = ROOT }
+			area_oh_lima = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_oh_northeast_rustbelt_rumble = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_oh_northeast_embrace_toledoan }
+		trigger = {
+			area_oh_bellefontaine = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_lima = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_bellefontaine
+				area = area_oh_northwestern
+				area = area_oh_lima
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_oh_northeast_integrate_the_northwest = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_oh_northeast_rustbelt_rumble }
+		trigger = {
+			area_oh_bellefontaine = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_toledo = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_oh_western = { add_permanent_claim = ROOT }
+			area_oh_dayton = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_bellefontaine
+				area = area_oh_toledo
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_oh_northeast_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CNT
+			tag = WOO
+			tag = CLV
+			tag = AKR
+			tag = YGL
+			tag = ATB
+			tag = SLM
+		}
+	}
+
+	mission_oh_northeast_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_oh_cleveland = { add_permanent_claim = ROOT }
+			area_oh_akron = { add_permanent_claim = ROOT }
+			area_oh_youngstown = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_oh_northeast_unite_the_northeast = {
+		icon = mission_clv
+		position = 2
+		required_missions = { mission_oh_northeast_fielding_an_army }
+		trigger = {
+			area_oh_cleveland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_akron = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_youngstown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_cleveland
+				area = area_oh_akron
+				area = area_oh_youngstown
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_oh_northeast_peace_in_cleveland = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_oh_northeast_unite_the_northeast }
+		trigger = {
+			area_oh_cleveland = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_akron = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_youngstown = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_oh_wooster = { add_permanent_claim = ROOT }
+			area_oh_canton = { add_permanent_claim = ROOT }
+			area_oh_mansfield = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_cleveland
+				area = area_oh_akron
+				area = area_oh_youngstown
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_oh_northeast_the_battle_of_mansfield = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_oh_northeast_peace_in_cleveland }
+		trigger = {
+			area_oh_wooster = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_canton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_mansfield = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_wooster
+				area = area_oh_canton
+				area = area_oh_mansfield
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_oh_northeast_managing_mansfield = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_oh_northeast_the_battle_of_mansfield }
+		trigger = {
+			area_oh_canton = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_mansfield = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_canton
+				area = area_oh_mansfield
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_oh_northeast_accept_cantonese = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_oh_northeast_managing_mansfield }
+		trigger = {
+			accepted_culture = culture_cantonese
+ 		}
+		effect = {
+			add_dip_power = 25
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+
+	}
+
+	mission_oh_northeast_prepare_for_columbus = {
+		icon = mission_assemble_an_army
+		position = 7
+		required_missions = { mission_oh_northeast_accept_cantonese mission_oh_northeast_integrate_the_northwest }
+		trigger = {
+
+ 		}
+		effect = {
+			area_oh_columbus = { add_permanent_claim = ROOT }
+			area_oh_north_columbus = { add_permanent_claim = ROOT }
+			area_oh_east_columbus = { add_permanent_claim = ROOT }
+			area_oh_south_columbus = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_oh_northeast_capturing_a_former_capital = {
+		icon = mission_cbs
+		position = 8
+		required_missions = { mission_oh_northeast_prepare_for_columbus }
+		trigger = {
+			area_oh_columbus = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_columbus
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

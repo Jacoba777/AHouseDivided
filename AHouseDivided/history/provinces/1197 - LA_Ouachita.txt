@@ -1,0 +1,29 @@
+capital="Monroe"
+discovered_by = miss_delta
+discovered_by = texas
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_north_louisianan
+center_of_trade=1
+is_city = yes
+owner=MRR
+add_core=MRR
+controller=MRR
+
+1444.11.12 = {
+	base_tax=2
+	base_production=3
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XLA
+	add_core=XLA
+	controller=XLA
+}

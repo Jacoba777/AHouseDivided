@@ -1,0 +1,31 @@
+capital="Kalamazoo"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=6
+base_production=7
+base_manpower=6
+native_size=190
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_creekazoo
+center_of_trade=1
+is_city = yes
+owner=AZO
+add_core=AZO
+add_core=AZO
+controller=AZO
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=4
+	base_production=6
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

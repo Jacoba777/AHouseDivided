@@ -1,0 +1,1966 @@
+country_decisions = {
+	form_great_lakes = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_lakes
+				culture_group = culture_group_ohio_river_valley
+				culture = culture_buffalonian
+				culture = culture_rochesterite
+				culture = culture_syracusan
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_mi
+#						region = region_oh
+#						region = region_in
+#						region = region_il
+#						region = region_wi
+#						region = region_mn
+#					}
+#					value = 125
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = GTL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1429  # Chicago
+				province_id = 1871  # Detroit
+				province_id = 1098  # Cleveland
+				province_id = 2366  # Milwaukee
+				province_id = 1848  # Grand Rapids
+				province_id = 1102  # Toledo
+				province_id = 706  # Rochester
+				province_id = 709  # Buffalo
+				province_id = 1812  # Mackinac
+				province_id = 2435  # Duluth
+			}
+		}
+		allow = {
+			owns_core_province = 1429  # Chicago
+			owns_core_province = 1871  # Detroit
+			owns_core_province = 1098  # Cleveland
+			owns_core_province = 2366  # Milwaukee
+			owns_core_province = 1848  # Grand Rapids
+			owns_core_province = 1102  # Toledo
+			# Toronto, Ottawa, Hamilton if I ever add Canada
+			OR = {
+				AND = {
+					owns_core_province = 706  # Rochester
+					owns_core_province = 709  # Buffalo
+				}
+				AND = {
+					owns_core_province = 1812  # Mackinac
+					owns_core_province = 2435  # Duluth
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_mi
+					region = region_oh
+					region = region_in
+					region = region_il
+					region = region_wi
+					region = region_mn
+				}
+				value = 250
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = GTL
+			region_mi = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			region_oh = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			region_in = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			region_il = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			region_wi = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			region_mn = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_great_plains = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_upper_midwestern
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_great_plains
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_mn
+#						region = region_ia
+#						region = region_mo
+#						region = region_ks
+#						region = region_ne
+#						region = region_sd
+#						region = region_nd
+#					}
+#					value = 125
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = GTP }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2479  # Minneapolis
+				province_id = 2914  # Fargo
+				province_id = 2961  # Rapid City
+				province_id = 2779  # Omaha
+				province_id = 2593  # Kansas City, KS
+				province_id = 2657  # Wichita
+				province_id = 2270  # Des Moines
+				province_id = 2997  # Sioux Falls
+				province_id = 1722  # St Louis
+				province_id = 2262  # Davenport
+				province_id = 3213  # Tulsa
+				province_id = 3241  # OKC
+			}
+		}
+		allow = {
+			owns_core_province = 2479  # Minneapolis
+			owns_core_province = 2914  # Fargo
+			owns_core_province = 2961  # Rapid City
+			owns_core_province = 2779  # Omaha
+			owns_core_province = 2593  # Kansas City, KS
+			owns_core_province = 2657  # Wichita
+			owns_core_province = 2270  # Des Moines
+			owns_core_province = 2997  # Sioux Falls
+			OR = {
+				AND = {
+					owns_core_province = 1722  # St Louis
+					owns_core_province = 2262  # Davenport
+				}
+				AND = {
+					owns_core_province = 3213  # Tulsa
+					owns_core_province = 3241  # OKC
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_mn
+					region = region_ia
+					region = region_mo
+					region = region_ks
+					region = region_ne
+					region = region_sd
+					region = region_nd
+				}
+				value = 250
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = GTP
+			region_mn = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_ia = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_mo = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_ks = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_ne = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_sd = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			region_nd = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GTP
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_frontier = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_front_range
+				culture_group = culture_group_rockies
+				culture_group = culture_group_navajo
+				culture_group = culture_group_great_basin
+				culture_group = culture_group_southwestern
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_columbian
+			}
+			NOT = {
+				OR = {
+					culture = culture_upper_tidewater
+					culture = culture_middle_tidewater
+					culture = culture_south_tidewater
+					culture = culture_rocky_mount
+					culture = culture_lowlander
+				}
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_mt
+#						region = region_wy
+#						region = region_co
+#						region = region_nm
+#						region = region_az
+#						region = region_ut
+#						region = region_id
+#						region = region_nv
+#					}
+#					value = 65
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = FTR }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3053  # Billings
+				province_id = 3126  # Boise
+				province_id = 2848  # Denver
+				province_id = 2859  # Colorado Springs
+				province_id = 3174  # Salt Lake City
+				province_id = 3286  # ABQ
+				province_id = 3317  # Phoenix
+				province_id = 2729  # Las Vegas
+				province_id = 2713  # Reno
+				province_id = 3079  # Spokane
+			}
+		}
+		allow = {
+			owns_core_province = 3053  # Billings
+			owns_core_province = 3126  # Boise
+			owns_core_province = 2848  # Denver
+			owns_core_province = 2859  # Colorado Springs
+			owns_core_province = 3174  # Salt Lake City
+			owns_core_province = 3286  # ABQ
+			OR = {
+				AND = {
+					owns_core_province = 3317  # Phoenix
+					owns_core_province = 2729  # Las Vegas
+				}
+				AND = {
+					owns_core_province = 2713  # Reno
+					owns_core_province = 3079  # Spokane
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_mt
+					region = region_wy
+					region = region_co
+					region = region_nm
+					region = region_az
+					region = region_ut
+					region = region_id
+					region = region_nv
+				}
+				value = 125
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = FTR
+			region_mt = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_wy = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_co = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_nm = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_az = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_ut = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_id = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			region_nv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = FTR
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_deseret = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_great_basin
+			}
+			religion = mormon
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = DST }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3174  # Salt Lake City
+				province_id = 2729  # Las Vegas
+				province_id = 2424  # Los Angeles
+				province_id = 2426  # San Diego
+				province_id = 3317  # Phoenix
+				province_id = 2843  # Grand Junction
+				province_id = 2713  # Reno
+			}
+		}
+		allow = {
+			owns_core_province = 3174  # Salt Lake City
+			owns_core_province = 2729  # Las Vegas
+			owns_core_province = 2424  # Los Angeles
+			owns_core_province = 2426  # San Diego
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 2843  # Grand Junction
+			owns_core_province = 2713  # Reno
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_ut
+					region = region_nv
+					region = region_az
+				}
+				value = 30
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = DST
+			region_ut = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DST
+			}
+			region_nv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DST
+			}
+			region_az = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DST
+			}
+			every_province = {
+				limit = { 
+					religion = mormon
+					NOT = { owned_by = ROOT }
+				}
+				add_core = DST
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_cascadia = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_cascadian
+				culture_group = culture_group_columbian
+				culture = culture_shasta
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = CCI }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3071  # Seattle
+				province_id = 3069  # Olympia
+				province_id = 2519  # Portland
+				province_id = 2541  # Eugene
+				province_id = 2377 # Redding
+				province_id = 3346 # Juneau
+			}
+		}
+		allow = {
+			owns_core_province = 3071  # Seattle
+			owns_core_province = 3069  # Olympia
+			owns_core_province = 2519  # Portland
+			owns_core_province = 2541  # Eugene
+			# Canada: Add Vancouver & Victoria
+			OR = {
+				owns_core_province = 2377 # Redding
+				owns_core_province = 3346 # Juneau
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_wa
+					region = region_or
+					culture_group = culture_group_cascadian
+				}
+				value = 50
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = CCI
+			region_wa = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = CCI
+			}
+			region_or = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = CCI
+			}
+			region_id = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = CCI
+			}
+			region_ak = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = CCI
+			}
+			every_province = {
+				limit = { 
+					culture_group = culture_group_cascadian
+					NOT = { owned_by = ROOT }
+				}
+				add_core = CCI
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_appalachia = {
+		major = yes
+		potential = {
+			culture_group = culture_group_appalachian
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = APL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1033  # Chattanooga
+				province_id = 1062  # Knoxville
+				province_id = 832  # Asheville
+				province_id = 1002  # Sullivan County (Johnson City + Bristol)
+				province_id = 2672 # Charleston, WV
+				province_id = 629 # Roanoke
+				province_id = 512 # Greenville, SC
+				province_id = 1533 # Guntersville, AL
+				province_id = 568 # Harrisonburg, VA
+				province_id = 2679 # Morgantown
+			}
+		}
+		allow = {
+			owns_core_province = 1033  # Chattanooga
+			owns_core_province = 1062  # Knoxville
+			owns_core_province = 832  # Asheville
+			owns_core_province = 1002  # Sullivan County (Johnson City + Bristol)
+			owns_core_province = 2672 # Charleston, WV
+			owns_core_province = 629 # Roanoke
+			OR = {
+				AND = {
+					owns_core_province = 512 # Greenville, SC
+					owns_core_province = 1533 # Guntersville, AL
+				}
+				AND = {
+					owns_core_province = 568 # Harrisonburg, VA
+					owns_core_province = 2679 # Morgantown
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_wv
+					culture_group = culture_group_appalachian
+				}
+				value = 100
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = APL
+			region_wv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = APL
+			}
+			region_tn = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = APL
+			}
+			region_ky = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = APL
+			}
+			region_va = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = APL
+			}
+			region_nc = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = APL
+			}
+			every_province = {
+				limit = { 
+					culture_group = culture_group_appalachian
+					NOT = { owned_by = ROOT }
+				}
+				add_core = APL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_carolina = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_upper_piedmontese
+			}
+			capital_scope = {
+				OR = {
+					region = region_nc
+					region = region_sc
+				}
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = NSC }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 806  # Wilmington
+				province_id = 798  # Charlotte
+				province_id = 821  # Raleigh
+				province_id = 825  # Greensboro
+				province_id = 512  # Greenville
+				province_id = 552  # Columbus
+				province_id = 526  # Charleston
+			}
+		}
+		allow = {
+			owns_core_province = 806  # Wilmington
+			owns_core_province = 798  # Charlotte
+			owns_core_province = 821  # Raleigh
+			owns_core_province = 825  # Greensboro
+			owns_core_province = 512  # Greenville
+			owns_core_province = 552  # Columbus
+			owns_core_province = 526  # Charleston
+			num_of_owned_provinces_with = {
+				region = region_nc
+				value = 60
+			}
+			num_of_owned_provinces_with = {
+				region = region_sc
+				value = 26
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = NSC
+			region_nc = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NSC
+			}
+			region_sc = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NSC
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_virginia_commonwealth = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_allegheny
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_upper_piedmontese
+			}
+			capital_scope = {
+				OR = {
+					region = region_wv
+					region = region_va
+				}
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = COV }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 663  # Richmond
+				province_id = 595  # Virginia Beach
+				province_id = 624  # Charlottesville
+				province_id = 629  # Roanoke
+				province_id = 2672  # Charleston
+				province_id = 2668  # Huntington
+			}
+		}
+		allow = {
+			owns_core_province = 663  # Richmond
+			owns_core_province = 595  # Virginia Beach
+			owns_core_province = 624  # Charlottesville
+			owns_core_province = 629  # Roanoke
+			owns_core_province = 2672  # Charleston
+			owns_core_province = 2668  # Huntington
+			num_of_owned_provinces_with = {
+				region = region_va
+				value = 61
+			}
+			num_of_owned_provinces_with = {
+				region = region_wv
+				value = 24
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = COV
+			region_va = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = COV
+			}
+			region_wv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = COV
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_new_england = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				culture_group = culture_group_woodlands_new_england
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#                num_of_owned_provinces_with = {
+#                    OR = {
+#                        region = region_me
+#                        region = region_nh
+#                        region = region_vt
+#                        region = region_ma
+#                        region = region_ri
+#                        region = region_ct
+#                    }
+#                    value = 20
+#                }
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = NEG }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 471  # Boston
+				province_id = 565  # Concord
+				province_id = 1598  # Portland
+				province_id = 878  # Burlington
+				province_id = 864  # Providence
+				province_id = 464  # Hartford
+				province_id = 474  # Cape Cod
+			}
+		}
+		allow = {
+			owns_core_province = 471  # Boston
+			owns_core_province = 565  # Concord
+			owns_core_province = 1598  # Portland
+			owns_core_province = 878  # Burlington
+			owns_core_province = 864  # Providence
+			owns_core_province = 464  # Hartford
+			owns_core_province = 474  # Cape Cod
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_me
+					region = region_nh
+					region = region_vt
+					region = region_ma
+					region = region_ri
+					region = region_ct
+				}
+				value = 40
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = NEG
+			region_me = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			region_nh = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			region_vt = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			region_ma = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			region_ri = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			region_ct = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = NEG
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_greater_southwest = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_southwestern
+				culture_group = culture_group_navajo
+				culture_group = culture_group_great_basin
+				culture = culture_angelino
+				culture = culture_san_diegan
+				culture = culture_south_utahn
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_az
+#						region = region_nm
+#						region = region_nv
+#						culture_group = culture_group_southwestern
+#					}
+#					value = 20
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = GSW }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3317  # Phoenix
+				province_id = 3286  # ABQ
+				province_id = 3319  # Tuscon
+				province_id = 2729  # Las Vegas
+				province_id = 2102  # El Paso
+				province_id = 2188  # Laredo
+				province_id = 2426  # San Diego
+			}
+		}
+		allow = {
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 3286  # ABQ
+			owns_core_province = 3319  # Tuscon
+			owns_core_province = 2729  # Las Vegas
+			owns_core_province = 2102  # El Paso
+			OR = {
+				owns_core_province = 2188  # Laredo
+				owns_core_province = 2426  # San Diego
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_az
+					region = region_nm
+					region = region_nv
+					culture_group = culture_group_southwestern
+				}
+				value = 40
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = GSW
+			region_az = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GSW
+			}
+			region_nm = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GSW
+			}
+			region_ca = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GSW
+			}
+			region_tx = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = GSW
+			}
+			every_province = {
+				limit = { 
+					culture_group = culture_group_southwestern
+					NOT = { owned_by = ROOT }
+				}
+				add_core = GSW
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_deep_south = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_western_deep_south
+				culture_group = culture_group_eastern_deep_south
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_cajun
+				culture_group = culture_group_gulf_coast
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_la
+#						region = region_ms
+#						region = region_al
+#						region = region_ga
+#						region = region_sc
+#					}
+#					value = 125
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = DPS }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 377  # Atlanta
+				province_id = 1544  # Birmingham
+				province_id = 1384  # Jackson
+				province_id = 1228  # New Orleans
+				province_id = 1022  # Memphis
+				province_id = 526  # Charleston
+				province_id = 311  # Augusta
+				province_id = 2153  # Houston
+				province_id = 2032  # Dallas
+				province_id = 1769  # Little Rock
+				province_id = 1888  # Tallahassee
+				province_id = 2164  # Jacksonville
+				province_id = 798  # Charlotte
+			}
+		}
+		allow = {
+			owns_core_province = 377  # Atlanta
+			owns_core_province = 1544  # Birmingham
+			owns_core_province = 1384  # Jackson
+			owns_core_province = 1228  # New Orleans
+			owns_core_province = 1022  # Memphis
+			owns_core_province = 526  # Charleston
+			owns_core_province = 311  # Augusta
+			OR = {
+				AND = {
+					owns_core_province = 2153  # Houston
+					owns_core_province = 2032  # Dallas
+					owns_core_province = 1769  # Little Rock
+				}
+				AND = {
+					owns_core_province = 1888  # Tallahassee
+					owns_core_province = 2164  # Jacksonville
+					owns_core_province = 798  # Charlotte
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_la
+					region = region_ms
+					region = region_al
+					region = region_ga
+					region = region_sc
+				}
+				value = 250
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = DPS
+			region_la = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_ms = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_al = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_ga = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_sc = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_fl = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			region_tx = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = DPS
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_mid_atlantic = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_allegheny
+				culture_group = culture_group_upstate
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_pa
+#						region = region_ny
+#						region = region_nj
+#						region = region_md
+#						region = region_va
+#					}
+#					value = 65
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = MTL }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 755  # Manhattan
+				province_id = 751  # Albany
+				province_id = 286  # Newark
+				province_id = 273  # Philadelphia
+				province_id = 214  # Dover
+				province_id = 617  # Arlington
+				province_id = 663  # Richmond
+				province_id = 265  # Harrisburg
+				province_id = 279  # Scranton
+			}
+		}
+		allow = {
+			owns_core_province = 755  # Manhattan
+			owns_core_province = 286  # Newark
+			owns_core_province = 273  # Philadelphia
+			owns_core_province = 214  # Dover
+			owns_core_province = 265  # Harrisburg
+			OR = {
+				AND = {
+					owns_core_province = 617  # Arlington
+					owns_core_province = 663  # Richmond
+				}
+				AND = {
+					owns_core_province = 279  # Scranton
+					owns_core_province = 751  # Albany
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_pa
+					region = region_ny
+					region = region_nj
+					region = region_md
+					region = region_va
+				}
+				value = 125
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = MTL
+			region_pa = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			region_ny = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			region_nj = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			region_md = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			region_va = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			region_wv = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = MTL
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_pacifica = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_californian
+				culture_group = culture_group_cascadian
+				culture_group = culture_group_alaskan
+				culture_group = culture_group_hawaiian
+			}
+#			OR = {
+#				has_country_flag = formed_a_state
+#				num_of_owned_provinces_with = {
+#					OR = {
+#						region = region_ca
+#						region = region_or
+#						region = region_wa
+#						region = region_ak
+#						region = region_hi
+#					}
+#					value = 50
+#				}
+#			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = PAC }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2424  # LA
+				province_id = 2426  # San Diego
+				province_id = 2401  # San Francisco
+				province_id = 3071  # Seattle
+				province_id = 2519  # Portland
+				province_id = 3335  # Anchorage
+				province_id = 3355  # Honolulu
+			}
+		}
+		allow = {
+			owns_core_province = 2424  # LA
+			owns_core_province = 2426  # San Diego
+			owns_core_province = 2401  # San Francisco
+			owns_core_province = 3071  # Seattle
+			owns_core_province = 2519  # Portland
+			OR = {
+				owns_core_province = 3335  # Anchorage
+				owns_core_province = 3355  # Honolulu
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_ca
+					region = region_or
+					region = region_wa
+					region = region_ak
+					region = region_hi
+				}
+				value = 100
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = PAC
+			region_ca = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = PAC
+			}
+			region_or = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = PAC
+			}
+			region_wa = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = PAC
+			}
+			region_ak = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = PAC
+			}
+			region_hi = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = PAC
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_dixieland = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_upper_piedmontese
+				culture_group = culture_group_ozark
+				culture_group = culture_group_western_deep_south
+				culture_group = culture_group_eastern_deep_south
+				culture_group = culture_group_texas_triangle
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_cajun
+				culture_group = culture_group_gulf_coast
+				culture_group = culture_group_upland_south
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_floridian
+			}
+			OR = {
+				has_country_flag = formed_a_megaregion
+				num_of_owned_provinces_with = {
+					continent = continent_south
+					value = 100
+				}
+			}
+			capital_scope = { continent = continent_south }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_gigaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = DIX }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 377  # Atlanta
+				province_id = 1544  # Birmingham
+				province_id = 1384  # Jackson
+				province_id = 1191  # Shreveport
+				province_id = 1228  # New Orleans
+				province_id = 1769  # Little Rock
+				province_id = 2153  # Houston
+				province_id = 2032  # Dallas
+				province_id = 1022  # Memphis
+				province_id = 1055  # Nashville
+				province_id = 526  # Charleston
+				province_id = 821  # Raleigh
+				province_id = 663  # Richmond
+				province_id = 798  # Charlotte
+				province_id = 1902  # Jacksonville
+				province_id = 1888  # Tallahassee
+				province_id = 2164  # San Antonio
+				province_id = 3241  # OKC
+				province_id = 3213  # Tulsa
+				province_id = 1698  # Springfield
+				province_id = 1927  # Orlando
+				province_id = 989  # Lexington
+				province_id = 2672  # Charleston, WV
+				province_id = 1946  # Miami
+			}
+		}
+		allow = {
+			owns_core_province = 377  # Atlanta
+			owns_core_province = 1544  # Birmingham
+			owns_core_province = 1384  # Jackson
+			owns_core_province = 1191  # Shreveport
+			owns_core_province = 1228  # New Orleans
+			owns_core_province = 1769  # Little Rock
+			owns_core_province = 2153  # Houston
+			owns_core_province = 2032  # Dallas
+			owns_core_province = 1022  # Memphis
+			owns_core_province = 1055  # Nashville
+			owns_core_province = 526  # Charleston
+			owns_core_province = 821  # Raleigh
+			owns_core_province = 663  # Richmond
+			owns_core_province = 798  # Charlotte
+			owns_core_province = 1902  # Jacksonville
+			owns_core_province = 1888  # Tallahassee
+			OR = {
+				AND = {
+					owns_core_province = 2164  # San Antonio
+					owns_core_province = 3241  # OKC
+					owns_core_province = 3213  # Tulsa
+					owns_core_province = 1698  # Springfield
+				}
+				AND = {
+					owns_core_province = 1927  # Orlando
+					owns_core_province = 989  # Lexington
+					owns_core_province = 2672  # Charleston, WV
+					owns_core_province = 1946  # Miami
+				}
+			}
+			num_of_owned_provinces_with = {
+				continent = continent_south
+				value = 700
+			}
+			adm_tech = 15
+			is_at_war = no
+		}
+		effect = {
+			change_tag = DIX
+			custom_tooltip = get_perma_claims_on_south
+			hidden_effect = {
+				continent_south = {
+					limit = { NOT = { owned_by = ROOT } }
+					add_permanent_claim = DIX
+				}
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_gigaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 75
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_heartland_empire = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_great_lakes
+				culture_group = culture_group_northwoods
+				culture_group = culture_group_ohio_river_valley
+				culture_group = culture_group_upper_midwestern
+				culture_group = culture_group_lower_midwestern
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_great_plains
+			}
+			OR = {
+				has_country_flag = formed_a_megaregion
+				num_of_owned_provinces_with = {
+					continent = continent_midwest
+					value = 100
+				}
+			}
+			capital_scope = { continent = continent_midwest }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_gigaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = HLE }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1429  # Chicago
+				province_id = 1871  # Detroit
+				province_id = 1098  # Cleveland
+				province_id = 2366  # Milwaukee
+				province_id = 1848  # Grand Rapids
+				province_id = 1102  # Toledo
+				province_id = 2479  # Minneapolis
+				province_id = 2779  # Omaha
+				province_id = 2593  # Kansas City, KS
+				province_id = 2270  # Des Moines
+				province_id = 2997  # Sioux Falls
+				province_id = 1722  # St Louis
+				province_id = 1177  # Columbus
+				province_id = 1113  # Cincinnati
+				province_id = 1294  # Indianapolis
+				province_id = 2363  # Madison
+				province_id = 2657  # Wichita
+				province_id = 2914  # Fargo
+				province_id = 2961  # Rapid City
+				province_id = 1698  # Springfield, MO
+				province_id = 888  # Louisville
+				province_id = 1339  # Evansville
+				province_id = 2672  # Charleston, WV
+				province_id = 215  # Erie
+			}
+		}
+		allow = {
+			owns_core_province = 1429  # Chicago
+			owns_core_province = 1871  # Detroit
+			owns_core_province = 1098  # Cleveland
+			owns_core_province = 2366  # Milwaukee
+			owns_core_province = 1848  # Grand Rapids
+			owns_core_province = 1102  # Toledo
+			owns_core_province = 2479  # Minneapolis
+			owns_core_province = 2779  # Omaha
+			owns_core_province = 2593  # Kansas City, KS
+			owns_core_province = 2270  # Des Moines
+			owns_core_province = 2997  # Sioux Falls
+			owns_core_province = 1722  # St Louis
+			owns_core_province = 1177  # Columbus
+			owns_core_province = 1113  # Cincinnati
+			owns_core_province = 1294  # Indianapolis
+			owns_core_province = 2363  # Madison
+			OR = {
+				AND = {
+					owns_core_province = 2657  # Wichita
+					owns_core_province = 2914  # Fargo
+					owns_core_province = 2961  # Rapid City
+					owns_core_province = 1698  # Springfield, MO
+				}
+				AND = {
+					owns_core_province = 888  # Louisville
+					owns_core_province = 1339  # Evansville
+					owns_core_province = 2672  # Charleston, WV
+					owns_core_province = 215  # Erie
+				}
+			}
+			num_of_owned_provinces_with = {
+				continent = continent_midwest
+				value = 600
+			}
+			adm_tech = 15
+			is_at_war = no
+		}
+		effect = {
+			change_tag = HLE
+			custom_tooltip = get_perma_claims_on_midwest
+			hidden_effect = {
+				every_province = {
+					limit = { 
+						continent = continent_midwest
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = HLE
+				}
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_gigaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 75
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_north_atlantic_union = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_maritime_new_england
+				culture_group = culture_group_woodlands_new_england
+				culture_group = culture_group_mid_atlantic
+				culture_group = culture_group_allegheny
+				culture_group = culture_group_upstate
+			}
+			OR = {
+				has_country_flag = formed_a_megaregion
+				num_of_owned_provinces_with = {
+					continent = continent_northeast
+					value = 75
+				}
+			}
+			capital_scope = { continent = continent_northeast }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_gigaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = NAU }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 755  # Manhattan
+				province_id = 751  # Albany
+				province_id = 706  # Rochester
+				province_id = 286  # Newark
+				province_id = 273  # Philadelphia
+				province_id = 224  # Pittsburgh
+				province_id = 265  # Harrisburg
+				province_id = 279  # Scranton
+				province_id = 214  # Dover
+				province_id = 471  # Boston
+				province_id = 474  # Cape Cod
+				province_id = 565  # Concord
+				province_id = 1598  # Portland, ME
+				province_id = 878  # Burlington
+				province_id = 864  # Providence
+				province_id = 464  # Hartford
+				province_id = 617  # Arlington
+				province_id = 663  # Richmond
+				province_id = 595  # VA Beach
+				province_id = 495  # Baltimore
+				province_id = 215  # Erie
+				province_id = 2679  # Morgantown
+				province_id = 709  # Buffalo
+				province_id = 2708  # Martinsburg
+			}
+		}
+		allow = {
+			owns_core_province = 755  # Manhattan
+			owns_core_province = 751  # Albany
+			owns_core_province = 706  # Rochester
+			owns_core_province = 286  # Newark
+			owns_core_province = 273  # Philadelphia
+			owns_core_province = 224  # Pittsburgh
+			owns_core_province = 265  # Harrisburg
+			owns_core_province = 279  # Scranton
+			owns_core_province = 214  # Dover
+			owns_core_province = 471  # Boston
+			owns_core_province = 474  # Cape Cod
+			owns_core_province = 565  # Concord
+			owns_core_province = 1598  # Portland, ME
+			owns_core_province = 878  # Burlington
+			owns_core_province = 864  # Providence
+			owns_core_province = 464  # Hartford
+			OR = {
+				AND = {
+					owns_core_province = 617  # Arlington
+					owns_core_province = 663  # Richmond
+					owns_core_province = 595  # VA Beach
+					owns_core_province = 495  # Baltimore
+				}
+				AND = {
+					owns_core_province = 215  # Erie
+					owns_core_province = 2679  # Morgantown
+					owns_core_province = 709  # Buffalo
+					owns_core_province = 2708  # Martinsburg
+				}
+			}
+			num_of_owned_provinces_with = {
+				continent = continent_northeast
+				value = 125
+			}
+			adm_tech = 15
+			is_at_war = no
+		}
+		effect = {
+			change_tag = NAU
+			custom_tooltip = get_perma_claims_on_northeast
+			hidden_effect = {
+				continent_northeast = {
+					limit = { NOT = { owned_by = ROOT } }
+					add_permanent_claim = NAU
+				}
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_gigaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 75
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_western_dominion = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_californian
+				culture_group = culture_group_cascadian
+				culture_group = culture_group_columbian
+				culture_group = culture_group_alaskan
+				culture_group = culture_group_hawaiian
+				culture_group = culture_group_front_range
+				culture_group = culture_group_rockies
+				culture_group = culture_group_mormon_corridor
+				culture_group = culture_group_navajo
+				culture_group = culture_group_great_basin
+				culture_group = culture_group_southwestern
+			}
+			OR = {
+				has_country_flag = formed_a_megaregion
+				num_of_owned_provinces_with = {
+					continent = continent_west
+					value = 75
+				}
+			}
+			capital_scope = { continent = continent_west }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_gigaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = WDO }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2424  # LA
+				province_id = 2426  # San Diego
+				province_id = 2401  # San Francisco
+				province_id = 3071  # Seattle
+				province_id = 2519  # Portland
+				province_id = 3053  # Billings
+				province_id = 3126  # Boise
+				province_id = 2848  # Denver
+				province_id = 2859  # Colorado Springs
+				province_id = 3174  # Salt Lake City
+				province_id = 3286  # ABQ
+				province_id = 3317  # Phoenix
+				province_id = 2729  # Las Vegas
+				province_id = 2713  # Reno
+				province_id = 3079  # Spokane
+				province_id = 2843  # Grand Junction
+				province_id = 3335  # Anchorage
+				province_id = 3355  # Honolulu
+				province_id = 3153  # Casper
+				province_id = 2961  # Rapid City
+				province_id = 2102  # El Paso
+				province_id = 1984  # Lubbock
+				province_id = 2188  # Laredo
+				province_id = 3241  # OKC
+			}
+		}
+		allow = {
+			owns_core_province = 2424  # LA
+			owns_core_province = 2426  # San Diego
+			owns_core_province = 2401  # San Francisco
+			owns_core_province = 3071  # Seattle
+			owns_core_province = 2519  # Portland
+			owns_core_province = 3053  # Billings
+			owns_core_province = 3126  # Boise
+			owns_core_province = 2848  # Denver
+			owns_core_province = 2859  # Colorado Springs
+			owns_core_province = 3174  # Salt Lake City
+			owns_core_province = 3286  # ABQ
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 2729  # Las Vegas
+			owns_core_province = 2713  # Reno
+			owns_core_province = 3079  # Spokane
+			owns_core_province = 2843  # Grand Junction
+			OR = {
+				AND = {
+					owns_core_province = 3335  # Anchorage
+					owns_core_province = 3355  # Honolulu
+					owns_core_province = 3153  # Casper
+					owns_core_province = 2961  # Rapid City
+				}
+				AND = {
+					owns_core_province = 2102  # El Paso
+					owns_core_province = 1984  # Lubbock
+					owns_core_province = 2188  # Laredo
+					owns_core_province = 3241  # OKC
+				}
+			}
+			num_of_owned_provinces_with = {
+				continent = continent_west
+				value = 250
+			}
+			adm_tech = 15
+			is_at_war = no
+		}
+		effect = {
+			change_tag = WDO
+			custom_tooltip = get_perma_claims_on_west
+			hidden_effect = {
+				continent_south = {
+					limit = { NOT = { owned_by = ROOT } }
+					add_permanent_claim = WDO
+				}
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_gigaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 75
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_united_states = {
+		major = yes
+		potential = {
+			num_of_owned_provinces_with = {
+				value = 250
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { tag = PAP }
+			NOT = { exists = XUS }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 505  # DC
+				province_id = 755  # Manhattan
+				province_id = 495  # Baltimore
+				province_id = 273  # Philadelphia
+				province_id = 224  # Pittsburgh
+				province_id = 471  # Boston
+				province_id = 1946  # Miami
+				province_id = 1924  # Tampa
+				province_id = 377  # Atlanta
+				province_id = 2153  # Houston
+				province_id = 2032  # Dallas
+				province_id = 2164  # San Antonio
+				province_id = 1429  # Chicago
+				province_id = 1871  # Detroit
+				province_id = 2479  # Minneapolis
+				province_id = 1722  # St Louis
+				province_id = 2424  # LA
+				province_id = 2401  # San Francisco
+				province_id = 2426  # San Diego
+				province_id = 2398  # Sacramento
+				province_id = 3317  # Phoenix
+				province_id = 2729  # Las Vegas
+				province_id = 3071  # Seattle
+				province_id = 2519  # Portland
+				province_id = 2848  # Denver
+			}
+		}
+		allow = {
+			owns_core_province = 505  # DC
+			owns_core_province = 755  # Manhattan
+			owns_core_province = 495  # Baltimore
+			owns_core_province = 273  # Philadelphia
+			owns_core_province = 224  # Pittsburgh
+			owns_core_province = 471  # Boston
+			owns_core_province = 1946  # Miami
+			owns_core_province = 1924  # Tampa
+			owns_core_province = 377  # Atlanta
+			owns_core_province = 2153  # Houston
+			owns_core_province = 2032  # Dallas
+			owns_core_province = 2164  # San Antonio
+			owns_core_province = 1429  # Chicago
+			owns_core_province = 1871  # Detroit
+			owns_core_province = 2479  # Minneapolis
+			owns_core_province = 1722  # St Louis
+			owns_core_province = 2424  # LA
+			owns_core_province = 2401  # San Francisco
+			owns_core_province = 2426  # San Diego
+			owns_core_province = 2398  # Sacramento
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 2729  # Las Vegas
+			owns_core_province = 3071  # Seattle
+			owns_core_province = 2519  # Portland
+			owns_core_province = 2848  # Denver
+			num_of_owned_provinces_with = {
+				value = 1250
+			}
+			adm_tech = 20
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XUS
+			custom_tooltip = get_perma_claims_on_world
+			hidden_effect = {
+				every_province = {
+					limit = {
+						OR = {
+							continent = continent_northeast
+							continent = continent_midwest
+							continent = continent_south
+							continent = continent_west
+							continent = continent_alaska
+							continent = continent_hawaii
+						}
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = XUS
+				}
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_gigaregion
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 100
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

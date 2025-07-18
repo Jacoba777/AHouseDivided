@@ -1,0 +1,29 @@
+capital="Manassas"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=7
+base_manpower=8
+native_size=250
+native_ferocity=4
+native_hostileness=4
+religion=baptist
+culture=culture_potomac
+is_city = yes
+owner=VMA
+add_core=VMA
+controller=VMA
+
+1444.11.12 = {
+	base_tax=30
+	base_production=8
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

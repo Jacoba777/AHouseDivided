@@ -1,0 +1,747 @@
+missions_md_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMD }
+
+	mission_md_round_out_little_america = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+            region_md = {
+                type = all
+                OR = {
+                    country_or_non_sovereign_subject_holds = ROOT
+                    province_id = 505
+                }
+            }
+ 		}
+		effect = {
+            country_event = { id = flavor_usa.2 }
+		}
+		provinces_to_highlight = {
+            region = region_md
+            NOT = { owned_by = ROOT }
+            NOT = { province_id = 505 }
+		}
+	}
+
+	mission_md_a_free_state = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_md_round_out_little_america }
+		trigger = {
+            region_md = {
+                type = all
+                OR = {
+                    AND = {
+                        country_or_non_sovereign_subject_holds = ROOT
+                        NOT = { devastation = 1 }
+                        NOT = { unrest = 10 }
+                        NOT = { local_autonomy = 50 }
+                    }
+                    province_id = 505
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			region_de = { add_permanent_claim = ROOT }
+			661 = { add_permanent_claim = ROOT }
+			662 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            region = region_md
+            NOT = { province_id = 505 }
+            OR = {
+                NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                devastation = 1
+                unrest = 10
+                local_autonomy = 50
+            }
+		}
+	}
+
+	mission_md_pacifying_the_penn_dutch = {
+		icon = settle_north_america
+		position = 3
+		required_missions = { mission_md_a_free_state }
+		trigger = {
+            OR = {
+                accepted_culture = culture_penn_dutch
+                religion = methodist
+            }
+ 		}
+		effect = {
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+			area_pa_johnstown = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_penetrating_pennsylvania = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_md_pacifying_the_penn_dutch }
+		trigger = {
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_johnstown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_south_dutch
+				area = area_pa_johnstown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_develop_the_alleghenies = {
+		icon = mission_colonial
+		position = 5
+		required_missions = { mission_md_penetrating_pennsylvania }
+		trigger = {
+            237 = { num_of_times_improved_by_owner = 2 }
+            238 = { num_of_times_improved_by_owner = 2 }
+            249 = { num_of_times_improved_by_owner = 2 }
+            250 = { num_of_times_improved_by_owner = 2 }
+            251 = { num_of_times_improved_by_owner = 2 }
+            266 = { num_of_times_improved_by_owner = 2 }
+ 		}
+		effect = {
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 237
+                province_id = 238
+                province_id = 249
+                province_id = 250
+                province_id = 251
+                province_id = 266
+            }
+            NOT = { num_of_times_improved_by_owner = 2 }
+		}
+	}
+
+	mission_md_conquer_harrisburg = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_md_develop_the_alleghenies }
+		trigger = {
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+				area = area_pa_north_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_md_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMD }
+
+	mission_md_dominate_delmarva = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_md_a_free_state }
+		trigger = {
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			661 = { country_or_non_sovereign_subject_holds = ROOT }
+			662 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_de
+				province_id = 661
+				province_id = 662
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_accept_philadelphian = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_md_dominate_delmarva }
+		trigger = {
+			accepted_culture = culture_philadelphian
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+			area_nj_south_jersey = { add_permanent_claim = ROOT }
+			area_nj_jersey_shore = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_the_fate_of_south_jersey = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_md_accept_philadelphian }
+		trigger = {
+			area_nj_south_jersey = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nj_jersey_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			region_nj = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nj_south_jersey
+				area = area_nj_jersey_shore
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_the_push_to_the_hudson = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_md_the_fate_of_south_jersey }
+		trigger = {
+			region_nj = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nj
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_stewards_of_new_jersey = {
+		icon = mission_nj
+		position = 7
+		required_missions = { mission_md_the_push_to_the_hudson }
+		trigger = {
+			region_nj = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nj
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_md_assimilate_newarkers = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_md_stewards_of_new_jersey }
+		trigger = {
+			accepted_culture = culture_hudsonian
+ 		}
+		effect = {
+			area_ny_nyc = { add_permanent_claim = ROOT }
+			area_ny_lower_hudson_valley = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_biting_the_big_apple = {
+		icon = mission_statue_of_liberty
+		position = 9
+		required_missions = { mission_md_assimilate_newarkers }
+		trigger = {
+			area_ny_nyc = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_nyc
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_mid_atlantic_trade = {
+		icon = mission_dominate_home_trade_node
+		position = 10
+		required_missions = { mission_md_biting_the_big_apple }
+		trigger = {
+            trade_income_percentage = 0.25
+            505 = { trade_share = { country = ROOT  share = 50 } }  # DC
+            755 = { trade_share = { country = ROOT  share = 50 } }  # NYC
+            OR = {
+                505 = { trade_share = { country = ROOT  share = 75 } }  # DC
+                755 = { trade_share = { country = ROOT  share = 75 } }  # NYC
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_captains_of_the_midatlantic
+				duration = 7300  # 20 years
+			}
+		}
+
+	}
+}
+
+missions_md_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMD }
+
+	mission_md_capture_philadelphia = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_md_accept_philadelphian }
+		trigger = {
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_grab_the_northern_neck = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_md_incorporate_nova }
+		trigger = {
+			area_va_northern_neck = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_middle_peninsula = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern_neck
+				area = area_va_middle_peninsula
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_peninsular_progress = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_md_grab_the_northern_neck }
+		trigger = {
+			area_va_northern_neck = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_middle_peninsula = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_east_richmond = { add_permanent_claim = ROOT }
+			area_va_peninsulas = { add_permanent_claim = ROOT }
+			595 = { add_permanent_claim = ROOT }
+			640 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern_neck
+				area = area_va_middle_peninsula
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_md_our_chesapeake = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_md_peninsular_progress }
+		trigger = {
+			area_va_east_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_peninsulas = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_east_richmond
+				area = area_va_peninsulas
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_bolstering_the_shores = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_md_our_chesapeake }
+		trigger = {
+			area_va_east_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_peninsulas = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_richmond = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_east_richmond
+				area = area_va_peninsulas
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_md_the_heart_of_virginia = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_md_bolstering_the_shores }
+		trigger = {
+			area_va_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_the_old_line_state = {
+		icon = mission_md
+		position = 11
+		required_missions = { mission_md_the_heart_of_virginia mission_md_mid_atlantic_trade }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_old_line_state
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_md_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMD }
+
+	mission_md_manage_the_hre = {
+		icon = mission_kaiserreich
+		position = 2
+		required_missions = {  }
+		trigger = {
+            OR = {
+                is_emperor = yes
+                NOT = { is_part_of_hre = yes }
+            }
+ 		}
+		effect = {
+			505 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_conquer_the_capital = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_md_manage_the_hre }
+		trigger = {
+			505 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_va_arlington = { add_permanent_claim = ROOT }
+			area_va_southern_nova = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 505
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_crossing_the_potomac = {
+		icon = mission_se_along_the_river
+		position = 4
+		required_missions = { mission_md_conquer_the_capital }
+		trigger = {
+			area_va_arlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_southern_nova = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_arlington
+				area = area_va_southern_nova
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_incorporate_nova = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_md_crossing_the_potomac }
+		trigger = {
+			area_va_arlington = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_southern_nova = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_northern_neck = { add_permanent_claim = ROOT }
+			area_va_middle_peninsula = { add_permanent_claim = ROOT }
+			648 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_arlington
+				area = area_va_southern_nova
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_md_march_to_morgantown = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_md_mountain_development }
+		trigger = {
+			area_wv_morgantown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_clarksburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_morgantown
+				area = area_wv_clarksburg
+				area = area_wv_northwestern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_md_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMD }
+
+	mission_md_pacifying_the_panhandle = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_md_manage_the_hre }
+		trigger = {
+			accepted_culture = culture_highlander
+ 		}
+		effect = {
+			area_wv_eastern_panhandle = { add_permanent_claim = ROOT }
+			area_va_northern = { add_permanent_claim = ROOT }
+			area_wv_potomac_highlands = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_md_master_of_shanondoah = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_md_pacifying_the_panhandle }
+		trigger = {
+			area_wv_eastern_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_eastern_panhandle
+				area = area_va_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_md_mountain_development = {
+		icon = spa_new_capital
+		position = 5
+		required_missions = { mission_md_master_of_shanondoah }
+		trigger = {
+			area_wv_eastern_panhandle = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_northern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_wv_morgantown = { add_permanent_claim = ROOT }
+			area_wv_clarksburg = { add_permanent_claim = ROOT }
+			area_wv_northwestern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_eastern_panhandle
+				area = area_va_northern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

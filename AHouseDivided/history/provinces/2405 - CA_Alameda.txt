@@ -1,0 +1,30 @@
+capital="Oakland"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=12
+base_production=11
+base_manpower=11
+native_size=340
+native_ferocity=5
+native_hostileness=4
+religion=atheist
+culture=culture_bay_area
+is_city = yes
+owner=ALM
+add_core=ALM
+add_core=FFC
+controller=ALM
+
+1444.11.12 = {
+	base_tax=93
+	base_production=56
+	base_manpower=39
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

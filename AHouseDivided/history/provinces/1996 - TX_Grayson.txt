@@ -1,0 +1,29 @@
+capital="Sherman"
+discovered_by = texas
+discovered_by = miss_delta
+discovered_by = southwest
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_metroplex
+is_city = yes
+owner=SMN
+add_core=SMN
+controller=SMN
+
+1444.11.12 = {
+	base_tax=2
+	base_production=2
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XTX
+	add_core=XTX
+	controller=XTX
+}

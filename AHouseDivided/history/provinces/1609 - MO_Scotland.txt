@@ -1,0 +1,26 @@
+capital="Memphis"
+discovered_by = central_plains
+discovered_by = great_lakes
+discovered_by = miss_delta
+discovered_by = appalachia
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_mid_missourian
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XMO
+	add_core=XMO
+	controller=XMO
+}

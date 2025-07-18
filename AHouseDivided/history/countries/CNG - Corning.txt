@@ -1,0 +1,7 @@
+technology_group = mid_atlantic
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = methodist
+primary_culture = culture_southern_tier
+capital = 713

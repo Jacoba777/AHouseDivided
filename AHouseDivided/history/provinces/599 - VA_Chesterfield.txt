@@ -1,0 +1,30 @@
+capital="Chesterfield"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=8
+base_production=7
+base_manpower=7
+native_size=220
+native_ferocity=4
+native_hostileness=4
+religion=baptist
+culture=culture_central_virginian
+is_city = yes
+owner=RCH
+add_core=RCH
+controller=RCH
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=12
+	base_production=6
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

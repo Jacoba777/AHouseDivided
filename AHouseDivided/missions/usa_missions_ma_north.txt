@@ -1,0 +1,188 @@
+missions_ma_north_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CBG
+			tag = SWT
+		}
+	}
+
+	mission_ma_north_conquer_boston = {
+		icon = mission_bto
+		position = 2
+		required_missions = { mission_ma_north_fielding_an_army }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+			area_ma_south_shore = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ma_north_the_south_shore_march = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_ma_north_conquer_boston }
+		trigger = {
+			area_ma_south_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_south_shore
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ma_north_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CBG
+			tag = SWT
+		}
+	}
+
+	mission_ma_north_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_ma_boston = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_ma_north_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CBG
+			tag = SWT
+		}
+	}
+
+	mission_ma_north_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ma_north_fielding_an_army }
+		trigger = {
+			470 = { country_or_non_sovereign_subject_holds = ROOT }
+			478 = { country_or_non_sovereign_subject_holds = ROOT }
+			479 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 470
+				province_id = 478
+				province_id = 479
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ma_north_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ma_north_local_feuds }
+		trigger = {
+			470 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			478 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			479 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_ma_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 470
+				province_id = 478
+				province_id = 479
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ma_north_subdue_the_west = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ma_north_a_respectable_state }
+		trigger = {
+			area_ma_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

@@ -1,0 +1,30 @@
+capital="Cedar Rapids"
+discovered_by = central_plains
+discovered_by = great_lakes
+discovered_by = northern_plains
+hre = no
+base_tax=6
+base_production=7
+base_manpower=6
+native_size=190
+native_ferocity=6
+native_hostileness=4
+religion=methodist
+culture=culture_corridor_iowan
+center_of_trade=2
+is_city = yes
+owner=CDR
+add_core=CDR
+controller=CDR
+
+1444.11.12 = {
+	base_tax=4
+	base_production=7
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XIA
+	add_core=XIA
+	controller=XIA
+}

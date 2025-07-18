@@ -1,0 +1,28 @@
+capital="Prosser"
+discovered_by = pacific_nw
+discovered_by = upper_rockies
+hre = no
+base_tax=6
+base_production=6
+base_manpower=6
+native_size=180
+native_ferocity=5
+native_hostileness=4
+religion=nondenominational
+culture=culture_washcolumbian
+is_city = yes
+owner=KNW
+add_core=KNW
+controller=KNW
+
+1444.11.12 = {
+	base_tax=3
+	base_production=5
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XWA
+	add_core=XWA
+	controller=XWA
+}

@@ -1,0 +1,28 @@
+capital="Moore Haven"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_west_floridian
+is_city = yes
+owner=CWS
+add_core=CWS
+controller=CWS
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

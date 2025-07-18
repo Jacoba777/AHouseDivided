@@ -1,0 +1,32 @@
+capital="Topeka"
+discovered_by = central_plains
+discovered_by = texas
+discovered_by = lower_rockies
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=methodist
+culture=culture_topekan
+center_of_trade=1
+is_city = yes
+owner=TPK
+add_core=TPK
+add_core=TPK
+controller=TPK
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=4
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XKS
+	add_core=XKS
+	controller=XKS
+}

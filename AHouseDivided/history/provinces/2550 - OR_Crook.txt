@@ -1,0 +1,25 @@
+capital="Prineville"
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = upper_rockies
+hre = no
+base_tax=3
+base_production=1
+base_manpower=1
+native_size=50
+native_ferocity=2
+native_hostileness=2
+religion=nondenominational
+culture=culture_bender
+
+1444.11.12 = {
+	base_tax=1
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XOR
+	add_core=XOR
+	controller=XOR
+}

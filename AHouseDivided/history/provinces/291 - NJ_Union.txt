@@ -1,0 +1,29 @@
+capital="Elizabeth"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=10
+base_production=8
+base_manpower=8
+native_size=260
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_nyc
+is_city = yes
+owner=UNI
+add_core=UNI
+add_core=NYC
+controller=UNI
+
+1444.11.12 = {
+	base_tax=26
+	base_production=14
+	base_manpower=14
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

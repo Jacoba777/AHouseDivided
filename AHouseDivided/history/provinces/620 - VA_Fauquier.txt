@@ -1,0 +1,29 @@
+capital="Warrenton"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=6
+base_production=3
+base_manpower=4
+native_size=130
+native_ferocity=3
+native_hostileness=3
+religion=baptist
+culture=culture_potomac
+is_city = yes
+owner=WRT
+add_core=WRT
+controller=WRT
+
+1444.11.12 = {
+	base_tax=4
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

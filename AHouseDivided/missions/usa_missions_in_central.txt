@@ -1,0 +1,366 @@
+missions_in_central_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = IDP
+			tag = LFY
+			tag = MCI
+			tag = KKM
+		}
+	}
+
+	mission_in_central_looking_north = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_in_central_fielding_an_army }
+		trigger = {
+			area_in_north_indianapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_kokomo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_muncie = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_lafayette = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_north_indianapolis
+				area = area_in_kokomo
+				area = area_in_muncie
+				area = area_in_lafayette
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_central_stabilize_the_north = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_in_central_looking_north }
+		trigger = {
+			area_in_north_indianapolis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_kokomo = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_muncie = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_lafayette = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_north_indianapolis
+				area = area_in_kokomo
+				area = area_in_muncie
+				area = area_in_lafayette
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_central_accept_north_hoosier = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_in_central_stabilize_the_north }
+		trigger = {
+			accepted_culture = culture_north_hoosier
+ 		}
+		effect = {
+			area_in_north_central = { add_permanent_claim = ROOT }
+			area_in_huntington = { add_permanent_claim = ROOT }
+			area_in_fort_wayne = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_central_the_siege_of_fort_wayne = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_in_central_accept_north_hoosier }
+		trigger = {
+			area_in_north_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_huntington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_fort_wayne = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_north_central
+				area = area_in_huntington
+				area = area_in_fort_wayne
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_in_central_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = IDP
+			tag = LFY
+			tag = MCI
+			tag = KKM
+		}
+	}
+
+	mission_in_central_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_in_eastern = { add_permanent_claim = ROOT }
+			area_in_western = { add_permanent_claim = ROOT }
+			area_in_central_indianapolis = { add_permanent_claim = ROOT }
+			area_in_south_indianapolis = { add_permanent_claim = ROOT }
+			area_in_north_indianapolis = { add_permanent_claim = ROOT }
+			area_in_kokomo = { add_permanent_claim = ROOT }
+			area_in_muncie = { add_permanent_claim = ROOT }
+			area_in_lafayette = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_in_central_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = IDP
+			tag = LFY
+			tag = MCI
+			tag = KKM
+		}
+	}
+
+	mission_in_central_going_south = {
+		icon = mission_ind
+		position = 2
+		required_missions = { mission_in_central_fielding_an_army }
+		trigger = {
+			area_in_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_central_indianapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_south_indianapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_eastern
+				area = area_in_western
+				area = area_in_central_indianapolis
+				area = area_in_south_indianapolis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_central_fortify_the_south = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_in_central_going_south }
+		trigger = {
+			area_in_eastern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_central_indianapolis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_in_south_indianapolis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 25
+			add_dip_power = 25
+			add_mil_power = 25
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_eastern
+				area = area_in_western
+				area = area_in_central_indianapolis
+				area = area_in_south_indianapolis
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_central_develop_west_indiana = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_in_central_fortify_the_south }
+		trigger = {
+			area_in_western = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_in_terre_haute = { add_permanent_claim = ROOT }
+			area_in_bloomington = { add_permanent_claim = ROOT }
+			area_in_southwest = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_in_western
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_in_central_take_terre_haute = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_in_central_develop_west_indiana }
+		trigger = {
+			area_in_terre_haute = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_bloomington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_southwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_terre_haute
+				area = area_in_bloomington
+				area = area_in_southwest
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_central_embrace_south_hoosier = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_in_central_take_terre_haute }
+		trigger = {
+			accepted_culture = culture_south_hoosier
+ 		}
+		effect = {
+			area_in_jasper = { add_permanent_claim = ROOT }
+			area_in_evansville = { add_permanent_claim = ROOT }
+			area_in_southern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_central_the_push_to_the_ohio = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_in_central_embrace_south_hoosier }
+		trigger = {
+			area_in_jasper = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_evansville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 75
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_jasper
+				area = area_in_evansville
+				area = area_in_southern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

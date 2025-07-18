@@ -1,0 +1,146 @@
+country_decisions = {
+	form_long_island = {
+		major = yes
+		potential = {
+			OR = {
+				tag = SUF
+				tag = NAS
+				tag = QNS
+				tag = BKL
+			}
+			capital_scope = { region = region_ny }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = LGI }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 760
+				province_id = 759
+			}
+		}
+		allow = {
+			owns = 760
+			owns = 759
+			is_at_war = no
+		}
+		effect = {
+			change_tag = LGI
+			757 = { add_core = LGI }
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			add_prestige = 10
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_niagara = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = culture_buffalonian
+				primary_culture = culture_rochesterite
+				primary_culture = culture_southern_tier
+			}
+			capital_scope = {
+				OR = {
+					area = area_ny_buffalo
+					area = area_ny_rochester
+					area = area_ny_finger_lakes
+					area = area_ny_elmira
+				}
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = NIA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 709  # Buffalo
+				province_id = 708  # Niagara
+				province_id = 706  # Rochester
+			}
+		}
+		allow = {
+			owns = 709  # Buffalo
+			owns = 708  # Niagara
+			owns = 706  # Rochester
+			num_of_owned_provinces_with = {
+				OR = {
+					area = area_ny_buffalo
+					area = area_ny_rochester
+					area = area_ny_finger_lakes
+					area = area_ny_elmira
+				}
+				value = 13
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = NIA
+			area_ny_buffalo = { add_permanent_claim = ROOT }
+			area_ny_rochester = { add_permanent_claim = ROOT }
+			area_ny_finger_lakes = { add_permanent_claim = ROOT }
+			area_ny_elmira = { add_permanent_claim = ROOT }
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			add_prestige = 15
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	form_south_jersey = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = culture_philadelphian
+				primary_culture = culture_rochesterite
+				primary_culture = culture_southern_tier
+			}
+			capital_scope = {
+				OR = {
+					area = area_ny_buffalo
+					area = area_ny_rochester
+					area = area_ny_finger_lakes
+					area = area_ny_elmira
+				}
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_state }
+			NOT = { exists = NIA }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 709  # Buffalo
+				province_id = 708  # Niagara
+				province_id = 706  # Rochester
+			}
+		}
+		allow = {
+			owns = 709  # Buffalo
+			owns = 708  # Niagara
+			owns = 706  # Rochester
+			num_of_owned_provinces_with = {
+				OR = {
+					area = area_ny_buffalo
+					area = area_ny_rochester
+					area = area_ny_finger_lakes
+					area = area_ny_elmira
+				}
+				value = 13
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = NIA
+			area_ny_buffalo = { add_permanent_claim = ROOT }
+			area_ny_rochester = { add_permanent_claim = ROOT }
+			area_ny_finger_lakes = { add_permanent_claim = ROOT }
+			area_ny_elmira = { add_permanent_claim = ROOT }
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			add_prestige = 15
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

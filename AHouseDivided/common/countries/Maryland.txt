@@ -1,0 +1,4226 @@
+# Maryland
+
+graphical_culture = westerngfx
+
+color = { 195 102 26 }
+revolutionary_colors = { 195 102 26 }
+
+monarch_names = {
+    "Noah #0" = 91
+    "Liam #0" = 87
+    "Jacob #0" = 81
+    "William #0" = 80
+    "Mason #0" = 79
+    "Ethan #0" = 74
+    "Michael #0" = 72
+    "Alexander #0" = 71
+    "James #0" = 70
+    "Elijah #0" = 68
+    "Benjamin #0" = 67
+    "Daniel #0" = 67
+    "Aiden #0" = 65
+    "Logan #0" = 63
+    "Jayden #0" = 63
+    "Matthew #0" = 62
+    "Lucas #0" = 59
+    "David #0" = 58
+    "Jackson #0" = 58
+    "Joseph #0" = 58
+    "Anthony #0" = 56
+    "Samuel #0" = 54
+    "Joshua #0" = 53
+    "Gabriel #0" = 53
+    "Andrew #0" = 52
+    "John #0" = 51
+    "Christopher #0" = 51
+    "Oliver #0" = 49
+    "Dylan #0" = 48
+    "Carter #0" = 47
+    "Isaac #0" = 47
+    "Luke #0" = 46
+    "Henry #0" = 46
+    "Owen #0" = 45
+    "Ryan #0" = 45
+    "Nathan #0" = 44
+    "Wyatt #0" = 44
+    "Caleb #0" = 43
+    "Sebastian #0" = 43
+    "Jack #0" = 43
+    "Christian #0" = 42
+    "Jonathan #0" = 40
+    "Julian #0" = 40
+    "Landon #0" = 40
+    "Levi #0" = 39
+    "Isaiah #0" = 38
+    "Hunter #0" = 37
+    "Aaron #0" = 35
+    "Thomas #0" = 35
+    "Charles #0" = 35
+    "Eli #0" = 35
+    "Jaxon #0" = 34
+    "Connor #0" = 34
+    "Nicholas #0" = 33
+    "Jeremiah #0" = 33
+    "Grayson #0" = 33
+    "Cameron #0" = 33
+    "Brayden #0" = 33
+    "Adrian #0" = 33
+    "Evan #0" = 32
+    "Jordan #0" = 32
+    "Josiah #0" = 31
+    "Angel #0" = 31
+    "Robert #0" = 31
+    "Gavin #0" = 31
+    "Tyler #0" = 30
+    "Austin #0" = 29
+    "Colton #0" = 29
+    "Jose #0" = 27
+    "Dominic #0" = 27
+    "Brandon #0" = 27
+    "Ian #0" = 26
+    "Lincoln #0" = 26
+    "Hudson #0" = 26
+    "Kevin #0" = 26
+    "Zachary #0" = 25
+    "Adam #0" = 25
+    "Mateo #0" = 25
+    "Jason #0" = 25
+    "Chase #0" = 25
+    "Nolan #0" = 25
+    "Ayden #0" = 25
+    "Cooper #0" = 25
+    "Parker #0" = 25
+    "Xavier #0" = 24
+    "Asher #0" = 24
+    "Carson #0" = 24
+    "Jace #0" = 24
+    "Easton #0" = 23
+    "Justin #0" = 23
+    "Leo #0" = 22
+    "Bentley #0" = 22
+    "Jaxson #0" = 21
+    "Nathaniel #0" = 21
+    "Blake #0" = 21
+    "Elias #0" = 20
+    "Theodore #0" = 20
+    "Kayden #0" = 20
+    "Luis #0" = 19
+    "Tristan #0" = 19
+    "Ezra #0" = 19
+    "Bryson #0" = 19
+    "Juan #0" = 19
+    "Brody #0" = 19
+    "Vincent #0" = 18
+    "Micah #0" = 18
+    "Miles #0" = 18
+    "Santiago #0" = 18
+    "Cole #0" = 18
+    "Ryder #0" = 18
+    "Carlos #0" = 18
+    "Damian #0" = 18
+    "Leonardo #0" = 18
+    "Roman #0" = 18
+    "Max #0" = 17
+    "Sawyer #0" = 17
+    "Jesus #0" = 17
+    "Diego #0" = 17
+    "Greyson #0" = 17
+    "Alex #0" = 16
+    "Maxwell #0" = 16
+    "Axel #0" = 16
+    "Eric #0" = 16
+    "Wesley #0" = 16
+    "Declan #0" = 16
+    "Giovanni #0" = 15
+    "Ezekiel #0" = 15
+    "Braxton #0" = 15
+    "Ashton #0" = 15
+    "Ivan #0" = 15
+    "Hayden #0" = 15
+    "Camden #0" = 15
+    "Silas #0" = 15
+    "Bryce #0" = 14
+    "Weston #0" = 14
+    "Harrison #0" = 14
+    "Jameson #0" = 14
+    "George #0" = 14
+    "Antonio #0" = 14
+    "Timothy #0" = 14
+    "Kaiden #0" = 14
+    "Jonah #0" = 14
+    "Everett #0" = 14
+    "Miguel #0" = 13
+    "Steven #0" = 13
+    "Richard #0" = 13
+    "Emmett #0" = 13
+    "Victor #0" = 13
+    "Kaleb #0" = 13
+    "Kai #0" = 13
+    "Maverick #0" = 13
+    "Joel #0" = 13
+    "Bryan #0" = 13
+    "Maddox #0" = 13
+    "Kingston #0" = 13
+    "Aidan #0" = 13
+    "Patrick #0" = 13
+    "Edward #0" = 13
+    "Emmanuel #0" = 13
+    "Jude #0" = 13
+    "Preston #0" = 13
+    "Alejandro #0" = 13
+    "Luca #0" = 12
+    "Bennett #0" = 12
+    "Jesse #0" = 12
+    "Jaden #0" = 12
+    "Colin #0" = 12
+    "Malachi #0" = 12
+    "Kaden #0" = 12
+    "Jayce #0" = 12
+    "Alan #0" = 12
+    "Marcus #0" = 12
+    "Kyle #0" = 12
+    "Brian #0" = 12
+    "Ryker #0" = 12
+    "Grant #0" = 12
+    "Abel #0" = 12
+    "Jeremy #0" = 12
+    "Riley #0" = 12
+    "Calvin #0" = 12
+    "Brantley #0" = 11
+    "Caden #0" = 11
+    "Oscar #0" = 11
+    "Abraham #0" = 11
+    "Brady #0" = 11
+    "Sean #0" = 11
+    "Jake #0" = 11
+    "Tucker #0" = 11
+    "Nicolas #0" = 11
+    "Mark #0" = 11
+    "Amir #0" = 10
+    "Avery #0" = 10
+    "King #0" = 10
+    "Gael #0" = 10
+    "Kenneth #0" = 10
+    "Bradley #0" = 10
+    "Cayden #0" = 10
+    "Xander #0" = 10
+    "Graham #0" = 10
+    "Paul #0" = 10
+    "Rowan #0" = 10
+    "Peter #0" = 9
+    "Maximus #0" = 9
+    "Zayden #0" = 9
+    "Andres #0" = 9
+    "Elliot #0" = 9
+    "Jasper #0" = 9
+    "Derek #0" = 9
+    "Omar #0" = 9
+    "Myles #0" = 9
+    "Zion #0" = 9
+    "Beau #0" = 9
+    "Jorge #0" = 9
+    "Waylon #0" = 9
+    "Finn #0" = 9
+    "Elliott #0" = 9
+    "Dean #0" = 9
+    "Zane #0" = 9
+    "Javier #0" = 9
+    "Tanner #0" = 9
+    "Rylan #0" = 9
+    "Gage #0" = 8
+    "Cody #0" = 8
+    "Karter #0" = 8
+    "Lorenzo #0" = 8
+    "Jase #0" = 8
+    "Charlie #0" = 8
+    "Devin #0" = 8
+    "Brooks #0" = 8
+    "Emiliano #0" = 8
+    "Griffin #0" = 8
+    "Lukas #0" = 8
+    "Judah #0" = 8
+    "Peyton #0" = 8
+    "August #0" = 8
+    "Israel #0" = 8
+    "Eduardo #0" = 8
+    "Collin #0" = 8
+    "Corbin #0" = 8
+    "Paxton #0" = 8
+    "Jax #0" = 8
+    "Francisco #0" = 8
+    "Josue #0" = 8
+    "Damien #0" = 8
+    "Conner #0" = 8
+    "Jaiden #0" = 8
+    "Travis #0" = 7
+    "Simon #0" = 7
+    "Dawson #0" = 7
+    "Erick #0" = 7
+    "Seth #0" = 7
+    "Cristian #0" = 7
+    "Matteo #0" = 7
+    "Stephen #0" = 7
+    "Beckett #0" = 7
+    "Garrett #0" = 7
+    "Chance #0" = 7
+    "Zander #0" = 7
+    "Trevor #0" = 7
+    "Clayton #0" = 7
+    "Ricardo #0" = 7
+    "Manuel #0" = 7
+    "Fernando #0" = 7
+    "River #0" = 7
+    "Milo #0" = 7
+    "Spencer #0" = 7
+    "Andre #0" = 7
+    "Iker #0" = 7
+    "Raymond #0" = 7
+    "Cash #0" = 7
+    "Martin #0" = 7
+    "Felix #0" = 7
+    "Mario #0" = 7
+    "Cesar #0" = 7
+    "Holden #0" = 7
+    "Rhett #0" = 7
+    "Messiah #0" = 7
+    "Kameron #0" = 7
+    "Gunner #0" = 6
+    "Rafael #0" = 6
+    "Kyler #0" = 6
+    "Emilio #0" = 6
+    "Jeffrey #0" = 6
+    "Keegan #0" = 6
+    "Reid #0" = 6
+    "Arthur #0" = 6
+    "Shane #0" = 6
+    "Donovan #0" = 6
+    "Edwin #0" = 6
+    "Lane #0" = 6
+    "Jaylen #0" = 6
+    "Hector #0" = 6
+    "Knox #0" = 6
+    "Amari #0" = 6
+    "Dallas #0" = 6
+    "Tyson #0" = 6
+    "Troy #0" = 6
+    "Louis #0" = 6
+    "Johnathan #0" = 6
+    "Leon #0" = 6
+    "Caiden #0" = 6
+    "Colt #0" = 6
+    "Edgar #0" = 6
+    "Barrett #0" = 6
+    "Dante #0" = 6
+    "Anderson #0" = 6
+    "Archer #0" = 6
+    "Johnny #0" = 6
+    "Andy #0" = 6
+    "Maximiliano #0" = 6
+    "Alexis #0" = 6
+    "Marco #0" = 6
+    "Adriel #0" = 6
+    "Sergio #0" = 6
+    "Landen #0" = 6
+    "Remington #0" = 6
+    "Cruz #0" = 6
+    "Dominick #0" = 5
+    "Angelo #0" = 5
+    "Trenton #0" = 5
+    "Jared #0" = 5
+    "Karson #0" = 5
+    "Titus #0" = 5
+    "Shawn #0" = 5
+    "Phoenix #0" = 5
+    "Walter #0" = 5
+    "Emerson #0" = 5
+    "Enzo #0" = 5
+    "Dalton #0" = 5
+    "Erik #0" = 5
+    "Drake #0" = 5
+    "Gregory #0" = 5
+    "Jett #0" = 5
+    "Thiago #0" = 5
+    "Walker #0" = 5
+    "Cohen #0" = 5
+    "Julius #0" = 5
+    "Jayceon #0" = 5
+    "Joaquin #0" = 5
+    "Ali #0" = 5
+    "Fabian #0" = 5
+    "Emanuel #0" = 5
+    "Drew #0" = 5
+    "Dakota #0" = 5
+    "Quinn #0" = 5
+    "Marshall #0" = 5
+    "Frank #0" = 5
+    "Desmond #0" = 5
+    "Tobias #0" = 5
+    "Skyler #0" = 5
+    "Roberto #0" = 5
+    "Legend #0" = 5
+    "Braylon #0" = 5
+    "Nash #0" = 5
+    "Pedro #0" = 5
+    "Romeo #0" = 5
+    "Grady #0" = 5
+    "Gideon #0" = 5
+    "Malik #0" = 5
+    "Ronan #0" = 5
+    "Matias #0" = 5
+    "Reed #0" = 5
+    "Nehemiah #0" = 4
+    "Brendan #0" = 4
+    "Finley #0" = 4
+    "Ace #0" = 4
+    "Allen #0" = 4
+    "Aden #0" = 4
+    "Kyrie #0" = 4
+    "Braden #0" = 4
+    "Ruben #0" = 4
+    "Orion #0" = 4
+    "Derrick #0" = 4
+    "Atticus #0" = 4
+    "Cade #0" = 4
+    "Leland #0" = 4
+    "Theo #0" = 4
+    "Adan #0" = 4
+    "Ismael #0" = 4
+    "Beckham #0" = 4
+    "Prince #0" = 4
+    "Marcos #0" = 4
+    "Corey #0" = 4
+    "Kason #0" = 4
+    "Jay #0" = 4
+    "Killian #0" = 4
+    "Pablo #0" = 4
+    "Muhammad #0" = 4
+    "Kash #0" = 4
+    "Jensen #0" = 4
+    "Braylen #0" = 4
+    "Kade #0" = 4
+    "Brennan #0" = 4
+    "Phillip #0" = 4
+    "Leonel #0" = 4
+    "Noel #0" = 4
+    "Major #0" = 4
+    "Solomon #0" = 4
+    "Kendrick #0" = 4
+    "Esteban #0" = 4
+    "Jayson #0" = 4
+    "Russell #0" = 4
+    "Armando #0" = 4
+    "Warren #0" = 4
+    "Daxton #0" = 4
+    "Ronald #0" = 4
+    "Brycen #0" = 4
+    "Brock #0" = 4
+    "Enrique #0" = 4
+    "Tate #0" = 4
+    "Porter #0" = 4
+    "Zaiden #0" = 4
+    "Abram #0" = 4
+    "Kolton #0" = 4
+    "Philip #0" = 4
+    "Ty #0" = 4
+    "Colby #0" = 4
+    "Dillon #0" = 4
+    "Dexter #0" = 4
+    "Taylor #0" = 4
+    "Damon #0" = 4
+    "Danny #0" = 4
+    "Ari #0" = 4
+    "Kamden #0" = 4
+    "Malcolm #0" = 4
+    "Ellis #0" = 4
+    "Keith #0" = 4
+    "Gerardo #0" = 4
+    "Kane #0" = 4
+    "Rory #0" = 4
+    "Conor #0" = 4
+    "Raul #0" = 3
+    "Khalil #0" = 3
+    "Scott #0" = 3
+    "Clark #0" = 3
+    "Albert #0" = 3
+    "Ibrahim #0" = 3
+    "Julio #0" = 3
+    "Kayson #0" = 3
+    "Arlo #0" = 3
+    "Hugo #0" = 3
+    "Kellan #0" = 3
+    "Donald #0" = 3
+    "Gunnar #0" = 3
+    "Jaxton #0" = 3
+    "Rocco #0" = 3
+    "Finnegan #0" = 3
+    "Bruce #0" = 3
+    "Zachariah #0" = 3
+    "Landyn #0" = 3
+    "Cyrus #0" = 3
+    "Luka #0" = 3
+    "Jaime #0" = 3
+    "Darius #0" = 3
+    "Dustin #0" = 3
+    "Maximilian #0" = 3
+    "Wade #0" = 3
+    "Mohamed #0" = 3
+    "Nico #0" = 3
+    "Jonas #0" = 3
+    "Odin #0" = 3
+    "Sullivan #0" = 3
+    "Keaton #0" = 3
+    "Trey #0" = 3
+    "Moises #0" = 3
+    "Malakai #0" = 3
+    "Atlas #0" = 3
+    "Jamison #0" = 3
+    "Saul #0" = 3
+    "Franklin #0" = 3
+    "Bodhi #0" = 3
+    "Lawson #0" = 3
+    "Nasir #0" = 3
+    "Davis #0" = 3
+    "Rodrigo #0" = 3
+    "Jakob #0" = 3
+    "Chandler #0" = 3
+    "Kellen #0" = 3
+    "Raiden #0" = 3
+    "Quentin #0" = 3
+    "Adonis #0" = 3
+    "Alec #0" = 3
+    "Kasen #0" = 3
+    "Hendrix #0" = 3
+    "Izaiah #0" = 3
+    "Tony #0" = 3
+    "Dennis #0" = 3
+    "Devon #0" = 3
+    "Pierce #0" = 3
+    "Zayne #0" = 3
+    "Hayes #0" = 3
+    "Cason #0" = 3
+    "Rhys #0" = 3
+    "Jerry #0" = 3
+    "Mathew #0" = 3
+    "Ryland #0" = 3
+    "Lawrence #0" = 3
+    "Alijah #0" = 3
+    "Armani #0" = 3
+    "Royce #0" = 3
+    "Moses #0" = 3
+    "Uriel #0" = 3
+    "Gustavo #0" = 3
+    "Tristen #0" = 3
+    "Ezequiel #0" = 3
+    "Randy #0" = 3
+    "Trent #0" = 3
+    "Chris #0" = 3
+    "Casey #0" = 3
+    "Lennox #0" = 3
+    "Colten #0" = 3
+    "Frederick #0" = 3
+    "Deacon #0" = 3
+    "Gianni #0" = 3
+    "Harvey #0" = 3
+    "Darren #0" = 3
+    "Arjun #0" = 3
+    "Jamari #0" = 3
+    "Winston #0" = 3
+    "Jalen #0" = 3
+    "Sterling #0" = 3
+    "Princeton #0" = 3
+    "Kian #0" = 3
+    "Francis #0" = 3
+    "Arturo #0" = 3
+    "Marvin #0" = 3
+    "Alberto #0" = 3
+    "Jimmy #0" = 3
+    "Kobe #0" = 3
+    "Johan #0" = 3
+    "Larry #0" = 3
+    "Justice #0" = 3
+    "Curtis #0" = 3
+    "Issac #0" = 3
+    "Kieran #0" = 3
+    "Braydon #0" = 3
+    "Mitchell #0" = 3
+    "Alonzo #0" = 3
+    "Mauricio #0" = 3
+    "Asa #0" = 3
+    "Ahmed #0" = 3
+    "Isaias #0" = 3
+    "Reece #0" = 3
+    "Mathias #0" = 3
+    "Moshe #0" = 3
+    "Benson #0" = 3
+    "Dorian #0" = 3
+    "Matthias #0" = 3
+    "Nikolas #0" = 3
+    "Augustus #0" = 3
+    "Milan #0" = 3
+    "Cullen #0" = 3
+    "Bowen #0" = 3
+    "Nikolai #0" = 3
+    "Sam #0" = 3
+    "Roy #0" = 3
+    "Dax #0" = 3
+    "Alfredo #0" = 3
+    "Cannon #0" = 3
+    "Luciano #0" = 3
+    "Hank #0" = 3
+    "Ricky #0" = 3
+    "Case #0" = 3
+    "Zayn #0" = 2
+    "Uriah #0" = 2
+    "Aarav #0" = 2
+    "Remy #0" = 2
+    "Lance #0" = 2
+    "Callen #0" = 2
+    "Kyson #0" = 2
+    "Quinton #0" = 2
+    "Brayan #0" = 2
+    "Bryant #0" = 2
+    "Raphael #0" = 2
+    "Ahmad #0" = 2
+    "Orlando #0" = 2
+    "Mekhi #0" = 2
+    "Mohammed #0" = 2
+    "Ronin #0" = 2
+    "Omari #0" = 2
+    "Maurice #0" = 2
+    "Eden #0" = 2
+    "Otto #0" = 2
+    "Lewis #0" = 2
+    "Joe #0" = 2
+    "Alvin #0" = 2
+    "Gary #0" = 2
+    "Sage #0" = 2
+    "Korbin #0" = 2
+    "Mohammad #0" = 2
+    "Douglas #0" = 2
+    "Salvador #0" = 2
+    "Boston #0" = 2
+    "Leonidas #0" = 2
+    "Payton #0" = 2
+    "Roger #0" = 2
+    "Nixon #0" = 2
+    "Tatum #0" = 2
+    "Talon #0" = 2
+    "Memphis #0" = 2
+    "Niko #0" = 2
+    "Raylan #0" = 2
+    "Quincy #0" = 2
+    "Dane #0" = 2
+    "Santino #0" = 2
+    "Kristopher #0" = 2
+    "Emmitt #0" = 2
+    "Byron #0" = 2
+    "Yahir #0" = 2
+    "Yusuf #0" = 2
+    "Royal #0" = 2
+    "Ariel #0" = 2
+    "Julien #0" = 2
+    "Ramon #0" = 2
+    "Elian #0" = 2
+    "Deandre #0" = 2
+    "Soren #0" = 2
+    "Kamari #0" = 2
+    "Nathanael #0" = 2
+    "Ayaan #0" = 2
+    "Roland #0" = 2
+    "Nelson #0" = 2
+    "Lucian #0" = 2
+    "Wilson #0" = 2
+    "Carl #0" = 2
+    "Rayan #0" = 2
+    "Eddie #0" = 2
+    "Jasiah #0" = 2
+    "Jacoby #0" = 2
+    "Oakley #0" = 2
+    "Noe #0" = 2
+    "Sincere #0" = 2
+    "Reese #0" = 2
+    "Ernesto #0" = 2
+    "Kylan #0" = 2
+    "Conrad #0" = 2
+    "Terry #0" = 2
+    "Aldo #0" = 2
+    "Layton #0" = 2
+    "Sylas #0" = 2
+    "Zackary #0" = 2
+    "Morgan #0" = 2
+    "Neil #0" = 2
+    "Brett #0" = 2
+    "Madden #0" = 2
+    "Rex #0" = 2
+    "Edison #0" = 2
+    "Leonard #0" = 2
+    "Hamza #0" = 2
+    "London #0" = 2
+    "Dominik #0" = 2
+    "Makai #0" = 2
+    "Rohan #0" = 2
+    "Alessandro #0" = 2
+    "Samson #0" = 2
+    "Crew #0" = 2
+    "Kelvin #0" = 2
+    "Bo #0" = 2
+    "Layne #0" = 2
+    "Kristian #0" = 2
+    "Tripp #0" = 2
+    "Jefferson #0" = 2
+    "Demetrius #0" = 2
+    "Carmelo #0" = 2
+    "Harley #0" = 2
+    "Zain #0" = 2
+    "Jagger #0" = 2
+    "Skylar #0" = 2
+    "Jaxen #0" = 2
+    "Callum #0" = 2
+    "Duke #0" = 2
+    "Melvin #0" = 2
+    "Rowen #0" = 2
+    "Lionel #0" = 2
+    "Blaine #0" = 2
+    "Vihaan #0" = 2
+    "Cassius #0" = 2
+    "Rodney #0" = 2
+    "Crosby #0" = 2
+    "Guillermo #0" = 2
+    "Terrance #0" = 2
+    "Harry #0" = 2
+    "Tomas #0" = 2
+    "Marc #0" = 2
+    "Brenden #0" = 2
+    "Tommy #0" = 2
+    "Jon #0" = 2
+    "Joey #0" = 2
+    "Lee #0" = 2
+    "Stanley #0" = 2
+    "Nickolas #0" = 2
+    "Yosef #0" = 2
+    "Cayson #0" = 2
+    "Casen #0" = 2
+    "Trace #0" = 2
+    "Bruno #0" = 2
+    "Fletcher #0" = 2
+    "Xzavier #0" = 2
+    "Brodie #0" = 2
+    "Alden #0" = 2
+    "Jeffery #0" = 2
+    "Valentino #0" = 2
+    "Apollo #0" = 2
+    "Lennon #0" = 2
+    "Zechariah #0" = 2
+    "Abdullah #0" = 2
+    "Forrest #0" = 2
+    "Amare #0" = 2
+    "Toby #0" = 2
+    "Marcelo #0" = 2
+    "Davion #0" = 2
+    "Allan #0" = 2
+    "Callan #0" = 2
+    "Kareem #0" = 2
+    "Ray #0" = 2
+    "Cory #0" = 2
+    "Aryan #0" = 2
+    "Ben #0" = 2
+    "Aron #0" = 2
+    "Hezekiah #0" = 2
+    "Jamir #0" = 2
+    "Alonso #0" = 2
+    "Vicente #0" = 2
+    "Abdiel #0" = 2
+    "Bronson #0" = 2
+    "Emery #0" = 2
+    "Chad #0" = 2
+    "Bobby #0" = 2
+    "Branson #0" = 2
+    "Kyree #0" = 2
+    "Clay #0" = 2
+    "Jamal #0" = 2
+    "Dayton #0" = 2
+    "Felipe #0" = 2
+    "Keagan #0" = 2
+    "Amos #0" = 2
+    "Channing #0" = 2
+    "Rayden #0" = 2
+    "Jadiel #0" = 2
+    "Kole #0" = 2
+    "Shaun #0" = 2
+    "Chaim #0" = 2
+    "Jermaine #0" = 2
+    "Zeke #0" = 2
+    "Mack #0" = 2
+    "Braeden #0" = 2
+    "Bentlee #0" = 2
+    "Harper #0" = 2
+    "Kingsley #0" = 2
+    "Leandro #0" = 2
+    "Elisha #0" = 2
+    "Briggs #0" = 2
+    "Samir #0" = 2
+    "Marlon #0" = 2
+    "Willie #0" = 2
+    "Kendall #0" = 2
+    "Kody #0" = 2
+    "Lucca #0" = 2
+    "Billy #0" = 2
+    "Giovani #0" = 2
+    "Thaddeus #0" = 2
+    "Flynn #0" = 2
+    "Reginald #0" = 2
+    "Kaison #0" = 2
+    "Wayne #0" = 2
+    "Aydin #0" = 2
+    "Titan #0" = 2
+    "Gannon #0" = 2
+    "Camron #0" = 2
+    "Gerald #0" = 2
+    "Axton #0" = 2
+    "Arian #0" = 2
+    "Ares #0" = 2
+    "Micheal #0" = 2
+    "Terrence #0" = 2
+    "Cairo #0" = 2
+    "Jamie #0" = 2
+    "Stetson #0" = 2
+    "Will #0" = 2
+    "Jedidiah #0" = 2
+    "Kaysen #0" = 2
+    "Braiden #0" = 2
+    "Kohen #0" = 2
+    "Darian #0" = 2
+    "Langston #0" = 2
+    "Ronnie #0" = 2
+    "Hassan #0" = 2
+    "Ulises #0" = 1
+    "Maxim #0" = 1
+    "Westin #0" = 1
+    "Rene #0" = 1
+    "Zaire #0" = 1
+    "Marcel #0" = 1
+    "Vincenzo #0" = 1
+    "Blaze #0" = 1
+    "Finnley #0" = 1
+    "Javon #0" = 1
+    "Alexzander #0" = 1
+    "Eugene #0" = 1
+    "Terrell #0" = 1
+    "Kashton #0" = 1
+    "Jonathon #0" = 1
+    "Jamarion #0" = 1
+    "Jerome #0" = 1
+    "Cain #0" = 1
+    "Fisher #0" = 1
+    "Brecken #0" = 1
+    "Sonny #0" = 1
+    "Joziah #0" = 1
+    "Adrien #0" = 1
+    "Junior #0" = 1
+    "Kannon #0" = 1
+    "Dariel #0" = 1
+    "Brentley #0" = 1
+    "Enoch #0" = 1
+    "Ford #0" = 1
+    "Zaid #0" = 1
+    "Rogelio #0" = 1
+    "Jessie #0" = 1
+    "Harold #0" = 1
+    "Mayson #0" = 1
+    "Kenny #0" = 1
+    "Rudy #0" = 1
+    "Tristian #0" = 1
+    "Dwayne #0" = 1
+    "Maxton #0" = 1
+    "Yousef #0" = 1
+    "Landry #0" = 1
+    "Misael #0" = 1
+    "Markus #0" = 1
+    "Kase #0" = 1
+    "Lachlan #0" = 1
+    "Kolten #0" = 1
+    "Duncan #0" = 1
+    "Jaydon #0" = 1
+    "Alfonso #0" = 1
+    "Jairo #0" = 1
+    "Maximo #0" = 1
+    "Lamar #0" = 1
+    "Javion #0" = 1
+    "Baylor #0" = 1
+    "Draven #0" = 1
+    "Van #0" = 1
+    "Wilder #0" = 1
+    "Franco #0" = 1
+    "Marquis #0" = 1
+    "Zavier #0" = 1
+    "Vance #0" = 1
+    "Houston #0" = 1
+    "Cedric #0" = 1
+    "Davian #0" = 1
+    "Anders #0" = 1
+    "Darwin #0" = 1
+    "Stefan #0" = 1
+    "Ishaan #0" = 1
+    "Graysen #0" = 1
+    "Urijah #0" = 1
+    "Alvaro #0" = 1
+    "Kamryn #0" = 1
+    "Azariah #0" = 1
+    "Rey #0" = 1
+    "Kolby #0" = 1
+    "Brent #0" = 1
+    "Darrell #0" = 1
+    "Augustine #0" = 1
+    "Colson #0" = 1
+    "Giancarlo #0" = 1
+    "Jadon #0" = 1
+    "Kairo #0" = 1
+    "Clyde #0" = 1
+    "Heath #0" = 1
+    "Hugh #0" = 1
+    "Keenan #0" = 1
+    "Deshawn #0" = 1
+    "Rashad #0" = 1
+    "Craig #0" = 1
+    "Konnor #0" = 1
+    "Semaj #0" = 1
+    "Emory #0" = 1
+    "Aydan #0" = 1
+    "Justus #0" = 1
+    "Leighton #0" = 1
+    "Alfred #0" = 1
+    "Damari #0" = 1
+    "Triston #0" = 1
+    "Zyaire #0" = 1
+    "Ameer #0" = 1
+    "Neymar #0" = 1
+    "Valentin #0" = 1
+    "Cristopher #0" = 1
+    "Harlan #0" = 1
+    "Lyric #0" = 1
+    "Otis #0" = 1
+    "Tyrone #0" = 1
+    "Miller #0" = 1
+    "Isiah #0" = 1
+    "Lochlan #0" = 1
+    "Grey #0" = 1
+    "Santana #0" = 1
+    "Aaden #0" = 1
+    "Magnus #0" = 1
+    "Camdyn #0" = 1
+    "Jordyn #0" = 1
+    "Salvatore #0" = 1
+    "Gauge #0" = 1
+    "Maison #0" = 1
+    "Shiloh #0" = 1
+    "Steve #0" = 1
+    "Canaan #0" = 1
+    "Reuben #0" = 1
+    "Blaise #0" = 1
+    "Dash #0" = 1
+    "Denver #0" = 1
+    "Kymani #0" = 1
+    "Eliseo #0" = 1
+    "Coleman #0" = 1
+    "Ridge #0" = 1
+    "Ramiro #0" = 1
+    "Rolando #0" = 1
+    "Jovanni #0" = 1
+    "Thatcher #0" = 1
+    "Boone #0" = 1
+    "Frankie #0" = 1
+    "Dominique #0" = 1
+    "Anson #0" = 1
+    "Bodie #0" = 1
+    "Marley #0" = 1
+    "Dario #0" = 1
+    "Yehuda #0" = 1
+    "Gordon #0" = 1
+    "Kamdyn #0" = 1
+    "Axl #0" = 1
+    "Davin #0" = 1
+    "Seamus #0" = 1
+    "Vaughn #0" = 1
+    "Gibson #0" = 1
+    "Jaziel #0" = 1
+    "Kye #0" = 1
+    "Kaeden #0" = 1
+    "Sutton #0" = 1
+    "Cristiano #0" = 1
+    "Santos #0" = 1
+    "Mustafa #0" = 1
+    "Randall #0" = 1
+    "Castiel #0" = 1
+    "Bridger #0" = 1
+    "Benton #0" = 1
+    "Turner #0" = 1
+    "Jabari #0" = 1
+    "Aidyn #0" = 1
+    "Quintin #0" = 1
+    "Jovani #0" = 1
+    "Kamron #0" = 1
+    "Osvaldo #0" = 1
+    "Camren #0" = 1
+    "Ernest #0" = 1
+    "Teagan #0" = 1
+    "Coen #0" = 1
+    "Reyansh #0" = 1
+    "Dilan #0" = 1
+    "Deangelo #0" = 1
+    "Ephraim #0" = 1
+    "Camilo #0" = 1
+    "Dangelo #0" = 1
+    "Ean #0" = 1
+    "Agustin #0" = 1
+    "Jair #0" = 1
+    "Konner #0" = 1
+    "Rodolfo #0" = 1
+    "Leroy #0" = 1
+    "Bode #0" = 1
+    "Juelz #0" = 1
+    "Kalel #0" = 1
+    "Henrik #0" = 1
+    "Gilbert #0" = 1
+    "Tristin #0" = 1
+    "Mike #0" = 1
+    "Briar #0" = 1
+    "Giovanny #0" = 1
+    "Yael #0" = 1
+    "Rocky #0" = 1
+    "Chace #0" = 1
+    "Dimitri #0" = 1
+    "Jaylin #0" = 1
+    "Howard #0" = 1
+    "Brysen #0" = 1
+    "Musa #0" = 1
+    "Reagan #0" = 1
+    "Ignacio #0" = 1
+    "Koda #0" = 1
+    "Mordechai #0" = 1
+    "Antoine #0" = 1
+    "Krish #0" = 1
+    "Keanu #0" = 1
+    "Khalid #0" = 1
+    "Judson #0" = 1
+    "Jordy #0" = 1
+    "Shepherd #0" = 1
+    "Jericho #0" = 1
+    "Kale #0" = 1
+    "Yisroel #0" = 1
+    "Jamar #0" = 1
+    "Anakin #0" = 1
+    "Bently #0" = 1
+    "Efrain #0" = 1
+    "Immanuel #0" = 1
+    "Isai #0" = 1
+    "Yadiel #0" = 1
+    "Brice #0" = 1
+    "Branden #0" = 1
+    "Makhi #0" = 1
+    "Rylee #0" = 1
+    "Huxley #0" = 1
+    "Brendon #0" = 1
+    "Eliezer #0" = 1
+    "Johnathon #0" = 1
+    "Westley #0" = 1
+    "Todd #0" = 1
+    "Damion #0" = 1
+    "Anton #0" = 1
+    "Sidney #0" = 1
+    "Gilberto #0" = 1
+    "Ralph #0" = 1
+    "Simeon #0" = 1
+    "Leif #0" = 1
+    "Tyree #0" = 1
+    "Derick #0" = 1
+    "Freddy #0" = 1
+    "Demarcus #0" = 1
+    "Fox #0" = 1
+    "Izayah #0" = 1
+    "Emmet #0" = 1
+    "Deon #0" = 1
+    "Malaki #0" = 1
+    "Truman #0" = 1
+    "Kylen #0" = 1
+    "Avi #0" = 1
+    "Camryn #0" = 1
+    "Boden #0" = 1
+    "Darien #0" = 1
+    "Vivaan #0" = 1
+    "Tyrell #0" = 1
+    "Clinton #0" = 1
+    "Louie #0" = 1
+    "Gavyn #0" = 1
+    "Merrick #0" = 1
+    "Brayson #0" = 1
+    "Jorden #0" = 1
+    "Foster #0" = 1
+    "Rylen #0" = 1
+    "Jaycob #0" = 1
+    "Jayvion #0" = 1
+    "Pierre #0" = 1
+    "Menachem #0" = 1
+    "Bishop #0" = 1
+    "Abner #0" = 1
+    "Aarush #0" = 1
+    "Maddux #0" = 1
+    "Cortez #0" = 1
+    "Shmuel #0" = 1
+    "Jeremias #0" = 1
+    "Brenton #0" = 1
+    "Ross #0" = 1
+    "Tadeo #0" = 1
+    "Eliot #0" = 1
+    "Damarion #0" = 1
+    "Brantlee #0" = 1
+    "Brennen #0" = 1
+    "Yahya #0" = 1
+    "Achilles #0" = 1
+    "Jesiah #0" = 1
+    "Karsen #0" = 1
+    "Jean #0" = 1
+    "Denzel #0" = 1
+    "Aditya #0" = 1
+    "Carsen #0" = 1
+    "Jaylon #0" = 1
+    "Kooper #0" = 1
+    "Elvis #0" = 1
+    "Deegan #0" = 1
+    "Zayd #0" = 1
+    "Ayan #0" = 1
+    "Garrison #0" = 1
+    "Gino #0" = 1
+    "Ira #0" = 1
+    "Jaxxon #0" = 1
+    "Roderick #0" = 1
+    "Clarence #0" = 1
+    "Darryl #0" = 1
+    "Brixton #0" = 1
+    "Koen #0" = 1
+    "Benicio #0" = 1
+    "Darnell #0" = 1
+    "Karim #0" = 1
+    "Slade #0" = 1
+    "Lyle #0" = 1
+    "Korbyn #0" = 1
+    "Jakobe #0" = 1
+    "Brogan #0" = 1
+    "Jaxx #0" = 1
+    "Yair #0" = 1
+    "Masen #0" = 1
+    "Broderick #0" = 1
+    "Chevy #0" = 1
+    "Stone #0" = 1
+    "Braylin #0" = 1
+    "Shimon #0" = 1
+    "Davon #0" = 1
+    "Yaakov #0" = 1
+    "Ulysses #0" = 1
+    "Kamren #0" = 1
+    "Alistair #0" = 1
+    "Taj #0" = 1
+    "Harris #0" = 1
+    "Robin #0" = 1
+    "Dhruv #0" = 1
+    "Mac #0" = 1
+    "Zahir #0" = 1
+    "Mikael #0" = 1
+    "Haiden #0" = 1
+    "Carlo #0" = 1
+    "Jaeden #0" = 1
+    "Gatlin #0" = 1
+    "Xavi #0" = 1
+    "Shlomo #0" = 1
+    "Keon #0" = 1
+    "Harlem #0" = 1
+    "Zack #0" = 1
+    "Baker #0" = 1
+    "Ledger #0" = 1
+    "Arnav #0" = 1
+    "Lucien #0" = 1
+    "Mariano #0" = 1
+    "Greysen #0" = 1
+    "Koa #0" = 1
+    "Zev #0" = 1
+    "Maxx #0" = 1
+    "Quinten #0" = 1
+    "Donte #0" = 1
+    "Elmer #0" = 1
+    "Gerard #0" = 1
+    "Milton #0" = 1
+    "Ahmir #0" = 1
+    "Idris #0" = 1
+    "Imran #0" = 1
+    "Joan #0" = 1
+    "Trevon #0" = 1
+    "Karl #0" = 1
+    "Gus #0" = 1
+    "Yandel #0" = 1
+    "Zyon #0" = 1
+    "Glenn #0" = 1
+    "Nigel #0" = 1
+    "Campbell #0" = 1
+    "Octavio #0" = 1
+    "Cormac #0" = 1
+    "Bernard #0" = 1
+    "Trystan #0" = 1
+    "Aedan #0" = 1
+    "Rayyan #0" = 1
+    "Eason #0" = 1
+    "Emir #0" = 1
+    "Dale #0" = 1
+    "Wallace #0" = 1
+    "Norman #0" = 1
+    "German #0" = 1
+    "Kyron #0" = 1
+    "Torin #0" = 1
+    "Vladimir #0" = 1
+    "Youssef #0" = 1
+    "Bilal #0" = 1
+    "Sheldon #0" = 1
+    "Jarrett #0" = 1
+    "Jad #0" = 1
+    "Johann #0" = 1
+    "Mccoy #0" = 1
+    "Bradyn #0" = 1
+    "Stephan #0" = 1
+    "Adler #0" = 1
+    "Lathan #0" = 1
+    "Aries #0" = 1
+    "Eliel #0" = 1
+    "Humberto #0" = 1
+    "Marcello #0" = 1
+    "Nick #0" = 1
+    "Creed #0" = 1
+    "Cale #0" = 1
+    "Daylen #0" = 1
+    "Wesson #0" = 1
+    "Jakari #0" = 1
+    "Jai #0" = 1
+    "Yitzchok #0" = 1
+    "Kaidyn #0" = 1
+    "Deklan #0" = 1
+    "Zamir #0" = 1
+    "Kyren #0" = 1
+    "Edmund #0" = 1
+    "Cael #0" = 1
+    "Jaidyn #0" = 1
+    "Gianluca #0" = 1
+    "Colter #0" = 1
+    "Kyan #0" = 1
+    "Irvin #0" = 1
+    "Jovan #0" = 1
+    "Dion #0" = 1
+    "Viktor #0" = 1
+    "Andreas #0" = 1
+    "Mikel #0" = 1
+    "Corban #0" = 1
+    "Guy #0" = 1
+    "Raheem #0" = 1
+    "Reynaldo #0" = 1
+    "Kennedy #0" = 1
+    "Kace #0" = 1
+    "Maksim #0" = 1
+    "Kenton #0" = 1
+    "Meir #0" = 1
+    "Kael #0" = 1
+    "Addison #0" = 1
+    "Finnian #0" = 1
+    "Eamon #0" = 1
+    "Vince #0" = 1
+    "Aleksander #0" = 1
+    "Corbyn #0" = 1
+    "Alaric #0" = 1
+    "Sami #0" = 1
+    "Destin #0" = 1
+    "Armaan #0" = 1
+    "Amar #0" = 1
+    "Avraham #0" = 1
+    "Lian #0" = 1
+    "Wells #0" = 1
+    "Archie #0" = 1
+    "Tayden #0" = 1
+    "Zachery #0" = 1
+    "Kalvin #0" = 1
+    "Leeland #0" = 1
+    "Devan #0" = 1
+    "Watson #0" = 1
+    "Yaseen #0" = 1
+    "Jet #0" = 1
+    "Forest #0" = 1
+    "Syed #0" = 1
+    "Aubrey #0" = 1
+    "Zackery #0" = 1
+    "Adolfo #0" = 1
+    "Deven #0" = 1
+    "Onyx #0" = 1
+    "Alton #0" = 1
+    "Aston #0" = 1
+    "Pranav #0" = 1
+    "Kent #0" = 1
+    "Jacobi #0" = 1
+    "Kain #0" = 1
+    "Siddharth #0" = 1
+    "Clifford #0" = 1
+    "Jael #0" = 1
+    "Josh #0" = 1
+    "Gonzalo #0" = 1
+    "Cian #0" = 1
+    "Coby #0" = 1
+    "Ronaldo #0" = 1
+    "Kaiser #0" = 1
+    "Bear #0" = 1
+    "Keller #0" = 1
+    "Marcellus #0" = 1
+    "Eddy #0" = 1
+    "Gaige #0" = 1
+    "Coy #0" = 1
+    "Fredrick #0" = 1
+    "Jaydan #0" = 1
+    "Kenzo #0" = 1
+    "Benny #0" = 1
+    "Wes #0" = 1
+    "Caspian #0" = 1
+    "Linus #0" = 1
+    "Decker #0" = 1
+    "Malakhi #0" = 1
+    "Baron #0" = 1
+    "Danilo #0" = 1
+    "Perry #0" = 1
+    "Cristobal #0" = 1
+    "Dakari #0" = 1
+    "Nikko #0" = 1
+    "Cashton #0" = 1
+    "Tyrese #0" = 1
+    "Aven #0" = 1
+    "Kabir #0" = 1
+    "Kelton #0" = 1
+    "Geovanni #0" = 1
+    "Hollis #0" = 1
+    "Amarion #0" = 1
+    "Beck #0" = 1
+    "Kolt #0" = 1
+    "Dereck #0" = 1
+    "Ewan #0" = 1
+    "Kyran #0" = 1
+    "Marquise #0" = 1
+    "Cornelius #0" = 1
+    "Hakeem #0" = 1
+    "Antwan #0" = 1
+    "Bailey #0" = 1
+    "Jaron #0" = 1
+    "Ishmael #0" = 1
+    "Haven #0" = 1
+    "Aayan #0" = 1
+    "Ismail #0" = 1
+    "Jarvis #0" = 1
+    "Noble #0" = 1
+    "Pierson #0" = 1
+    "Kadyn #0" = 1
+    "Isaak #0" = 1
+    "Nova #0" = 1
+    "Benedict #0" = 1
+    "Karsyn #0" = 1
+    "Carmine #0" = 1
+    "Mikah #0" = 1
+    "Keyon #0" = 1
+    "Bernardo #0" = 1
+    "Presley #0" = 1
+    "Ever #0" = 1
+    "Laith #0" = 1
+    "Murphy #0" = 1
+    "Tzvi #0" = 1
+    "Jayse #0" = 1
+    "Tiago #0" = 1
+    "Kaine #0" = 1
+    "Atreyu #0" = 1
+    "Barry #0" = 1
+    "Rian #0" = 1
+    "Devonte #0" = 1
+    "Rishi #0" = 1
+    "Rico #0" = 1
+    "Aayden #0" = 1
+    "Jaquan #0" = 1
+    "Nikhil #0" = 1
+    "Nazir #0" = 1
+    "Zavion #0" = 1
+    "Oskar #0" = 1
+    "Yoel #0" = 1
+    "Zephaniah #0" = 1
+    "Lucius #0" = 1
+    "Boaz #0" = 1
+    "Brighton #0" = 1
+    "Zakai #0" = 1
+    "Sammy #0" = 1
+    "Veer #0" = 1
+    "Antony #0" = 1
+    "Hasan #0" = 1
+    "Tevin #0" = 1
+    "Lyndon #0" = 1
+    "Ruger #0" = 1
+    "Palmer #0" = 1
+    "Kallen #0" = 1
+    "Gray #0" = 1
+    "Jenson #0" = 1
+    "Kenji #0" = 1
+    "Lamont #0" = 1
+    "Graeme #0" = 1
+    "Gian #0" = 1
+    "Krew #0" = 1
+    "Rome #0" = 1
+    "Aksel #0" = 1
+    "Johnpaul #0" = 1
+    "Tahj #0" = 1
+    "Devyn #0" = 1
+    "Elvin #0" = 1
+    "Austyn #0" = 1
+    "Bronx #0" = 1
+    "Shepard #0" = 1
+    "Cal #0" = 1
+    "Westyn #0" = 1
+    "Dashiell #0" = 1
+    "Smith #0" = 1
+    "Alek #0" = 1
+    "Kruz #0" = 1
+    "Francesco #0" = 1
+    "Lev #0" = 1
+    "Zaden #0" = 1
+    "Khari #0" = 1
+    "Josias #0" = 1
+    "Kyng #0" = 1
+    "Rio #0" = 1
+    "Eleazar #0" = 1
+    "Emil #0" = 1
+    "Irving #0" = 1
+    "Jaxsen #0" = 1
+    "Salem #0" = 1
+    "Abdulrahman #0" = 1
+    "Adiel #0" = 1
+    "Tobin #0" = 1
+    "Yeshua #0" = 1
+    "Zaylen #0" = 1
+    "Remi #0" = 1
+    "Elan #0" = 1
+    "Diesel #0" = 1
+    "Jeramiah #0" = 1
+    "Jerimiah #0" = 1
+    "Dashawn #0" = 1
+    "Jahmir #0" = 1
+    "Rowdy #0" = 1
+    "Bjorn #0" = 1
+    "Mikhail #0" = 1
+    "Sebastien #0" = 1
+    "Ramsey #0" = 1
+    "Demarion #0" = 1
+    "Estevan #0" = 1
+    "Reign #0" = 1
+    "Carver #0" = 1
+    "Kasey #0" = 1
+    "Caysen #0" = 1
+    "Dillan #0" = 1
+    "Cillian #0" = 1
+    "Jamel #0" = 1
+    "Lloyd #0" = 1
+    "Ansel #0" = 1
+    "Osiris #0" = 1
+    "Wiley #0" = 1
+    "Jakai #0" = 1
+    "Nikola #0" = 1
+    "Syncere #0" = 1
+    "Daryl #0" = 1
+    "Eliyahu #0" = 1
+    "Lenny #0" = 1
+    "Ajay #0" = 1
+    "Shamar #0" = 1
+    "Demari #0" = 1
+    "Neal #0" = 1
+    "Phineas #0" = 1
+    "Dev #0" = 1
+    "Jaleel #0" = 1
+    "Drayden #0" = 1
+    "Maddix #0" = 1
+    "Dezmond #0" = 1
+    "Aamir #0" = 1
+    "Austen #0" = 1
+    "Jovanny #0" = 1
+    "Kiyan #0" = 1
+    "Nestor #0" = 1
+    "Shea #0" = 1
+    "Braxtyn #0" = 1
+    "Rigoberto #0" = 1
+    "Massimo #0" = 1
+    "Deion #0" = 1
+    "Lazarus #0" = 1
+    "Keelan #0" = 1
+    "Oren #0" = 1
+    "Clint #0" = 1
+    "Savion #0" = 1
+    "Jordi #0" = 1
+    "Chaz #0" = 1
+    "Cristofer #0" = 1
+    "Zakaria #0" = 1
+    "Tariq #0" = 1
+    "Abdul #0" = 1
+    "Akeem #0" = 1
+    "Vernon #0" = 1
+    "Tylan #0" = 1
+    "Jacen #0" = 1
+    "Hagen #0" = 1
+    "Bastian #0" = 1
+    "Myron #0" = 1
+    "Cordell #0" = 1
+    "Ethen #0" = 1
+    "Jionni #0" = 1
+    "Dwight #0" = 1
+    "Yasir #0" = 1
+    "Brigham #0" = 1
+    "Domenic #0" = 1
+    "Jordon #0" = 1
+    "Leyton #0" = 1
+    "Hans #0" = 1
+    "Aaryan #0" = 1
+    "Canyon #0" = 1
+    "Maximillian #0" = 1
+    "Ansh #0" = 1
+    "Korben #0" = 1
+    "Zeus #0" = 1
+    "Gionni #0" = 1
+    "Genesis #0" = 1
+    "Izaac #0" = 1
+    "Arman #0" = 1
+    "Abdirahman #0" = 1
+    "Kayleb #0" = 1
+    "Ryden #0" = 1
+    "Linkin #0" = 1
+    "Montgomery #0" = 1
+    "Evander #0" = 1
+    "Canon #0" = 1
+    "Kenan #0" = 1
+    "Earl #0" = 1
+    "Jaydin #0" = 1
+    "Ander #0" = 1
+    "Kamarion #0" = 1
+    "Carsyn #0" = 1
+    "Kurt #0" = 1
+    "Lonnie #0" = 1
+    "Jariel #0" = 1
+    "Clifton #0" = 1
+    "Faris #0" = 1
+    "Ramses #0" = 1
+    "Brandt #0" = 1
+    "Denis #0" = 1
+    "Eithan #0" = 1
+    "Ezrah #0" = 1
+    "Khai #0" = 1
+    "Azael #0" = 1
+    "Ervin #0" = 1
+    "Javian #0" = 1
+    "Jones #0" = 1
+    "Courtney #0" = 1
+    "Donnie #0" = 1
+    "Dov #0" = 1
+    "Ely #0" = 1
+    "Emmit #0" = 1
+    "Dovid #0" = 1
+    "Jethro #0" = 1
+    "Kiaan #0" = 1
+    "Ammar #0" = 1
+    "Benaiah #0" = 1
+    "Truett #0" = 1
+    "Duane #0" = 1
+    "Yakov #0" = 1
+    "Don #0" = 1
+    "Jayvon #0" = 1
+    "Kelly #0" = 1
+    "Zephyr #0" = 1
+    "Avion #0" = 1
+    "Callahan #0" = 1
+    "Damir #0" = 1
+    "Hussein #0" = 1
+    "Braedyn #0" = 1
+    "Britton #0" = 1
+    "Kenyon #0" = 1
+    "Micaiah #0" = 1
+    "Caius #0" = 1
+    "Marek #0" = 1
+    "Anas #0" = 1
+    "Jamarcus #0" = 1
+    "Banks #0" = 1
+    "Maddex #0" = 1
+    "Talan #0" = 1
+    "Azriel #0" = 1
+    "Alexandro #0" = 1
+    "Jayven #0" = 1
+    "Koby #0" = 1
+    "Reilly #0" = 1
+    "Terence #0" = 1
+    "Tyce #0" = 1
+    "Aryeh #0" = 1
+    "Jamil #0" = 1
+    "Kiran #0" = 1
+    "Riaan #0" = 1
+    "Kyrin #0" = 1
+    "Salman #0" = 1
+    "Isa #0" = 1
+    "Ishan #0" = 1
+    "Johnnie #0" = 1
+    "Elon #0" = 1
+    "Lester #0" = 1
+    "Giuseppe #0" = 1
+    "Stephon #0" = 1
+    "Markell #0" = 1
+    "Yariel #0" = 1
+    "Fred #0" = 1
+    "Korey #0" = 1
+    "Zayvion #0" = 1
+    "Jakobi #0" = 1
+    "Tyshawn #0" = 1
+    "Henri #0" = 1
+    "Bryden #0" = 1
+    "Nate #0" = 1
+    "Grayden #0" = 1
+    "Umar #0" = 1
+    "Ocean #0" = 1
+    "Dandre #0" = 1
+    "Eliam #0" = 1
+    "Thor #0" = 1
+    "Dewayne #0" = 1
+    "Treyvon #0" = 1
+    "Monroe #0" = 1
+    "Calum #0" = 1
+    "Kaisen #0" = 1
+    "Javen #0" = 1
+    "Zakariya #0" = 1
+    "Steele #0" = 1
+    "Denim #0" = 1
+    "Markel #0" = 1
+    "Mylo #0" = 1
+    "Pharaoh #0" = 1
+    "Saint #0" = 1
+    "Link #0" = 1
+    "Benito #0" = 1
+    "Cecil #0" = 1
+    "Josef #0" = 1
+    "Ambrose #0" = 1
+    "Kilian #0" = 1
+    "Dan #0" = 1
+    "Keshawn #0" = 1
+    "Seven #0" = 1
+    "Hadlee #0" = -1
+    "America #0" = -1
+    "Renee #0" = -1
+    "Ellis #0" = -1
+    "Romina #0" = -1
+    "Zaylee #0" = -1
+    "Libby #0" = -1
+    "Moriah #0" = -1
+    "Montserrat #0" = -1
+    "Everlee #0" = -1
+    "Yaritza #0" = -1
+    "Vienna #0" = -1
+    "Ann #0" = -1
+    "Rhea #0" = -1
+    "Jocelynn #0" = -1
+    "Lilia #0" = -1
+    "Amia #0" = -1
+    "Zainab #0" = -1
+    "Tinley #0" = -1
+    "Xiomara #0" = -1
+    "Kyndall #0" = -1
+    "Annalee #0" = -1
+    "Esperanza #0" = -1
+    "Ari #0" = -1
+    "Ellison #0" = -1
+    "Harmoni #0" = -1
+    "Noor #0" = -1
+    "Ayana #0" = -1
+    "Lilyanna #0" = -1
+    "Aitana #0" = -1
+    "Aubri #0" = -1
+    "Macey #0" = -1
+    "Elora #0" = -1
+    "Marleigh #0" = -1
+    "Tinsley #0" = -1
+    "Nalani #0" = -1
+    "Audriana #0" = -1
+    "Treasure #0" = -1
+    "Miya #0" = -1
+    "Isis #0" = -1
+    "Patience #0" = -1
+    "Nathalia #0" = -1
+    "Carlie #0" = -1
+    "India #0" = -1
+    "Krystal #0" = -1
+    "Karter #0" = -1
+    "Mattie #0" = -1
+    "Milania #0" = -1
+    "Holland #0" = -1
+    "Sarahi #0" = -1
+    "Lennox #0" = -1
+    "Ariadne #0" = -1
+    "Shannon #0" = -1
+    "Briar #0" = -1
+    "Kaitlynn #0" = -1
+    "Alianna #0" = -1
+    "Ellianna #0" = -1
+    "Samiyah #0" = -1
+    "Kourtney #0" = -1
+    "Amayah #0" = -1
+    "Dalia #0" = -1
+    "Alisa #0" = -1
+    "Naya #0" = -1
+    "Raylee #0" = -1
+    "Avalynn #0" = -1
+    "Jana #0" = -1
+    "Riya #0" = -1
+    "Campbell #0" = -1
+    "Araceli #0" = -1
+    "Cristina #0" = -1
+    "Akira #0" = -1
+    "Veda #0" = -1
+    "Saniya #0" = -1
+    "Regan #0" = -1
+    "Brisa #0" = -1
+    "Saanvi #0" = -1
+    "Hadleigh #0" = -1
+    "Neveah #0" = -1
+    "Rihanna #0" = -1
+    "Aubriella #0" = -1
+    "Aubrianna #0" = -1
+    "Louise #0" = -1
+    "Maxine #0" = -1
+    "Andi #0" = -1
+    "Tamia #0" = -1
+    "Dani #0" = -1
+    "Magdalena #0" = -1
+    "Destinee #0" = -1
+    "Mylah #0" = -1
+    "Arden #0" = -1
+    "Kamilah #0" = -1
+    "Natalya #0" = -1
+    "Ramona #0" = -1
+    "Promise #0" = -1
+    "Abrielle #0" = -1
+    "Carina #0" = -1
+    "Itzayana #0" = -1
+    "Temperance #0" = -1
+    "Bryn #0" = -1
+    "Cambria #0" = -1
+    "Yara #0" = -1
+    "Belle #0" = -1
+    "Ireland #0" = -1
+    "Kaelynn #0" = -1
+    "Samira #0" = -1
+    "Giavanna #0" = -1
+    "Devyn #0" = -1
+    "Violeta #0" = -1
+    "Harleigh #0" = -1
+    "Kasey #0" = -1
+    "Antonia #0" = -1
+    "Frankie #0" = -1
+    "Kylah #0" = -1
+    "Marjorie #0" = -1
+    "Charlize #0" = -1
+    "Charity #0" = -1
+    "Haleigh #0" = -1
+    "Karma #0" = -1
+    "Giada #0" = -1
+    "Rosalyn #0" = -1
+    "Royal #0" = -1
+    "Keily #0" = -1
+    "Valery #0" = -1
+    "Larissa #0" = -1
+    "Deanna #0" = -1
+    "Selene #0" = -1
+    "Tess #0" = -1
+    "Jurnee #0" = -1
+    "Calliope #0" = -1
+    "Avalyn #0" = -1
+    "Kamiyah #0" = -1
+    "Anais #0" = -1
+    "Berkley #0" = -1
+    "Alaysia #0" = -1
+    "Elina #0" = -1
+    "Sunny #0" = -1
+    "Micaela #0" = -1
+    "Diya #0" = -1
+    "Jenesis #0" = -1
+    "Palmer #0" = -1
+    "Emberly #0" = -1
+    "Carley #0" = -1
+    "Fallon #0" = -1
+    "Alora #0" = -1
+    "Cordelia #0" = -1
+    "Ali #0" = -1
+    "Gisselle #0" = -1
+    "Sylvie #0" = -1
+    "Honesty #0" = -1
+    "Karis #0" = -1
+    "Heavenly #0" = -1
+    "Jazmyn #0" = -1
+    "Rilynn #0" = -1
+    "Bayleigh #0" = -1
+    "Selina #0" = -1
+    "Dalilah #0" = -1
+    "Ayva #0" = -1
+    "Abbie #0" = -1
+    "Davina #0" = -1
+    "Makena #0" = -1
+    "Kamari #0" = -1
+    "Marlene #0" = -1
+    "Aliah #0" = -1
+    "Yesenia #0" = -1
+    "Kelsie #0" = -1
+    "Anniston #0" = -1
+    "Sanaa #0" = -1
+    "Aleigha #0" = -1
+    "Blaire #0" = -1
+    "Theresa #0" = -1
+    "Maylee #0" = -1
+    "Katrina #0" = -1
+    "Carleigh #0" = -1
+    "Jakayla #0" = -1
+    "Kaylen #0" = -1
+    "Karissa #0" = -1
+    "Robin #0" = -1
+    "Vada #0" = -1
+    "Opal #0" = -1
+    "Robyn #0" = -1
+    "Adilynn #0" = -1
+    "Adalee #0" = -1
+    "Della #0" = -1
+    "Bree #0" = -1
+    "Stacy #0" = -1
+    "Kaylyn #0" = -1
+    "Luisa #0" = -1
+    "Gwyneth #0" = -1
+    "Chandler #0" = -1
+    "Rachael #0" = -1
+    "Tia #0" = -1
+    "Kailynn #0" = -1
+    "Nahla #0" = -1
+    "Belinda #0" = -1
+    "Karleigh #0" = -1
+    "Roxanne #0" = -1
+    "Kamille #0" = -1
+    "Maritza #0" = -1
+    "Taraji #0" = -1
+    "Elissa #0" = -1
+    "Austyn #0" = -1
+    "Malayah #0" = -1
+    "Emani #0" = -1
+    "Aminah #0" = -1
+    "Maddie #0" = -1
+    "Ashtyn #0" = -1
+    "Scout #0" = -1
+    "Vivien #0" = -1
+    "Amiah #0" = -1
+    "Sally #0" = -1
+    "Mavis #0" = -1
+    "Britney #0" = -1
+    "Raya #0" = -1
+    "August #0" = -1
+    "Rosalee #0" = -1
+    "Kaidence #0" = -1
+    "Whitley #0" = -1
+    "Lillyana #0" = -1
+    "Ellery #0" = -1
+    "Haylie #0" = -1
+    "Cheyanne #0" = -1
+    "Aanya #0" = -1
+    "Addie #0" = -1
+    "Dania #0" = -1
+    "Kaitlin #0" = -1
+    "Jacquelyn #0" = -1
+    "Zendaya #0" = -1
+    "Elayna #0" = -1
+    "Dream #0" = -1
+    "Litzy #0" = -1
+    "Ailani #0" = -1
+    "Leela #0" = -1
+    "Addalyn #0" = -1
+    "Annelise #0" = -1
+    "Kendal #0" = -1
+    "Lianna #0" = -1
+    "Pyper #0" = -1
+    "Ivana #0" = -1
+    "Izabelle #0" = -1
+    "Kaleah #0" = -1
+    "Lorena #0" = -1
+    "Tianna #0" = -1
+    "Leilah #0" = -1
+    "Leena #0" = -1
+    "Maryjane #0" = -1
+    "Cassie #0" = -1
+    "Drew #0" = -1
+    "Emerald #0" = -1
+    "Annette #0" = -1
+    "Etta #0" = -1
+    "Kaley #0" = -1
+    "Evalynn #0" = -1
+    "Kensington #0" = -1
+    "Audrianna #0" = -1
+    "Kinsey #0" = -1
+    "Jaqueline #0" = -1
+    "Novalee #0" = -1
+    "Elodie #0" = -1
+    "Sofie #0" = -1
+    "Yazmin #0" = -1
+    "Malani #0" = -1
+    "Rubi #0" = -1
+    "Yuliana #0" = -1
+    "Dior #0" = -1
+    "Karmen #0" = -1
+    "Isabell #0" = -1
+    "Delia #0" = -1
+    "Anabel #0" = -1
+    "Tania #0" = -1
+    "Soraya #0" = -1
+    "Ailyn #0" = -1
+    "Egypt #0" = -1
+    "Shea #0" = -1
+    "Paisleigh #0" = -1
+    "Lillyanna #0" = -1
+    "Preslee #0" = -1
+    "Asha #0" = -1
+    "Kayleen #0" = -1
+    "Bentley #0" = -1
+    "Rebeca #0" = -1
+    "Aadhya #0" = -1
+    "Caydence #0" = -1
+    "Jovie #0" = -1
+    "Zoya #0" = -1
+    "Londynn #0" = -1
+    "Mayra #0" = -1
+    "Aiyanna #0" = -1
+    "Aranza #0" = -1
+    "Marian #0" = -1
+    "Spencer #0" = -1
+    "Legacy #0" = -1
+    "Karly #0" = -1
+    "Kataleya #0" = -1
+    "Gracyn #0" = -1
+    "Pamela #0" = -1
+    "Celina #0" = -1
+    "Brynley #0" = -1
+    "Beatrix #0" = -1
+    "Janet #0" = -1
+    "Hayleigh #0" = -1
+    "Journi #0" = -1
+    "Marcella #0" = -1
+    "Brynleigh #0" = -1
+    "Jacey #0" = -1
+    "Oaklyn #0" = -1
+    "Yoselin #0" = -1
+    "Persephone #0" = -1
+    "Laniyah #0" = -1
+    "Arlette #0" = -1
+    "Jaleah #0" = -1
+    "Adilene #0" = -1
+    "Adela #0" = -1
+    "Elia #0" = -1
+    "Kalia #0" = -1
+    "Marlowe #0" = -1
+    "Damaris #0" = -1
+    "Viola #0" = -1
+    "Nailah #0" = -1
+    "Seraphina #0" = -1
+    "Noel #0" = -1
+    "Carsyn #0" = -1
+    "Nellie #0" = -1
+    "Reece #0" = -1
+    "Carissa #0" = -1
+    "Ila #0" = -1
+    "Saoirse #0" = -1
+    "Essence #0" = -1
+    "Aubriana #0" = -1
+    "Ashanti #0" = -1
+    "Kaycee #0" = -1
+    "Ezra #0" = -1
+    "Ashton #0" = -1
+    "Mika #0" = -1
+    "Rita #0" = -1
+    "Florence #0" = -1
+    "Mireya #0" = -1
+    "Kyndal #0" = -1
+    "Kendyl #0" = -1
+    "Vivianna #0" = -1
+    "Christiana #0" = -1
+    "Jaylen #0" = -1
+    "Jaylyn #0" = -1
+    "Marlie #0" = -1
+    "Samiya #0" = -1
+    "Dalary #0" = -1
+    "Yasmine #0" = -1
+    "Margo #0" = -1
+    "Luella #0" = -1
+    "Winnie #0" = -1
+    "Maite #0" = -1
+    "Kirsten #0" = -1
+    "Aislinn #0" = -1
+    "Loretta #0" = -1
+    "Rylynn #0" = -1
+    "Flora #0" = -1
+    "Jazzlyn #0" = -1
+    "Audra #0" = -1
+    "Janice #0" = -1
+    "Annaliese #0" = -1
+    "Cailyn #0" = -1
+    "Katerina #0" = -1
+    "Blessing #0" = -1
+    "Annabell #0" = -1
+    "Amaia #0" = -1
+    "Kya #0" = -1
+    "Tyler #0" = -1
+    "Milagros #0" = -1
+    "Carson #0" = -1
+    "Silvia #0" = -1
+    "Heidy #0" = -1
+    "Azul #0" = -1
+    "Raylynn #0" = -1
+    "Abbey #0" = -1
+    "Calista #0" = -1
+    "Kinlee #0" = -1
+    "Marin #0" = -1
+    "Malka #0" = -1
+    "Violette #0" = -1
+    "Shirley #0" = -1
+    "Leigha #0" = -1
+    "Oaklynn #0" = -1
+    "Kiersten #0" = -1
+    "Coral #0" = -1
+    "Oaklee #0" = -1
+    "Suri #0" = -1
+    "Darcy #0" = -1
+    "Betty #0" = -1
+    "Leilany #0" = -1
+    "Shyla #0" = -1
+    "Lizeth #0" = -1
+    "Neriah #0" = -1
+    "Susanna #0" = -1
+    "Taya #0" = -1
+    "Zayla #0" = -1
+    "Sailor #0" = -1
+    "Karli #0" = -1
+    "Colbie #0" = -1
+    "Jamiyah #0" = -1
+    "Anneliese #0" = -1
+    "Geraldine #0" = -1
+    "Tamara #0" = -1
+    "Evangelina #0" = -1
+    "Shania #0" = -1
+    "Geneva #0" = -1
+    "Jadyn #0" = -1
+    "Kaila #0" = -1
+    "Dominique #0" = -1
+    "Yamilet #0" = -1
+    "Shaylee #0" = -1
+    "Malak #0" = -1
+    "Addelyn #0" = -1
+    "Capri #0" = -1
+    "Anita #0" = -1
+    "Naima #0" = -1
+    "Nyah #0" = -1
+    "Roslyn #0" = -1
+    "Yaretzy #0" = -1
+    "Darlene #0" = -1
+    "Adyson #0" = -1
+    "Keila #0" = -1
+    "Kinzley #0" = -1
+    "Ananya #0" = -1
+    "Aida #0" = -1
+    "Milah #0" = -1
+    "Gretchen #0" = -1
+    "Sanai #0" = -1
+    "Keilani #0" = -1
+    "Dina #0" = -1
+    "Jubilee #0" = -1
+    "Miyah #0" = -1
+    "Aracely #0" = -1
+    "Areli #0" = -1
+    "Kyrie #0" = -1
+    "Lilyann #0" = -1
+    "Shaniya #0" = -1
+    "Lyanna #0" = -1
+    "Zora #0" = -1
+    "Alanah #0" = -1
+    "Kamora #0" = -1
+    "Mariela #0" = -1
+    "Adilyn #0" = -1
+    "Alex #0" = -1
+    "Marisa #0" = -1
+    "Priya #0" = -1
+    "Waverly #0" = -1
+    "Annaleigh #0" = -1
+    "Karley #0" = -1
+    "Salem #0" = -1
+    "Donna #0" = -1
+    "Agnes #0" = -1
+    "Soleil #0" = -1
+    "Meilani #0" = -1
+    "Iyanna #0" = -1
+    "Cecily #0" = -1
+    "Vida #0" = -1
+    "Jael #0" = -1
+    "Arleth #0" = -1
+    "Aarya #0" = -1
+    "Maura #0" = -1
+    "Emme #0" = -1
+    "Halo #0" = -1
+    "Clover #0" = -1
+    "Queen #0" = -1
+    "Jaidyn #0" = -1
+    "Jaslyn #0" = -1
+    "Elly #0" = -1
+    "Mariella #0" = -1
+    "Nyomi #0" = -1
+    "Lucinda #0" = -1
+    "Maisy #0" = -1
+    "Ziva #0" = -1
+    "Jaiden #0" = -1
+    "Dayanna #0" = -1
+    "Kacey #0" = -1
+    "Kalea #0" = -1
+    "Anayah #0" = -1
+    "Maribel #0" = -1
+    "Darla #0" = -1
+    "Grecia #0" = -1
+    "Shreya #0" = -1
+    "Keziah #0" = -1
+    "Farah #0" = -1
+    "Nya #0" = -1
+    "Jaclyn #0" = -1
+    "Sarina #0" = -1
+    "Evelina #0" = -1
+    "Izzabella #0" = -1
+    "Toni #0" = -1
+    "Aila #0" = -1
+    "Analise #0" = -1
+    "Jersey #0" = -1
+    "Leticia #0" = -1
+    "Unique #0" = -1
+    "Harriet #0" = -1
+    "Jazelle #0" = -1
+    "Kenzi #0" = -1
+    "Katarina #0" = -1
+    "Melinda #0" = -1
+    "Sonya #0" = -1
+    "Rayleigh #0" = -1
+    "Skylah #0" = -1
+    "Lidia #0" = -1
+    "Meera #0" = -1
+    "Arlene #0" = -1
+    "Janiah #0" = -1
+    "Skylynn #0" = -1
+    "Nadine #0" = -1
+    "Khadija #0" = -1
+    "Carmella #0" = -1
+    "Hailie #0" = -1
+    "Caleigh #0" = -1
+    "Mylee #0" = -1
+    "Shyanne #0" = -1
+    "Ensley #0" = -1
+    "Tallulah #0" = -1
+    "Kinleigh #0" = -1
+    "Zahara #0" = -1
+    "Ayah #0" = -1
+    "Dariana #0" = -1
+    "Eisley #0" = -1
+    "Eleanora #0" = -1
+    "Brayleigh #0" = -1
+    "Lucie #0" = -1
+    "Sapphire #0" = -1
+    "Andie #0" = -1
+    "Emiliana #0" = -1
+    "Emi #0" = -1
+    "Zola #0" = -1
+    "Addalynn #0" = -1
+    "Denver #0" = -1
+    "Yarely #0" = -1
+    "Delanie #0" = -1
+    "Lucero #0" = -1
+    "Linnea #0" = -1
+    "Araya #0" = -1
+    "Aliyana #0" = -1
+    "Bellamy #0" = -1
+    "Kayley #0" = -1
+    "Jamya #0" = -1
+    "Isadora #0" = -1
+    "Amariah #0" = -1
+    "Quincy #0" = -1
+    "Bexley #0" = -1
+    "Janie #0" = -1
+    "Chasity #0" = -1
+    "Katy #0" = -1
+    "Nariah #0" = -1
+    "Ida #0" = -1
+    "Brinlee #0" = -1
+    "Chevelle #0" = -1
+    "Melani #0" = -1
+    "Prisha #0" = -1
+    "Kamiya #0" = -1
+    "Kierra #0" = -1
+    "Anjali #0" = -1
+    "Ashlee #0" = -1
+    "Elana #0" = -1
+    "Nicolette #0" = -1
+    "Avani #0" = -1
+    "Lela #0" = -1
+    "Tina #0" = -1
+    "Makiyah #0" = -1
+    "Peighton #0" = -1
+    "Bridgette #0" = -1
+    "Kaci #0" = -1
+    "Vayda #0" = -1
+    "Audree #0" = -1
+    "Yvette #0" = -1
+    "Abrianna #0" = -1
+    "Nayla #0" = -1
+    "Stephany #0" = -1
+    "Precious #0" = -1
+    "Zaniya #0" = -1
+    "Aarna #0" = -1
+    "Beverly #0" = -1
+    "Aspyn #0" = -1
+    "Shay #0" = -1
+    "Annabeth #0" = -1
+    "Kenleigh #0" = -1
+    "Rhiannon #0" = -1
+    "Finnley #0" = -1
+    "Harlie #0" = -1
+    "Indie #0" = -1
+    "Isha #0" = -1
+    "Aniston #0" = -1
+    "Petra #0" = -1
+    "Abigale #0" = -1
+    "Imogen #0" = -1
+    "Eunice #0" = -1
+    "Layan #0" = -1
+    "Elinor #0" = -1
+    "Ema #0" = -1
+    "Carrie #0" = -1
+    "Eleni #0" = -1
+    "Grayson #0" = -1
+    "Kianna #0" = -1
+    "Kynslee #0" = -1
+    "Gina #0" = -1
+    "Izabel #0" = -1
+    "Aditi #0" = -1
+    "Kaylah #0" = -1
+    "Melania #0" = -1
+    "Kynleigh #0" = -1
+    "Lenora #0" = -1
+    "Carli #0" = -1
+    "Payten #0" = -1
+    "Abbygail #0" = -1
+    "Zaira #0" = -1
+    "Ayesha #0" = -1
+    "Alba #0" = -1
+    "Guinevere #0" = -1
+    "Tanya #0" = -1
+    "Denisse #0" = -1
+    "Amyah #0" = -1
+    "Dalila #0" = -1
+    "Kamya #0" = -1
+    "Susana #0" = -1
+    "Kamilla #0" = -1
+    "Kathy #0" = -1
+    "Carol #0" = -1
+    "Blythe #0" = -1
+    "Cleo #0" = -1
+    "Noelia #0" = -1
+    "Lacie #0" = -1
+    "Elisha #0" = -1
+    "Sydnee #0" = -1
+    "Lillyann #0" = -1
+    "Abagail #0" = -1
+    "Shanaya #0" = -1
+    "Judy #0" = -1
+    "Irie #0" = -1
+    "Cayla #0" = -1
+    "Desirae #0" = -1
+    "Brookelynn #0" = -1
+    "Estefania #0" = -1
+    "Charli #0" = -2
+    "Remington #0" = -2
+    "Courtney #0" = -2
+    "Annabel #0" = -2
+    "Kiera #0" = -2
+    "Rosa #0" = -2
+    "Anabelle #0" = -2
+    "Natasha #0" = -2
+    "Kenley #0" = -2
+    "Myra #0" = -2
+    "Jaelynn #0" = -2
+    "Danica #0" = -2
+    "Siena #0" = -2
+    "Erica #0" = -2
+    "Elyse #0" = -2
+    "Ivanna #0" = -2
+    "Avianna #0" = -2
+    "Emmy #0" = -2
+    "Jolene #0" = -2
+    "Jessie #0" = -2
+    "Lennon #0" = -2
+    "Jaycee #0" = -2
+    "Laney #0" = -2
+    "Wren #0" = -2
+    "Oakley #0" = -2
+    "Irene #0" = -2
+    "Jemma #0" = -2
+    "Azalea #0" = -2
+    "Erika #0" = -2
+    "Alyson #0" = -2
+    "Mae #0" = -2
+    "Karsyn #0" = -2
+    "Lylah #0" = -2
+    "Amani #0" = -2
+    "Carter #0" = -2
+    "Estrella #0" = -2
+    "Marina #0" = -2
+    "Nathalie #0" = -2
+    "Elaine #0" = -2
+    "Linda #0" = -2
+    "Braylee #0" = -2
+    "Lea #0" = -2
+    "Lorelai #0" = -2
+    "Whitney #0" = -2
+    "Jasmin #0" = -2
+    "Leona #0" = -2
+    "Miah #0" = -2
+    "Alia #0" = -2
+    "Clarissa #0" = -2
+    "Dallas #0" = -2
+    "Paola #0" = -2
+    "Amelie #0" = -2
+    "Kimber #0" = -2
+    "Bria #0" = -2
+    "Elisabeth #0" = -2
+    "Armani #0" = -2
+    "Teresa #0" = -2
+    "Perla #0" = -2
+    "Maisie #0" = -2
+    "Yareli #0" = -2
+    "Aryanna #0" = -2
+    "Kynlee #0" = -2
+    "Emory #0" = -2
+    "Avah #0" = -2
+    "Reyna #0" = -2
+    "Alena #0" = -2
+    "Coraline #0" = -2
+    "Pearl #0" = -2
+    "Milani #0" = -2
+    "Nataly #0" = -2
+    "Henley #0" = -2
+    "Brenda #0" = -2
+    "Myah #0" = -2
+    "Milan #0" = -2
+    "Kiley #0" = -2
+    "Chaya #0" = -2
+    "Maleah #0" = -2
+    "Caylee #0" = -2
+    "Laylah #0" = -2
+    "Celine #0" = -2
+    "Leyla #0" = -2
+    "Kora #0" = -2
+    "Esme #0" = -2
+    "Ansley #0" = -2
+    "Lilianna #0" = -2
+    "Kailani #0" = -2
+    "Alaya #0" = -2
+    "Rory #0" = -2
+    "Saige #0" = -2
+    "Adele #0" = -2
+    "Simone #0" = -2
+    "Madalynn #0" = -2
+    "Claudia #0" = -2
+    "Ciara #0" = -2
+    "Ellen #0" = -2
+    "Ophelia #0" = -2
+    "Elliott #0" = -2
+    "Meadow #0" = -2
+    "Amiya #0" = -2
+    "Amirah #0" = -2
+    "Zoie #0" = -2
+    "Alma #0" = -2
+    "Isabela #0" = -2
+    "Jaylee #0" = -2
+    "Dorothy #0" = -2
+    "Galilea #0" = -2
+    "Nancy #0" = -2
+    "Jaylynn #0" = -2
+    "Malaya #0" = -2
+    "Jolie #0" = -2
+    "Elliot #0" = -2
+    "Tori #0" = -2
+    "Collins #0" = -2
+    "Noemi #0" = -2
+    "Desiree #0" = -2
+    "Sloan #0" = -2
+    "Mara #0" = -2
+    "Anabella #0" = -2
+    "Karlee #0" = -2
+    "Aliana #0" = -2
+    "Eileen #0" = -2
+    "Madyson #0" = -2
+    "Cara #0" = -2
+    "Livia #0" = -2
+    "Lailah #0" = -2
+    "Kaylynn #0" = -2
+    "Chanel #0" = -2
+    "Dana #0" = -2
+    "Shayla #0" = -2
+    "Raquel #0" = -2
+    "Hadassah #0" = -2
+    "Kathleen #0" = -2
+    "Farrah #0" = -2
+    "Hailee #0" = -2
+    "Brenna #0" = -2
+    "Kallie #0" = -2
+    "Sariah #0" = -2
+    "Clare #0" = -2
+    "Jazlynn #0" = -2
+    "Alaia #0" = -2
+    "Lizbeth #0" = -2
+    "Mina #0" = -2
+    "Kassandra #0" = -2
+    "Sutton #0" = -2
+    "Leanna #0" = -2
+    "Martha #0" = -2
+    "Christine #0" = -2
+    "Patricia #0" = -2
+    "Jaylene #0" = -2
+    "Arely #0" = -2
+    "Giana #0" = -2
+    "Halle #0" = -2
+    "Nola #0" = -2
+    "Janessa #0" = -2
+    "Julieta #0" = -2
+    "Sandra #0" = -2
+    "Rayna #0" = -2
+    "Kenna #0" = -2
+    "Zahra #0" = -2
+    "Zariyah #0" = -2
+    "Wynter #0" = -2
+    "Aliza #0" = -2
+    "Laurel #0" = -2
+    "Roselyn #0" = -2
+    "Casey #0" = -2
+    "Keyla #0" = -2
+    "Aiyana #0" = -2
+    "Paityn #0" = -2
+    "Marisol #0" = -2
+    "Jayde #0" = -2
+    "Kenya #0" = -2
+    "Aliya #0" = -2
+    "Corinne #0" = -2
+    "Lisa #0" = -2
+    "Royalty #0" = -2
+    "Amalia #0" = -2
+    "Ariya #0" = -2
+    "Ivory #0" = -2
+    "Aurelia #0" = -2
+    "Rylan #0" = -2
+    "Zaniyah #0" = -2
+    "Kristina #0" = -2
+    "Averi #0" = -2
+    "Kayden #0" = -2
+    "Carolyn #0" = -2
+    "Monroe #0" = -2
+    "Kimora #0" = -2
+    "Kiana #0" = -2
+    "Liv #0" = -2
+    "Emilie #0" = -2
+    "Lina #0" = -2
+    "Deborah #0" = -2
+    "Celia #0" = -2
+    "Zaria #0" = -2
+    "Adrienne #0" = -2
+    "Iliana #0" = -2
+    "Taliyah #0" = -2
+    "Harlee #0" = -2
+    "Kalani #0" = -2
+    "Chana #0" = -2
+    "Kori #0" = -2
+    "Remy #0" = -2
+    "Amya #0" = -2
+    "Lara #0" = -2
+    "Noa #0" = -2
+    "Joslyn #0" = -2
+    "Wendy #0" = -2
+    "Kaylani #0" = -2
+    "Hana #0" = -2
+    "Janiya #0" = -2
+    "Ayleen #0" = -2
+    "Astrid #0" = -2
+    "Milana #0" = -2
+    "Ally #0" = -2
+    "Natalee #0" = -2
+    "Rosie #0" = -2
+    "Kairi #0" = -2
+    "Katalina #0" = -2
+    "Salma #0" = -2
+    "Denise #0" = -2
+    "Paula #0" = -2
+    "Kailee #0" = -2
+    "Yasmin #0" = -2
+    "Lindsay #0" = -2
+    "Lillianna #0" = -2
+    "Paulina #0" = -2
+    "Giovanna #0" = -2
+    "Ryann #0" = -2
+    "Antonella #0" = -2
+    "Abbigail #0" = -2
+    "Mollie #0" = -2
+    "Alissa #0" = -2
+    "Kenia #0" = -2
+    "Saniyah #0" = -2
+    "Raina #0" = -2
+    "Barbara #0" = -2
+    "Kristen #0" = -2
+    "Thalia #0" = -2
+    "Paloma #0" = -2
+    "Reina #0" = -2
+    "Sky #0" = -2
+    "Milena #0" = -2
+    "Zion #0" = -2
+    "Bryanna #0" = -2
+    "Amora #0" = -2
+    "Kehlani #0" = -2
+    "Asia #0" = -2
+    "Cindy #0" = -2
+    "Maren #0" = -2
+    "Carlee #0" = -2
+    "Joyce #0" = -2
+    "Tabitha #0" = -2
+    "Stevie #0" = -2
+    "Adley #0" = -2
+    "Marianna #0" = -2
+    "Carla #0" = -2
+    "Danika #0" = -2
+    "Princess #0" = -2
+    "Mercy #0" = -2
+    "Cherish #0" = -2
+    "Jaida #0" = -2
+    "Emerie #0" = -2
+    "Bonnie #0" = -2
+    "Belen #0" = -2
+    "Kaya #0" = -2
+    "Mariyah #0" = -2
+    "Briley #0" = -2
+    "Alessia #0" = -2
+    "Poppy #0" = -2
+    "Frida #0" = -2
+    "Rayne #0" = -2
+    "Jaylin #0" = -2
+    "Emmalynn #0" = -2
+    "Aimee #0" = -2
+    "Scarlette #0" = -2
+    "Aubrielle #0" = -2
+    "Khaleesi #0" = -2
+    "Ayanna #0" = -2
+    "Alisson #0" = -2
+    "Estella #0" = -2
+    "Abril #0" = -2
+    "Analia #0" = -2
+    "Meghan #0" = -2
+    "Susan #0" = -2
+    "Lyra #0" = -2
+    "Judith #0" = -2
+    "Elin #0" = -2
+    "Addilynn #0" = -2
+    "Rivka #0" = -2
+    "Penny #0" = -2
+    "Kaiya #0" = -2
+    "Kai #0" = -2
+    "Jewel #0" = -2
+    "Joelle #0" = -2
+    "Alisha #0" = -2
+    "Jessa #0" = -2
+    "Alannah #0" = -2
+    "Diamond #0" = -2
+    "Nathaly #0" = -2
+    "Emmie #0" = -2
+    "Aryana #0" = -2
+    "Yamileth #0" = -2
+    "Kinslee #0" = -2
+    "Clementine #0" = -2
+    "Faye #0" = -2
+    "Aya #0" = -2
+    "Mercedes #0" = -2
+    "Ingrid #0" = -2
+    "Azariah #0" = -2
+    "Heather #0" = -2
+    "Louisa #0" = -2
+    "Hunter #0" = -2
+    "Mckayla #0" = -2
+    "Jordynn #0" = -2
+    "Karlie #0" = -2
+    "Maliah #0" = -2
+    "Sherlyn #0" = -2
+    "Micah #0" = -2
+    "Amaris #0" = -2
+    "Octavia #0" = -2
+    "Tara #0" = -2
+    "Sidney #0" = -2
+    "Estelle #0" = -2
+    "Zelda #0" = -2
+    "Sariyah #0" = -2
+    "Sonia #0" = -2
+    "Jenny #0" = -2
+    "Janae #0" = -2
+    "Luz #0" = -2
+    "Julianne #0" = -2
+    "Emmeline #0" = -2
+    "Lesly #0" = -2
+    "Emmalee #0" = -2
+    "Taryn #0" = -2
+    "Nala #0" = -2
+    "Sharon #0" = -2
+    "Dixie #0" = -2
+    "Reign #0" = -2
+    "Gwen #0" = -2
+    "Tegan #0" = -2
+    "Emmaline #0" = -2
+    "Bryleigh #0" = -2
+    "Monserrat #0" = -2
+    "Angeline #0" = -2
+    "Evalyn #0" = -2
+    "Landry #0" = -2
+    "Alyvia #0" = -2
+    "Azaria #0" = -2
+    "Kaleigh #0" = -2
+    "Luciana #0" = -3
+    "Savanna #0" = -3
+    "Elisa #0" = -3
+    "Jaylah #0" = -3
+    "Karla #0" = -3
+    "Nia #0" = -3
+    "Sasha #0" = -3
+    "Hanna #0" = -3
+    "Zariah #0" = -3
+    "Madisyn #0" = -3
+    "Marlee #0" = -3
+    "Lorelei #0" = -3
+    "Thea #0" = -3
+    "Crystal #0" = -3
+    "Marilyn #0" = -3
+    "Cassandra #0" = -3
+    "Eve #0" = -3
+    "Addilyn #0" = -3
+    "Braelyn #0" = -3
+    "Jamie #0" = -3
+    "Justice #0" = -3
+    "Melany #0" = -3
+    "Ryan #0" = -3
+    "Kassidy #0" = -3
+    "Regina #0" = -3
+    "Brylee #0" = -3
+    "Raven #0" = -3
+    "Jayden #0" = -3
+    "Leighton #0" = -3
+    "Selah #0" = -3
+    "Alani #0" = -3
+    "Kailey #0" = -3
+    "Janiyah #0" = -3
+    "Julissa #0" = -3
+    "Anya #0" = -3
+    "Ariah #0" = -3
+    "Miley #0" = -3
+    "Monica #0" = -3
+    "Priscilla #0" = -3
+    "Lacey #0" = -3
+    "Sylvia #0" = -3
+    "Liana #0" = -3
+    "Cameron #0" = -3
+    "Rebekah #0" = -3
+    "Brittany #0" = -3
+    "Guadalupe #0" = -3
+    "Tiana #0" = -3
+    "Emmalyn #0" = -3
+    "Cynthia #0" = -3
+    "Addisyn #0" = -3
+    "Lilian #0" = -3
+    "Rosemary #0" = -3
+    "Braelynn #0" = -3
+    "Helena #0" = -3
+    "Alanna #0" = -3
+    "Johanna #0" = -3
+    "Hallie #0" = -3
+    "Lainey #0" = -3
+    "Jaliyah #0" = -3
+    "Dayana #0" = -3
+    "Kaylie #0" = -3
+    "Madilynn #0" = -3
+    "Malaysia #0" = -3
+    "Hayley #0" = -3
+    "Madalyn #0" = -3
+    "Breanna #0" = -3
+    "Willa #0" = -3
+    "Aleena #0" = -3
+    "Caitlyn #0" = -3
+    "Aniya #0" = -3
+    "Gloria #0" = -3
+    "Skyla #0" = -3
+    "Kaelyn #0" = -3
+    "Lauryn #0" = -3
+    "Virginia #0" = -3
+    "Lillie #0" = -3
+    "Winter #0" = -3
+    "Kaliyah #0" = -3
+    "Frances #0" = -3
+    "Bridget #0" = -3
+    "Elsa #0" = -3
+    "Cataleya #0" = -3
+    "Magnolia #0" = -3
+    "Aisha #0" = -3
+    "Angie #0" = -3
+    "Charleigh #0" = -3
+    "Charley #0" = -3
+    "Liberty #0" = -3
+    "Aileen #0" = -3
+    "Bailee #0" = -3
+    "Alayah #0" = -3
+    "Audrina #0" = -3
+    "Anne #0" = -3
+    "Margot #0" = -3
+    "Tatiana #0" = -3
+    "Lilyana #0" = -3
+    "Angelique #0" = -3
+    "Matilda #0" = -3
+    "Jaelyn #0" = -3
+    "Cecelia #0" = -3
+    "Joselyn #0" = -3
+    "Meredith #0" = -3
+    "Kaylin #0" = -3
+    "Mariam #0" = -3
+    "Maia #0" = -3
+    "Mira #0" = -3
+    "Kadence #0" = -3
+    "Saylor #0" = -3
+    "Marie #0" = -3
+    "Anahi #0" = -3
+    "Hattie #0" = -3
+    "Demi #0" = -3
+    "Mikaela #0" = -3
+    "Shiloh #0" = -3
+    "Annika #0" = -3
+    "Anika #0" = -3
+    "Ariyah #0" = -3
+    "Edith #0" = -3
+    "Katelynn #0" = -3
+    "Colette #0" = -3
+    "Emelia #0" = -3
+    "Adelina #0" = -3
+    "Tenley #0" = -3
+    "Melina #0" = -3
+    "Kensley #0" = -3
+    "Caitlin #0" = -3
+    "Maryam #0" = -3
+    "Kailyn #0" = -3
+    "Elianna #0" = -3
+    "Beatrice #0" = -3
+    "Aviana #0" = -3
+    "Lindsey #0" = -3
+    "Blair #0" = -3
+    "Lexie #0" = -3
+    "Dulce #0" = -3
+    "Lilith #0" = -3
+    "Renata #0" = -3
+    "Emilee #0" = -3
+    "Greta #0" = -3
+    "Mabel #0" = -3
+    "Kamryn #0" = -4
+    "Journee #0" = -4
+    "Yaretzi #0" = -4
+    "Ariella #0" = -4
+    "Abby #0" = -4
+    "Skyler #0" = -4
+    "Aspen #0" = -4
+    "Zara #0" = -4
+    "Mallory #0" = -4
+    "Kyleigh #0" = -4
+    "Logan #0" = -4
+    "River #0" = -4
+    "Amira #0" = -4
+    "Scarlet #0" = -4
+    "Elle #0" = -4
+    "Gracelyn #0" = -4
+    "Daleyza #0" = -4
+    "Raelyn #0" = -4
+    "Remi #0" = -4
+    "Maliyah #0" = -4
+    "Lana #0" = -4
+    "Haylee #0" = -4
+    "Macy #0" = -4
+    "Jazmin #0" = -4
+    "Amina #0" = -4
+    "Daphne #0" = -4
+    "Adaline #0" = -4
+    "Emely #0" = -4
+    "Joy #0" = -4
+    "Miracle #0" = -4
+    "Blake #0" = -4
+    "Bethany #0" = -4
+    "Alejandra #0" = -4
+    "Helen #0" = -4
+    "Macie #0" = -4
+    "Nayeli #0" = -4
+    "Jayda #0" = -4
+    "April #0" = -4
+    "Maeve #0" = -4
+    "Carolina #0" = -4
+    "Jazmine #0" = -4
+    "Kara #0" = -4
+    "Skye #0" = -4
+    "Brinley #0" = -4
+    "Marissa #0" = -4
+    "Giuliana #0" = -4
+    "Karina #0" = -4
+    "Karen #0" = -4
+    "Juniper #0" = -4
+    "Baylee #0" = -4
+    "Serena #0" = -4
+    "Madelynn #0" = -4
+    "Kaia #0" = -4
+    "Leia #0" = -4
+    "Jimena #0" = -4
+    "Paislee #0" = -4
+    "Mckinley #0" = -4
+    "Evelynn #0" = -4
+    "Averie #0" = -4
+    "Sarai #0" = -4
+    "Kelly #0" = -4
+    "Dylan #0" = -4
+    "Everleigh #0" = -4
+    "Nylah #0" = -4
+    "Anaya #0" = -4
+    "Gwendolyn #0" = -4
+    "Aylin #0" = -4
+    "Angelica #0" = -4
+    "Fernanda #0" = -4
+    "Jayleen #0" = -4
+    "Kennedi #0" = -4
+    "Viviana #0" = -4
+    "Amari #0" = -4
+    "Aubrie #0" = -4
+    "Zuri #0" = -4
+    "Dahlia #0" = -4
+    "Freya #0" = -4
+    "Aleah #0" = -4
+    "Danna #0" = -4
+    "Julie #0" = -4
+    "Jazlyn #0" = -4
+    "Janelle #0" = -4
+    "Felicity #0" = -4
+    "Annalise #0" = -4
+    "Francesca #0" = -4
+    "Phoenix #0" = -4
+    "Millie #0" = -4
+    "Samara #0" = -4
+    "Celeste #0" = -4
+    "Gracelynn #0" = -4
+    "Evie #0" = -4
+    "Tiffany #0" = -4
+    "Holly #0" = -4
+    "Itzel #0" = -4
+    "Bristol #0" = -4
+    "Michaela #0" = -4
+    "Harlow #0" = -4
+    "Kyra #0" = -4
+    "Imani #0" = -4
+    "Laura #0" = -5
+    "Amiyah #0" = -5
+    "Nyla #0" = -5
+    "Kenzie #0" = -5
+    "Erin #0" = -5
+    "Jane #0" = -5
+    "June #0" = -5
+    "Kayleigh #0" = -5
+    "Adelaide #0" = -5
+    "Kathryn #0" = -5
+    "Kendra #0" = -5
+    "Alison #0" = -5
+    "Sloane #0" = -5
+    "Madilyn #0" = -5
+    "Sabrina #0" = -5
+    "Alicia #0" = -5
+    "Amber #0" = -5
+    "Daniella #0" = -5
+    "Alessandra #0" = -5
+    "Madeleine #0" = -5
+    "Rowan #0" = -5
+    "Kali #0" = -5
+    "Kelsey #0" = -5
+    "Annie #0" = -5
+    "Nadia #0" = -5
+    "Charlee #0" = -5
+    "Leslie #0" = -5
+    "Lia #0" = -5
+    "Lucille #0" = -5
+    "Christina #0" = -5
+    "Kamila #0" = -5
+    "Alondra #0" = -5
+    "Sawyer #0" = -5
+    "Emersyn #0" = -5
+    "Kaydence #0" = -5
+    "Heaven #0" = -5
+    "Kyla #0" = -5
+    "Kiara #0" = -5
+    "Cadence #0" = -5
+    "Amara #0" = -5
+    "Talia #0" = -5
+    "Veronica #0" = -5
+    "Catalina #0" = -5
+    "Maddison #0" = -5
+    "Carly #0" = -5
+    "Bianca #0" = -5
+    "Sierra #0" = -5
+    "Heidi #0" = -5
+    "Cheyenne #0" = -5
+    "Ashlynn #0" = -5
+    "Elsie #0" = -5
+    "Allyson #0" = -5
+    "Rylie #0" = -5
+    "Briana #0" = -5
+    "Vera #0" = -5
+    "Ada #0" = -5
+    "Addyson #0" = -5
+    "Kira #0" = -5
+    "Ainsley #0" = -5
+    "Myla #0" = -5
+    "Adelynn #0" = -5
+    "Briella #0" = -5
+    "Esmeralda #0" = -5
+    "Camilla #0" = -5
+    "Haven #0" = -5
+    "Arielle #0" = -5
+    "Blakely #0" = -5
+    "Jillian #0" = -5
+    "Gia #0" = -5
+    "Camryn #0" = -5
+    "Annabella #0" = -5
+    "Ember #0" = -5
+    "Sage #0" = -5
+    "Tatum #0" = -5
+    "Carmen #0" = -5
+    "Maci #0" = -6
+    "Miranda #0" = -6
+    "Eloise #0" = -6
+    "Elliana #0" = -6
+    "Brynlee #0" = -6
+    "Dakota #0" = -6
+    "Jordan #0" = -6
+    "Adrianna #0" = -6
+    "Noelle #0" = -6
+    "Makenna #0" = -6
+    "Katie #0" = -6
+    "Angel #0" = -6
+    "Evangeline #0" = -6
+    "Danielle #0" = -6
+    "Megan #0" = -6
+    "Cali #0" = -6
+    "Gemma #0" = -6
+    "Lexi #0" = -6
+    "Joanna #0" = -6
+    "Vivienne #0" = -6
+    "Cassidy #0" = -6
+    "Shelby #0" = -6
+    "Ashlyn #0" = -6
+    "Malia #0" = -6
+    "Raegan #0" = -6
+    "Lilliana #0" = -6
+    "Amanda #0" = -6
+    "Selena #0" = -6
+    "Mariana #0" = -6
+    "Paris #0" = -6
+    "Miriam #0" = -6
+    "Journey #0" = -6
+    "Ruth #0" = -6
+    "Mikayla #0" = -6
+    "Lilah #0" = -6
+    "Harley #0" = -6
+    "Olive #0" = -6
+    "Elaina #0" = -6
+    "Phoebe #0" = -6
+    "Chelsea #0" = -6
+    "Nina #0" = -6
+    "Rosalie #0" = -6
+    "Alexia #0" = -6
+    "Lena #0" = -6
+    "Fatima #0" = -6
+    "Lyric #0" = -6
+    "Alexandria #0" = -7
+    "Melissa #0" = -7
+    "Marley #0" = -7
+    "Sienna #0" = -7
+    "Anastasia #0" = -7
+    "Gabriela #0" = -7
+    "Adelyn #0" = -7
+    "Josie #0" = -7
+    "Leila #0" = -7
+    "Lola #0" = -7
+    "Tessa #0" = -7
+    "Aniyah #0" = -7
+    "Hope #0" = -7
+    "Finley #0" = -7
+    "Keira #0" = -7
+    "Diana #0" = -7
+    "Kinley #0" = -7
+    "Parker #0" = -7
+    "Mckenna #0" = -7
+    "Maggie #0" = -7
+    "Juliet #0" = -7
+    "Juliette #0" = -7
+    "Camille #0" = -7
+    "Brynn #0" = -7
+    "Haley #0" = -7
+    "Delaney #0" = -7
+    "Georgia #0" = -7
+    "Allie #0" = -7
+    "Ayla #0" = -7
+    "Jenna #0" = -7
+    "Jada #0" = -7
+    "Jacqueline #0" = -7
+    "Julianna #0" = -8
+    "Cecilia #0" = -8
+    "Izabella #0" = -8
+    "Makenzie #0" = -8
+    "Esther #0" = -8
+    "Stephanie #0" = -8
+    "Raelynn #0" = -8
+    "Genevieve #0" = -8
+    "Alina #0" = -8
+    "Hayden #0" = -8
+    "Callie #0" = -8
+    "Angela #0" = -8
+    "Alivia #0" = -8
+    "Arya #0" = -8
+    "Presley #0" = -8
+    "Iris #0" = -8
+    "Jennifer #0" = -8
+    "Giselle #0" = -8
+    "Arabella #0" = -8
+    "Teagan #0" = -8
+    "Lucia #0" = -8
+    "Fiona #0" = -8
+    "Kylee #0" = -8
+    "Ana #0" = -8
+    "Charlie #0" = -8
+    "Kate #0" = -8
+    "Alayna #0" = -8
+    "Nova #0" = -9
+    "Ryleigh #0" = -9
+    "Daisy #0" = -9
+    "Norah #0" = -9
+    "Eliza #0" = -9
+    "Rose #0" = -9
+    "Rebecca #0" = -9
+    "Michelle #0" = -9
+    "Alaina #0" = -9
+    "Catherine #0" = -9
+    "Londyn #0" = -9
+    "Summer #0" = -9
+    "Lila #0" = -9
+    "Jayla #0" = -9
+    "Katelyn #0" = -9
+    "Daniela #0" = -9
+    "Harmony #0" = -9
+    "Amaya #0" = -9
+    "Alana #0" = -9
+    "Emerson #0" = -9
+    "Margaret #0" = -10
+    "Juliana #0" = -10
+    "Melody #0" = -10
+    "Amy #0" = -10
+    "Eden #0" = -10
+    "Mckenzie #0" = -10
+    "Laila #0" = -10
+    "Vanessa #0" = -10
+    "Ariel #0" = -10
+    "Gracie #0" = -10
+    "Valerie #0" = -10
+    "Adalyn #0" = -10
+    "Brooklynn #0" = -10
+    "Gabrielle #0" = -10
+    "Kaitlyn #0" = -10
+    "Athena #0" = -10
+    "Elise #0" = -10
+    "Jessica #0" = -10
+    "Adriana #0" = -10
+    "Leilani #0" = -10
+    "Valeria #0" = -11
+    "Everly #0" = -11
+    "Destiny #0" = -11
+    "Rachel #0" = -11
+    "Ximena #0" = -11
+    "Emery #0" = -11
+    "Sara #0" = -11
+    "Angelina #0" = -11
+    "Adalynn #0" = -11
+    "Kendall #0" = -11
+    "Reese #0" = -11
+    "Aliyah #0" = -11
+    "Brooke #0" = -12
+    "Lilly #0" = -12
+    "Ivy #0" = -12
+    "Adeline #0" = -12
+    "Payton #0" = -12
+    "Lyla #0" = -12
+    "Isla #0" = -12
+    "Jordyn #0" = -12
+    "Paige #0" = -12
+    "Isabel #0" = -12
+    "Mariah #0" = -12
+    "Mya #0" = -12
+    "Nicole #0" = -12
+    "Mary #0" = -13
+    "Molly #0" = -13
+    "Hadley #0" = -13
+    "Delilah #0" = -13
+    "Emilia #0" = -13
+    "Josephine #0" = -13
+    "Morgan #0" = -14
+    "Natalia #0" = -14
+    "Kimberly #0" = -14
+    "Vivian #0" = -14
+    "Quinn #0" = -14
+    "Valentina #0" = -14
+    "Andrea #0" = -14
+    "Willow #0" = -14
+    "Clara #0" = -14
+    "London #0" = -14
+    "Jade #0" = -14
+    "Liliana #0" = -14
+    "Jocelyn #0" = -14
+    "Trinity #0" = -14
+    "Kinsley #0" = -14
+    "Brielle #0" = -14
+    "Jasmine #0" = -15
+    "Maria #0" = -15
+    "Annabelle #0" = -15
+    "Lauren #0" = -15
+    "Reagan #0" = -15
+    "Elena #0" = -15
+    "Rylee #0" = -15
+    "Isabelle #0" = -15
+    "Bailey #0" = -15
+    "Eliana #0" = -15
+    "Sydney #0" = -15
+    "Makayla #0" = -15
+    "Cora #0" = -15
+    "Alexandra #0" = -16
+    "Alice #0" = -16
+    "Kayla #0" = -16
+    "Ruby #0" = -17
+    "Piper #0" = -17
+    "Melanie #0" = -17
+    "Lydia #0" = -17
+    "Aubree #0" = -17
+    "Madeline #0" = -17
+    "Aurora #0" = -17
+    "Faith #0" = -17
+    "Mackenzie #0" = -18
+    "Eva #0" = -18
+    "Gianna #0" = -18
+    "Luna #0" = -18
+    "Katherine #0" = -18
+    "Hazel #0" = -18
+    "Khloe #0" = -18
+    "Ashley #0" = -19
+    "Brianna #0" = -19
+    "Sadie #0" = -19
+    "Naomi #0" = -19
+    "Kylie #0" = -19
+    "Julia #0" = -19
+    "Sophie #0" = -19
+    "Madelyn #0" = -20
+    "Serenity #0" = -20
+    "Kennedy #0" = -20
+    "Taylor #0" = -20
+    "Alyssa #0" = -20
+    "Autumn #0" = -20
+    "Paisley #0" = -20
+    "Genesis #0" = -21
+    "Alexis #0" = -21
+    "Eleanor #0" = -21
+    "Maya #0" = -21
+    "Caroline #0" = -21
+    "Peyton #0" = -21
+    "Skylar #0" = -21
+    "Lucy #0" = -22
+    "Alexa #0" = -22
+    "Arianna #0" = -22
+    "Violet #0" = -22
+    "Ariana #0" = -22
+    "Nevaeh #0" = -23
+    "Kaylee #0" = -23
+    "Stella #0" = -23
+    "Mila #0" = -23
+    "Nora #0" = -23
+    "Ellie #0" = -23
+    "Bella #0" = -23
+    "Aaliyah #0" = -24
+    "Sarah #0" = -24
+    "Gabriella #0" = -25
+    "Hailey #0" = -25
+    "Claire #0" = -25
+    "Penelope #0" = -25
+    "Allison #0" = -26
+    "Aria #0" = -27
+    "Savannah #0" = -27
+    "Audrey #0" = -27
+    "Anna #0" = -27
+    "Riley #0" = -29
+    "Leah #0" = -29
+    "Scarlett #0" = -30
+    "Zoe #0" = -30
+    "Camila #0" = -30
+    "Samantha #0" = -30
+    "Brooklyn #0" = -31
+    "Layla #0" = -33
+    "Aubrey #0" = -34
+    "Zoey #0" = -34
+    "Lillian #0" = -34
+    "Hannah #0" = -34
+    "Lily #0" = -36
+    "Natalie #0" = -36
+    "Addison #0" = -37
+    "Victoria #0" = -37
+    "Grace #0" = -38
+    "Avery #0" = -43
+    "Sofia #0" = -43
+    "Chloe #0" = -44
+    "Harper #0" = -44
+    "Evelyn #0" = -45
+    "Ella #0" = -45
+    "Elizabeth #0" = -49
+    "Amelia #0" = -49
+    "Madison #0" = -51
+    "Charlotte #0" = -53
+    "Emily #0" = -61
+    "Abigail #0" = -62
+    "Mia #0" = -67
+    "Ava #0" = -81
+    "Isabella #0" = -89
+    "Sophia #0" = -94
+    "Olivia #0" = -96
+    "Emma #0" = -102
+}
+
+leader_names = {
+	Smith
+    Johnson
+    Williams
+    Brown
+    Jones
+    Davis
+    Miller
+    Anderson
+    Wilson
+    Garcia
+    Taylor
+    Thomas
+    Moore
+    Rodriguez
+    Lee
+    Jackson
+    Martin
+    White
+    Martinez
+    Thompson
+    Harris
+    Clark
+    Hernandez
+    Lopez
+    Lewis
+    Walker
+    Robinson
+    Allen
+    Gonzalez
+    Hall
+    Young
+    King
+    Wright
+    Adams
+    Hill
+    Baker
+    Green
+    Scott
+    Nelson
+    Perez
+    Campbell
+    Carter
+    Roberts
+    Sanchez
+    Mitchell
+    Evans
+    Phillips
+    Turner
+    Edwards
+    Collins
+    Parker
+    Ramirez
+    Nguyen
+    Stewart
+    Morris
+    Cook
+    Rogers
+    Murphy
+    Peterson
+    Morgan
+    Cooper
+    Bell
+    Flores
+    Bailey
+    Torres
+    Reed
+    Cox
+    Rivera
+    Wood
+    Howard
+    Ward
+    Kelly
+    Brooks
+    Bennett
+    Gray
+    Watson
+    Richardson
+    Hughes
+    James
+    Ross
+    Foster
+    Gomez
+    Sullivan
+    Myers
+    Diaz
+    Price
+    Long
+    Butler
+    Barnes
+    Sanders
+    Kim
+    Coleman
+    Cruz
+    Fisher
+    Russell
+    Reyes
+    Powell
+    Perry
+    Henderson
+    Jenkins
+    Alexander
+    Hamilton
+    Graham
+    West
+    Reynolds
+    Simmons
+    Patterson
+    Jordan
+    Cole
+    Wallace
+    Griffin
+    Morales
+    Ortiz
+    Hayes
+    Ellis
+    Bryant
+    Gibson
+    Gonzales
+    Stevens
+    Harrison
+    Ford
+    McDonald
+    Patel
+    Murray
+    Ramos
+    Gutierrez
+    Owens
+    Marshall
+    Kennedy
+    Wells
+    Burns
+    Woods
+    Freeman
+    Crawford
+    Olson
+    Gordon
+    Webb
+    Henry
+    Wagner
+    Tucker
+    Ruiz
+    Meyer
+    Shaw
+    Snyder
+    Black
+    Washington
+    Fox
+    Dixon
+    Simpson
+    Chavez
+    Mason
+    Hunt
+    Porter
+    Boyd
+    Castillo
+    Rose
+    Stone
+    Hunter
+    Palmer
+    Schmidt
+    Hicks
+    Vasquez
+    Robertson
+    Mendoza
+    Warren
+    Ferguson
+    Alvarez
+    Holmes
+    Rice
+    Ryan
+    Mills
+    Dunn
+    Gardner
+    Hansen
+    Arnold
+    Chen
+    Nichols
+    Hoffman
+    Daniels
+    Stephens
+    Romero
+    Hawkins
+    Grant
+    Carroll
+    Kelley
+    Hart
+    Duncan
+    Bradley
+    Elliott
+    Andrews
+    Payne
+    Berry
+    Johnston
+    Tran
+    Weaver
+    Armstrong
+    Cunningham
+    Peters
+    Pierce
+    Fernandez
+    Spencer
+    Ray
+    Hudson
+    Jimenez
+    Moreno
+    Knight
+    Carlson
+    Lane
+    Riley
+    Greene
+    Matthews
+    Carpenter
+    Larson
+    Burke
+    Chapman
+    Willis
+    Richards
+    Medina
+    Garza
+    Herrera
+    Watkins
+    George
+    Castro
+    Harper
+    Wheeler
+    Perkins
+    Lawrence
+    Jacobs
+    Jensen
+    Carr
+    Morrison
+    Silva
+    Austin
+    Bishop
+    Dean
+    Lynch
+    Wong
+    Franklin
+    Montgomery
+    Harvey
+    Gilbert
+    Hanson
+    Williamson
+    Weber
+    Lawson
+    Vargas
+    Cohen
+    Howell
+    Aguilar
+    Garrett
+    Walsh
+    Reid
+    Burton
+    Wang
+    Oliver
+    Day
+    Welch
+    Schneider
+    Fuller
+    McCoy
+    Davidson
+    Schultz
+    Newman
+    Sims
+    Fowler
+    Salazar
+    Bowman
+    Walters
+    Holland
+    May
+    Brewer
+    Barrett
+    Singh
+    Keller
+    Guzman
+    Little
+    Fields
+    Banks
+    Pearson
+    Curtis
+    Munoz
+    Beck
+    Douglas
+    Lucas
+    Pena
+    Wade
+    Becker
+    Barnett
+    Soto
+    Mendez
+    Park
+    Chambers
+    Powers
+    Bates
+    Caldwell
+    Schwartz
+    Hopkins
+    Craig
+    Byrd
+    Valdez
+    Leonard
+    Fleming
+    Gregory
+    Stanley
+    Delgado
+    Lowe
+    Benson
+    Frazier
+    Lambert
+    Klein
+    Jennings
+    Shelton
+    Barker
+    Rhodes
+    Obrien
+    Sutton
+    Norris
+    McDaniel
+    Watts
+    McCarthy
+    Hale
+    Mann
+    Holt
+    Neal
+    Steele
+    Vaughn
+    Erickson
+    Guerrero
+    Santos
+    Parks
+    Love
+    Wolfe
+    Zimmerman
+    Chang
+    Haynes
+    Warner
+    Bush
+    Sandoval
+    Fletcher
+    Horton
+    Dawson
+    Graves
+    Miles
+    Joseph
+    Terry
+    Rios
+    Lyons
+    Alvarado
+    Ortega
+    Baldwin
+    Bowen
+    Estrada
+    Page
+    McKinney
+    Swanson
+    Chandler
+    Griffith
+    Quinn
+    Reeves
+    Li
+    Higgins
+    Santiago
+    Daniel
+    Contreras
+    Vega
+    Simon
+    Robbins
+    Ball
+    Blair
+    Hardy
+    Gross
+    Christensen
+    Cummings
+    FitzGerald
+    Sharp
+    Chan
+    Nunez
+    Doyle
+    Moran
+    Maldonado
+    Thornton
+    Fischer
+    Liu
+    McLaughlin
+    Cross
+    Ramsey
+    Barber
+    Wolf
+    Dennis
+    Paul
+    Francis
+    Goodman
+    Brady
+    Moss
+    Sherman
+    Manning
+    Padilla
+    Garner
+    Dominguez
+    Gill
+    Harmon
+    Curry
+    Newton
+    Yang
+    Burgess
+    Stevenson
+    Webster
+    Luna
+    McGee
+    Rodgers
+    Walton
+    Reese
+    Acosta
+    Clarke
+    Todd
+    Blake
+    Goodwin
+    Gallagher
+    Frank
+    Cannon
+    Waters
+    Mueller
+    Potter
+    Saunders
+    Malone
+    Schroeder
+    Barton
+    Marquez
+    Hodges
+    Farmer
+    Lin
+    Bauer
+    Espinoza
+    Hines
+    Rowe
+    Mack
+    Vazquez
+    Cortez
+    Wise
+    Hammond
+    Kramer
+    Hubbard
+    Casey
+    Bowers
+    Navarro
+    Logan
+    Maxwell
+    Adkins
+    Tate
+    Ingram
+    Cobb
+    Buchanan
+    Rojas
+    Townsend
+    Hartman
+    Harrington
+    Hampton
+    Le
+    Flynn
+    McCormick
+    Mullins
+    Patton
+    McGuire
+    Osborne
+    Weiss
+    Norman
+    Figueroa
+    Parsons
+    Molina
+    Conner
+    Floyd
+    Glover
+    Wu
+    Owen
+    Lloyd
+    Strickland
+    French
+    Roth
+    Pope
+    Lang
+    Gibbs
+    Hogan
+    Miranda
+    Duran
+    Norton
+    Tyler
+    McBride
+    Marsh
+    Sparks
+    Pham
+    Yates
+    Campos
+    Cain
+    Morton
+    Khan
+    Brock
+    Olsen
+    Moody
+    Drake
+    Ballard
+    Huang
+    Cochran
+    Burnett
+    Avila
+    Pratt
+    Bryan
+    Petersen
+    Lindsey
+    Salinas
+    Meyers
+    Lamb
+    Larsen
+    Stokes
+    Zhang
+    Ayala
+    Shah
+    Hess
+    Bass
+    McKenzie
+    Carson
+    Greer
+    Shaffer
+    Nash
+    Carey
+    Briggs
+    Morrow
+    Wall
+    Patrick
+    Collier
+    Shepherd
+    Leon
+    Wilkins
+    Copeland
+    Summers
+    Decker
+    Nicholson
+    Clayton
+    Davenport
+    Oconnor
+    Mejia
+    Houston
+    Carrillo
+    Whitaker
+    Wilcox
+    Wilkinson
+    Holloway
+    Robles
+    Underwood
+    Atkinson
+    Bradford
+    Short
+    Farrell
+    Guerra
+    Bridges
+    Anthony
+    Hoover
+    Cameron
+    Poole
+    Charles
+    Conley
+    Massey
+    Trujillo
+    Chase
+    Callahan
+    Abbott
+    Monroe
+    Pacheco
+    Foley
+    Boone
+    Huff
+    Allison
+    Hood
+    Deleon
+    Horn
+    Kane
+    Lara
+    Randall
+    Bond
+    Wyatt
+    Sweeney
+    Cabrera
+    Bruce
+    Kirk
+    Richard
+    Montoya
+    Gates
+    Kirby
+    Roberson
+    Juarez
+    Fuentes
+    Aguirre
+    Phelps
+    Skinner
+    Dickerson
+    Berg
+    Heath
+    Brennan
+    York
+    Dalton
+    Koch
+    Roy
+    Combs
+    Ochoa
+    Pittman
+    Roman
+    Garrison
+    Boyer
+    Atkins
+    Glenn
+    Franco
+    Harrell
+    Baxter
+    Mathews
+    Rich
+    Solis
+    Hancock
+    Flowers
+    Vincent
+    Singleton
+    Mathis
+    Shields
+    Russo
+    Huffman
+    Stein
+    Grimes
+    Marks
+    Parrish
+    Golden
+    Cline
+    Savage
+    Christian
+    Gallegos
+    Booth
+    Hodge
+    Velasquez
+    Dyer
+    Stephenson
+    Dillon
+    Wiggins
+    Jacobson
+    Walter
+    Cardenas
+    Berger
+    David
+    Wiley
+    Rivas
+    Serrano
+    Beard
+    Melton
+    Lam
+    McClure
+    Jefferson
+    Barry
+    Sawyer
+    Eaton
+    Trevino
+    Gilmore
+    McDowell
+    Beasley
+    Blackwell
+    Ware
+    Solomon
+    Preston
+    Hensley
+    Keith
+    Hutchinson
+    Friedman
+    Tanner
+    Yu
+    Humphrey
+    Johns
+    Hobbs
+    Small
+    Snow
+    Pitts
+    English
+    Colon
+    Henson
+    Cervantes
+    Barr
+    Clay
+    Suarez
+    Kerr
+    MacDonald
+    Calderon
+    Wilkerson
+    Conway
+    Kline
+    Villarreal
+    Merritt
+    Nolan
+    Prince
+    Shannon
+    McCullough
+    McKee
+    Levy
+    Vance
+    Ho
+    Stafford
+    McClain
+    Dorsey
+    Bartlett
+    Woodard
+    Sloan
+    Barron
+    Kemp
+    Roach
+    Winters
+    McLean
+    Bullock
+    Hurst
+    Michael
+    Buck
+    Browning
+    Strong
+    Gentry
+    Kent
+    Durham
+    Choi
+    Moon
+    Schaefer
+    Reilly
+    Salas
+    Hahn
+    Knox
+    Orr
+    Nielsen
+    McIntyre
+    Castaneda
+    Camacho
+    Whitehead
+    Chung
+    Hull
+    Ali
+    Herman
+    Rosales
+    Leach
+    Mayer
+    Gillespie
+    Hendricks
+    Weeks
+    Stark
+    Mercado
+    Stout
+    Meadows
+    Bradshaw
+    Glass
+    Levine
+    Mosley
+    Buckley
+    Morse
+    Donovan
+    Valencia
+    Zamora
+    Gaines
+    Knapp
+    McCall
+    Frost
+    Calhoun
+    Conrad
+    Villanueva
+    Lester
+    Howe
+    Mahoney
+    Hardin
+    John
+    Livingston
+    Blankenship
+    Peck
+    Sellers
+    Ellison
+    Pruitt
+    Lozano
+    Lynn
+    McIntosh
+    McFarland
+    FitzPatrick
+    McConnell
+    Noble
+    Boyle
+    McMahon
+    Case
+    Middleton
+    Leblanc
+    Lowery
+    Crosby
+    Bender
+    Frederick
+    Randolph
+    Vaughan
+    Bentley
+    Gould
+    Duffy
+    Pace
+    Pennington
+    Sexton
+    Cantu
+    Huynh
+    Macias
+    Hurley
+    Andrade
+    Harding
+    Everett
+    Crane
+    Velez
+    Giles
+    Ayers
+    Santana
+    Woodward
+    McMillan
+    Kaufman
+    Dougherty
+    Escobar
+    Clements
+    Brandt
+    Hickman
+    Krueger
+    Dunlap
+    Walls
+    Katz
+    Barrera
+    Valentine
+    Hebert
+    Rocha
+    Shepard
+    Landry
+    Spears
+    Rush
+    Avery
+    House
+    Blanchard
+    Best
+    Dodson
+    Benton
+    Hanna
+    McKay
+    Blackburn
+    Pugh
+    Fry
+    Huber
+    Orozco
+    Mora
+    Bean
+    Bernard
+    Hayden
+    Raymond
+    Andersen
+    Goldstein
+    Kaplan
+    Goldberg
+    Sampson
+    Mays
+    Ashley
+    Stuart
+    Valenzuela
+    Finley
+    Rasmussen
+    Haas
+    Haley
+    Oneill
+    Novak
+    Mullen
+    McCarty
+    Dickson
+    Ibarra
+    Waller
+    Farley
+    Donaldson
+    Benjamin
+    Duke
+    Rangel
+    Estes
+    Herring
+    Moses
+    Faulkner
+    Schmitt
+    Braun
+    Nixon
+    Hays
+    Baird
+    Burch
+    Costa
+    Melendez
+    Oneal
+    Sheppard
+    Werner
+    Richmond
+    Horne
+    Potts
+    Moyer
+    Krause
+    McCann
+    Blevins
+    Spence
+    Good
+    Stanton
+    Irwin
+    McGrath
+    Coffey
+    Dudley
+    Compton
+    Davies
+    Whitney
+    Sanford
+    Proctor
+    Frye
+    Maddox
+    McPherson
+    Joyce
+    Shea
+    Cantrell
+    Archer
+    Acevedo
+    Arias
+    Bird
+    Rowland
+    Madden
+    Ritter
+    Cherry
+    Kaiser
+    Church
+    Rivers
+    Frey
+    Yoder
+    Cheng
+    Mercer
+    Cooke
+    Downs
+    Pineda
+    Hendrix
+    Fritz
+    Forbes
+    Winter
+    Galloway
+    Petty
+    Hester
+    Ewing
+    Mooney
+    Booker
+    Daugherty
+    Sosa
+    Maynard
+    Hooper
+    Cowan
+    Holden
+    Galvan
+    Riggs
+    Terrell
+    Pollard
+    Arroyo
+    Rollins
+    Bray
+    Mayo
+    Carney
+    Jarvis
+    Cordova
+    Merrill
+    Daly
+    Cooley
+    Vogel
+    Hinton
+    Kuhn
+    Lim
+    Ferrell
+    Chaney
+    Holder
+    Haney
+    Hatfield
+    Lindsay
+    McGowan
+    Travis
+    Delaney
+    Bright
+    Bolton
+    Witt
+    Lancaster
+    Branch
+    Rubio
+    Donnelly
+    Snider
+    Gamble
+    Gorman
+    Zuniga
+    Donahue
+    McNeil
+    Bonner
+    Byers
+    Costello
+    McKnight
+    Key
+    Crowley
+    Bautista
+    Riddle
+    Pearce
+    Maloney
+    Albert
+    Lake
+    Carver
+    Guthrie
+    Lehman
+}
+
+ship_names = {
+	"American Fabius" "American Revenue" "Black Prince" "Bonhomme Richard" "Bunker Hill" "General Gadsen" "General Gates" "General Greene" "General Mifflin"
+	"General Montgomery" "General Washington" "Happy Return" "Morning Star" "New Haven" "New York" "Norfolk Revenge" "North Carolina" "Queen of France" "South Carolina"
+	"South Edisto" "St. Lawrence" "St. Louis" "True Blue" "United States" "White Oak" Abigail Achilles Active Adams Addition Adventure Albany Alfred Alliance Alston
+	America Amphitrite Annapolis Argo Ariel Arnold Astrea Aurora Bachelor Boston Bourbon Brandywine Bricole Bruke Bulldog Bulloch Cabot Camden Caswell Chatham Chesapeake
+	Columbus Comet Commerce Concord Confederacy Confiance Congress Connecticut Constellation Constitution Cyane Deane Defence Delaware Dickenson Dilligent Disdain Dolphin
+	Dragon Eagle Effingham Endeavour Enterprise Essex Experiment Fairfield Fox Franklin Friendship Frolic Ganges Greyhound Griffon Guilford Hague Hammond Hampden Hancock
+	Hannah Hannibal Harlequin Hawke Hazard Henry Hero Hibernia Hudson Hunter Impertinent Independence Insurgent Jamestown Java Katy Lee Lewis Lexington Liberty Lincoln
+	Lynch Macedonia Manly Marblehead Massachusetts Merrimack Middletown Mifflin Minerva Monmouth Montezuma Morris Mosquito Northampton Ohio Page Patapsco Peacock
+	Pennsylvania Philadephia Pilgrim Pompey Portsmouth Potomac President Prosper Protector Providence Putnam Raleigh Randolph Ranger Rattlesnake Reprisal Republic
+	Repulse Resistance Resolution Retrieve Rhodes Richard Sabine Safeguard Saratoga Scorpion Shark Spitfire Spy Surprise Swift Tartar Tempest Trumbull Tyrannicide
+	Vengeance Vermont Viper Virginia Wabash Warren Warren Washington Wasp Wilkes
+}

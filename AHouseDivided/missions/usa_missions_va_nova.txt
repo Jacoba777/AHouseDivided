@@ -1,0 +1,435 @@
+missions_va_nova_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ARG
+			tag = FFX
+			tag = LEE
+			tag = VMA
+			tag = SFD
+			tag = SPV
+			tag = CUL
+			tag = RAP
+			tag = WRT
+		}
+	}
+
+	mission_va_nova_to_the_chesapeake = {
+		icon = mission_vab
+		position = 9
+		required_missions = { mission_va_nova_administering_richmond }
+		trigger = {
+			area_va_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_virginia_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_southeastern
+				area = area_va_virginia_beach
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_va_nova_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ARG
+			tag = FFX
+			tag = LEE
+			tag = VMA
+			tag = SFD
+			tag = SPV
+			tag = CUL
+			tag = RAP
+			tag = WRT
+		}
+	}
+
+	mission_va_nova_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_va_nova_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_va_nova_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_va_nova_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			area_va_southern_nova = { add_permanent_claim = ROOT }
+			area_va_arlington = { add_permanent_claim = ROOT }
+			area_va_northern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_nova_uniting_nova = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_va_nova_a_respectable_state }
+		trigger = {
+			area_va_southern_nova = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_arlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			change_government_reform_progress = 25
+
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_southern_nova
+				area = area_va_arlington
+				area = area_va_northern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_stabilize_our_home_region = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_va_nova_uniting_nova }
+		trigger = {
+			area_va_southern_nova = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_arlington = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_northern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_northern_neck = { add_permanent_claim = ROOT }
+			area_va_middle_peninsula = { add_permanent_claim = ROOT }
+			area_va_louisa = { add_permanent_claim = ROOT }
+			area_va_charlottesville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_southern_nova
+				area = area_va_arlington
+				area = area_va_northern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_nova_a_peninsular_push = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_nova_stabilize_our_home_region }
+		trigger = {
+			area_va_northern_neck = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_middle_peninsula = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_va_richmond = { add_permanent_claim = ROOT }
+			area_va_south_richmond = { add_permanent_claim = ROOT }
+			area_va_east_richmond = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_northern_neck
+				area = area_va_middle_peninsula
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_the_fate_of_river_city = {
+		icon = mission_rch
+		position = 7
+		required_missions = { mission_va_nova_a_peninsular_push }
+		trigger = {
+			area_va_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_south_richmond = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 0.75
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_south_richmond
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_administering_richmond = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_va_nova_the_fate_of_river_city }
+		trigger = {
+			area_va_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_va_south_richmond = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_southeastern = { add_permanent_claim = ROOT }
+			area_va_virginia_beach = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_richmond
+				area = area_va_south_richmond
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_va_nova_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ARG
+			tag = FFX
+			tag = LEE
+			tag = VMA
+			tag = SFD
+			tag = SPV
+			tag = CUL
+			tag = RAP
+			tag = WRT
+		}
+	}
+
+	mission_va_nova_capture_charlottesville = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_va_nova_stabilize_our_home_region }
+		trigger = {
+			area_va_louisa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_charlottesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_louisa
+				area = area_va_charlottesville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_stabilize_charlottesville = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_va_nova_capture_charlottesville }
+		trigger = {
+			area_va_charlottesville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_va_lynchburg = { add_permanent_claim = ROOT }
+			area_va_roanoke = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_charlottesville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_va_nova_into_the_blue_ridge = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_va_nova_stabilize_charlottesville }
+		trigger = {
+			area_va_lynchburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_roanoke = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_lynchburg
+				area = area_va_roanoke
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_va_nova_accept_central_virginian = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_va_nova_administering_richmond }
+		trigger = {
+			accepted_culture = culture_central_virginian
+ 		}
+		effect = {
+			area_va_central = { add_permanent_claim = ROOT }
+			area_va_goochland = { add_permanent_claim = ROOT }
+			area_va_southern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_va_nova_the_piedmont_campaign = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_va_nova_accept_central_virginian }
+		trigger = {
+			area_va_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_goochland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_va_central
+				area = area_va_goochland
+				area = area_va_southern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

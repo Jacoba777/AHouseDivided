@@ -1,0 +1,25 @@
+capital="Antigo"
+discovered_by = great_lakes
+discovered_by = northern_plains
+discovered_by = central_plains
+hre = no
+base_tax=1
+base_production=1
+base_manpower=1
+native_size=30
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_north_highlander
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=0
+}
+
+1444.11.13 = {
+	owner=XWI
+	add_core=XWI
+	controller=XWI
+}

@@ -1,0 +1,30 @@
+capital="Riverhead"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=12
+base_production=10
+base_manpower=10
+native_size=320
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_nyc
+center_of_trade=1
+is_city = yes
+owner=SUF
+add_core=SUF
+add_core=NYC
+controller=SUF
+
+1444.11.12 = {
+	base_tax=86
+	base_production=39
+	base_manpower=37
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

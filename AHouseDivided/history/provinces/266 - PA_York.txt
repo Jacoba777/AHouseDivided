@@ -1,0 +1,31 @@
+capital="York"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=7
+base_production=7
+base_manpower=8
+native_size=220
+native_ferocity=5
+native_hostileness=4
+religion=methodist
+culture=culture_penn_dutch
+center_of_trade=1
+is_city = yes
+owner=YRK
+add_core=YRK
+controller=YRK
+
+1444.11.12 = {
+	base_tax=8
+	base_production=8
+	base_manpower=11
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

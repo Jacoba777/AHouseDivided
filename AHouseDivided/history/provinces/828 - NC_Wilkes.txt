@@ -1,0 +1,28 @@
+capital="Wilkesboro"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=3
+base_production=3
+base_manpower=3
+native_size=90
+native_ferocity=5
+native_hostileness=4
+religion=baptist
+culture=culture_blue_ridge
+is_city = yes
+owner=WKS
+add_core=WKS
+controller=WKS
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

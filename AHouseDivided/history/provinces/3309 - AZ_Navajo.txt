@@ -1,0 +1,29 @@
+capital="Holbrook"
+discovered_by = southwest
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=4
+base_production=3
+base_manpower=4
+native_size=110
+native_ferocity=4
+native_hostileness=4
+religion=mormon
+culture=culture_navajo
+is_city = yes
+owner=FMG
+add_core=FMG
+controller=FMG
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XAZ
+	add_core=XAZ
+	controller=XAZ
+}

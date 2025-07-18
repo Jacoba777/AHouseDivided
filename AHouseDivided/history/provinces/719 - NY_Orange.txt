@@ -1,0 +1,30 @@
+capital="Goshen"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=8
+base_production=7
+base_manpower=7
+native_size=220
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_hudsonian
+is_city = yes
+owner=GSN
+add_core=GSN
+add_core=NYC
+controller=GSN
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=14
+	base_production=8
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

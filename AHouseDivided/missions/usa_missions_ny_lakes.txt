@@ -1,0 +1,447 @@
+missions_ny_lakes_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SYC
+			tag = AUB
+			tag = RCR
+			tag = SNF
+			tag = BAT
+			tag = BUF
+			tag = OLE
+			tag = JMS
+		}
+	}
+
+	mission_ny_lakes_the_rochester_question = {
+		icon = mission_luther_theses
+		position = 2
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = RCR
+				AND = {
+					exists = RCR
+					military_strength = {
+						who = RCR
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = RCR
+			}
+			OR = {
+				RCR = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				RCR = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = RCR }
+				tag = RCR
+			}
+ 		}
+		effect = {
+			area_ny_rochester = { add_permanent_claim = ROOT }
+			area_ny_finger_lakes = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_lakes_annex_the_hudson_valley = {
+		icon = mission_se_along_the_river
+		position = 7
+		required_missions = { mission_ny_lakes_the_great_push_east }
+		trigger = {
+			area_ny_hudson_valley = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ny_lower_hudson_valley = { add_permanent_claim = ROOT }
+			755 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_hudson_valley
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_lakes_biting_the_big_apple = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_ny_lakes_annex_the_hudson_valley }
+		trigger = {
+			area_ny_lower_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			755 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_lower_hudson_valley
+				province_id = 755
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_lakes_taming_new_york_city = {
+		icon = mission_statue_of_liberty
+		position = 9
+		required_missions = { mission_ny_lakes_biting_the_big_apple }
+		trigger = {
+			area_ny_lower_hudson_valley = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			755 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_lower_hudson_valley
+				province_id = 755
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_ny_lakes_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SYC
+			tag = AUB
+			tag = RCR
+			tag = SNF
+			tag = BAT
+			tag = BUF
+			tag = OLE
+			tag = JMS
+		}
+	}
+
+	mission_ny_lakes_the_rochester_gambit = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ny_lakes_the_rochester_question mission_ny_lakes_consolidating_our_realm }
+		trigger = {
+			706 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			737 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ny_finger_lakes = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 0.25
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 706
+				province_id = 737
+				area = area_ny_finger_lakes
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_lakes_the_iroquois_campaign = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ny_lakes_the_rochester_gambit }
+		trigger = {
+			area_ny_buffalo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_syracuse = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_finger_lakes = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_rochester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_buffalo
+				area = area_ny_syracuse
+				area = area_ny_finger_lakes
+				area = area_ny_rochester
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_lakes_an_upstate_confederation = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_ny_lakes_the_iroquois_campaign }
+		trigger = {
+			accepted_culture = culture_rochesterite
+			accepted_culture = culture_buffalonian
+			accepted_culture = culture_syracusan
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+			area_ny_southern_tier = { add_permanent_claim = ROOT }
+			area_ny_eastern = { add_permanent_claim = ROOT }
+			area_ny_hudson_valley = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_lakes_the_great_push_east = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ny_lakes_an_upstate_confederation }
+		trigger = {
+			area_ny_southern_tier = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ny_hudson_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_southern_tier
+				area = area_ny_eastern
+				area = area_ny_hudson_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ny_lakes_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SYC
+			tag = AUB
+			tag = RCR
+			tag = SNF
+			tag = BAT
+			tag = BUF
+			tag = OLE
+			tag = JMS
+		}
+	}
+
+	mission_ny_lakes_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_ny_lakes_consolidating_our_realm = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ny_lakes_fielding_an_army }
+		trigger = {
+            NOT = { num_of_subjects = 1 }
+            num_of_owned_provinces_with = {
+                value = 4
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+			OR = {
+
+
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_lakes_incorporate_the_east = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_ny_lakes_the_great_push_east }
+		trigger = {
+			area_ny_eastern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ny_albany = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_eastern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_lakes_retaking_the_old_capital = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_ny_lakes_incorporate_the_east }
+		trigger = {
+			area_ny_albany = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_albany
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_lakes_administering_a_capital = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_ny_lakes_retaking_the_old_capital }
+		trigger = {
+			area_ny_albany = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ny_albany
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

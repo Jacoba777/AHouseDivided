@@ -1,0 +1,29 @@
+capital="Waukesha"
+discovered_by = great_lakes
+discovered_by = northern_plains
+discovered_by = central_plains
+hre = no
+base_tax=8
+base_production=8
+base_manpower=7
+native_size=230
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_milwaukeean
+is_city = yes
+owner=MWK
+add_core=MWK
+controller=MWK
+
+1444.11.12 = {
+	base_tax=14
+	base_production=12
+	base_manpower=10
+}
+
+1444.11.13 = {
+	owner=XWI
+	add_core=XWI
+	controller=XWI
+}

@@ -1,0 +1,86 @@
+acadia_national_park = {
+	start = 1606
+	date = 1444.1.1
+	time = { months = 0 }
+	build_cost = 0
+	can_be_moved = yes
+	move_days_per_unit_distance = 1
+	starting_tier = 2
+	type = monument
+	build_trigger = {
+		OR = {
+			culture_group = culture_group_woodlands_new_england
+			culture_group = culture_group_maritime_new_england
+		}
+		province_is_or_accepts_culture = yes
+	}
+	on_built = {}
+	on_destroyed = {}
+	can_use_modifiers_trigger = {
+		OR = {
+			culture_group = culture_group_woodlands_new_england
+			culture_group = culture_group_maritime_new_england
+		}
+		province_is_or_accepts_culture = yes
+	}
+	can_upgrade_trigger = {
+		OR = {
+			culture_group = culture_group_woodlands_new_england
+			culture_group = culture_group_maritime_new_england
+		}
+		province_is_or_accepts_culture = yes
+	}
+	keep_trigger = {}
+	tier_0 = {
+		upgrade_time = { months = 0 }
+		cost_to_upgrade = { factor = 0 }
+		province_modifiers = {}
+		area_modifier = {}
+		country_modifiers = {}
+		on_upgraded = {}
+	}
+	tier_1 = {
+		upgrade_time = { months = 120 }
+		cost_to_upgrade = { factor = 1000 }
+		province_modifiers = {}
+		area_modifier = {}
+		region_modifier = {
+			local_friendly_movement_speed = 0.05
+		}
+		country_modifiers = {
+			horde_unity = 0.5
+			envoy_travel_time = -0.15
+		}
+		on_upgraded = {}
+	}
+	tier_2 = {
+		upgrade_time = { months = 240 }
+		cost_to_upgrade = { factor = 2500 }
+		province_modifiers = {}
+		area_modifier = {}
+		region_modifier = {
+			local_friendly_movement_speed = 0.1
+			regiment_recruit_speed = -0.1
+		}
+		country_modifiers = {
+			horde_unity = 0.5
+			envoy_travel_time = -0.15
+		}
+		on_upgraded = {}
+	}
+	tier_3 = {
+		upgrade_time = { months = 480 }
+		cost_to_upgrade = { factor = 5000 }
+		province_modifiers = {}
+		area_modifier = {}
+		region_modifier = {
+			local_friendly_movement_speed = 0.2
+			regiment_recruit_speed = -0.25
+		}
+		country_modifiers = {
+			horde_unity = 1 
+			envoy_travel_time = -0.25
+		}
+		on_upgraded = {}
+	}
+}

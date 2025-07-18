@@ -1,0 +1,8 @@
+technology_group = new_england
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = catholic
+primary_culture = culture_bostonian
+capital = 471
+elector = yes

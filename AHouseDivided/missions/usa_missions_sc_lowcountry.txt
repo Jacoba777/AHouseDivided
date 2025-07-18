@@ -1,0 +1,308 @@
+missions_sc_lowcountry_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CLS
+			tag = HIL
+		}
+	}
+
+	mission_sc_lowcountry_beachfront_property = {
+		icon = mission_ne_great_lakes_conquest
+		position = 4
+		required_missions = { mission_sc_lowcountry_peace_in_the_lowcountry }
+		trigger = {
+			area_sc_myrtle_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 0.5
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_myrtle_beach
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_sc_lowcountry_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CLS
+			tag = HIL
+		}
+	}
+
+	mission_sc_lowcountry_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_sc_charleston = { add_permanent_claim = ROOT }
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_sc_lowcountry_going_coastal = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_sc_lowcountry_fielding_an_army }
+		trigger = {
+			area_sc_charleston = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_sc_lowcountry = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_charleston
+				area = area_sc_lowcountry
+			}
+			NOT = { owned_by = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_sc_lowcountry_peace_in_the_lowcountry = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_sc_lowcountry_going_coastal }
+		trigger = {
+			area_sc_charleston = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_sc_lowcountry = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_sc_columbia = { add_permanent_claim = ROOT }
+			area_sc_newberry = { add_permanent_claim = ROOT }
+			area_sc_myrtle_beach = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_charleston
+				area = area_sc_lowcountry
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+}
+
+missions_sc_lowcountry_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = CLS
+			tag = HIL
+		}
+	}
+
+	mission_sc_lowcountry_denounce_columbia = {
+		icon = mission_cum
+		position = 4
+		required_missions = { mission_sc_lowcountry_peace_in_the_lowcountry }
+		trigger = {
+			OR = {
+				is_rival = CUM
+				AND = {
+					exists = CUM
+					military_strength = {
+						who = CUM
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CUM
+			}
+			OR = {
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CUM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CUM }
+				tag = CUM
+			}
+ 		}
+		effect = {
+			area_sc_columbia = { add_permanent_claim = ROOT }
+			area_sc_thoroughbred = { add_permanent_claim = ROOT }
+			area_sc_newberry = { add_permanent_claim = ROOT }
+			CUM = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_sc_lowcountry_battle_for_the_midlands = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_sc_lowcountry_denounce_columbia }
+		trigger = {
+			area_sc_columbia = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_lowcountry_administering_columbia = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_sc_lowcountry_battle_for_the_midlands }
+		trigger = {
+			area_sc_columbia = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_sc_greenville = { add_permanent_claim = ROOT }
+			area_sc_old_96_district = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_columbia
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_sc_lowcountry_upcountry_upheaval = {
+		icon = mission_grn
+		position = 7
+		required_missions = { mission_sc_lowcountry_administering_columbia }
+		trigger = {
+			area_sc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_greenville
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_sc_lowcountry_peace_in_greenville = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_sc_lowcountry_upcountry_upheaval }
+		trigger = {
+			area_sc_greenville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 75
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_greenville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

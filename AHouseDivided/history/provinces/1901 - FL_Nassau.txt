@@ -1,0 +1,28 @@
+capital="Fernandina Beach"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=5
+base_production=4
+base_manpower=4
+native_size=130
+native_ferocity=4
+native_hostileness=3
+religion=baptist
+culture=culture_jacksonvillian
+is_city = yes
+owner=JSV
+add_core=JSV
+controller=JSV
+
+1444.11.12 = {
+	base_tax=2
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

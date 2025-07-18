@@ -1,0 +1,29 @@
+capital="Placerville"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=8
+base_production=5
+base_manpower=6
+native_size=190
+native_ferocity=3
+native_hostileness=4
+religion=catholic
+culture=culture_sacramentan
+is_city = yes
+owner=SCM
+add_core=SCM
+controller=SCM
+
+1444.11.12 = {
+	base_tax=10
+	base_production=3
+	base_manpower=5
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

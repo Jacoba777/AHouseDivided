@@ -1,0 +1,31 @@
+capital="Albuquerque"
+discovered_by = southwest
+discovered_by = lower_rockies
+discovered_by = texas
+hre = no
+base_tax=8
+base_production=9
+base_manpower=9
+native_size=260
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_burqueno
+center_of_trade=2
+is_city = yes
+owner=ABQ
+add_core=ABQ
+controller=ABQ
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=12
+	base_production=15
+	base_manpower=16
+}
+
+1444.11.13 = {
+	owner=XNM
+	add_core=XNM
+	controller=XNM
+}

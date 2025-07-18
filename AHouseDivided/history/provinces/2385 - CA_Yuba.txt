@@ -1,0 +1,30 @@
+capital="Marysville"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=5
+base_production=3
+base_manpower=4
+native_size=120
+native_ferocity=3
+native_hostileness=4
+religion=catholic
+culture=culture_sacramentan
+is_city = yes
+owner=YUB
+add_core=YUB
+controller=YUB
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

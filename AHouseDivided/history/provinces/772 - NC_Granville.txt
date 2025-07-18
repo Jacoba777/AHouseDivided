@@ -1,0 +1,28 @@
+capital="Oxford"
+discovered_by = appalachia
+discovered_by = southeast
+hre = no
+base_tax=4
+base_production=4
+base_manpower=3
+native_size=110
+native_ferocity=5
+native_hostileness=3
+religion=baptist
+culture=culture_raleighite
+is_city = yes
+owner=DUR
+add_core=DUR
+controller=DUR
+
+1444.11.12 = {
+	base_tax=1
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XNC
+	add_core=XNC
+	controller=XNC
+}

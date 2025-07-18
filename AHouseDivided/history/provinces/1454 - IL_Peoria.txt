@@ -1,0 +1,31 @@
+capital="Peoria"
+discovered_by = great_lakes
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=5
+base_production=6
+base_manpower=6
+native_size=170
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_peorian
+center_of_trade=1
+is_city = yes
+owner=PEA
+add_core=PEA
+controller=PEA
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=5
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XIL
+	add_core=XIL
+	controller=XIL
+}

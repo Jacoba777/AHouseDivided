@@ -1,0 +1,32 @@
+capital="Los Angeles"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=15
+base_production=14
+base_manpower=15
+native_size=440
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_angelino
+center_of_trade=2
+is_city = yes
+owner=LAX
+add_core=LAX
+controller=LAX
+fort_15th=yes
+trade_goods=gems
+
+1444.11.12 = {
+	base_tax=414
+	base_production=297
+	base_manpower=233
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

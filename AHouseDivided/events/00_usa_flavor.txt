@@ -1,0 +1,82 @@
+namespace = flavor_usa
+
+# Blue Crab Boom
+country_event = {
+	id = flavor_usa.1
+	title = flavor_usa.1.title
+	desc = flavor_usa.1.desc
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	trigger = {
+		num_of_owned_provinces_with = {
+			value = 1
+			OR = {
+				region = region_md
+				region = region_va
+			}
+			trade_goods = fish
+		}
+	}
+
+	option = {
+		name = flavor_usa.1.a
+
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = region_md
+					region = region_va
+				}
+				trade_goods = fish
+			}
+			add_permanent_province_modifier = {
+				name = "country_modifier_blue_crab_boom"
+				duration = 730
+			}
+		}
+		
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = flavor_usa.1.b
+
+		add_country_modifier = {
+			name = "country_modifier_blue_crab_handouts"
+			duration = 1825
+		}
+		
+		ai_chance = { factor = 0 }
+	}
+}
+
+# Maryland: The question of monarchy
+country_event = {
+	id = flavor_usa.2
+	title = flavor_usa.2.title
+	desc = flavor_usa.2.desc
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_usa.2.a
+
+		change_government = monarchy
+		
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = flavor_usa.2.b
+
+		add_stability = 1
+		add_republican_tradition = 25
+		
+		ai_chance = { factor = 0 }
+	}
+}

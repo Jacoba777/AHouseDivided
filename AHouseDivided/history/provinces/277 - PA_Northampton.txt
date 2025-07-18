@@ -1,0 +1,30 @@
+capital="Easton"
+discovered_by = mid_atlantic
+discovered_by = great_lakes
+discovered_by = appalachia
+discovered_by = new_england
+hre = no
+base_tax=7
+base_production=7
+base_manpower=7
+native_size=210
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_allentonian
+is_city = yes
+owner=ALN
+add_core=ALN
+controller=ALN
+
+1444.11.12 = {
+	base_tax=7
+	base_production=6
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XPA
+	add_core=XPA
+	controller=XPA
+}

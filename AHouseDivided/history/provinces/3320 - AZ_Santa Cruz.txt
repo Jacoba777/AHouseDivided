@@ -1,0 +1,29 @@
+capital="Nogales"
+discovered_by = southwest
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=catholic
+culture=culture_tusconian
+is_city = yes
+owner=NGL
+add_core=NGL
+controller=NGL
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XAZ
+	add_core=XAZ
+	controller=XAZ
+}

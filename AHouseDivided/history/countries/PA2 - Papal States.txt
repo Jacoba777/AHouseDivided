@@ -1,0 +1,18 @@
+technology_group = mid_atlantic
+government = theocracy
+add_government_reform = papacy_reform
+government_rank = 1
+religion = catholic
+primary_culture = culture_central_jersey
+capital = 294
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Snooki"
+		dynasty = "Polizzi"
+		adm = 3
+		dip = 4
+		mil = 1
+	}
+}

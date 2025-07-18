@@ -1,0 +1,796 @@
+missions_in_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XIN }
+
+	mission_in_invade_illinois = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_in_the_hoosier_reunion }
+		trigger = {
+			area_il_northeast_little_egypt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_champaign = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_danville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_northeast_little_egypt
+				area = area_il_eastern
+				area = area_il_champaign
+				area = area_il_danville
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_the_way_of_the_valley = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_in_invade_illinois }
+		trigger = {
+			accepted_culture = culture_valley_illinoisian
+ 		}
+		effect = {
+			area_il_south_central = { add_permanent_claim = ROOT }
+			area_il_east_little_egypt = { add_permanent_claim = ROOT }
+			area_il_west_little_egypt = { add_permanent_claim = ROOT }
+			area_il_greater_saline = { add_permanent_claim = ROOT }
+			area_il_carbondale = { add_permanent_claim = ROOT }
+			area_il_southern_tip = { add_permanent_claim = ROOT }
+			area_il_southeastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_pharaoh_of_little_egypt = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_in_the_way_of_the_valley }
+		trigger = {
+			area_il_south_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_east_little_egypt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_west_little_egypt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_greater_saline = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_carbondale = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southern_tip = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_south_central
+				area = area_il_east_little_egypt
+				area = area_il_west_little_egypt
+				area = area_il_greater_saline
+				area = area_il_carbondale
+				area = area_il_southern_tip
+				area = area_il_southeastern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_prepare_for_central_illinois = {
+		icon = mission_assemble_an_army
+		position = 6
+		required_missions = { mission_in_stabilize_chicago mission_in_pharaoh_of_little_egypt }
+		trigger = {
+
+ 		}
+		effect = {
+			region_il = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_the_lincoln_campaign = {
+		icon = mission_il
+		position = 7
+		required_missions = { mission_in_prepare_for_central_illinois }
+		trigger = {
+			region_il = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_il
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_investments_in_basketball = {
+		icon = mission_basketball
+		position = 8
+		required_missions = {  }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 15
+                num_of_times_expanded_infrastructure = 1
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_great_basketball_craze
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_in_the_indy_500 = {
+		icon = mission_indy500
+		position = 9
+		required_missions = { mission_in_investments_in_basketball }
+		trigger = {
+            1294 = {
+                has_great_project = {
+                    type = indy500
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_indy_500_speed
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_in_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XIN }
+
+	mission_in_indiana-_phylactic_shock = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_in = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_in
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_the_hoosier_reunion = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_in_indiana-_phylactic_shock }
+		trigger = {
+			region_in = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			area_il_northeast_little_egypt = { add_permanent_claim = ROOT }
+			area_il_eastern = { add_permanent_claim = ROOT }
+			area_il_champaign = { add_permanent_claim = ROOT }
+			area_il_danville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_in
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_embrace_chicagolander = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_in_the_hoosier_reunion }
+		trigger = {
+			accepted_culture = culture_chicagolander
+ 		}
+		effect = {
+			area_il_south_chicago = { add_permanent_claim = ROOT }
+			area_il_chicago = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_the_fate_of_windy_city = {
+		icon = mission_ccg
+		position = 4
+		required_missions = { mission_in_embrace_chicagolander }
+		trigger = {
+			area_il_south_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_south_chicago
+				area = area_il_chicago
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_stabilize_chicago = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_in_the_fate_of_windy_city }
+		trigger = {
+			area_il_south_chicago = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_chicago = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_south_chicago
+				area = area_il_chicago
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_midwestern_agriculture = {
+		icon = mission_corn_and_soybeans
+		position = 8
+		required_missions = {  }
+		trigger = {
+            OR = {
+                production_leader = { trade_goods = corn }
+                production_leader = { trade_goods = soybeans }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_breadbasket_of_america
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_in_foster_conservatism = {
+		icon = mission_conservatism
+		position = 9
+		required_missions = { mission_in_midwestern_agriculture }
+		trigger = {
+            OR = {
+                government = monarchy
+                government = theocracy
+                faction_influence = {
+                    faction = faction_conservatives
+                    influence = 75
+                }
+            }
+            OR = {
+                full_idea_group = plutocracy_ideas
+                full_idea_group = aristocracy_ideas
+                full_idea_group = religious_ideas
+            }
+            NOT = { religion = atheist }
+            NOT = { religion = secular }
+            religious_unity = 0.99
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 100
+		}
+
+	}
+
+	mission_in_rustbelt_revival = {
+		icon = mission_rust_belt
+		position = 10
+		required_missions = { mission_in_foster_conservatism mission_in_the_indy_500 }
+		trigger = {
+            region_in = {
+                type = all
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_rustbelt_revival
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_in_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XIN }
+
+	mission_in_accept_lousivillian = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_in_the_hoosier_reunion }
+		trigger = {
+			accepted_culture = culture_louisvillian
+ 		}
+		effect = {
+			area_ky_fort_knox = { add_permanent_claim = ROOT }
+			area_ky_south_louisville = { add_permanent_claim = ROOT }
+			area_ky_west_louisvillle = { add_permanent_claim = ROOT }
+			area_ky_northern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 5
+		required_missions = { mission_in_the_fate_of_windy_city }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+			area_wi_southeastern = { add_permanent_claim = ROOT }
+			area_wi_milwaukee = { add_permanent_claim = ROOT }
+			area_wi_fond_du_lac = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_capture_milwaukee = {
+		icon = mission_mwk
+		position = 6
+		required_missions = { mission_in_build_a_navy }
+		trigger = {
+			area_wi_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_milwaukee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_fond_du_lac = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_mi_michiana = { add_permanent_claim = ROOT }
+			area_mi_grand_rapids = { add_permanent_claim = ROOT }
+			area_mi_southern = { add_permanent_claim = ROOT }
+
+			area_mi_jackson = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_southeastern
+				area = area_wi_milwaukee
+				area = area_wi_fond_du_lac
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_invade_the_mitten = {
+		icon = mission_grr
+		position = 7
+		required_missions = { mission_in_capture_milwaukee }
+		trigger = {
+			area_mi_michiana = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_grand_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_jackson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_michiana
+				area = area_mi_grand_rapids
+				area = area_mi_southern
+				area = area_mi_jackson
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_pacify_the_michiganders = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_in_invade_the_mitten }
+		trigger = {
+			area_mi_grand_rapids = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mi_southern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_grand_rapids
+				area = area_mi_southern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_ohio_valley_preparations = {
+		icon = mission_assemble_an_army
+		position = 9
+		required_missions = { mission_in_integrate_columbus mission_in_pacify_the_michiganders }
+		trigger = {
+
+ 		}
+		effect = {
+			region_oh = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_in_the_end_of_ohio = {
+		icon = mission_oh
+		position = 10
+		required_missions = { mission_in_ohio_valley_preparations }
+		trigger = {
+			region_oh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_oh
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_crossroads_of_america = {
+		icon = mission_in
+		position = 11
+		required_missions = { mission_in_rustbelt_revival mission_in_the_end_of_ohio }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_crossroads_of_america
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_in_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XIN }
+
+	mission_in_crossing_the_ohio = {
+		icon = mission_lvl
+		position = 4
+		required_missions = { mission_in_accept_lousivillian }
+		trigger = {
+			area_ky_fort_knox = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_south_louisville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_west_louisvillle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ky_south_cincinnati = { add_permanent_claim = ROOT }
+			area_ky_cincinnati = { add_permanent_claim = ROOT }
+			area_oh_north_cincinnati = { add_permanent_claim = ROOT }
+			area_oh_southwestern = { add_permanent_claim = ROOT }
+			area_ky_owensboro = { add_permanent_claim = ROOT }
+			area_ky_grayson = { add_permanent_claim = ROOT }
+			area_ky_danville = { add_permanent_claim = ROOT }
+			area_ky_frankfort = { add_permanent_claim = ROOT }
+			area_ky_lexington = { add_permanent_claim = ROOT }
+			area_ky_mount_sterling = { add_permanent_claim = ROOT }
+			area_ky_harrison = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_fort_knox
+				area = area_ky_south_louisville
+				area = area_ky_west_louisvillle
+				area = area_ky_northern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_trouble_in_cincinnati = {
+		icon = mission_cin
+		position = 5
+		required_missions = { mission_in_crossing_the_ohio }
+		trigger = {
+			area_ky_south_cincinnati = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_cincinnati = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_north_cincinnati = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_south_cincinnati
+				area = area_ky_cincinnati
+				area = area_oh_north_cincinnati
+				area = area_oh_southwestern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_peace_in_little_paris = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_in_trouble_in_cincinnati }
+		trigger = {
+			area_ky_cincinnati = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_north_cincinnati = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_oh_western = { add_permanent_claim = ROOT }
+			area_oh_dayton = { add_permanent_claim = ROOT }
+			area_oh_columbus = { add_permanent_claim = ROOT }
+			area_oh_east_columbus = { add_permanent_claim = ROOT }
+			area_oh_south_columbus = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_cincinnati
+				area = area_oh_north_cincinnati
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_in_sweep_central_ohio = {
+		icon = mission_cbs
+		position = 7
+		required_missions = { mission_in_peace_in_little_paris }
+		trigger = {
+			area_oh_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_dayton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_columbus = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_east_columbus = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_south_columbus = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 0.75
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_western
+				area = area_oh_dayton
+				area = area_oh_columbus
+				area = area_oh_east_columbus
+				area = area_oh_south_columbus
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_in_integrate_columbus = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_in_sweep_central_ohio }
+		trigger = {
+			area_oh_dayton = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_columbus = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_oh_east_columbus = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_oh_dayton
+				area = area_oh_columbus
+				area = area_oh_east_columbus
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_in_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XIN }
+
+	mission_in_the_bluegrass_wars = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_in_crossing_the_ohio }
+		trigger = {
+			area_ky_owensboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_grayson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_danville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_frankfort = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_lexington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_mount_sterling = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_harrison = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ky_owensboro
+				area = area_ky_grayson
+				area = area_ky_danville
+				area = area_ky_frankfort
+				area = area_ky_lexington
+				area = area_ky_mount_sterling
+				area = area_ky_harrison
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

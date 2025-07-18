@@ -1,0 +1,1599 @@
+XGA_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XGA
+	}
+	
+	start = {
+		defensiveness = 0.10
+	}
+
+	bonus = {
+		global_missionary_strength = 0.01
+	}
+
+	georgian_plantations = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	shermans_march_lessons = {
+		global_monthly_devastation = -0.2
+	}
+
+	munitions_plants = {
+		land_maintenance_modifier = -0.05
+	}
+
+	rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.15
+	}
+
+	cola = {
+		global_unrest = -1
+	}
+
+	martin_luther_king_legacy = {
+		num_accepted_cultures = 1
+		prestige = 0.5
+	}
+
+	hub_of_the_south = {
+		caravan_power = 0.2
+		trade_efficiency = 0.1
+	}
+}
+
+XOH_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XOH
+	}
+	
+	start = {
+        global_spy_defence = 0.1
+    }
+
+    bonus = {
+        fire_damage_received = -0.10
+    }
+
+	industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	oh_navigable_waterways = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	cleveland_steel = {
+		build_cost = -0.1
+	}
+
+	pharmaceuticals = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.1
+	}
+
+	ohio_presidents = {
+		administrative_efficiency = 0.1
+		prestige = 0.25
+	}
+	
+	four_dead_in_ohio = {
+		global_unrest = -1.0
+		stability_cost_modifier = -0.10
+	}
+}
+
+XLA_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XLA
+	}
+	
+	start = {
+        land_attrition = -0.10
+    }
+
+    bonus = {
+        estate_interaction_cooldown_modifier = -0.2
+    }
+	
+	mississippi_mouth = {
+		trade_efficiency = 0.2
+	}
+
+	bayou_resistance = {
+		enemy_core_creation = 0.2
+	}
+
+	legacy_of_huey_long = {
+		yearly_absolutism = 0.25
+		max_absolutism = 10
+	}
+
+	mardi_gras_celebrations = {
+		stability_cost_modifier = -0.10
+		prestige = 0.25
+	}
+
+	levees = {
+		global_monthly_devastation = -0.25
+	}
+	
+	religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.1
+	}
+
+	cajun_perseverence = {
+		development_cost_in_primary_culture = -0.1
+		same_culture_advisor_cost = -0.2
+	}
+}
+
+XIN_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XIN
+	}
+
+	start = {
+		production_efficiency = 0.10
+	}
+
+	bonus = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+	
+	ambitious_developers = {
+		local_development_cost = -0.15
+	}
+
+	industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	bounty_hunters = {
+		merc_maintenance_modifier = -0.10
+		mercenary_discipline = 0.05
+	}
+
+	austerity = {
+		inflation_action_cost = -0.25
+	}
+	
+	in_volunteers = {
+		land_forcelimit_modifier = 0.25
+	}
+
+	pharmaceuticals = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+}
+
+XMS_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XMS
+	}
+
+	start = {
+		production_efficiency = 0.05
+	}
+
+	bonus = {
+		artillery_power = 0.10
+	}
+
+	jacksonian_democracy = {
+		monthly_gold_inflation_modifier = -0.1
+		expel_minorities_cost = -0.2
+	}
+
+	rebels_without_a_cause = {
+		manpower_in_true_faith_provinces = 0.15
+	}
+
+	freedom_summer = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	casinos = {
+		global_tax_modifier = 0.1
+	}
+
+	ms_blues = {
+		culture_conversion_cost = -0.25
+		prestige = 0.2
+	}
+
+	bible_belt_values = {
+		global_missionary_strength = 0.02
+        tolerance_own = 1.0
+	}
+
+	steadfast_conservatives = {
+		stability_cost_modifier = -0.1
+		global_unrest = -1
+	}
+}
+
+XIL_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XIL
+	}
+
+	start = {
+		blockade_efficiency = 0.2
+	}
+
+	bonus = {
+		state_governing_cost = -0.1
+	}
+	
+	financial_hub = {
+        merchants = 1
+	}
+
+	public_education = {
+		adm_tech_cost_modifier = -0.05
+        innovativeness_gain = 0.5
+	}
+
+	religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.1
+	}
+
+	well_funded_state = {
+		global_tax_modifier = 0.1
+	}
+
+	great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	legacy_of_abraham_lincoln = {
+		prestige = 1
+	}
+}
+
+XAL_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XAL
+	}
+
+	start = {
+		fire_damage_received = -0.10
+	}
+
+	bonus = {
+		same_religion_advisor_cost = -0.25
+	}
+
+	bible_belt_values = {
+		global_missionary_strength = 0.02
+        tolerance_own = 1.0
+	}
+
+	steadfast_conservatives = {
+		stability_cost_modifier = -0.1
+		global_unrest = -1
+	}
+
+	busy_port_cities = {
+		global_prov_trade_power_modifier = 0.1
+	}
+
+	king_cotton = {
+		production_efficiency = 0.05
+	}
+	
+	huntsville_logistics = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	legacy_of_rosa_parks = {
+		prestige = 0.25
+		num_accepted_cultures = 1
+	}
+
+	tuskegee_university = {
+		adm_tech_cost_modifier = -0.05
+        innovativeness_gain = 0.5
+	}
+}
+
+XMO_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XMO
+	}
+	
+	start = {
+        cavalry_cost = -0.15
+    }
+
+    bonus = {
+        land_forcelimit_modifier = 0.10
+    }
+
+	the_ozarks = {
+		global_tax_modifier = 0.10
+	}
+
+	mo_cultural_confluence = {
+		improve_relation_modifier = 0.25
+		culture_conversion_cost = -0.1
+	}
+
+	winemaking = {
+		global_unrest = -1
+	}
+	
+	gateway_to_the_west = {
+		colonists = 1
+	}
+
+	st_louis_financial_center = {
+		interest = -0.5
+		development_cost = -0.05
+	}
+
+	legacy_of_mark_twain = {
+		prestige = 0.5
+	}
+
+	show_me = {
+		global_spy_defence = 0.2
+		institution_spread_from_true_faith = 0.1
+	}
+}
+
+XAR_ideas = {
+	free = yes
+
+	trigger = {
+		tag = XAR
+	}
+	
+	start = {
+        adm_tech_cost_modifier = -0.1
+    }
+
+    bonus = {
+        mercenary_manpower = 0.10
+    }
+
+	little_rock_river_port = {
+		trade_steering = 0.15
+	}
+
+	natural_state = {
+		stability_cost_modifier = -0.1
+	}
+
+	ar_the_family = {
+		administrative_efficiency = 0.1
+	}
+
+	little_rock_nine = {
+		prestige = 0.25
+		num_accepted_cultures = 1
+	}
+
+	bible_belt_values = {
+		global_missionary_strength = 0.02
+        tolerance_own = 1.0
+	}
+
+	the_ozarks = {
+		global_tax_modifier = 0.10
+	}
+
+	walmart = {
+		global_trade_power = 0.15
+	}
+}
+
+XMI_ideas = {
+	free = yes
+	start = {
+		naval_forcelimit_modifier = 0.1
+	}
+
+	bonus = {
+		production_efficiency = 0.1
+	}
+
+	trigger = {
+		tag = XMI
+	}
+
+	great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	legacy_of_the_edmund_fitzgerald = {
+		ship_durability = 0.15
+	}
+
+	industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	northern_wolverines = {
+		hostile_attrition = 1
+		defensiveness = 0.15
+	}
+
+	lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	industrial_innovation = {
+		innovativeness_gain = 0.5
+		build_time = -0.25
+	}
+
+	coast_guard = {
+		naval_maintenance_modifier = -0.1
+		naval_morale = 0.1
+	}
+}
+
+XFL_ideas = {
+	free = yes
+	start = {
+		navy_tradition = 1
+	}
+
+	bonus = {
+		years_of_nationalism = -5
+	}
+
+	trigger = {
+		tag = XFL
+	}
+
+	florida_sunshine = {
+		development_cost = -0.15
+	}
+
+	gulf_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	kennedy_space_center = {
+		prestige = 1
+	}
+
+	everglades = {
+		land_attrition = -0.10
+        defensiveness = 0.15
+	}
+
+	public_education = {
+		adm_tech_cost_modifier = -0.05
+        innovativeness_gain = 0.5
+	}
+
+	retirement_communities = {
+		global_tax_modifier = 0.15
+	}
+
+	latino_wall_street = {
+		merchants = 1
+	}
+}
+
+XTX_ideas = {
+	free = yes
+	start = {
+		governing_capacity = 100
+	}
+
+	bonus = {
+		war_exhaustion = -0.05                  
+	}
+
+	trigger = {
+		tag = XTX
+	}
+
+	the_lone_star = {
+		yearly_absolutism = 0.5
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	cowboys = {
+		cavalry_cost = -0.10
+        cavalry_fire = 1
+	}
+
+	texas_rangers = {
+		global_unrest = -1
+	}
+
+	alamo = {
+		land_morale = 0.10
+	}
+
+	tx_space_industry = {
+		prestige = 1
+	}
+
+	high_tech = {
+		innovativeness_gain = 0.5
+		production_efficiency = 0.1
+	}
+
+	bigger_in_texas = {
+		core_creation = -0.2
+        governing_capacity_modifier = 0.1
+	}
+}
+
+XIA_ideas = {
+	free = yes
+	start = {
+        tolerance_own = 1
+	}
+
+	bonus = {
+		num_accepted_cultures = 1
+	}
+
+	trigger = {
+		tag = XIA
+	}
+
+	agricultural_innovations = {
+		production_efficiency = 0.10
+	}
+
+	ia_river_trade = {
+		trade_steering = 0.15
+	}
+
+	corn_and_soybeans = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	county_fairs = {
+		global_unrest = -1
+	}
+
+	rural_resilience = {
+		war_exhaustion = -0.02
+	}
+
+	iowa_caucus = {
+		republican_tradition = 0.2
+		legitimacy = 0.4
+		horde_unity = 0.4
+		meritocracy = 0.4
+		devotion = 0.4
+	}
+
+	black_hawk = {
+		discipline = 0.05
+		prestige = 0.2
+	}
+}
+
+XWI_ideas = {
+	free = yes
+	start = {
+		yearly_absolutism = 0.25
+        max_absolutism = 5
+	}
+
+	bonus = {
+        manpower_in_true_faith_provinces = 0.10
+	}
+
+	trigger = {
+		tag = XWI
+	}
+
+	wi_breweries = {
+		global_unrest = -1
+	}
+
+	great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	wisconisin_cheese = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	wisconsin_idea = {
+		technology_cost = -0.1
+        innovativeness_gain = 0.5
+	}
+
+	progressive_trailblazers_v2 = {
+		reform_progress_growth = 0.2
+		diplomatic_reputation = 0.5
+	}
+
+	badgers = {
+		production_efficiency = 0.05
+	}
+
+	careful_diplomacy = {
+		ae_impact = -0.2
+	}
+}
+
+XCA_ideas = {
+	free = yes
+	start = {
+		governing_capacity = 100
+	}
+
+	bonus = {
+		core_creation = -0.2
+        governing_capacity_modifier = 0.1
+	}
+
+	trigger = {
+		tag = XCA
+	}
+
+	the_golden_state = {
+		monthly_gold_inflation_modifier = -0.25
+	}
+
+	agricultural_innovations = {
+		production_efficiency = 0.10
+	}
+
+	california_dreaming = {
+		prestige = 1
+	}
+
+	bustling_metropolises = {
+		development_cost = -0.1
+	}
+
+	ca_financial_hub = {
+        merchants = 1
+	}
+
+	silicon_valley = {
+		innovativeness_gain = 1
+        idea_cost = -0.075
+        technology_cost = -0.075
+	}
+
+	hollywood = {
+		culture_conversion_cost = -0.25
+        culture_conversion_time = -0.25
+		num_accepted_cultures = 1
+	}
+}
+
+XMN_ideas = {
+	free = yes
+	start = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	bonus = {
+		global_trade_power = 0.1
+	}
+
+	trigger = {
+		tag = XMN
+	}
+
+	land_of_10000_lakes = {
+		defensiveness = 0.1
+	}
+
+	healthcare = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	public_education = {
+		adm_tech_cost_modifier = -0.05
+        innovativeness_gain = 0.5
+	}
+
+	minnesota_nice = {
+		improve_relation_modifier = 0.2
+	}
+
+	county_fairs = {
+		global_unrest = -1
+	}
+
+	iron_range = {
+		production_efficiency = 0.05
+        build_cost = -0.05
+	}
+
+	scandinavian_roots = {
+		development_cost = -0.1
+	}
+}
+
+XOR_ideas = {
+	free = yes
+	start = {
+		overextension_impact_modifier = -0.1
+	}
+
+	bonus = {
+		global_unrest = -1
+	}
+
+	trigger = {
+		tag = XOR
+	}
+
+	lumbermills = {
+        build_cost = -0.15
+	}
+
+	silicon_forest = {
+		innovativeness_gain = 1
+	}
+
+	oregon_system = {
+        reform_progress_growth = 0.25
+	}
+
+	environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	champions_of_democracy = {
+		republican_tradition = 0.3
+	}
+
+	defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	oregon_trail = {
+		global_colonial_growth = 20
+		land_attrition = -0.05
+	}
+}
+
+XKS_ideas = {
+	free = yes
+	start = {
+		global_tax_modifier = 0.05
+	}
+
+	bonus = {
+		caravan_power = 0.2
+	}
+
+	trigger = {
+		tag = XKS
+	}
+
+	john_brown = {
+        movement_speed = 0.1
+		prestige = 0.5
+	}
+
+	county_fairs = {
+		global_unrest = -1
+	}
+
+	bleeding_kansas = {
+        fire_damage = 0.10
+	}
+
+	cattle_drives = {
+		cavalry_cost = -0.10
+        cav_to_inf_ratio = 0.10
+	}
+	
+	settlers_of_the_praries = {
+		colonists = 1
+	}
+
+	anabaptist_traditions = {
+		tolerance_heathen = 2.0
+        tolerance_heretic = 1.0
+	}
+
+	ad_astra_per_aspera = {
+		war_exhaustion = -0.05
+	}
+}
+
+XNV_ideas = {
+	free = yes
+	start = {
+		promote_culture_cost = -0.25
+	}
+
+	bonus = {
+		vassal_forcelimit_bonus = 0.2
+        vassal_manpower_bonus = 0.1
+	}
+
+	trigger = {
+		tag = XNV
+	}
+
+	casinos = {
+		global_tax_modifier = 0.1
+	}
+
+	battle_born = {
+        land_morale = 0.10
+	}
+	
+	hoover_dam = {
+        great_project_upgrade_cost = -0.25
+	}
+
+	boomtowns = {
+        development_cost = -0.1
+        monthly_gold_inflation_modifier = -0.1
+	}
+	
+	area51 = {
+        mil_tech_cost_modifier = -0.15
+	}
+
+	cowboys = {
+		cavalry_cost = -0.10
+        cavalry_fire = 1
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+}
+
+XNE_ideas = {
+	free = yes
+	start = {
+		religious_unity = 0.1
+	}
+
+	bonus = {
+		territories_governing_cost = -0.1
+	}
+
+	trigger = {
+		tag = XNE
+	}
+
+	unicameral = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	county_fairs = {
+		global_unrest = -1
+	}
+
+	railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	cattle_drives = {
+		cavalry_cost = -0.10
+        cav_to_inf_ratio = 0.10
+	}
+	
+	settlers_of_the_praries = {
+		colonists = 1
+	}
+
+	cornhuskers = {
+		development_cost = -0.1
+	}
+
+	arbor_day_celebrations = {
+		global_unrest = -1
+	}
+}
+
+XCO_ideas = {
+	free = yes
+	start = {
+		reduced_liberty_desire = 10
+	}
+
+	bonus = {
+		yearly_army_professionalism = 0.015
+	}
+
+	trigger = {
+		tag = XCO
+	}
+
+	ski_resorts = {
+		global_tax_modifier = 0.1
+	}
+
+	denver_trade_hub = {
+		merchants = 1
+	}
+
+	rocky_mountains = {
+		defensiveness = 0.15
+	}
+
+	pikes_peak = {
+		gold_depletion_chance_modifier = -0.25
+	}
+	
+	nil_sine_numine = {
+		global_missionary_strength = 0.02
+	}
+
+	winemaking = {
+		global_unrest = -1
+	}
+
+	healthy_populace = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+}
+
+XND_ideas = {
+	free = yes
+	start = {
+		leader_cost = -0.10
+	}
+
+	bonus = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	trigger = {
+		tag = XND
+	}
+
+	scandinavian_roots = {
+		development_cost = -0.1
+	}
+
+	farmers_cooperatives = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	powwows = {
+		global_unrest = -1
+	}
+	
+	settlers_of_the_praries = {
+		colonists = 1
+	}
+	
+	roughriders = {
+		artillery_shock = 1
+        cav_to_inf_ratio = 0.15
+	}
+
+	rural_populism = {
+		max_absolutism = 10
+	}
+
+	hard_work = {
+		production_efficiency = 0.1
+	}
+}
+
+XSD_ideas = {
+	free = yes
+	start = {
+		land_morale = 0.05
+	}
+
+	bonus = {
+		colony_cost_modifier = -0.25
+	}
+
+	trigger = {
+		tag = XSD
+	}
+
+	agricultural_innovations = {
+		production_efficiency = 0.10
+	}
+
+	rural_resilience = {
+		war_exhaustion = -0.02
+	}
+
+	powwows = {
+		global_unrest = -1
+	}
+	
+	settlers_of_the_praries = {
+		colonists = 1
+	}
+
+	sitting_bull = {
+		discipline = 0.05
+		prestige = 0.2
+	}
+	
+	black_hills_gold = {
+		gold_depletion_chance_modifier = -0.25
+	}
+
+	rural_populism = {
+		max_absolutism = 10
+	}
+}
+
+XMT_ideas = {
+	free = yes
+	start = {
+		monthly_favor_modifier = 0.1
+	}
+
+	bonus = {
+		prestige_per_development_from_conversion = 0.5
+	}
+
+	trigger = {
+		tag = XMT
+	}
+
+	lewis_and_clark_legacy = {
+		free_maintenance_on_expl_conq = yes
+	}
+
+	gold_and_silver = {
+		production_efficiency = 0.1
+	}
+
+	cattle_drives = {
+		cavalry_cost = -0.10
+        cav_to_inf_ratio = 0.10
+	}
+
+	mt_volunteers = {
+		global_manpower_modifier = 0.10
+	}
+	
+	harsh_winters = {
+		land_attrition = -0.10
+		defensiveness = 0.10
+	}
+
+	split_ticketers = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	big_sky_country = {
+		war_exhaustion = -0.05
+	}
+}
+
+XWA_ideas = {
+	free = yes
+	start = {
+		yearly_corruption = -0.05
+	}
+
+	bonus = {
+		global_unrest = -2
+	}
+
+	trigger = {
+		tag = XWA
+	}
+
+	defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	puget_sound_trade = {
+		trade_efficiency = 0.15
+	}
+
+	lumbermills = {
+        build_cost = -0.15
+	}
+
+	seattle_tech = {
+		idea_cost = -0.1
+	}
+
+	winemaking = {
+		global_unrest = -1
+	}
+
+	progressive_trailblazers_v2 = {
+		reform_progress_growth = 0.2
+		diplomatic_reputation = 0.5
+	}
+
+	alki = {
+		technology_cost = -0.1
+	}
+}
+
+XID_ideas = {
+	free = yes
+	start = {
+		manpower_recovery_speed = 0.10
+	}
+
+	bonus = {
+		missionaries = 1
+	}
+
+	trigger = {
+		tag = XID
+	}
+
+	gem_state = {
+		production_efficiency = 0.1
+	}
+
+	rural_populism = {
+		max_absolutism = 10
+	}
+
+	id_national_laboratory = {
+		adm_tech_cost_modifier = -0.15
+		mil_tech_cost_modifier = -0.15
+	}
+
+	free_silver = {
+        inflation_reduction = 0.1
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+
+	rocky_mountains = {
+		defensiveness = 0.15
+	}
+
+	idaho_potatoes = {
+		global_trade_goods_size_modifier = 0.1
+        development_cost = -0.05
+	}
+}
+
+XWY_ideas = {
+	free = yes
+	start = {
+		spy_offence = 0.1
+	}
+
+	bonus = {
+		military_tactics = 0.25
+	}
+
+	trigger = {
+		tag = XWY
+	}
+
+	bison_hunting = {
+		land_attrition = -0.10
+	}
+
+	yellowstone = {
+		global_tax_modifier = 0.1
+	}
+
+	cowboys = {
+		cavalry_cost = -0.10
+        cavalry_fire = 1
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+
+	coal_miners = {
+		production_efficiency = 0.1
+	}
+
+	cattle_drives = {
+		cavalry_cost = -0.10
+        cav_to_inf_ratio = 0.10
+	}
+
+	womens_suffrage = {
+		may_recruit_female_generals = yes
+        female_advisor_chance = 0.5
+        prestige = 0.5
+	}
+}
+
+XUT_ideas = {
+	free = yes
+	start = {
+		global_spy_defence = 0.1
+	}
+
+	bonus = {
+		land_morale = 0.10
+	}
+
+	trigger = {
+		tag = XUT
+	}
+
+	mormon_pioneers = {
+		global_colonial_growth = 20
+	}
+
+	beehives = {
+		production_efficiency = 0.1
+	}
+
+	ski_resorts = {
+		global_tax_modifier = 0.1
+	}
+
+	national_parks = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	silicon_slopes = {
+		idea_cost = -0.1
+	}
+
+	public_education = {
+		adm_tech_cost_modifier = -0.05
+        innovativeness_gain = 0.5
+	}
+
+	lds_missionaries = {
+		global_missionary_strength = 0.02
+	}
+}
+
+XOK_ideas = {
+	free = yes
+	start = {
+		development_cost = -0.1
+	}
+
+	bonus = {
+		possible_adm_policy = 1
+	}
+
+	trigger = {
+		tag = XOK
+	}
+
+	ok_land_run = {
+		global_colonial_growth = 25
+	}
+
+	tornado_resilience = {
+		global_monthly_devastation = -0.1
+	}
+
+	native_coexistence = {
+		num_accepted_cultures = 2
+	}
+
+	cattle_drives = {
+		cavalry_cost = -0.10
+        cav_to_inf_ratio = 0.10
+	}
+
+	red_river_trade = {
+		trade_efficiency = 0.1
+	}
+
+	dust_bowl = {
+		stability_cost_modifier = -0.25
+	}
+
+	labor_omnia_vincit = {
+		production_efficiency = 0.1
+	}
+}
+
+XNM_ideas = {
+	free = yes
+	start = {
+		colonist_placement_chance = 0.05
+	}
+
+	bonus = {
+		global_manpower_modifier = 0.10
+	}
+
+	trigger = {
+		tag = XNM
+	}
+
+	native_coexistence = {
+		num_accepted_cultures = 2
+	}
+
+	los_alamos_lab = {
+		mil_tech_cost_modifier = -0.20
+	}
+
+	land_of_enchantment = {
+		prestige = 1.0
+	}
+
+	turquoise_trade = {
+		global_trade_power = 0.1
+	}
+
+	chili_pepper_cuisine = {
+		culture_conversion_cost = -0.2
+        culture_conversion_time = -0.2
+	}
+
+	balloon_fiesta = {
+		global_unrest = -1
+	}
+
+	hispano_perseverence = {
+		development_cost_in_primary_culture = -0.1
+		same_culture_advisor_cost = -0.2
+	}
+}
+
+XAZ_ideas = {
+	free = yes
+	start = {
+		warscore_from_battles_modifier = 0.5
+	}
+
+	bonus = {
+		mercenary_manpower = 0.2
+	}
+
+	trigger = {
+		tag = XAZ
+	}
+
+	desert_resilience = {
+		defensiveness = 0.15
+	}
+
+	grand_canyon = {
+		prestige = 1.0
+	}
+
+	copper_mining = {
+		production_efficiency = 0.1
+	}
+
+	sunbelt_growth = {
+		development_cost = -0.15
+	}
+
+	navajo = {
+		num_accepted_cultures = 2
+	}
+
+	retirement_communities = {
+		global_tax_modifier = 0.15
+	}
+
+	silicon_desert = {
+		technology_cost = -0.1
+	}
+}
+
+XAK_ideas = {
+	free = yes
+	start = {
+		global_autonomy = -0.05
+	}
+
+	bonus = {
+		global_ship_trade_power = 0.25
+	}
+
+	trigger = {
+		tag = XAK
+	}
+
+	environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	alaskan_frontiers = {
+		may_establish_frontier = yes
+	}
+
+	klondike_gold_rush = {
+		monthly_gold_inflation_modifier = -0.25
+	}
+
+	harsh_winters = {
+		land_attrition = -0.10
+		defensiveness = 0.10
+	}
+
+	alaskan_natives = {
+		num_accepted_cultures = 2
+        diplomatic_upkeep = 1
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+
+	ak_permanent_fund = {
+		global_unrest = -2
+	}
+}
+
+XHI_ideas = {
+	free = yes
+	start = {
+		naval_morale = 0.20
+		heavy_ship_power = 0.15
+	}
+
+	bonus = {
+		navy_tradition = 1
+	}
+
+	trigger = {
+		tag = XHI
+	}
+
+	rediscovering_america = {
+		range = 1
+		free_maintenance_on_expl_conq = yes
+	}
+
+	sugar_plantations = {
+		production_efficiency = 0.1
+	}
+
+	environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	hula_and_aloha = {
+		global_unrest = -1
+	}
+
+	tropical_paradise = {
+		development_cost = -0.15
+	}
+
+	island_trade_routes = {
+        global_ship_trade_power = 0.35
+        global_trade_goods_size_modifier = 0.1
+	}
+    
+	seafaring_people = {
+		leader_naval_manuever = 1
+		blockade_efficiency = 0.33
+		allowed_marine_fraction = 0.50
+	}
+}
+
+JFF_ideas = {
+	free = yes
+	start = {
+		naval_morale = 0.20
+		heavy_ship_power = 0.15
+	}
+
+	bonus = {
+		land_morale = 0.10
+	}
+
+	trigger = {
+		tag = JFF
+	}
+
+	local_government = {
+		global_unrest = -1
+	}
+
+	environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+
+	defense_industry = {
+		land_maintenance_modifier = -0.05
+	}
+
+	jefferson_secession = {
+		hostile_attrition = 1
+		enemy_core_creation = 0.2
+	}
+
+	rural_populism = {
+		max_absolutism = 10
+	}
+
+	boomtowns = {
+        development_cost = -0.1
+        monthly_gold_inflation_modifier = -0.1
+	}
+}

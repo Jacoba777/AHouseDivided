@@ -1,0 +1,29 @@
+capital="Charlotte"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=4
+base_production=5
+base_manpower=4
+native_size=130
+native_ferocity=6
+native_hostileness=3
+religion=pentecostal
+culture=culture_lansingite
+is_city = yes
+owner=LSG
+add_core=LSG
+add_core=LSG
+controller=LSG
+
+1444.11.12 = {
+	base_tax=1
+	base_production=2
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

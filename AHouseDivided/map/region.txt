@@ -1,0 +1,1077 @@
+region_ak = {
+	areas = {
+		area_ak_central
+		area_ak_denali_and_fairbanks
+		area_ak_far_north
+		area_ak_islands
+		area_ak_juneau
+		area_ak_lake_and_peninsula
+		area_ak_north_panhandle
+		area_ak_south_panhandle
+		area_ak_west
+	}
+}
+
+region_al = {
+	areas = {
+		area_al_auburn
+		area_al_birmingham
+		area_al_central
+		area_al_east_blackbelt
+		area_al_east_central
+		area_al_gadsden
+		area_al_huntsville
+		area_al_mobile
+		area_al_montgomery
+		area_al_north_birmingham
+		area_al_northeast
+		area_al_northwest
+		area_al_south
+		area_al_southeast
+		area_al_southwest
+		area_al_tuscaloosa
+		area_al_west_blackbelt
+		area_al_west_central
+	}
+}
+
+region_ar = {
+	areas = {
+		area_ar_arkadelphia
+		area_ar_east_central
+		area_ar_forest_city
+		area_ar_fort_smith
+		area_ar_harrison
+		area_ar_helena
+		area_ar_hot_spring
+		area_ar_jonesboro
+		area_ar_little_rock
+		area_ar_mountain_home
+		area_ar_northeast
+		area_ar_northern
+		area_ar_northwest
+		area_ar_pine_bluff
+		area_ar_polk
+		area_ar_russellville
+		area_ar_searcy
+		area_ar_southeast
+		area_ar_southern
+		area_ar_southwest
+		area_ar_western
+	}
+}
+
+region_az = {
+	areas = {
+		area_az_northern
+		area_az_south
+		area_az_south_central
+		area_az_western
+	}
+}
+
+region_ca = {
+	areas = {
+		area_ca_central_coast
+		area_ca_east_bay
+		area_ca_east_shasta
+		area_ca_eastern_sierra
+		area_ca_inland_empire
+		area_ca_north_bay
+		area_ca_north_central_valley
+		area_ca_north_coast
+		area_ca_sacramento
+		area_ca_san_francisco
+		area_ca_san_joaquin
+		area_ca_south_central_valley
+		area_ca_south_sierra
+		area_ca_southern
+		area_ca_west_shasta
+		area_ca_yuba
+	}
+}
+
+region_co = {
+	areas = {
+		area_co_central
+		area_co_denver
+		area_co_east_central
+		area_co_eastern
+		area_co_glenwood
+		area_co_mineral_springs
+		area_co_morgan
+		area_co_north_front_range
+		area_co_northeast
+		area_co_northwest
+		area_co_south_front_range
+		area_co_southeast
+		area_co_southern
+		area_co_southwest
+		area_co_west_central
+		area_co_western
+	}
+}
+
+region_ct = {
+	areas = {
+		area_ct_northern
+		area_ct_southern
+		area_ct_western
+	}
+}
+
+region_de = {
+	areas = {
+		area_de
+	}
+}
+
+region_fl = {
+	areas = {
+		area_fl_emerald_coast
+		area_fl_forgotten_coast
+		area_fl_gainesville
+		area_fl_gold_coast
+		area_fl_heartland
+		area_fl_jacksonville
+		area_fl_lakeland
+		area_fl_nature_coast
+		area_fl_north_central
+		area_fl_ocala
+		area_fl_orlando
+		area_fl_sarasota
+		area_fl_southwest
+		area_fl_space_coast
+		area_fl_tallahassee
+		area_fl_tampa
+		area_fl_treasure_coast
+		area_fl_west
+	}
+}
+
+region_ga = {
+	areas = {
+		area_ga_albany
+		area_ga_americus
+		area_ga_atlanta
+		area_ga_augusta
+		area_ga_central_classic
+		area_ga_central_heartland
+		area_ga_central_high_country
+		area_ga_central_magenta
+		area_ga_central_presidental
+		area_ga_coastal
+		area_ga_columbus
+		area_ga_dalton
+		area_ga_east_heartland
+		area_ga_east_high_country
+		area_ga_east_magenta
+		area_ga_east_plantation
+		area_ga_far_east_high_country
+		area_ga_fitzgerald
+		area_ga_hinesville
+		area_ga_macon
+		area_ga_north
+		area_ga_north_atlanta
+		area_ga_north_classic
+		area_ga_north_heartland
+		area_ga_north_magenta
+		area_ga_north_presidential
+		area_ga_northeast
+		area_ga_northwest
+		area_ga_northwest_magenta
+		area_ga_northwest_plantation
+		area_ga_savannah
+		area_ga_south_atlanta
+		area_ga_south_classic
+		area_ga_south_heartland
+		area_ga_south_plantation
+		area_ga_southeast
+		area_ga_southeast_presidential
+		area_ga_southwest_magenta
+		area_ga_southwest_plantation
+		area_ga_valdosta
+		area_ga_west_atlanta
+		area_ga_west_high_country
+	}
+}
+
+region_hi = {
+	areas = {
+		area_hi
+	}
+}
+
+region_ia = {
+	areas = {
+		area_ia_buena_vista
+		area_ia_cedar_rapids
+		area_ia_central
+		area_ia_davenport
+		area_ia_des_moines
+		area_ia_east_des_moines
+		area_ia_east_omaha
+		area_ia_east_sioux_city
+		area_ia_eastern
+		area_ia_fort_dodge
+		area_ia_iowa_city
+		area_ia_north_central
+		area_ia_north_of_waterloo
+		area_ia_northeast
+		area_ia_northern
+		area_ia_northwest
+		area_ia_ottumwa
+		area_ia_south_of_des_moines
+		area_ia_southeast
+		area_ia_southern
+		area_ia_southwest
+		area_ia_spencer
+		area_ia_waterloo
+		area_ia_west_central
+	}
+}
+
+region_id = {
+	areas = {
+		area_id_boise
+		area_id_central
+		area_id_eastern
+		area_id_idaho_falls
+		area_id_north_central
+		area_id_panhandle
+		area_id_pocatello
+		area_id_rexburg
+		area_id_south
+		area_id_west_central
+		area_id_western
+	}
+}
+
+region_il = {
+	areas = {
+		area_il_bloomington
+		area_il_carbondale
+		area_il_central
+		area_il_champaign
+		area_il_chicago
+		area_il_danville
+		area_il_east_little_egypt
+		area_il_eastern
+		area_il_greater_saline
+		area_il_jacksonville
+		area_il_macomb
+		area_il_macoupin
+		area_il_northeast_little_egypt
+		area_il_northeast_st_louis
+		area_il_northwest
+		area_il_ottawa
+		area_il_peoria
+		area_il_rock_island
+		area_il_rockford
+		area_il_south_central
+		area_il_south_chicago
+		area_il_southeast_st_louis
+		area_il_southeastern
+		area_il_southern_tip
+		area_il_springfield
+		area_il_west_little_egypt
+		area_il_west_peoria
+		area_il_western
+	}
+}
+
+region_in = {
+	areas = {
+		area_in_bloomington
+		area_in_central_indianapolis
+		area_in_eastern
+		area_in_evansville
+		area_in_fort_wayne
+		area_in_huntington
+		area_in_indiana_chicagoland
+		area_in_jasper
+		area_in_kokomo
+		area_in_lafayette
+		area_in_michigan_city
+		area_in_muncie
+		area_in_north_central
+		area_in_north_indianapolis
+		area_in_north_louisville
+		area_in_northeast
+		area_in_south_bend
+		area_in_south_central
+		area_in_south_indianapolis
+		area_in_southeast
+		area_in_southern
+		area_in_southwest
+		area_in_terre_haute
+		area_in_west_cincinatti
+		area_in_western
+	}
+}
+
+region_ks = {
+	areas = {
+		area_ks_allen
+		area_ks_central
+		area_ks_coffeyville
+		area_ks_dodge_city
+		area_ks_east_central
+		area_ks_edwards
+		area_ks_garden_city
+		area_ks_great_bend
+		area_ks_hays
+		area_ks_manhattan
+		area_ks_north_central
+		area_ks_north_of_manhattan
+		area_ks_northeast
+		area_ks_northern
+		area_ks_northwest
+		area_ks_norton
+		area_ks_salina
+		area_ks_sheridan
+		area_ks_southeast
+		area_ks_southern
+		area_ks_southwest
+		area_ks_southwest_kansas_city
+		area_ks_topeka
+		area_ks_west_kansas_city
+		area_ks_western
+		area_ks_wichita
+	}
+}
+
+region_ky = {
+	areas = {
+		area_ky_bowling_green
+		area_ky_central
+		area_ky_cincinnati
+		area_ky_danville
+		area_ky_east_central
+		area_ky_eastern
+		area_ky_fort_knox
+		area_ky_frankfort
+		area_ky_grayson
+		area_ky_harrison
+		area_ky_hopkinsville
+		area_ky_johnson
+		area_ky_lexington
+		area_ky_logan
+		area_ky_london
+		area_ky_maysville
+		area_ky_mount_sterling
+		area_ky_north_purchase
+		area_ky_northeastern
+		area_ky_northern
+		area_ky_owensboro
+		area_ky_richmond
+		area_ky_somerset
+		area_ky_south_cincinnati
+		area_ky_south_louisville
+		area_ky_south_purchase
+		area_ky_southeastern
+		area_ky_southern
+		area_ky_west_louisvillle
+		area_ky_western
+	}
+}
+
+region_la = {
+	areas = {
+		area_la_baton_rouge
+		area_la_east_florida_parishes
+		area_la_eastern
+		area_la_franklin
+		area_la_greater_new_orleans
+		area_la_lafayette
+		area_la_monroe
+		area_la_north_acadia
+		area_la_northeast
+		area_la_northern
+		area_la_shreveport
+		area_la_southeast_acadia
+		area_la_southwest_acadia
+		area_la_west_acadia
+		area_la_west_florida_parishes
+		area_la_western
+	}
+}
+
+region_ma = {
+	areas = {
+		area_ma_boston
+		area_ma_cape_cod
+		area_ma_south_shore
+		area_ma_western
+	}
+}
+
+region_md = {
+	areas = {
+		area_md_baltimore
+		area_md_capital
+		area_md_northeastern
+		area_md_panhandle
+		area_md_southeast_chesapeake
+		area_md_southern
+	}
+}
+
+region_me = {
+	areas = {
+		area_me_augusta
+		area_me_eastern
+		area_me_northern
+		area_me_portland
+	}
+}
+
+region_mi = {
+	areas = {
+		area_mi_alpena
+		area_mi_cadillac
+		area_mi_central
+		area_mi_detroit
+		area_mi_east_superior
+		area_mi_escanaba
+		area_mi_gladwin
+		area_mi_grand_rapids
+		area_mi_houghton
+		area_mi_jackson
+		area_mi_lansing
+		area_mi_marquette
+		area_mi_michiana
+		area_mi_north_detroit
+		area_mi_north_saginaw_bay
+		area_mi_oscoda
+		area_mi_saginaw
+		area_mi_southern
+		area_mi_thumb
+		area_mi_tip_of_mitten
+		area_mi_traverse
+		area_mi_west_detroit
+		area_mi_western
+	}
+}
+
+region_mn = {
+	areas = {
+		area_mn_albert_lea
+		area_mn_alexandria
+		area_mn_bemidji
+		area_mn_central
+		area_mn_duluth
+		area_mn_east_fargo
+		area_mn_east_grand_forks
+		area_mn_eastern
+		area_mn_faribault
+		area_mn_mankato
+		area_mn_marshall
+		area_mn_minneapolis
+		area_mn_north_central
+		area_mn_north_minneapolis
+		area_mn_northern
+		area_mn_northwest
+		area_mn_south_minneapolis
+		area_mn_southeast
+		area_mn_southern
+		area_mn_southwest
+		area_mn_st_paul
+		area_mn_western
+		area_mn_yellow_medicine
+	}
+}
+
+region_mo = {
+	areas = {
+		area_mo_barry
+		area_mo_bootheel
+		area_mo_branson
+		area_mo_cape_girardeau
+		area_mo_columbia
+		area_mo_crawford
+		area_mo_eastern
+		area_mo_farmington
+		area_mo_jefferson_city
+		area_mo_joplin
+		area_mo_kirksville
+		area_mo_lebanon
+		area_mo_north_central
+		area_mo_northeast
+		area_mo_northeast_kansas_city
+		area_mo_northern
+		area_mo_northwest
+		area_mo_poplar_bluff
+		area_mo_sedalia
+		area_mo_shelby
+		area_mo_south_central
+		area_mo_southeast_kansas_city
+		area_mo_southern
+		area_mo_springfield
+		area_mo_st_josephs
+		area_mo_sullivan
+		area_mo_wayne
+		area_mo_west_st_louis
+		area_mo_western
+	}
+}
+
+region_ms = {
+	areas = {
+		area_ms_brookhaven
+		area_ms_coastal
+		area_ms_columbus
+		area_ms_east
+		area_ms_east_central
+		area_ms_eastern
+		area_ms_hattiesburg
+		area_ms_jackson
+		area_ms_monroe
+		area_ms_north_central
+		area_ms_north_coast
+		area_ms_north_delta
+		area_ms_north_jackson
+		area_ms_northeast
+		area_ms_northern
+		area_ms_south_delta
+		area_ms_south_memphis
+		area_ms_southeastern
+		area_ms_southern
+		area_ms_southwest
+		area_ms_tupelo
+	}
+}
+
+region_mt = {
+	areas = {
+		area_mt_billings
+		area_mt_central
+		area_mt_eastern
+		area_mt_great_falls
+		area_mt_helena
+		area_mt_missouri_river
+		area_mt_northeast
+		area_mt_northern
+		area_mt_northwest
+		area_mt_south_central
+		area_mt_southeast
+		area_mt_southwest
+		area_mt_west_central
+		area_mt_western
+		area_mt_yellowstone_country
+	}
+}
+
+region_nc = {
+	areas = {
+		area_nc_asheville
+		area_nc_central_coast
+		area_nc_charlotte
+		area_nc_cullowhee
+		area_nc_east_charlotte
+		area_nc_elizabeth_city
+		area_nc_fayetteville
+		area_nc_goldsboro
+		area_nc_greensboro
+		area_nc_greenville
+		area_nc_hickory
+		area_nc_mount_airy
+		area_nc_new_bern
+		area_nc_north_charlotte
+		area_nc_north_research_triangle
+		area_nc_north_wilkesboro
+		area_nc_northeast
+		area_nc_northern_coast
+		area_nc_northwestern
+		area_nc_pinehurst
+		area_nc_raleigh
+		area_nc_rocky_mount
+		area_nc_south_coast
+		area_nc_southern
+		area_nc_southwestern
+		area_nc_west_research_triangle
+		area_nc_western
+		area_nc_winstone
+	}
+}
+
+region_nd = {
+	areas = {
+		area_nd_bismarck
+		area_nd_dickinson
+		area_nd_eastern
+		area_nd_jamestown
+		area_nd_mcintosh
+		area_nd_minot
+		area_nd_north_central
+		area_nd_northeast
+		area_nd_northwestern
+		area_nd_southern
+		area_nd_southwestern
+		area_nd_towner
+		area_nd_wast_fargo
+		area_nd_western
+	}
+}
+
+region_ne = {
+	areas = {
+		area_ne_grand_island
+		area_ne_kearney
+		area_ne_lewis_and_clark
+		area_ne_lexington
+		area_ne_lincoln
+		area_ne_norfolk
+		area_ne_north_panhandle
+		area_ne_north_pioneer
+		area_ne_north_platte
+		area_ne_northeast
+		area_ne_northeast_sandhills
+		area_ne_prarie_lakes
+		area_ne_scottsbluff
+		area_ne_south_panhandle
+		area_ne_south_pioneer
+		area_ne_south_sandhills
+		area_ne_southeast
+		area_ne_southern
+		area_ne_southwest_sandhills
+		area_ne_southwestern
+		area_ne_west_omaha
+		area_ne_west_sandhills
+		area_ne_west_sioux_city
+		area_ne_western
+	}
+}
+
+region_nh = {
+	areas = {
+		area_nh_concord
+		area_nh_manchester
+		area_nh_northern
+	}
+}
+
+region_nj = {
+	areas = {
+		area_nj_central_jersey
+		area_nj_jersey_shore
+		area_nj_newark
+		area_nj_north_jersey
+		area_nj_south_jersey
+	}
+}
+
+region_nm = {
+	areas = {
+		area_nm_albuquerque
+		area_nm_central
+		area_nm_clovis
+		area_nm_northeastern
+		area_nm_northern
+		area_nm_northwest
+		area_nm_santa_fe
+		area_nm_southeastern
+		area_nm_southwestern
+	}
+}
+
+region_nv = {
+	areas = {
+		area_nv_northeastern
+		area_nv_northern
+		area_nv_reno
+		area_nv_southern
+	}
+}
+
+region_ny = {
+	areas = {
+		area_ny_albany
+		area_ny_buffalo
+		area_ny_eastern
+		area_ny_elmira
+		area_ny_finger_lakes
+		area_ny_glens_falls
+		area_ny_hudson_valley
+		area_ny_ithaca
+		area_ny_lower_hudson_valley
+		area_ny_mohawk_valley
+		area_ny_north_country
+		area_ny_nyc
+		area_ny_rochester
+		area_ny_southern_tier
+		area_ny_syracuse
+	}
+}
+
+region_oh = {
+	areas = {
+		area_oh_akron
+		area_oh_bellefontaine
+		area_oh_canton
+		area_oh_cleveland
+		area_oh_columbus
+		area_oh_dayton
+		area_oh_east_central
+		area_oh_east_columbus
+		area_oh_eastern
+		area_oh_lima
+		area_oh_mansfield
+		area_oh_north_cincinnati
+		area_oh_north_columbus
+		area_oh_northwestern
+		area_oh_sandusky
+		area_oh_south_columbus
+		area_oh_southeastern
+		area_oh_southern
+		area_oh_southwestern
+		area_oh_toledo
+		area_oh_western
+		area_oh_wooster
+		area_oh_youngstown
+	}
+}
+
+region_ok = {
+	areas = {
+		area_ok_blaine
+		area_ok_durant
+		area_ok_east_tulsa
+		area_ok_eastern
+		area_ok_northeastern
+		area_ok_northern
+		area_ok_northwestern
+		area_ok_oklahoma_city
+		area_ok_panhandle
+		area_ok_shawnee
+		area_ok_south_central
+		area_ok_south_oklahoma_city
+		area_ok_southeastern
+		area_ok_southern
+		area_ok_southwestern
+		area_ok_tahlequah
+		area_ok_tulsa
+		area_ok_west_central
+		area_ok_western
+		area_ok_woodward
+	}
+}
+
+region_or = {
+	areas = {
+		area_or_central
+		area_or_northeastern
+		area_or_northern
+		area_or_northern_coast
+		area_or_portland
+		area_or_salem
+		area_or_southeastern
+		area_or_southern
+		area_or_southern_coast
+	}
+}
+
+region_pa = {
+	areas = {
+		area_pa_allegheny_mts
+		area_pa_allentown
+		area_pa_central
+		area_pa_central_wilds
+		area_pa_east_dutch
+		area_pa_east_wilds
+		area_pa_erie
+		area_pa_johnstown
+		area_pa_north_dutch
+		area_pa_north_pittsburgh
+		area_pa_northeast
+		area_pa_philly
+		area_pa_pittsburgh
+		area_pa_scranton
+		area_pa_south_dutch
+		area_pa_stroudsburg
+		area_pa_susquehanna_valley
+		area_pa_west_wilds
+	}
+}
+
+region_ri = {
+	areas = {
+		area_ri
+	}
+}
+
+region_sc = {
+	areas = {
+		area_sc_charleston
+		area_sc_columbia
+		area_sc_florence
+		area_sc_greenville
+		area_sc_lowcountry
+		area_sc_myrtle_beach
+		area_sc_newberry
+		area_sc_northern
+		area_sc_old_96_district
+		area_sc_olde_english_district
+		area_sc_spartanburg
+		area_sc_thoroughbred
+	}
+}
+
+region_sd = {
+	areas = {
+		area_sd_aberdeen
+		area_sd_brule
+		area_sd_central
+		area_sd_charles_mix
+		area_sd_huron
+		area_sd_lake
+		area_sd_mitchell
+		area_sd_northeastern
+		area_sd_northern
+		area_sd_northwestern
+		area_sd_pierre
+		area_sd_rapid_city
+		area_sd_sioux_falls
+		area_sd_southeastern
+		area_sd_southern
+		area_sd_southwestern
+		area_sd_watertown
+	}
+}
+
+region_se = {
+	areas = {
+		area_sea_bering_sea
+		area_sea_canadian_atlantic
+		area_sea_great_lakes
+		area_sea_gulf_of_mexico
+		area_sea_hawaii
+		area_sea_north_pacific
+		area_sea_northeastern_atlantic
+		area_sea_northwest_passage
+		area_sea_pacific
+		area_sea_southeastern_atlantic
+	}
+}
+
+region_tn = {
+	areas = {
+		area_tn_campbell
+		area_tn_carroll
+		area_tn_cleveland
+		area_tn_cookeville
+		area_tn_east_central
+		area_tn_hickman
+		area_tn_jackson
+		area_tn_johnson_city
+		area_tn_kingsport
+		area_tn_knoxville
+		area_tn_morristown
+		area_tn_nashville
+		area_tn_north_chattanooga
+		area_tn_north_memphis
+		area_tn_northern
+		area_tn_northwestern
+		area_tn_rhea
+		area_tn_smoky_mountains
+		area_tn_south_nashville
+		area_tn_southern
+		area_tn_southwestern
+		area_tn_tullahoma
+		area_tn_upper_cumberland
+		area_tn_west_nashville
+		area_tn_western
+	}
+}
+
+region_tx = {
+	areas = {
+		area_tx_abilene
+		area_tx_amarillo
+		area_tx_athens
+		area_tx_austin
+		area_tx_beaumont
+		area_tx_brenham
+		area_tx_briscoe
+		area_tx_brownwood
+		area_tx_burleson
+		area_tx_burnet
+		area_tx_college_station
+		area_tx_corpus_christi
+		area_tx_dallas
+		area_tx_del_rio
+		area_tx_eagle_pass
+		area_tx_eastern
+		area_tx_el_paso
+		area_tx_fort_worth
+		area_tx_gaines
+		area_tx_garza_strip
+		area_tx_gonzales
+		area_tx_granbury
+		area_tx_hall
+		area_tx_houston
+		area_tx_hunt
+		area_tx_huntsville
+		area_tx_killeen
+		area_tx_kimble
+		area_tx_laredo
+		area_tx_longview
+		area_tx_lubbock
+		area_tx_mc_allen
+		area_tx_mcculloch
+		area_tx_midland
+		area_tx_mount_pleasant
+		area_tx_north_panhandle
+		area_tx_north_san_antonio
+		area_tx_northeast_panhandle
+		area_tx_northeastern
+		area_tx_northwestern
+		area_tx_pecos
+		area_tx_polk
+		area_tx_san_angelo
+		area_tx_san_antonio
+		area_tx_sherman
+		area_tx_snyder
+		area_tx_south_central
+		area_tx_southeast_panhandle
+		area_tx_southeastern
+		area_tx_southern
+		area_tx_stonewall
+		area_tx_throckmorton
+		area_tx_tyler
+		area_tx_upton
+		area_tx_van_zandt
+		area_tx_vernon
+		area_tx_victoria
+		area_tx_waco
+		area_tx_west_houston
+		area_tx_west_metroplex
+		area_tx_west_panhandle
+		area_tx_west_san_antonio
+		area_tx_western
+		area_tx_wichita_falls
+	}
+}
+
+region_ut = {
+	areas = {
+		area_ut_central
+		area_ut_eastern
+		area_ut_northern
+		area_ut_ogden
+		area_ut_salt_lake
+		area_ut_southern
+		area_ut_southwestern
+	}
+}
+
+region_va = {
+	areas = {
+		area_va_arlington
+		area_va_blacksburg
+		area_va_blue_ridge
+		area_va_bristol
+		area_va_carroll
+		area_va_central
+		area_va_charlottesville
+		area_va_danville
+		area_va_east_richmond
+		area_va_goochland
+		area_va_harrisonburg
+		area_va_louisa
+		area_va_lynchburg
+		area_va_middle_peninsula
+		area_va_northern
+		area_va_northern_neck
+		area_va_peninsulas
+		area_va_richmond
+		area_va_roanoke
+		area_va_south_richmond
+		area_va_southeastern
+		area_va_southern
+		area_va_southern_nova
+		area_va_valley
+		area_va_virginia_beach
+		area_va_western
+	}
+}
+
+region_vt = {
+	areas = {
+		area_vt_burlington
+		area_vt_central
+		area_vt_northeastern
+		area_vt_southern
+	}
+}
+
+region_wa = {
+	areas = {
+		area_wa_kennewick
+		area_wa_northwestern
+		area_wa_olympia
+		area_wa_peninsula
+		area_wa_puget_sound
+		area_wa_sotheastern
+		area_wa_southwest
+		area_wa_spokane
+		area_wa_wenatchee
+		area_wa_yakima
+	}
+}
+
+region_wi = {
+	areas = {
+		area_wi_appleton
+		area_wi_baraboo
+		area_wi_central
+		area_wi_eastern_saint_paul
+		area_wi_eau_claire
+		area_wi_fond_du_lac
+		area_wi_green_bay
+		area_wi_la_crosse
+		area_wi_madison
+		area_wi_milwaukee
+		area_wi_north_central
+		area_wi_northeastern
+		area_wi_northern
+		area_wi_northwestern
+		area_wi_shawano
+		area_wi_southeastern
+		area_wi_southwestern
+		area_wi_wausau
+		area_wi_western
+	}
+}
+
+region_wv = {
+	areas = {
+		area_wv_allegheny_highlands
+		area_wv_beckley
+		area_wv_central
+		area_wv_charleston
+		area_wv_clarksburg
+		area_wv_eastern_panhandle
+		area_wv_morgantown
+		area_wv_northern_panhandle
+		area_wv_northwestern
+		area_wv_parkersburg
+		area_wv_potomac_highlands
+		area_wv_south_charleston
+		area_wv_southern
+		area_wv_southwestern
+		area_wv_western
+	}
+}
+
+region_wy = {
+	areas = {
+		area_wy_casper
+		area_wy_cheyenne
+		area_wy_gillette
+		area_wy_northern
+		area_wy_southwestern
+		area_wy_yellowstone
+	}
+}
+

@@ -1,0 +1,32 @@
+capital="Denver"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=10
+base_production=10
+base_manpower=9
+native_size=290
+native_ferocity=5
+native_hostileness=3
+religion=nondenominational
+culture=culture_denverite
+center_of_trade=2
+is_city = yes
+owner=DVR
+add_core=DVR
+controller=DVR
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=26
+	base_production=36
+	base_manpower=17
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

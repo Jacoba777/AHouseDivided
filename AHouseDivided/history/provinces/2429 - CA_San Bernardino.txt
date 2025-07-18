@@ -1,0 +1,30 @@
+capital="San Bernardino"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=11
+base_production=10
+base_manpower=11
+native_size=320
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_angelino
+is_city = yes
+owner=SBN
+add_core=SBN
+controller=SBN
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=71
+	base_production=38
+	base_manpower=53
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

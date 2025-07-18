@@ -1,0 +1,3 @@
+discovered_by = new_england
+discovered_by = mid_atlantic
+discovered_by = appalachia

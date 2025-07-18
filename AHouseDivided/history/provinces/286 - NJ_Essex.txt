@@ -1,0 +1,30 @@
+capital="Newark"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=11
+base_production=10
+base_manpower=10
+native_size=310
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_hudsonian
+center_of_trade=1
+is_city = yes
+owner=NWK
+add_core=NWK
+add_core=NYC
+controller=NWK
+
+1444.11.12 = {
+	base_tax=51
+	base_production=41
+	base_manpower=38
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

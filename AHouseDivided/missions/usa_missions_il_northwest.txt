@@ -1,0 +1,553 @@
+missions_il_northwest_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RKF
+			tag = DXN
+		}
+	}
+
+	mission_il_northwest_the_elephant_in_the_room = {
+		icon = mission_luther_theses
+		position = 3
+		required_missions = { mission_il_northwest_unite_the_northwest }
+		trigger = {
+			OR = {
+				is_rival = CCG
+				AND = {
+					exists = CCG
+					military_strength = {
+						who = CCG
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = CCG
+			}
+			OR = {
+				CCG = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				CCG = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = CCG }
+				tag = CCG
+			}
+ 		}
+		effect = {
+			area_il_ottawa = { add_permanent_claim = ROOT }
+			area_il_chicago = { add_permanent_claim = ROOT }
+			area_il_south_chicago = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_il_northwest_the_fate_of_windy_city = {
+		icon = mission_ccg
+		position = 4
+		required_missions = { mission_il_northwest_the_elephant_in_the_room }
+		trigger = {
+			area_il_ottawa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_south_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_ottawa
+				area = area_il_chicago
+				area = area_il_south_chicago
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_il_northwest_peace_in_chicagoland = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_il_northwest_the_fate_of_windy_city }
+		trigger = {
+			area_il_ottawa = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_chicago = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_south_chicago = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_il_bloomington = { add_permanent_claim = ROOT }
+			area_il_champaign = { add_permanent_claim = ROOT }
+			area_il_danville = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_ottawa
+				area = area_il_chicago
+				area = area_il_south_chicago
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_il_northwest_invade_the_valley = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_il_northwest_peace_in_chicagoland }
+		trigger = {
+			area_il_bloomington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_champaign = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_danville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_bloomington
+				area = area_il_champaign
+				area = area_il_danville
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_il_northwest_placate_bloomington = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_il_northwest_invade_the_valley }
+		trigger = {
+			area_il_bloomington = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_champaign = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_danville = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_bloomington
+				area = area_il_champaign
+				area = area_il_danville
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_il_northwest_the_way_of_the_valley = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_il_northwest_placate_bloomington }
+		trigger = {
+			accepted_culture = culture_valley_illinoisian
+ 		}
+		effect = {
+			area_il_south_central = { add_permanent_claim = ROOT }
+			area_il_eastern = { add_permanent_claim = ROOT }
+			area_il_central = { add_permanent_claim = ROOT }
+			area_il_northeast_little_egypt = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_il_northwest_sweep_the_valley = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_il_northwest_the_way_of_the_valley }
+		trigger = {
+			area_il_south_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_northeast_little_egypt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_south_central
+				area = area_il_eastern
+				area = area_il_central
+				area = area_il_northeast_little_egypt
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_il_northwest_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RKF
+			tag = DXN
+		}
+	}
+
+	mission_il_northwest_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_il_northwest = { add_permanent_claim = ROOT }
+			area_il_rockford = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_il_northwest_unite_the_northwest = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_il_northwest_fielding_an_army }
+		trigger = {
+			area_il_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			1425 = { country_or_non_sovereign_subject_holds = ROOT }
+			1424 = { country_or_non_sovereign_subject_holds = ROOT }
+			1433 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_northwest
+				province_id = 1425
+				province_id = 1424
+				province_id = 1433
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_il_northwest_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = RKF
+			tag = DXN
+		}
+	}
+
+	mission_il_northwest_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_il_northwest_unite_the_northwest }
+		trigger = {
+			area_il_northwest = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			1425 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			1424 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			1433 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_il_rock_island = { add_permanent_claim = ROOT }
+			area_il_peoria = { add_permanent_claim = ROOT }
+			area_il_west_peoria = { add_permanent_claim = ROOT }
+			area_il_macomb = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_northwest
+				province_id = 1425
+				province_id = 1424
+				province_id = 1433
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_il_northwest_the_fate_of_the_peorians = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_il_northwest_a_respectable_state }
+		trigger = {
+			area_il_rock_island = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_il_peoria = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_il_west_peoria = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_il_macomb = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_rock_island
+				area = area_il_peoria
+				area = area_il_west_peoria
+				area = area_il_macomb
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_il_northwest_accept_peorian = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_il_northwest_the_fate_of_the_peorians }
+		trigger = {
+			accepted_culture = culture_peorian
+ 		}
+		effect = {
+			area_il_springfield = { add_permanent_claim = ROOT }
+			area_il_jacksonville = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_il_northwest_the_sack_of_springfield = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_il_northwest_accept_peorian }
+		trigger = {
+			area_il_springfield = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_il_jacksonville = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_springfield
+				area = area_il_jacksonville
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_il_northwest_stabilize_the_old_capital = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_il_northwest_the_sack_of_springfield }
+		trigger = {
+			area_il_springfield = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 25
+			add_adm_power = 25
+			add_mil_power = 25
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_springfield
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_il_northwest_improving_springfield = {
+		icon = mission_early_game_buildings
+		position = 8
+		required_missions = { mission_il_northwest_stabilize_the_old_capital }
+		trigger = {
+			area_il_springfield = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_il_macoupin = { add_permanent_claim = ROOT }
+			area_il_northeast_st_louis = { add_permanent_claim = ROOT }
+			area_il_southeast_st_louis = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_il_springfield
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_il_northwest_take_east_st_louis = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_il_northwest_improving_springfield }
+		trigger = {
+			area_il_macoupin = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_northeast_st_louis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southeast_st_louis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_macoupin
+				area = area_il_northeast_st_louis
+				area = area_il_southeast_st_louis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

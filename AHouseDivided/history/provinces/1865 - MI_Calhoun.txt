@@ -1,0 +1,30 @@
+capital="Marshall"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+hre = no
+base_tax=4
+base_production=5
+base_manpower=5
+native_size=140
+native_ferocity=6
+native_hostileness=4
+religion=nondenominational
+culture=culture_creekazoo
+is_city = yes
+owner=AZO
+add_core=AZO
+add_core=BTK
+controller=AZO
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=1
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XMI
+	add_core=XMI
+	controller=XMI
+}

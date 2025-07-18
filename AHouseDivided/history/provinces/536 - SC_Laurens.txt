@@ -1,0 +1,28 @@
+capital="Laurens"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=2
+base_production=3
+base_manpower=3
+native_size=80
+native_ferocity=7
+native_hostileness=4
+religion=baptist
+culture=culture_midlander
+is_city = yes
+owner=GRN
+add_core=GRN
+controller=GRN
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=2
+}
+
+1444.11.13 = {
+	owner=XSC
+	add_core=XSC
+	controller=XSC
+}

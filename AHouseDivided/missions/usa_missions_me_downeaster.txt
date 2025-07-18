@@ -1,0 +1,93 @@
+missions_me_downeaster_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = TPL
+			tag = LWT
+			tag = KBC
+		}
+	}
+
+	mission_me_downeaster_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_me_portland = { add_permanent_claim = ROOT }
+			area_me_augusta = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_me_downeaster_the_battle_for_maine = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_me_downeaster_fielding_an_army }
+		trigger = {
+			1598 = { country_or_non_sovereign_subject_holds = ROOT }
+			1600 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1598
+				province_id = 1600
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_me_downeaster_stabilize_southern_maine = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_me_downeaster_the_battle_for_maine }
+		trigger = {
+			area_me_portland = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_me_augusta = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_me_portland
+				area = area_me_augusta
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

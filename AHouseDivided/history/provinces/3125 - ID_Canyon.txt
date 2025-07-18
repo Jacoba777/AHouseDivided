@@ -1,0 +1,30 @@
+capital="Caldwell"
+discovered_by = upper_rockies
+discovered_by = pacific_nw
+discovered_by = california
+discovered_by = lower_rockies
+hre = no
+base_tax=6
+base_production=5
+base_manpower=6
+native_size=170
+native_ferocity=4
+native_hostileness=4
+religion=mormon
+culture=culture_boise
+is_city = yes
+owner=BOI
+add_core=BOI
+controller=BOI
+
+1444.11.12 = {
+	base_tax=3
+	base_production=3
+	base_manpower=6
+}
+
+1444.11.13 = {
+	owner=XID
+	add_core=XID
+	controller=XID
+}

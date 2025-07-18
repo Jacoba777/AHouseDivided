@@ -1,0 +1,133 @@
+missions_ma_cape_cod_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = DED
+			tag = TTN
+			tag = PLY
+			tag = BRN
+			tag = MVD
+			tag = NTK
+		}
+	}
+
+	mission_ma_cape_cod_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_ma_cape_cod_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ma_cape_cod_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ma_cape_cod_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ma_cape_cod_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_ma_cape_cod = { add_permanent_claim = ROOT }
+			area_ma_south_shore = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ma_cape_cod_unite_the_south_shore = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ma_cape_cod_a_respectable_state }
+		trigger = {
+			area_ma_cape_cod = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ma_south_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ma_boston = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_cape_cod
+				area = area_ma_south_shore
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ma_cape_cod_conquer_boston = {
+		icon = mission_bto
+		position = 5
+		required_missions = { mission_ma_cape_cod_unite_the_south_shore }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

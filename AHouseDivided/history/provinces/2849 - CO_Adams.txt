@@ -1,0 +1,30 @@
+capital="Brighton"
+discovered_by = lower_rockies
+discovered_by = southwest
+discovered_by = central_plains
+discovered_by = upper_rockies
+hre = no
+base_tax=8
+base_production=8
+base_manpower=8
+native_size=240
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_denverite
+is_city = yes
+owner=DVR
+add_core=DVR
+controller=DVR
+
+1444.11.12 = {
+	base_tax=12
+	base_production=11
+	base_manpower=13
+}
+
+1444.11.13 = {
+	owner=XCO
+	add_core=XCO
+	controller=XCO
+}

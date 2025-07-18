@@ -1,0 +1,20 @@
+bookmark = {
+	name = bookmark_west
+	desc = bookmark_west_desc
+	date = 1444.11.11
+	
+	center = 2424
+	
+	country = PLD
+	country = SEA
+	country = DVR
+	country = SCM
+	country = FFC
+	country = LAX
+	country = ANC
+	country = OAU
+	
+	easy_country = PLD
+	easy_country = SEA
+	easy_country = DVR
+}

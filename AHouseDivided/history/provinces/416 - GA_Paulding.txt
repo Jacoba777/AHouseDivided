@@ -1,0 +1,28 @@
+capital="Dallas"
+discovered_by = southeast
+discovered_by = appalachia
+hre = no
+base_tax=6
+base_production=4
+base_manpower=6
+native_size=160
+native_ferocity=4
+native_hostileness=4
+religion=baptist
+culture=culture_atlantan
+is_city = yes
+owner=ATL
+add_core=ATL
+controller=ATL
+
+1444.11.12 = {
+	base_tax=4
+	base_production=1
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XGA
+	add_core=XGA
+	controller=XGA
+}

@@ -1,0 +1,7 @@
+technology_group = hawaii
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = nondenominational
+primary_culture = culture_hawaiian
+capital = 3354

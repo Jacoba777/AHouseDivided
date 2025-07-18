@@ -1,0 +1,944 @@
+missions_ny_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNY }
+
+	mission_ny_incorporate_newark = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ny_unite_new_york_metro }
+		trigger = {
+			area_nj_newark = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_nj = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nj_newark
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_crush_new_jersey = {
+		icon = mission_nj
+		position = 5
+		required_missions = { mission_ny_incorporate_newark }
+		trigger = {
+			region_nj = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_nj
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_accept_philadelphian = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_ny_crush_new_jersey }
+		trigger = {
+			accepted_culture = culture_philadelphian
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_the_city_of_brotherly_love = {
+		icon = mission_liberty_bell
+		position = 7
+		required_missions = { mission_ny_accept_philadelphian }
+		trigger = {
+			area_pa_philly = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			224 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+			region_de = { add_permanent_claim = ROOT }
+			area_md_northeastern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+				province_id = 224
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_dominate_delmarva = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_ny_the_city_of_brotherly_love }
+		trigger = {
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_de
+				area = area_md_northeastern
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_prepare_for_maryland = {
+		icon = mission_assemble_an_army
+		position = 9
+		required_missions = { mission_ny_dominate_delmarva mission_ny_the_amish_wars }
+		trigger = {
+
+ 		}
+		effect = {
+			area_md_baltimore = { add_permanent_claim = ROOT }
+			area_md_capital = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_the_maryland_campaign = {
+		icon = mission_md
+		position = 10
+		required_missions = { mission_ny_prepare_for_maryland }
+		trigger = {
+			area_md_baltimore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_capital = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 25
+			add_meritocracy = 25
+			add_republican_tradition = 12
+			add_devotion = 25
+			add_horde_unity = 25
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_baltimore
+				area = area_md_capital
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_ny_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNY }
+
+	mission_ny_the_world_trade_center = {
+		icon = mission_war_chest
+		position = 2
+		required_missions = {  }
+		trigger = {
+            trade_income_percentage = 0.33
+            755 = {
+                trade_share = { country = ROOT  share = 50 }
+                province_has_center_of_trade_of_level = 3
+            }  # NYC
+ 		}
+		effect = {
+			add_years_of_income = 1
+			area_nj_north_jersey = { add_permanent_claim = ROOT }
+			area_nj_newark = { add_permanent_claim = ROOT }
+			area_ct_western = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_unite_new_york_metro = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_ny_the_world_trade_center }
+		trigger = {
+			area_nj_north_jersey = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nj_newark = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ct_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nj_north_jersey
+				area = area_nj_newark
+				area = area_ct_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_new_york_bureaucrats = {
+		icon = hand-picked_bureaucrats
+		position = 7
+		required_missions = {  }
+		trigger = {
+            courthouse = 20
+ 		}
+		effect = {
+			add_dip_power = 100
+		}
+
+	}
+
+	mission_ny_the_amish_wars = {
+		icon = settle_north_america
+		position = 8
+		required_missions = { mission_ny_the_city_of_brotherly_love }
+		trigger = {
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+				area = area_pa_north_dutch
+				area = area_pa_south_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_taming_the_wilds = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_ny_the_amish_wars }
+		trigger = {
+			area_pa_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_northeast
+				area = area_pa_susquehanna_valley
+				area = area_pa_east_wilds
+				area = area_pa_central_wilds
+				area = area_pa_central
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_yearning_to_breathe_free = {
+		icon = mission_statue_of_liberty
+		position = 10
+		required_missions = { mission_ny_new_york_stock_exchange }
+		trigger = {
+            755 = {
+                has_great_project = {
+                    type = statue_of_liberty
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_yearning_to_breathe_free
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 755
+		}
+	}
+
+	mission_ny_united_nations_capital = {
+		icon = mission_un
+		position = 11
+		required_missions = { mission_ny_yearning_to_breathe_free }
+		trigger = {
+            any_ally = {
+                has_opinion = { who = ROOT  value = 150 }
+                trust = { who = ROOT  value = 80 }
+                total_development = 200
+                continent = continent_west
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_united_nations
+				duration = 18250  # 50 years
+			}
+		}
+
+	}
+}
+
+missions_ny_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNY }
+
+	mission_ny_manage_the_hre = {
+		icon = mission_kaiserreich
+		position = 1
+		required_missions = {  }
+		trigger = {
+            OR = {
+                is_emperor = yes
+                NOT = { is_part_of_hre = yes }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+
+	}
+
+	mission_ny_incorporate_bridgeport = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ny_unite_new_york_metro }
+		trigger = {
+			area_ct_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_ct = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ct_western
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_scourge_of_hartford = {
+		icon = mission_ct
+		position = 5
+		required_missions = { mission_ny_incorporate_bridgeport }
+		trigger = {
+			region_ct = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ct
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_connecting_connecticut = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_ny_scourge_of_hartford }
+		trigger = {
+			region_ct = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_ri = { add_permanent_claim = ROOT }
+			area_ma_south_shore = { add_permanent_claim = ROOT }
+			area_ma_cape_cod = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ct
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_plight_of_the_pilgrims = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_ny_connecting_connecticut }
+		trigger = {
+			region_ri = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ma_south_shore = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ma_cape_cod = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ma_boston = { add_permanent_claim = ROOT }
+			area_nh_manchester = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ri
+				area = area_ma_south_shore
+				area = area_ma_cape_cod
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_the_ivy_league = {
+		icon = mission_early_modern_university
+		position = 8
+		required_missions = { mission_ny_new_york_bureaucrats }
+		trigger = {
+            742 = {
+                has_building = university
+                is_prosperous = yes
+            }
+            755 = {
+                has_building = university
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+            change_innovativeness = 3
+			add_country_modifier = {
+				name = country_modifier_the_ivy_league
+				duration = 9125  # 25 years
+			}
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 742
+                province_id = 755
+            }
+            NOT = {
+                has_building = university
+                is_prosperous = yes
+            }
+		}
+	}
+
+	mission_ny_new_york_stock_exchange = {
+		icon = mission_mal_riches_of_trade
+		position = 9
+		required_missions = { mission_ny_the_ivy_league }
+		trigger = {
+            755 = {
+                has_building = stock_exchange
+                has_great_project = {
+                    type = wall_street
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_years_of_income = 1.5
+		}
+		provinces_to_highlight = {
+            province_id = 755
+		}
+	}
+
+	mission_ny_promote_yankee_unity = {
+		icon = support_american_independence
+		position = 10
+		required_missions = { mission_ny_integrating_boston }
+		trigger = {
+            religious_unity = 0.99
+            stability = 2
+            num_accepted_cultures = 5
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_country_modifier = {
+				name = country_modifier_yankee_unity
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_ny_the_acela_trade_empire = {
+		icon = mission_dominate_home_trade_node
+		position = 11
+		required_missions = { mission_ny_promote_yankee_unity }
+		trigger = {
+            755 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # NYC
+            471 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Boston
+            505 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Boston
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_acela_trade_empire
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+
+	mission_ny_the_empire_state = {
+		icon = mission_ny
+		position = 12
+		required_missions = { mission_ny_united_nations_capital mission_ny_the_acela_trade_empire }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_empire_state
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_ny_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNY }
+
+	mission_ny_new_york_reunification = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_ny = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ny
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_administering_a_state = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_ny_new_york_reunification mission_ny_manage_the_hre }
+		trigger = {
+			region_ny = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			area_pa_scranton = { add_permanent_claim = ROOT }
+			area_pa_allentown = { add_permanent_claim = ROOT }
+			area_pa_stroudsburg = { add_permanent_claim = ROOT }
+			258 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ny
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_penetrating_pennsylviania = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_ny_administering_a_state }
+		trigger = {
+			area_pa_scranton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_allentown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_stroudsburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_erie = { add_permanent_claim = ROOT }
+			area_pa_west_wilds = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_scranton
+				area = area_pa_allentown
+				area = area_pa_stroudsburg
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_allegheny_tributaries = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ny_penetrating_pennsylviania }
+		trigger = {
+			area_pa_erie = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_west_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_erie
+				area = area_pa_west_wilds
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_pennsylvania_factories = {
+		icon = the_london_steelyard
+		position = 5
+		required_missions = { mission_ny_allegheny_tributaries }
+		trigger = {
+            215 = { has_building = workshop  num_of_times_improved_by_owner = 5 }
+            279 = { has_building = workshop  num_of_times_improved_by_owner = 5 }
+            275 = { has_building = workshop  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			224 = { add_permanent_claim = ROOT }
+			area_pa_north_pittsburgh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 215
+                province_id = 279
+                province_id = 275
+            }
+            NOT = {
+                num_of_times_improved_by_owner = 5
+                has_building = workshop
+            }
+		}
+	}
+
+	mission_ny_the_fate_of_steel_city = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ny_pennsylvania_factories }
+		trigger = {
+			224 = { country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_north_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 224
+				area = area_pa_north_pittsburgh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_incorporate_pittsburgh = {
+		icon = mission_pit
+		position = 7
+		required_missions = { mission_ny_the_fate_of_steel_city }
+		trigger = {
+			224 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 224
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ny_the_city_on_a_hill = {
+		icon = mission_bto
+		position = 8
+		required_missions = { mission_ny_plight_of_the_pilgrims mission_ny_western_massachusetts }
+		trigger = {
+			area_ma_boston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nh_manchester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nh_concord = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+				area = area_nh_manchester
+				area = area_nh_concord
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_integrating_boston = {
+		icon = mission_alliances
+		position = 9
+		required_missions = { mission_ny_the_city_on_a_hill }
+		trigger = {
+			area_ma_boston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_boston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_ny_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XNY }
+
+	mission_ny_northern_developments = {
+		icon = mission_early_game_buildings
+		position = 3
+		required_missions = { mission_ny_administering_a_state }
+		trigger = {
+			area_ny_glens_falls = { type = all  num_of_times_improved_by_owner = 5 }
+			699 = { num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_vt_burlington = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_ny_glens_falls
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+				AND = {
+					province_id = 699
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_ny_crossing_lake_champlain = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ny_northern_developments }
+		trigger = {
+			area_vt_burlington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_vt_burlington
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_vermonter_acceptance = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_ny_crossing_lake_champlain }
+		trigger = {
+			accepted_culture = culture_vermonter
+ 		}
+		effect = {
+			region_vt = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ny_the_vermont_campaign = {
+		icon = mission_vt
+		position = 6
+		required_missions = { mission_ny_vermonter_acceptance }
+		trigger = {
+			region_vt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			area_ma_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_vt
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ny_western_massachusetts = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_ny_the_vermont_campaign }
+		trigger = {
+			area_ma_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nh_concord = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ma_western
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}

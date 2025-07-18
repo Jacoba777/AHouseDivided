@@ -1,0 +1,10 @@
+﻿l_english:
+ faction_progressives:0 "Progressives"
+ faction_progressives_influence:0 "Progressives Influence"
+ faction_progressives_FACTION_DESC:0 "Progressives represent those who are seeking to reform society to make it more equitable. Progressives are more tolerant to change and to pluralism."
+ faction_moderates:0 "Moderates"
+ faction_moderates_influence:0 "Moderates Influence"
+ faction_moderates_FACTION_DESC:0 "Moderates attempt to strike a balance between the reform of the progressives and continuity of the conservatives. They prefer gradual change, and consensus-building."
+ faction_conservatives:0 "Conservatives"
+ faction_conservatives_influence:0 "Conservatives Influence"
+ faction_conservatives_FACTION_DESC:0 "Conservatives are those who seek to uphold the existing institutions of a country. They are more skeptical to change, preferring their societies to stick to traditional ways of life."

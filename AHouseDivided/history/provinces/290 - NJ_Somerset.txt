@@ -1,0 +1,29 @@
+capital="Somerville"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = yes
+base_tax=9
+base_production=9
+base_manpower=7
+native_size=250
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_central_jersey
+is_city = yes
+owner=SMV
+add_core=SMV
+add_core=NYC
+controller=SMV
+
+1444.11.12 = {
+	base_tax=21
+	base_production=16
+	base_manpower=8
+}
+
+1444.11.13 = {
+	owner=XNJ
+	add_core=XNJ
+	controller=XNJ
+}

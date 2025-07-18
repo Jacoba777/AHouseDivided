@@ -1,0 +1,30 @@
+capital="Bloomington"
+discovered_by = great_lakes
+discovered_by = central_plains
+discovered_by = appalachia
+hre = no
+base_tax=6
+base_production=6
+base_manpower=5
+native_size=170
+native_ferocity=5
+native_hostileness=3
+religion=nondenominational
+culture=culture_bloomingtonian
+center_of_trade=1
+is_city = yes
+owner=BTP
+add_core=BTP
+controller=BTP
+
+1444.11.12 = {
+	base_tax=3
+	base_production=5
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XIL
+	add_core=XIL
+	controller=XIL
+}

@@ -1,0 +1,30 @@
+capital="East Greenwich"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=7
+base_production=6
+base_manpower=5
+native_size=180
+native_ferocity=4
+native_hostileness=3
+religion=catholic
+culture=culture_providencial
+is_city = yes
+owner=EGW
+add_core=EGW
+add_core=PVD
+controller=EGW
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=5
+	base_production=4
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XRI
+	add_core=XRI
+	controller=XRI
+}

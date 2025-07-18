@@ -1,0 +1,73 @@
+# A region can only belong to one super region.
+
+superregion_alaska = {
+	region_ak
+}
+
+superregion_hawaii = {
+	region_hi
+}
+
+superregion_northeast = {
+	region_ct
+	region_de
+	region_ma
+	region_md
+	region_me
+	region_nh
+	region_nj
+	region_ny
+	region_pa
+	region_ri
+	region_vt
+}
+
+superregion_midwest = {
+	region_ia
+	region_il
+	region_in
+	region_ks
+	region_mi
+	region_mn
+	region_mo
+	region_nd
+	region_ne
+	region_oh
+	region_sd
+	region_wi
+}
+
+superregion_south = {
+	region_al
+	region_ar
+	region_fl
+	region_ga
+	region_ky
+	region_la
+	region_ms
+	region_nc
+	region_ok
+	region_sc
+	region_tn
+	region_tx
+	region_va
+	region_wv
+}
+
+superregion_west = {
+	region_az
+	region_ca
+	region_co
+	region_id
+	region_mt
+	region_nm
+	region_nv
+	region_or
+	region_ut
+	region_wa
+	region_wy
+}
+
+
+
+

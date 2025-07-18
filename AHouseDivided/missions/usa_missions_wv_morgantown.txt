@@ -1,0 +1,336 @@
+missions_wv_morgantown_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MGT }
+
+	mission_wv_morgantown_the_maryland_panhandle = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wv_morgantown_fielding_an_army }
+		trigger = {
+			area_md_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_wv_eastern_panhandle = { add_permanent_claim = ROOT }
+			2706 = { add_permanent_claim = ROOT }
+			2710 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_md_panhandle
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_morgantown_unite_shanondoah = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wv_morgantown_the_maryland_panhandle }
+		trigger = {
+			area_wv_eastern_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			2706 = { country_or_non_sovereign_subject_holds = ROOT }
+			2710 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_eastern_panhandle
+				province_id = 2706
+				province_id = 2710
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_morgantown_harmonize_the_highlands = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_wv_morgantown_unite_shanondoah }
+		trigger = {
+			area_wv_eastern_panhandle = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2706 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2710 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_eastern_panhandle
+				province_id = 2706
+				province_id = 2710
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_wv_morgantown_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MGT }
+
+	mission_wv_morgantown_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_md_panhandle = { add_permanent_claim = ROOT }
+			area_wv_northern_panhandle = { add_permanent_claim = ROOT }
+			area_oh_eastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wv_morgantown_facing_a_giant = {
+		icon = mission_pit
+		position = 2
+		required_missions = {  }
+		trigger = {
+			war_with = PIT
+ 		}
+		effect = {
+			221 = { add_core = ROOT }
+		}
+
+	}
+
+	mission_wv_morgantown_rise_of_an_underdog = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wv_morgantown_facing_a_giant mission_wv_morgantown_war_for_wheeling }
+		trigger = {
+			221 = { country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_northern_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+			area_pa_pittsburgh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 221
+				area = area_wv_northern_panhandle
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+}
+
+missions_wv_morgantown_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MGT }
+
+	mission_wv_morgantown_war_for_wheeling = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wv_morgantown_fielding_an_army }
+		trigger = {
+			2660 = { country_or_non_sovereign_subject_holds = ROOT }
+			2661 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2660
+				province_id = 2661
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_morgantown_placate_wheeling = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_wv_morgantown_war_for_wheeling }
+		trigger = {
+			2660 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2661 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+            2702 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2701 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2685 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+            2687 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+            }
+    
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2660
+				province_id = 2661
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wv_morgantown_develop_the_hollerlands = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_wv_morgantown_placate_wheeling }
+		trigger = {
+			area_wv_central = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_wv_charleston = { add_permanent_claim = ROOT }
+			area_wv_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_wv_central
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_wv_morgantown_conquer_charleston = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wv_morgantown_develop_the_hollerlands }
+		trigger = {
+			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_wv_morgantown_administering_charleston = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_wv_morgantown_conquer_charleston }
+		trigger = {
+			area_wv_charleston = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+			area_wv_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_charleston
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

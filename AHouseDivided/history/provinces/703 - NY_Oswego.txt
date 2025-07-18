@@ -1,0 +1,28 @@
+capital="Oswego"
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=4
+base_production=5
+base_manpower=5
+native_size=140
+native_ferocity=6
+native_hostileness=4
+religion=catholic
+culture=culture_syracusan
+is_city = yes
+owner=SYC
+add_core=SYC
+controller=SYC
+
+1444.11.12 = {
+	base_tax=1
+	base_production=3
+	base_manpower=3
+}
+
+1444.11.13 = {
+	owner=XNY
+	add_core=XNY
+	controller=XNY
+}

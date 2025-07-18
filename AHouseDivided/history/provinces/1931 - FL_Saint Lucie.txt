@@ -1,0 +1,28 @@
+capital="Fort Pierce"
+discovered_by = southeast
+discovered_by = miss_delta
+hre = no
+base_tax=7
+base_production=6
+base_manpower=7
+native_size=200
+native_ferocity=4
+native_hostileness=4
+religion=catholic
+culture=culture_lucie
+is_city = yes
+owner=LCI
+add_core=LCI
+controller=LCI
+
+1444.11.12 = {
+	base_tax=5
+	base_production=4
+	base_manpower=9
+}
+
+1444.11.13 = {
+	owner=XFL
+	add_core=XFL
+	controller=XFL
+}

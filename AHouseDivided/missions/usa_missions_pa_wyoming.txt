@@ -1,0 +1,452 @@
+missions_pa_wyoming_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ALN
+			tag = ESB
+			tag = SCR
+			tag = SAY
+		}
+	}
+
+	mission_pa_wyoming_susquehanna_campaign = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_wyoming_unite_the_valley }
+		trigger = {
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_susquehanna_valley
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_susquehanna_inroads = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_pa_wyoming_susquehanna_campaign }
+		trigger = {
+			accepted_culture = culture_susquehanna
+ 		}
+		effect = {
+			area_pa_allegheny_mts = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_pa_wyoming_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ALN
+			tag = ESB
+			tag = SCR
+			tag = SAY
+		}
+	}
+
+	mission_pa_wyoming_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_pa_wyoming_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_pa_wyoming_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_pa_wyoming_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			area_pa_scranton = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_wyoming_the_siege_of_scranton = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_pa_wyoming_a_respectable_state }
+		trigger = {
+			area_pa_scranton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_northeast = { add_permanent_claim = ROOT }
+			area_pa_stroudsburg = { add_permanent_claim = ROOT }
+			area_pa_allentown = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_scranton
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_unite_the_valley = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_pa_wyoming_the_siege_of_scranton }
+		trigger = {
+			area_pa_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_stroudsburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_allentown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+			area_pa_susquehanna_valley = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_northeast
+				area = area_pa_stroudsburg
+				area = area_pa_allentown
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_coal_fields_workshops = {
+		icon = the_london_steelyard
+		position = 6
+		required_missions = { mission_pa_wyoming_unite_the_valley }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 5
+                OR = {
+                    area = area_pa_scranton
+                    area = area_pa_northeast
+                    area = area_pa_stroudsburg
+                    area = area_pa_allentown
+                }
+                has_building = workshop
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            262 = { change_trade_goods = coal }
+            278 = { change_trade_goods = coal }
+		}
+		provinces_to_highlight = {
+            OR = {
+                area = area_pa_scranton
+                area = area_pa_northeast
+                area = area_pa_stroudsburg
+                area = area_pa_allentown
+            }
+            NOT = {
+                has_building = workshop
+                owned_by = ROOT
+            }
+		}
+	}
+
+	mission_pa_wyoming_king_of_lancaster = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_pa_wyoming_susquehanna_campaign }
+		trigger = {
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_east_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_pacifying_the_penn_dutch = {
+		icon = settle_north_america
+		position = 8
+		required_missions = { mission_pa_wyoming_king_of_lancaster }
+		trigger = {
+			accepted_culture = culture_penn_dutch
+ 		}
+		effect = {
+			area_pa_north_dutch = { add_permanent_claim = ROOT }
+			area_pa_south_dutch = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_pa_wyoming_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ALN
+			tag = ESB
+			tag = SCR
+			tag = SAY
+		}
+	}
+
+	mission_pa_wyoming_brotherly_conflict = {
+		icon = mission_phl
+		position = 6
+		required_missions = { mission_pa_wyoming_unite_the_valley }
+		trigger = {
+			OR = {
+				is_rival = PHL
+				AND = {
+					exists = PHL
+					military_strength = {
+						who = PHL
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = PHL
+			}
+			OR = {
+				PHL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				PHL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = PHL }
+				tag = PHL
+			}
+ 		}
+		effect = {
+			area_pa_philly = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_pa_wyoming_the_city_of_brotherly_love = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_pa_wyoming_brotherly_conflict }
+		trigger = {
+			area_pa_philly = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_stabilize_philadelphia = {
+		icon = mission_alliances
+		position = 8
+		required_missions = { mission_pa_wyoming_the_city_of_brotherly_love }
+		trigger = {
+			area_pa_philly = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_philly
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_pa_wyoming_retaking_the_old_capital = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_pa_wyoming_pacifying_the_penn_dutch mission_pa_wyoming_stabilize_philadelphia }
+		trigger = {
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_johnstown = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_north_dutch
+				area = area_pa_south_dutch
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_into_the_mountains = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_pa_wyoming_retaking_the_old_capital }
+		trigger = {
+			area_pa_allegheny_mts = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_pa_pittsburgh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_allegheny_mts
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_the_fate_of_steel_city = {
+		icon = mission_unite_home_region
+		position = 11
+		required_missions = { mission_pa_wyoming_into_the_mountains }
+		trigger = {
+			area_pa_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_pa_wyoming_incorporate_pittsburgh = {
+		icon = mission_alliances
+		position = 12
+		required_missions = { mission_pa_wyoming_the_fate_of_steel_city }
+		trigger = {
+			area_pa_pittsburgh = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_steel_city_foundries
+				duration = 5475  # 15 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}

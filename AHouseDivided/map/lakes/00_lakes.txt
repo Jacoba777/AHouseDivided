@@ -1,0 +1,83 @@
+# Great Salt
+lake = {
+  triangle_strip = {
+    2540 635
+    2567 640
+    2581 601
+    2553 585
+    2540 635
+  }
+  height = 21
+}
+
+# Utah Lake
+lake = {
+	triangle_strip = {
+		2573 582
+		2582 582
+		2579 570
+		2542 568
+		2573 582
+	}
+	height = 21
+}
+
+# Bear Lake, UT
+lake = {
+	triangle_strip = {
+		2590 634
+		2600 653
+		2600 631
+		2590 634
+	}
+	height = 22
+}
+
+
+# Lake Tahoe
+lake = {
+	triangle_strip = {
+		2323 578
+		2334 578
+		2333 565
+		2323 566
+		2323 578
+	}
+	height = 22
+}
+
+# Pyramid Lake
+lake = {
+	triangle_strip = {
+		2343 609
+		2355 614
+		2354 595
+		2347 597
+		2343 609
+	}
+	height = 21
+}
+
+# Yellowstone lakes
+lake = {
+	triangle_strip = {
+		2625 737
+		2641 737
+		2626 704
+		2615 710
+		2625 737
+	}
+	height = 22
+}
+
+# Oregon lake
+lake = {
+	triangle_strip = {
+		2384 728
+		2404 729
+		2404 718
+		2383 716
+		2384 728
+	}
+	height = 20
+}

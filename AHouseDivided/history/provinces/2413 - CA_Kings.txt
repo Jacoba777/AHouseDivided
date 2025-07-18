@@ -1,0 +1,30 @@
+capital="Hanford"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=5
+base_production=5
+base_manpower=5
+native_size=150
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_south_valley
+is_city = yes
+owner=HFR
+add_core=HFR
+controller=HFR
+fort_15th=yes
+
+1444.11.12 = {
+	base_tax=2
+	base_production=2
+	base_manpower=4
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

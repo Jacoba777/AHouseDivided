@@ -1,0 +1,29 @@
+capital="Merced"
+discovered_by = california
+discovered_by = southwest
+discovered_by = pacific_nw
+hre = no
+base_tax=6
+base_production=6
+base_manpower=7
+native_size=190
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_north_valley
+is_city = yes
+owner=MCD
+add_core=MCD
+controller=MCD
+
+1444.11.12 = {
+	base_tax=4
+	base_production=3
+	base_manpower=7
+}
+
+1444.11.13 = {
+	owner=XCA
+	add_core=XCA
+	controller=XCA
+}

@@ -1,0 +1,118 @@
+missions_ct_minor_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SMF
+			tag = TRR
+			tag = NGT
+			tag = BPT
+			tag = HFD
+			tag = KIL
+			tag = NWC
+			tag = MDT
+			tag = NHV
+		}
+	}
+
+	mission_ct_minor_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+
+	}
+
+	mission_ct_minor_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ct_minor_fielding_an_army }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+            area_for_scope_province = { is_capital_of = ROOT }
+            NOT = { owned_by = ROOT }
+		}
+	}
+
+	mission_ct_minor_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_ct_minor_local_feuds }
+		trigger = {
+            capital_scope = {
+                area_for_scope_province = {
+                    type = all
+                    country_or_non_sovereign_subject_holds = ROOT
+                    NOT = { devastation = 1 }
+                    NOT = { unrest = 10 }
+                    NOT = { local_autonomy = 50 }
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			region_ct = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ct_minor_unite_connecticut = {
+		icon = mission_ct
+		position = 4
+		required_missions = { mission_ct_minor_a_respectable_state }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 6
+                owned_by = ROOT
+                region = region_ct
+            }
+            464 = { owned_by = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+            region = region_ct
+            NOT = { owned_by = ROOT }
+		}
+	}
+}

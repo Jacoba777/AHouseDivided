@@ -1,0 +1,29 @@
+capital="Tazewell"
+discovered_by = appalachia
+discovered_by = mid_atlantic
+discovered_by = new_england
+hre = no
+base_tax=1
+base_production=2
+base_manpower=2
+native_size=50
+native_ferocity=8
+native_hostileness=4
+religion=methodist
+culture=culture_ridge_virginian
+is_city = yes
+owner=BLU
+add_core=BLU
+controller=BLU
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XVA
+	add_core=XVA
+	controller=XVA
+}

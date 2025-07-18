@@ -1,0 +1,28 @@
+capital="Butte"
+discovered_by = upper_rockies
+discovered_by = northern_plains
+hre = no
+base_tax=2
+base_production=2
+base_manpower=2
+native_size=60
+native_ferocity=5
+native_hostileness=4
+religion=catholic
+culture=culture_missoulan
+is_city = yes
+owner=BUT
+add_core=BUT
+controller=BUT
+
+1444.11.12 = {
+	base_tax=0
+	base_production=1
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XMT
+	add_core=XMT
+	controller=XMT
+}

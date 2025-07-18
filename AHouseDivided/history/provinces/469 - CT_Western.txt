@@ -1,0 +1,30 @@
+capital="Stamford"
+discovered_by = new_england
+discovered_by = mid_atlantic
+hre = yes
+base_tax=10
+base_production=10
+base_manpower=8
+native_size=280
+native_ferocity=5
+native_hostileness=3
+religion=catholic
+culture=culture_hudsonian
+center_of_trade=1
+is_city = yes
+owner=SMF
+add_core=SMF
+add_core=NYC
+controller=SMF
+
+1444.11.12 = {
+	base_tax=41
+	base_production=26
+	base_manpower=15
+}
+
+1444.11.13 = {
+	owner=XCT
+	add_core=XCT
+	controller=XCT
+}

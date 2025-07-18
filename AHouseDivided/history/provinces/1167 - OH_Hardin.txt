@@ -1,0 +1,29 @@
+capital="Kenton"
+discovered_by = great_lakes
+discovered_by = mid_atlantic
+discovered_by = appalachia
+hre = no
+base_tax=1
+base_production=1
+base_manpower=2
+native_size=40
+native_ferocity=5
+native_hostileness=6
+religion=methodist
+culture=culture_columbusite
+is_city = yes
+owner=FDY
+add_core=FDY
+controller=FDY
+
+1444.11.12 = {
+	base_tax=0
+	base_production=0
+	base_manpower=1
+}
+
+1444.11.13 = {
+	owner=XOH
+	add_core=XOH
+	controller=XOH
+}
