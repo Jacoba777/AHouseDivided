@@ -10,7 +10,7 @@ missions_wi_slot1 = {
 		position = 3
 		required_missions = { mission_wi_the_badger_reunion }
 		trigger = {
-			accepted_culture = culture_milwaukee
+			accepted_culture = culture_milwaukeean
  		}
 		effect = {
 			area_il_chicago = { add_permanent_claim = ROOT }
