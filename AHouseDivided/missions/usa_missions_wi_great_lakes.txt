@@ -1,0 +1,365 @@
+missions_wi_great_lakes_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GBY
+			tag = MWK
+			tag = APT
+			tag = FDL
+			tag = SHE
+		}
+	}
+
+	mission_wi_great_lakes_king_of_lake_michigan = {
+		icon = mission_mwk
+		position = 4
+		required_missions = { mission_wi_great_lakes_a_respectable_state }
+		trigger = {
+			area_wi_green_bay = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_shawano = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_fond_du_lac = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_milwaukee = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_green_bay
+				area = area_wi_shawano
+				area = area_wi_fond_du_lac
+				area = area_wi_milwaukee
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_wi_great_lakes_embrace_milwaukeean = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_wi_great_lakes_king_of_lake_michigan }
+		trigger = {
+			accepted_culture = culture_milwaukeean
+ 		}
+		effect = {
+			area_wi_southeastern = { add_core = ROOT }
+		}
+
+	}
+
+	mission_wi_great_lakes_acquire_kenosha = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_wi_great_lakes_embrace_milwaukeean }
+		trigger = {
+			area_wi_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_southeastern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_wi_great_lakes_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GBY
+			tag = MWK
+			tag = APT
+			tag = FDL
+			tag = SHE
+		}
+	}
+
+	mission_wi_great_lakes_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_wi_appleton = { add_permanent_claim = ROOT }
+			2348 = { add_permanent_claim = ROOT }
+			2349 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_great_lakes_local_feuds = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wi_great_lakes_fielding_an_army }
+		trigger = {
+			area_wi_appleton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			2348 = { country_or_non_sovereign_subject_holds = ROOT }
+			2349 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_appleton
+				province_id = 2348
+				province_id = 2349
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_wi_great_lakes_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_wi_great_lakes_local_feuds }
+		trigger = {
+			area_wi_appleton = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2348 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2349 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_wi_green_bay = { add_permanent_claim = ROOT }
+			area_wi_shawano = { add_permanent_claim = ROOT }
+			area_wi_fond_du_lac = { add_permanent_claim = ROOT }
+			area_wi_milwaukee = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_appleton
+				province_id = 2348
+				province_id = 2349
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_wi_great_lakes_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = GBY
+			tag = MWK
+			tag = APT
+			tag = FDL
+			tag = SHE
+		}
+	}
+
+	mission_wi_great_lakes_rival_madison = {
+		icon = mission_luther_theses
+		position = 4
+		required_missions = { mission_wi_great_lakes_a_respectable_state }
+		trigger = {
+			OR = {
+				is_rival = MDS
+				AND = {
+					exists = MDS
+					military_strength = {
+						who = MDS
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MDS
+			}
+			OR = {
+				MDS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MDS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MDS }
+				tag = MDS
+			}
+ 		}
+		effect = {
+			area_wi_madison = { add_permanent_claim = ROOT }
+			area_wi_southwestern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_great_lakes_march_on_madison = {
+		icon = mission_mds
+		position = 5
+		required_missions = { mission_wi_great_lakes_rival_madison }
+		trigger = {
+			area_wi_madison = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_madison
+				area = area_wi_southwestern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_wi_great_lakes_administering_a_capital = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_wi_great_lakes_march_on_madison }
+		trigger = {
+			area_wi_madison = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wi_southwestern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			change_government_reform_progress = 25
+
+			add_prestige_or_monarch_power = { amount = 15 }
+			area_wi_wausau = { add_permanent_claim = ROOT }
+			area_wi_central = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_madison
+				area = area_wi_southwestern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wi_great_lakes_pushing_westward = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_wi_great_lakes_administering_a_capital }
+		trigger = {
+			area_wi_wausau = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_central = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_wausau
+				area = area_wi_central
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}

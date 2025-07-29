@@ -1,0 +1,376 @@
+missions_wi_western_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = WAU
+			tag = EAU
+			tag = LCS
+		}
+	}
+
+	mission_wi_western_the_milwaukee_menace = {
+		icon = mission_luther_theses
+		position = 2
+		required_missions = { mission_wi_western_fielding_an_army }
+		trigger = {
+			OR = {
+				is_rival = MWK
+				AND = {
+					exists = MWK
+					military_strength = {
+						who = MWK
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MWK
+			}
+			OR = {
+				MWK = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MWK = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MWK }
+				tag = MWK
+			}
+ 		}
+		effect = {
+			area_wi_milwaukee = { add_permanent_claim = ROOT }
+			area_wi_fond_du_lac = { add_permanent_claim = ROOT }
+			area_wi_southeastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_western_master_of_lake_michigan = {
+		icon = mission_mwk
+		position = 3
+		required_missions = { mission_wi_western_the_milwaukee_menace }
+		trigger = {
+			area_wi_milwaukee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_fond_du_lac = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_milwaukee
+				area = area_wi_fond_du_lac
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_wi_western_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = WAU
+			tag = EAU
+			tag = LCS
+		}
+	}
+
+	mission_wi_western_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_wi_eau_claire = { add_permanent_claim = ROOT }
+			area_wi_western = { add_permanent_claim = ROOT }
+			area_wi_wausau = { add_permanent_claim = ROOT }
+			area_wi_la_crosse = { add_permanent_claim = ROOT }
+			2333 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_western_rival_madison = {
+		icon = mission_luther_theses
+		position = 2
+		required_missions = { mission_wi_western_fielding_an_army }
+		trigger = {
+			OR = {
+				is_rival = MDS
+				AND = {
+					exists = MDS
+					military_strength = {
+						who = MDS
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MDS
+			}
+			OR = {
+				MDS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MDS = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MDS }
+				tag = MDS
+			}
+ 		}
+		effect = {
+			area_wi_madison = { add_permanent_claim = ROOT }
+			area_wi_southwestern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_western_march_on_madison = {
+		icon = mission_mds
+		position = 3
+		required_missions = { mission_wi_western_rival_madison }
+		trigger = {
+			area_wi_madison = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_madison
+				area = area_wi_southwestern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_wi_western_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = WAU
+			tag = EAU
+			tag = LCS
+		}
+	}
+
+	mission_wi_western_unite_west_wisconsin = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wi_western_fielding_an_army }
+		trigger = {
+			area_wi_eau_claire = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_western = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_wausau = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			2358 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			2343 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_eau_claire
+				area = area_wi_western
+				area = area_wi_wausau
+				province_id = 2358
+				province_id = 2343
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_wi_western_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_wi_western_unite_west_wisconsin }
+		trigger = {
+			area_wi_eau_claire = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_wi_western = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_wi_wausau = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			2358 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			2343 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_wi_shawano = { add_permanent_claim = ROOT }
+			area_wi_green_bay = { add_permanent_claim = ROOT }
+			area_wi_appleton = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_eau_claire
+				area = area_wi_western
+				area = area_wi_wausau
+				province_id = 2358
+				province_id = 2343
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_wi_western_green_bay_awaits = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_wi_western_a_respectable_state }
+		trigger = {
+			area_wi_shawano = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_green_bay = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_appleton = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_shawano
+				area = area_wi_green_bay
+				area = area_wi_appleton
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}

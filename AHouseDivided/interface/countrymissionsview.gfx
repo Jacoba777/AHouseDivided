@@ -835,6 +835,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "mission_mn"
+		texturefile = "gfx/interface/missions/states/mission_mn.dds"
+	}
+	
+	spriteType = {
 		name = "mission_mds"
 		texturefile = "gfx/interface/missions/states/mission_mds.dds"
 	}
@@ -1042,6 +1047,56 @@ spriteTypes = {
 	spriteType = {
 		name = "mission_stl"
 		texturefile = "gfx/interface/missions/states/mission_stl.dds"
+	}
+	
+	spriteType = {
+		name = "mission_great_lakes"
+		texturefile = "gfx/interface/missions/mission_great_lakes.dds"
+	}
+	
+	spriteType = {
+		name = "mission_auto_plant"
+		texturefile = "gfx/interface/missions/mission_auto_plant.dds"
+	}
+	
+	spriteType = {
+		name = "mission_uaw"
+		texturefile = "gfx/interface/missions/mission_uaw.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mackinac_bridge"
+		texturefile = "gfx/interface/missions/mission_mackinac_bridge.dds"
+	}
+	
+	spriteType = {
+		name = "mission_iron_and_copper"
+		texturefile = "gfx/interface/missions/mission_iron_and_copper.dds"
+	}
+	
+	spriteType = {
+		name = "mission_spanish_armada"
+		texturefile = "gfx/interface/missions/mission_spanish_armada.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dairy"
+		texturefile = "gfx/interface/missions/mission_dairy.dds"
+	}
+	
+	spriteType = {
+		name = "mission_brewery"
+		texturefile = "gfx/interface/missions/mission_brewery.dds"
+	}
+	
+	spriteType = {
+		name = "mission_lambeau_field"
+		texturefile = "gfx/interface/missions/mission_lambeau_field.dds"
+	}
+	
+	spriteType = {
+		name = "mission_wisconsin_idea"
+		texturefile = "gfx/interface/missions/mission_wisconsin_idea.dds"
 	}
 	
 	spriteType = {

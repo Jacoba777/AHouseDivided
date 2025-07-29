@@ -1,0 +1,435 @@
+missions_mi_yooper_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = ESC
+			tag = GGB
+			tag = CMX
+			tag = IMT
+			tag = MQT
+			tag = CIU
+		}
+	}
+
+	mission_mi_yooper_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_mi_marquette = { add_permanent_claim = ROOT }
+			area_mi_houghton = { add_permanent_claim = ROOT }
+			area_mi_escanaba = { add_permanent_claim = ROOT }
+			area_mi_east_superior = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_yooper_unite_superior = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_mi_yooper_fielding_an_army }
+		trigger = {
+			area_mi_marquette = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_houghton = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_escanaba = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_east_superior = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_marquette
+				area = area_mi_houghton
+				area = area_mi_escanaba
+				area = area_mi_east_superior
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mi_yooper_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_mi_yooper_unite_superior }
+		trigger = {
+			area_mi_marquette = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mi_houghton = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mi_escanaba = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mi_east_superior = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_marquette
+				area = area_mi_houghton
+				area = area_mi_escanaba
+				area = area_mi_east_superior
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mi_yooper_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 4
+		required_missions = { mission_mi_yooper_a_respectable_state }
+		trigger = {
+            navy_size_percentage = 1
+ 		}
+		effect = {
+            1803 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+            1808 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+            1810 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+            1812 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+    
+			area_mi_tip_of_mitten = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_yooper_crossing_the_bridge = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mi_yooper_build_a_navy }
+		trigger = {
+			area_mi_tip_of_mitten = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_tip_of_mitten
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mi_yooper_footholds_in_the_mitten = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_mi_yooper_crossing_the_bridge }
+		trigger = {
+			area_mi_tip_of_mitten = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_mi_traverse = { add_permanent_claim = ROOT }
+			area_mi_cadillac = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_tip_of_mitten
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mi_yooper_take_traverse_city = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mi_yooper_footholds_in_the_mitten }
+		trigger = {
+			area_mi_traverse = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_cadillac = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+			area_mi_western = { add_permanent_claim = ROOT }
+			area_mi_grand_rapids = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_traverse
+				area = area_mi_cadillac
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mi_yooper_grand_river_campaign = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_mi_yooper_take_traverse_city }
+		trigger = {
+			area_mi_grand_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_grand_rapids
+				area = area_mi_western
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_yooper_accept_grand_rapidian = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_mi_yooper_grand_river_campaign }
+		trigger = {
+			accepted_culture = culture_grand_rapidian
+ 		}
+		effect = {
+			area_mi_central = { add_permanent_claim = ROOT }
+			area_mi_lansing = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_yooper_capture_lansing = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_mi_yooper_accept_grand_rapidian }
+		trigger = {
+			area_mi_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_lansing = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_central
+				area = area_mi_lansing
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_yooper_administering_a_capital = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { mission_mi_yooper_capture_lansing }
+		trigger = {
+			area_mi_central = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mi_lansing = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_mi_detroit = { add_permanent_claim = ROOT }
+			area_mi_west_detroit = { add_permanent_claim = ROOT }
+			area_mi_north_detroit = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_central
+				area = area_mi_lansing
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mi_yooper_the_fate_of_motor_city = {
+		icon = mission_unite_home_region
+		position = 12
+		required_missions = { mission_mi_yooper_administering_a_capital }
+		trigger = {
+			area_mi_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_west_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_north_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_detroit
+				area = area_mi_west_detroit
+				area = area_mi_north_detroit
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

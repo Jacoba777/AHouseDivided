@@ -1,0 +1,301 @@
+missions_mi_west_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = BTK
+			tag = AZO
+			tag = HLD
+			tag = GRR
+			tag = BGR
+			tag = MKG
+			tag = NIL
+			tag = LDT
+		}
+	}
+
+	mission_mi_west_the_fate_of_saginaw_bay = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mi_west_accept_lansingite }
+		trigger = {
+			area_mi_saginaw = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_mi_gladwin = { add_permanent_claim = ROOT }
+			area_mi_north_saginaw_bay = { add_permanent_claim = ROOT }
+			area_mi_thumb = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_saginaw
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_west_lake_huron_holdings = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mi_west_the_fate_of_saginaw_bay }
+		trigger = {
+			area_mi_gladwin = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_north_saginaw_bay = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_thumb = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_gladwin
+				area = area_mi_north_saginaw_bay
+				area = area_mi_thumb
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_mi_west_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = BTK
+			tag = AZO
+			tag = HLD
+			tag = GRR
+			tag = BGR
+			tag = MKG
+			tag = NIL
+			tag = LDT
+		}
+	}
+
+	mission_mi_west_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_mi_grand_rapids = { add_permanent_claim = ROOT }
+			area_mi_southern = { add_permanent_claim = ROOT }
+			area_mi_western = { add_permanent_claim = ROOT }
+			area_mi_michiana = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_west_unite_west_michigan = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_mi_west_fielding_an_army }
+		trigger = {
+			area_mi_grand_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_michiana = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_grand_rapids
+				area = area_mi_southern
+				area = area_mi_western
+				area = area_mi_michiana
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_west_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_mi_west_unite_west_michigan }
+		trigger = {
+			area_mi_grand_rapids = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mi_southern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mi_western = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mi_michiana = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_mi_central = { add_permanent_claim = ROOT }
+			area_mi_lansing = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_grand_rapids
+				area = area_mi_southern
+				area = area_mi_western
+				area = area_mi_michiana
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mi_west_capture_lansing = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mi_west_a_respectable_state }
+		trigger = {
+			area_mi_lansing = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_jackson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_lansing
+				area = area_mi_jackson
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_west_accept_lansingite = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_mi_west_capture_lansing }
+		trigger = {
+			accepted_culture = culture_lansingite
+ 		}
+		effect = {
+			area_mi_saginaw = { add_permanent_claim = ROOT }
+			area_mi_jackson = { add_permanent_claim = ROOT }
+			area_mi_west_detroit = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_mi_west_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = BTK
+			tag = AZO
+			tag = HLD
+			tag = GRR
+			tag = BGR
+			tag = MKG
+			tag = NIL
+			tag = LDT
+		}
+	}
+
+	mission_mi_west_control_ann_arbor = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mi_west_accept_lansingite }
+		trigger = {
+			area_mi_jackson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_west_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			change_government_reform_progress = 25
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_jackson
+				area = area_mi_west_detroit
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_west_embrace_detroiter = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_mi_west_control_ann_arbor }
+		trigger = {
+			accepted_culture = culture_detroiter
+ 		}
+		effect = {
+			area_mi_detroit = { add_permanent_claim = ROOT }
+			area_mi_north_detroit = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_west_the_fate_of_motor_city = {
+		icon = mission_dtw
+		position = 8
+		required_missions = { mission_mi_west_embrace_detroiter }
+		trigger = {
+			area_mi_north_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_west_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_north_detroit
+				area = area_mi_detroit
+				area = area_mi_west_detroit
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

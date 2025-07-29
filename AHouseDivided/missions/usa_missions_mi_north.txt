@@ -1,0 +1,403 @@
+missions_mi_north_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = APN
+			tag = CDC
+			tag = TVC
+			tag = PLN
+			tag = IOS
+		}
+	}
+
+	mission_mi_north_hold_saginaw_bay = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mi_north_accept_mid_michigander }
+		trigger = {
+			area_mi_saginaw = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_saginaw
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_north_stabilize_saginaw = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_mi_north_hold_saginaw_bay }
+		trigger = {
+			area_mi_saginaw = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_mi_thumb = { add_permanent_claim = ROOT }
+			area_mi_detroit = { add_permanent_claim = ROOT }
+			area_mi_north_detroit = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_saginaw
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mi_north_the_fate_of_motor_city = {
+		icon = mission_dtw
+		position = 8
+		required_missions = { mission_mi_north_stabilize_saginaw }
+		trigger = {
+			area_mi_north_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 1
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_north_detroit
+				area = area_mi_detroit
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_mi_north_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = APN
+			tag = CDC
+			tag = TVC
+			tag = PLN
+			tag = IOS
+		}
+	}
+
+	mission_mi_north_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 1
+		required_missions = {  }
+		trigger = {
+            navy_size_percentage = 1
+ 		}
+		effect = {
+            1814 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+            1815 = {
+                if = {
+                    limit = { is_empty = yes }
+                    cede_province = ROOT
+                }
+                else = {
+                    add_permanent_claim = ROOT
+                }
+            }
+    
+			area_mi_tip_of_mitten = { add_permanent_claim = ROOT }
+			area_mi_traverse = { add_permanent_claim = ROOT }
+			area_mi_alpena = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_north_unite_the_mitten_tip = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_mi_north_build_a_navy }
+		trigger = {
+			area_mi_tip_of_mitten = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_traverse = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_alpena = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_tip_of_mitten
+				area = area_mi_traverse
+				area = area_mi_alpena
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mi_north_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_mi_north_unite_the_mitten_tip }
+		trigger = {
+			area_mi_tip_of_mitten = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mi_traverse = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mi_alpena = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_mi_cadillac = { add_permanent_claim = ROOT }
+			area_mi_gladwin = { add_permanent_claim = ROOT }
+			area_mi_oscoda = { add_permanent_claim = ROOT }
+			area_mi_north_saginaw_bay = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_tip_of_mitten
+				area = area_mi_traverse
+				area = area_mi_alpena
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mi_north_dominate_the_north = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mi_north_a_respectable_state }
+		trigger = {
+			area_mi_cadillac = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_gladwin = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_oscoda = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mi_north_saginaw_bay = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_cadillac
+				area = area_mi_gladwin
+				area = area_mi_oscoda
+				area = area_mi_north_saginaw_bay
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mi_north_accept_mid_michigander = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_mi_north_dominate_the_north }
+		trigger = {
+			accepted_culture = culture_mid_michigander
+ 		}
+		effect = {
+			area_mi_saginaw = { add_permanent_claim = ROOT }
+			area_mi_western = { add_permanent_claim = ROOT }
+			area_mi_central = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_mi_north_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = APN
+			tag = CDC
+			tag = TVC
+			tag = PLN
+			tag = IOS
+		}
+	}
+
+	mission_mi_north_sweep_mid_michigan = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mi_north_accept_mid_michigander }
+		trigger = {
+			area_mi_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_mi_grand_rapids = { add_permanent_claim = ROOT }
+			area_mi_lansing = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_western
+				area = area_mi_central
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_north_grand_river_campaign = {
+		icon = mission_grr
+		position = 7
+		required_missions = { mission_mi_north_sweep_mid_michigan }
+		trigger = {
+			area_mi_grand_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_lansing = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_grand_rapids
+				area = area_mi_lansing
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mi_north_accept_lansingite = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_mi_north_grand_river_campaign }
+		trigger = {
+			accepted_culture = culture_lansingite
+ 		}
+		effect = {
+			area_mi_southern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mi_north_battle_of_battle_creek = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_mi_north_accept_lansingite }
+		trigger = {
+			area_mi_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_southern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

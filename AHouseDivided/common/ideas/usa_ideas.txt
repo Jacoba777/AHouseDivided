@@ -296,6 +296,107 @@ georgian_ideas = {
 	}
 }
 
+hoosier_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XIN
+		}
+	}
+	start = {
+		production_efficiency = 0.10
+	}
+
+	hoosier_railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	hoosier_ambitious_developers = {
+		local_development_cost = -0.15
+	}
+
+	hoosier_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	hoosier_bounty_hunters = {
+		merc_maintenance_modifier = -0.10
+		mercenary_discipline = 0.05
+	}
+
+	hoosier_austerity = {
+		inflation_action_cost = -0.25
+	}
+
+	hoosier_indiana_volunteers = {
+		land_forcelimit_modifier = 0.25
+	}
+
+	hoosier_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	bonus = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+}
+
+illinoisan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XIL
+		}
+	}
+	start = {
+		blockade_efficiency = 0.2
+	}
+
+	illinoisan_financial_hub = {
+		merchants = 1
+	}
+
+	illinoisan_public_education = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	illinoisan_religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.1
+	}
+
+	illinoisan_a_well_funded_state = {
+		global_tax_modifier = 0.1
+	}
+
+	illinoisan_great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	illinoisan_railroads = {
+		movement_speed = 0.10
+		expand_infrastructure_cost_modifier = -0.25
+	}
+
+	illinoisan_legacy_of_abraham_lincoln = {
+		prestige = 1
+	}
+
+	bonus = {
+		state_governing_cost = -0.1
+	}
+}
+
 kentuckian_ideas = {
 	free = yes
 
@@ -351,8 +452,8 @@ lesser_alabaman_ideas = {
 			tag = BMH
 			tag = MGM
 			tag = TCL
-			tag = MSH
 			tag = HTV
+			tag = MSH
 			tag = SCT
 			tag = GSD
 			tag = MOB
@@ -516,36 +617,36 @@ lesser_floridian_ideas = {
 
 	trigger = {
 		OR = {
-			tag = RLD
-			tag = PBY
-			tag = TVG
-			tag = DTA
 			tag = WCL
 			tag = LLD
 			tag = TMP
+			tag = RLD
+			tag = PBY
+			tag = TVG
 			tag = CTR
+			tag = DTA
 			tag = OCL
 			tag = JSV
-			tag = PLK
 			tag = LKC
 			tag = ALU
+			tag = PLK
+			tag = THS
 			tag = PNC
 			tag = CSV
 			tag = PNM
 			tag = FGC
-			tag = THS
-			tag = LCI
-			tag = OKB
-			tag = SBS
 			tag = MII
 			tag = KEY
 			tag = NPS
 			tag = CCL
+			tag = CWS
+			tag = LCI
+			tag = OKB
+			tag = SBG
 			tag = PUG
 			tag = ACD
 			tag = SRS
-			tag = CWS
-			tag = SBG
+			tag = SBS
 		}
 	}
 	start = {
@@ -595,36 +696,36 @@ lesser_georgian_ideas = {
 		OR = {
 			tag = CDT
 			tag = RME
+			tag = GSV
 			tag = ATN
 			tag = THO
 			tag = LGG
-			tag = GSV
 			tag = CNL
 			tag = TCA
 			tag = ATL
+			tag = MCN
 			tag = WRR
+			tag = CMB
 			tag = MGV
 			tag = AGA
-			tag = CMB
-			tag = MCN
 			tag = SMR
 			tag = CLH
 			tag = DTN
-			tag = JSP
-			tag = BCK
 			tag = CMD
-			tag = HSV
-			tag = SBR
+			tag = BCK
 			tag = SVH
+			tag = HSV
+			tag = JSP
+			tag = SBR
 			tag = AMC
 			tag = GAB
 			tag = VDT
+			tag = BBG
 			tag = TFT
 			tag = FZG
 			tag = WCS
 			tag = DBN
 			tag = ERL
-			tag = BBG
 		}
 	}
 	start = {
@@ -662,6 +763,136 @@ lesser_georgian_ideas = {
 
 	bonus = {
 		global_missionary_strength = 0.01
+	}
+}
+
+lesser_hoosier_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = CCG
+			tag = KKE
+			tag = OTW
+			tag = CBD
+			tag = CTL
+			tag = MVN
+			tag = RKF
+			tag = DXN
+			tag = BTP
+			tag = CPN
+			tag = VML
+			tag = DCT
+			tag = CLE
+			tag = EFH
+			tag = PEA
+			tag = SPF
+			tag = QCY
+			tag = GBG
+			tag = MCB
+			tag = IDP
+			tag = LFY
+			tag = MCI
+			tag = KKM
+			tag = SBD
+			tag = FTW
+			tag = EKT
+			tag = MIC
+			tag = EVN
+			tag = BMT
+			tag = THT
+		}
+	}
+	start = {
+		production_efficiency = 0.06
+	}
+
+	lesser_hoosier_railroads = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.15
+	}
+
+	lesser_hoosier_ambitious_developers = {
+		local_development_cost = -0.1
+	}
+
+	lesser_hoosier_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_hoosier_bounty_hunters = {
+		merc_maintenance_modifier = -0.06
+		mercenary_discipline = 0.03
+	}
+
+	lesser_hoosier_austerity = {
+		inflation_action_cost = -0.15
+	}
+
+	lesser_hoosier_indiana_volunteers = {
+		land_forcelimit_modifier = 0.15
+	}
+
+	lesser_hoosier_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	bonus = {
+		republican_tradition = 0.15
+		legitimacy = 0.3
+		horde_unity = 0.3
+		meritocracy = 0.3
+		devotion = 0.3
+	}
+}
+
+lesser_illinoisan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+
+		}
+	}
+	start = {
+		blockade_efficiency = 0.15
+	}
+
+	lesser_illinoisan_financial_hub = {
+		merchants = 1
+	}
+
+	lesser_illinoisan_public_education = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_illinoisan_religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.5
+	}
+
+	lesser_illinoisan_a_well_funded_state = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_illinoisan_great_lakes_shipping = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.15
+	}
+
+	lesser_illinoisan_railroads = {
+		movement_speed = 0.06
+		expand_infrastructure_cost_modifier = -0.15
+	}
+
+	lesser_illinoisan_legacy_of_abraham_lincoln = {
+		prestige = 0.5
+	}
+
+	bonus = {
+		state_governing_cost = -0.06
 	}
 }
 
@@ -835,6 +1066,88 @@ lesser_marylander_ideas = {
 
 	bonus = {
 		center_of_trade_upgrade_cost = -0.06
+	}
+}
+
+lesser_michigander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = ADR
+			tag = DTW
+			tag = FNT
+			tag = MNO
+			tag = WVR
+			tag = LSG
+			tag = JKS
+			tag = HRN
+			tag = BAY
+			tag = GTT
+			tag = MDL
+			tag = MTP
+			tag = MBS
+			tag = APN
+			tag = CDC
+			tag = TVC
+			tag = PLN
+			tag = IOS
+			tag = BTK
+			tag = AZO
+			tag = HLD
+			tag = GRR
+			tag = BGR
+			tag = MKG
+			tag = NIL
+			tag = LDT
+			tag = ESC
+			tag = GGB
+			tag = CMX
+			tag = IMT
+			tag = MQT
+			tag = CIU
+		}
+	}
+	start = {
+		naval_forcelimit_modifier = 0.06
+		global_sailors_modifier = 0.06
+	}
+
+	lesser_michigander_great_lakes_shipping = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.15
+	}
+
+	lesser_michigander_legacy_of_the_edmund_fitzgerald = {
+		ship_durability = 0.1
+	}
+
+	lesser_michigander_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_michigander_northern_wolverines = {
+		hostile_attrition = 0.5
+		defensiveness = 0.1
+	}
+
+	lesser_michigander_lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	lesser_michigander_industrial_innovation = {
+		innovativeness_gain = 0.3
+		build_time = -0.15
+	}
+
+	lesser_michigander_the_coast_guard = {
+		naval_maintenance_modifier = -0.06
+		naval_morale = 0.06
+	}
+
+	bonus = {
+		production_efficiency = 0.06
 	}
 }
 
@@ -1236,6 +1549,73 @@ lesser_nutmegger_ideas = {
 
 	bonus = {
 		idea_cost = -0.06
+	}
+}
+
+lesser_ohioan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = CBS
+			tag = MFD
+			tag = ZNV
+			tag = MAV
+			tag = YGL
+			tag = ATB
+			tag = SLM
+			tag = CLV
+			tag = AKR
+			tag = CNT
+			tag = WOO
+			tag = TLD
+			tag = SDK
+			tag = FDY
+			tag = CIN
+			tag = DAY
+			tag = LIM
+			tag = OSF
+		}
+	}
+	start = {
+		global_spy_defence = 0.06
+	}
+
+	lesser_ohioan_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_ohioan_navigable_waterways = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.13
+	}
+
+	lesser_ohioan_cleveland_steel = {
+		build_cost = -0.06
+	}
+
+	lesser_ohioan_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_ohioan_religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.05
+	}
+
+	lesser_ohioan_mother_of_presidents = {
+		administrative_efficiency = 0.05
+		prestige = 0.18
+	}
+
+	lesser_ohioan_four_dead_in_ohio = {
+		global_unrest = -1.0
+		stability_cost_modifier = -0.05
+	}
+
+	bonus = {
+		fire_damage_received = -0.06
 	}
 }
 
@@ -1681,6 +2061,65 @@ lesser_west_virginian_ideas = {
 	}
 }
 
+lesser_wisconsinite_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = MRT
+			tag = GBY
+			tag = MWK
+			tag = APT
+			tag = FDL
+			tag = SHE
+			tag = MDS
+			tag = WAU
+			tag = EAU
+			tag = LCS
+		}
+	}
+	start = {
+		yearly_absolutism = 0.15
+		max_absolutism = 5
+	}
+
+	lesser_wisconsinite_wisconsin_breweries = {
+		global_unrest = -1
+	}
+
+	lesser_wisconsinite_great_lakes_shipping = {
+		trade_steering = 0.1
+		global_ship_trade_power = 0.15
+	}
+
+	lesser_wisconsinite_dairyland = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_wisconsinite_the_wisconsin_idea = {
+		technology_cost = -0.06
+		innovativeness_gain = 0.3
+	}
+
+	lesser_wisconsinite_progressive_trailblazers = {
+		reform_progress_growth = 0.15
+		diplomatic_reputation = 0.5
+	}
+
+	lesser_wisconsinite_badgers = {
+		hostile_attrition = 0.3
+		defensiveness = 0.06
+	}
+
+	lesser_wisconsinite_careful_diplomacy = {
+		ae_impact = -0.15
+	}
+
+	bonus = {
+		manpower_in_true_faith_provinces = 0.06
+	}
+}
+
 mainer_ideas = {
 	free = yes
 
@@ -1774,6 +2213,57 @@ marylander_ideas = {
 
 	bonus = {
 		center_of_trade_upgrade_cost = -0.1
+	}
+}
+
+michigander_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMI
+		}
+	}
+	start = {
+		naval_forcelimit_modifier = 0.1
+		global_sailors_modifier = 0.1
+	}
+
+	michigander_great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	michigander_legacy_of_the_edmund_fitzgerald = {
+		ship_durability = 0.15
+	}
+
+	michigander_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	michigander_northern_wolverines = {
+		hostile_attrition = 1
+		defensiveness = 0.15
+	}
+
+	michigander_lighthouses = {
+		own_coast_naval_combat_bonus = 1.0
+		movement_speed_in_fleet_modifier = 1
+	}
+
+	michigander_industrial_innovation = {
+		innovativeness_gain = 0.5
+		build_time = -0.25
+	}
+
+	michigander_the_coast_guard = {
+		naval_maintenance_modifier = -0.1
+		naval_morale = 0.1
+	}
+
+	bonus = {
+		production_efficiency = 0.1
 	}
 }
 
@@ -2178,6 +2668,56 @@ nutmegger_ideas = {
 	}
 }
 
+ohioan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XOH
+		}
+	}
+	start = {
+		global_spy_defence = 0.1
+	}
+
+	ohioan_industrial_heartland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	ohioan_navigable_waterways = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	ohioan_cleveland_steel = {
+		build_cost = -0.1
+	}
+
+	ohioan_pharmaceutical_industry = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	ohioan_religious_diversity = {
+		tolerance_heathen = 1
+		religious_unity = 0.1
+	}
+
+	ohioan_mother_of_presidents = {
+		administrative_efficiency = 0.1
+		prestige = 0.25
+	}
+
+	ohioan_four_dead_in_ohio = {
+		global_unrest = -1.0
+		stability_cost_modifier = -0.10
+	}
+
+	bonus = {
+		fire_damage_received = -0.10
+	}
+}
+
 pennsylvanian_ideas = {
 	free = yes
 
@@ -2516,5 +3056,55 @@ west_virginian_ideas = {
 
 	bonus = {
 		artillery_cost = -0.10
+	}
+}
+
+wisconsinite_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XWI
+		}
+	}
+	start = {
+		yearly_absolutism = 0.25
+		max_absolutism = 5
+	}
+
+	wisconsinite_wisconsin_breweries = {
+		global_unrest = -1
+	}
+
+	wisconsinite_great_lakes_shipping = {
+		trade_steering = 0.15
+		global_ship_trade_power = 0.2
+	}
+
+	wisconsinite_dairyland = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	wisconsinite_the_wisconsin_idea = {
+		technology_cost = -0.1
+		innovativeness_gain = 0.5
+	}
+
+	wisconsinite_progressive_trailblazers = {
+		reform_progress_growth = 0.2
+		diplomatic_reputation = 1
+	}
+
+	wisconsinite_badgers = {
+		hostile_attrition = 0.5
+		defensiveness = 0.1
+	}
+
+	wisconsinite_careful_diplomacy = {
+		ae_impact = -0.2
+	}
+
+	bonus = {
+		manpower_in_true_faith_provinces = 0.10
 	}
 }

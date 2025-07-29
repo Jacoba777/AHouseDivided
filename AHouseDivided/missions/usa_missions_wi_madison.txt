@@ -1,0 +1,236 @@
+missions_wi_madison_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MDS }
+
+	mission_wi_madison_the_northwoods_frontier = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wi_madison_controlling_the_center }
+		trigger = {
+			area_wi_wausau = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_shawano = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_wausau
+				area = area_wi_shawano
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_wi_madison_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MDS }
+
+	mission_wi_madison_controlling_the_center = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_wi_madison_fielding_an_army }
+		trigger = {
+			area_wi_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_wi_appleton = { add_permanent_claim = ROOT }
+			area_wi_wausau = { add_permanent_claim = ROOT }
+			area_wi_shawano = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_central
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_wi_madison_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MDS }
+
+	mission_wi_madison_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_wi_central = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_madison_pushing_to_the_lake = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wi_madison_controlling_the_center }
+		trigger = {
+			area_wi_appleton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_appleton
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_wi_madison_lakeside_fortifications = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_wi_madison_pushing_to_the_lake }
+		trigger = {
+			area_wi_appleton = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_wi_green_bay = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_appleton
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_wi_madison_green_bay_awaits = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_wi_madison_lakeside_fortifications }
+		trigger = {
+			area_wi_green_bay = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_green_bay
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_wi_madison_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = MDS }
+
+	mission_wi_madison_the_milwaukee_menace = {
+		icon = mission_mwk
+		position = 2
+		required_missions = { mission_wi_madison_fielding_an_army }
+		trigger = {
+			OR = {
+				is_rival = MWK
+				AND = {
+					exists = MWK
+					military_strength = {
+						who = MWK
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MWK
+			}
+			OR = {
+				MWK = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MWK = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MWK }
+				tag = MWK
+			}
+ 		}
+		effect = {
+			area_wi_milwaukee = { add_permanent_claim = ROOT }
+			area_wi_fond_du_lac = { add_permanent_claim = ROOT }
+			area_wi_southeastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_wi_madison_master_of_lake_michigan = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_wi_madison_the_milwaukee_menace }
+		trigger = {
+			area_wi_milwaukee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_fond_du_lac = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_milwaukee
+				area = area_wi_fond_du_lac
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

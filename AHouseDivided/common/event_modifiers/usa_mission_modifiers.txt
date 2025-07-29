@@ -617,3 +617,59 @@ country_modifier_a_prairie_empire = {
     num_accepted_cultures = 1
 }
 
+country_modifier_cheesehead_prosperity = {
+    development_cost = -0.05
+    global_prosperity_growth = 0.1
+}
+
+country_modifier_brewey_culture = {
+    global_trade_power = 0.1
+}
+
+country_modifier_timber_surplus = {
+    build_cost = -0.25
+    build_time = -0.25
+}
+
+country_modifier_green_bay_packers = {
+    culture_conversion_cost = -0.25
+    global_trade_power = 0.05
+}
+
+country_modifier_education_reform = {
+    innovativeness_gain = 0.5
+    global_institution_spread = 0.33
+}
+
+country_modifier_the_wisconsin_idea = {
+    advisor_cost = -0.25
+}
+
+country_modifier_forward = {
+    reform_progress_growth = 0.1
+    global_trade_goods_size_modifier = 0.1
+    advisor_cost = -0.1
+}
+
+country_modifier_the_united_auto_workers = {
+    republican_tradition = 0.25
+    advisor_cost = -0.1
+    land_morale = 0.05
+}
+
+country_modifier_bridge_builders = {
+    movement_speed = 0.10
+    global_autonomy = -0.05
+}
+
+country_modifier_iron_exports = {
+    build_cost = -0.25
+    build_time = -0.25
+}
+
+country_modifier_great_lakes_legacy = {
+    naval_forcelimit_modifier = 0.2
+    naval_tradition_from_trade = 0.33
+    global_trade_goods_size_modifier = 0.1
+}
+

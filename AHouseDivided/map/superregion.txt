@@ -8,66 +8,101 @@ superregion_hawaii = {
 	region_hi
 }
 
-superregion_northeast = {
-	region_ct
-	region_de
-	region_ma
-	region_md
-	region_me
-	region_nh
+superregion_midatlantic = {
 	region_nj
 	region_ny
 	region_pa
+}
+
+superregion_new_england = {
+	region_ct
+	region_ma
+	region_me
+	region_nh
 	region_ri
 	region_vt
 }
 
-superregion_midwest = {
-	region_ia
-	region_il
-	region_in
-	region_ks
-	region_mi
-	region_mn
-	region_mo
-	region_nd
-	region_ne
-	region_oh
-	region_sd
-	region_wi
-}
-
-superregion_south = {
-	region_al
-	region_ar
-	region_fl
-	region_ga
-	region_ky
-	region_la
-	region_ms
-	region_nc
-	region_ok
-	region_sc
-	region_tn
-	region_tx
+superregion_greater_delmarva = {
+	region_de
+	region_md
 	region_va
 	region_wv
 }
 
-superregion_west = {
-	region_az
-	region_ca
-	region_co
-	region_id
-	region_mt
-	region_nm
-	region_nv
-	region_or
-	region_ut
-	region_wa
-	region_wy
+superregion_upper_great_lakes = {
+	region_mi
+	region_mn
+	region_wi
 }
 
+superregion_ohio_river_valley = {
+	region_il
+	region_in
+	region_oh
+}
 
+superregion_interriviera = {
+	region_ia
+	region_mo
+}
 
+superregion_dakotas = {
+	region_nd
+	region_sd
+}
 
+superregion_central_plains = {
+	region_ks
+	region_ok
+	region_ne
+}
+
+superregion_atlantic_south = {
+	region_ga
+	region_nc
+	region_sc
+}
+
+superregion_upper_south = {
+	region_ky
+	region_tn
+}
+
+superregion_delta = {
+	region_al
+	region_ar
+	region_la
+	region_ms
+}
+
+superregion_florida = {
+	region_fl
+}
+
+superregion_texas = {
+	region_tx
+}
+
+superregion_four_corners = {
+	region_az
+	region_co
+	region_nm
+	region_ut
+}
+
+superregion_pacific_northwest = {
+	region_or
+	region_wa
+}
+
+superregion_grand_sierra = {
+	region_ca
+	region_nv
+}
+
+superregion_northern_rockies = {
+	region_id
+	region_mt
+	region_wy
+}

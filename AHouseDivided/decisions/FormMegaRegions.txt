@@ -5,9 +5,20 @@ country_decisions = {
 			OR = {
 				culture_group = culture_group_great_lakes
 				culture_group = culture_group_ohio_river_valley
+				culture_group = culture_group_northwoods
+				culture_group = culture_group_upper_midwestern
 				culture = culture_buffalonian
 				culture = culture_rochesterite
 				culture = culture_syracusan
+			}
+			OR = {
+				capital_scope = {
+					OR = {
+						superregion = superregion_upper_great_lakes
+						superregion = superregion_upper_great_lakes
+						superregion = superregion_midatlantic
+					}
+				}
 			}
 #			OR = {
 #				has_country_flag = formed_a_state
