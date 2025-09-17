@@ -130,7 +130,8 @@ bay_stater_ideas = {
 	}
 
 	bay_stater_early_abolitionists = {
-		loyalty_change_on_revoked = 0.05
+		capture_ship_chance = 0.1
+		blockade_efficiency = 0.1
 	}
 
 	bay_stater_yankee_melting_pot = {
@@ -313,7 +314,7 @@ hoosier_ideas = {
 	}
 
 	hoosier_ambitious_developers = {
-		development_cost = -0.15
+		local_development_cost = -0.15
 	}
 
 	hoosier_industrial_heartland = {
@@ -812,7 +813,7 @@ lesser_hoosier_ideas = {
 	}
 
 	lesser_hoosier_ambitious_developers = {
-		development_cost = -0.1
+		local_development_cost = -0.1
 	}
 
 	lesser_hoosier_industrial_heartland = {
@@ -1810,7 +1811,7 @@ lesser_south_carolinan_ideas = {
 	}
 
 	lesser_south_carolinan_a_developers_dream = {
-		development_cost = -0.1
+		local_development_cost = -0.1
 	}
 
 	bonus = {
@@ -2854,7 +2855,7 @@ south_carolinan_ideas = {
 	}
 
 	south_carolinan_a_developers_dream = {
-		development_cost = -0.15
+		local_development_cost = -0.15
 	}
 
 	bonus = {
