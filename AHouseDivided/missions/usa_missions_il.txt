@@ -10,7 +10,7 @@ missions_il_slot1 = {
 		position = 4
 		required_missions = { mission_il_develop_the_valley }
 		trigger = {
-			accepted_culture = culture_st_louisian
+			accepted_culture = culture_saint_louisian
  		}
 		effect = {
 			area_mo_west_st_louis = { add_permanent_claim = ROOT }

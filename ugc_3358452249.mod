@@ -1,4 +1,4 @@
-version="0.6.3"
+version="0.6.2"
 tags={
 	"Map"
 	"New Nations"
@@ -27,4 +27,5 @@ replace_path="interface/great_projects.gfx"
 replace_path="decisions"
 replace_path="events"
 supported_version="v1.37.*"
+path="C:/Program Files (x86)/Steam/steamapps/workshop/content/236850/3358452249"
 remote_file_id="3358452249"

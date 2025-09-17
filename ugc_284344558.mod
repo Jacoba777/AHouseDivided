@@ -1,0 +1,17 @@
+name="SuperStates Mod"
+replace_path="common/bookmarks"
+replace_path="common/country_tags"
+replace_path="common/natives"
+replace_path="common/tradenodes"
+replace_path="common/colonial_regions"
+tags={
+	"Alternative History"
+	"Expansion"
+	"National Ideas"
+	"New Nations"
+	"Map"
+}
+picture="superstates.png"
+supported_version="v1.37.5.*"
+path="C:/Program Files (x86)/Steam/steamapps/workshop/content/236850/284344558"
+remote_file_id="284344558"
