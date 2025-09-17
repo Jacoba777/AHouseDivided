@@ -5,6 +5,7 @@ missions_wi_great_lakes_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = MRT
 			tag = GBY
 			tag = MWK
 			tag = APT
@@ -13,7 +14,7 @@ missions_wi_great_lakes_slot1 = {
 		}
 	}
 
-	mission_wi_great_lakes_king_of_lake_michigan = {
+	mission_wi_great_lakes_master_of_lake_michigan = {
 		icon = mission_mwk
 		position = 4
 		required_missions = { mission_wi_great_lakes_a_respectable_state }
@@ -66,7 +67,7 @@ missions_wi_great_lakes_slot1 = {
 	mission_wi_great_lakes_embrace_milwaukeean = {
 		icon = mission_diplomatic_relation
 		position = 5
-		required_missions = { mission_wi_great_lakes_king_of_lake_michigan }
+		required_missions = { mission_wi_great_lakes_master_of_lake_michigan }
 		trigger = {
 			accepted_culture = culture_milwaukeean
  		}
@@ -104,6 +105,7 @@ missions_wi_great_lakes_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = MRT
 			tag = GBY
 			tag = MWK
 			tag = APT
@@ -212,6 +214,7 @@ missions_wi_great_lakes_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = MRT
 			tag = GBY
 			tag = MWK
 			tag = APT
