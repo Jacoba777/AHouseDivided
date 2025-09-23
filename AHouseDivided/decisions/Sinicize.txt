@@ -1,0 +1,132 @@
+country_decisions = {
+	sinicize_culture = {
+		potential = {
+			OR = {
+				primary_culture = culture_cajun
+				primary_culture = culture_east_texan
+				primary_culture = culture_longview
+				culture_group = culture_group_southern_plains
+				culture_group = culture_group_western_deep_south
+			}
+		}
+		provinces_to_highlight = {
+			if = {
+				limit = { ROOT = { culture_group = culture_group_southern_plains } }
+				culture_group = culture_group_southern_plains
+			}
+			else = { culture = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			OR = {
+				development_in_provinces = {
+					culture_group = culture_group_texas_triangle
+					value = 300
+				}
+				#custom_trigger_tooltip = {
+				#	tooltip = chinese_culture_group_dominates_in_country
+				#	OR = {
+				#		dominant_culture = manchu_new
+				#		dominant_culture = culture_metroplex
+				#		dominant_culture = culture_central_texan
+				#		dominant_culture = culture_mid_trianglian
+				#		dominant_culture = culture_austinite
+				#		dominant_culture = culture_houstonian
+				#		dominant_culture = culture_south_trianglian
+				#		dominant_culture = culture_victorian
+				#		dominant_culture = culture_alamo
+				#		dominant_culture = culture_corpus_christian
+				#		dominant_culture = culture_east_texan_new
+				#		dominant_culture = culture_cajun_new
+				#		dominant_culture = culture_west_texan_new
+				#		dominant_culture = culture_little_dixie_new
+				#		dominant_culture = culture_longview_new
+				#	}
+				#}
+				is_emperor_of_china = yes
+			}
+			if = {
+				limit = {
+					culture_group = culture_group_southern_plains
+				}
+				custom_trigger_tooltip = {
+					tooltip = sinicize_culture_at
+					NOT = {
+						any_province = {
+							culture_group = ROOT
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = sinicize_culture_tt
+					NOT = {
+						any_province = {
+							culture = ROOT
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = { #Sinicize culture_east_texan
+				limit = {
+					primary_culture = culture_east_texan
+				}
+				update_entire_culture = {
+					culture = culture_east_texan
+				}
+			}
+			if = { #Sinicize culture_cajun
+				limit = {
+					primary_culture = culture_cajun
+				}
+				update_entire_culture = {
+					culture = culture_cajun
+				}
+			}
+			if = { #Sinicize culture_longview
+				limit = {
+					primary_culture = culture_longview
+				}
+				update_entire_culture = {
+					culture = culture_longview
+				}
+			}
+			if = { #Sinicize Southern Plains
+				limit = {
+					culture_group = culture_group_southern_plains
+				}
+				update_entire_culture_group = {
+					culture = culture_west_texan
+					culture1 = culture_west_texan
+					culture2 = culture_amarillo
+					culture3 = culture_south_plains
+					culture4 = culture_enid
+					culture5 = culture_tulsan
+					culture6 = culture_oklahoma_cityan
+				}
+			}
+			if = { #Sinicize Western Deep South
+				limit = {
+					culture_group = culture_group_western_deep_south
+				}
+				update_entire_culture_group = {
+					culture = culture_little_dixie
+					culture1 = culture_little_dixie
+					culture2 = culture_north_louisianan
+					culture3 = culture_south_arkansan
+					culture4 = culture_little_rocker
+					culture5 = culture_delta_arkansan
+				}
+			}
+			custom_tooltip = sinicize_culture_ct
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

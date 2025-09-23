@@ -274,3 +274,23 @@ can_join_hre = {
 
 can_leave_hre = {
 }
+
+can_colonize_province = {
+	condition = {
+		tooltip = "tooltip_alaskan_frontiers"
+		potential = {
+			FROM = 	{
+				not = {
+					or = {
+						primary_culture = culture_alaskan
+						primary_culture = culture_panhandle_alaskan
+					}
+				}
+
+			}
+		}
+		allow =  {
+			NOT = { region = region_ak }
+		}
+	}
+}

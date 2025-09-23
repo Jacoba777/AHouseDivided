@@ -11,6 +11,11 @@ native_ferocity=5
 native_hostileness=2
 religion=catholic
 culture=culture_austinite
+is_city = yes
+owner=HTN
+add_core=HTN
+controller=HTN
+add_core=ASN
 
 1444.11.12 = {
 	base_tax=0

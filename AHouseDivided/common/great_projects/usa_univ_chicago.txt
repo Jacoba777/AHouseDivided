@@ -9,13 +9,11 @@ univ_chicago = {
 	type = monument
 
 	build_trigger = {
-		owner = {
-			OR = {
-				tag = CCG
-				tag = XIL
-				tag = GTL
-				tag = HLE
-			}
+		OR = {
+			tag = CCG
+			tag = XIL
+			tag = GTL
+			tag = HLE
 		}
 	}
 
@@ -26,24 +24,20 @@ univ_chicago = {
 	}
 
 	can_use_modifiers_trigger = {
-		owner = {
-			OR = {
-				tag = CCG
-				tag = XIL
-				tag = GTL
-				tag = HLE
-			}
+		OR = {
+			tag = CCG
+			tag = XIL
+			tag = GTL
+			tag = HLE
 		}
 	}
 
 	can_upgrade_trigger = {
-		owner = {
-			OR = {
-				tag = CCG
-				tag = XIL
-				tag = GTL
-				tag = HLE
-			}
+		OR = {
+			tag = CCG
+			tag = XIL
+			tag = GTL
+			tag = HLE
 		}
 	}
 

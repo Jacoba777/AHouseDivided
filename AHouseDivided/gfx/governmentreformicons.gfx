@@ -312,6 +312,7 @@ spriteTypes = {
 		texturefile = "gfx//interface//government_reform_icons//shogunate.dds"
 	}
 
+	##changed for urban alaska reform image
 	spriteType = {
 		name = "government_reform_peacock_throne"
 		texturefile = "gfx//interface//government_reform_icons//peacock_throne.dds"
@@ -1643,4 +1644,8 @@ spriteTypes = {
 		name = "government_reform_vozove_hradby_reform"
 		texturefile = "gfx//interface//government_reform_icons//dlc//winds_of_change//vozove_hradby_reform.dds"
 	}
+
+
+
+	##ADH reforms
 }

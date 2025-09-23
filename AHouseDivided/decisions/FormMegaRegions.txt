@@ -5,20 +5,9 @@ country_decisions = {
 			OR = {
 				culture_group = culture_group_great_lakes
 				culture_group = culture_group_ohio_river_valley
-				culture_group = culture_group_northwoods
-				culture_group = culture_group_upper_midwestern
 				culture = culture_buffalonian
 				culture = culture_rochesterite
 				culture = culture_syracusan
-			}
-			OR = {
-				capital_scope = {
-					OR = {
-						superregion = superregion_upper_great_lakes
-						superregion = superregion_upper_great_lakes
-						superregion = superregion_midatlantic
-					}
-				}
 			}
 #			OR = {
 #				has_country_flag = formed_a_state
@@ -1719,6 +1708,24 @@ country_decisions = {
 		effect = {
 			change_tag = NAU
 			custom_tooltip = get_perma_claims_on_northeast
+			if = {
+				limit = {
+					is_emperor = yes
+				}
+				dismantle_hre = yes
+			}
+			else = {
+				emperor = {
+					add_opinion = {
+						who = root
+						modifier = opinion_left_empire
+					}
+				}
+				set_in_empire = no
+				emperor = {
+					country_event = { id = hre_event.5 }
+				}
+			}
 			hidden_effect = {
 				continent_northeast = {
 					limit = { NOT = { owned_by = ROOT } }
@@ -1869,8 +1876,13 @@ country_decisions = {
 	form_united_states = {
 		major = yes
 		potential = {
-			num_of_owned_provinces_with = {
-				value = 250
+			or = {
+				num_of_owned_provinces_with = {
+					value = 250
+				}
+				num_of_subjects = 37
+				country_or_non_sovereign_subject_holds = 505
+				tag = HLR
 			}
 			was_never_end_game_tag_trigger = yes
 			NOT = { tag = PAP }
@@ -1906,39 +1918,46 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 505  # DC
-			owns_core_province = 755  # Manhattan
-			owns_core_province = 495  # Baltimore
-			owns_core_province = 273  # Philadelphia
-			owns_core_province = 224  # Pittsburgh
-			owns_core_province = 471  # Boston
-			owns_core_province = 1946  # Miami
-			owns_core_province = 1924  # Tampa
-			owns_core_province = 377  # Atlanta
-			owns_core_province = 2153  # Houston
-			owns_core_province = 2032  # Dallas
-			owns_core_province = 2164  # San Antonio
-			owns_core_province = 1429  # Chicago
-			owns_core_province = 1871  # Detroit
-			owns_core_province = 2479  # Minneapolis
-			owns_core_province = 1722  # St Louis
-			owns_core_province = 2424  # LA
-			owns_core_province = 2401  # San Francisco
-			owns_core_province = 2426  # San Diego
-			owns_core_province = 2398  # Sacramento
-			owns_core_province = 3317  # Phoenix
-			owns_core_province = 2729  # Las Vegas
-			owns_core_province = 3071  # Seattle
-			owns_core_province = 2519  # Portland
-			owns_core_province = 2848  # Denver
-			num_of_owned_provinces_with = {
-				value = 1250
+			calc_true_if = {
+				505 = { country_or_non_sovereign_subject_holds = ROOT } # DC
+				755 = { country_or_non_sovereign_subject_holds = ROOT } # Manhattan
+				495 = { country_or_non_sovereign_subject_holds = ROOT } # Baltimore
+				273 = { country_or_non_sovereign_subject_holds = ROOT } # Philadelphia
+				224 = { country_or_non_sovereign_subject_holds = ROOT } # Pittsburgh
+				471 = { country_or_non_sovereign_subject_holds = ROOT } # Boston
+				1946 = { country_or_non_sovereign_subject_holds = ROOT } # Miami
+				1924 = { country_or_non_sovereign_subject_holds = ROOT } # Tampa
+				377 = { country_or_non_sovereign_subject_holds = ROOT } # Atlanta
+				2153 = { country_or_non_sovereign_subject_holds = ROOT } # Houston
+				2032 = { country_or_non_sovereign_subject_holds = ROOT } # Dallas
+				2164 = { country_or_non_sovereign_subject_holds = ROOT } # San Antonio
+				1429 = { country_or_non_sovereign_subject_holds = ROOT } # Chicago
+				1871 = { country_or_non_sovereign_subject_holds = ROOT } # Detroit
+				2479 = { country_or_non_sovereign_subject_holds = ROOT } # Minneapolis
+				1722 = { country_or_non_sovereign_subject_holds = ROOT } # St Louis
+				2424 = { country_or_non_sovereign_subject_holds = ROOT } # LA
+				2401 = { country_or_non_sovereign_subject_holds = ROOT } # San Francisco
+				2426 = { country_or_non_sovereign_subject_holds = ROOT } # San Diego
+				2398 = { country_or_non_sovereign_subject_holds = ROOT } # Sacramento
+				3317 = { country_or_non_sovereign_subject_holds = ROOT } # Phoenix
+				2729 = { country_or_non_sovereign_subject_holds = ROOT } # Las Vegas
+				3071 = { country_or_non_sovereign_subject_holds = ROOT } # Seattle
+				2519 = { country_or_non_sovereign_subject_holds = ROOT } # Portland
+				2848 = { country_or_non_sovereign_subject_holds = ROOT } # Denver		
+				amount = 9
+			}
+			or = {
+				num_of_owned_provinces_with = {
+					value = 1250
+				}
+				num_of_subjects = 37
 			}
 			adm_tech = 20
 			is_at_war = no
 		}
 		effect = {
 			change_tag = XUS
+			set_capital = 505
 			custom_tooltip = get_perma_claims_on_world
 			hidden_effect = {
 				every_province = {
@@ -1955,12 +1974,24 @@ country_decisions = {
 					}
 					add_permanent_claim = XUS
 				}
+				every_country = {
+					limit = {
+						is_subject_of = ROOT
+					}
+					country_event = { id = flavor_xus.1789 }
+				}
 			}
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			custom_tooltip = become_an_empire_tt
-			hidden_effect = { set_government_rank = 3 }
-			set_country_flag = formed_a_gigaregion
+			hidden_effect = { 
+				set_government_rank = 3
+				remove_government_reform = ottoman_government
+				change_government = republic
+				add_government_reform = american_government
+			}
+			set_country_flag = formed_america
+			set_country_flag = formed_a_megaregion
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas

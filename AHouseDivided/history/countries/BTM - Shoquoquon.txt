@@ -1,4 +1,4 @@
-technology_group = great_plains
+technology_group = great_lakes
 government = republic
 add_government_reform = american_republic
 government_rank = 1

@@ -12,9 +12,10 @@ native_hostileness=4
 religion=baptist
 culture=culture_corpus_christian
 is_city = yes
-owner=VIC
-add_core=VIC
-controller=VIC
+owner=HTN
+add_core=HTN
+controller=HTN
+add_core=CPC
 
 1444.11.12 = {
 	base_tax=0

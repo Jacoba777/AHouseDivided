@@ -229,7 +229,7 @@ indian_sultanate_reform = {
 	}
 }
 
-shogunate = {
+shogunate = {###reformatted for california
 	icon = "shogunate"
 	allow_normal_conversion = yes
 	potential = {
@@ -237,10 +237,10 @@ shogunate = {
 		OR = {
 			AND = {
 				capital_scope = {
-					province_id = 1020
+					province_id = 2398
 				}
-				culture_group = japanese_g
-				NOT = { exists = JAP }
+				culture_group = culture_group_californian
+				NOT = { exists = XCA }
 			}
 			AND = {
 				is_playing_custom_nation = yes
@@ -251,10 +251,10 @@ shogunate = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 50
 	nation_designer_trigger = {
-		culture_group = japanese_g
-		technology_group = chinese
-		capital_scope = { region = japan_region }
-		owns = 1020
+		culture_group = culture_group_californian
+		technology_group = californian_tech
+		capital_scope = { region = region_ca }
+		owns = 2398
 	}
 	legacy_equivalent = shogunate_legacy
 	fixed_rank = 2
@@ -284,7 +284,7 @@ shogunate = {
 	}
 }
 
-daimyo = {
+daimyo = { ###reformatted for california
 	icon = "daimyo"
 	allow_normal_conversion = no
 	potential = {
@@ -299,9 +299,9 @@ daimyo = {
 	nation_designer_cost = 0
 	lock_level_when_selected = yes
 	nation_designer_trigger = {
-		culture_group = japanese_g
-		technology_group = chinese
-		capital_scope = { region = japan_region }
+		culture_group = culture_group_californian
+		technology_group = californian_tech
+		capital_scope = { region = region_ca }
 	}
 	modifiers = {
 		land_morale = 0.1
@@ -420,7 +420,7 @@ absolutist_france_reform = {
 	}
 }
 
-indep_daimyo = {
+indep_daimyo = { ## reformatted for california
 	icon = "samurai"
 	allow_normal_conversion = no
 	potential = {
@@ -432,8 +432,8 @@ indep_daimyo = {
 					is_subject = no
 					is_subject_of_type = tributary_state
 				}
-				capital_scope = { region = japan_region }
-				culture_group = japanese_g
+				capital_scope = { region = region_ca }
+				culture_group = culture_group_californian
 			}
 			AND = {
 				is_playing_custom_nation = yes
@@ -444,9 +444,9 @@ indep_daimyo = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 0
 	nation_designer_trigger = {
-		culture_group = japanese_g
-		technology_group = chinese
-		capital_scope = { region = japan_region }
+		culture_group = culture_group_californian
+		technology_group = californian_tech
+		capital_scope = { region = region_ca }
 	}
 	legacy_equivalent = indep_daimyo_legacy
 	maintain_dynasty = yes
@@ -461,44 +461,26 @@ indep_daimyo = {
 	}
 }
 
-celestial_empire = {
+celestial_empire = { ##reformatted for texas
 	icon = "celestial_empire"
 	allow_normal_conversion = no
 	potential = {
+		OR = {
+			primary_culture = culture_east_texan
+			primary_culture = culture_longview
+			primary_culture = culture_south_plains
+			culture_group = culture_group_texas_triangle
+		}
+		technology_group = texas
+	}
+	trigger = {
 		if = {
-			limit = {
-				has_dlc = "Mandate of Heaven"
-			}
+			limit = { has_dlc = "Mandate of Heaven" }
 			is_emperor_of_china = yes
 		}
-		else = {
-			OR = {
-				has_reform = celestial_empire
-				AND = {
-					culture_group = east_asian
-					num_of_cities = 50
-				}
-			}
-		}
-		NOT = { has_global_flag = empire_of_china_dismantled }
 	}
-	legacy_equivalent = celestial_empire_legacy
-	maintain_dynasty = yes
-	allow_force_tributary = no
-	valid_for_nation_designer = yes
-	nation_designer_cost = 10
-	lock_level_when_selected = yes
-	nation_designer_trigger = {
-		culture_group = east_asian
-		technology_group = chinese
-		capital_scope = {
-			OR = {
-				region = north_china_region
-				region = xinan_region
-				region = south_china_region
-			}
-		}
-	}
+
+	
 	factions = {
 		temples
 		enuchs
@@ -532,36 +514,25 @@ celestial_empire = {
 	}
 }
 
-chinese_warlord = {
-	icon = "samurai"
+chinese_warlord = { ##reformatted for texas
+	icon = "asian_scripture"
 	allow_normal_conversion = no
 	potential = {
 		OR = {
-			primary_culture = bai
-			primary_culture = miao
-			primary_culture = yi
-			culture_group = east_asian
+			primary_culture = culture_east_texan
+			primary_culture = culture_longview
+			primary_culture = culture_south_plains
+			culture_group = culture_group_texas_triangle
 		}
 		OR = {
-			AND = {
-				OR = {
-					primary_culture = miao
-					primary_culture = yi
-				}
-				religion = animism
-			}
-			AND = {
-				primary_culture = bai
-				religion = buddhism
-			}
-			religion = confucianism
+			religion = baptist
+			religion = lutheran
+			religion = catholic
 		}
-		technology_group = chinese
+		technology_group = texas
 		capital_scope = {
 			OR = {
-				region = north_china_region
-				region = xinan_region
-				region = south_china_region
+				region = region_tx
 			}
 		}
 		if = {
@@ -571,31 +542,20 @@ chinese_warlord = {
 	}
 	trigger = {
 		OR = {
-			primary_culture = bai
-			primary_culture = miao
-			primary_culture = yi
-			culture_group = east_asian
+			primary_culture = culture_east_texan
+			primary_culture = culture_longview
+			primary_culture = culture_south_plains
+			culture_group = culture_group_texas_triangle
 		}
 		OR = {
-			AND = {
-				OR = {
-					primary_culture = miao
-					primary_culture = yi
-				}
-				religion = animism
-			}
-			AND = {
-				primary_culture = bai
-				religion = buddhism
-			}
-			religion = confucianism
+			religion = baptist
+			religion = lutheran
+			religion = catholic
 		}
-		technology_group = chinese
+		technology_group = texas
 		capital_scope = {
 			OR = {
-				region = north_china_region
-				region = xinan_region
-				region = south_china_region
+				region = region_tx
 			}
 		}
 		if = {
@@ -609,31 +569,20 @@ chinese_warlord = {
 	nation_designer_cost = 10
 	nation_designer_trigger = {
 		OR = {
-			primary_culture = bai
-			primary_culture = miao
-			primary_culture = yi
-			culture_group = east_asian
+			primary_culture = culture_east_texan
+			primary_culture = culture_longview
+			primary_culture = culture_south_plains
+			culture_group = culture_group_texas_triangle
 		}
-		technology_group = chinese
+		technology_group = texas
 		OR = {
-			AND = {
-				OR = {
-					primary_culture = miao
-					primary_culture = yi
-				}
-				religion = animism
-			}
-			AND = {
-				primary_culture = bai
-				religion = buddhism
-			}
-			religion = confucianism
+			religion = baptist
+			religion = lutheran
+			religion = catholic
 		}
 		capital_scope = {
 			OR = {
-				region = north_china_region
-				region = xinan_region
-				region = south_china_region
+				region = region_tx
 			}
 		}
 	}
@@ -992,10 +941,10 @@ ottoman_government = {
 	allow_normal_conversion = yes
 	icon = "ottoman_government"
 	potential = {
-		religion_group = muslim
+		religion_group = christian
 		OR = {
 			AND = {
-				tag = TUR
+				tag = XCA
 				NOT = { map_setup = map_setup_random }
 			}
 			AND = {
@@ -1006,16 +955,13 @@ ottoman_government = {
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 20
-	nation_designer_trigger = {
-		religion_group = muslim
-	}
 	legacy_equivalent = ottoman_government_legacy
 	maintain_dynasty = yes
 	modifiers = {
 		unjustified_demands = -0.1
 		legitimacy = 0.5
 		max_absolutism = 5
-		governing_capacity = 150
+		governing_capacity = 300
 	}
 
 	removed_effect = {
@@ -1038,6 +984,7 @@ ottoman_government = {
 		government_abilities = {
 			ottoman_decadence_mechanic
 		}
+		has_parliament = yes
 	}
 	conditional = {
 		allow = { 
@@ -1056,6 +1003,7 @@ ottoman_government = {
 		custom_attributes = {
 			has_harem_events = yes
 		}
+		has_parliament = yes
 	}
 }
 
@@ -1937,7 +1885,6 @@ modernized_ottoman_government = {
 	allow_normal_conversion = yes
 	icon = "modernized_ottoman_government"
 	potential = {
-		religion_group = muslim
 		OR = {
 			has_reform = modernized_ottoman_government
 			has_unlocked_government_reform = { government_reform = modernized_ottoman_government }
@@ -1968,9 +1915,7 @@ modernized_ottoman_government = {
 		allow = { has_dlc = "Domination" }
 		has_pashas = yes
 		has_janissaries = yes
-		has_harem = yes
 		custom_attributes = {
-			has_harem_events = yes
 			enables_estate_janissaries = yes
 			has_eyalets = yes
 		}
@@ -1988,10 +1933,6 @@ modernized_ottoman_government = {
 			has_dlc = "Rights of Man" 
 			NOT = { has_dlc = "Domination" }
 		}
-		has_harem = yes
-		custom_attributes = {
-			has_harem_events = yes
-		}
 	}
 }
 
@@ -2000,7 +1941,6 @@ reorganized_ottoman_government = {
 	allow_normal_conversion = yes
 	icon = "ottoman_government"
 	potential = {
-		religion_group = muslim
 		OR = {
 			has_reform = reorganized_ottoman_government
 			has_unlocked_government_reform = { government_reform = reorganized_ottoman_government }

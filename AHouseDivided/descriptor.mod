@@ -1,4 +1,4 @@
-version="0.6.3"
+version="0.5.1"
 tags={
 	"Map"
 	"New Nations"
@@ -7,7 +7,7 @@ tags={
 	"Religion"
 	"Trade"
 }
-name="A House Divided"
+name="Western Expanse"
 replace_path="history/provinces"
 replace_path="history/diplomacy"
 replace_path="history/wars"

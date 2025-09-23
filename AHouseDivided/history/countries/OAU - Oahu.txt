@@ -5,3 +5,10 @@ government_rank = 1
 religion = nondenominational
 primary_culture = culture_hawaiian
 capital = 3355
+
+historical_rival =  AUI
+historical_rival =  MOK
+historical_rival =  UAI
+add_core = MOK
+add_core = AUI
+add_core = UAI
