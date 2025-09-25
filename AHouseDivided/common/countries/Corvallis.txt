@@ -1,4 +1,4 @@
-# Coravallis
+# Corvallis
 
 graphical_culture = westerngfx
 
