@@ -1,0 +1,1352 @@
+namespace = ming_crisis
+
+# Mandate Questioned
+country_event = {
+	id = ming_crisis.1
+	title = "ming_crisis.1.t"
+	desc = "ming_crisis.1.d"
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+				}
+				spawn_rebels = {
+					type = anti_tax_rebels 
+					size = 6
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.1.a
+		add_stability = -2
+		add_mandate = -35
+		add_corruption = 5
+	}
+}
+
+# The Mandate Restored
+country_event = {
+	id = ming_crisis.2
+	title = "ming_crisis.2.t"
+	desc = "ming_crisis.2.d"
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ming_crisis.2.a
+		add_stability = 1
+		add_mandate = 20
+		
+		if = { 
+			limit = { 
+				has_estate = estate_eunuchs 
+				num_of_estate_privileges = { 
+					estate = estate_eunuchs 
+					value = 1 
+				}
+			}
+			add_ruler_modifier = {
+				name = mng_undisputed_mandate_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+# Li John's rebellion and the Shun dynasty
+country_event = {
+	id = ming_crisis.3
+	title = "ming_crisis.3.t"
+	desc = "ming_crisis.3.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { exists = WAC }
+		num_of_owned_provinces_with = {
+			value = 3
+			region = region_tx
+			controlled_by = REB
+		}
+		any_owned_province = {
+			OR = {
+				area = area_tx_waco
+				area = area_tx_athens
+				area = area_tx_killeen
+				area = area_tx_college_station
+				area = area_tx_burleson
+				area = area_tx_huntsville
+				area = liaoning_area
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+					OR = {
+						area = area_tx_waco
+						area = area_tx_athens
+						area = area_tx_killeen
+						area = area_tx_college_station
+						area = area_tx_burleson
+						area = area_tx_huntsville
+						area = liaoning_area
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+				}
+				add_core = WAC
+				clear_rebels = yes
+			}
+			release = WAC
+			WAC = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+						artillery = 0.1
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+					country_event = {
+						id = ming_crisis.10
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.3.a
+		add_stability = -2
+		add_mandate = -10
+		WAC = {
+			define_ruler = {
+				name = "John"
+				dynasty = "Texas"
+			}
+			add_yearly_manpower = 15
+			add_years_of_income = 15
+		}
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+			}
+			WAC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_take_mandate
+				}
+			}
+		}
+		else = {
+			WAC = {
+				declare_war = root
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.3.b
+		trigger = {
+			ai = no
+		}
+		add_stability = -2
+		add_mandate = -10
+		WAC = {
+			define_ruler = {
+				name = "John"
+				dynasty = "Texas"
+			}
+			add_yearly_manpower = 15
+			add_years_of_income = 15
+		}
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+				is_emperor_of_china = yes
+			}
+			WAC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_take_mandate
+				}
+			}
+		}
+		else = {
+			WAC = {
+				declare_war = root
+			}
+		}
+		switch_tag = WAC
+	}
+
+	after = {
+		hidden_effect = {
+			WAC = {
+				if = {
+					limit = {
+						any_neighbor_country = {
+							has_reform = steppe_horde
+							total_own_and_non_tributary_subject_development = 300
+							is_subject = no
+							#NOT = { truce_with = ROOT }
+							NOT = { alliance_with = ROOT }
+							#NOT = { is_subject_of = ROOT }
+						}
+					}
+					random_neighbor_country = {
+						limit = {
+							has_reform = steppe_horde
+							total_own_and_non_tributary_subject_development = 300
+							is_subject = no
+							#NOT = { truce_with = ROOT }
+							NOT = { alliance_with = ROOT }
+							#NOT = { is_subject_of = ROOT }
+						}
+						country_event = { id = ming_crisis.9 days = 1 }
+					}
+				}
+				else_if = {
+					limit = {
+						any_neighbor_country = {
+							tag = MCH
+							is_free_or_tributary_trigger = yes
+							NOT = { alliance_with = root }
+						}
+					}
+					MCH = {
+						country_event = { id = ming_crisis.9 days = 1 }
+					}
+				}
+			}
+		}
+	}
+}
+
+# Yunnan Protectorate
+country_event = {
+	id = ming_crisis.4
+	title = "ming_crisis.4.t"
+	desc = "ming_crisis.4.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { exists = DLS }
+		num_of_owned_provinces_with = {
+			value = 5
+			region = region_tx
+			controlled_by = REB
+		}
+		any_owned_province = {
+			OR = {
+				area = area_tx_zandt
+				area = area_tx_dallas
+				area = area_tx_hunt
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+					OR = {
+						area = area_tx_zandt
+						area = area_tx_dallas
+						area = area_tx_hunt
+					}
+					OR = {
+						controlled_by = REB
+						controlled_by = ROOT
+					}
+					NOT = { is_core = DLS }
+				}
+				add_core = DLS
+				clear_rebels = yes
+			}
+			release = DLS
+			DLS = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+						artillery = 0.1
+					}
+				}
+				change_government = monarchy
+				add_government_reform = chinese_warlord
+				adopt_reform_progress = ROOT
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+					country_event = {
+						id = ming_crisis.10
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.4.a
+		ai_chance = { factor = 1 }
+		add_mandate = -5
+		DLS = { add_liberty_desire = 100 }
+	}
+	option = {
+		name = ming_crisis.4.b
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		DLS = {
+			declare_war_with_cb = {
+				who = root
+				casus_belli = cb_independence_war
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.4.c
+		trigger = { ai = no }
+		add_mandate = 15
+		switch_tag = DLS
+		DLS = {
+			declare_war_with_cb = {
+				who = root
+				casus_belli = cb_independence_war
+			}
+		}
+	}
+}
+
+# Losing Control in the South
+country_event = {
+	id = ming_crisis.5
+	title = "ming_crisis.5.t"
+	desc = "ming_crisis.5.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		OR = {
+			NOT = { exists = SAN }
+			NOT = { exists = VIC }
+			NOT = { exists = ASN }
+			NOT = { exists = CPC }
+		}
+		num_of_owned_provinces_with = {
+			value = 8
+			region = region_tx
+			controlled_by = REB
+		}
+		any_owned_province = {
+			OR = {
+				area = area_tx_san_antonio
+				area = area_tx_west_san_antonio
+				area = area_tx_victoria
+				area = area_tx_gonzales
+				area = area_tx_southeastern
+				area = area_tx_burnet
+				area = area_tx_austin
+				area = area_tx_brenham
+				area = area_tx_southern
+				area = area_tx_corpus_christi
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						exists = SAN
+					}
+				}
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							OR = {
+								area = area_tx_san_antonio
+								area = area_tx_west_san_antonio
+							}
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							NOT = { is_core = SAN }
+						}
+						add_core = SAN
+						clear_rebels = yes
+					}
+					release = SAN
+					SAN = {
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.6
+								cavalry = 0.3
+								artillery = 0.1
+							}
+						}
+						change_government = monarchy
+						add_government_reform = chinese_warlord
+						adopt_reform_progress = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = VIC
+					}
+				}
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							OR = {
+								area = area_tx_victoria
+								area = area_tx_gonzales
+								area = area_tx_southeastern
+							}
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							NOT = { is_core = VIC }
+						}
+						add_core = VIC
+						clear_rebels = yes
+					}
+					release = VIC
+					VIC = {
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.6
+								cavalry = 0.3
+								artillery = 0.1
+							}
+						}
+						change_government = monarchy
+						add_government_reform = chinese_warlord
+						adopt_reform_progress = ROOT
+					}
+				}
+			}
+			if = { # adding ASN to make things harder on HTN
+				limit = {
+					NOT = {
+						exists = ASN
+					}
+				}
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							OR = {
+								area = area_tx_burnet
+								area = area_tx_austin
+								area = area_tx_brenham
+							}
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							NOT = { is_core = ASN }
+						}
+						add_core = ASN
+						clear_rebels = yes
+					}
+					release = ASN
+					ASN = {
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.6
+								cavalry = 0.3
+								artillery = 0.1
+							}
+						}
+						change_government = monarchy
+						add_government_reform = chinese_warlord
+						adopt_reform_progress = ROOT
+					}
+				}
+			}
+			if = { # adding CPC to make things harder on HTN
+				limit = {
+					NOT = {
+						exists = CPC
+					}
+				}
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							OR = {
+								area = area_tx_southern
+								area = area_tx_corpus_christi
+							}
+							OR = {
+								controlled_by = REB
+								controlled_by = ROOT
+							}
+							NOT = { is_core = CPC }
+						}
+						add_core = CPC
+						clear_rebels = yes
+					}
+					release = CPC
+					CPC = {
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 0.6
+								cavalry = 0.3
+								artillery = 0.1
+							}
+						}
+						change_government = monarchy
+						add_government_reform = chinese_warlord
+						adopt_reform_progress = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { is_neighbor_of = ROOT }
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+					country_event = {
+						id = ming_crisis.10
+					}
+				}
+			}
+		}		
+	}
+	
+	option = {
+		name = ming_crisis.5.a
+		ai_chance = { factor = 1 }
+		add_mandate = -5
+		if = {
+			limit = {
+				exists = VIC
+				overlord_of = VIC
+			}
+			VIC = { add_liberty_desire = 100 }
+		}
+		if = {
+			limit = {
+				exists = SAN
+				overlord_of = SAN
+			}
+			SAN = { add_liberty_desire = 100 }
+		}
+		if = {
+			limit = {
+				exists = ASN
+				overlord_of = ASN
+			}
+			ASN = { add_liberty_desire = 100 }
+		}
+		if = {
+			limit = {
+				exists = CPC
+				overlord_of = CPC
+			}
+			CPC = { add_liberty_desire = 100 }
+		}
+	}
+	option = {
+		name = ming_crisis.5.b
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		if = {
+			limit = {
+				exists = VIC
+				VIC = {
+					is_subject_of = ROOT
+				}
+			}
+			VIC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = SAN
+				SAN = {
+					is_subject_of = ROOT
+				}
+			}
+			SAN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ASN
+				ASN = {
+					is_subject_of = ROOT
+				}
+			}
+			ASN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = CPC
+				CPC = {
+					is_subject_of = ROOT
+				}
+			}
+			CPC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.5.c
+		trigger = { ai = no }
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		switch_tag = VIC
+		if = {
+			limit = {
+				exists = VIC
+				VIC = {
+					is_subject_of = ROOT
+				}
+			}
+			VIC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = SAN
+				SAN = {
+					is_subject_of = ROOT
+				}
+			}
+			SAN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ASN
+				ASN = {
+					is_subject_of = ROOT
+				}
+			}
+			ASN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = CPC
+				CPC = {
+					is_subject_of = ROOT
+				}
+			}
+			CPC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.5.e
+		trigger = { ai = no }
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		switch_tag = SAN
+		if = {
+			limit = {
+				exists = VIC
+				VIC = {
+					is_subject_of = ROOT
+				}
+			}
+			VIC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = SAN
+				SAN = {
+					is_subject_of = ROOT
+				}
+			}
+			SAN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ASN
+				ASN = {
+					is_subject_of = ROOT
+				}
+			}
+			ASN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = CPC
+				CPC = {
+					is_subject_of = ROOT
+				}
+			}
+			CPC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.5.f
+		trigger = { ai = no }
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		switch_tag = ASN
+		if = {
+			limit = {
+				exists = VIC
+				VIC = {
+					is_subject_of = ROOT
+				}
+			}
+			VIC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = SAN
+				SAN = {
+					is_subject_of = ROOT
+				}
+			}
+			SAN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ASN
+				ASN = {
+					is_subject_of = ROOT
+				}
+			}
+			ASN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = CPC
+				CPC = {
+					is_subject_of = ROOT
+				}
+			}
+			CPC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.5.g
+		trigger = { ai = no }
+		ai_chance = { factor = 0 }
+		add_mandate = 15
+		switch_tag = CPC
+		if = {
+			limit = {
+				exists = VIC
+				VIC = {
+					is_subject_of = ROOT
+				}
+			}
+			VIC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = SAN
+				SAN = {
+					is_subject_of = ROOT
+				}
+			}
+			SAN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ASN
+				ASN = {
+					is_subject_of = ROOT
+				}
+			}
+			ASN = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = CPC
+				CPC = {
+					is_subject_of = ROOT
+				}
+			}
+			CPC = {
+				declare_war_with_cb = {
+					who = root
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}
+
+# Peasants revolt in [area]
+country_event = {
+	id = ming_crisis.6
+	title = "ming_crisis.6.t"
+	desc = "ming_crisis.6.d"
+	picture = ANGRY_MOB_eventPicture
+	goto = ming_disaster_rebel_province
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_state = yes
+			superregion = superregion_texas
+			NOT = { local_autonomy = 75 }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					superregion = superregion_texas
+					NOT = { local_autonomy = 75 }
+				}
+				save_event_target_as = ming_disaster_rebel_province
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.6.a
+		ai_chance = { factor = 1 }
+		add_mandate = 5
+		event_target:ming_disaster_rebel_province = {
+			spawn_rebels = {
+				type = anti_tax_rebels 
+				size = 6
+			}
+		}
+	}
+	option = {
+		name = ming_crisis.6.b
+		ai_chance = { factor = 0 }
+		add_mandate = -10
+		event_target:ming_disaster_rebel_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 50
+			}
+		}
+	}
+}
+
+
+# Gatekeeper for ending depending on whether you kept the Mandate or not
+country_event = {
+	id = ming_crisis.7
+	title = none
+	desc = none
+	picture = none
+	hidden = yes
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		on_non_estate_disaster_end = yes
+		hidden_effect = {
+			set_country_flag = ming_crisis_happened
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			country_event = { id = ming_crisis.2 }
+		}
+		else = {
+			country_event = { id = ming_crisis.8 }
+		}
+	}
+	option = { }
+}
+
+# The Mandate Restored
+country_event = {
+	id = ming_crisis.8
+	title = "ming_crisis.8.t"
+	desc = "ming_crisis.8.d"
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				save_event_target_as = emperor_of_china
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.8.a
+		add_stability = 1
+	}
+}
+
+
+# Manchu/Nomadic Intervention on Shun
+country_event = {
+	id = ming_crisis.9
+	title = "ming_crisis.9.t"
+	desc = "ming_crisis.9.d"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = ming_crisis.9.A
+
+		liaoning_area = {
+			limit = {
+				owned_by = WAC
+				NOT = { is_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_claim = ROOT
+		}
+
+		area_tx_burleson = {
+			limit = {
+				owned_by = WAC
+				NOT = { is_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_claim = ROOT
+		}
+
+		area_tx_huntsville = {
+			limit = {
+				owned_by = WAC
+				NOT = { is_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_claim = ROOT
+		}
+
+		area_tx_college_station = {
+			limit = {
+				owned_by = WAC
+				NOT = { is_claim = ROOT }
+				NOT = { is_core = ROOT }
+			}
+			add_claim = ROOT
+		}
+		
+		if = {
+			limit = {
+				has_casus_belli = {
+					type = cb_horde_vs_civ
+					target = WAC
+				}
+			}
+			declare_war_with_cb = {
+				who = WAC
+				casus_belli = cb_horde_vs_civ
+			}
+		}
+		else = {
+			declare_war_with_cb = {
+				who = WAC
+				casus_belli = cb_conquest
+			}
+		}
+
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.67
+				has_opinion = {
+					who = from
+					value = 10
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = {
+					who = from
+					value = 50
+				}
+			}
+			modifier = {
+				factor = 0.2
+				has_opinion = {
+					who = from
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_at_war = yes
+				NOT = { war_score = 0 }
+			}
+			modifier = {
+				factor = 0
+				is_at_war = yes
+				NOT = { war_score = -15 }
+			}
+			modifier = {
+				factor = 0.2
+				is_in_large_debt = yes
+			}
+		}
+	}
+
+	option = {
+		name = ming_crisis.9.B
+
+		add_prestige = -20
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.01
+				OR = {
+					ai_attitude = {
+						who = from
+						attitude = attitude_hostile
+					}
+					is_rival = from
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ming_crisis.10
+	title = "ming_crisis.10.t"
+	desc = "ming_crisis.10.d"
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ming_crisis.10.a
+		grant_independence = yes
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = ming_crisis.10.b
+		custom_tooltip = ming_crisis.10.tt
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+	
+# Ming falls apart!
+country_event = {
+	id = ming_crisis.11
+	title = "ming_crisis.11.t"
+	desc = "ming_crisis.11.d"
+	picture = ANGRY_MOB_eventPicture
+	goto = ming_disaster_nationalist_province
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			superregion = superregion_texas
+			any_core_country = {
+				NOT = { tag = ROOT }
+				NOT = { tag = WAC }
+				NOT = { tag = SAN }
+				NOT = { tag = VIC }
+				NOT = { tag = ASN }
+				NOT = { tag = CPC }
+				exists = no
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					superregion = superregion_texas
+					any_core_country = {
+						NOT = { tag = ROOT }
+						NOT = { tag = WAC }
+						NOT = { tag = SAN }
+						NOT = { tag = VIC }
+						NOT = { tag = ASN }
+						NOT = { tag = CPC }
+						exists = no
+					}
+				}
+				save_event_target_as = ming_disaster_nationalist_province
+				random_core_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						NOT = { tag = WAC }
+						NOT = { tag = SAN }
+						NOT = { tag = VIC }
+						NOT = { tag = ASN }
+						NOT = { tag = CPC }
+						exists = no
+					}
+					save_event_target_as = ming_disaster_new_tag
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ming_crisis.11.a
+		add_mandate = 5
+		event_target:ming_disaster_new_tag = {
+			event_target:ming_disaster_nationalist_province = {
+				spawn_rebels = {
+					type = nationalist_rebels
+					friend = PREV
+					size = 5
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {
+		name = ming_crisis.11.b
+		add_mandate = -5
+		event_target:ming_disaster_nationalist_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_local_autonomy = 10
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

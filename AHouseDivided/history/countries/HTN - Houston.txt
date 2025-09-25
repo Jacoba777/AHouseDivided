@@ -1,7 +1,14 @@
 technology_group = texas
-government = republic
-add_government_reform = american_republic
-government_rank = 1
+government = monarchy
+add_government_reform = celestial_empire
+government_rank = 3
 religion = baptist
 primary_culture = culture_houstonian
-capital = 2153
+capital = 2136
+
+if = { 
+	limit = { has_dlc = "Domination" }
+	set_estate_privilege = estate_eunuchs_allow_personal_fortunes_privilege
+    set_estate_privilege = estate_eunuchs_land_rights_privilege
+    set_estate_privilege = estate_eunuchs_royal_intrigue_keepers_privilege
+}

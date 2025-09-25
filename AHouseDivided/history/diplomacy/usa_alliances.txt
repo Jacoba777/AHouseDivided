@@ -862,54 +862,6 @@ dependency = {
 	start_date = 1444.1.1
 }
 
-# Los Angeles-Orange Vassalization
-dependency = {
-	subject_type = vassal
-	first = LAX
-	second = ORA
-	start_date = 1444.1.1
-}
-
-# Los Angeles-Ventura Vassalization
-dependency = {
-	subject_type = vassal
-	first = LAX
-	second = VTR
-	start_date = 1444.1.1
-}
-
-# Fresno-Hanford Vassalization
-dependency = {
-	subject_type = vassal
-	first = FSN
-	second = HFR
-	start_date = 1444.1.1
-}
-
-# Fresno-Madera Vassalization
-dependency = {
-	subject_type = vassal
-	first = FSN
-	second = MDR
-	start_date = 1444.1.1
-}
-
-# Sacramento-Truckee Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = TKE
-	start_date = 1444.1.1
-}
-
-# Sacramento-Yuba Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = YUB
-	start_date = 1444.1.1
-}
-
 # Portland-Salem Vassalization
 dependency = {
 	subject_type = vassal

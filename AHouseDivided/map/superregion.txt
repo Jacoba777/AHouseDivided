@@ -8,13 +8,7 @@ superregion_hawaii = {
 	region_hi
 }
 
-superregion_midatlantic = {
-	region_nj
-	region_ny
-	region_pa
-}
-
-superregion_new_england = {
+superregion_newengland = {
 	region_ct
 	region_ma
 	region_me
@@ -23,86 +17,97 @@ superregion_new_england = {
 	region_vt
 }
 
-superregion_greater_delmarva = {
-	region_de
-	region_md
-	region_va
-	region_wv
+superregion_midlands = {
+	region_nj
+	region_ny
+	region_pa
+
 }
 
-superregion_upper_great_lakes = {
-	region_mi
+superregion_upperlakes = {
 	region_mn
 	region_wi
+	region_mi
 }
 
-superregion_ohio_river_valley = {
+superregion_lowerlakes = {
 	region_il
 	region_in
 	region_oh
 }
 
-superregion_interriviera = {
-	region_ia
-	region_mo
-}
-
-superregion_dakotas = {
+superregion_dakota = {
 	region_nd
 	region_sd
 }
 
-superregion_central_plains = {
+superregion_plains = {
 	region_ks
 	region_ok
 	region_ne
 }
 
-superregion_atlantic_south = {
-	region_ga
-	region_nc
-	region_sc
+superregion_centralia = {
+	region_mo
+	region_ia
 }
 
-superregion_upper_south = {
+superregion_bourbon = {
 	region_ky
 	region_tn
 }
 
 superregion_delta = {
-	region_al
-	region_ar
 	region_la
 	region_ms
+	region_ar
 }
 
-superregion_florida = {
+superregion_tidewater = {
+	region_wv
+	region_md
+	region_va
+	region_de
+}
+
+superregion_carolina = {
+	region_nc
+	region_sc
+}
+
+superregion_midsouth = {
+	region_al
 	region_fl
+	region_ga
 }
 
 superregion_texas = {
 	region_tx
 }
 
-superregion_four_corners = {
-	region_az
-	region_co
-	region_nm
-	region_ut
-}
-
-superregion_pacific_northwest = {
+superregion_cascadia = {
 	region_or
 	region_wa
 }
 
-superregion_grand_sierra = {
-	region_ca
+superregion_california = {
+	region_ca	
 	region_nv
 }
 
-superregion_northern_rockies = {
+superregion_rockies = {
 	region_id
 	region_mt
 	region_wy
 }
+
+superregion_west = {
+	region_nm
+	region_az
+}
+
+superregion_deseret = {
+	region_ut
+	region_co
+}
+

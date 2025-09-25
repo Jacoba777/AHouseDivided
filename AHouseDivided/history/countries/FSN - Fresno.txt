@@ -1,6 +1,6 @@
 technology_group = california
-government = republic
-add_government_reform = american_republic
+government = monarchy
+add_government_reform = daimyo
 government_rank = 1
 religion = catholic
 primary_culture = culture_fresnoan

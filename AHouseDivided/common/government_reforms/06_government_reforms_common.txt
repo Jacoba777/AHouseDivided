@@ -4675,7 +4675,7 @@ german_cultural_disunity_reform = {
 	lock_level_when_selected = yes
 	block_cultural_union = yes
 	potential = {
-		tag = GER
+		tag = XUS
 		has_country_flag = GER_stuck_disunited
 	}
 	modifiers = {

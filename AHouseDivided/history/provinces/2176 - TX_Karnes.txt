@@ -12,9 +12,10 @@ native_hostileness=2
 religion=catholic
 culture=culture_alamo
 is_city = yes
-owner=SAN
+owner=HTN
+add_core=HTN
+controller=HTN
 add_core=SAN
-controller=SAN
 
 1444.11.12 = {
 	base_tax=0

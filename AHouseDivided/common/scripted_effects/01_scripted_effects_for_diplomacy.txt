@@ -1,0 +1,147 @@
+#Country scopes unless otherwise stated
+
+add_mutual_opinion_modifier_effect = {
+	add_opinion = {
+		who = $target$
+		modifier = $modifier$
+	}
+	reverse_add_opinion = {
+		who = $target$
+		modifier = $modifier$
+	}
+}
+
+eyalet_effect = {
+	override_country_name = $tag$
+	set_country_flag = has_eyalet_country_name
+	set_country_flag = has_eyalet_color
+	set_country_flag = has_overriden_name_flag
+	set_country_flag = has_overriden_color_flag
+	hidden_effect = {
+		if = {
+			limit = { religion = noreligion }
+			change_religion = ROOT
+		}
+		if = {
+			limit = { primary_culture = noculture }
+			change_primary_culture = ROOT
+		}
+	}
+	if = {
+		limit = {
+			ROOT = { tag = XCA }
+		}
+		change_country_color = { color = { 219 172 40 } }
+	}
+	else_if = {
+		limit = {
+			ROOT = { tag = XUS }
+		}
+		change_country_color = { color = { 69 157 208 } }
+	}
+	else = {
+		change_country_color = { country = ROOT }
+	}
+	set_country_flag = is_$tag$_flag
+}
+
+eyalet_name_effect = {
+	set_country_flag = has_eyalet_country_name
+	set_country_flag = has_overriden_name_flag
+	override_country_name = $tag$
+}
+
+eyalet_dynamic_name_change_effect = {
+	if = { limit = { tag = XAK } eyalet_name_effect = { tag = EY1 } }
+	if = { limit = { tag = XAL } eyalet_name_effect = { tag = EY2 } }
+	if = { limit = { tag = XAR } eyalet_name_effect = { tag = EY3 } }
+	if = { limit = { tag = XAZ } eyalet_name_effect = { tag = EY4 } }
+	if = { limit = { tag = XCO } eyalet_name_effect = { tag = EY5 } }
+	if = { limit = { tag = XDK } eyalet_name_effect = { tag = EY6 } }
+	if = { limit = { tag = XFL } eyalet_name_effect = { tag = EY7 } }
+	if = { limit = { tag = XHI } eyalet_name_effect = { tag = EY8 } }
+	if = { limit = { tag = XIL } eyalet_name_effect = { tag = EY9 } }
+	if = { limit = { tag = XRS } eyalet_name_effect = { tag = E10 } }
+	if = { limit = { tag = XIN } eyalet_name_effect = { tag = E11 } }
+	if = { limit = { tag = XIA } eyalet_name_effect = { tag = E12 } }
+	if = { limit = { tag = XKS } eyalet_name_effect = { tag = E13 } }
+	if = { limit = { tag = XME } eyalet_name_effect = { tag = E14 } }
+	if = { limit = { tag = XMI } eyalet_name_effect = { tag = E15 } }
+	if = { limit = { tag = XMN } eyalet_name_effect = { tag = E16 } }
+	if = { limit = { tag = XMS } eyalet_name_effect = { tag = E17 } }
+	if = { limit = { tag = XMO } eyalet_name_effect = { tag = E18 } }
+	if = { limit = { tag = XMT } eyalet_name_effect = { tag = E19 } }
+	if = { limit = { tag = XNE } eyalet_name_effect = { tag = E20 } }
+	if = { limit = { tag = XNV } eyalet_name_effect = { tag = E21 } }
+	if = { limit = { tag = XOR } eyalet_name_effect = { tag = E22 } }
+	if = { limit = { tag = XOH } eyalet_name_effect = { tag = E23 } }
+	if = { limit = { tag = XWV } eyalet_name_effect = { tag = E24 } }
+	if = { limit = { tag = XVA } eyalet_name_effect = { tag = E25 } }
+	if = { limit = { tag = XTN } eyalet_name_effect = { tag = E26 } }
+	if = { limit = { tag = XLA } eyalet_name_effect = { tag = E27 } }
+	if = { limit = { tag = XUT } eyalet_name_effect = { tag = E28 } }
+	if = { limit = { tag = XWY } eyalet_name_effect = { tag = E29 } }
+	if = { limit = { tag = XNH } eyalet_name_effect = { tag = E30 } }
+	if = { limit = { tag = XVT } eyalet_name_effect = { tag = E31 } }
+	if = { limit = { tag = XNY } eyalet_name_effect = { tag = E32 } }
+	if = { limit = { tag = XRI } eyalet_name_effect = { tag = E33 } }
+	if = { limit = { tag = XCT } eyalet_name_effect = { tag = E34 } }
+	if = { limit = { tag = XPA } eyalet_name_effect = { tag = E35 } }
+	if = { limit = { tag = XMD } eyalet_name_effect = { tag = E36 } }
+	if = { limit = { tag = XVA } eyalet_name_effect = { tag = E37 } }
+	if = { limit = { tag = XKY } eyalet_name_effect = { tag = E38 } }
+	if = { limit = { tag = XNC } eyalet_name_effect = { tag = E39 } }
+	if = { limit = { tag = XSC } eyalet_name_effect = { tag = E40 } }
+	if = { limit = { tag = XGA } eyalet_name_effect = { tag = E41 } }
+	if = { limit = { tag = XTX } eyalet_name_effect = { tag = E42 } }
+	if = { limit = { tag = XDE } eyalet_name_effect = { tag = E43 } }
+	if = { limit = { tag = XNJ } eyalet_name_effect = { tag = E44 } }
+	if = { limit = { tag = XNV } eyalet_name_effect = { tag = E45 } }
+	if = { limit = { tag = XOK } eyalet_name_effect = { tag = E46 } }
+	if = { limit = { tag = XWI } eyalet_name_effect = { tag = E47 } }
+	if = { limit = { tag = XMA } eyalet_name_effect = { tag = E48 } }
+	if = { limit = { tag = XID } eyalet_name_effect = { tag = E49 } }
+	if = { limit = { tag = XWA } eyalet_name_effect = { tag = E50 } }
+	if = { limit = { tag = XNM } eyalet_name_effect = { tag = E51 } }
+}
+
+convert_special_subject_to_vassal = {
+	if = {
+		limit = {
+			$subject$ = { is_subject_of = $overlord$ }
+			OR = {
+				AND = {
+					$overlord$ = { NOT = { has_government_attribute = has_eyalets } }
+					$subject$ = {
+						OR = {
+							is_subject_of_type = eyalet
+							is_subject_of_type = core_eyalet
+						}
+					}
+				}
+				AND = {
+					$overlord$ = { NOT = { has_government_attribute = enables_pronoias } }
+					$subject$ = {
+						OR = {
+							is_subject_of_type = pronoia_subject_type
+							is_subject_of_type = hereditary_pronoia_subject_type
+						}
+					}
+				}
+				AND = {
+					$overlord$ = { NOT = { has_government_mechanic = persian_influence_mechanic } }
+					$subject$ = {
+						is_subject_of_type = cultural_sphere_of_influence_subject
+					}
+				}
+			}
+		}
+		$overlord$ = {
+			create_subject = {
+				subject_type = vassal
+				subject = $subject$
+				keep_liberty_desire = yes
+			}
+		}
+	}
+}

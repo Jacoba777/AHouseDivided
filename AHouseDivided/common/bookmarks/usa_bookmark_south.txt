@@ -11,10 +11,10 @@ bookmark = {
 	country = CLT
 	country = RCH
 	country = VAB
-	country = DLS
+	country = BTR
 	country = LXG
 	
 	easy_country = ATL
 	easy_country = HTN
 	easy_country = NSH
-}
+} 

@@ -12,9 +12,10 @@ native_hostileness=4
 religion=baptist
 culture=culture_metroplex
 is_city = yes
-owner=DLS
+owner=HTN
+add_core=HTN
+controller=HTN
 add_core=DLS
-controller=DLS
 
 1444.11.12 = {
 	base_tax=1

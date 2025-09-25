@@ -13,9 +13,10 @@ religion=baptist
 culture=culture_austinite
 center_of_trade=2
 is_city = yes
-owner=ASN
+owner=HTN
+add_core=HTN
+controller=HTN
 add_core=ASN
-controller=ASN
 
 1444.11.12 = {
 	base_tax=41
