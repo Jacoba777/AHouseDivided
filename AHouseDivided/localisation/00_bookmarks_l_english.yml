@@ -11,5 +11,3 @@
  bookmark_linear_dev_desc:0 "This scenario is the same as the previous four, but development is scaled linearly rather than logarithmically. This creates provinces with extremely high development around cities (LA county is over 900 dev), and most provinces are 3 development, creating very unbalanced gameplay."
  bookmark_fifty_states:0 "Alternative Start: 50 States"
  bookmark_fifty_states_desc:0 "(Note: This scenario uses the linear dev scale. Read the bookmark description for Linear Dev for more information.). With the Federal Goverment dissolved, the fifty states have found themselves all on their own. Inter-state tensions remain high, and war seems inevitable. Can the people of the United States be brought together under one nation once more?"
- bookmark_basedev:0 "Alternative Start: Base EU4 Provincal Development"
- bookmark_basedev_desc:0 "This scenario is the same as the the previous four, but development has been rescaled to match to more similarly match what is experienced in the base game."
