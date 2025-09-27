@@ -14,8 +14,8 @@ culture=culture_houstonian
 is_city = yes
 owner=HTN
 add_core=HTN
-controller=HTN
 add_core=WLK
+controller=HTN
 
 1444.11.12 = {
 	base_tax=1

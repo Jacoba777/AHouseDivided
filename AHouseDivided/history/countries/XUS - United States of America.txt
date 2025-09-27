@@ -1,6 +1,6 @@
 technology_group = mid_atlantic
 government = republic
-set_legacy_government = american_government_legacy
+add_government_reform = american_republic
 government_rank = 1
 religion = secular
 primary_culture = culture_potomac

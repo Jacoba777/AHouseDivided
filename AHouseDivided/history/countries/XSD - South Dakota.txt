@@ -4,4 +4,4 @@ add_government_reform = american_republic
 government_rank = 1
 religion = lutheran
 primary_culture = culture_south_dakotan
-capital = 2965
+capital = 2964

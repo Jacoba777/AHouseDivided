@@ -14,8 +14,8 @@ culture=culture_mid_trianglian
 is_city = yes
 owner=HTN
 add_core=HTN
-controller=HTN
 add_core=WAC
+controller=HTN
 
 1444.11.12 = {
 	base_tax=0
