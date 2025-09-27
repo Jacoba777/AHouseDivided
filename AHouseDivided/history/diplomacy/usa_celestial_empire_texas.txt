@@ -1,4 +1,6 @@
-#Ming Tributaries
+1260.5.5 = { celestial_emperor = HTN }
+
+#Houston Tributaries
 
 dependency = {
 	subject_type = "tributary_state"
