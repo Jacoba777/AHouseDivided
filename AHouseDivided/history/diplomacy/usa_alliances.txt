@@ -862,139 +862,11 @@ dependency = {
 	start_date = 1444.1.1
 }
 
-# Sacramento-El Centro Vassalization
+# Sacramento-Marin Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = ECT
-	start_date = 1444.1.1
-}
-
-# Sacramento-San Diego Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SDG
-	start_date = 1444.1.1
-}
-
-# Sacramento-Riverside Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = RVS
-	start_date = 1444.1.1
-}
-
-# Sacramento-San Bernardino Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SBN
-	start_date = 1444.1.1
-}
-
-# Sacramento-Orange Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = ORA
-	start_date = 1444.1.1
-}
-
-# Sacramento-Los Angeles Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = LAX
-	start_date = 1444.1.1
-}
-
-# Sacramento-Ventura Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = VTR
-	start_date = 1444.1.1
-}
-
-# Sacramento-Santa Barbara Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SBB
-	start_date = 1444.1.1
-}
-
-# Sacramento-San Luis Obispo Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SLU
-	start_date = 1444.1.1
-}
-
-# Sacramento-Bakersfield Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = BKF
-	start_date = 1444.1.1
-}
-
-# Sacramento-Visalia Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = VSL
-	start_date = 1444.1.1
-}
-
-# Sacramento-Hanford Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = HFR
-	start_date = 1444.1.1
-}
-
-# Sacramento-Salinas Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SLA
-	start_date = 1444.1.1
-}
-
-# Sacramento-Fresno Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = FSN
-	start_date = 1444.1.1
-}
-
-# Sacramento-Madera Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = MDR
-	start_date = 1444.1.1
-}
-
-# Sacramento-San Jose Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SJS
-	start_date = 1444.1.1
-}
-
-# Sacramento-Santa Cruz Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SAC
+	second = RIN
 	start_date = 1444.1.1
 }
 
@@ -1006,30 +878,6 @@ dependency = {
 	start_date = 1444.1.1
 }
 
-# Sacramento-Merced Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = MCD
-	start_date = 1444.1.1
-}
-
-# Sacramento-Modesto Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = MDO
-	start_date = 1444.1.1
-}
-
-# Sacramento-Stockton Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = STO
-	start_date = 1444.1.1
-}
-
 # Sacramento-Alameda Vassalization
 dependency = {
 	subject_type = vassal
@@ -1038,19 +886,11 @@ dependency = {
 	start_date = 1444.1.1
 }
 
-# Sacramento-Contra Costa Vassalization
+# Sacramento-Santa Cruz Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = CTC
-	start_date = 1444.1.1
-}
-
-# Sacramento-Marin Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = RIN
+	second = SAC
 	start_date = 1444.1.1
 }
 
@@ -1062,51 +902,43 @@ dependency = {
 	start_date = 1444.1.1
 }
 
+# Sacramento-San Jose Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = SJS
+	start_date = 1444.1.1
+}
+
+# Sacramento-Contra Costa Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = CTC
+	start_date = 1444.1.1
+}
+
+# Sacramento-Los Angeles Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = LAX
+	start_date = 1444.1.1
+}
+
+# Sacramento-Salinas Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = SLA
+	start_date = 1444.1.1
+}
+
 # Sacramento-Napa Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
 	second = NPA
-	start_date = 1444.1.1
-}
-
-# Sacramento-Vallejo Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = VLJ
-	start_date = 1444.1.1
-}
-
-# Sacramento-Truckee Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = TKE
-	start_date = 1444.1.1
-}
-
-# Sacramento-Yuba Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = YUB
-	start_date = 1444.1.1
-}
-
-# Sacramento-Sonora Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = SNR
-	start_date = 1444.1.1
-}
-
-# Sacramento-Clearlake Vassalization
-dependency = {
-	subject_type = vassal
-	first = SCM
-	second = CLK
 	start_date = 1444.1.1
 }
 
@@ -1126,67 +958,115 @@ dependency = {
 	start_date = 1444.1.1
 }
 
-# Sacramento-Crescent City Vassalization
+# Sacramento-Santa Barbara Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = CCC
+	second = SBB
 	start_date = 1444.1.1
 }
 
-# Sacramento-Redding Vassalization
+# Sacramento-Vallejo Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = RED
+	second = VLJ
 	start_date = 1444.1.1
 }
 
-# Sacramento-Red Bluff Vassalization
+# Sacramento-El Centro Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = RBF
+	second = ECT
 	start_date = 1444.1.1
 }
 
-# Sacramento-Susanville Vassalization
+# Sacramento-San Diego Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = SSV
+	second = SDG
 	start_date = 1444.1.1
 }
 
-# Sacramento-Chico Vassalization
+# Sacramento-Ventura Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = CCO
+	second = VTR
 	start_date = 1444.1.1
 }
 
-# Sacramento-Sierra Vassalization
+# Sacramento-Truckee Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = SRR
+	second = TKE
 	start_date = 1444.1.1
 }
 
-# Sacramento-Siskiyou Vassalization
+# Sacramento-Stockton Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = SSU
+	second = STO
 	start_date = 1444.1.1
 }
 
-# Sacramento-Trinity Vassalization
+# Sacramento-San Luis Obispo Vassalization
 dependency = {
 	subject_type = vassal
 	first = SCM
-	second = TNY
+	second = SLU
+	start_date = 1444.1.1
+}
+
+# Sacramento-San Bernardino Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = SBN
+	start_date = 1444.1.1
+}
+
+# Sacramento-Merced Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = MCD
+	start_date = 1444.1.1
+}
+
+# Sacramento-Orange Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = ORA
+	start_date = 1444.1.1
+}
+
+# Sacramento-Riverside Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = RVS
+	start_date = 1444.1.1
+}
+
+# Sacramento-Modesto Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = MDO
+	start_date = 1444.1.1
+}
+
+# Sacramento-Sonora Vassalization
+dependency = {
+	subject_type = vassal
+	first = SCM
+	second = SNR
 	start_date = 1444.1.1
 }
 

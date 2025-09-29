@@ -1,6 +1,6 @@
 technology_group = california
-government = monarchy
-add_government_reform = daimyo
+government = republic
+add_government_reform = american_republic
 government_rank = 1
 religion = atheist
 primary_culture = culture_north_coast

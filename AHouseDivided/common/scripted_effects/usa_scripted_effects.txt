@@ -1,0 +1,24 @@
+##prevent large country kahoots
+#every_known_country = {
+#	limit = { 
+#		NOT = { tag = WDO } 
+#		NOT = { tag = NAU } 
+#		NOT = { tag = XUS } 
+#		NOT = { tag = HLE } 
+#		NOT = { tag = GSW } 
+#		NOT = { tag = DIX }
+#	}
+#	add_opinion = {
+#		who = {
+#			and = {
+#				tag = WDO
+#				tag = NAU
+#				tag = XUS
+#				tag = HLE
+#				tag = GSW
+#				tag = DIX
+#			}
+#		}
+#		modifier = manifesting_destiny
+#	}
+#}
