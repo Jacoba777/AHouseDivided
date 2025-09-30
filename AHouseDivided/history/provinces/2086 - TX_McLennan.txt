@@ -13,9 +13,10 @@ religion=baptist
 culture=culture_mid_trianglian
 center_of_trade=1
 is_city = yes
-owner=WAC
+owner=HTN
+add_core=HTN
 add_core=WAC
-controller=WAC
+controller=HTN
 
 1444.11.12 = {
 	base_tax=3

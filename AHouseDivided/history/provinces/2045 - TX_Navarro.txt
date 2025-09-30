@@ -12,9 +12,10 @@ native_hostileness=5
 religion=baptist
 culture=culture_metroplex
 is_city = yes
-owner=CSN
+owner=HTN
+add_core=HTN
 add_core=CSN
-controller=CSN
+controller=HTN
 
 1444.11.12 = {
 	base_tax=0

@@ -13,9 +13,10 @@ religion=catholic
 culture=culture_corpus_christian
 center_of_trade=2
 is_city = yes
-owner=CPC
+owner=HTN
+add_core=HTN
 add_core=CPC
-controller=CPC
+controller=HTN
 fort_15th=yes
 
 1444.11.12 = {

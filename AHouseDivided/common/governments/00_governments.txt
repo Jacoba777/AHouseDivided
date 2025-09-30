@@ -129,6 +129,7 @@ monarchy = {
 				austrian_absolute_monarchy
 				merchant_aristocracy_reform
 				gothic_monarchy_reform
+
 			}
 		}
 		hereditary_vs_nobility = {
@@ -604,6 +605,7 @@ republic = {
 		colonial_government_legacy
 		american_republic_legacy
 		federal_republic_legacy
+		american_government_legacy
 		peasants_republic_legacy
 		veche_republic_legacy
 		cossacks_legacy_reform
@@ -634,6 +636,7 @@ republic = {
 				great_veche_republic
 				american_republic
 				federal_republic
+				american_government
 				colonial_government
 				crown_colony_government
 				private_enterprise_colony_government
@@ -979,6 +982,9 @@ republic = {
 		free_city
 		trading_city
 		american_republic
+		#ADH additions
+		california_republic
+		
 		revolutionary_republic_reform
 		pirate_republic_reform
 		protectorate_parliament_reform
@@ -1052,6 +1058,8 @@ tribal = {
 				gond_kingdom
 				great_mongol_state_reform
 				stateless_society
+				#us reform
+				urban_alaska
 				polynesian_kingdom
 				polynesian_tribe
 				sacred_kingdom

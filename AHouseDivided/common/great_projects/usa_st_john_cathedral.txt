@@ -12,6 +12,7 @@ st_john_cathedral = {
 		province_is_or_accepts_religion = {
 			religion = catholic
 		}
+		tag = XGA
 	}
 
 	on_built = {
@@ -24,12 +25,14 @@ st_john_cathedral = {
 		province_is_or_accepts_religion = {
 			religion = catholic
 		}
+		tag = XGA
 	}
 
 	can_upgrade_trigger = {
 		province_is_or_accepts_religion = {
 			religion = catholic
 		}
+		tag = XGA
 	}
 
 	keep_trigger = {
@@ -117,5 +120,6 @@ st_john_cathedral = {
 			monthly_fervor_increase = 0.5
 		}
 		on_upgraded = {
+		}
 	}
 }

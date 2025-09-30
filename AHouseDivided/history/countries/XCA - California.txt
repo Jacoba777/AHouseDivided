@@ -1,6 +1,6 @@
 technology_group = california
-government = republic
-add_government_reform = american_republic
+government = monarchy
+add_government_reform = ottoman_government
 government_rank = 3
 religion = catholic
 primary_culture = culture_sacramentan

@@ -207,7 +207,12 @@ estate_nobles = {
 			tag = MAM
 		}
 	}
-	
+		custom_name = {
+		desc = estate_oligarchs
+		trigger = {
+			always = yes
+		}
+	}
 	color = { 200 0 50 }
 	
 	privileges = {

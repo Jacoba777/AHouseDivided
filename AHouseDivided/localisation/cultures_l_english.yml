@@ -283,3 +283,9 @@
  culture_group_upstate:0 "Upstate"
  culture_group_western_deep_south:0 "Western Deep South"
  culture_group_woodlands_new_england:0 "Woodlands New England"
+  #texas scinized cultures:
+ culture_cajun_new:0 "Creole"
+ culture_west_texan_new:0 "Front Range"
+ culture_little_dixie_new:0 "Lil Dixie"
+ culture_longview_new:0 "Longerview"
+ culture_east_texan_new:0 "Eastern Texan"

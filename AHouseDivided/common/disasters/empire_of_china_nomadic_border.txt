@@ -1,0 +1,631 @@
+empire_of_china_nomadic_border = {
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		is_emperor_of_china = yes
+		not = { tag = XTX }
+	}
+
+	can_start = {
+		has_any_disaster = no
+		any_known_country = {
+			is_subject = no
+			NOT = { truce_with = ROOT }
+			NOT = { alliance_with = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = empire_of_china_nomadic_border_tt
+				OR = {
+					exists = XAK
+					exists = XHI
+					exists = XWA
+					exists = XOR
+					exists = XCA
+					exists = XNV
+					exists = XID
+					exists = XMT
+					exists = XWY
+					exists = XUT
+					exists = XCO
+					exists = XAZ
+					exists = XNM
+					exists = XTX
+					exists = XOK
+					exists = XKS
+					exists = XNE
+					exists = XSD
+					exists = XND
+					exists = XMN
+					exists = XIA
+					exists = XMO
+					exists = XAR
+					exists = XLA
+					exists = XMS
+					exists = XAL
+					exists = XGA
+					exists = XFL
+					exists = XSC
+					exists = XNC
+					exists = XVA
+					exists = XWV
+					exists = XKY
+					exists = XIL
+					exists = XWI
+					exists = XMI
+					exists = XIN
+					exists = XOH
+					exists = XMD
+					exists = XDE
+					exists = XPA
+					exists = XNJ
+					exists = XNY
+					exists = XCT
+					exists = XRI
+					exists = XMA
+					exists = XVT
+					exists = XNH
+					exists = XME
+				}
+				and ={
+					has_country_flag = formed_a_state
+					total_development  = ROOT
+				}
+			}
+			#NOT = { is_subject_of = ROOT }
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			NOT = {
+				any_known_country = {
+					NOT = { truce_with = ROOT }
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+					custom_trigger_tooltip = {
+						tooltip = empire_of_china_nomadic_border_tt
+						OR = {
+								exists = XAK
+								exists = XHI
+								exists = XWA
+								exists = XOR
+								exists = XCA
+								exists = XNV
+								exists = XID
+								exists = XMT
+								exists = XWY
+								exists = XUT
+								exists = XCO
+								exists = XAZ
+								exists = XNM
+								exists = XTX
+								exists = XOK
+								exists = XKS
+								exists = XNE
+								exists = XSD
+								exists = XND
+								exists = XMN
+								exists = XIA
+								exists = XMO
+								exists = XAR
+								exists = XLA
+								exists = XMS
+								exists = XAL
+								exists = XGA
+								exists = XFL
+								exists = XSC
+								exists = XNC
+								exists = XVA
+								exists = XWV
+								exists = XKY
+								exists = XIL
+								exists = XWI
+								exists = XMI
+								exists = XIN
+								exists = XOH
+								exists = XMD
+								exists = XDE
+								exists = XPA
+								exists = XNJ
+								exists = XNY
+								exists = XCT
+								exists = XRI
+								exists = XMA
+								exists = XVT
+								exists = XNH
+								exists = XME
+							hidden_trigger = {
+								and = {
+									any_known_country = { 
+										and ={
+											has_country_flag = formed_a_state
+											total_development  = ROOT
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = { 
+				any_known_country = { 
+					and = {
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			any_known_country = {
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_nomadic_border_tt
+					OR = {
+						exists = XAK
+						exists = XHI
+						exists = XWA
+						exists = XOR
+						exists = XCA
+						exists = XNV
+						exists = XID
+						exists = XMT
+						exists = XWY
+						exists = XUT
+						exists = XCO
+						exists = XAZ
+						exists = XNM
+						exists = XTX
+						exists = XOK
+						exists = XKS
+						exists = XNE
+						exists = XSD
+						exists = XND
+						exists = XMN
+						exists = XIA
+						exists = XMO
+						exists = XAR
+						exists = XLA
+						exists = XMS
+						exists = XAL
+						exists = XGA
+						exists = XFL
+						exists = XSC
+						exists = XNC
+						exists = XVA
+						exists = XWV
+						exists = XKY
+						exists = XIL
+						exists = XWI
+						exists = XMI
+						exists = XIN
+						exists = XOH
+						exists = XMD
+						exists = XDE
+						exists = XPA
+						exists = XNJ
+						exists = XNY
+						exists = XCT
+						exists = XRI
+						exists = XMA
+						exists = XVT
+						exists = XNH
+						exists = XME
+					}
+					and ={
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+				is_subject = no
+				NOT = { truce_with = ROOT }
+				NOT = { alliance_with = ROOT }
+				#NOT = { is_subject_of = ROOT }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			any_known_country = {
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_nomadic_border_tt
+					OR = {
+						exists = XAK
+						exists = XHI
+						exists = XWA
+						exists = XOR
+						exists = XCA
+						exists = XNV
+						exists = XID
+						exists = XMT
+						exists = XWY
+						exists = XUT
+						exists = XCO
+						exists = XAZ
+						exists = XNM
+						exists = XTX
+						exists = XOK
+						exists = XKS
+						exists = XNE
+						exists = XSD
+						exists = XND
+						exists = XMN
+						exists = XIA
+						exists = XMO
+						exists = XAR
+						exists = XLA
+						exists = XMS
+						exists = XAL
+						exists = XGA
+						exists = XFL
+						exists = XSC
+						exists = XNC
+						exists = XVA
+						exists = XWV
+						exists = XKY
+						exists = XIL
+						exists = XWI
+						exists = XMI
+						exists = XIN
+						exists = XOH
+						exists = XMD
+						exists = XDE
+						exists = XPA
+						exists = XNJ
+						exists = XNY
+						exists = XCT
+						exists = XRI
+						exists = XMA
+						exists = XVT
+						exists = XNH
+						exists = XME
+					}
+					and ={
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+				war_with = ROOT
+				war_score_against = {
+					who = ROOT
+					value = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			any_known_country = {
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_nomadic_border_tt
+					OR = {
+						exists = XAK
+						exists = XHI
+						exists = XWA
+						exists = XOR
+						exists = XCA
+						exists = XNV
+						exists = XID
+						exists = XMT
+						exists = XWY
+						exists = XUT
+						exists = XCO
+						exists = XAZ
+						exists = XNM
+						exists = XTX
+						exists = XOK
+						exists = XKS
+						exists = XNE
+						exists = XSD
+						exists = XND
+						exists = XMN
+						exists = XIA
+						exists = XMO
+						exists = XAR
+						exists = XLA
+						exists = XMS
+						exists = XAL
+						exists = XGA
+						exists = XFL
+						exists = XSC
+						exists = XNC
+						exists = XVA
+						exists = XWV
+						exists = XKY
+						exists = XIL
+						exists = XWI
+						exists = XMI
+						exists = XIN
+						exists = XOH
+						exists = XMD
+						exists = XDE
+						exists = XPA
+						exists = XNJ
+						exists = XNY
+						exists = XCT
+						exists = XRI
+						exists = XMA
+						exists = XVT
+						exists = XNH
+						exists = XME
+					}
+					and ={
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+				war_with = ROOT
+				war_score_against = {
+					who = ROOT
+					value = 25
+				}
+			}
+		}
+		modifier = {
+			factor = -3
+			any_known_country = {
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_nomadic_border_tt
+					OR = {
+						exists = XAK
+						exists = XHI
+						exists = XWA
+						exists = XOR
+						exists = XCA
+						exists = XNV
+						exists = XID
+						exists = XMT
+						exists = XWY
+						exists = XUT
+						exists = XCO
+						exists = XAZ
+						exists = XNM
+						exists = XTX
+						exists = XOK
+						exists = XKS
+						exists = XNE
+						exists = XSD
+						exists = XND
+						exists = XMN
+						exists = XIA
+						exists = XMO
+						exists = XAR
+						exists = XLA
+						exists = XMS
+						exists = XAL
+						exists = XGA
+						exists = XFL
+						exists = XSC
+						exists = XNC
+						exists = XVA
+						exists = XWV
+						exists = XKY
+						exists = XIL
+						exists = XWI
+						exists = XMI
+						exists = XIN
+						exists = XOH
+						exists = XMD
+						exists = XDE
+						exists = XPA
+						exists = XNJ
+						exists = XNY
+						exists = XCT
+						exists = XRI
+						exists = XMA
+						exists = XVT
+						exists = XNH
+						exists = XME
+					}
+					and ={
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = warscore_v_horde_25_tt
+					ROOT = {
+						war_score_against = {
+							who = PREV
+							value = 25
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	
+	can_end = {
+		OR = {
+			is_emperor_of_china = no
+			NOT = {
+				any_known_country = {
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+					custom_trigger_tooltip = {
+						tooltip = empire_of_china_nomadic_border_tt
+						OR = {
+							exists = XAK
+							exists = XHI
+							exists = XWA
+							exists = XOR
+							exists = XCA
+							exists = XNV
+							exists = XID
+							exists = XMT
+							exists = XWY
+							exists = XUT
+							exists = XCO
+							exists = XAZ
+							exists = XNM
+							exists = XTX
+							exists = XOK
+							exists = XKS
+							exists = XNE
+							exists = XSD
+							exists = XND
+							exists = XMN
+							exists = XIA
+							exists = XMO
+							exists = XAR
+							exists = XLA
+							exists = XMS
+							exists = XAL
+							exists = XGA
+							exists = XFL
+							exists = XSC
+							exists = XNC
+							exists = XVA
+							exists = XWV
+							exists = XKY
+							exists = XIL
+							exists = XWI
+							exists = XMI
+							exists = XIN
+							exists = XOH
+							exists = XMD
+							exists = XDE
+							exists = XPA
+							exists = XNJ
+							exists = XNY
+							exists = XCT
+							exists = XRI
+							exists = XMA
+							exists = XVT
+							exists = XNH
+							exists = XME
+							hidden_trigger = {
+								and = {
+									
+								}
+							}
+						}
+						and ={
+							has_country_flag = formed_a_state
+							total_development  = ROOT
+						}
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = { 
+				any_known_country = { 
+					and = {
+						has_country_flag = formed_a_state
+						total_development  = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+
+	modifier = {
+		imperial_mandate = -0.4
+		reduced_liberty_desire = -25
+		land_morale = -0.2
+	}	
+	
+	
+	on_start = empire_of_china_nomadic_border_events.1
+	on_end = empire_of_china_nomadic_border_events.2
+	
+	on_monthly = {
+		events = {
+			mch_missions.5 # Koxinga flees to Taiwan
+			ming_crisis.3 # Li Zicheng's Rebellion and the Shun Dynasty
+			ming_crisis.4 # Autonomy for Yunnan province
+			ming_crisis.5 # Losing Control in the South
+		}
+		random_events = { 
+			#1000 = 0
+			# None
+		}
+	}
+
+	on_start_effect = {
+		hidden_effect = {
+			clr_country_flag = empire_of_china_nomadic_border_started_ticker
+			clr_country_flag = empire_of_china_nomadic_border_further_ticker
+			every_country = {
+				limit = {
+					has_country_flag = empire_of_china_nomadic_border_cause
+				}
+				clr_country_flag = empire_of_china_nomadic_border_cause
+			}
+		}
+	}
+
+	#triggered monthly when it is ticking up to 100. The progress is saved in a variable that is <disaster key>_progress
+	on_progress_effect = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = empire_of_china_nomadic_border_started_ticker }
+				check_variable = {
+					which = empire_of_china_nomadic_border_progress
+					value = 10
+				}
+			}
+			set_country_flag = empire_of_china_nomadic_border_started_ticker
+			every_known_country = {
+				limit = {
+					OR = {
+						has_country_flag = formed_a_state
+					}
+					total_development  = ROOT
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+				}
+				set_country_flag = empire_of_china_nomadic_border_cause
+				country_event = { id = empire_of_china_nomadic_border_events.3 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = empire_of_china_nomadic_border_further_ticker }
+				check_variable = {
+					which = empire_of_china_nomadic_border_progress
+					value = 75
+				}
+			}
+			set_country_flag = empire_of_china_nomadic_border_further_ticker
+			every_known_country = {
+				limit = {
+					OR = {
+						has_country_flag = formed_a_state
+					}
+					total_development  = ROOT
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+				}
+				country_event = { id = empire_of_china_nomadic_border_events.4 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = empire_of_china_nomadic_border_progress
+						value = 5
+					}
+				}
+				has_country_flag = empire_of_china_nomadic_border_started_ticker
+			}
+
+			every_country = {
+				limit = {
+					has_country_flag = empire_of_china_nomadic_border_cause
+				}
+				country_event = { id = empire_of_china_nomadic_border_events.5 }
+			}
+		}
+	}
+}
+

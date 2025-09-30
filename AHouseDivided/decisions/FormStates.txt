@@ -1721,73 +1721,243 @@ country_decisions = {
 		ai_will_do = { factor = 1 }
 	}
 	
-	form_california = {
+	# Unite California - 1
+	unite_japan = {
 		major = yes
 		potential = {
-			OR = {
-				culture_group = culture_group_californian
-				culture_group = culture_group_cascadian
-				primary_culture = culture_yuman
-			}
-			capital_scope = { region = region_ca }
-			was_never_end_game_tag_trigger = yes
-			NOT = { has_country_flag = formed_a_state }
+			NOT = { tag = XCA }
 			NOT = { tag = PAP }
-			NOT = { exists = XCA }
+			NOT = { has_country_flag = formed_japan_flag }
+			NOT = { has_country_flag = formed_a_state }
+			was_never_end_game_tag_trigger = yes
+			has_reform = shogunate
+			any_country = {
+				vassal_of = ROOT
+				has_reform = daimyo
+			}
+			culture_group = culture_group_californian
 		}
 		provinces_to_highlight = {
 			OR = {
-				province_id = 2401  # San Fran
-				province_id = 2424  # LA
-				province_id = 2426  # San Diego
-				province_id = 2398  # Sacramento
-				province_id = 2414  # Fresno
-				province_id = 2430  # Bakersfield
-				province_id = 2404  # San Jose
-				province_id = 2429  # San Bernadino
+				province_id = 2398
 			}
+			NOT = { owned_by = ROOT }
 		}
 		allow = {
-			owns_core_province = 2401  # San Fran
-			owns_core_province = 2424  # LA
-			owns_core_province = 2426  # San Diego
-			owns_core_province = 2398  # Sacramento
-			owns_core_province = 2414  # Fresno
-			owns_core_province = 2430  # Bakersfield
-			owns_core_province = 2404  # San Jose
-			owns_core_province = 2429  # San Bernadino
-			num_of_owned_provinces_with = {
-				region = region_ca
-				value = 26
-			}
-			adm_tech = 10
+			NOT = { exists = XCA }
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
 			is_at_war = no
+			num_of_cities = 25
+			owns = 2398
 		}
 		effect = {
-			change_tag = XCA
-			region_ca = {
-				limit = { NOT = { owned_by = ROOT } }
-				add_permanent_claim = XCA
-			}
+			remove_government_reform = shogunate
 			on_change_tag_effect = yes
-			restore_country_name_effect = yes
-			set_country_flag = formed_a_state
-			custom_tooltip = become_an_empire_tt
-			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = california_republic
+			#set_legacy_government = ottoman_government_legacy
+			set_government_rank = 3
+			custom_tooltip = unite_japan_subject_tooltip
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						has_reform = daimyo
+					}
+					ROOT = {
+						free_vassal = PREV
+					}
+					remove_government_reform = daimyo
+					#set_legacy_government = indep_daimyo
+					every_owned_province = {
+						remove_core = XCA
+					}
+					set_country_flag = was_daimyo
+				}
+			}
+			change_tag = XCA
+			swap_non_generic_missions = yes
+			if = {
+				limit = { ai = no }
+				on_change_tag_effect = yes
+			}
+			restore_country_name = yes
+			set_country_flag = formed_japan_flag
+
+			if = { 
+				limit = { 
+					region_ca = { NOT = { country_or_non_sovereign_subject_holds = ROOT } } 
+				}
+				region_ca = {
+					limit = {
+						NOT = { is_core = ROOT } 
+						NOT = { owned_by = ROOT } 
+					}
+					add_permanent_claim = ROOT 
+				}
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
-			add_country_modifier = {
-				name = "centralization_modifier"
-				duration = 7300
+			if = { 
+				limit = { has_dlc = "Domination" }
+				add_country_modifier = {
+					name = JAP_grant_samurai_modifier
+					duration = -1 
+				}
 			}
-			add_prestige = 50
-			swap_non_generic_missions = yes
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_cities = 30 }
+			}
+		}
 	}
 	
+	# United California - 2
+	united_japan = {
+		major = yes
+		potential = {
+			has_reform = shogunate
+			NOT = { has_country_flag = formed_japan_flag }
+			NOT = { has_country_flag = formed_a_state }
+			was_never_end_game_tag_trigger = yes
+			NOT = { exists = XCA }
+			NOT = { tag = PAP }
+			culture_group = culture_group_californian
+		}
+		allow = {
+			NOT = { exists = XCA }
+			is_free_or_tributary_trigger = yes
+			owns = 2398
+			all_country = {
+				NOT = {
+					has_reform = daimyo
+				}
+				NOT = {
+					has_reform = indep_daimyo
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XCA
+			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			remove_government_reform = shogunate
+			add_government_reform = california_republic
+			#set_legacy_government = ottoman_government_legacy
+			set_country_flag = formed_japan_flag
+			set_country_flag = formed_a_state
+			set_government_rank = 3
+			add_legitimacy = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			if = { 
+				limit = { 
+					region_ca = { NOT = { country_or_non_sovereign_subject_holds = ROOT } } 
+				}
+				region_ca = {
+					limit = {
+						NOT = { is_core = ROOT } 
+						NOT = { owned_by = ROOT } 
+					}
+					add_permanent_claim = ROOT 
+				}
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = { 
+				limit = { has_dlc = "Domination" }
+				add_country_modifier = {
+					name = JAP_grant_samurai_modifier
+					duration = -1 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	# United California - 3
+	united_japan_daimyo = {
+		major = yes
+		potential = {
+			NOT = { tag = XCA }
+			NOT = { has_country_flag = formed_japan_flag }
+			NOT = { has_country_flag = formed_a_state }
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_reform = shogunate }
+			NOT = { has_reform = celestial_empire }
+			culture_group = culture_group_californian
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2398
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			NOT = { exists = XCA }
+			is_free_or_tributary_trigger = yes
+			owns = 2398
+			all_country = {
+				OR = {
+					tag = ROOT
+					AND = {
+						NOT = { has_reform = daimyo }
+						NOT = { has_reform = indep_daimyo }
+						NOT = { has_reform = shogunate }
+					}
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = XCA
+			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			set_country_flag = formed_japan_flag
+			set_country_flag = formed_a_state
+			remove_non_electors_emperors_from_empire_effect = yes
+			remove_government_reform = daimyo
+			remove_government_reform = indep_daimyo
+			add_government_reform = california_republic
+			#set_legacy_government = ottoman_government_legacy
+			set_government_rank = 3
+			add_legitimacy = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = { 
+				limit = { has_dlc = "Domination" }
+				add_country_modifier = {
+					name = XCA_grant_samurai_modifier
+					duration = -1 
+				}
+			}
+			if = {
+				limit = { ai = no }
+				on_change_tag_effect = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	form_minnesota = {
 		major = yes
 		potential = {
@@ -2753,6 +2923,13 @@ country_decisions = {
 			NOT = { has_country_flag = formed_a_state }
 			NOT = { tag = PAP }
 			NOT = { exists = XAK }
+			or = {
+				tag = UBA
+				num_of_owned_provinces_with = {
+					region = region_ak
+					value = 10
+				}			
+			}
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -2765,8 +2942,12 @@ country_decisions = {
 			owns_core_province = 3346  # Juneau
 			owns_core_province = 3335  # Fairbanks
 			owns_core_province = 3338  # Anchorage
-			adm_tech = 8
+			adm_tech = 10
 			is_at_war = no
+			num_of_owned_provinces_with = {
+				region = region_ak
+				value = 10
+			}
 		}
 		effect = {
 			change_tag = XAK

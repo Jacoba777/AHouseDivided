@@ -525,7 +525,15 @@ industrialized_province_trigger = { #Province Scope
 }
 
 was_never_end_game_tag_trigger = {	#Country Scope
-	always = yes
+	OR = {
+		NOT = { end_game_tags_blocked = yes }
+		custom_trigger_tooltip = {
+			tooltip = was_never_end_game_tag_trigger_tt
+			AND = {
+				NOT = { was_tag = XUS }
+			}
+		}
+	}
 }
 
 
@@ -1144,8 +1152,19 @@ valid_for_personal_unions_trigger = {
 }
 
 is_shadow_kingdom_eligible_trigger = {
-	always = no
+	is_emperor = no
+	is_part_of_hre = yes
+	OR = {
+		capital_scope = { region = region_virginia }
+		AND = {
+			culture_group = culture_potomac
+			any_owned_province = {
+				region = region_virgina
+			}
+		}
+	}
 }
+
 
 will_leave_for_shadow_kingdom_trigger = {
 	NOT = {

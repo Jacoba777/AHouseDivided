@@ -13,9 +13,10 @@ religion=baptist
 culture=culture_mid_trianglian
 center_of_trade=1
 is_city = yes
-owner=TXK
+owner=HTN
+add_core=HTN
 add_core=TXK
-controller=TXK
+controller=HTN
 fort_15th=yes
 
 1444.11.12 = {

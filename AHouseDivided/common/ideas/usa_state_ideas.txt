@@ -1467,7 +1467,10 @@ XAK_ideas = {
 	}
 
 	trigger = {
-		tag = XAK
+		OR = {
+			tag = XAK
+			tag = UBA
+		}
 	}
 
 	environmental_stewardship = {

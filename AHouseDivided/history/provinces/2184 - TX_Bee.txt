@@ -12,9 +12,10 @@ native_hostileness=6
 religion=catholic
 culture=culture_alamo
 is_city = yes
-owner=CPC
+owner=HTN
+add_core=HTN
 add_core=CPC
-controller=CPC
+controller=HTN
 
 1444.11.12 = {
 	base_tax=0

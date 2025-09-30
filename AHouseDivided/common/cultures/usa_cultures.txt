@@ -244,6 +244,11 @@ culture_group_texas_triangle = {
 	culture_victorian = {}
 	culture_alamo = { primary = SAN }
 	culture_corpus_christian = { primary = CPC }
+	culture_east_texan_new = {}
+	culture_cajun_new = {}
+	culture_west_texan_new = {}
+	culture_longview_new = {}
+	culture_little_dixie_new = {}
 	
 	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
 	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
@@ -261,7 +266,7 @@ culture_group_upland_south = {
 	culture_centralseean = {}
 	culture_nashvillian = { primary = NSH }
 	culture_eastesseean = { primary = JBV }
-	culture_little_egyptian =  primary = CBD }
+	culture_little_egyptian = { primary = CBD }
 	culture_bootheel = { primary = CGD }
 	culture_jonesboro = { primary = JBR }
 	

@@ -13,9 +13,10 @@ religion=catholic
 culture=culture_alamo
 center_of_trade=2
 is_city = yes
-owner=SAN
+owner=HTN
+add_core=HTN
 add_core=SAN
-controller=SAN
+controller=HTN
 fort_15th=yes
 
 1444.11.12 = {

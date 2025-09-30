@@ -12,9 +12,10 @@ native_hostileness=8
 religion=baptist
 culture=culture_mid_trianglian
 is_city = yes
-owner=TXK
+owner=HTN
+add_core=HTN
 add_core=TXK
-controller=TXK
+controller=HTN
 
 1444.11.12 = {
 	base_tax=0

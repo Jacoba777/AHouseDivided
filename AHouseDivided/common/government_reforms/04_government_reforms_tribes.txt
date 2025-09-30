@@ -254,16 +254,40 @@ stateless_society = {
 	lock_level_when_selected = yes
 	nation_designer_cost = 0
 	modifiers = {
-		governing_capacity_modifier = -0.99
-		defensiveness = 0.75
-		land_morale = 0.15
+		governing_capacity_modifier = -0.95
+		defensiveness = 0.25
+		land_morale = 0.2
 	}
 	ai = {
 		factor = 1
 		modifier = {
 			factor = -1
-			num_of_cities = 2
+			num_of_cities = 3
 		}
+	}
+}
+
+urban_alaska = {
+	icon = "peacock_throne"
+	allow_normal_conversion = no
+	valid_for_nation_designer = yes
+	lock_level_when_selected = yes
+	nation_designer_cost = 0
+	potential = {
+		and = {
+			owns_or_non_sovereign_subject_of = 3346  # Juneau
+			owns_or_non_sovereign_subject_of = 3335  # Fairbanks
+			owns_or_non_sovereign_subject_of = 3338  # Anchorage
+		}
+		or = {
+			primary_culture = culture_panhandle_alaskan
+			primary_culture = culture_alaskan
+		}
+	}
+	modifiers = {
+		governing_capacity_modifier = -0.80
+		defensiveness = 0.25
+		land_morale = 0.2		
 	}
 }
 

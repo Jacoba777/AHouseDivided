@@ -12,9 +12,10 @@ native_hostileness=5
 religion=baptist
 culture=culture_houstonian
 is_city = yes
-owner=WLK
+owner=HTN
+add_core=HTN
 add_core=WLK
-controller=WLK
+controller=HTN
 
 1444.11.12 = {
 	base_tax=1
