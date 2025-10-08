@@ -1,0 +1,26 @@
+triggered_modifier_ak_home_colonization_buff = {
+    potential = {
+        is_colony = yes
+		owner = {
+			OR = {
+				culture_group = culture_group_alaskan
+				primary_culture = culture_panhandle_alaskan
+			}
+		}
+    }
+    
+    trigger = {
+        is_colony = yes
+		owner = {
+			OR = {
+				culture_group = culture_group_alaskan
+				primary_culture = culture_panhandle_alaskan
+			}
+		}
+		has_climate = arctic
+    }
+    
+	local_colonial_growth = 100
+	local_colonist_placement_chance = 0.95
+	local_colony_cost_modifier = 0.2
+}
