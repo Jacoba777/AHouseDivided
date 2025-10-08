@@ -5,8 +5,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XAL = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_al
                         value = 46
@@ -56,8 +57,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XAK = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ak
                         value = 14
@@ -107,8 +109,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XAR = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ar
                         value = 52 
@@ -157,8 +160,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XAZ = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_az
                         value = 12
@@ -207,8 +211,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XCO = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_co
                         value = 44
@@ -257,8 +262,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XCT = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ct
                         value = 6
@@ -307,8 +313,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XDE = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_de
                         value = 3
@@ -357,8 +364,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XFL = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_fl
                         value = 46
@@ -407,8 +415,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XGA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ga
                         value = 108
@@ -457,8 +466,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XHI = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_hi
                         value = 4
@@ -507,8 +517,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XID = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_id
                         value = 30
@@ -557,8 +568,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XIL = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_il
                         value = 70
@@ -607,8 +619,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XIN = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_in
                         value = 62
@@ -657,8 +670,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XRS = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ok
                         value = 14
@@ -707,8 +721,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XIA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ia
                         value = 68
@@ -757,8 +772,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XKS = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ks
                         value = 72
@@ -807,8 +823,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XKY = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ky
                         value = 82
@@ -857,8 +874,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XLA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_la
                         value = 44
@@ -907,8 +925,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XME = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_me
                         value = 12
@@ -957,8 +976,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMD = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_md
                         value = 18
@@ -1007,8 +1027,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ma
                         value = 10
@@ -1057,8 +1078,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMI = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mi
                         value = 56
@@ -1107,8 +1129,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMN = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mn
                         value = 60
@@ -1157,8 +1180,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMS = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ms
                         value = 56
@@ -1207,8 +1231,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMO = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mo
                         value = 78
@@ -1257,8 +1282,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XMT = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mt
                         value = 38
@@ -1307,8 +1333,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNE = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ne
                         value = 64
@@ -1357,8 +1384,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNV = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nv
                         value = 12
@@ -1407,8 +1435,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNH = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nh
                         value = 8
@@ -1457,8 +1486,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNJ = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nj
                         value = 16
@@ -1507,8 +1537,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNM = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nm
                         value = 24
@@ -1557,8 +1588,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNY = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ny
                         value = 42
@@ -1607,8 +1639,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XNC = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nc
                         value = 68
@@ -1657,8 +1690,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XDK = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         superregion = superregion_dakota
                         value = 82
@@ -1709,8 +1743,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XOH = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_oh
                         value = 60
@@ -1759,8 +1794,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XOK = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ok
                         value = 14
@@ -1809,8 +1845,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XOR = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_or
                         value = 26
@@ -1859,8 +1896,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XPA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_pa
                         value = 46
@@ -1909,8 +1947,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XRI = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ri
                         value = 4
@@ -1959,8 +1998,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XSC = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_sc
                         value = 32
@@ -2009,8 +2049,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XTN = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_tn
                         value = 64
@@ -2059,8 +2100,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XTX = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_tx
                         value = 178
@@ -2109,8 +2151,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XUT = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ut
                         value = 2
@@ -2159,8 +2202,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XVT = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_vt
                         value = 10
@@ -2209,8 +2253,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XVA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_va
                         value = 70
@@ -2259,8 +2304,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XWA = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wa
                         value = 28
@@ -2310,8 +2356,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XWV = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wv
                         value = 38
@@ -2360,8 +2407,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XWI = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wi
                         value = 50
@@ -2410,8 +2458,9 @@ country_decisions = {
             and = {
                 tag = XCA
                 XWY = {
-                    subject_type = organized_territory_reform
-                    not = { subject_type = core_eyalet }
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wy
                         value = 16
