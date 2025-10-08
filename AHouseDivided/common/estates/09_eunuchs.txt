@@ -64,14 +64,68 @@ estate_eunuchs = {
 	influence_modifier = {
 		desc = EST_VAL_LOW_MANDATE
 		trigger = {
-			NOT = { imperial_mandate = 50 }
+			if = {
+				limit = { root = { is_emperor_of_china = yes } }
+				NOT = { imperial_mandate = 50 }
+			}
+			else_if = {
+				limit = { root  = { government = republic } }
+				not = { republican_tradition = 80 }
+			}
+			#else_if = { THEY LACK THE CORRESPONDING VARIABLE - ALL THE MORE REASON TO NOT USE FOR THE SE
+			#	limit = { root = { government = native } }
+			#	not = {  }
+			#}
+			else_if = {
+				limit = { 
+					root = { government = monarchy } 
+					is_emperor_of_china = no
+				}
+				not = { legitimacy = 75 }
+			}
+			else_if = {
+				limit = { root = { government = tribal } }
+				not = { horde_unity = 80 }
+			}
+			else_if = {
+				limit = { root = { government = theocracy } }
+				not = { devotion = 80 }
+			}
+
 		}
 		influence = 20		
 	}
 	influence_modifier = {
 		desc = EST_VAL_LOW_MERITOCRACY
 		trigger = {
-			NOT = { meritocracy = 50 }
+			if = {
+				limit = { root = { is_emperor_of_china = yes } }
+				NOT = { imperial_mandate = 50 }
+			}
+			else_if = {
+				limit = { root  = { government = republic } }
+				not = { republican_tradition = 80 }
+			}
+			#else_if = { THEY LACK THE CORRESPONDING VARIABLE - ALL THE MORE REASON TO NOT USE FOR THE SE
+			#	limit = { root = { government = native } }
+			#	not = {  }
+			#}
+			else_if = {
+				limit = { 
+					root = { government = monarchy } 
+					is_emperor_of_china = no
+				}
+				not = { legitimacy = 75 }
+			}
+			else_if = {
+				limit = { root = { government = tribal } }
+				not = { horde_unity = 80 }
+			}
+			else_if = {
+				limit = { root = { government = theocracy } }
+				not = { devotion = 80 }
+			}
+
 		}
 		influence = 20
 	}
