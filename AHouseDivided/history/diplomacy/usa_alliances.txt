@@ -30,6 +30,14 @@ dependency = {
 	start_date = 1444.1.1
 }
 
+# Kansas City-St Joseph Vassalization
+dependency = {
+	subject_type = vassal
+	first = KSC
+	second = STJ
+	start_date = 1444.1.1
+}
+
 # Philadelphia-Reading Vassalization
 dependency = {
 	subject_type = vassal
@@ -723,14 +731,6 @@ dependency = {
 	subject_type = vassal
 	first = STL
 	second = CTL
-	start_date = 1444.1.1
-}
-
-# Kansas City-St Joseph Vassalization
-dependency = {
-	subject_type = vassal
-	first = KSC
-	second = STJ
 	start_date = 1444.1.1
 }
 
