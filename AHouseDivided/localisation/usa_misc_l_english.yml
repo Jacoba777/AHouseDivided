@@ -4,3 +4,4 @@
  stateless_society:0 "Independent Borough"
  stateless_society_desc:0 "Isolated cities rise amidst the now untamed expanse of Alaska, each maintaining order within its own walls. Authority cannot stretch far beyond the urban centers, and threats are few—coming only from neighboring cities willing to cross the vast regrowing wilderness between them."
  STATELESS_SOCIETY:0 "Independent Borough"
+ triggered_modifier_ak_home_colonization_buff:0 "An Alaskan colonizing Alaska"

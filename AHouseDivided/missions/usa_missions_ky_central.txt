@@ -28,7 +28,7 @@ missions_ky_central_slot1 = {
 				area = area_ky_grayson
 				area = area_ky_fort_knox
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -63,7 +63,7 @@ missions_ky_central_slot1 = {
 				area = area_ky_south_louisville
 				area = area_ky_west_louisvillle
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -130,7 +130,7 @@ missions_ky_central_slot1 = {
 				area = area_ky_south_cincinnati
 				area = area_ky_cincinnati
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -181,7 +181,7 @@ missions_ky_central_slot2 = {
 				area = area_ky_southern
 				area = area_ky_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -251,7 +251,7 @@ missions_ky_central_slot2 = {
 				area = area_ky_bowling_green
 				area = area_ky_somerset
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -325,7 +325,7 @@ missions_ky_central_slot3 = {
 			OR = {
 
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -347,7 +347,7 @@ missions_ky_central_slot3 = {
 				area = area_ky_frankfort
 				area = area_ky_lexington
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -429,7 +429,7 @@ missions_ky_central_slot3 = {
 			OR = {
 
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

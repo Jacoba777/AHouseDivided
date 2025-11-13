@@ -123,32 +123,32 @@ missions_in_north_slot3 = {
 		required_missions = { mission_in_north_a_respectable_state }
 		trigger = {
 			OR = {
-				is_rival = IND
+				is_rival = IDP
 				AND = {
-					exists = IND
+					exists = IDP
 					military_strength = {
-						who = IND
+						who = IDP
 						value = 2.0
 					}
 				}
 				power_projection = 80
-				tag = IND
+				tag = IDP
 			}
 			OR = {
-				IND = {
+				IDP = {
 					has_opinion_modifier = {
 						who = ROOT
 						modifier = scornfully_insulted
 					}
 				}
-				IND = {
+				IDP = {
 					has_opinion_modifier = {
 						who = ROOT
 						modifier = insulted
 					}
 				}
-				NOT = { exists = IND }
-				tag = IND
+				NOT = { exists = IDP }
+				tag = IDP
 			}
  		}
 		effect = {
@@ -193,19 +193,19 @@ missions_in_north_slot3 = {
  		}
 		effect = {
 			area_in_central_indianapolis = { add_permanent_claim = ROOT }
-			area_in_indiana_chicagoland = { add_permanent_claim = ROOT }
+			area_in_south_indianapolis = { add_permanent_claim = ROOT }
 			area_in_western = { add_permanent_claim = ROOT }
 		}
 
 	}
 
 	mission_in_north_a_dagger_to_the_heart = {
-		icon = mission_unite_home_region
+		icon = mission_idp
 		position = 7
 		required_missions = { mission_in_north_welcome_indianapolitan }
 		trigger = {
 			area_in_central_indianapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_in_indiana_chicagoland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_south_indianapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_in_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
@@ -215,7 +215,7 @@ missions_in_north_slot3 = {
 		provinces_to_highlight = {
 			OR = {
 				area = area_in_central_indianapolis
-				area = area_in_indiana_chicagoland
+				area = area_in_south_indianapolis
 				area = area_in_western
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }

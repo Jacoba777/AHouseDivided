@@ -46,7 +46,7 @@ missions_ga_atlanta_slot1 = {
 				area = area_ga_dalton
 				area = area_ga_north
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -141,7 +141,7 @@ missions_ga_atlanta_slot2 = {
 				area = area_ga_macon
 				area = area_ga_east_heartland
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -232,7 +232,7 @@ missions_ga_atlanta_slot3 = {
 			OR = {
 				area = area_ga_augusta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -320,7 +320,7 @@ missions_ga_atlanta_slot3 = {
 				area = area_sc_thoroughbred
 				area = area_sc_lowcountry
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}

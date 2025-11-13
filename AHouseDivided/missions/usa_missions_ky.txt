@@ -5,30 +5,6 @@ missions_ky_slot1 = {
 	has_country_shield = yes
 	potential = { tag = XKY }
 
-	mission_ky_invade_west_virginia = {
-		icon = mission_unite_home_region
-		position = 3
-		required_missions = { mission_ky_the_bluegrass_state }
-		trigger = {
-			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_wv_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_va_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			area_va_bristol = { add_permanent_claim = ROOT }
-			area_va_blue_ridge = { add_permanent_claim = ROOT }
-			area_va_blacksburg = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_wv_south_charleston
-				area = area_wv_southwestern
-				area = area_va_western
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
 	mission_ky_the_march_to_blacksburg = {
 		icon = mission_unite_home_region
 		position = 4
@@ -48,7 +24,7 @@ missions_ky_slot1 = {
 				area = area_va_blue_ridge
 				area = area_va_blacksburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -106,7 +82,7 @@ missions_ky_slot1 = {
 				area = area_va_roanoke
 				area = area_va_carroll
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -169,7 +145,7 @@ missions_ky_slot1 = {
 				area = area_tn_johnson_city
 				area = area_tn_smoky_mountains
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -192,7 +168,7 @@ missions_ky_slot1 = {
 				area = area_nc_northwestern
 				area = area_nc_asheville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -252,7 +228,7 @@ missions_ky_slot1 = {
 				area = area_ga_north
 				area = area_ga_central_high_country
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -294,76 +270,28 @@ missions_ky_slot2 = {
 	has_country_shield = yes
 	potential = { tag = XKY }
 
-	mission_ky_the_bourbon_reunion = {
+	mission_ky_invade_west_virginia = {
 		icon = mission_unite_home_region
-		position = 1
-		required_missions = {  }
-		trigger = {
-			region_ky = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_stability = 1
-
-			add_prestige_or_monarch_power = { amount = 10 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				region = region_ky
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ky_the_bluegrass_state = {
-		icon = mission_alliances
-		position = 2
-		required_missions = { mission_ky_the_bourbon_reunion }
-		trigger = {
-			region_ky = {
-				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
-				}
-			}
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_a_prosperous_state
-				duration = 7300  # 20 years
-			}
-			area_wv_south_charleston = { add_permanent_claim = ROOT }
-			area_wv_southwestern = { add_permanent_claim = ROOT }
-			area_va_western = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				region = region_ky
-			}
-			OR = {
-				NOT { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 1
-				unrest = 10
-				local_autonomy = 50
-			}
-		}
-	}
-
-	mission_ky_embrace_cincinnatian = {
-		icon = mission_diplomatic_relation
 		position = 3
 		required_missions = { mission_ky_the_bluegrass_state }
 		trigger = {
-			accepted_culture = culture_cincinnatian
+			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			area_oh_north_cincinnati = { add_permanent_claim = ROOT }
-			area_in_west_cincinatti = { add_permanent_claim = ROOT }
-			area_oh_southwestern = { add_permanent_claim = ROOT }
+			area_va_bristol = { add_permanent_claim = ROOT }
+			area_va_blue_ridge = { add_permanent_claim = ROOT }
+			area_va_blacksburg = { add_permanent_claim = ROOT }
 		}
-
+		provinces_to_highlight = {
+			OR = {
+				area = area_wv_south_charleston
+				area = area_wv_southwestern
+				area = area_va_western
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 	}
 
 	mission_ky_accept_kanawha = {
@@ -405,7 +333,7 @@ missions_ky_slot2 = {
 				area = area_wv_southern
 				area = area_wv_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -461,7 +389,7 @@ missions_ky_slot2 = {
 			OR = {
 				region = region_wv
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -499,7 +427,7 @@ missions_ky_slot2 = {
 				area = area_tn_knoxville
 				area = area_tn_campbell
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -554,7 +482,7 @@ missions_ky_slot2 = {
 				area = area_tn_north_chattanooga
 				area = area_tn_cleveland
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -575,7 +503,7 @@ missions_ky_slot2 = {
 			OR = {
 				region = region_tn
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -606,7 +534,7 @@ missions_ky_slot2 = {
 				province_id = 1528
 				province_id = 1529
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -618,15 +546,74 @@ missions_ky_slot3 = {
 	has_country_shield = yes
 	potential = { tag = XKY }
 
-	mission_ky_placating_louisvillians = {
+	mission_ky_the_bourbon_reunion = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_ky = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ky
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ky_the_bluegrass_state = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_ky_the_bourbon_reunion }
+		trigger = {
+			region_ky = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+			area_wv_south_charleston = { add_permanent_claim = ROOT }
+			area_wv_southwestern = { add_permanent_claim = ROOT }
+			area_va_western = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ky
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ky_embrace_cincinnatian = {
 		icon = mission_diplomatic_relation
 		position = 3
 		required_missions = { mission_ky_the_bluegrass_state }
 		trigger = {
-			accepted_culture = culture_louisvillian
+			accepted_culture = culture_cincinnatian
  		}
 		effect = {
-			area_in_north_louisville = { add_permanent_claim = ROOT }
+			area_oh_north_cincinnati = { add_permanent_claim = ROOT }
+			area_in_west_cincinatti = { add_permanent_claim = ROOT }
+			area_oh_southwestern = { add_permanent_claim = ROOT }
 		}
 
 	}
@@ -652,7 +639,7 @@ missions_ky_slot3 = {
 				area = area_in_west_cincinatti
 				area = area_oh_southwestern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -740,65 +727,53 @@ missions_ky_slot3 = {
 				area = area_oh_southeastern
 				area = area_oh_east_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
-	mission_ky_the_boot_comes_down = {
+	mission_ky_approaching_nashville = {
 		icon = mission_unite_home_region
 		position = 8
-		required_missions = { mission_ky_prepare_for_missouri }
+		required_missions = { mission_ky_invest_in_jackson }
 		trigger = {
-			area_mo_farmington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_mo_wayne = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_mo_poplar_bluff = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_mo_cape_girardeau = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_mo_bootheel = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_carroll = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_west_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_hickman = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			area_ar_northeast = { add_permanent_claim = ROOT }
-			area_ar_jonesboro = { add_permanent_claim = ROOT }
-			1743 = { add_permanent_claim = ROOT }
-			1759 = { add_permanent_claim = ROOT }
+			area_tn_nashville = { add_permanent_claim = ROOT }
+			area_tn_south_nashville_area_tn_northern = { add_permanent_claim = ROOT }
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_mo_farmington
-				area = area_mo_wayne
-				area = area_mo_poplar_bluff
-				area = area_mo_cape_girardeau
-				area = area_mo_bootheel
+				area = area_tn_carroll
+				area = area_tn_west_nashville
+				area = area_tn_hickman
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
-	mission_ky_fight_for_jonesboro = {
-		icon = mission_unite_home_region
+	mission_ky_the_fate_of_music_city = {
+		icon = mission_nsh
 		position = 9
-		required_missions = { mission_ky_the_boot_comes_down }
+		required_missions = { mission_ky_approaching_nashville }
 		trigger = {
-			area_ar_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_ar_jonesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			1743 = { country_or_non_sovereign_subject_holds = ROOT }
-			1759 = { country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			add_legitimacy = 20
-			add_meritocracy = 20
-			add_republican_tradition = 10
-			add_devotion = 20
-			add_horde_unity = 20
-			add_adm_power = 100
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_ar_northeast
-				area = area_ar_jonesboro
-				province_id = 1743
-				province_id = 1759
+				area = area_tn_nashville
+				area = area_tn_northern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -873,7 +848,7 @@ missions_ky_slot3 = {
 				province_id = 1765
 				province_id = 1766
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -944,6 +919,19 @@ missions_ky_slot4 = {
 	has_country_shield = yes
 	potential = { tag = XKY }
 
+	mission_ky_placating_louisvillians = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_ky_the_bluegrass_state }
+		trigger = {
+			accepted_culture = culture_louisvillian
+ 		}
+		effect = {
+			area_in_north_louisville = { add_permanent_claim = ROOT }
+		}
+
+	}
+
 	mission_ky_reuniting_louisville = {
 		icon = mission_lvl
 		position = 4
@@ -962,170 +950,9 @@ missions_ky_slot4 = {
 			OR = {
 				area = area_in_north_louisville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
-
-	mission_ky_assail_little_egypt = {
-		icon = mission_unite_home_region
-		position = 5
-		required_missions = { mission_ky_reuniting_louisville }
-		trigger = {
-			area_il_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_il_carbondale = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_il_greater_saline = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_il_southern_tip = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			area_in_evansville = { add_permanent_claim = ROOT }
-			area_in_jasper = { add_permanent_claim = ROOT }
-			area_in_southern = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_il_southeastern
-				area = area_il_carbondale
-				area = area_il_greater_saline
-				area = area_il_southern_tip
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ky_take_southern_indiana = {
-		icon = mission_unite_home_region
-		position = 6
-		required_missions = { mission_ky_assail_little_egypt }
-		trigger = {
-			area_in_evansville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_in_jasper = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_in_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_mil_power = 100
-			add_prestige_or_monarch_power = { amount = 15 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_in_evansville
-				area = area_in_jasper
-				area = area_in_southern
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ky_prepare_for_missouri = {
-		icon = mission_mo
-		position = 7
-		required_missions = { mission_ky_take_southern_indiana mission_ky_take_west_tennessee }
-		trigger = {
-
- 		}
-		effect = {
-			area_mo_farmington = { add_permanent_claim = ROOT }
-			area_mo_wayne = { add_permanent_claim = ROOT }
-			area_mo_poplar_bluff = { add_permanent_claim = ROOT }
-			area_mo_cape_girardeau = { add_permanent_claim = ROOT }
-		}
-
-	}
-
-	mission_ky_approaching_nashville = {
-		icon = mission_unite_home_region
-		position = 8
-		required_missions = { mission_ky_invest_in_jackson }
-		trigger = {
-			area_tn_carroll = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_tn_west_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_tn_hickman = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			area_tn_nashville = { add_permanent_claim = ROOT }
-			area_tn_south_nashville_area_tn_northern = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_tn_carroll
-				area = area_tn_west_nashville
-				area = area_tn_hickman
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ky_the_fate_of_music_city = {
-		icon = mission_nsh
-		position = 9
-		required_missions = { mission_ky_approaching_nashville }
-		trigger = {
-			area_tn_nashville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_tn_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_a_successful_conquest
-				duration = 730  # 2 years
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_tn_nashville
-				area = area_tn_northern
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ky_welcome_nashvillians = {
-		icon = mission_diplomatic_relation
-		position = 10
-		required_missions = { mission_ky_the_fate_of_music_city }
-		trigger = {
-			accepted_culture = culture_nashvillian
- 		}
-		effect = {
-			area_tn_north_memphis = { add_permanent_claim = ROOT }
-			area_ms_south_memphis = { add_permanent_claim = ROOT }
-			area_ar_forest_city = { add_permanent_claim = ROOT }
-			1764 = { add_permanent_claim = ROOT }
-			1765 = { add_permanent_claim = ROOT }
-			1766 = { add_permanent_claim = ROOT }
-		}
-
-	}
-
-	mission_ky_bourbon_for_all = {
-		icon = mission_bourbon
-		position = 11
-		required_missions = { mission_ky_the_kentucky_derby }
-		trigger = {
-            num_of_owned_provinces_with = {
-                value = 10
-                has_building = farm_estate
-                has_building = workshop
-                OR = {
-                    trade_goods = grain
-                    trade_goods = corn
-                }
-            }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_bourbon_exports
-				duration = 9125  # 25 years
-			}
-		}
-
-	}
-}
-
-missions_ky_slot5 = {
-	slot = 5
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = XKY }
 
 	mission_ky_peace_in_north_lousiville = {
 		icon = mission_alliances
@@ -1181,7 +1008,7 @@ missions_ky_slot5 = {
 				area = area_tn_western
 				area = area_tn_jackson
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1205,6 +1032,179 @@ missions_ky_slot5 = {
 				}
 			}
 		}
+	}
+
+	mission_ky_the_boot_comes_down = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_ky_prepare_for_missouri }
+		trigger = {
+			area_mo_farmington = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_wayne = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_poplar_bluff = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_cape_girardeau = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mo_bootheel = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ar_northeast = { add_permanent_claim = ROOT }
+			area_ar_jonesboro = { add_permanent_claim = ROOT }
+			1743 = { add_permanent_claim = ROOT }
+			1759 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_farmington
+				area = area_mo_wayne
+				area = area_mo_poplar_bluff
+				area = area_mo_cape_girardeau
+				area = area_mo_bootheel
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ky_fight_for_jonesboro = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_ky_the_boot_comes_down }
+		trigger = {
+			area_ar_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_jonesboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			1743 = { country_or_non_sovereign_subject_holds = ROOT }
+			1759 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_legitimacy = 20
+			add_meritocracy = 20
+			add_republican_tradition = 10
+			add_devotion = 20
+			add_horde_unity = 20
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ar_northeast
+				area = area_ar_jonesboro
+				province_id = 1743
+				province_id = 1759
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ky_welcome_nashvillians = {
+		icon = mission_diplomatic_relation
+		position = 10
+		required_missions = { mission_ky_the_fate_of_music_city }
+		trigger = {
+			accepted_culture = culture_nashvillian
+ 		}
+		effect = {
+			area_tn_north_memphis = { add_permanent_claim = ROOT }
+			area_ms_south_memphis = { add_permanent_claim = ROOT }
+			area_ar_forest_city = { add_permanent_claim = ROOT }
+			1764 = { add_permanent_claim = ROOT }
+			1765 = { add_permanent_claim = ROOT }
+			1766 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ky_bourbon_for_all = {
+		icon = mission_bourbon
+		position = 11
+		required_missions = { mission_ky_the_kentucky_derby }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                has_building = farm_estate
+                has_building = workshop
+                OR = {
+                    trade_goods = grain
+                    trade_goods = corn
+                }
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_bourbon_exports
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_ky_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XKY }
+
+	mission_ky_assail_little_egypt = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ky_reuniting_louisville }
+		trigger = {
+			area_il_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_carbondale = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_greater_saline = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southern_tip = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_in_evansville = { add_permanent_claim = ROOT }
+			area_in_jasper = { add_permanent_claim = ROOT }
+			area_in_southern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_southeastern
+				area = area_il_carbondale
+				area = area_il_greater_saline
+				area = area_il_southern_tip
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ky_take_southern_indiana = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ky_assail_little_egypt }
+		trigger = {
+			area_in_evansville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_jasper = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_in_evansville
+				area = area_in_jasper
+				area = area_in_southern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ky_prepare_for_missouri = {
+		icon = mission_mo
+		position = 7
+		required_missions = { mission_ky_take_southern_indiana mission_ky_take_west_tennessee }
+		trigger = {
+
+ 		}
+		effect = {
+			area_mo_farmington = { add_permanent_claim = ROOT }
+			area_mo_wayne = { add_permanent_claim = ROOT }
+			area_mo_poplar_bluff = { add_permanent_claim = ROOT }
+			area_mo_cape_girardeau = { add_permanent_claim = ROOT }
+		}
+
 	}
 
 	mission_ky_the_fate_of_fort_knox = {

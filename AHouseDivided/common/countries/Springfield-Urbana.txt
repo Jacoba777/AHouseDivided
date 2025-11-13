@@ -1,9 +1,9 @@
-# Ozark Springfield
+# Springfield-Urbana
 
 graphical_culture = westerngfx
 
-color = { 82 145 193 }
-revolutionary_colors = { 82 145 193 }
+color = { 255 58 106 }
+revolutionary_colors = { 255 58 106 }
 
 monarch_names = {
     "Noah #0" = 91

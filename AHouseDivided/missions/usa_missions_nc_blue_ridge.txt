@@ -55,7 +55,7 @@ missions_nc_blue_ridge_slot3 = {
 				area = area_nc_cullowhee
 				area = area_nc_asheville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -124,7 +124,7 @@ missions_nc_blue_ridge_slot3 = {
 				area = area_nc_east_charlotte
 				area = area_nc_hickory
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -223,7 +223,7 @@ missions_nc_blue_ridge_slot3 = {
 				area = area_nc_west_research_triangle
 				area = area_nc_raleigh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -316,7 +316,7 @@ missions_nc_blue_ridge_slot3 = {
 				area = area_nc_pinehurst
 				area = area_nc_fayetteville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

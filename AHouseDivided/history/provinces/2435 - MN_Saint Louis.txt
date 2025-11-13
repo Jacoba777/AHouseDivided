@@ -17,6 +17,7 @@ owner=DTH
 add_core=DTH
 controller=DTH
 fort_15th=yes
+trade_goods=iron
 
 1444.11.12 = {
 	base_tax=3

@@ -840,6 +840,61 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "mission_ia"
+		texturefile = "gfx/interface/missions/states/mission_ia.dds"
+	}
+	
+	spriteType = {
+		name = "mission_sd"
+		texturefile = "gfx/interface/missions/states/mission_sd.dds"
+	}
+	
+	spriteType = {
+		name = "mission_nd"
+		texturefile = "gfx/interface/missions/states/mission_nd.dds"
+	}
+	
+	spriteType = {
+		name = "mission_ks"
+		texturefile = "gfx/interface/missions/states/mission_ks.dds"
+	}
+	
+	spriteType = {
+		name = "mission_ok"
+		texturefile = "gfx/interface/missions/states/mission_ok.dds"
+	}
+	
+	spriteType = {
+		name = "mission_tsa"
+		texturefile = "gfx/interface/missions/states/mission_tsa.dds"
+	}
+	
+	spriteType = {
+		name = "mission_okc"
+		texturefile = "gfx/interface/missions/states/mission_okc.dds"
+	}
+	
+	spriteType = {
+		name = "mission_wta"
+		texturefile = "gfx/interface/missions/states/mission_wta.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dmn"
+		texturefile = "gfx/interface/missions/states/mission_dmn.dds"
+	}
+	
+	spriteType = {
+		name = "mission_omh"
+		texturefile = "gfx/interface/missions/states/mission_omh.dds"
+	}
+	
+	spriteType = {
+		name = "mission_ksc"
+		texturefile = "gfx/interface/missions/states/mission_ksc.dds"
+	}
+	
+	spriteType = {
 		name = "mission_mds"
 		texturefile = "gfx/interface/missions/states/mission_mds.dds"
 	}
@@ -1047,6 +1102,31 @@ spriteTypes = {
 	spriteType = {
 		name = "mission_stl"
 		texturefile = "gfx/interface/missions/states/mission_stl.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mark_twain"
+		texturefile = "gfx/interface/missions/mission_mark_twain.dds"
+	}
+	
+	spriteType = {
+		name = "mission_st_louis_arch"
+		texturefile = "gfx/interface/missions/mission_st_louis_arch.dds"
+	}
+	
+	spriteType = {
+		name = "mission_dred_scott"
+		texturefile = "gfx/interface/missions/mission_dred_scott.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mo_coat_of_arms"
+		texturefile = "gfx/interface/missions/mission_mo_coat_of_arms.dds"
+	}
+	
+	spriteType = {
+		name = "mission_mayo"
+		texturefile = "gfx/interface/missions/mission_mayo.dds"
 	}
 	
 	spriteType = {

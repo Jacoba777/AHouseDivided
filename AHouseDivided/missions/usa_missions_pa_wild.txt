@@ -118,7 +118,7 @@ missions_pa_wild_slot2 = {
 			OR = {
 				area = area_pa_susquehanna_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -139,7 +139,7 @@ missions_pa_wild_slot2 = {
 			OR = {
 				area = area_pa_north_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -253,7 +253,7 @@ missions_pa_wild_slot3 = {
 				province_id = 240
 				province_id = 235
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -276,7 +276,7 @@ missions_pa_wild_slot3 = {
 				area = area_pa_johnstown
 				area = area_pa_allegheny_mts
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -337,7 +337,7 @@ missions_pa_wild_slot3 = {
 			OR = {
 				area = area_pa_philly
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -454,7 +454,7 @@ missions_pa_wild_slot4 = {
 				area = area_pa_north_pittsburgh
 				area = area_pa_pittsburgh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

@@ -5,12 +5,12 @@ missions_ga_coastal_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = JSP
-			tag = BCK
 			tag = CMD
-			tag = HSV
-			tag = SBR
+			tag = BCK
 			tag = SVH
+			tag = HSV
+			tag = JSP
+			tag = SBR
 		}
 	}
 
@@ -59,7 +59,7 @@ missions_ga_coastal_slot1 = {
 				area = area_sc_thoroughbred
 				area = area_sc_lowcountry
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -72,12 +72,12 @@ missions_ga_coastal_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = JSP
-			tag = BCK
 			tag = CMD
-			tag = HSV
-			tag = SBR
+			tag = BCK
 			tag = SVH
+			tag = HSV
+			tag = JSP
+			tag = SBR
 		}
 	}
 
@@ -120,7 +120,7 @@ missions_ga_coastal_slot2 = {
 				area = area_ga_hinesville
 				area = area_ga_savannah
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -132,12 +132,12 @@ missions_ga_coastal_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = JSP
-			tag = BCK
 			tag = CMD
-			tag = HSV
-			tag = SBR
+			tag = BCK
 			tag = SVH
+			tag = HSV
+			tag = JSP
+			tag = SBR
 		}
 	}
 
@@ -277,7 +277,7 @@ missions_ga_coastal_slot3 = {
 				area = area_ga_fitzgerald
 				area = area_ga_east_plantation
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -306,7 +306,7 @@ missions_ga_coastal_slot3 = {
 				province_id = 371
 				area = area_ga_macon
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -329,7 +329,7 @@ missions_ga_coastal_slot3 = {
 				area = area_ga_atlanta
 				area = area_ga_south_atlanta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

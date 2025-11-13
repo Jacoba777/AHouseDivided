@@ -1,0 +1,394 @@
+missions_mo_central_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JFC
+			tag = CMY
+			tag = FLW
+		}
+	}
+
+	mission_mo_central_dealing_with_st_louis = {
+		icon = mission_luther_theses
+		position = 4
+		required_missions = { mission_mo_central_a_respectable_state }
+		trigger = {
+			OR = {
+				is_rival = STL
+				AND = {
+					exists = STL
+					military_strength = {
+						who = STL
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = STL
+			}
+			OR = {
+				STL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				STL = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = STL }
+				tag = STL
+			}
+ 		}
+		effect = {
+			area_mo_crawford = { add_permanent_claim = ROOT }
+			area_mo_eastern = { add_permanent_claim = ROOT }
+			area_mo_farmington = { add_permanent_claim = ROOT }
+			area_mo_west_st_louis = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_central_unlocking_the_gateway = {
+		icon = mission_stl
+		position = 5
+		required_missions = { mission_mo_central_dealing_with_st_louis }
+		trigger = {
+			area_mo_crawford = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_eastern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_farmington = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_west_st_louis = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 0.75
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_crawford
+				area = area_mo_eastern
+				area = area_mo_farmington
+				area = area_mo_west_st_louis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_mo_central_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JFC
+			tag = CMY
+			tag = FLW
+		}
+	}
+
+	mission_mo_central_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_mo_columbia = { add_permanent_claim = ROOT }
+			area_mo_jefferson_city = { add_permanent_claim = ROOT }
+			area_mo_south_central = { add_permanent_claim = ROOT }
+			1667 = { add_permanent_claim = ROOT }
+			1668 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_central_boonslick_centralization = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_mo_central_fielding_an_army }
+		trigger = {
+			area_mo_columbia = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_jefferson_city = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_south_central = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			1667 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			1668 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_columbia
+				area = area_mo_jefferson_city
+				area = area_mo_south_central
+				province_id = 1667
+				province_id = 1668
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mo_central_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_mo_central_boonslick_centralization }
+		trigger = {
+			area_mo_columbia = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mo_jefferson_city = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mo_south_central = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			1667 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			1668 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_mo_lebanon = { add_permanent_claim = ROOT }
+			area_mo_southern = { add_permanent_claim = ROOT }
+			area_mo_branson = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_columbia
+				area = area_mo_jefferson_city
+				area = area_mo_south_central
+				province_id = 1667
+				province_id = 1668
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+}
+
+missions_mo_central_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = JFC
+			tag = CMY
+			tag = FLW
+		}
+	}
+
+	mission_mo_central_towards_the_ozarks = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mo_central_a_respectable_state }
+		trigger = {
+			area_mo_lebanon = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_southern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_branson = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_lebanon
+				area = area_mo_southern
+				area = area_mo_branson
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mo_central_ozark_recognition = {
+		icon = mission_diplomatic_relation
+		position = 5
+		required_missions = { mission_mo_central_towards_the_ozarks }
+		trigger = {
+			accepted_culture = culture_ozark
+ 		}
+		effect = {
+			area_mo_springfield = { add_permanent_claim = ROOT }
+			area_mo_barry = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_central_the_fate_of_springfield = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mo_central_ozark_recognition }
+		trigger = {
+			area_mo_springfield = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_barry = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_springfield
+				area = area_mo_barry
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}

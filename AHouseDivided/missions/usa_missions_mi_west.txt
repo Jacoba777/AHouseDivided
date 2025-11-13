@@ -5,14 +5,14 @@ missions_mi_west_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = BTK
-			tag = AZO
-			tag = HLD
 			tag = GRR
 			tag = BGR
-			tag = MKG
-			tag = NIL
 			tag = LDT
+			tag = MKG
+			tag = BTK
+			tag = HLD
+			tag = AZO
+			tag = NIL
 		}
 	}
 
@@ -67,14 +67,14 @@ missions_mi_west_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = BTK
-			tag = AZO
-			tag = HLD
 			tag = GRR
 			tag = BGR
-			tag = MKG
-			tag = NIL
 			tag = LDT
+			tag = MKG
+			tag = BTK
+			tag = HLD
+			tag = AZO
+			tag = NIL
 		}
 	}
 
@@ -186,8 +186,8 @@ missions_mi_west_slot2 = {
 		position = 4
 		required_missions = { mission_mi_west_a_respectable_state }
 		trigger = {
+			area_mi_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_mi_lansing = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_mi_jackson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
 			add_adm_power = 100
@@ -199,8 +199,8 @@ missions_mi_west_slot2 = {
 		}
 		provinces_to_highlight = {
 			OR = {
+				area = area_mi_central
 				area = area_mi_lansing
-				area = area_mi_jackson
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -229,14 +229,14 @@ missions_mi_west_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = BTK
-			tag = AZO
-			tag = HLD
 			tag = GRR
 			tag = BGR
-			tag = MKG
-			tag = NIL
 			tag = LDT
+			tag = MKG
+			tag = BTK
+			tag = HLD
+			tag = AZO
+			tag = NIL
 		}
 	}
 

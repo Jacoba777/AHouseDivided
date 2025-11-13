@@ -109,7 +109,7 @@ missions_ma_cape_cod_slot3 = {
 				area = area_ma_cape_cod
 				area = area_ma_south_shore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -127,7 +127,7 @@ missions_ma_cape_cod_slot3 = {
 			OR = {
 				area = area_ma_boston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

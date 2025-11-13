@@ -5,13 +5,12 @@ missions_pa_slot1 = {
 	has_country_shield = yes
 	potential = { tag = XPA }
 
-	mission_pa_along_the_ohio = {
-		icon = mission_se_along_the_river
+	mission_pa_master_of_morgantown = {
+		icon = mission_unite_home_region
 		position = 4
 		required_missions = { mission_pa_elevating_pittsburgher }
 		trigger = {
-			area_wv_northern_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_oh_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_morgantown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
 			add_country_modifier = {
@@ -21,10 +20,9 @@ missions_pa_slot1 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_wv_northern_panhandle
-				area = area_oh_eastern
+				area = area_wv_morgantown
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -96,7 +94,7 @@ missions_pa_slot1 = {
 				province_id = 2683
 				province_id = 2684
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -119,7 +117,7 @@ missions_pa_slot1 = {
 				area = area_wv_parkersburg
 				area = area_oh_southeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -171,7 +169,7 @@ missions_pa_slot1 = {
 				area = area_wv_charleston
 				area = area_wv_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -199,12 +197,13 @@ missions_pa_slot2 = {
 
 	}
 
-	mission_pa_master_of_morgantown = {
-		icon = mission_unite_home_region
+	mission_pa_along_the_ohio = {
+		icon = mission_se_along_the_river
 		position = 4
 		required_missions = { mission_pa_elevating_pittsburgher }
 		trigger = {
-			area_wv_morgantown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_northern_panhandle = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_oh_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
 			add_country_modifier = {
@@ -214,9 +213,10 @@ missions_pa_slot2 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_wv_morgantown
+				area = area_wv_northern_panhandle
+				area = area_oh_eastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -280,7 +280,7 @@ missions_pa_slot2 = {
 				region = region_de
 				area = area_md_northeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -303,7 +303,7 @@ missions_pa_slot2 = {
 				area = area_md_baltimore
 				province_id = 503
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -337,7 +337,7 @@ missions_pa_slot2 = {
 			OR = {
 				area = area_md_capital
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -398,7 +398,7 @@ missions_pa_slot3 = {
 			OR = {
 				region = region_pa
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -469,7 +469,7 @@ missions_pa_slot3 = {
 				area = area_nj_south_jersey
 				area = area_nj_jersey_shore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -493,7 +493,7 @@ missions_pa_slot3 = {
 			OR = {
 				region = region_nj
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -526,7 +526,7 @@ missions_pa_slot3 = {
 			OR = {
 				area = area_ny_nyc
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -579,7 +579,7 @@ missions_pa_slot3 = {
 				area = area_ny_hudson_valley
 				area = area_ny_lower_hudson_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -647,7 +647,7 @@ missions_pa_slot4 = {
 			OR = {
 				area = area_ny_buffalo
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -670,7 +670,7 @@ missions_pa_slot4 = {
 				area = area_ny_ithaca
 				area = area_ny_southern_tier
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -721,7 +721,7 @@ missions_pa_slot4 = {
 			OR = {
 				area = area_ny_rochester
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -789,7 +789,7 @@ missions_pa_slot4 = {
 				area = area_ny_finger_lakes
 				area = area_ny_syracuse
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -818,7 +818,7 @@ missions_pa_slot5 = {
 			OR = {
 				area = area_oh_youngstown
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -870,7 +870,7 @@ missions_pa_slot5 = {
 			OR = {
 				area = area_oh_cleveland
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

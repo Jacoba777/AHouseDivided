@@ -5,6 +5,75 @@ missions_ma_slot1 = {
 	has_country_shield = yes
 	potential = { tag = XMA }
 
+	mission_ma_rebuild_old_north_church = {
+		icon = mission_old_mission_church
+		position = 5
+		required_missions = {  }
+		trigger = {
+            471 = { has_building = temple }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_religious_realignment
+				duration = 5475  # 15 years
+			}
+		}
+		provinces_to_highlight = {
+            province_id = 471
+		}
+	}
+
+	mission_ma_the_mills_of_lowell = {
+		icon = the_london_steelyard
+		position = 6
+		required_missions = { mission_ma_rebuild_old_north_church }
+		trigger = {
+            478 = { has_building = workshop  base_production=10 }
+            470 = { has_building = workshop  base_production=10 }
+ 		}
+		effect = {
+            478 = { change_trade_goods = cloth }
+            470 = { change_trade_goods = cloth }
+		}
+		provinces_to_highlight = {
+            OR = {
+                province_id = 478
+                province_id = 470
+            }
+            NOT = {
+                has_building = workshop
+                base_production = 10
+            }
+		}
+	}
+
+	mission_ma_the_general_hospital = {
+		icon = plague_doctor_training
+		position = 7
+		required_missions = { mission_ma_the_mills_of_lowell }
+		trigger = {
+            471 = {
+                has_building = trade_depot
+                has_building = state_house
+                num_of_times_expanded_infrastructure = 2
+            }
+ 		}
+		effect = {
+            471 = { change_trade_goods = drugs }
+		}
+		provinces_to_highlight = {
+            province_id = 471
+		}
+	}
+}
+
+missions_ma_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMA }
+
 	mission_ma_the_mayflower_compact = {
 		icon = mission_bengal_entrepot
 		position = 1
@@ -88,6 +157,131 @@ missions_ma_slot1 = {
 		}
 	}
 
+	mission_ma_reopen_fenway_park = {
+		icon = mission_baseball
+		position = 6
+		required_missions = { mission_ma_rebuild_old_north_church }
+		trigger = {
+            471 = {
+                has_great_project = {
+                    type = fenway_park
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_fenway_park_pride
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_ma_bean_city_canneries = {
+		icon = mission_mal_riches_of_trade
+		position = 7
+		required_missions = { mission_ma_reopen_fenway_park }
+		trigger = {
+            estate_loyalty = {
+                estate = estate_burghers
+                loyalty = 60
+            }
+            estate_influence = {
+                estate = estate_burghers
+                influence = 75
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_baked_bean_cultural_revolution
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_ma_improvements_at_harvard = {
+		icon = mission_early_modern_university
+		position = 8
+		required_missions = { mission_ma_bean_city_canneries mission_ma_the_general_hospital }
+		trigger = {
+            478 = {
+                has_great_project = {
+                    type = univ_harvard
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            change_innovativeness = 3
+			add_country_modifier = {
+				name = country_modifier_the_ivy_league
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+}
+
+missions_ma_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMA }
+
+	mission_ma_unite_greater_boston = {
+		icon = mission_bto
+		position = 3
+		required_missions = { mission_ma_the_puritan_reunification }
+		trigger = {
+			area_nh_manchester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			region_nh = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nh_manchester
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ma_managing_manchester = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ma_unite_greater_boston }
+		trigger = {
+			area_nh_manchester = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_me_portland = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nh_manchester
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
 	mission_ma_the_chowder_wars = {
 		icon = mission_unite_home_region
 		position = 5
@@ -104,7 +298,7 @@ missions_ma_slot1 = {
 			OR = {
 				area = area_me_portland
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -156,108 +350,6 @@ missions_ma_slot1 = {
 			}
 		}
 	}
-}
-
-missions_ma_slot2 = {
-	slot = 2
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = XMA }
-
-	mission_ma_managing_manchester = {
-		icon = mission_alliances
-		position = 4
-		required_missions = { mission_ma_unite_greater_boston }
-		trigger = {
-			area_nh_manchester = {
-				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
-				}
-			}
- 		}
-		effect = {
-			area_me_portland = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_nh_manchester
-			}
-			OR = {
-				NOT { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 1
-				unrest = 10
-				local_autonomy = 50
-			}
-		}
-	}
-
-	mission_ma_rebuild_old_north_church = {
-		icon = mission_old_mission_church
-		position = 5
-		required_missions = {  }
-		trigger = {
-            471 = { has_building = temple }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_religious_realignment
-				duration = 5475  # 15 years
-			}
-		}
-		provinces_to_highlight = {
-            province_id = 471
-		}
-	}
-
-	mission_ma_reopen_fenway_park = {
-		icon = mission_baseball
-		position = 6
-		required_missions = { mission_ma_rebuild_old_north_church }
-		trigger = {
-            471 = {
-                has_great_project = {
-                    type = fenway_park
-                    tier = 3
-                }
-                owned_by = ROOT
-            }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_fenway_park_pride
-				duration = 9125  # 25 years
-			}
-		}
-
-	}
-
-	mission_ma_bean_city_canneries = {
-		icon = mission_mal_riches_of_trade
-		position = 7
-		required_missions = { mission_ma_reopen_fenway_park }
-		trigger = {
-            estate_loyalty = {
-                estate = estate_burghers
-                loyalty = 60
-            }
-            estate_influence = {
-                estate = estate_burghers
-                influence = 75
-            }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_baked_bean_cultural_revolution
-				duration = 9125  # 25 years
-			}
-		}
-
-	}
 
 	mission_ma_attack_augusta = {
 		icon = mission_unite_home_region
@@ -273,100 +365,8 @@ missions_ma_slot2 = {
 			OR = {
 				area = area_me_augusta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
-	}
-}
-
-missions_ma_slot3 = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = XMA }
-
-	mission_ma_unite_greater_boston = {
-		icon = mission_bto
-		position = 3
-		required_missions = { mission_ma_the_puritan_reunification }
-		trigger = {
-			area_nh_manchester = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			region_nh = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_nh_manchester
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_ma_the_mills_of_lowell = {
-		icon = the_london_steelyard
-		position = 6
-		required_missions = { mission_ma_rebuild_old_north_church }
-		trigger = {
-            478 = { has_building = workshop  base_production=10 }
-            470 = { has_building = workshop  base_production=10 }
- 		}
-		effect = {
-            478 = { change_trade_goods = cloth }
-            470 = { change_trade_goods = cloth }
-		}
-		provinces_to_highlight = {
-            OR = {
-                province_id = 478
-                province_id = 470
-            }
-            NOT = {
-                has_building = workshop
-                base_production = 10
-            }
-		}
-	}
-
-	mission_ma_the_general_hospital = {
-		icon = plague_doctor_training
-		position = 7
-		required_missions = { mission_ma_the_mills_of_lowell }
-		trigger = {
-            471 = {
-                has_building = trade_depot
-                has_building = state_house
-                num_of_times_expanded_infrastructure = 2
-            }
- 		}
-		effect = {
-            471 = { change_trade_goods = drugs }
-		}
-		provinces_to_highlight = {
-            province_id = 471
-		}
-	}
-
-	mission_ma_improvements_at_harvard = {
-		icon = mission_early_modern_university
-		position = 8
-		required_missions = { mission_ma_bean_city_canneries mission_ma_the_general_hospital }
-		trigger = {
-            478 = {
-                has_great_project = {
-                    type = univ_harvard
-                    tier = 3
-                }
-                owned_by = ROOT
-            }
- 		}
-		effect = {
-            change_innovativeness = 3
-			add_country_modifier = {
-				name = country_modifier_the_ivy_league
-				duration = 9125  # 25 years
-			}
-		}
-
 	}
 
 	mission_ma_the_bay_state = {
@@ -409,7 +409,7 @@ missions_ma_slot4 = {
 			OR = {
 				region = region_ma
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -465,7 +465,7 @@ missions_ma_slot4 = {
 			OR = {
 				region = region_nh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -509,7 +509,7 @@ missions_ma_slot4 = {
 				area = area_vt_central
 				area = area_vt_northeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -540,7 +540,7 @@ missions_ma_slot4 = {
 			OR = {
 				area = area_vt_burlington
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -603,7 +603,7 @@ missions_ma_slot5 = {
 			OR = {
 				region = region_ri
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -658,7 +658,7 @@ missions_ma_slot5 = {
 				area = area_ct_northern
 				area = area_ct_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

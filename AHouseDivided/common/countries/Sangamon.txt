@@ -1,9 +1,9 @@
-# Ohio Springfield
+# Sangamon
 
 graphical_culture = westerngfx
 
-color = { 255 58 106 }
-revolutionary_colors = { 255 58 106 }
+color = { 75 69 111 }
+revolutionary_colors = { 75 69 111 }
 
 monarch_names = {
     "Noah #0" = 91

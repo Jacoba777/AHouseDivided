@@ -1,0 +1,94 @@
+namespace = usa_mission_events
+
+# St Louis: Missouri or Illinois?
+country_event = {
+	id = usa_mission_events.1
+	title = usa_mission_events.1.title
+	desc = usa_mission_events.1.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {}
+
+	option = {
+		name = usa_mission_events.1.a
+		ai_chance = { factor = 85 }
+
+		set_country_flag = country_flag_stl_missouri_identity
+		swap_non_generic_missions = yes
+		area_mo_jefferson_city = { add_permanent_claim = ROOT }
+		area_mo_columbia = { add_permanent_claim = ROOT }
+	}
+
+	option = {
+		name = usa_mission_events.1.b
+		ai_chance = { factor = 15 }
+		
+		set_country_flag = country_flag_stl_illinois_identity
+		set_capital = 1502
+		swap_non_generic_missions = yes
+		area_il_jacksonville = { add_permanent_claim = ROOT }
+		area_il_springfield = { add_permanent_claim = ROOT }
+		area_il_macomb = { add_permanent_claim = ROOT }
+		area_il_west_peoria = { add_permanent_claim = ROOT }
+		area_il_peoria = { add_permanent_claim = ROOT }
+	}
+}
+
+# KC: Missouri or Kansas?
+country_event = {
+	id = usa_mission_events.2
+	title = usa_mission_events.2.title
+	desc = usa_mission_events.2.desc
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {}
+
+	option = {
+		name = usa_mission_events.2.a
+		ai_chance = { factor = 85 }
+
+		set_country_flag = country_flag_ksc_missouri_identity
+		swap_non_generic_missions = yes
+
+		add_treasury = -100
+		capital_scope = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+		}
+
+		1652 = {
+			if = {
+				limit = { is_empty = yes }
+				cede_province = ROOT
+			} else = { add_permanent_claim = ROOT }
+		}
+		1669 = {
+			if = {
+				limit = { is_empty = yes }
+				cede_province = ROOT
+			} else = { add_permanent_claim = ROOT }
+		}
+		area_mo_jefferson_city = { add_permanent_claim = ROOT }
+		area_mo_columbia = { add_permanent_claim = ROOT }
+		1668 = { add_permanent_claim = ROOT }
+	}
+
+	option = {
+		name = usa_mission_events.2.b
+		ai_chance = { factor = 15 }
+		
+		set_country_flag = country_flag_ksc_kansas_identity
+		set_capital = 2593
+		swap_non_generic_missions = yes
+		area_ks_topeka = { add_permanent_claim = ROOT }
+		area_ks_manhattan = { add_permanent_claim = ROOT }
+		2598 = { add_permanent_claim = ROOT }
+	}
+}

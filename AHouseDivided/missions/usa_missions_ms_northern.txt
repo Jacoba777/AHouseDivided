@@ -71,7 +71,7 @@ missions_ms_northern_slot3 = {
 				area = area_ms_monroe
 				area = area_ms_northeast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -190,7 +190,7 @@ missions_ms_northern_slot3 = {
 			OR = {
 				area = area_ms_south_memphis
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -248,7 +248,7 @@ missions_ms_northern_slot3 = {
 				area = area_ms_jackson
 				area = area_ms_north_jackson
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -287,7 +287,7 @@ missions_ms_northern_slot3 = {
 				area = area_ms_coastal
 				area = area_ms_north_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

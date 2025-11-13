@@ -1,0 +1,278 @@
+missions_mn_duluth_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = DTH }
+
+	mission_mn_duluth_a_domestic_focus = {
+		icon = prosperity_for_all
+		position = 1
+		required_missions = {  }
+		trigger = {
+            capital_scope = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+ 		}
+		effect = {
+            add_treasury = -100
+            capital_scope = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+    
+			2456 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			area_mn_eastern = { add_permanent_claim = ROOT }
+			area_mn_north_minneapolis = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_duluth_advancing_southward = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_mn_duluth_a_domestic_focus }
+		trigger = {
+			area_mn_eastern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mn_north_minneapolis = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			2459 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			2457 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_eastern
+				area = area_mn_north_minneapolis
+				province_id = 2459
+				province_id = 2457
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mn_duluth_a_respectable_state = {
+		icon = mission_alliances
+		position = 3
+		required_missions = { mission_mn_duluth_advancing_southward }
+		trigger = {
+			area_mn_eastern = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mn_north_minneapolis = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			2459 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			2457 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_mn_minneapolis = { add_permanent_claim = ROOT }
+			area_mn_st_paul = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_eastern
+				area = area_mn_north_minneapolis
+				province_id = 2459
+				province_id = 2457
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mn_duluth_battle_for_the_twin_cities = {
+		icon = mission_mnp
+		position = 4
+		required_missions = { mission_mn_duluth_a_respectable_state }
+		trigger = {
+			area_mn_minneapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mn_st_paul = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_adm_power = 100
+			change_government_reform_progress = 25
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_minneapolis
+				area = area_mn_st_paul
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_duluth_hold_the_former_capital = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_mn_duluth_battle_for_the_twin_cities }
+		trigger = {
+			area_mn_minneapolis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mn_st_paul = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_minneapolis
+				area = area_mn_st_paul
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mn_duluth_embrace_minnea-paulite = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_mn_duluth_hold_the_former_capital }
+		trigger = {
+			accepted_culture = culture_minnea_paulite
+ 		}
+		effect = {
+			area_mn_faribault = { add_permanent_claim = ROOT }
+			area_mn_southeast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_duluth_into_the_blufflands = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mn_duluth_embrace_minnea-paulite }
+		trigger = {
+			area_mn_faribault = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mn_southeast = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_faribault
+				area = area_mn_southeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}

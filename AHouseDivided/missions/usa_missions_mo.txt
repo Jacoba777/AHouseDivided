@@ -1,0 +1,963 @@
+missions_mo_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMO }
+
+	mission_mo_embrace_kansas_citian = {
+		icon = mission_ksc
+		position = 3
+		required_missions = { mission_mo_a_united_missouri }
+		trigger = {
+			accepted_culture = culture_kc_kansan
+ 		}
+		effect = {
+			area_ks_southwest_kansas_city = { add_permanent_claim = ROOT }
+			area_ks_west_kansas_city = { add_permanent_claim = ROOT }
+			area_ks_topeka = { add_permanent_claim = ROOT }
+			area_ks_northeast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_invade_kansas = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mo_embrace_kansas_citian }
+		trigger = {
+			area_ks_southwest_kansas_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_west_kansas_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_topeka = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_southwest_kansas_city
+				area = area_ks_west_kansas_city
+				area = area_ks_topeka
+				area = area_ks_northeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_peace_in_topeka = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_mo_invade_kansas }
+		trigger = {
+			area_ks_west_kansas_city = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ks_topeka = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_ks_manhattan = { add_permanent_claim = ROOT }
+			area_ks_east_central = { add_permanent_claim = ROOT }
+			area_ks_allen = { add_permanent_claim = ROOT }
+			area_ks_coffeyville = { add_permanent_claim = ROOT }
+			area_ks_southeast = { add_permanent_claim = ROOT }
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			change_government_reform_progress = 20
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_west_kansas_city
+				area = area_ks_topeka
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mo_sweep_eastern_kansas = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mo_peace_in_topeka }
+		trigger = {
+			area_ks_manhattan = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_east_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_allen = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_coffeyville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_southeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ks_central = { add_permanent_claim = ROOT }
+			area_ks_wichita = { add_permanent_claim = ROOT }
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_manhattan
+				area = area_ks_east_central
+				area = area_ks_allen
+				area = area_ks_coffeyville
+				area = area_ks_southeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_im_going_to_wichita = {
+		icon = mission_wta
+		position = 7
+		required_missions = { mission_mo_sweep_eastern_kansas }
+		trigger = {
+			area_ks_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_wichita = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_central
+				area = area_ks_wichita
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_accept_wichitan = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_mo_im_going_to_wichita }
+		trigger = {
+			accepted_culture = culture_wichitan
+ 		}
+		effect = {
+			region_ks = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_the_sunflower_conquest = {
+		icon = mission_ks
+		position = 9
+		required_missions = { mission_mo_accept_wichitan }
+		trigger = {
+			region_ks = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ks
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_mo_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMO }
+
+	mission_mo_retake_our_state = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_mo = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_mo is_city = yes }
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mo_a_united_missouri = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_mo_retake_our_state }
+		trigger = {
+			region_mo = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_mo is_city = yes }
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mo_amplify_st_louisian = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_mo_a_united_missouri }
+		trigger = {
+			accepted_culture = culture_saint_louisian
+ 		}
+		effect = {
+			area_il_southeast_st_louis = { add_permanent_claim = ROOT }
+			area_il_northeast_st_louis = { add_permanent_claim = ROOT }
+			area_il_macoupin = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_unite_the_st_louis_metro = {
+		icon = mission_stl
+		position = 4
+		required_missions = { mission_mo_amplify_st_louisian }
+		trigger = {
+			area_il_southeast_st_louis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_northeast_st_louis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_macoupin = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_il_western = { add_permanent_claim = ROOT }
+			area_il_macomb = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_southeast_st_louis
+				area = area_il_northeast_st_louis
+				area = area_il_macoupin
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_unforgotten = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mo_unite_the_st_louis_metro }
+		trigger = {
+			area_il_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_macomb = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_il_jacksonville = { add_permanent_claim = ROOT }
+			area_il_peoria = { add_permanent_claim = ROOT }
+			area_il_west_peoria = { add_permanent_claim = ROOT }
+			area_il_springfield = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_western
+				area = area_il_macomb
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_the_heart_of_illinois = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_mo_unforgotten }
+		trigger = {
+			area_il_jacksonville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_peoria = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_west_peoria = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_springfield = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_jacksonville
+				area = area_il_peoria
+				area = area_il_west_peoria
+				area = area_il_springfield
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_midwestern_preparations = {
+		icon = mission_assemble_an_army
+		position = 7
+		required_missions = { mission_mo_the_heart_of_illinois mission_mo_sweep_eastern_kansas }
+		trigger = {
+			area_il_peoria = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_il_springfield = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ks_manhattan = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+            custom_tooltip = "tooltip_claim_by_culture"
+            hidden_effect = {
+                every_province = {
+                    limit = {
+                        NOT = { owned_by = ROOT }
+                        culture_group = culture_group_lower_midwestern
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_peoria
+				area = area_il_springfield
+				area = area_ks_manhattan
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mo_midwestern_hegemon = {
+		icon = mission_pf_map_table
+		position = 8
+		required_missions = { mission_mo_midwestern_preparations }
+		trigger = {
+            continent_midwest = {
+                type = all
+                OR = {
+                    NOT = { culture_group = culture_group_lower_midwestern }
+                    owned_by = ROOT
+                }
+            }
+ 		}
+		effect = {
+			add_legitimacy = 25
+			add_meritocracy = 25
+			add_republican_tradition = 12
+			add_devotion = 25
+			add_horde_unity = 25
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+
+	}
+
+	mission_mo_the_march_on_memphis = {
+		icon = mission_mps
+		position = 9
+		required_missions = { mission_mo_rounding_out_arkansas }
+		trigger = {
+			area_ms_south_memphis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_north_memphis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ms_south_memphis
+				area = area_tn_north_memphis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_the_might_of_missouri = {
+		icon = mission_mo_coat_of_arms
+		position = 10
+		required_missions = { mission_mo_the_end_of_oklahoma mission_mo_the_march_on_memphis mission_mo_the_sunflower_conquest }
+		trigger = {
+
+ 		}
+		effect = {
+			change_government_reform_progress = 50
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+
+	}
+}
+
+missions_mo_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMO }
+
+	mission_mo_resettle_rural_missouri = {
+		icon = mission_early_game_buildings
+		position = 3
+		required_missions = { mission_mo_a_united_missouri }
+		trigger = {
+			region_mo = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_mo
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mo_accept_ozark_culture = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_mo_resettle_rural_missouri }
+		trigger = {
+			accepted_culture = culture_ozark
+ 		}
+		effect = {
+			area_ok_northeastern = { add_permanent_claim = ROOT }
+			area_ok_tahlequah = { add_permanent_claim = ROOT }
+			area_ar_northwest = { add_permanent_claim = ROOT }
+			area_ar_fort_smith = { add_permanent_claim = ROOT }
+			area_ar_harrison = { add_permanent_claim = ROOT }
+			area_ar_mountain_home = { add_permanent_claim = ROOT }
+			area_ar_northern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_unite_the_ozarks = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mo_accept_ozark_culture }
+		trigger = {
+			area_ok_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ok_tahlequah = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_fort_smith = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_harrison = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_mountain_home = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ok_east_tulsa = { add_permanent_claim = ROOT }
+			area_ok_tulsa = { add_permanent_claim = ROOT }
+			area_ar_little_rock = { add_permanent_claim = ROOT }
+			area_ar_russellville = { add_permanent_claim = ROOT }
+			area_ar_western = { add_permanent_claim = ROOT }
+			area_ar_hot_spring = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ok_northeastern
+				area = area_ok_tahlequah
+				area = area_ar_northwest
+				area = area_ar_fort_smith
+				area = area_ar_harrison
+				area = area_ar_mountain_home
+				area = area_ar_northern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_the_fate_of_little_rock = {
+		icon = mission_lrk
+		position = 6
+		required_missions = { mission_mo_unite_the_ozarks }
+		trigger = {
+			area_ar_little_rock = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_russellville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ar_hot_spring = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ar_little_rock
+				area = area_ar_russellville
+				area = area_ar_western
+				area = area_ar_hot_spring
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_hold_central_arkansas = {
+		icon = mission_alliances
+		position = 7
+		required_missions = { mission_mo_the_fate_of_little_rock }
+		trigger = {
+			area_ar_little_rock = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ar_hot_spring = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			region_ar = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ar_little_rock
+				area = area_ar_hot_spring
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mo_rounding_out_arkansas = {
+		icon = mission_ar
+		position = 8
+		required_missions = { mission_mo_hold_central_arkansas }
+		trigger = {
+			region_ar = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+			area_ms_south_memphis = { add_permanent_claim = ROOT }
+			area_tn_north_memphis = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ar
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_the_end_of_oklahoma = {
+		icon = mission_ok
+		position = 9
+		required_missions = { mission_mo_oklahoman_inroads }
+		trigger = {
+			region_ok = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ok
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_the_gateway_to_the_west = {
+		icon = mission_st_louis_arch
+		position = 10
+		required_missions = { mission_mo_missourian_trade }
+		trigger = {
+            1722 = {
+                has_great_project = {
+                    type = gateway_arch
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_gateway_to_the_west
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_mo_mother_of_the_west = {
+		icon = mission_mo
+		position = 11
+		required_missions = { mission_mo_the_gateway_to_the_west mission_mo_confronting_civil_rights mission_mo_the_might_of_missouri }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_mother_of_the_west
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_mo_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMO }
+
+	mission_mo_bootheel_investments = {
+		icon = mission_early_game_buildings
+		position = 4
+		required_missions = { mission_mo_resettle_rural_missouri }
+		trigger = {
+			area_mo_bootheel = { type = all  num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			area_il_west_little_egypt = { add_permanent_claim = ROOT }
+			area_il_greater_saline = { add_permanent_claim = ROOT }
+			area_il_southern_tip = { add_permanent_claim = ROOT }
+			area_il_southeastern = { add_permanent_claim = ROOT }
+			area_ky_north_purchase = { add_permanent_claim = ROOT }
+			area_ky_south_purchase = { add_permanent_claim = ROOT }
+			area_tn_northwestern = { add_permanent_claim = ROOT }
+			area_tn_western = { add_permanent_claim = ROOT }
+			area_tn_jackson = { add_permanent_claim = ROOT }
+			area_tn_carroll = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_mo_bootheel
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_mo_crush_the_upland_south = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mo_bootheel_investments }
+		trigger = {
+			area_il_west_little_egypt = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_greater_saline = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southern_tip = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_north_purchase = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ky_south_purchase = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_western = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_jackson = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_tn_carroll = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_west_little_egypt
+				area = area_il_greater_saline
+				area = area_il_southern_tip
+				area = area_il_southeastern
+				area = area_ky_north_purchase
+				area = area_ky_south_purchase
+				area = area_tn_northwestern
+				area = area_tn_western
+				area = area_tn_jackson
+				area = area_tn_carroll
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_sacking_tulsa = {
+		icon = mission_tsa
+		position = 6
+		required_missions = { mission_mo_unite_the_ozarks }
+		trigger = {
+			area_ok_east_tulsa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ok_tulsa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ok_northern = { add_permanent_claim = ROOT }
+			area_ok_oklahoma_city = { add_permanent_claim = ROOT }
+			area_ok_south_oklahoma_city = { add_permanent_claim = ROOT }
+			area_ok_shawnee = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ok_east_tulsa
+				area = area_ok_tulsa
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_take_oklahoma_city = {
+		icon = mission_okc
+		position = 7
+		required_missions = { mission_mo_sacking_tulsa }
+		trigger = {
+			area_ok_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ok_oklahoma_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ok_south_oklahoma_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ok_shawnee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ok_northern
+				area = area_ok_oklahoma_city
+				area = area_ok_south_oklahoma_city
+				area = area_ok_shawnee
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mo_oklahoman_inroads = {
+		icon = mission_diplomatic_relation
+		position = 8
+		required_missions = { mission_mo_take_oklahoma_city }
+		trigger = {
+			accepted_culture = culture_oklahoma_cityan
+ 		}
+		effect = {
+			region_ok = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_missourian_trade = {
+		icon = mission_dominate_home_trade_node
+		position = 9
+		required_missions = { mission_mo_the_boy_from_hannibal }
+		trigger = {
+            1722 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # STL
+            1649 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # KC
+            1698 = {
+                trade_share = { country = ROOT  share = 80 }
+                province_has_center_of_trade_of_level = 3
+            }  # Ozark
+ 		}
+		effect = {
+			add_years_of_income = 0.75
+            1722 = { change_trade_goods = steel }
+		}
+
+	}
+
+	mission_mo_confronting_civil_rights = {
+		icon = mission_dred_scott
+		position = 10
+		required_missions = { mission_mo_missourian_trade }
+		trigger = {
+            1722 = {
+                OR = {
+                    has_building = courthouse
+                    has_building = town_hall
+                }
+                has_building = university
+                OR = {
+                    higher_development_than = 1661
+                    development = 40
+                }
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_redress_for_dred_scott
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_mo_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMO }
+
+	mission_mo_patronize_ozark_music = {
+		icon = mission_bluegrass
+		position = 7
+		required_missions = {  }
+		trigger = {
+            num_of_estate_privileges = {
+                estate = estate_burghers
+                value = 4
+            }
+            estate_loyalty = {
+                estate = estate_burghers
+                loyalty = 60
+            }
+            estate_influence = {
+                estate = estate_burghers
+                influence = 75
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_bluegrass_traditions
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_mo_the_boy_from_hannibal = {
+		icon = mission_mark_twain
+		position = 8
+		required_missions = { mission_mo_patronize_ozark_music }
+		trigger = {
+            stability = 2
+            monthly_adm = 12
+            1626 = {
+                is_prosperous = yes
+            }
+ 		}
+		effect = {
+            define_advisor = {
+                type = philosopher
+                name = "Mark Twain"
+                skill = 3
+                culture = culture_mid_missourian
+                religion = presbyterian
+                location = 1626
+                cost_multiplier = 0.25
+            }
+    
+		}
+
+	}
+}

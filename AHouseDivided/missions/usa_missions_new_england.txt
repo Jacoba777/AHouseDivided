@@ -149,7 +149,7 @@ missions_new_england_slot2 = {
 				area = area_ny_hudson_valley
 				area = area_ny_nyc
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -209,7 +209,7 @@ missions_new_england_slot2 = {
 			OR = {
 				region = region_nj
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -243,7 +243,7 @@ missions_new_england_slot2 = {
 			OR = {
 				region = region_de
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -266,7 +266,7 @@ missions_new_england_slot2 = {
 				area = area_md_southeast_chesapeake
 				area = area_md_baltimore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -323,7 +323,7 @@ missions_new_england_slot2 = {
 				region = region_md
 				area = area_va_arlington
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -380,6 +380,7 @@ missions_new_england_slot2 = {
             OR = {
                 government = republic
                 has_government_mechanic = parliament
+                full_idea_group = humanist_ideas
             }
  		}
 		effect = {
@@ -445,7 +446,7 @@ missions_new_england_slot3 = {
 			OR = {
 				region = region_ny
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -465,7 +466,7 @@ missions_new_england_slot3 = {
 			OR = {
 				area = area_pa_philly
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -488,7 +489,7 @@ missions_new_england_slot3 = {
 				area = area_pa_south_dutch
 				area = area_pa_east_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -539,7 +540,7 @@ missions_new_england_slot3 = {
 			OR = {
 				region = region_pa
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -622,7 +623,7 @@ missions_new_england_slot3 = {
 			OR = {
 
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -723,7 +724,7 @@ missions_new_england_slot4 = {
 
 				area = area_ny_albany
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -792,7 +793,7 @@ missions_new_england_slot4 = {
 				area = area_ny_syracuse
 				area = area_ny_buffalo
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -858,7 +859,7 @@ missions_new_england_slot4 = {
 				area = area_pa_west_wilds
 				area = area_pa_erie
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -902,7 +903,7 @@ missions_new_england_slot4 = {
 				area = area_pa_central_wilds
 				area = area_pa_east_wilds
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

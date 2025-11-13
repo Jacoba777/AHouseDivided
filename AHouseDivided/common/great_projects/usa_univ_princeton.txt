@@ -9,7 +9,7 @@ univ_princeton = {
 	type = monument
 	build_trigger = {
 		OR = {
-			culture = culture_central_jerseyan
+			culture = culture_central_jersey
 			tag = XNJ
 			tag = NEG
 			tag = MTL
@@ -23,7 +23,7 @@ univ_princeton = {
 	}
 	can_use_modifiers_trigger = {
 		OR = {
-			culture = culture_central_jerseyan
+			culture = culture_central_jersey
 			tag = XNJ
 			tag = NEG
 			tag = MTL
@@ -33,7 +33,7 @@ univ_princeton = {
 	}
 	can_upgrade_trigger = {
 		OR = {
-			culture = culture_central_jerseyan
+			culture = culture_central_jersey
 			tag = XNJ
 			tag = NEG
 			tag = MTL

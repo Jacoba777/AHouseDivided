@@ -82,12 +82,12 @@ missions_va_chesapeake_slot1 = {
 
 	}
 
-	mission_va_chesapeake_incorporate_lynchburg = {
+	mission_va_chesapeake_stabilize_charlottesville = {
 		icon = mission_alliances
 		position = 9
 		required_missions = { mission_va_chesapeake_into_piedmont }
 		trigger = {
-			area_va_lynchburg = {
+			area_va_charlottesville = {
 				type = all  
 				AND {
 					country_or_non_sovereign_subject_holds = ROOT
@@ -98,11 +98,11 @@ missions_va_chesapeake_slot1 = {
 			}
  		}
 		effect = {
-			area_va_roanoke = { add_permanent_claim = ROOT }
+			area_va_harrisonburg = { add_permanent_claim = ROOT }
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_va_lynchburg
+				area = area_va_charlottesville
 			}
 			OR = {
 				NOT { country_or_non_sovereign_subject_holds = ROOT }
@@ -113,22 +113,22 @@ missions_va_chesapeake_slot1 = {
 		}
 	}
 
-	mission_va_chesapeake_capture_roanoke = {
+	mission_va_chesapeake_the_highland_campaign = {
 		icon = mission_unite_home_region
 		position = 10
-		required_missions = { mission_va_chesapeake_incorporate_lynchburg }
+		required_missions = { mission_va_chesapeake_stabilize_charlottesville }
 		trigger = {
-			area_va_roanoke = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_harrisonburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			add_dip_power = 50
+			add_mil_power = 50
 			add_prestige_or_monarch_power = { amount = 10 }
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_va_roanoke
+				area = area_va_harrisonburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -168,7 +168,7 @@ missions_va_chesapeake_slot2 = {
 				area = area_va_southeastern
 				area = area_va_virginia_beach
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -234,7 +234,7 @@ missions_va_chesapeake_slot2 = {
 				area = area_va_central
 				area = area_va_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -276,7 +276,7 @@ missions_va_chesapeake_slot2 = {
 				area = area_va_charlottesville
 				area = area_va_lynchburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -331,7 +331,7 @@ missions_va_chesapeake_slot3 = {
 				area = area_va_east_richmond
 				area = area_va_peninsulas
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -371,12 +371,12 @@ missions_va_chesapeake_slot3 = {
 
 	}
 
-	mission_va_chesapeake_stabilize_charlottesville = {
+	mission_va_chesapeake_incorporate_lynchburg = {
 		icon = mission_alliances
 		position = 9
 		required_missions = { mission_va_chesapeake_into_piedmont }
 		trigger = {
-			area_va_charlottesville = {
+			area_va_lynchburg = {
 				type = all  
 				AND {
 					country_or_non_sovereign_subject_holds = ROOT
@@ -387,11 +387,11 @@ missions_va_chesapeake_slot3 = {
 			}
  		}
 		effect = {
-			area_va_harrisonburg = { add_permanent_claim = ROOT }
+			area_va_roanoke = { add_permanent_claim = ROOT }
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_va_charlottesville
+				area = area_va_lynchburg
 			}
 			OR = {
 				NOT { country_or_non_sovereign_subject_holds = ROOT }
@@ -402,22 +402,22 @@ missions_va_chesapeake_slot3 = {
 		}
 	}
 
-	mission_va_chesapeake_the_highland_campaign = {
+	mission_va_chesapeake_capture_roanoke = {
 		icon = mission_unite_home_region
 		position = 10
-		required_missions = { mission_va_chesapeake_stabilize_charlottesville }
+		required_missions = { mission_va_chesapeake_incorporate_lynchburg }
 		trigger = {
-			area_va_harrisonburg = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_va_roanoke = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			add_mil_power = 50
+			add_dip_power = 50
 			add_prestige_or_monarch_power = { amount = 10 }
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_va_harrisonburg
+				area = area_va_roanoke
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

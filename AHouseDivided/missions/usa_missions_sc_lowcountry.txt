@@ -29,7 +29,7 @@ missions_sc_lowcountry_slot1 = {
 			OR = {
 				area = area_sc_myrtle_beach
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -91,7 +91,7 @@ missions_sc_lowcountry_slot2 = {
 				area = area_sc_charleston
 				area = area_sc_lowcountry
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -217,7 +217,7 @@ missions_sc_lowcountry_slot3 = {
 			OR = {
 				area = area_sc_columbia
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -270,7 +270,7 @@ missions_sc_lowcountry_slot3 = {
 			OR = {
 				area = area_sc_greenville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

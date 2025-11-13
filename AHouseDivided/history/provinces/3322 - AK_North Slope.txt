@@ -10,6 +10,7 @@ native_hostileness=2
 religion=atheist
 culture=culture_alaskan
 center_of_trade=1
+add_province_triggered_modifier = triggered_modifier_ak_home_colonization_buff
 
 1444.11.12 = {
 	base_tax=0

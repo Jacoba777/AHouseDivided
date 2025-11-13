@@ -5,18 +5,18 @@ missions_fl_south_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = LCI
-			tag = OKB
-			tag = SBS
 			tag = MII
 			tag = KEY
 			tag = NPS
 			tag = CCL
+			tag = CWS
+			tag = LCI
+			tag = OKB
+			tag = SBG
 			tag = PUG
 			tag = ACD
 			tag = SRS
-			tag = CWS
-			tag = SBG
+			tag = SBS
 		}
 	}
 
@@ -62,7 +62,7 @@ missions_fl_south_slot2 = {
 				area = area_fl_treasure_coast
 				area = area_fl_heartland
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -139,6 +139,64 @@ missions_fl_south_slot2 = {
 		}
 	}
 
+	mission_fl_south_embrace_south_floridian = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_fl_south_stabilize_south_florida }
+		trigger = {
+			accepted_culture = culture_south_floridian
+ 		}
+		effect = {
+			area_fl_lakeland = { add_permanent_claim = ROOT }
+			area_fl_tampa = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_south_take_greater_tampa = {
+		icon = mission_tmp
+		position = 5
+		required_missions = { mission_fl_south_embrace_south_floridian }
+		trigger = {
+			area_fl_lakeland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_fl_tampa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_fl_lakeland
+				area = area_fl_tampa
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_fl_south_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = MII
+			tag = KEY
+			tag = NPS
+			tag = CCL
+			tag = CWS
+			tag = LCI
+			tag = OKB
+			tag = SBG
+			tag = PUG
+			tag = ACD
+			tag = SRS
+			tag = SBS
+		}
+	}
+
 	mission_fl_south_embrace_lucie = {
 		icon = mission_diplomatic_relation
 		position = 4
@@ -174,65 +232,7 @@ missions_fl_south_slot2 = {
 				area = area_fl_orlando
 				area = area_fl_space_coast
 			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-}
-
-missions_fl_south_slot3 = {
-	slot = 3
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		OR = {
-			tag = LCI
-			tag = OKB
-			tag = SBS
-			tag = MII
-			tag = KEY
-			tag = NPS
-			tag = CCL
-			tag = PUG
-			tag = ACD
-			tag = SRS
-			tag = CWS
-			tag = SBG
-		}
-	}
-
-	mission_fl_south_embrace_south_floridian = {
-		icon = mission_diplomatic_relation
-		position = 4
-		required_missions = { mission_fl_south_stabilize_south_florida }
-		trigger = {
-			accepted_culture = culture_south_floridian
- 		}
-		effect = {
-			area_fl_lakeland = { add_permanent_claim = ROOT }
-			area_fl_tampa = { add_permanent_claim = ROOT }
-		}
-
-	}
-
-	mission_fl_south_take_greater_tampa = {
-		icon = mission_tmp
-		position = 5
-		required_missions = { mission_fl_south_embrace_south_floridian }
-		trigger = {
-			area_fl_lakeland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_fl_tampa = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_mil_power = 50
-			add_prestige_or_monarch_power = { amount = 10 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_fl_lakeland
-				area = area_fl_tampa
-			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -269,7 +269,7 @@ missions_fl_south_slot3 = {
 				area = area_fl_jacksonville
 				area = area_fl_ocala
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

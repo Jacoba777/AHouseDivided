@@ -15,6 +15,7 @@ is_city = yes
 owner=DTH
 add_core=DTH
 controller=DTH
+trade_goods=tropical_wood
 
 1444.11.12 = {
 	base_tax=0

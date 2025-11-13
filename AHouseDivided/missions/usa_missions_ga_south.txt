@@ -8,12 +8,12 @@ missions_ga_south_slot1 = {
 			tag = AMC
 			tag = GAB
 			tag = VDT
+			tag = BBG
 			tag = TFT
 			tag = FZG
 			tag = WCS
 			tag = DBN
 			tag = ERL
-			tag = BBG
 		}
 	}
 
@@ -56,7 +56,7 @@ missions_ga_south_slot1 = {
 				area = area_ga_central_magenta
 				area = area_ga_southwest_plantation
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -106,7 +106,7 @@ missions_ga_south_slot1 = {
 				area = area_ga_savannah
 				area = area_ga_east_magenta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -122,12 +122,12 @@ missions_ga_south_slot2 = {
 			tag = AMC
 			tag = GAB
 			tag = VDT
+			tag = BBG
 			tag = TFT
 			tag = FZG
 			tag = WCS
 			tag = DBN
 			tag = ERL
-			tag = BBG
 		}
 	}
 
@@ -165,12 +165,12 @@ missions_ga_south_slot3 = {
 			tag = AMC
 			tag = GAB
 			tag = VDT
+			tag = BBG
 			tag = TFT
 			tag = FZG
 			tag = WCS
 			tag = DBN
 			tag = ERL
-			tag = BBG
 		}
 	}
 
@@ -249,7 +249,7 @@ missions_ga_south_slot3 = {
 				area = area_ga_fitzgerald
 				area = area_ga_east_plantation
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -278,7 +278,7 @@ missions_ga_south_slot3 = {
 				province_id = 371
 				area = area_ga_macon
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -301,7 +301,7 @@ missions_ga_south_slot3 = {
 				area = area_ga_atlanta
 				area = area_ga_south_atlanta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

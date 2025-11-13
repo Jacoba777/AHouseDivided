@@ -90,7 +90,7 @@ missions_al_central_slot3 = {
 				area = area_al_montgomery
 				province_id = 1553
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -214,7 +214,7 @@ missions_al_central_slot3 = {
 				area = area_al_northwest
 				area = area_al_huntsville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -265,7 +265,7 @@ missions_al_central_slot3 = {
 			OR = {
 				area = area_al_mobile
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}

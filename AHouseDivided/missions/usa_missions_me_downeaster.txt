@@ -45,7 +45,7 @@ missions_me_downeaster_slot3 = {
 				province_id = 1598
 				province_id = 1600
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

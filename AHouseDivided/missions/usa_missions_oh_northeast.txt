@@ -5,13 +5,13 @@ missions_oh_northeast_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = CNT
-			tag = WOO
-			tag = CLV
-			tag = AKR
 			tag = YGL
 			tag = ATB
 			tag = SLM
+			tag = CLV
+			tag = AKR
+			tag = CNT
+			tag = WOO
 		}
 	}
 
@@ -85,13 +85,13 @@ missions_oh_northeast_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = CNT
-			tag = WOO
-			tag = CLV
-			tag = AKR
 			tag = YGL
 			tag = ATB
 			tag = SLM
+			tag = CLV
+			tag = AKR
+			tag = CNT
+			tag = WOO
 		}
 	}
 
@@ -208,13 +208,13 @@ missions_oh_northeast_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = CNT
-			tag = WOO
-			tag = CLV
-			tag = AKR
 			tag = YGL
 			tag = ATB
 			tag = SLM
+			tag = CLV
+			tag = AKR
+			tag = CNT
+			tag = WOO
 		}
 	}
 

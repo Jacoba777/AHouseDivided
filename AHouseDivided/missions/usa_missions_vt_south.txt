@@ -39,7 +39,7 @@ missions_vt_south_slot3 = {
 			OR = {
 				area = area_vt_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -90,7 +90,7 @@ missions_vt_south_slot3 = {
 			OR = {
 				area = area_vt_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

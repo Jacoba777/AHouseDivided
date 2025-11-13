@@ -1,0 +1,454 @@
+missions_00_ksc_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KSC }
+
+	mission_00_ksc_centralize_kansas_city = {
+		icon = mission_pf_map_table
+		position = 1
+		required_missions = {  }
+		trigger = {
+            NOT = { num_of_subjects = 1 }
+ 		}
+		effect = {
+			add_stability = 1
+		}
+		provinces_to_highlight = {
+		}
+	}
+
+	mission_00_ksc_a_question_of_identity = {
+		icon = mission_book_of_royal_degrees
+		position = 2
+		required_missions = { mission_00_ksc_centralize_kansas_city }
+		trigger = {
+            capital_scope = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+ 		}
+		effect = {
+			country_event = { id = usa_mission_events.2 }
+		}
+
+	}
+}
+
+missions_00_stl_slot3_no_identity_yet = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = KSC
+		NOT = { has_country_flag = country_flag_ksc_missouri_identity }
+		NOT = { has_country_flag = country_flag_ksc_kansas_identity }
+	}
+
+	mission_branch_unknown = {
+		icon = mission_unknown_mission
+		position = 3
+		required_missions = { mission_00_ksc_a_question_of_identity }
+		trigger = {
+			always = no
+ 		}
+		effect = {
+
+		}
+
+	}
+}
+
+missions_mo_ksc_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = KSC
+		has_country_flag = country_flag_ksc_missouri_identity
+	}
+	
+	mission_mo_ksc_control_the_boonslicks = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_00_ksc_a_question_of_identity }
+		trigger = {
+			area_mo_jefferson_city = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_columbia = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_jefferson_city
+				area = area_mo_columbia
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mo_ksc_administering_a_capital = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_mo_ksc_control_the_boonslicks }
+		trigger = {
+			area_mo_jefferson_city = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			area_mo_columbia = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_mo_south_central = { add_permanent_claim = ROOT }
+			area_mo_southern = { add_permanent_claim = ROOT }
+			area_mo_lebanon = { add_permanent_claim = ROOT }
+			area_mo_branson = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_jefferson_city
+				area = area_mo_columbia
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mo_ksc_towards_the_ozarks = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mo_ksc_administering_a_capital }
+		trigger = {
+			area_mo_south_central = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_southern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_lebanon = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_branson = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_south_central
+				area = area_mo_southern
+				area = area_mo_lebanon
+				area = area_mo_branson
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mo_ksc_ozark_recognition = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_mo_ksc_towards_the_ozarks }
+		trigger = {
+			accepted_culture = culture_ozark
+ 		}
+		effect = {
+			area_mo_springfield = { add_permanent_claim = ROOT }
+			area_mo_barry = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mo_ksc_the_fate_of_springfield = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mo_ksc_ozark_recognition }
+		trigger = {
+			area_mo_springfield = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mo_barry = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_legitimacy = 15
+			add_meritocracy = 15
+			add_republican_tradition = 7
+			add_devotion = 15
+			add_horde_unity = 15
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mo_springfield
+				area = area_mo_barry
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_ks_ksc_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		tag = KSC
+		has_country_flag = country_flag_ksc_kansas_identity
+	}
+
+	mission_ks_ksc_capture_topeka = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_00_ksc_a_question_of_identity }
+		trigger = {
+			area_ks_topeka = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ks_manhattan = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			2598 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_topeka
+				area = area_ks_manhattan
+				province_id = 2598
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ks_ksc_administering_a_capital = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_ks_ksc_capture_topeka }
+		trigger = {
+			area_ks_topeka = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ks_manhattan = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			2598 = {
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_topeka
+				area = area_ks_manhattan
+				province_id = 2598
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ks_ksc_developing_the_frontier = {
+		icon = prosperity_for_all
+		position = 5
+		required_missions = { mission_ks_ksc_administering_a_capital }
+		trigger = {
+
+            2588 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+
+            2589 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+
+            2598 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+			2599 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			2600 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			2621 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+
+            2588 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+
+            2589 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+
+            2621 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+			area_ks_wichita = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ks_ksc_im_going_to_wichita = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_ks_ksc_developing_the_frontier }
+		trigger = {
+			area_ks_wichita = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ks_wichita
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}

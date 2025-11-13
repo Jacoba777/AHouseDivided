@@ -5,7 +5,7 @@ missions_wi_madison_slot1 = {
 	has_country_shield = yes
 	potential = { tag = MDS }
 
-	mission_wi_madison_the_northwoods_frontier = {
+	mission_wi_madison_northwoods_frontier = {
 		icon = mission_unite_home_region
 		position = 3
 		required_missions = { mission_wi_madison_controlling_the_center }
@@ -169,8 +169,8 @@ missions_wi_madison_slot4 = {
 	has_country_shield = yes
 	potential = { tag = MDS }
 
-	mission_wi_madison_the_milwaukee_menace = {
-		icon = mission_mwk
+	mission_wi_madison_a_milwaukee_menace = {
+		icon = mission_luther_theses
 		position = 2
 		required_missions = { mission_wi_madison_fielding_an_army }
 		trigger = {
@@ -212,9 +212,9 @@ missions_wi_madison_slot4 = {
 	}
 
 	mission_wi_madison_master_of_lake_michigan = {
-		icon = mission_unite_home_region
+		icon = mission_mwk
 		position = 3
-		required_missions = { mission_wi_madison_the_milwaukee_menace }
+		required_missions = { mission_wi_madison_a_milwaukee_menace }
 		trigger = {
 			area_wi_milwaukee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_wi_fond_du_lac = { type = all  country_or_non_sovereign_subject_holds = ROOT }

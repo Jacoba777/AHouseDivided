@@ -32,7 +32,7 @@ missions_wv_southern_slot1 = {
 
 
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -55,7 +55,7 @@ missions_wv_southern_slot1 = {
 			OR = {
 				area = area_wv_parkersburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -162,8 +162,20 @@ missions_wv_southern_slot2 = {
 		position = 3
 		required_missions = { mission_wv_southern_staking_our_claims }
 		trigger = {
-			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_wv_south_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_charleston = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wv_south_charleston = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
  		}
 		effect = {
 			HTT = { every_owned_province = { add_permanent_claim = ROOT }  }
@@ -174,7 +186,8 @@ missions_wv_southern_slot2 = {
 				area = area_wv_charleston
 				area = area_wv_south_charleston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
 		}
 	}
 }
@@ -198,20 +211,26 @@ missions_wv_southern_slot3 = {
 		trigger = {
 			area_wv_charleston = {
 				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
 				}
 			}
 			area_wv_south_charleston = {
 				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
 				}
 			}
  		}
@@ -230,6 +249,7 @@ missions_wv_southern_slot3 = {
 				unrest = 10
 				local_autonomy = 50
 			}
+			is_city = yes
 		}
 	}
 
@@ -250,7 +270,7 @@ missions_wv_southern_slot3 = {
 				area = area_wv_southern
 				area = area_wv_beckley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -316,7 +336,7 @@ missions_wv_southern_slot3 = {
 				area = area_wv_central
 				area = area_wv_clarksburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

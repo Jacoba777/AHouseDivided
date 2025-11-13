@@ -38,7 +38,7 @@ missions_de_minor_slot3 = {
 			OR = {
 				region = region_de
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

@@ -32,7 +32,7 @@ missions_pa_erie_slot1 = {
 				area = area_pa_central_wilds
 				area = area_pa_east_wilds
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -53,7 +53,7 @@ missions_pa_erie_slot1 = {
 			OR = {
 				area = area_pa_north_pittsburgh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -85,7 +85,7 @@ missions_pa_erie_slot1 = {
 			OR = {
 				area = area_pa_pittsburgh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -166,7 +166,7 @@ missions_pa_erie_slot1 = {
 				area = area_pa_east_dutch
 				area = area_pa_philly
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -216,7 +216,7 @@ missions_pa_erie_slot2 = {
 			OR = {
 				area = area_pa_erie
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -275,7 +275,7 @@ missions_pa_erie_slot2 = {
 			OR = {
 				area = area_pa_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -328,7 +328,7 @@ missions_pa_erie_slot2 = {
 				area = area_pa_allegheny_mts
 				area = area_pa_susquehanna_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -362,7 +362,7 @@ missions_pa_erie_slot2 = {
 			OR = {
 				area = area_pa_north_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -440,7 +440,7 @@ missions_pa_erie_slot3 = {
 				area = area_ny_buffalo
 				area = area_oh_youngstown
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

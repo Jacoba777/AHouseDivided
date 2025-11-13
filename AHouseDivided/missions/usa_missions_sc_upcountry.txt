@@ -156,7 +156,7 @@ missions_sc_upcountry_slot3 = {
 			OR = {
 				area = area_sc_columbia
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -248,7 +248,7 @@ missions_sc_upcountry_slot3 = {
 			OR = {
 				area = area_sc_charleston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

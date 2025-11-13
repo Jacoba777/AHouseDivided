@@ -11,7 +11,7 @@ missions_wi_western_slot1 = {
 		}
 	}
 
-	mission_wi_western_the_milwaukee_menace = {
+	mission_wi_western_a_milwaukee_menace = {
 		icon = mission_luther_theses
 		position = 2
 		required_missions = { mission_wi_western_fielding_an_army }
@@ -56,7 +56,7 @@ missions_wi_western_slot1 = {
 	mission_wi_western_master_of_lake_michigan = {
 		icon = mission_mwk
 		position = 3
-		required_missions = { mission_wi_western_the_milwaukee_menace }
+		required_missions = { mission_wi_western_a_milwaukee_menace }
 		trigger = {
 			area_wi_milwaukee = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_wi_fond_du_lac = { type = all  country_or_non_sovereign_subject_holds = ROOT }

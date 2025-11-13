@@ -39,7 +39,7 @@ missions_md_southern_slot3 = {
 			OR = {
 				area = area_md_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -64,7 +64,7 @@ missions_md_southern_slot3 = {
 				province_id = 503
 				province_id = 504
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -82,7 +82,7 @@ missions_md_southern_slot3 = {
 			OR = {
 				area = area_md_northeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -100,7 +100,7 @@ missions_md_southern_slot3 = {
 			OR = {
 				area = area_md_baltimore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

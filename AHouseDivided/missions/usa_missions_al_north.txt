@@ -5,8 +5,8 @@ missions_al_north_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = MSH
 			tag = HTV
+			tag = MSH
 			tag = SCT
 			tag = GSD
 		}
@@ -46,7 +46,7 @@ missions_al_north_slot3 = {
 				area = area_al_huntsville
 				area = area_al_northeast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -158,7 +158,7 @@ missions_al_north_slot3 = {
 				area = area_al_east_central
 				area = area_al_montgomery
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -286,7 +286,7 @@ missions_al_north_slot3 = {
 			OR = {
 				area = area_al_mobile
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}

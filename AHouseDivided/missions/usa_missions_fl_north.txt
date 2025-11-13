@@ -6,9 +6,9 @@ missions_fl_north_slot3 = {
 	potential = {
 		OR = {
 			tag = JSV
-			tag = PLK
 			tag = LKC
 			tag = ALU
+			tag = PLK
 		}
 	}
 
@@ -73,7 +73,7 @@ missions_fl_north_slot3 = {
 				area = area_fl_gainesville
 				province_id = 1914
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -171,7 +171,7 @@ missions_fl_north_slot3 = {
 				area = area_fl_orlando
 				area = area_fl_space_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -206,7 +206,7 @@ missions_fl_north_slot3 = {
 				area = area_fl_lakeland
 				area = area_fl_tampa
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -275,7 +275,7 @@ missions_fl_north_slot3 = {
 				area = area_fl_southwest
 				area = area_fl_gold_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

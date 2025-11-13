@@ -1,78 +1,5 @@
-missions_pa_philadelphian_slot2 = {
-	slot = 2
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = {
-		OR = {
-			tag = PHL
-			tag = CST
-			tag = NRT
-			tag = BKS
-		}
-	}
-
-	mission_pa_philadelphian_greater_philadelphia = {
-		icon = mission_liberty_bell
-		position = 9
-		required_missions = {  }
-		trigger = {
-            num_of_owned_provinces_with = {
-                value = 10
-                culture = culture_philadelphian
-            }
- 		}
-		effect = {
-			add_prestige_or_monarch_power = { amount = 15 }
-			add_adm_power = 50
-		}
-
-	}
-
-	mission_pa_philadelphian_develop_the_capital = {
-		icon = mission_early_game_buildings
-		position = 10
-		required_missions = { mission_pa_philadelphian_greater_philadelphia }
-		trigger = {
-			area_pa_philly = { type = all  num_of_times_improved_by_owner = 2 }
-			273 = { num_of_times_improved_by_owner = 5 }
- 		}
-		effect = {
-			add_years_of_income = 1
-			293 = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				AND = {
-					area = area_pa_philly
-					NOT = { num_of_times_improved_by_owner =  2}
-				}
-				AND = {
-					province_id = 273
-					NOT = { num_of_times_improved_by_owner =  5}
-				}
-			}
-		}
-	}
-
-	mission_pa_philadelphian_new_york_trade = {
-		icon = mission_statue_of_liberty
-		position = 11
-		required_missions = { mission_pa_philadelphian_develop_the_capital }
-		trigger = {
-            trade_income_percentage = 0.25
-            755 = { trade_share = { country = ROOT  share = 40 } }  # NYC
- 		}
-		effect = {
-			add_prestige_or_monarch_power = { amount = 25 }
-			area_ny_nyc = { add_permanent_claim = ROOT }
-		}
-
-	}
-}
-
-missions_pa_philadelphian_slot3 = {
-	slot = 3
+missions_pa_philadelphian_slot1 = {
+	slot = 1
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -104,7 +31,7 @@ missions_pa_philadelphian_slot3 = {
 				area = area_pa_north_dutch
 				area = area_pa_south_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -159,7 +86,7 @@ missions_pa_philadelphian_slot3 = {
 				area = area_pa_johnstown
 				area = area_pa_allegheny_mts
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -190,94 +117,10 @@ missions_pa_philadelphian_slot3 = {
             NOT = { num_of_times_improved_by_owner = 2 }
 		}
 	}
-
-	mission_pa_philadelphian_the_fate_of_steel_city = {
-		icon = mission_unite_home_region
-		position = 10
-		required_missions = { mission_pa_philadelphian_brotherly_conflict mission_pa_philadelphian_develop_the_alleghenies }
-		trigger = {
-			area_pa_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_prestige_or_monarch_power = { amount = 25 }
-			add_adm_power = 50
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_pa_pittsburgh
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_pa_philadelphian_incorporate_pittsburgh = {
-		icon = mission_alliances
-		position = 11
-		required_missions = { mission_pa_philadelphian_the_fate_of_steel_city }
-		trigger = {
-			area_pa_pittsburgh = {
-				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
-				}
-			}
- 		}
-		effect = {
-			add_years_of_income = 1
-			add_prestige_or_monarch_power = { amount = 25 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_pa_pittsburgh
-			}
-			OR = {
-				NOT { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 1
-				unrest = 10
-				local_autonomy = 50
-			}
-		}
-	}
-
-	mission_pa_philadelphian_spreading_the_love = {
-		icon = mission_phl
-		position = 12
-		required_missions = { mission_pa_philadelphian_incorporate_pittsburgh mission_pa_philadelphian_coal_fields_workshops mission_pa_philadelphian_new_york_trade }
-		trigger = {
-			224 = { num_of_times_improved_by_owner = 5 }
-			265 = { num_of_times_improved_by_owner = 5 }
-			275 = { num_of_times_improved_by_owner = 5 }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_the_city_of_brotherly_love
-				duration = -1  # PERMANENT
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				AND = {
-					province_id = 224
-					NOT = { num_of_times_improved_by_owner =  5}
-				}
-				AND = {
-					province_id = 265
-					NOT = { num_of_times_improved_by_owner =  5}
-				}
-				AND = {
-					province_id = 275
-					NOT = { num_of_times_improved_by_owner =  5}
-				}
-			}
-		}
-	}
 }
 
-missions_pa_philadelphian_slot4 = {
-	slot = 4
+missions_pa_philadelphian_slot2 = {
+	slot = 2
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -396,7 +239,94 @@ missions_pa_philadelphian_slot4 = {
 			OR = {
 				area = area_pa_east_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_pa_philadelphian_the_fate_of_steel_city = {
+		icon = mission_unite_home_region
+		position = 10
+		required_missions = { mission_pa_philadelphian_brotherly_conflict mission_pa_philadelphian_develop_the_alleghenies }
+		trigger = {
+			area_pa_pittsburgh = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_pa_philadelphian_incorporate_pittsburgh = {
+		icon = mission_alliances
+		position = 11
+		required_missions = { mission_pa_philadelphian_the_fate_of_steel_city }
+		trigger = {
+			area_pa_pittsburgh = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_pittsburgh
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+}
+
+missions_pa_philadelphian_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = PHL
+			tag = CST
+			tag = NRT
+			tag = BKS
+		}
+	}
+
+	mission_pa_philadelphian_onward_to_allentown = {
+		icon = mission_unite_home_region
+		position = 6
+		required_missions = { mission_pa_philadelphian_king_of_lancaster }
+		trigger = {
+			area_pa_allentown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_allentown
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -505,10 +435,43 @@ missions_pa_philadelphian_slot4 = {
             }
 		}
 	}
+
+	mission_pa_philadelphian_spreading_the_love = {
+		icon = mission_phl
+		position = 12
+		required_missions = { mission_pa_philadelphian_incorporate_pittsburgh mission_pa_philadelphian_coal_fields_workshops mission_pa_philadelphian_new_york_trade }
+		trigger = {
+			224 = { num_of_times_improved_by_owner = 5 }
+			265 = { num_of_times_improved_by_owner = 5 }
+			275 = { num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_city_of_brotherly_love
+				duration = -1  # PERMANENT
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 224
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+				AND = {
+					province_id = 265
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+				AND = {
+					province_id = 275
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
 }
 
-missions_pa_philadelphian_slot5 = {
-	slot = 5
+missions_pa_philadelphian_slot4 = {
+	slot = 4
 	generic = no
 	ai = yes
 	has_country_shield = yes
@@ -518,27 +481,6 @@ missions_pa_philadelphian_slot5 = {
 			tag = CST
 			tag = NRT
 			tag = BKS
-		}
-	}
-
-	mission_pa_philadelphian_onward_to_allentown = {
-		icon = mission_unite_home_region
-		position = 6
-		required_missions = { mission_pa_philadelphian_king_of_lancaster }
-		trigger = {
-			area_pa_allentown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_a_successful_conquest
-				duration = 730  # 2 years
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_pa_allentown
-			}
-			NOT = { owned_by = ROOT }
 		}
 	}
 
@@ -570,7 +512,7 @@ missions_pa_philadelphian_slot5 = {
 			OR = {
 				area = area_pa_susquehanna_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -591,7 +533,80 @@ missions_pa_philadelphian_slot5 = {
 				area = area_pa_scranton
 				area = area_pa_stroudsburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
+	}
+
+	mission_pa_philadelphian_develop_the_capital = {
+		icon = mission_early_game_buildings
+		position = 10
+		required_missions = { mission_pa_philadelphian_greater_philadelphia }
+		trigger = {
+			area_pa_philly = { type = all  num_of_times_improved_by_owner = 2 }
+			273 = { num_of_times_improved_by_owner = 5 }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			293 = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					area = area_pa_philly
+					NOT = { num_of_times_improved_by_owner =  2}
+				}
+				AND = {
+					province_id = 273
+					NOT = { num_of_times_improved_by_owner =  5}
+				}
+			}
+		}
+	}
+
+	mission_pa_philadelphian_new_york_trade = {
+		icon = mission_statue_of_liberty
+		position = 11
+		required_missions = { mission_pa_philadelphian_develop_the_capital }
+		trigger = {
+            trade_income_percentage = 0.25
+            755 = { trade_share = { country = ROOT  share = 40 } }  # NYC
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			area_ny_nyc = { add_permanent_claim = ROOT }
+		}
+
+	}
+}
+
+missions_pa_philadelphian_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = PHL
+			tag = CST
+			tag = NRT
+			tag = BKS
+		}
+	}
+
+	mission_pa_philadelphian_greater_philadelphia = {
+		icon = mission_liberty_bell
+		position = 9
+		required_missions = {  }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                culture = culture_philadelphian
+            }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+
 	}
 }

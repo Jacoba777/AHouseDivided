@@ -190,7 +190,7 @@ missions_in_central_slot3 = {
 	}
 
 	mission_in_central_going_south = {
-		icon = mission_ind
+		icon = mission_idp
 		position = 2
 		required_missions = { mission_in_central_fielding_an_army }
 		trigger = {

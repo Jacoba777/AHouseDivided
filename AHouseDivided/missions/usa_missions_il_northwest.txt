@@ -529,7 +529,7 @@ missions_il_northwest_slot3 = {
 	}
 
 	mission_il_northwest_take_east_st_louis = {
-		icon = mission_unite_home_region
+		icon = mission_stl
 		position = 9
 		required_missions = { mission_il_northwest_improving_springfield }
 		trigger = {
