@@ -757,7 +757,7 @@ country_event = {
 	
 	major = yes
 	major_trigger = {
-		capital_scope = { continent = asia } 
+		capital_scope = { continent = continent_south } 
 	}
 	is_triggered_only = yes
 	
@@ -797,7 +797,7 @@ country_event = {
 	
 	major = yes
 	major_trigger = {
-		capital_scope = { continent = asia } 
+		capital_scope = { continent = continent_south } 
 	}
 	is_triggered_only = yes
 

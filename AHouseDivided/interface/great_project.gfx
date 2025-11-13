@@ -533,4 +533,9 @@ spriteTypes = {
 		name = "GFX_great_project_gateway_southlake"	
 		texturefile = "gfx//interface//great_projects//great_project_gateway_southlake.dds"
 	}
+
+	spriteType = {
+		name = "GFX_great_project_blackbeards_grave"	
+		texturefile = "gfx//interface//great_projects//great_project_blackbeards_grave.dds"
+	}
 }

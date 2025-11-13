@@ -17,16 +17,55 @@ culture_group_mid_atlantic = {
 culture_group_appalachian = {
 	graphical_culture = westerngfx
 	
-	culture_north_georgia = { primary = GSV }
-	culture_kanahwa = { primary = CHW }
-	culture_upcountry = { primary = GRN }
-	culture_chattanoogan = { primary = CTN }
-	culture_ridge_virginian = { primary = ROA }
-	culture_cumberland = {}
-	culture_johnsonian = { primary = JSC }
-	culture_knoxvillian = { primary = KNX }
-	culture_scottsboro = { primary = SCT }
-	culture_blue_ridge = { primary = ASV }
+	culture_north_georgia = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = GSV 
+	}
+	culture_kanahwa = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = CHW
+	}
+	culture_upcountry = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = GRN
+	}
+	culture_chattanoogan = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = CTN
+	}
+	culture_ridge_virginian = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = ROA
+	}
+	culture_cumberland = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+	}
+	culture_johnsonian = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = JSC
+	}
+	culture_knoxvillian = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = KNX
+	}
+	culture_scottsboro = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = SCT
+	}
+	culture_blue_ridge = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = ASV
+	}
 	
 	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
 	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
@@ -78,16 +117,44 @@ culture_group_allegheny = {
 	graphical_culture = westerngfx
 	
 	culture_phittsburgher = { primary = PIT }
-	culture_morgantonian = { primary = MGT }
-	culture_allegheny = {}
-	culture_highlander = {}
+	culture_morgantonian = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = MGT
+	}
+	culture_allegheny = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+	}
+	culture_highlander = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+	}
 	culture_scrantonian = { primary = SCR }
 	culture_shanondoah = {}
 	culture_penn_dutch = { primary = HSB }
 	culture_allentonian = { primary = ALN }
 	culture_southern_tier = { primary = ITH }
-	culture_hollerlander = {}
+	culture_hollerlander = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+	}
 	culture_susquehanna = {}
+	
+	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
+	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
+	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }
+}
+
+culture_group_tidewater = {
+	graphical_culture = westerngfx
+	
+	culture_middle_tidewater = {}
+	culture_lowlander = {}
+	culture_south_tidewater = { primary = GVK }
+	culture_upper_tidewater = { primary = VAB }
+	culture_east_chesapeake = {}
+	culture_rocky_mount = { primary = RMT }
 	
 	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
 	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
@@ -103,13 +170,7 @@ culture_group_atlantic_south = {
 	culture_charlestonian = { primary = CLS }
 	culture_myrtle = { primary = MYT }
 	culture_pee_dee = {}
-	culture_rocky_mount = { primary = RMT }
-	culture_middle_tidewater = {}
-	culture_lowlander = {}
-	culture_south_tidewater = { primary = GVK }
-	culture_upper_tidewater = { primary = VAB }
-	culture_east_chesapeake = {}
-	
+
 	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
 	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
 	dynasty_names = { Smith Johnson Williams Brown Jones Davis Miller Anderson Wilson Garcia Taylor Thomas Moore Rodriguez Lee Jackson Martin White Martinez Thompson Harris Clark Hernandez Lopez Lewis Walker Robinson Allen Gonzalez Hall Young King Wright Adams Hill Baker Green Scott Nelson Perez Campbell Carter Roberts Sanchez Mitchell Evans Phillips Turner Edwards Collins Parker Ramirez Nguyen Stewart Morris Cook Rogers Murphy }

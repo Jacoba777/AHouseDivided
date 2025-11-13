@@ -11,4 +11,7 @@ if = {
 	set_estate_privilege = estate_eunuchs_allow_personal_fortunes_privilege
     set_estate_privilege = estate_eunuchs_land_rights_privilege
     set_estate_privilege = estate_eunuchs_royal_intrigue_keepers_privilege
+	set_estate_privilege = estate_eunuchs_imperial_council_privilege
+	set_estate_privilege = estate_eunuchs_promote_eunuch_rights
+	set_estate_privilege = estate_eunuchs_single_whip_law_privilege
 }

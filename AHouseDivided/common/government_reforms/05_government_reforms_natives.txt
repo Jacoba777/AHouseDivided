@@ -54,6 +54,9 @@ native_chiefdom_reform = {
 	modifiers = {
 		tribal_development_growth = 0.02
 	}
+	effect = {
+		set_country_flag = old_south_flag
+	}
 }
 
 native_federation_reform = {
@@ -63,6 +66,20 @@ native_federation_reform = {
 	nation_designer_cost = 20
 	modifiers = {
 		global_manpower_modifier = 0.2
+	}
+	effect = {
+		set_country_flag = old_south_flag
+	}
+	government_abilities = {
+		cossacks_mechanic
+	}
+	conditional = {
+		allow = {
+			has_dlc = "The Cossacks"
+		}
+		custom_attributes = {
+			enables_estate_cossacks = yes
+		}
 	}
 }
 
@@ -75,6 +92,20 @@ native_clan_council_reform = {
 		diplomatic_upkeep = 1
 		diplomats = 1
 	}
+	effect = {
+		set_country_flag = old_south_flag
+	}
+	government_abilities = {
+		cossacks_mechanic
+	}
+	conditional = {
+		allow = {
+			has_dlc = "The Cossacks"
+		}
+		custom_attributes = {
+			enables_estate_cossacks = yes
+		}
+	}
 }
 
 native_hereditary_reform = {
@@ -84,6 +115,20 @@ native_hereditary_reform = {
 	nation_designer_cost = 20
 	modifiers = {
 		stability_cost_modifier = -0.33
+	}
+	effect = {
+		set_country_flag = old_south_flag
+	}
+	government_abilities = {
+		cossacks_mechanic
+	}
+	conditional = {
+		allow = {
+			has_dlc = "The Cossacks"
+		}
+		custom_attributes = {
+			enables_estate_cossacks = yes
+		}
 	}
 }
 
@@ -385,6 +430,7 @@ native_becomes_monarchy_reform = {
 			limit = { NOT = { owner = { exists = yes } } }
 			settle_province = ROOT
 		}
+		clr_country_flag = old_south_flag
 		set_country_flag = populists_in_government
 		on_native_government_change_effect = yes
 		change_government = monarchy
@@ -406,6 +452,7 @@ native_becomes_republic_reform = {
 			limit = { NOT = { owner = { exists = yes } } }
 			settle_province = ROOT
 		}
+		clr_country_flag = old_south_flag
 		set_country_flag = populists_in_government
 		on_native_government_change_effect = yes
 		change_government = republic
@@ -422,7 +469,7 @@ native_becomes_republic_reform = {
 			}
 		}
 		modifier = {
-			factor = 0
+			factor = 1
 		}
 	}
 }
@@ -438,13 +485,14 @@ native_becomes_theocracy_reform = {
 			limit = { NOT = { owner = { exists = yes } } }
 			settle_province = ROOT
 		}
+		clr_country_flag = old_south_flag
 		set_country_flag = populists_in_government
 		on_native_government_change_effect = yes
 		change_government = theocracy
 		change_government_reform_progress = -250 # Doing it like this to avoid that migration code triggers
 	}
 	ai = {
-		factor = 0
+		factor = 1
 	}
 }
 
@@ -465,6 +513,7 @@ native_becomes_horde_reform = {
 			limit = { NOT = { owner = { exists = yes } } }
 			settle_province = ROOT
 		}
+		clr_country_flag = old_south_flag
 		set_country_flag = populists_in_government
 		on_native_government_change_effect = yes
 		change_government = tribal
@@ -474,8 +523,9 @@ native_becomes_horde_reform = {
 		custom_tooltip = STEPPE_HORDE_BENEFITS
 	}
 	ai = {
-		factor = 0
+		factor = 1
 	}
+	
 }
 
 native_remain_being_native_reform = {
@@ -486,9 +536,9 @@ native_remain_being_native_reform = {
 		movement_speed = 0.05
 	}
 	ai = {
-		factor = 100
+		factor = 5
 		modifier = {
-			factor = 0
+			factor = 3
 			any_neighbor_country = {
 				OR = {
 					government = monarchy

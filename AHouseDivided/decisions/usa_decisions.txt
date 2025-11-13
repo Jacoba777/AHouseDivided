@@ -1,0 +1,136 @@
+country_decisions = {
+
+    old_south_raid = {
+
+        # who can see the decision
+        potential = {
+            has_country_flag = oldsouth
+            any_neighbor_country = {
+                has_country_flag = newsouth
+            }
+            NOT = { is_at_war = yes }
+        }
+
+        # requirements to take the decision
+        allow = {
+            manpower = 1
+            has_estate = estate_cossacks
+            NOT = { has_country_flag = recent_raid_cooldown } # local cooldown for the raider
+            any_neighbor_country = {
+                has_country_flag = newsouth
+                total_development = 10
+            }
+        }
+
+        effect = {
+            # apply a short cooldown on the raider so they can't spam
+            set_country_flag = recent_raid_cooldown
+            root = { save_event_target_as = flavor_usa_raider }
+
+            # choose a neighbor to raid
+            random_neighbor_country = {
+                limit = {
+                    has_country_flag = newsouth
+                    total_development = 10
+                    not = { war_with = root }
+                }
+
+                # pick a border province in the target to mark and damage
+                random_owned_province = {
+                    limit = {
+                        any_neighbor_province = { owned_by = ROOT }   # province borders the raider
+                        is_city = yes
+                        NOT = { devastation = 100 }
+                        not = {
+                            has_province_flag = dixie_recently_raided_province
+                        }
+                    }
+
+                    # mark province so it 'remembers' the raid (useful for other systems)
+                    set_province_flag = dixie_recently_raided
+                    add_province_modifier = {
+                        name = dixie_recent_raid
+                        duration = 1825        # 5 years
+                    }
+                    add_devastation = 15
+
+                    # decrease base stats (similar to Cossack behavior)
+                    random_list = {
+                        1 = {
+                            trigger = { base_tax = 2 }
+                            add_base_tax = -1
+                        }
+                        1 = {
+                            trigger = { base_production = 2 }
+                            add_base_production = -1
+                        }
+                        1 = {
+                            trigger = { base_manpower = 2 }
+                            add_base_manpower = -1
+                        }
+                    }
+
+                    # loot the province (give raider money)
+                    remove_loot = {
+                        who = root
+                        amount = 5
+                    }
+                    owner = {
+                        # notify the owner country: store the flag that it was raided (non-unique global flag)
+                        set_country_flag = dixie_raided_recently_tag
+                    }
+
+                    # save the province as an event target, and call an event on the victim with the raider in FROM
+                    save_event_target_as = raided_province
+                    owner = {
+                        # fire the victim response event in the victim's scope; From = the raider
+                        country_event = { id = flavor_usa.50 days = 7 } 
+                    }
+                } # end random_owned_province
+            } # end random_neighbor_country
+
+            # also fire a small 'success' event for the raider itself (optional, hidden)
+            root = { country_event = { id = flavor_usa.60 days = 7 } }
+            
+        } # end effect
+
+        ai_will_do = {
+            factor = 1
+        }
+    } # end decision
+
+
+    ns_fuck_os = {
+        major = yes
+        potential = {
+            has_country_flag = newsouth
+            or = {
+                NOT = { has_country_modifier = dixie_embargoed }
+                NOT = { has_country_modifier = dixie_corruption }
+            }
+        }
+        allow = {
+            or = {
+                NOT = { has_country_modifier = dixie_embargoed }
+                NOT = { has_country_modifier = dixie_corruption }
+            }
+            treasury = 500
+            any_neighbor_country = {
+                not = {
+                    has_opinion = {
+                        who = root
+                        value = -25
+                    }
+                }
+                
+            }
+        }
+        effect = {
+            country_event = {
+                id = flavor_usa.1865
+            }
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+}

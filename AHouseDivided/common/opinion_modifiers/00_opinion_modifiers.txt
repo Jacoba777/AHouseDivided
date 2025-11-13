@@ -5352,7 +5352,14 @@ hab_peaceful_shadow_kingdom = {
 
 ######ADH
 
-#manifesting_destiny = {
-#	opinion = -100
-#	yearly_decay = 0
-#}
+manifesting_destiny = {
+	opinion = -100
+	yearly_decay = 0
+}
+
+
+
+economic_subterfuge = {
+    opinion = -25
+    yearly_decay = 1
+}

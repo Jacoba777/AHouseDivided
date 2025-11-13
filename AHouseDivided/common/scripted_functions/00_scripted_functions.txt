@@ -275,6 +275,10 @@ can_join_hre = {
 can_leave_hre = {
 }
 
+
+
+###ADH###
+
 can_colonize_province = {
 	condition = {
 		tooltip = "tooltip_alaskan_frontiers"

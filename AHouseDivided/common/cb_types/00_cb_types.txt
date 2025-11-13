@@ -1780,13 +1780,7 @@ cb_push_back_colonizers = {
             is_native_tribe = no
             NOT = {
                 OR = { 
-                    technology_group = north_american
-                    technology_group = mesoamerican
-                    technology_group = south_american
-                    technology_group = andean
-                    technology_group = aboriginal_tech
-                    technology_group = polynesian_tech
-                    technology_group = high_american
+                     
                 }
             }
             OR = {
@@ -2189,6 +2183,13 @@ cb_tim_crush_rebellion = {
 	
 	war_goal = TIM_crush_rebellion
 }
+
+
+
+
+
+###ADH###
+
 
 # Unite Hawaii cb - dangerously close to fantasy here
 cb_unite_hawaii = {

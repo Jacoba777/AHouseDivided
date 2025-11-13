@@ -278,7 +278,7 @@ development = {
 	naval_forcelimit = 0.1			# special case, affected by autonomy & set to 0 by code if not port
 	local_sailors = 60			# special case, affected by autonomy & set to 0 by code if not port
 	province_trade_power_value = 0.2
-	local_amount_of_banners = 0.066
+	local_amount_of_banners = 0.25
 	local_amount_of_cawa = 0.125
 	local_amount_of_carolean = 0.1
 	local_amount_of_hussars = 0.01
@@ -2457,3 +2457,34 @@ alaska_debuff = {
 	native_assimilation = -0.95	
 }
 
+raid_punished = {
+    mercenary_discipline = -0.05
+    mercenary_cost = 0.25
+    mercenary_manpower = -0.25
+}
+
+
+dixie_embargoed = {
+    global_tax_modifier = -0.05
+}
+
+dixie_corruption = {
+    global_tax_modifier = -0.05
+	burghers_influence_modifier = 5
+}
+
+new_south_trade_disruption = {
+    trade_efficiency = -0.15
+    global_trade_power = -0.1
+}
+
+new_south_corruption = {
+	nobles_influence_modifier = 0.10
+	nobles_loyalty_modifier = -0.15
+	burghers_loyalty_modifier = -0.15
+	burghers_influence_modifier = 0.05
+}
+
+dixie_recent_raid = {
+	development_cost_modifier = 0.05
+}

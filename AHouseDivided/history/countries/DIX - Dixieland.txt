@@ -1,7 +1,8 @@
 technology_group = texas
-government = republic
-add_government_reform = american_republic
+government = monarchy
+add_government_reform = prussian_monarchy
 government_rank = 1
 religion = baptist
 primary_culture = culture_houstonian
 capital = 2153
+set_country_flag = access_to_prussian_militarization_flag

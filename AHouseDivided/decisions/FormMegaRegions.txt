@@ -1103,6 +1103,7 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = DPS
+			add_government_reform = prussian_republic_reform
 			region_la = {
 				limit = { NOT = { owned_by = ROOT } }
 				add_permanent_claim = DPS
@@ -1468,6 +1469,8 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = DIX
+			change_government = monarchy
+			add_government_reform = prussian_monarchy
 			custom_tooltip = get_perma_claims_on_south
 			hidden_effect = {
 				continent_south = {

@@ -3261,3 +3261,34 @@ is_or_was_mongol_nation = {
 is_or_was_moghulistan_nation = {
 	always = no
 }
+
+
+###ADH###
+
+#south under non southerners
+occupying_southern_country = {
+	and ={
+		not = {
+			has_country_flag = old_south_flag
+		}
+		any_owned_province = {
+			province_is_or_accepts_culture = {
+				culture_group = culture_group_tidewater
+				culture_group = culture_group_atlantic_south
+				culture_group = culture_group_upper_piedmontese
+				culture_group = culture_group_lower_piedmontese
+				culture_group = culture_group_cajun
+				culture_group = culture_group_appalachian
+				culture_group = culture_group_eastern_deep_south
+				culture_group = culture_group_western_deep_south
+				culture_group = culture_group_gulf_coast
+			}
+		}
+	}
+}
+
+raided_by_old_south = {
+	any_owned_province = {
+		has_province_flag = dixie_recently_raided
+	}
+}

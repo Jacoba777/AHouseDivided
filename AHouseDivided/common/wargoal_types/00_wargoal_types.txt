@@ -2722,6 +2722,8 @@ take_native_american_land = {
 	war_name = TAKE_NATIVE_AMERICAN_LAND_WAR_NAME
 }
 
+
+###modified for ADH south
 push_back_colonizers = {
 	type = superiority
 	
@@ -2735,6 +2737,7 @@ push_back_colonizers = {
 		peace_options = {
 			po_force_out_colonizers
 			po_demand_provinces
+			po_release_annexed
 		}
 	}
 	
@@ -3347,6 +3350,11 @@ take_capital_vassalize_flower_wars = {
 
 	war_name = VASSAL_MISSION_WAR_NAME
 }
+
+
+
+
+###ADH###
 
 take_province_hawaii = {
 	type = take_province

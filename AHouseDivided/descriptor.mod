@@ -7,7 +7,7 @@ tags={
 	"Religion"
 	"Trade"
 }
-name="Western Expanse"
+name="Rebel Yell"
 replace_path="history/provinces"
 replace_path="history/diplomacy"
 replace_path="history/wars"
@@ -27,4 +27,3 @@ replace_path="interface/great_projects.gfx"
 replace_path="decisions"
 replace_path="events"
 supported_version="v1.37.*"
-remote_file_id="3358452249"

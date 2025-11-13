@@ -6,6 +6,10 @@
 
 namespace = cossack_estate_events
 
+
+
+##Gutted and reused for dixie
+
 #Colonisation of the Steppes
 #Cossacks vs Nobles
 country_event = {
@@ -17,7 +21,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = forest
 		}
 		estate_influence = {
 			estate = estate_nobles
@@ -42,10 +46,10 @@ country_event = {
 		any_owned_province = {
 			base_production = 2
 			OR = {
-				has_terrain = steppe
+				has_terrain = forest
 				any_neighbor_province = {
 					owned_by = ROOT
-					has_terrain = steppe
+					has_terrain = woods
 				}
 			}
 		}
@@ -63,10 +67,10 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					OR = {
-						has_terrain = steppe
+						has_terrain = forest
 						any_neighbor_province = {
 							owned_by = ROOT
-							has_terrain = steppe
+							has_terrain = forest
 						}
 					}
 					is_city = yes
@@ -75,7 +79,7 @@ country_event = {
 			}
 			random_owned_province = {
 				limit = {
-					has_terrain = steppe
+					has_terrain = forest
 				}
 				save_event_target_as = serfs_arriving_province
 			}
@@ -230,12 +234,12 @@ country_event = {
 		}
 		any_owned_province = {
 			development = 4
-			NOT = { region = scandinavia_region }
-			NOT = { region = baltic_region }
-			NOT = { region = east_siberia_region }
-			NOT = { region = west_siberia_region }
-			NOT = { superregion = europe_superregion }
-			has_terrain = steppe
+			continent = continent_south
+			not = { region = region_tx }
+			or = {
+				has_terrain = forest
+				has_terrain = woods
+			}
 			any_neighbor_province = {
 				NOT = { owned_by = ROOT }
 				is_city = yes
@@ -291,12 +295,9 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					development = 4
-					NOT = { region = scandinavia_region }
-					NOT = { region = baltic_region }
-					NOT = { region = east_siberia_region }
-					NOT = { region = west_siberia_region }
-					NOT = { superregion = europe_superregion }
-					has_terrain = steppe
+					continent = continent_south
+					not = { region = region_tx }
+					has_terrain = forest
 					any_neighbor_province = {
 						NOT = { owned_by = ROOT }
 						is_city = yes
@@ -757,7 +758,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 			is_territory = no
 		}
 		estate_territory = { 
@@ -862,7 +863,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -962,7 +963,7 @@ country_event = {
 		has_estate = estate_cossacks
 		has_estate = estate_burghers
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -1081,12 +1082,12 @@ country_event = {
 		has_estate = estate_cossacks
 		num_of_colonists = 1
 		any_owned_province = {
-			OR = {
-				region = central_asia_region
-				region = west_siberia_region
-				region = east_siberia_region
+			continent = continent_south
+			or = {
+				has_terrain = forest
+				has_terrain = woods
 			}
-			has_terrain = steppe
+
 			is_territory = no
 		}
 		NOT = {
@@ -1113,11 +1114,10 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_terrain = steppe
-					OR = {
-						region = west_siberia_region
-						region = east_siberia_region
-						region = central_asia_region
+					continent = continent_south
+					or = {
+						has_terrain = forest
+						has_terrain = woods
 					}
 					is_territory = no
 				}
@@ -1206,7 +1206,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 			is_territory = no
 			is_capital = no
 			is_city = yes
@@ -1257,7 +1257,7 @@ country_event = {
 						}
 					}
 					any_owned_province = {
-						has_terrain = steppe
+						has_terrain = woods
 						is_capital = no
 						is_city = yes
 						NOT = { has_province_flag = cossack_revolt }
@@ -1268,7 +1268,7 @@ country_event = {
 				}
 				random_owned_province = {
 					limit = {
-						has_terrain = steppe
+						has_terrain = woods
 						is_capital = no
 						is_city = yes
 						NOT = { has_province_flag = cossack_revolt }
@@ -1318,7 +1318,7 @@ country_event = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_terrain = steppe
+						has_terrain = woods
 					}
 					add_local_autonomy = 10
 				}
@@ -1341,7 +1341,7 @@ country_event = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_terrain = steppe
+						has_terrain = woods
 					}
 					add_local_autonomy = 20
 				}
@@ -1358,7 +1358,7 @@ country_event = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						has_terrain = steppe
+						has_terrain = woods
 					}
 					add_local_autonomy = 33
 				}
@@ -1417,7 +1417,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 			is_capital = no
 			is_overseas = no
 			is_territory = no
@@ -1435,7 +1435,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_terrain = steppe
+					has_terrain = woods
 					is_capital = no
 					is_overseas = no
 					is_territory = no
@@ -1484,7 +1484,7 @@ country_event = {
 	trigger = {
 		has_estate = estate_cossacks
 		any_owned_province = {
-			has_terrain = steppe
+			has_terrain = woods
 		}
 		estate_influence = {
 			estate = estate_cossacks

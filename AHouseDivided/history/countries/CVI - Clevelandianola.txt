@@ -1,6 +1,8 @@
 technology_group = miss_delta
-government = tribal
-add_government_reform = steppe_horde
+government = native
+add_government_reform = native_chiefdom_reform
+add_government_reform = native_oral_tradition_reform
+add_government_reform = native_war_band_reform
 government_rank = 1
 religion = baptist
 primary_culture = culture_delta_miss

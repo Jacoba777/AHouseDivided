@@ -1,6 +1,7 @@
 technology_group = southeast
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = dixie_autocracy_reform
+set_country_flag = oldsouth
 government_rank = 1
 religion = baptist
 primary_culture = culture_deep_alabaman

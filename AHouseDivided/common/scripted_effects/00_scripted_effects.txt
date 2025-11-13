@@ -6657,6 +6657,9 @@ adopt_technology_group_from_target = {
 }
 
 
+
+###ADH###
+
 ##prevent large country kahoots
 #every_known_country = {
 #	limit = { 
@@ -6681,3 +6684,6 @@ adopt_technology_group_from_target = {
 #		modifier = manifesting_destiny
 #	}
 #}
+
+
+
