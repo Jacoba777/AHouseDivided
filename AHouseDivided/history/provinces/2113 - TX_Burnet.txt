@@ -14,8 +14,8 @@ culture=culture_austinite
 is_city = yes
 owner=HTN
 add_core=HTN
-add_core=ASN
 controller=HTN
+add_core=ASN
 
 1444.11.12 = {
 	base_tax=1

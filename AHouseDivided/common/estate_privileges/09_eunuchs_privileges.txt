@@ -13,10 +13,6 @@ estate_eunuchs_bookkeepers_privilege = {
 	benefits = { 
 		yearly_corruption = -0.05
 		imperial_mandate = 0.03
-		republican_tradition = 0.03
-		devotion = 0.03
-		legitimacy = 0.03
-		horde_unity = 0.03
 	}
 	penalties = {
 	}
@@ -31,20 +27,12 @@ estate_eunuchs_bookkeepers_privilege = {
 			factor = 0.5
 			NOT = { yearly_corruption_increase = 0.1 } 
 			imperial_mandate = 80 
-			republican_tradition = 95
-			devotion = 95
-			legitimacy = 95
-			horde_unity = 95
 		}
 		modifier = {
 			factor = 2.5
 			OR = { 
 				yearly_corruption_increase = 0.2
 				NOT = { imperial_mandate = 50 } 
-				NOT = { republican_tradition = 80 } 
-				NOT = { legitimacy = 80 } 
-				NOT = { horde_unity = 80 } 
-				NOT = { devotion = 80 } 
 			}
 		}
 	}

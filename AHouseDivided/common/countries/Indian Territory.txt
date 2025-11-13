@@ -1,9 +1,9 @@
-# Indian Territory
+# Illinois
 
 graphical_culture = westerngfx
 
-color = { 181 125 105 }
-revolutionary_colors = { 181 125 105 }
+color = { 120 90 60 }
+revolutionary_colors = { 120 90 60 }
 
 monarch_names = {
     "Noah #0" = 91

@@ -14,8 +14,8 @@ culture=culture_metroplex
 is_city = yes
 owner=HTN
 add_core=HTN
-add_core=CSN
 controller=HTN
+add_core=DLS
 
 1444.11.12 = {
 	base_tax=1

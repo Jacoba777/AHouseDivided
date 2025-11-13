@@ -1467,10 +1467,7 @@ XAK_ideas = {
 	}
 
 	trigger = {
-		OR = {
-			tag = XAK
-			tag = UBA
-		}
+		tag = XAK
 	}
 
 	environmental_stewardship = {
@@ -1598,5 +1595,51 @@ JFF_ideas = {
 	boomtowns = {
         development_cost = -0.1
         monthly_gold_inflation_modifier = -0.1
+	}
+}
+
+UBA_ideas = {
+	free = yes
+	start = {
+		global_autonomy = -0.05
+	}
+
+	bonus = {
+		global_ship_trade_power = 0.25
+	}
+
+	trigger = {
+		tag = UBA
+	}
+
+	environmental_stewardship = {
+		discipline = 0.02
+		prestige = 0.25
+	}
+
+	alaskan_frontiers = {
+		may_establish_frontier = yes
+	}
+
+	klondike_gold_rush = {
+		monthly_gold_inflation_modifier = -0.25
+	}
+
+	harsh_winters = {
+		land_attrition = -0.10
+		defensiveness = 0.10
+	}
+
+	alaskan_natives = {
+		num_accepted_cultures = 2
+        diplomatic_upkeep = 1
+	}
+
+	libertarian_society = {
+        advisor_cost = -0.1
+	}
+
+	ak_permanent_fund = {
+		global_unrest = -2
 	}
 }

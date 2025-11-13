@@ -1,4 +1,4 @@
-# Dakota
+# South Dakota
 
 graphical_culture = westerngfx
 

@@ -14,8 +14,8 @@ culture=culture_alamo
 is_city = yes
 owner=HTN
 add_core=HTN
-add_core=SAN
 controller=HTN
+add_core=SAN
 
 1444.11.12 = {
 	base_tax=5

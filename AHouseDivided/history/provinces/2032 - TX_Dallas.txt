@@ -15,8 +15,8 @@ center_of_trade=2
 is_city = yes
 owner=HTN
 add_core=HTN
-add_core=DLS
 controller=HTN
+add_core=DLS
 fort_15th=yes
 
 1444.11.12 = {

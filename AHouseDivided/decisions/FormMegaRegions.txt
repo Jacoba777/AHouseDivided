@@ -5,20 +5,9 @@ country_decisions = {
 			OR = {
 				culture_group = culture_group_great_lakes
 				culture_group = culture_group_ohio_river_valley
-				culture_group = culture_group_northwoods
-				culture_group = culture_group_upper_midwestern
 				culture = culture_buffalonian
 				culture = culture_rochesterite
 				culture = culture_syracusan
-			}
-			OR = {
-				capital_scope = {
-					OR = {
-						superregion = superregion_upper_great_lakes
-						superregion = superregion_lower_great_lakes
-						superregion = superregion_midatlantic
-					}
-				}
 			}
 #			OR = {
 #				has_country_flag = formed_a_state
@@ -816,73 +805,6 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
-		}
-		ai_will_do = { factor = 1 }
-	}
-
-	form_dakota = {
-		major = yes
-		potential = {
-			OR = {
-				culture_group = culture_group_great_plains
-				culture_group = culture_group_upper_midwestern
-			}
-			capital_scope = {
-				OR = {
-					region = region_nd 
-					region = region_sd 
-				}
-			}
-			was_never_end_game_tag_trigger = yes
-			NOT = { has_country_flag = formed_a_state }
-			NOT = { tag = PAP }
-			NOT = { exists = XDK }
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 2920  # Bismarck
-				province_id = 2914  # Fargo
-				province_id = 2964  # Pierre
-				province_id = 2961  # Rapid City
-			}
-		}
-		allow = {
-			owns_core_province = 2920  # Bismarck
-			owns_core_province = 2914  # Fargo
-			owns_core_province = 2964  # Pierre
-			owns_core_province = 2961  # Rapid City
-			num_of_owned_provinces_with = {
-				superregion = superregion_dakotas
-				value = 25
-			}
-			adm_tech = 10
-			is_at_war = no
-		}
-		effect = {
-			change_tag = XDK
-			region_nd = {
-				limit = { NOT = { owned_by = ROOT } }
-				add_permanent_claim = XDK
-			}
-			region_sd = {
-				limit = { NOT = { owned_by = ROOT } }
-				add_permanent_claim = XDK				
-			}
-			on_change_tag_effect = yes
-			restore_country_name_effect = yes
-			set_country_flag = formed_a_state
-			custom_tooltip = become_an_empire_tt
-			hidden_effect = { set_government_rank = 3 }
-			if = {
-				limit = { has_custom_ideas = no }
-				country_event = { id = ideagroups.1 } #Swap Ideas
-			}
-			add_country_modifier = {
-				name = "centralization_modifier"
-				duration = 7300
-			}
-			add_prestige = 40
-			swap_non_generic_missions = yes
 		}
 		ai_will_do = { factor = 1 }
 	}

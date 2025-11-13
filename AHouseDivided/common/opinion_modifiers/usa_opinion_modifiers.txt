@@ -1,4 +1,0 @@
-#manifesting_destiny = {
-#	opinion = -100
-#	yearly_decay = 0
-#}

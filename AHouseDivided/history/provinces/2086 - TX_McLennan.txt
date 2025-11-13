@@ -15,8 +15,8 @@ center_of_trade=1
 is_city = yes
 owner=HTN
 add_core=HTN
-add_core=WAC
 controller=HTN
+add_core=WAC
 
 1444.11.12 = {
 	base_tax=3

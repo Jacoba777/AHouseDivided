@@ -1,0 +1,247 @@
+#Ming Tributaries
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = ALI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = BMN
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = LTK
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = TYL
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = LVW
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = DLS
+	start_date = 1444.1.1
+	end_date = 1473.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = HFW
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = GNB
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = KHM
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = LCH
+	start_date = 1444.1.1
+	end_date = 1449.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = PRS
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = TAL
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = KRR
+	start_date = 1444.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = HDG
+	start_date = 1444.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = RPD
+	start_date = 1438.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = LRD
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = SAG
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = BWN
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = TYL
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = ABL
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = BSP
+	start_date = 1444.1.1
+	end_date = 1473.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = MID
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = ELP
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = LBK
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = AML
+	start_date = 1444.1.1
+	end_date = 1449.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = WTF
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = FWH
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = COK
+	start_date = 1444.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = SMN
+	start_date = 1444.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = TXB
+	start_date = 1438.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = HTN
+	second = BWV
+	start_date = 1438.1.1
+	end_date = 1618.1.1
+}

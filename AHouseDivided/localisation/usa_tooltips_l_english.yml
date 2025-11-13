@@ -3,3 +3,4 @@
  tooltip_claim_by_primary_culture:0 "We gain a permanent claim on all provinces of §Y[Root.Culture.GetName]§! culture"
  tooltip_claim_by_culture:0 " We will gain a permanent claim on all provinces of a nearby culture"
  tooltip_own_all_provs_primary_culture:0 "We own all provinces of §Y[Root.Culture.GetName]§! culture"
+ ak_colony_debuff:0 "Alaskan Colonization Difficulties."
