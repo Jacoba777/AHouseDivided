@@ -5,3 +5,7 @@
  stateless_society_desc:0 "Isolated cities rise amidst the now untamed expanse of Alaska, each maintaining order within its own walls. Authority cannot stretch far beyond the urban centers, and threats are few—coming only from neighboring cities willing to cross the vast regrowing wilderness between them."
  STATELESS_SOCIETY:0 "Independent Borough"
  triggered_modifier_ak_home_colonization_buff:0 "An Alaskan colonizing Alaska"
+ dixie_republic:0 "Aristocratic Republic"
+ dixie_republic_desc:0 "Unlike the Carpetbaggers which give in to the guiles of mercantiles, we never put down our dreams of being lords over our own domains. Our Ancestors fought for our lands and our people stand free from their repression. War and Will shall lead our way!"
+ dixie_autocracy_reform:0 "Despotic Republic"
+ dixie_autocracy_reform_desc:0 "Since the fall of our great land and the refusal of those then in power to stave off losses, we have nominated the strongest and most visionary among us to lead our people in these troubling times."

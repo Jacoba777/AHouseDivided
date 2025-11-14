@@ -176,11 +176,11 @@ prussian_republic_reform = {
 	potential = {
 		OR = {
 			AND = {
-				tag = PRU
+				tag = DPS
 				NOT = { map_setup = map_setup_random }
 			}
 			AND = {
-				tag = GER
+				tag = DIX
 				NOT = { map_setup = map_setup_random }
 				OR = {
 					has_reform = prussian_monarchy
@@ -190,7 +190,7 @@ prussian_republic_reform = {
 					is_hegemon_of_type = military_hegemon
 					development_in_provinces = {
 						value = 500
-						culture = prussian
+						culture_group = culture_group_eastern_deep_south
 					}
 				}
 			}
@@ -211,7 +211,7 @@ prussian_republic_reform = {
 		OR = {
 			religion = protestant
 			religion = reformed
-			religion = hussite
+			religion = baptist
 			religion = anglican
 			AND = {
 				is_playing_custom_nation = yes
@@ -1300,6 +1300,70 @@ american_republic = {
 	duration = 4
 }
 
+###ADH###
+
+dixie_republic = {
+	icon = "parliament"
+	allow_normal_conversion = yes
+	potential = {
+		or = {
+			culture_group = culture_group_tidewater
+			culture_group = culture_group_atlantic_south
+			culture_group = culture_group_upper_piedmontese
+			culture_group = culture_group_lower_piedmontese
+			culture_group = culture_group_cajun
+			culture_group = culture_group_eastern_deep_south
+			culture_group = culture_group_western_deep_south
+			culture_group = culture_group_gulf_coast
+		}
+	}
+	trigger = {
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	modifiers = {
+		war_exhaustion = -0.04
+		stability_cost_modifier = -0.1
+		max_absolutism = 20
+		liberty_desire = 15
+	}
+	factions = {
+		faction_progressives
+		faction_moderates
+		faction_conservatives
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+			has_dlc = "The Cossacks"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			enables_estate_cossacks = yes
+			civil_war_on_every_new_ruler = yes
+		}
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Cradle of Civilization"
+		}
+	}
+	duration = 4
+}
+
+
 federal_republic = {
 	icon = "constitution"
 	allow_normal_conversion = yes
@@ -1932,7 +1996,7 @@ dutch_republic = {
 cossacks_reform = {
 	icon = "horde_riding"
 	legacy_equivalent = cossacks_legacy_reform
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
 	potential = {
 		OR = {
 			AND = {
@@ -1941,6 +2005,7 @@ cossacks_reform = {
 			}
 			has_reform = cossacks_reform
 			have_had_reform = cossacks_reform
+			tag = byz
 		}
 	}
 	trigger = {
@@ -1965,7 +2030,6 @@ cossacks_reform = {
 			has_terrain = steppe
 		}
 	}
-
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no

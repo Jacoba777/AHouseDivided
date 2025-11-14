@@ -80,3 +80,610 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+
+
+##New/Old South Rivalry
+
+
+
+#old wants kick out new - raids
+#see usa decisions
+
+#new response to raids - demand recompense (kill mercenary group, or mil advisor) [blame mercs or the gov?(gov gives ae)]
+#see below
+
+#old nobility demands liberation of new province
+#see noble agendas
+
+#new oligarch demands subjugation of old troublemaker (very small nations comparatively)
+#see noble agendas
+
+#new to old destabilization - either assassin, economic lockout, manpower siphoning, or estate disloyalty/corruption increase
+#see usa decisions
+
+#old to new destabilize - estate disloyalty (oligarch), terrorize merchants
+
+# ========================
+#  Fund Corruption
+# ========================
+country_event = {
+    id = flavor_usa.301
+    title = flavor_usa.301.t
+    desc = flavor_usa.301.desc
+    picture = GFX_event_corruption
+
+    is_triggered_only = yes
+    
+    trigger = {
+        has_country_flag = newsouth
+    }
+
+    immediate = {
+        root = {
+            add_country_modifier = {
+                name = dixie_corruption
+                duration = 600
+            }
+        }
+
+        # Find up to 4 qualifying Old South targets
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_1_1
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_1 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_2_1
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_1 }
+                NOT = { tag = event_target:flavor_usa_target_2_1 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_3_1
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_1 }
+                NOT = { tag = event_target:flavor_usa_target_2_1 }
+                NOT = { tag = event_target:flavor_usa_target_3_1 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_4_1
+        }
+    }
+
+    option = {
+        name = "Fund corruption in [flavor_usa_target_1_1.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_1_1 }
+        hidden_effect = {
+            event_target:flavor_usa_target_1_1 = {
+                country_event = {
+                    id = flavor_usa.45
+                    days = -1
+                }
+            }
+            ROOT = { add_treasury = -500 }
+        }
+    }
+    option = {
+        name = "Fund corruption in [flavor_usa_target_2_1.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_2_1 }
+        hidden_effect = {
+            event_target:flavor_usa_target_2_1 = {
+                country_event = {
+                    id = flavor_usa.45
+                    days = -1
+                }
+            }
+            ROOT = { add_treasury = -500 }
+        }
+    }
+    option = {
+        name = "Fund corruption in [flavor_usa_target_3_1.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_3_1 }
+        hidden_effect = {
+            event_target:flavor_usa_target_3_1 = {
+                country_event = {
+                    id = flavor_usa.45
+                    days = -1
+                }
+            }
+            ROOT = { add_treasury = -500 }
+        }
+    }
+    option = {
+        name = "Fund corruption in [flavor_usa_target_4_1.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_4_1 }
+        hidden_effect = {
+            event_target:flavor_usa_target_4_1 = {
+                country_event = {
+                    id = flavor_usa.45
+                    days = -1
+                }
+            }
+            ROOT = { add_treasury = -500 }
+        }
+    }
+}
+
+# ========================
+#  Shut Out Merchants
+# ========================
+country_event = {
+    id = flavor_usa.311
+    title = flavor_usa.311.t
+    desc = flavor_usa.311.desc
+    picture = GFX_event_trade_embargo
+
+    is_triggered_only = yes
+
+    trigger = {
+        has_country_flag = newsouth
+    }
+
+    immediate = {
+        root = {
+            add_country_modifier = {
+                name = dixie_embargoed
+                duration = 600
+            }
+        }
+        # same selection logic as above
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_1_2
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_2 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_2_2
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_2 }
+                NOT = { tag = event_target:flavor_usa_target_2_2 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_3_2
+        }
+        random_neighbor_country = {
+            limit = {
+                has_country_flag = oldsouth
+                NOT = { tag = event_target:flavor_usa_target_1_2 }
+                NOT = { tag = event_target:flavor_usa_target_2_2 }
+                NOT = { tag = event_target:flavor_usa_target_3_2 }
+                OR = {
+                    not = {
+                        has_opinion = {
+                            who = ROOT 
+                            value = -50 
+                        }
+                    }
+                    is_rival = ROOT
+                    ROOT = { is_rival = PREV }
+                }
+            }
+            save_event_target_as = flavor_usa_target_4_2
+        }
+    }
+
+    option = {
+        name = "Shut out merchants from [flavor_usa_target_1_2.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_1_2 }
+        hidden_effect = {
+            event_target:flavor_usa_target_1_2 = {
+                add_country_modifier = {
+                    name = new_south_trade_disruption
+                    duration = 1825
+                }
+            }
+            ROOT = { add_treasury = -250 }
+        }
+    }
+    option = {
+        name = "Shut out merchants from [flavor_usa_target_2_2.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_2_2 }
+        hidden_effect = {
+            event_target:flavor_usa_target_2_2 = {
+                add_country_modifier = {
+                    name = new_south_trade_disruption
+                    duration = 1825
+                }
+            }
+            ROOT = { add_treasury = -250 }
+        }
+    }
+    option = {
+        name = "Shut out merchants from [flavor_usa_target_3_2.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_3_2 }
+        hidden_effect = {
+            event_target:flavor_usa_target_3_2 = {
+                add_country_modifier = {
+                    name = new_south_trade_disruption
+                    duration = 1825
+                }
+            }
+            ROOT = { add_treasury = -250 }
+        }
+    }
+    option = {
+        name = "Shut out merchants from [flavor_usa_target_4_2.GetName]"
+        trigger = { has_saved_event_target = flavor_usa_target_4_2 }
+        hidden_effect = {
+            event_target:flavor_usa_target_4_2 = {
+                add_country_modifier = {
+                    name = new_south_trade_disruption
+                    duration = 1825
+                }
+            }
+            ROOT = { add_treasury = -250 }
+        }
+    }
+}
+
+
+###Dixie Corruption event
+
+country_event = {
+    id = flavor_usa.45
+    title = flavor_usa.45.t
+    desc = flavor_usa.45.desc
+    picture = GFX_event_corruption
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.45.a
+        add_country_modifier = {
+            name = new_south_corruption
+            duration = 600
+        }
+        add_corruption = 2
+    }
+}
+
+
+###Raiding Response
+
+country_event = {
+    id = flavor_usa.50
+    title =  flavor_usa.50.t
+    desc =  flavor_usa.50.desc
+    picture = gfx_event_village_raided
+
+    is_triggered_only = yes
+
+     option = {
+        name = flavor_usa.50.a # "Demand the perpetrators be handed over"
+        ai_chance = { factor = 1 }
+        hidden_effect = {
+            if = {
+                limit = { event_target:flavor_usa_raider = { exists = yes } }
+                event_target:flavor_usa_raider = {
+                    country_event = {
+                        id = flavor_usa.70
+                        days = 7
+                    }
+                }
+            }
+        }
+        add_power_projection = {
+            type = insulted_rival
+            amount = 5
+        } 
+    }
+
+    option = {
+        name = flavor_usa.50.b # "Demand a government official be turned over"
+        ai_chance = { factor = 1 }
+        hidden_effect = {
+            if = {
+                limit = { event_target:flavor_usa_raider = { exists = yes } }
+                event_target:flavor_usa_raider = {
+                    country_event = {
+                        id = flavor_usa.80
+                        days = 7
+                    }
+                }
+            }
+        }
+        add_dip_power = -50
+        add_legitimacy = 5
+    }
+
+    option = {
+        name = flavor_usa.50.c # "Drop the issue"
+        ai_chance = { factor = 0.5 }
+        add_power_projection = {
+            type = insulted_rival
+            amount = -10
+        } 
+        add_prestige = -5
+    }
+
+    option = {
+        trigger = {
+            ruler_has_personality = fierce_negotiator_personality
+        }
+        name = flavor_usa.50.d # "Demand full accountability"
+        ai_chance = { factor = 5 }
+        hidden_effect = {
+            if = {
+                limit = { event_target:flavor_usa_raider = { exists = yes } }
+                event_target:flavor_usa_raider = {
+                    country_event = {
+                        id = flavor_usa.90
+                        days = 7
+                
+                    }
+                }
+            }
+        }
+        add_legitimacy = 10
+        add_power_projection = {
+            type = insulted_rival
+            amount = 10
+        }
+        add_prestige = 10
+        
+    }
+}
+
+country_event = {
+    id = flavor_usa.60
+    title = flavor_usa.60.t
+    desc = flavor_usa.60.desc
+    picture = GFX_event_village_burning
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.60.a
+        add_treasury = 200
+        add_prestige = 10
+    }
+}
+
+country_event = {
+    id = flavor_usa.70
+    title = flavor_usa.70.t
+    desc = flavor_usa.70.desc
+    picture = GFX_event_village_burning
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.70.a
+        add_country_modifier = {
+            name = raid_punished
+                duration = 9125
+            }
+        add_prestige = -10
+    }
+
+    option = {
+        name = flavor_usa.70.b
+        every_neighbor_country  = {
+            limit = {
+                has_country_flag = dixie_raided_recently_tag
+            }
+            declare_war_with_cb = {
+                casus_belli = cb_humiliate
+                who = root
+            }
+        }
+    }
+}
+
+country_event = {
+    id = flavor_usa.80
+    title = flavor_usa.80.t
+    desc = flavor_usa.80.desc
+    picture = GFX_event_village_burning
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.80.a
+        kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+        add_legitimacy = -10
+    }
+
+    option = {
+        name = flavor_usa.80.b
+        every_neighbor_country  = {
+            limit = {
+                has_country_flag = dixie_raided_recently_tag
+            }
+            declare_war_with_cb = {
+                casus_belli = cb_humiliate
+                who = root
+            }
+        }       
+    }
+}
+
+country_event = {
+    id = flavor_usa.90
+    title = flavor_usa.90.t
+    desc = flavor_usa.90.desc
+    picture = GFX_event_village_burning
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.90.a
+        kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+        add_legitimacy = -25
+        add_country_modifier = {
+            name = raid_punished
+                duration = 1825
+            }
+        add_prestige = -20
+    }
+
+    option = {
+        name = flavor_usa.90.b
+        every_neighbor_country  = {
+            limit = {
+                has_country_flag = dixie_raided_recently_tag
+            }
+            declare_war_with_cb = {
+                casus_belli = cb_humiliate
+                who = root
+            }
+        }
+    }
+}
+
+country_event = {
+    id = flavor_usa.1865
+    title = flavor_usa.1865.t
+    desc = flavor_usa.1865.desc
+    picture = GFX_event_village_burning
+
+    is_triggered_only = yes
+
+    option = {
+        name = flavor_usa.1865.a
+        trigger = {
+            not = { has_country_modifier = dixie_embargoed }
+            treasury = 250
+        }
+        country_event = {
+            id = flavor_usa.311
+        }
+    }
+
+    option = {
+        name = flavor_usa.1865.b
+        trigger = {
+            not = { has_country_modifier = dixie_corruption }
+            treasury = 500
+        }
+        country_event = {
+            id = flavor_usa.301
+        }
+    }
+}
+
+country_event = {
+    id = flavor_usa.001
+    title = flavor_usa.001.t
+    desc = flavor_usa.001.desc
+
+    trigger = {
+        is_date = 1444.11.11
+    }
+
+    option = {
+        name = flavor_usa.001.a
+        trigger = {
+            or = {
+                has_country_flag = newsouth
+                has_country_flag = oldsouth
+                has_reform = tanistry_reform                
+            }
+
+        }
+        
+    }
+
+    option = {
+        name = flavor_usa.001.b
+        trigger = {
+            not = {
+                has_country_flag = newsouth
+                has_country_flag = oldsouth
+                has_reform = tanistry_reform
+            }
+        }
+
+    }
+}

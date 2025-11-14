@@ -6,6 +6,9 @@ monarchy = {
 				feudalism_reform
 				autocracy_reform
 				elective_monarchy_reform
+				###ADH###
+				dixie_autocracy_reform
+				
 				plutocratic_reform
 				indian_sultanate_reform
 				nayankara_reform
@@ -129,6 +132,7 @@ monarchy = {
 				austrian_absolute_monarchy
 				merchant_aristocracy_reform
 				gothic_monarchy_reform
+
 
 			}
 		}
@@ -635,6 +639,9 @@ republic = {
 				veche_republic
 				great_veche_republic
 				american_republic
+				###ADH###
+				dixie_republic
+
 				federal_republic
 				american_government
 				colonial_government

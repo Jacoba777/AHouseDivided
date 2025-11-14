@@ -72,6 +72,50 @@ elective_monarchy_reform = {
 	}
 }
 
+###ADH###
+dixie_autocracy_reform = {
+	icon = "ballot_box"
+	potential = {
+		has_dlc = "Domination"
+		or = {
+			culture_group = culture_group_texas_triangle
+			culture_group = culture_group_appalachian
+			culture_group = culture_group_tidewater
+			culture_group = culture_group_atlantic_south
+			culture_group = culture_group_upper_piedmontese
+			culture_group = culture_group_lower_piedmontese
+			culture_group = culture_group_cajun
+			culture_group = culture_group_eastern_deep_south
+			culture_group = culture_group_western_deep_south
+			culture_group = culture_group_gulf_coast
+		}
+	}
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		max_absolutism = 20
+		all_estate_influence_modifier = 0.1
+		yearly_absolutism = 0.5
+		liberty_desire = 15
+	}
+	conditional = {
+		allow = {
+			has_dlc = "The Cossacks"
+		}
+		custom_attributes = {
+			enables_estate_cossacks = yes
+		}
+	}
+	custom_attributes = {
+		has_ruler_election = yes
+		civil_war_on_every_new_ruler = yes
+	}
+	ai = {
+		factor = 0.5
+	}
+}
+
 plutocratic_reform = {
 	icon = "asian_scripture"
 	allow_normal_conversion = yes
@@ -1177,7 +1221,10 @@ tanistry_reform = {
 	icon = "tanistry"
 	allow_normal_conversion = yes
 	potential = {
-		primary_culture = irish
+		or = {
+			culture_group = culture_group_appalachian
+			culture_group = culture_group_allegheny
+		}
 	}
 	nation_designer_trigger = {
 		primary_culture = irish
@@ -1194,6 +1241,39 @@ tanistry_reform = {
 		custom_attributes = {
 			has_ruler_election = yes
 			can_elect_from_relative = yes
+			allow_banners = yes
+			can_recruit_banners_from_primary_culture_provinces = yes
+		}
+	}
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_dlc = "Mandate of Heaven" }
+				capital_scope = {
+					add_province_modifier = {
+						name = allow_banners_capital_modifier
+						duration = -1
+						hidden = yes
+					}
+				}
+				every_owned_province = {
+					limit = { culture = root }
+					add_province_modifier = {
+						name = mongol_banners_location
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			capital_scope = { remove_province_modifier = allow_banners_capital_modifier }
+			every_owned_province = {
+				limit = { has_province_modifier = mongol_banners_location }
+				remove_province_modifier = mongol_banners_location
+			}
 		}
 	}
 	ai = {
@@ -1213,7 +1293,10 @@ irish_highkingdom_reform = {
 		}
 	}
 	trigger = {
-		primary_culture = irish
+		or = {
+			culture_group = culture_group_appalachian
+			culture_group = culture_group_allegheny
+		}
 	}
 	nation_designer_trigger = {
 		primary_culture = irish
@@ -1240,6 +1323,39 @@ irish_highkingdom_reform = {
 		custom_attributes = {
 			has_ruler_election = yes
 			can_elect_from_relative = yes
+			allow_banners = yes
+			can_recruit_banners_from_primary_culture_provinces = yes
+		}
+	}
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { has_dlc = "Mandate of Heaven" }
+				capital_scope = {
+					add_province_modifier = {
+						name = allow_banners_capital_modifier
+						duration = -1
+						hidden = yes
+					}
+				}
+				every_owned_province = {
+					limit = { culture = root }
+					add_province_modifier = {
+						name = mongol_banners_location
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			capital_scope = { remove_province_modifier = allow_banners_capital_modifier }
+			every_owned_province = {
+				limit = { has_province_modifier = mongol_banners_location }
+				remove_province_modifier = mongol_banners_location
+			}
 		}
 	}
 	ai = {
@@ -2219,7 +2335,7 @@ prussian_monarchy = {
 		NOT = { has_reform = prussian_monarchy_base }
 		OR = {
 			AND = {
-				tag = PRU
+				tag = DIX
 				OR = {
 					has_mission = emp_brapru_army_reforms_2
 					has_mission = emp_brapru_army_reforms_3
@@ -2235,7 +2351,7 @@ prussian_monarchy = {
 		OR = {
 			religion = protestant
 			religion = reformed
-			religion = hussite
+			religion = baptist
 			religion = anglican
 			has_unlocked_government_reform = { government_reform = prussian_monarchy }
 		}
@@ -2270,6 +2386,9 @@ prussian_monarchy = {
 			prussian_militarization_mechanic_3
 		}
 	}
+	custom_attributes = {
+		has_ruler_election = yes
+	}
 }
 
 prussian_monarchy_base = {
@@ -2285,11 +2404,11 @@ prussian_monarchy_base = {
 		}
 		OR = {
 			AND = {
-				tag = PRU
+				tag = DPS
 				NOT = { map_setup = map_setup_random }
 			}
 			AND = {
-				tag = GER
+				tag = DIX
 				NOT = { map_setup = map_setup_random }
 				OR = {
 					has_reform = prussian_monarchy_base
@@ -2299,7 +2418,7 @@ prussian_monarchy_base = {
 					is_hegemon_of_type = military_hegemon
 					development_in_provinces = {
 						value = 500
-						culture = prussian
+						culture_group = culture_group_eastern_deep_south
 					}
 				}
 			}
@@ -2320,7 +2439,7 @@ prussian_monarchy_base = {
 		OR = {
 			religion = protestant
 			religion = reformed
-			religion = hussite
+			religion = baptist
 			religion = anglican
 			AND = {
 				is_playing_custom_nation = yes

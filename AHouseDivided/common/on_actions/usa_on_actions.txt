@@ -1,0 +1,67 @@
+##no step on dixie snek
+on_province_owner_change = {
+    effect = {
+        if = {
+            limit = {
+				root ={
+					OR = {
+	                    culture_group = culture_group_atlantic_south
+    	                culture_group = culture_group_upper_piedmontese
+        	            culture_group = culture_group_eastern_deep_south
+            	        culture_group = culture_group_lower_piedmontese
+    	                culture_group = culture_group_western_deep_south
+        	            culture_group = culture_group_gulf_coast
+            	        culture_group = culture_group_floridian
+              		    culture_group = culture_group_cajun
+						culture_group = culture_group_tidewater
+						culture_group = culture_group_appalachian
+            	    }
+				}
+                # Province has Old South culture
+                
+                # New owner does NOT belong to southern culture
+                THIS = {
+					or = {
+						NOT = {
+	        	            primary_culture = {
+	    	                    OR = {
+    	    	                    culture_group = culture_group_atlantic_south
+	    	                        culture_group = culture_group_upper_piedmontese
+    	    	                    culture_group = culture_group_eastern_deep_south
+	        	                    culture_group = culture_group_lower_piedmontese
+    	        	                culture_group = culture_group_western_deep_south
+        	        		        culture_group = culture_group_gulf_coast
+            	            	    culture_group = culture_group_floridian
+                	        	    culture_group = culture_group_cajun
+									culture_group = culture_group_tidewater
+									culture_group = culture_group_appalachian
+	        	                }
+    		       	        }
+           		 	    }
+						tag = HTN
+						tag = ATL
+						tag = NSH
+						tag = RCH
+						tag = RAL
+						tag = MII
+						tag = CLT
+						tag = NWO
+					}
+				}
+            }
+        # Effects
+        }
+	    set_province_flag = old_south_lands
+    	this = {
+			set_country_flag = carpetbagger_flag
+		}
+    }
+}
+
+on_startup = {
+    events = { native_flags.1 }
+}
+
+on_new_country = {
+    events = { native_flags.1 }
+}

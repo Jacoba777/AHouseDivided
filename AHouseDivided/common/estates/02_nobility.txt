@@ -344,6 +344,9 @@ estate_nobles = {
 		estate_nobles_mam_increase_army_tradition 
 		estate_nobles_mam_increase_army_professionalism 
 		estate_nobles_mam_focus_on_military_matters
+		#ADH
+		estate_nobles_dixie_conquest
+		estate_nobles_vassalise_dixie
 	}
 	
 	influence_from_dev_modifier = 1.0
