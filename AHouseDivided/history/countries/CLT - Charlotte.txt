@@ -1,6 +1,7 @@
 technology_group = appalachia
 government = republic
-add_government_reform = american_republic
+add_government_reform = civic_republicanism_government
+set_country_flag = newsouth
 government_rank = 1
 religion = baptist
 primary_culture = culture_charlottean
