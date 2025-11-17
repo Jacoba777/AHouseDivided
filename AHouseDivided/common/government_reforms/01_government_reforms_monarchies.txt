@@ -109,7 +109,6 @@ dixie_autocracy_reform = {
 	}
 	custom_attributes = {
 		has_ruler_election = yes
-		civil_war_on_every_new_ruler = yes
 	}
 	ai = {
 		factor = 0.5

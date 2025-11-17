@@ -65,3 +65,11 @@ on_startup = {
 on_new_country = {
     events = { native_flags.1 }
 }
+
+on_new_monarch = {
+	events = { flavor_usa.3 }
+}
+
+on_new_term_election = {
+	events = { flavor_usa.3 }
+}

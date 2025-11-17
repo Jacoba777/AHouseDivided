@@ -1352,7 +1352,6 @@ dixie_republic = {
 		has_parliament = yes
 		custom_attributes = {
 			enables_estate_cossacks = yes
-			civil_war_on_every_new_ruler = yes
 		}
 	}
 	conditional = {

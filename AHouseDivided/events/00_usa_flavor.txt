@@ -81,6 +81,71 @@ country_event = {
 	}
 }
 
+# Old South: New dixie ruler must submit to nobles
+country_event = {
+	id = flavor_usa.3
+	title = flavor_usa.3.title
+	desc = flavor_usa.3.desc
+	picture = CIVIL_WAR_eventPicture
+	goto = rebel_province
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_reform = dixie_republic
+			has_reform = dixie_autocracy_reform
+		}
+		num_of_owned_provinces_with = {
+			value = 2
+			is_core = ROOT
+		}
+		crown_land_share = 5
+	}
+
+	option = {
+		name = flavor_usa.3.a
+		
+		add_years_of_income = -0.5
+		add_yearly_manpower = -1.5
+		kill_leader = { type = general }
+		
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = flavor_usa.3.b
+		
+		hidden_effect = {
+			set_saved_name = {
+				key = upstart_pretender
+				type = leader
+			}
+		}
+		
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = 	pretender_rebels
+				leader = upstart_pretender
+				religion = ROOT
+				size = 2
+				win = yes
+			}
+			add_local_autonomy = 25
+
+			hidden_effect = { save_event_target_as = rebel_province }
+		}
+		
+		ai_chance = { factor = 1 }
+	}
+}
+
 
 ##New/Old South Rivalry
 
