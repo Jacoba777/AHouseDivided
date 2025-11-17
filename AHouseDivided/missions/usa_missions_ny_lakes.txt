@@ -16,45 +16,46 @@ missions_ny_lakes_slot1 = {
 		}
 	}
 
-	mission_ny_lakes_the_rochester_question = {
-		icon = mission_luther_theses
-		position = 2
+	mission_ny_lakes_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
 		required_missions = {  }
 		trigger = {
-			OR = {
-				is_rival = RCR
-				AND = {
-					exists = RCR
-					military_strength = {
-						who = RCR
-						value = 2.0
-					}
-				}
-				power_projection = 80
-				tag = RCR
-			}
-			OR = {
-				RCR = {
-					has_opinion_modifier = {
-						who = ROOT
-						modifier = scornfully_insulted
-					}
-				}
-				RCR = {
-					has_opinion_modifier = {
-						who = ROOT
-						modifier = insulted
-					}
-				}
-				NOT = { exists = RCR }
-				tag = RCR
-			}
+            army_size_percentage = 1
  		}
 		effect = {
-			area_ny_rochester = { add_permanent_claim = ROOT }
-			area_ny_finger_lakes = { add_permanent_claim = ROOT }
+            capital_scope = {
+                area = {
+                    limit = { NOT = { owned_by = ROOT } }
+                    add_permanent_claim = ROOT
+                }
+            }
 		}
 
+	}
+
+	mission_ny_lakes_consolidating_our_realm = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ny_lakes_fielding_an_army }
+		trigger = {
+            NOT = { num_of_subjects = 1 }
+            num_of_owned_provinces_with = {
+                value = 4
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+			add_stability = 1
+
+		}
+		provinces_to_highlight = {
+			OR = {
+
+
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 	}
 
 	mission_ny_lakes_annex_the_hudson_valley = {
@@ -108,7 +109,7 @@ missions_ny_lakes_slot1 = {
 				area = area_ny_lower_hudson_valley
 				province_id = 755
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -243,7 +244,7 @@ missions_ny_lakes_slot2 = {
 				area = area_ny_finger_lakes
 				area = area_ny_rochester
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -291,7 +292,7 @@ missions_ny_lakes_slot2 = {
 				area = area_ny_eastern
 				area = area_ny_hudson_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -314,46 +315,45 @@ missions_ny_lakes_slot3 = {
 		}
 	}
 
-	mission_ny_lakes_fielding_an_army = {
-		icon = mission_build_up_to_force_limit
-		position = 1
+	mission_ny_lakes_the_rochester_question = {
+		icon = mission_luther_theses
+		position = 2
 		required_missions = {  }
 		trigger = {
-            army_size_percentage = 1
- 		}
-		effect = {
-            capital_scope = {
-                area = {
-                    limit = { NOT = { owned_by = ROOT } }
-                    add_permanent_claim = ROOT
-                }
-            }
-		}
-
-	}
-
-	mission_ny_lakes_consolidating_our_realm = {
-		icon = mission_unite_home_region
-		position = 2
-		required_missions = { mission_ny_lakes_fielding_an_army }
-		trigger = {
-            NOT = { num_of_subjects = 1 }
-            num_of_owned_provinces_with = {
-                value = 4
-                owned_by = ROOT
-            }
- 		}
-		effect = {
-			add_stability = 1
-
-		}
-		provinces_to_highlight = {
 			OR = {
-
-
+				is_rival = RCR
+				AND = {
+					exists = RCR
+					military_strength = {
+						who = RCR
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = RCR
 			}
-			NOT = { owned_by = ROOT }
+			OR = {
+				RCR = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				RCR = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = RCR }
+				tag = RCR
+			}
+ 		}
+		effect = {
+			area_ny_rochester = { add_permanent_claim = ROOT }
+			area_ny_finger_lakes = { add_permanent_claim = ROOT }
 		}
+
 	}
 
 	mission_ny_lakes_incorporate_the_east = {
@@ -404,7 +404,7 @@ missions_ny_lakes_slot3 = {
 			OR = {
 				area = area_ny_albany
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

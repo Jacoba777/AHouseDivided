@@ -36,7 +36,7 @@ missions_va_nova_slot1 = {
 				area = area_va_southeastern
 				area = area_va_virginia_beach
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -101,7 +101,7 @@ missions_va_nova_slot2 = {
 			OR = {
 
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -158,7 +158,7 @@ missions_va_nova_slot2 = {
 				area = area_va_arlington
 				area = area_va_northern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -234,7 +234,7 @@ missions_va_nova_slot2 = {
 				area = area_va_northern_neck
 				area = area_va_middle_peninsula
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -255,7 +255,7 @@ missions_va_nova_slot2 = {
 				area = area_va_richmond
 				area = area_va_south_richmond
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -338,7 +338,7 @@ missions_va_nova_slot3 = {
 				area = area_va_louisa
 				area = area_va_charlottesville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -391,7 +391,7 @@ missions_va_nova_slot3 = {
 				area = area_va_lynchburg
 				area = area_va_roanoke
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -429,7 +429,7 @@ missions_va_nova_slot3 = {
 				area = area_va_goochland
 				area = area_va_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

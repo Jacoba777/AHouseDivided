@@ -55,7 +55,7 @@ missions_ny_hudson_slot1 = {
 			OR = {
 				area = area_ny_albany
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -185,7 +185,7 @@ missions_ny_hudson_slot2 = {
 				area = area_ny_lower_hudson_valley
 				area = area_ny_hudson_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -258,7 +258,7 @@ missions_ny_hudson_slot2 = {
 				area = area_ny_eastern
 				area = area_ny_southern_tier
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -354,7 +354,7 @@ missions_ny_hudson_slot3 = {
 				area = area_ny_ithaca
 				area = area_ny_syracuse
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -405,7 +405,7 @@ missions_ny_hudson_slot3 = {
 			OR = {
 				area = area_ny_finger_lakes
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -440,7 +440,7 @@ missions_ny_hudson_slot3 = {
 				area = area_ny_rochester
 				province_id = 709
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

@@ -95,7 +95,7 @@ missions_nj_north_slot3 = {
 			OR = {
 				area = area_nj_north_jersey
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -168,7 +168,7 @@ missions_nj_north_slot3 = {
 			OR = {
 				area = area_nj_central_jersey
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -193,7 +193,7 @@ missions_nj_north_slot3 = {
 				province_id = 295
 				province_id = 296
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

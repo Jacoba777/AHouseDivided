@@ -1,0 +1,138 @@
+missions_ia_des_moines_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = DMN }
+
+	mission_ia_des_moines_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			area_ia_cedar_rapids = { add_permanent_claim = ROOT }
+			area_ia_central = { add_permanent_claim = ROOT }
+			area_ia_iowa_city = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ia_des_moines_comandeer_the_corridor = {
+		icon = mission_unite_home_region
+		position = 2
+		required_missions = { mission_ia_des_moines_fielding_an_army }
+		trigger = {
+			area_ia_cedar_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_iowa_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_cedar_rapids
+				area = area_ia_central
+				area = area_ia_iowa_city
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_ia_des_moines_a_respectable_state = {
+		icon = mission_dmn
+		position = 3
+		required_missions = { mission_ia_des_moines_comandeer_the_corridor }
+		trigger = {
+			area_ia_cedar_rapids = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ia_central = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_ia_iowa_city = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_adm_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_cedar_rapids
+				area = area_ia_central
+				area = area_ia_iowa_city
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_ia_des_moines_embrace_corridor_iowan = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_ia_des_moines_a_respectable_state }
+		trigger = {
+			accepted_culture = culture_corridor_iowan
+ 		}
+		effect = {
+			area_ia_davenport = { add_permanent_claim = ROOT }
+			area_ia_southeast = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ia_des_moines_to_the_mississippi = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_ia_des_moines_embrace_corridor_iowan }
+		trigger = {
+			area_ia_davenport = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_southeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_davenport
+				area = area_ia_southeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

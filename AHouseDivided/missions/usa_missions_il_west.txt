@@ -5,11 +5,11 @@ missions_il_west_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = PEA
+			tag = SPF
 			tag = QCY
 			tag = GBG
 			tag = MCB
-			tag = PEA
-			tag = SPF
 		}
 	}
 
@@ -87,11 +87,11 @@ missions_il_west_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = PEA
+			tag = SPF
 			tag = QCY
 			tag = GBG
 			tag = MCB
-			tag = PEA
-			tag = SPF
 		}
 	}
 
@@ -319,11 +319,11 @@ missions_il_west_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = PEA
+			tag = SPF
 			tag = QCY
 			tag = GBG
 			tag = MCB
-			tag = PEA
-			tag = SPF
 		}
 	}
 

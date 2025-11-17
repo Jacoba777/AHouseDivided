@@ -170,7 +170,7 @@ missions_tn_slot2 = {
 				area = area_ky_southern
 				area = area_ky_bowling_green
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -230,7 +230,7 @@ missions_tn_slot2 = {
 				area = area_ky_western
 				area = area_ky_owensboro
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -294,7 +294,7 @@ missions_tn_slot2 = {
 				area = area_il_carbondale
 				area = area_il_south_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -319,7 +319,7 @@ missions_tn_slot2 = {
 				area = area_mo_cape_girardeau
 				area = area_mo_bootheel
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -371,7 +371,7 @@ missions_tn_slot2 = {
 				province_id = 1743
 				province_id = 1759
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -441,7 +441,7 @@ missions_tn_slot3 = {
 				area = area_ky_central
 				area = area_ky_danville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -479,7 +479,7 @@ missions_tn_slot3 = {
 				area = area_ky_west_louisvillle
 				area = area_in_north_louisville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -554,7 +554,7 @@ missions_tn_slot3 = {
 				area = area_ga_north_atlanta
 				area = area_ga_west_atlanta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -666,7 +666,7 @@ missions_tn_slot4 = {
 			OR = {
 				region = region_tn
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -741,7 +741,7 @@ missions_tn_slot4 = {
 				area = area_ms_northeast
 				area = area_ms_tupelo
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -762,7 +762,7 @@ missions_tn_slot4 = {
 				area = area_al_northwest
 				area = area_al_huntsville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -819,7 +819,7 @@ missions_tn_slot4 = {
 				area = area_ga_northwest
 				area = area_ga_dalton
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -868,7 +868,7 @@ missions_tn_slot4 = {
 				area = area_ga_northeast
 				area = area_sc_greenville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -879,12 +879,12 @@ missions_tn_slot4 = {
 		trigger = {
             calc_true_if = {
                 amount = 2
-                accept_culture = culture_bluegrass
-                accept_culture = culture_bowling_green
-                accept_culture = culture_cumberland
-                accept_culture = culture_louisvillian
-                accept_culture = culture_pennyroyal
-                accept_culture = culture_purchase
+                accepted_culture = culture_bluegrass
+                accepted_culture = culture_bowling_green
+                accepted_culture = culture_cumberland
+                accepted_culture = culture_louisvillian
+                accepted_culture = culture_pennyroyal
+                accepted_culture = culture_purchase
             }
  		}
 		effect = {
@@ -914,7 +914,7 @@ missions_tn_slot4 = {
 			OR = {
 				region = region_ky
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -962,7 +962,7 @@ missions_tn_slot5 = {
 				area = area_nc_cullowhee
 				area = area_nc_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1022,7 +1022,7 @@ missions_tn_slot5 = {
 				area = area_nc_hickory
 				area = area_nc_northwestern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1045,7 +1045,7 @@ missions_tn_slot5 = {
 				area = area_va_bristol
 				area = area_va_blue_ridge
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1094,7 +1094,7 @@ missions_tn_slot5 = {
 				area = area_ky_southeastern
 				area = area_ky_eastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1117,7 +1117,7 @@ missions_tn_slot5 = {
 				area = area_wv_south_charleston
 				area = area_wv_charleston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

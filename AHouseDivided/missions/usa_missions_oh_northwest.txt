@@ -5,8 +5,8 @@ missions_oh_northwest_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = SDK
 			tag = TLD
+			tag = SDK
 			tag = FDY
 		}
 	}
@@ -168,8 +168,8 @@ missions_oh_northwest_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = SDK
 			tag = TLD
+			tag = SDK
 			tag = FDY
 		}
 	}

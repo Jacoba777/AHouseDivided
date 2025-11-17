@@ -42,7 +42,7 @@ missions_ms_slot1 = {
 				area = area_tn_north_memphis
 				area = area_ar_forest_city
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -112,7 +112,7 @@ missions_ms_slot1 = {
 				area = area_ar_pine_bluff
 				area = area_ar_little_rock
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -299,7 +299,7 @@ missions_ms_slot2 = {
 			OR = {
 				region = region_ar
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -333,7 +333,7 @@ missions_ms_slot3 = {
 			OR = {
 				AND = { region = region_ms is_city = yes }
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -397,7 +397,7 @@ missions_ms_slot3 = {
 				area = area_al_tuscaloosa
 				area = area_al_west_central
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -422,7 +422,7 @@ missions_ms_slot3 = {
 				area = area_al_south
 				area = area_al_montgomery
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -474,7 +474,7 @@ missions_ms_slot3 = {
 			OR = {
 				region = region_al
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -582,7 +582,7 @@ missions_ms_slot4 = {
 				area = area_al_mobile
 				area = area_fl_emerald_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -688,7 +688,7 @@ missions_ms_slot4 = {
 				area = area_fl_tallahassee
 				area = area_fl_forgotten_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -737,7 +737,7 @@ missions_ms_slot4 = {
 				area = area_la_southeast_acadia
 				area = area_la_lafayette
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -760,7 +760,7 @@ missions_ms_slot4 = {
 			OR = {
 				region = region_la
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -793,7 +793,7 @@ missions_ms_slot5 = {
 				area = area_la_west_florida_parishes
 				area = area_la_baton_rouge
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

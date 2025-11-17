@@ -12,22 +12,38 @@ missions_pa_wyoming_slot1 = {
 		}
 	}
 
-	mission_pa_wyoming_susquehanna_campaign = {
-		icon = mission_unite_home_region
+	mission_pa_wyoming_coal_fields_workshops = {
+		icon = the_london_steelyard
 		position = 6
 		required_missions = { mission_pa_wyoming_unite_the_valley }
 		trigger = {
-			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+            num_of_owned_provinces_with = {
+                value = 5
+                OR = {
+                    area = area_pa_scranton
+                    area = area_pa_northeast
+                    area = area_pa_stroudsburg
+                    area = area_pa_allentown
+                }
+                has_building = workshop
+                owned_by = ROOT
+            }
  		}
 		effect = {
-			add_mil_power = 100
-			area_pa_east_dutch = { add_permanent_claim = ROOT }
+            262 = { change_trade_goods = coal }
+            278 = { change_trade_goods = coal }
 		}
 		provinces_to_highlight = {
-			OR = {
-				area = area_pa_susquehanna_valley
-			}
-			NOT = { owned_by = ROOT }
+            OR = {
+                area = area_pa_scranton
+                area = area_pa_northeast
+                area = area_pa_stroudsburg
+                area = area_pa_allentown
+            }
+            NOT = {
+                has_building = workshop
+                owned_by = ROOT
+            }
 		}
 	}
 
@@ -153,7 +169,7 @@ missions_pa_wyoming_slot2 = {
 			OR = {
 				area = area_pa_scranton
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -177,42 +193,26 @@ missions_pa_wyoming_slot2 = {
 				area = area_pa_stroudsburg
 				area = area_pa_allentown
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
-	mission_pa_wyoming_coal_fields_workshops = {
-		icon = the_london_steelyard
+	mission_pa_wyoming_susquehanna_campaign = {
+		icon = mission_unite_home_region
 		position = 6
 		required_missions = { mission_pa_wyoming_unite_the_valley }
 		trigger = {
-            num_of_owned_provinces_with = {
-                value = 5
-                OR = {
-                    area = area_pa_scranton
-                    area = area_pa_northeast
-                    area = area_pa_stroudsburg
-                    area = area_pa_allentown
-                }
-                has_building = workshop
-                owned_by = ROOT
-            }
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-            262 = { change_trade_goods = coal }
-            278 = { change_trade_goods = coal }
+			add_mil_power = 100
+			area_pa_east_dutch = { add_permanent_claim = ROOT }
 		}
 		provinces_to_highlight = {
-            OR = {
-                area = area_pa_scranton
-                area = area_pa_northeast
-                area = area_pa_stroudsburg
-                area = area_pa_allentown
-            }
-            NOT = {
-                has_building = workshop
-                owned_by = ROOT
-            }
+			OR = {
+				area = area_pa_susquehanna_valley
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -233,7 +233,7 @@ missions_pa_wyoming_slot2 = {
 			OR = {
 				area = area_pa_east_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -323,7 +323,7 @@ missions_pa_wyoming_slot3 = {
 			OR = {
 				area = area_pa_philly
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -375,7 +375,7 @@ missions_pa_wyoming_slot3 = {
 				area = area_pa_north_dutch
 				area = area_pa_south_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -393,7 +393,7 @@ missions_pa_wyoming_slot3 = {
 			OR = {
 				area = area_pa_allegheny_mts
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -412,7 +412,7 @@ missions_pa_wyoming_slot3 = {
 			OR = {
 				area = area_pa_pittsburgh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 

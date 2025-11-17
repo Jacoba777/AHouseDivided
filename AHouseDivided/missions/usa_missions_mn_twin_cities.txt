@@ -1,0 +1,313 @@
+missions_mn_twin_cities_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = MNP
+			tag = STP
+		}
+	}
+
+	mission_mn_twin_cities_looking_south = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_mn_twin_cities_unite_the_twin_cities }
+		trigger = {
+			area_mn_faribault = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mn_south_minneapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_faribault
+				area = area_mn_south_minneapolis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_twin_cities_consolidating_the_south = {
+		icon = mission_alliances
+		position = 4
+		required_missions = { mission_mn_twin_cities_looking_south }
+		trigger = {
+			area_mn_faribault = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_mn_south_minneapolis = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_mn_albert_lea = { add_permanent_claim = ROOT }
+			area_mn_southeast = { add_permanent_claim = ROOT }
+			area_mn_mankato = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_faribault
+				area = area_mn_south_minneapolis
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mn_twin_cities_into_the_blufflands = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mn_twin_cities_consolidating_the_south }
+		trigger = {
+			area_mn_southeast = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mn_mankato = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			add_mil_power = 50
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_southeast
+				area = area_mn_mankato
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_mn_twin_cities_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = MNP
+			tag = STP
+		}
+	}
+
+	mission_mn_twin_cities_a_twin_city_rivalry = {
+		icon = mission_luther_theses
+		position = 1
+		required_missions = {  }
+		trigger = {
+			OR = {
+				is_rival = STP
+				AND = {
+					exists = STP
+					military_strength = {
+						who = STP
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = STP
+			}
+			OR = {
+				STP = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				STP = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = STP }
+				tag = STP
+			}
+			OR = {
+				is_rival = MNP
+				AND = {
+					exists = MNP
+					military_strength = {
+						who = MNP
+						value = 2.0
+					}
+				}
+				power_projection = 80
+				tag = MNP
+			}
+			OR = {
+				MNP = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted
+					}
+				}
+				MNP = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = insulted
+					}
+				}
+				NOT = { exists = MNP }
+				tag = MNP
+			}
+ 		}
+		effect = {
+			area_mn_st_paul = { add_core = ROOT }
+			area_mn_minneapolis = { add_core = ROOT }
+		}
+
+	}
+
+	mission_mn_twin_cities_unite_the_twin_cities = {
+		icon = mission_mnp
+		position = 2
+		required_missions = { mission_mn_twin_cities_a_twin_city_rivalry }
+		trigger = {
+			area_mn_st_paul = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mn_minneapolis = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 10 }
+			change_government_reform_progress = 25
+
+			area_mn_north_minneapolis = { add_permanent_claim = ROOT }
+			area_mn_eastern = { add_permanent_claim = ROOT }
+			area_mn_north_central = { add_permanent_claim = ROOT }
+			area_mn_faribault = { add_permanent_claim = ROOT }
+			area_mn_south_minneapolis = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_st_paul
+				area = area_mn_minneapolis
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_mn_twin_cities_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = MNP
+			tag = STP
+		}
+	}
+
+	mission_mn_twin_cities_turning_north = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_mn_twin_cities_unite_the_twin_cities }
+		trigger = {
+			area_mn_north_minneapolis = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_mn_eastern = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mn_north_minneapolis
+				area = area_mn_eastern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mn_twin_cities_iron_range_inroads = {
+		icon = mission_diplomatic_relation
+		position = 4
+		required_missions = { mission_mn_twin_cities_turning_north }
+		trigger = {
+			accepted_culture = culture_iron_range
+ 		}
+		effect = {
+			2456 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			DTH = { every_owned_province = { add_permanent_claim = ROOT }  }
+		}
+
+	}
+
+	mission_mn_twin_cities_the_zenith_city = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mn_twin_cities_iron_range_inroads }
+		trigger = {
+			2435 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2435
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

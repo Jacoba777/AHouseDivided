@@ -74,7 +74,7 @@ missions_al_south_slot3 = {
 				province_id = 1589
 				area = area_al_southeast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -218,7 +218,7 @@ missions_al_south_slot3 = {
 				area = area_al_east_central
 				area = area_al_montgomery
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -328,7 +328,7 @@ missions_al_south_slot3 = {
 				area = area_al_northwest
 				area = area_al_huntsville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

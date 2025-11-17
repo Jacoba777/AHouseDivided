@@ -1290,7 +1290,7 @@ country_decisions = {
 				province_id = 1698  # Springfield
 				province_id = 1655  # Jefferson City
 				province_id = 1591  # St Louis
-				province_id = 1722  # Kansas City
+				province_id = 1649  # Kansas City
 			}
 		}
 		allow = {
@@ -1299,7 +1299,7 @@ country_decisions = {
 			owns_core_province = 1655  # Jefferson City
 			OR = {
 				owns_core_province = 1591  # St Louis
-				owns_core_province = 1722  # Kansas City
+				owns_core_province = 1649  # Kansas City
 			}
 			num_of_owned_provinces_with = {
 				region = region_mo

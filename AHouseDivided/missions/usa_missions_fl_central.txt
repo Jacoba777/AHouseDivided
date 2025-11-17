@@ -5,14 +5,14 @@ missions_fl_central_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = RLD
-			tag = PBY
-			tag = TVG
-			tag = DTA
 			tag = WCL
 			tag = LLD
 			tag = TMP
+			tag = RLD
+			tag = PBY
+			tag = TVG
 			tag = CTR
+			tag = DTA
 			tag = OCL
 		}
 	}
@@ -65,7 +65,7 @@ missions_fl_central_slot2 = {
 				province_id = 1919
 				province_id = 1920
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -203,7 +203,7 @@ missions_fl_central_slot2 = {
 				area = area_fl_treasure_coast
 				area = area_fl_gold_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -215,14 +215,14 @@ missions_fl_central_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = RLD
-			tag = PBY
-			tag = TVG
-			tag = DTA
 			tag = WCL
 			tag = LLD
 			tag = TMP
+			tag = RLD
+			tag = PBY
+			tag = TVG
 			tag = CTR
+			tag = DTA
 			tag = OCL
 		}
 	}
@@ -258,7 +258,7 @@ missions_fl_central_slot3 = {
 				area = area_fl_sarasota
 				area = area_fl_southwest
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -292,7 +292,7 @@ missions_fl_central_slot3 = {
 			OR = {
 				area = area_fl_jacksonville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

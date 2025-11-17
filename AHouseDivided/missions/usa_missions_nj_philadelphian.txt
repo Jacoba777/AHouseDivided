@@ -106,7 +106,7 @@ missions_nj_philadelphian_slot3 = {
 				area = area_nj_south_jersey
 				area = area_nj_jersey_shore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -190,7 +190,7 @@ missions_nj_philadelphian_slot3 = {
 				province_id = 292
 				province_id = 293
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -213,7 +213,7 @@ missions_nj_philadelphian_slot3 = {
 				province_id = 291
 				province_id = 286
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

@@ -1,0 +1,837 @@
+missions_mn_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMN }
+
+	mission_mn_embrace_blufflander = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_mn_the_minnesota_reunion }
+		trigger = {
+			accepted_culture = culture_blufflander
+ 		}
+		effect = {
+			area_wi_eastern_saint_paul = { add_permanent_claim = ROOT }
+			area_wi_eau_claire = { add_permanent_claim = ROOT }
+			area_wi_western = { add_permanent_claim = ROOT }
+			area_wi_la_crosse = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_total_driftlessness = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mn_embrace_blufflander }
+		trigger = {
+			area_wi_eastern_saint_paul = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_eau_claire = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_western = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_wi_la_crosse = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			area_wi_baraboo = { add_permanent_claim = ROOT }
+			area_wi_madison = { add_permanent_claim = ROOT }
+			area_wi_southwestern = { add_permanent_claim = ROOT }
+			add_mil_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_eastern_saint_paul
+				area = area_wi_eau_claire
+				area = area_wi_western
+				area = area_wi_la_crosse
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mn_the_siege_of_madison = {
+		icon = mission_mds
+		position = 5
+		required_missions = { mission_mn_total_driftlessness }
+		trigger = {
+			area_wi_baraboo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_madison = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_southwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_baraboo
+				area = area_wi_madison
+				area = area_wi_southwestern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_integrate_madison = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_mn_the_siege_of_madison }
+		trigger = {
+			area_wi_baraboo = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wi_madison = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wi_southwestern = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_baraboo
+				area = area_wi_madison
+				area = area_wi_southwestern
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mn_reinstate_iron_range_mining = {
+		icon = mission_iron_and_copper
+		position = 7
+		required_missions = {  }
+		trigger = {
+            2435 = {
+                base_production = 8
+                has_building = workshop
+            }
+            2440 = {
+                base_production = 8
+                has_building = workshop
+            }
+ 		}
+		effect = {
+			add_years_of_income = 1
+		}
+
+	}
+
+	mission_mn_protect_the_northwoods = {
+		icon = mission_forest
+		position = 8
+		required_missions = { mission_mn_reinstate_iron_range_mining }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 3
+                OR = {
+                    has_terrain = forest
+                    has_terrain = woods
+                }
+                OR = {
+                    region = region_mn
+                    region = region_wi
+                    region = region_mi
+                }
+                fort_level = 1
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_timber_surplus
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_mn_minnesota_diplomacy = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_mn_protect_the_northwoods }
+		trigger = {
+            OR = {
+                diplomatic_reputation = 5
+                num_of_trusted_allies = 3
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_minnesotan_diplomacy
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_mn_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMN }
+
+	mission_mn_retake_our_state = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_mn = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_mn is_city = yes }
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_mn_the_minnesota_reunion = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_mn_retake_our_state }
+		trigger = {
+			region_mn = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_mn is_city = yes }
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_mn_embrace_iron_ranger = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_mn_the_minnesota_reunion }
+		trigger = {
+			accepted_culture = culture_iron_range
+ 		}
+		effect = {
+			area_wi_northwestern = { add_permanent_claim = ROOT }
+			area_wi_northern = { add_permanent_claim = ROOT }
+			area_wi_north_central = { add_permanent_claim = ROOT }
+			area_wi_northeastern = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_prepare_for_milwaukee = {
+		icon = mission_assemble_an_army
+		position = 7
+		required_missions = { mission_mn_stabilize_green_bay mission_mn_integrate_madison }
+		trigger = {
+
+ 		}
+		effect = {
+			region_wi = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_support_family_farms = {
+		icon = mission_ne_agriculture
+		position = 8
+		required_missions = {  }
+		trigger = {
+            num_of_owned_provinces_with = {
+                value = 10
+                OR = {
+                    trade_goods = corn
+                    trade_goods = soybeans
+                }
+                num_of_times_improved_by_owner = 2
+            }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_agricultural_prosperity
+				duration = 9125  # 25 years
+			}
+		}
+
+	}
+
+	mission_mn_mayo_clinic_revitalization = {
+		icon = mission_mayo
+		position = 9
+		required_missions = { mission_mn_support_family_farms }
+		trigger = {
+            2500 = {
+                has_great_project = {
+                    type = mayo_clinic
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+ 		}
+		effect = {
+            2500 = { change_trade_goods = drugs  add_base_production = 5 }
+    
+		}
+
+	}
+
+	mission_mn_bastion_of_progressivism = {
+		icon = mission_progressive
+		position = 10
+		required_missions = { mission_mn_minnesota_diplomacy mission_mn_mayo_clinic_revitalization }
+		trigger = {
+            faction_influence = {
+                faction = faction_progressives
+                influence = 75
+            }
+            OR = {
+                religion = atheist
+                religion = secular
+                full_idea_group = humanist_ideas
+            }
+            OR = {
+                government = republic
+                has_government_mechanic = parliament
+                full_idea_group = humanist_ideas
+            }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 100
+		}
+
+	}
+}
+
+missions_mn_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMN }
+
+	mission_mn_resettle_the_west = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { mission_mn_the_minnesota_reunion }
+		trigger = {
+			region_mn = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ia_northwest = { add_permanent_claim = ROOT }
+			area_ia_spencer = { add_permanent_claim = ROOT }
+			area_ia_northern = { add_permanent_claim = ROOT }
+			area_ia_north_of_waterloo = { add_permanent_claim = ROOT }
+			area_ia_northeast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_mn
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_northwoods_escapades = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_mn_embrace_iron_ranger }
+		trigger = {
+			area_wi_northwestern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_north_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_wi_wausau = { add_permanent_claim = ROOT }
+			area_wi_shawano = { add_permanent_claim = ROOT }
+			area_wi_green_bay = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_northwestern
+				area = area_wi_northern
+				area = area_wi_north_central
+				area = area_wi_northeastern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_secure_north_wisconsin = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = { mission_mn_northwoods_escapades }
+		trigger = {
+			area_wi_wausau = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_shawano = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wi_green_bay = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_wausau
+				area = area_wi_shawano
+				area = area_wi_green_bay
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_stabilize_green_bay = {
+		icon = mission_alliances
+		position = 6
+		required_missions = { mission_mn_secure_north_wisconsin }
+		trigger = {
+			area_wi_wausau = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wi_shawano = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+			area_wi_green_bay = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_mi_houghton = { add_permanent_claim = ROOT }
+			area_mi_marquette = { add_permanent_claim = ROOT }
+			area_mi_escanaba = { add_permanent_claim = ROOT }
+			area_mi_east_superior = { add_permanent_claim = ROOT }
+			add_dip_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_wi_wausau
+				area = area_wi_shawano
+				area = area_wi_green_bay
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_mn_peninsular_escapades = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mn_stabilize_green_bay }
+		trigger = {
+			area_mi_houghton = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_marquette = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_escanaba = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_east_superior = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_houghton
+				area = area_mi_marquette
+				area = area_mi_escanaba
+				area = area_mi_east_superior
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_sweep_wisconsin = {
+		icon = mission_mwk
+		position = 8
+		required_missions = { mission_mn_prepare_for_milwaukee }
+		trigger = {
+			region_wi = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			change_government_reform_progress = 25
+
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_wi
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_accept_milwaukeean = {
+		icon = mission_diplomatic_relation
+		position = 9
+		required_missions = { mission_mn_sweep_wisconsin }
+		trigger = {
+			accepted_culture = culture_milwaukeean
+ 		}
+		effect = {
+			area_il_chicago = { add_permanent_claim = ROOT }
+			area_il_south_chicago = { add_permanent_claim = ROOT }
+			area_in_indiana_chicagoland = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_the_fate_of_windy_city = {
+		icon = mission_ccg
+		position = 10
+		required_missions = { mission_mn_accept_milwaukeean }
+		trigger = {
+			area_il_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_il_south_chicago = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_in_indiana_chicagoland = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_years_of_income = 1
+			add_prestige_or_monarch_power = { amount = 20 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_il_chicago
+				area = area_il_south_chicago
+				area = area_in_indiana_chicagoland
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_the_northern_star = {
+		icon = mission_mn
+		position = 11
+		required_missions = { mission_mn_bastion_of_progressivism mission_mn_the_fate_of_windy_city }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_northern_star
+				duration = -1  # PERMANENT
+			}
+		}
+
+	}
+}
+
+missions_mn_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMN }
+
+	mission_mn_invade_iowa = {
+		icon = mission_ia
+		position = 4
+		required_missions = { mission_mn_resettle_the_west }
+		trigger = {
+			area_ia_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_spencer = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_northern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_north_of_waterloo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_ne_west_sioux_city = { add_permanent_claim = ROOT }
+			area_sd_southeastern = { add_permanent_claim = ROOT }
+			area_sd_sioux_falls = { add_permanent_claim = ROOT }
+			area_sd_lake = { add_permanent_claim = ROOT }
+			area_sd_watertown = { add_permanent_claim = ROOT }
+			area_sd_northeastern = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_northwest
+				area = area_ia_spencer
+				area = area_ia_northern
+				area = area_ia_north_of_waterloo
+				area = area_ia_northeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_a_south_dakota_foothold = {
+		icon = mission_sd
+		position = 5
+		required_missions = { mission_mn_invade_iowa }
+		trigger = {
+			area_ne_west_sioux_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sd_southeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sd_sioux_falls = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sd_lake = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sd_watertown = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sd_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nd_wast_fargo = { add_permanent_claim = ROOT }
+			area_nd_eastern = { add_permanent_claim = ROOT }
+			area_nd_northeast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ne_west_sioux_city
+				area = area_sd_southeastern
+				area = area_sd_sioux_falls
+				area = area_sd_lake
+				area = area_sd_watertown
+				area = area_sd_northeastern
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_and_now_the_north = {
+		icon = mission_nd
+		position = 6
+		required_missions = { mission_mn_a_south_dakota_foothold }
+		trigger = {
+			area_nd_wast_fargo = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nd_eastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nd_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			region_sd = { add_permanent_claim = ROOT }
+			region_nd = { add_permanent_claim = ROOT }
+            continent_midwest = {
+                limit = {
+                    culture_group = culture_group_upper_midwestern
+                    NOT = { owned_by = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nd_wast_fargo
+				area = area_nd_eastern
+				area = area_nd_northeast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_dominate_the_dakotas = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mn_and_now_the_north }
+		trigger = {
+			region_sd = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			region_nd = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_adm_power = 100
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_sd
+				region = region_nd
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_mn_build_a_navy = {
+		icon = mission_establish_high_seas_navy
+		position = 8
+		required_missions = { mission_mn_peninsular_escapades }
+		trigger = {
+            navy_size_percentage = 1
+            has_flagship = yes
+            OR = {
+                num_of_galley = 20
+                num_of_heavy_ship = 10
+            }
+ 		}
+		effect = {
+			area_mi_tip_of_mitten = { add_permanent_claim = ROOT }
+			area_mi_alpena = { add_permanent_claim = ROOT }
+			area_mi_oscoda = { add_permanent_claim = ROOT }
+			area_mi_north_saginaw_bay = { add_permanent_claim = ROOT }
+			area_mi_cadillac = { add_permanent_claim = ROOT }
+			area_mi_traverse = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_mn_cross_into_the_mitten = {
+		icon = mission_mi
+		position = 9
+		required_missions = { mission_mn_build_a_navy }
+		trigger = {
+			area_mi_tip_of_mitten = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_alpena = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_oscoda = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_north_saginaw_bay = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_cadillac = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_mi_traverse = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_adm_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_mi_tip_of_mitten
+				area = area_mi_alpena
+				area = area_mi_oscoda
+				area = area_mi_north_saginaw_bay
+				area = area_mi_cadillac
+				area = area_mi_traverse
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_mn_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XMN }
+
+	mission_mn_unite_the_upper_midwest = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_mn_and_now_the_north }
+		trigger = {
+			2248 = { country_or_non_sovereign_subject_holds = ROOT }
+			2232 = { country_or_non_sovereign_subject_holds = ROOT }
+			2238 = { country_or_non_sovereign_subject_holds = ROOT }
+			2262 = { country_or_non_sovereign_subject_holds = ROOT }
+			1425 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_mil_power = 100
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2248
+				province_id = 2232
+				province_id = 2238
+				province_id = 2262
+				province_id = 1425
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

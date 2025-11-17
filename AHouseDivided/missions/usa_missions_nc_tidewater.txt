@@ -38,7 +38,7 @@ missions_nc_tidewater_slot1 = {
 				area = area_nc_west_research_triangle
 				area = area_nc_raleigh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -80,7 +80,7 @@ missions_nc_tidewater_slot1 = {
 				area = area_nc_winstone
 				area = area_nc_greensboro
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -183,7 +183,7 @@ missions_nc_tidewater_slot2 = {
 				area = area_nc_new_bern
 				area = area_nc_central_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -248,7 +248,7 @@ missions_nc_tidewater_slot2 = {
 				area = area_nc_northeast
 				area = area_nc_elizabeth_city
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -341,7 +341,7 @@ missions_nc_tidewater_slot3 = {
 				area = area_nc_fayetteville
 				area = area_nc_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -397,7 +397,7 @@ missions_nc_tidewater_slot3 = {
 				area = area_nc_north_charlotte
 				area = area_nc_east_charlotte
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -434,7 +434,7 @@ missions_nc_tidewater_slot3 = {
 				area = area_nc_southwestern
 				area = area_nc_hickory
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

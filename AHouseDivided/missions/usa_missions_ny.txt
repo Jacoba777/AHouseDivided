@@ -50,7 +50,7 @@ missions_ny_slot1 = {
 			OR = {
 				region = region_nj
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -111,13 +111,14 @@ missions_ny_slot1 = {
 		}
 	}
 
-	mission_ny_dominate_delmarva = {
-		icon = mission_unite_home_region
+	mission_ny_the_amish_wars = {
+		icon = settle_north_america
 		position = 8
 		required_missions = { mission_ny_the_city_of_brotherly_love }
 		trigger = {
-			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_md_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
 			add_country_modifier = {
@@ -127,25 +128,40 @@ missions_ny_slot1 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				region = region_de
-				area = area_md_northeastern
+				area = area_pa_east_dutch
+				area = area_pa_north_dutch
+				area = area_pa_south_dutch
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
-	mission_ny_prepare_for_maryland = {
-		icon = mission_assemble_an_army
+	mission_ny_taming_the_wilds = {
+		icon = mission_unite_home_region
 		position = 9
-		required_missions = { mission_ny_dominate_delmarva mission_ny_the_amish_wars }
+		required_missions = { mission_ny_the_amish_wars }
 		trigger = {
-
+			area_pa_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_east_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_pa_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			area_md_baltimore = { add_permanent_claim = ROOT }
-			area_md_capital = { add_permanent_claim = ROOT }
-		}
+			add_stability = 1
 
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_pa_northeast
+				area = area_pa_susquehanna_valley
+				area = area_pa_east_wilds
+				area = area_pa_central_wilds
+				area = area_pa_central
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 	}
 
 	mission_ny_the_maryland_campaign = {
@@ -169,7 +185,7 @@ missions_ny_slot1 = {
 				area = area_md_baltimore
 				area = area_md_capital
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -220,7 +236,7 @@ missions_ny_slot2 = {
 				area = area_nj_newark
 				area = area_ct_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -237,14 +253,13 @@ missions_ny_slot2 = {
 
 	}
 
-	mission_ny_the_amish_wars = {
-		icon = settle_north_america
+	mission_ny_dominate_delmarva = {
+		icon = mission_unite_home_region
 		position = 8
 		required_missions = { mission_ny_the_city_of_brotherly_love }
 		trigger = {
-			area_pa_east_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_north_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_south_dutch = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			region_de = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_md_northeastern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
 			add_country_modifier = {
@@ -254,40 +269,25 @@ missions_ny_slot2 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_pa_east_dutch
-				area = area_pa_north_dutch
-				area = area_pa_south_dutch
+				region = region_de
+				area = area_md_northeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
-	mission_ny_taming_the_wilds = {
-		icon = mission_unite_home_region
+	mission_ny_prepare_for_maryland = {
+		icon = mission_assemble_an_army
 		position = 9
-		required_missions = { mission_ny_the_amish_wars }
+		required_missions = { mission_ny_dominate_delmarva mission_ny_the_amish_wars }
 		trigger = {
-			area_pa_northeast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_susquehanna_valley = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_east_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_central_wilds = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_pa_central = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+
  		}
 		effect = {
-			add_stability = 1
+			area_md_baltimore = { add_permanent_claim = ROOT }
+			area_md_capital = { add_permanent_claim = ROOT }
+		}
 
-			add_prestige_or_monarch_power = { amount = 25 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_pa_northeast
-				area = area_pa_susquehanna_valley
-				area = area_pa_east_wilds
-				area = area_pa_central_wilds
-				area = area_pa_central
-			}
-			NOT = { owned_by = ROOT }
-		}
 	}
 
 	mission_ny_yearning_to_breathe_free = {
@@ -343,25 +343,24 @@ missions_ny_slot3 = {
 	has_country_shield = yes
 	potential = { tag = XNY }
 
-	mission_ny_manage_the_hre = {
-		icon = mission_kaiserreich
+	mission_ny_new_york_reunification = {
+		icon = mission_unite_home_region
 		position = 1
 		required_missions = {  }
 		trigger = {
-            OR = {
-                is_emperor = yes
-                NOT = { is_part_of_hre = yes }
-            }
+			region_ny = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
-			add_legitimacy = 10
-			add_meritocracy = 10
-			add_republican_tradition = 5
-			add_devotion = 10
-			add_horde_unity = 10
-			add_prestige_or_monarch_power = { amount = 10 }
-		}
+			add_stability = 1
 
+			add_prestige_or_monarch_power = { amount = 25 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = region_ny
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 	}
 
 	mission_ny_incorporate_bridgeport = {
@@ -410,7 +409,7 @@ missions_ny_slot3 = {
 			OR = {
 				region = region_ct
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -466,7 +465,7 @@ missions_ny_slot3 = {
 				area = area_ma_south_shore
 				area = area_ma_cape_cod
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -596,24 +595,25 @@ missions_ny_slot4 = {
 	has_country_shield = yes
 	potential = { tag = XNY }
 
-	mission_ny_new_york_reunification = {
-		icon = mission_unite_home_region
+	mission_ny_manage_the_hre = {
+		icon = mission_kaiserreich
 		position = 1
 		required_missions = {  }
 		trigger = {
-			region_ny = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+            OR = {
+                is_emperor = yes
+                NOT = { is_part_of_hre = yes }
+            }
  		}
 		effect = {
-			add_stability = 1
+			add_legitimacy = 10
+			add_meritocracy = 10
+			add_republican_tradition = 5
+			add_devotion = 10
+			add_horde_unity = 10
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
 
-			add_prestige_or_monarch_power = { amount = 25 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				region = region_ny
-			}
-			NOT = { owned_by = ROOT }
-		}
 	}
 
 	mission_ny_administering_a_state = {
@@ -673,7 +673,7 @@ missions_ny_slot4 = {
 				area = area_pa_allentown
 				area = area_pa_stroudsburg
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -693,7 +693,7 @@ missions_ny_slot4 = {
 				area = area_pa_erie
 				area = area_pa_west_wilds
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -742,7 +742,7 @@ missions_ny_slot4 = {
 				province_id = 224
 				area = area_pa_north_pittsburgh
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -798,7 +798,7 @@ missions_ny_slot4 = {
 				area = area_nh_manchester
 				area = area_nh_concord
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -888,7 +888,7 @@ missions_ny_slot5 = {
 			OR = {
 				area = area_vt_burlington
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -920,7 +920,7 @@ missions_ny_slot5 = {
 			OR = {
 				region = region_vt
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -938,7 +938,7 @@ missions_ny_slot5 = {
 			OR = {
 				area = area_ma_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

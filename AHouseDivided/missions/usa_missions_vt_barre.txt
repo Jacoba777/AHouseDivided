@@ -82,7 +82,7 @@ missions_vt_barre_slot3 = {
 				province_id = 877
 				province_id = 879
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

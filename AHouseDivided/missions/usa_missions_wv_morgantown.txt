@@ -21,7 +21,7 @@ missions_wv_morgantown_slot1 = {
 			OR = {
 				area = area_md_panhandle
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -46,7 +46,7 @@ missions_wv_morgantown_slot1 = {
 				province_id = 2706
 				province_id = 2710
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -157,7 +157,7 @@ missions_wv_morgantown_slot2 = {
 				province_id = 221
 				area = area_wv_northern_panhandle
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -188,7 +188,7 @@ missions_wv_morgantown_slot3 = {
 				province_id = 2660
 				province_id = 2661
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -281,7 +281,13 @@ missions_wv_morgantown_slot3 = {
 		position = 5
 		required_missions = { mission_wv_morgantown_develop_the_hollerlands }
 		trigger = {
-			area_wv_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_wv_charleston = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
  		}
 		effect = {
 			add_country_modifier = {
@@ -293,7 +299,8 @@ missions_wv_morgantown_slot3 = {
 			OR = {
 				area = area_wv_charleston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
 		}
 	}
 
@@ -304,11 +311,14 @@ missions_wv_morgantown_slot3 = {
 		trigger = {
 			area_wv_charleston = {
 				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
 				}
 			}
  		}
@@ -331,6 +341,7 @@ missions_wv_morgantown_slot3 = {
 				unrest = 10
 				local_autonomy = 50
 			}
+			is_city = yes
 		}
 	}
 }

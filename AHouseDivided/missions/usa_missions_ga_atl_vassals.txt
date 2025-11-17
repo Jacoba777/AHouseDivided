@@ -7,10 +7,10 @@ missions_ga_atl_vassals_slot1 = {
 		OR = {
 			tag = CDT
 			tag = RME
+			tag = GSV
 			tag = ATN
 			tag = THO
 			tag = LGG
-			tag = GSV
 			tag = CNL
 			tag = TCA
 		}
@@ -101,7 +101,7 @@ missions_ga_atl_vassals_slot1 = {
 				area = area_ga_north_heartland
 				area = area_ga_north_classic
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -116,10 +116,10 @@ missions_ga_atl_vassals_slot2 = {
 		OR = {
 			tag = CDT
 			tag = RME
+			tag = GSV
 			tag = ATN
 			tag = THO
 			tag = LGG
-			tag = GSV
 			tag = CNL
 			tag = TCA
 		}
@@ -177,7 +177,7 @@ missions_ga_atl_vassals_slot2 = {
 				area = area_ga_atlanta
 				area = area_ga_west_atlanta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -248,10 +248,10 @@ missions_ga_atl_vassals_slot3 = {
 		OR = {
 			tag = CDT
 			tag = RME
+			tag = GSV
 			tag = ATN
 			tag = THO
 			tag = LGG
-			tag = GSV
 			tag = CNL
 			tag = TCA
 		}
@@ -282,7 +282,7 @@ missions_ga_atl_vassals_slot3 = {
 				area = area_ga_central_high_country
 				area = area_ga_far_east_high_country
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -340,7 +340,7 @@ missions_ga_atl_vassals_slot3 = {
 			OR = {
 				area = area_ga_augusta
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -428,7 +428,7 @@ missions_ga_atl_vassals_slot3 = {
 				area = area_sc_thoroughbred
 				area = area_sc_lowcountry
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}

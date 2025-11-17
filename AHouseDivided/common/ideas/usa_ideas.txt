@@ -396,6 +396,56 @@ illinoisan_ideas = {
 	}
 }
 
+iowan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XIA
+		}
+	}
+	start = {
+		tolerance_own = 1
+	}
+
+	iowan_agricultural_innovations = {
+		production_efficiency = 0.10
+	}
+
+	iowan_iowan_river_trade = {
+		trade_steering = 0.1
+	}
+
+	iowan_corn_and_soybeans = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	iowan_county_fairs = {
+		global_unrest = -1
+	}
+
+	iowan_rural_resilience = {
+		war_exhaustion = -0.02
+	}
+
+	iowan_the_iowa_caucus = {
+		republican_tradition = 0.2
+		legitimacy = 0.4
+		horde_unity = 0.4
+		meritocracy = 0.4
+		devotion = 0.4
+	}
+
+	iowan_legacy_of_black_hawk = {
+		discipline = 0.05
+		prestige = 0.2
+	}
+
+	bonus = {
+		num_accepted_cultures = 1
+	}
+}
+
 kentuckian_ideas = {
 	free = yes
 
@@ -448,15 +498,15 @@ lesser_alabaman_ideas = {
 
 	trigger = {
 		OR = {
+			tag = HTV
 			tag = BMH
 			tag = MGM
+			tag = MOB
+			tag = DOT
 			tag = TCL
-			tag = HTV
 			tag = MSH
 			tag = SCT
 			tag = GSD
-			tag = MOB
-			tag = DOT
 		}
 	}
 	start = {
@@ -503,6 +553,13 @@ lesser_bay_stater_ideas = {
 
 	trigger = {
 		OR = {
+			tag = PFD
+			tag = GFD
+			tag = NHT
+			tag = HPD
+			tag = WOR
+			tag = CBG
+			tag = SWT
 			tag = BTO
 			tag = DED
 			tag = TTN
@@ -510,13 +567,6 @@ lesser_bay_stater_ideas = {
 			tag = BRN
 			tag = MVD
 			tag = NTK
-			tag = CBG
-			tag = SWT
-			tag = PFD
-			tag = GFD
-			tag = NHT
-			tag = HPD
-			tag = WOR
 		}
 	}
 	start = {
@@ -616,24 +666,6 @@ lesser_floridian_ideas = {
 
 	trigger = {
 		OR = {
-			tag = WCL
-			tag = LLD
-			tag = TMP
-			tag = RLD
-			tag = PBY
-			tag = TVG
-			tag = CTR
-			tag = DTA
-			tag = OCL
-			tag = JSV
-			tag = LKC
-			tag = ALU
-			tag = PLK
-			tag = THS
-			tag = PNC
-			tag = CSV
-			tag = PNM
-			tag = FGC
 			tag = MII
 			tag = KEY
 			tag = NPS
@@ -645,7 +677,25 @@ lesser_floridian_ideas = {
 			tag = PUG
 			tag = ACD
 			tag = SRS
+			tag = WCL
+			tag = LLD
+			tag = TMP
 			tag = SBS
+			tag = RLD
+			tag = PBY
+			tag = TVG
+			tag = CTR
+			tag = DTA
+			tag = JSV
+			tag = LKC
+			tag = ALU
+			tag = PLK
+			tag = OCL
+			tag = THS
+			tag = PNC
+			tag = CSV
+			tag = PNM
+			tag = FGC
 		}
 	}
 	start = {
@@ -693,37 +743,37 @@ lesser_georgian_ideas = {
 
 	trigger = {
 		OR = {
+			tag = ATL
 			tag = CDT
 			tag = RME
-			tag = GSV
-			tag = ATN
-			tag = THO
-			tag = LGG
-			tag = CNL
-			tag = TCA
-			tag = ATL
-			tag = MCN
-			tag = WRR
-			tag = CMB
-			tag = MGV
-			tag = AGA
 			tag = SMR
 			tag = CLH
 			tag = DTN
+			tag = GSV
+			tag = ATN
+			tag = MCN
+			tag = WRR
+			tag = THO
+			tag = CMB
+			tag = AMC
+			tag = GAB
+			tag = VDT
+			tag = LGG
+			tag = BBG
+			tag = TFT
+			tag = FZG
+			tag = WCS
 			tag = CMD
 			tag = BCK
 			tag = SVH
 			tag = HSV
 			tag = JSP
 			tag = SBR
-			tag = AMC
-			tag = GAB
-			tag = VDT
-			tag = BBG
-			tag = TFT
-			tag = FZG
-			tag = WCS
 			tag = DBN
+			tag = MGV
+			tag = AGA
+			tag = CNL
+			tag = TCA
 			tag = ERL
 		}
 	}
@@ -770,36 +820,36 @@ lesser_hoosier_ideas = {
 
 	trigger = {
 		OR = {
+			tag = SBD
+			tag = EVN
+			tag = IDP
+			tag = LFY
 			tag = CCG
-			tag = KKE
-			tag = OTW
-			tag = CBD
-			tag = CTL
-			tag = MVN
+			tag = FTW
+			tag = BMT
+			tag = MCI
+			tag = KKM
+			tag = EKT
+			tag = THT
+			tag = MIC
 			tag = RKF
-			tag = DXN
+			tag = PEA
 			tag = BTP
+			tag = SPF
+			tag = CBD
 			tag = CPN
 			tag = VML
 			tag = DCT
+			tag = KKE
+			tag = OTW
+			tag = DXN
 			tag = CLE
 			tag = EFH
-			tag = PEA
-			tag = SPF
+			tag = CTL
 			tag = QCY
 			tag = GBG
 			tag = MCB
-			tag = IDP
-			tag = LFY
-			tag = MCI
-			tag = KKM
-			tag = SBD
-			tag = FTW
-			tag = EKT
-			tag = MIC
-			tag = EVN
-			tag = BMT
-			tag = THT
+			tag = MVN
 		}
 	}
 	start = {
@@ -895,19 +945,78 @@ lesser_illinoisan_ideas = {
 	}
 }
 
+lesser_iowan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = DVP
+			tag = BTM
+			tag = CDR
+			tag = IAC
+			tag = DMN
+			tag = WTL
+			tag = SXC
+			tag = CRL
+			tag = SML
+			tag = SPT
+		}
+	}
+	start = {
+		tolerance_own = 0.6
+	}
+
+	lesser_iowan_agricultural_innovations = {
+		production_efficiency = 0.06
+	}
+
+	lesser_iowan_iowan_river_trade = {
+		trade_steering = 0.06
+	}
+
+	lesser_iowan_corn_and_soybeans = {
+		global_trade_goods_size_modifier = 0.06
+	}
+
+	lesser_iowan_county_fairs = {
+		global_unrest = -0.5
+	}
+
+	lesser_iowan_rural_resilience = {
+		war_exhaustion = -0.015
+	}
+
+	lesser_iowan_the_iowa_caucus = {
+		republican_tradition = 0.15
+		legitimacy = 0.3
+		horde_unity = 0.3
+		meritocracy = 0.3
+		devotion = 0.3
+	}
+
+	lesser_iowan_legacy_of_black_hawk = {
+		discipline = 0.03
+		prestige = 0.15
+	}
+
+	bonus = {
+		num_accepted_cultures = 1
+	}
+}
+
 lesser_kentuckian_ideas = {
 	free = yes
 
 	trigger = {
 		OR = {
 			tag = FTK
-			tag = BWL
-			tag = PUL
-			tag = PIK
-			tag = LDN
 			tag = LXG
+			tag = PIK
 			tag = LVL
+			tag = BWL
 			tag = PDC
+			tag = LDN
+			tag = PUL
 			tag = OWB
 		}
 	}
@@ -955,10 +1064,10 @@ lesser_mainer_ideas = {
 
 	trigger = {
 		OR = {
-			tag = BAG
 			tag = TPL
 			tag = LWT
 			tag = KBC
+			tag = BAG
 		}
 	}
 	start = {
@@ -1008,8 +1117,17 @@ lesser_marylander_ideas = {
 
 	trigger = {
 		OR = {
+			tag = CBL
+			tag = GRT
+			tag = WDC
+			tag = WGM
+			tag = PGE
 			tag = BLR
+			tag = LEO
+			tag = CHS
+			tag = CVT
 			tag = BEL
+			tag = ANP
 			tag = ELC
 			tag = WMS
 			tag = FDK
@@ -1020,14 +1138,6 @@ lesser_marylander_ideas = {
 			tag = SNH
 			tag = ROK
 			tag = CEC
-			tag = WGM
-			tag = PGE
-			tag = ANP
-			tag = LEO
-			tag = CHS
-			tag = CVT
-			tag = CBL
-			tag = GRT
 		}
 	}
 	start = {
@@ -1078,33 +1188,33 @@ lesser_michigander_ideas = {
 			tag = FNT
 			tag = MNO
 			tag = WVR
-			tag = LSG
-			tag = JKS
-			tag = HRN
+			tag = GRR
 			tag = BAY
+			tag = BGR
 			tag = GTT
+			tag = HRN
+			tag = LSG
+			tag = LDT
 			tag = MDL
 			tag = MTP
+			tag = MKG
 			tag = MBS
 			tag = APN
 			tag = CDC
 			tag = TVC
 			tag = PLN
-			tag = IOS
 			tag = BTK
-			tag = AZO
 			tag = HLD
-			tag = GRR
-			tag = BGR
-			tag = MKG
+			tag = JKS
+			tag = AZO
 			tag = NIL
-			tag = LDT
 			tag = ESC
 			tag = GGB
 			tag = CMX
 			tag = IMT
 			tag = MQT
 			tag = CIU
+			tag = IOS
 		}
 	}
 	start = {
@@ -1150,17 +1260,79 @@ lesser_michigander_ideas = {
 	}
 }
 
+lesser_minnesotan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = DTH
+			tag = MNP
+			tag = STP
+			tag = RCA
+			tag = STC
+			tag = MKT
+			tag = BAI
+			tag = FBT
+			tag = FGF
+			tag = AAA
+			tag = MHL
+		}
+	}
+	start = {
+		republican_tradition = 0.15
+		legitimacy = 0.3
+		horde_unity = 0.3
+		meritocracy = 0.3
+		devotion = 0.3
+	}
+
+	lesser_minnesotan_land_of_ten_thousand_lakes = {
+		defensiveness = 0.06
+	}
+
+	lesser_minnesotan_investments_in_healthcare = {
+		manpower_recovery_speed = 0.03
+		land_attrition = -0.03
+	}
+
+	lesser_minnesotan_public_education = {
+		adm_tech_cost_modifier = -0.03
+		innovativeness_gain = 0.3
+	}
+
+	lesser_minnesotan_minnesota_nice = {
+		improve_relation_modifier = 0.15
+	}
+
+	lesser_minnesotan_county_fairs = {
+		global_unrest = -0.3
+	}
+
+	lesser_minnesotan_the_iron_range = {
+		production_efficiency = 0.03
+		build_cost = -0.03
+	}
+
+	lesser_minnesotan_scandinavian_roots = {
+		development_cost = -0.06
+	}
+
+	bonus = {
+		global_trade_power = 0.06
+	}
+}
+
 lesser_mississippian_ideas = {
 	free = yes
 
 	trigger = {
 		OR = {
+			tag = BLX
 			tag = JSN
-			tag = MRD
+			tag = HTB
 			tag = TPO
 			tag = WPT
-			tag = BLX
-			tag = HTB
+			tag = MRD
 		}
 	}
 	start = {
@@ -1206,18 +1378,78 @@ lesser_mississippian_ideas = {
 	}
 }
 
+lesser_missourian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = KSC
+			tag = STJ
+			tag = STL
+			tag = MSF
+			tag = JFC
+			tag = CMY
+			tag = JPN
+			tag = CGD
+			tag = BSN
+			tag = WRB
+			tag = PPB
+			tag = FLW
+			tag = KKV
+		}
+	}
+	start = {
+		cavalry_cost = -0.06
+	}
+
+	lesser_missourian_ozarks_tourism = {
+		global_tax_modifier = 0.06
+	}
+
+	lesser_missourian_cultural_confluence = {
+		improve_relation_modifier = 0.15
+		culture_conversion_cost = -0.06
+	}
+
+	lesser_missourian_winemaking = {
+		global_unrest = -0.5
+	}
+
+	lesser_missourian_gateway_to_the_west = {
+		colonists = 1
+	}
+
+	lesser_missourian_financial_sector = {
+		interest = -0.3
+		development_cost = -0.03
+	}
+
+	lesser_missourian_legacy_of_mark_twain = {
+		prestige = 0.3
+	}
+
+	lesser_missourian_show_me = {
+		global_spy_defence = 0.15
+		institution_spread_from_true_faith = 0.06
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.06
+	}
+}
+
 lesser_new_hampshirite_ideas = {
 	free = yes
 
 	trigger = {
 		OR = {
-			tag = LCT
 			tag = RKH
 			tag = STF
 			tag = LCN
 			tag = CCD
 			tag = MCR
 			tag = KEE
+			tag = LCT
 			tag = BLN
 		}
 	}
@@ -1268,27 +1500,27 @@ lesser_new_jerseyan_ideas = {
 
 	trigger = {
 		OR = {
+			tag = VIN
+			tag = ALC
+			tag = OCA
 			tag = TRN
-			tag = SMV
-			tag = MMH
-			tag = NBK
-			tag = FMT
-			tag = BVD
 			tag = NWK
 			tag = JYC
 			tag = HKS
 			tag = PSC
 			tag = UNI
 			tag = MRS
-			tag = NTN
-			tag = VIN
-			tag = ALC
-			tag = OCA
+			tag = SMV
+			tag = MMH
 			tag = BLT
 			tag = CDN
 			tag = WBY
 			tag = JSM
 			tag = OCN
+			tag = NBK
+			tag = FMT
+			tag = NTN
+			tag = BVD
 		}
 	}
 	start = {
@@ -1336,16 +1568,6 @@ lesser_new_yorker_ideas = {
 
 	trigger = {
 		OR = {
-			tag = HUD
-			tag = ABY
-			tag = GSF
-			tag = GLV
-			tag = AMS
-			tag = UTI
-			tag = WTR
-			tag = ODB
-			tag = MLN
-			tag = PTB
 			tag = MHT
 			tag = BRX
 			tag = QNS
@@ -1359,20 +1581,30 @@ lesser_new_yorker_ideas = {
 			tag = PKS
 			tag = GSN
 			tag = KGN
+			tag = HUD
+			tag = ABY
+			tag = GSF
+			tag = GLV
+			tag = AMS
+			tag = ONT
+			tag = UTI
 			tag = SYC
 			tag = AUB
 			tag = RCR
 			tag = SNF
-			tag = BAT
-			tag = BUF
-			tag = OLE
-			tag = JMS
-			tag = ONT
 			tag = CLD
 			tag = ITH
 			tag = BGH
 			tag = ELM
 			tag = CNG
+			tag = BAT
+			tag = BUF
+			tag = OLE
+			tag = JMS
+			tag = WTR
+			tag = ODB
+			tag = MLN
+			tag = PTB
 		}
 	}
 	start = {
@@ -1421,35 +1653,35 @@ lesser_north_carolinan_ideas = {
 
 	trigger = {
 		OR = {
-			tag = WKS
-			tag = BOO
-			tag = FRC
-			tag = MRN
-			tag = CLW
-			tag = CLT
-			tag = SHB
-			tag = FYV
-			tag = PRT
-			tag = LBT
-			tag = ERH
-			tag = GNR
-			tag = WSN
-			tag = HKR
-			tag = ABM
-			tag = RAL
-			tag = DUR
-			tag = HDS
 			tag = EZB
 			tag = KLL
 			tag = ROR
 			tag = NBE
 			tag = GVK
+			tag = SHB
 			tag = MHD
 			tag = OSW
 			tag = PWT
 			tag = RMT
 			tag = WIL
 			tag = GLD
+			tag = RAL
+			tag = DUR
+			tag = HDS
+			tag = FYV
+			tag = PRT
+			tag = LBT
+			tag = ERH
+			tag = GNR
+			tag = WSN
+			tag = WKS
+			tag = BOO
+			tag = HKR
+			tag = CLT
+			tag = ABM
+			tag = FRC
+			tag = MRN
+			tag = CLW
 		}
 	}
 	start = {
@@ -1556,24 +1788,24 @@ lesser_ohioan_ideas = {
 
 	trigger = {
 		OR = {
-			tag = CBS
-			tag = MFD
-			tag = ZNV
-			tag = MAV
 			tag = YGL
 			tag = ATB
 			tag = SLM
+			tag = CIN
+			tag = TLD
 			tag = CLV
 			tag = AKR
 			tag = CNT
-			tag = WOO
-			tag = TLD
-			tag = SDK
-			tag = FDY
-			tag = CIN
+			tag = CBS
 			tag = DAY
 			tag = LIM
+			tag = MFD
 			tag = OSF
+			tag = SDK
+			tag = ZNV
+			tag = FDY
+			tag = WOO
+			tag = MAV
 		}
 	}
 	start = {
@@ -1623,6 +1855,16 @@ lesser_pennsylvanian_ideas = {
 
 	trigger = {
 		OR = {
+			tag = PHL
+			tag = RDG
+			tag = LCR
+			tag = ALN
+			tag = ESB
+			tag = SCR
+			tag = SAY
+			tag = WMP
+			tag = LKH
+			tag = PTV
 			tag = BSB
 			tag = SBY
 			tag = LSB
@@ -1634,33 +1876,23 @@ lesser_pennsylvanian_ideas = {
 			tag = LOO
 			tag = JON
 			tag = SMS
-			tag = RDG
-			tag = LCR
-			tag = PTV
-			tag = HSB
-			tag = YRK
-			tag = GTY
-			tag = LBN
-			tag = CSB
+			tag = PIT
+			tag = PDA
 			tag = NCA
 			tag = OIL
 			tag = EIE
 			tag = MEA
 			tag = WRN
-			tag = PHL
+			tag = BDF
+			tag = ELK
+			tag = HSB
+			tag = YRK
+			tag = GTY
+			tag = LBN
+			tag = CSB
 			tag = CST
 			tag = NRT
 			tag = BKS
-			tag = PIT
-			tag = WMP
-			tag = LKH
-			tag = PDA
-			tag = BDF
-			tag = ELK
-			tag = ALN
-			tag = ESB
-			tag = SCR
-			tag = SAY
 		}
 	}
 	start = {
@@ -1762,22 +1994,22 @@ lesser_south_carolinan_ideas = {
 
 	trigger = {
 		OR = {
-			tag = CLS
-			tag = HIL
 			tag = CUM
 			tag = ONG
 			tag = NBR
-			tag = LGT
-			tag = MYT
-			tag = SMT
-			tag = FLT
-			tag = BNV
 			tag = GWD
 			tag = SNC
 			tag = GRN
 			tag = STB
 			tag = GFY
 			tag = GRU
+			tag = CLS
+			tag = HIL
+			tag = LGT
+			tag = MYT
+			tag = SMT
+			tag = FLT
+			tag = BNV
 		}
 	}
 	start = {
@@ -1824,17 +2056,17 @@ lesser_tennessean_ideas = {
 	trigger = {
 		OR = {
 			tag = CTN
-			tag = KNX
-			tag = BDY
-			tag = NSH
-			tag = CKE
-			tag = THM
 			tag = KGP
-			tag = JSC
-			tag = MST
 			tag = CKV
+			tag = NSH
 			tag = JBV
 			tag = MPS
+			tag = KNX
+			tag = JSC
+			tag = CKE
+			tag = BDY
+			tag = THM
+			tag = MST
 		}
 	}
 	start = {
@@ -1883,10 +2115,10 @@ lesser_vermonter_ideas = {
 
 	trigger = {
 		OR = {
-			tag = VTB
 			tag = BTV
 			tag = RUT
 			tag = BNT
+			tag = VTB
 		}
 	}
 	start = {
@@ -1934,31 +2166,31 @@ lesser_virginian_ideas = {
 
 	trigger = {
 		OR = {
-			tag = BSE
-			tag = CTV
-			tag = LYN
-			tag = MTV
-			tag = DNV
-			tag = RCH
-			tag = VAB
-			tag = NNK
-			tag = HRS
-			tag = STN
-			tag = BRY
-			tag = FRR
-			tag = WIN
-			tag = RIP
 			tag = ARG
 			tag = FFX
 			tag = LEE
+			tag = RCH
+			tag = CTV
+			tag = HRS
+			tag = STN
+			tag = LYN
+			tag = ROA
+			tag = BLK
+			tag = BSE
+			tag = MTV
+			tag = DNV
+			tag = VAB
+			tag = BRY
+			tag = FRR
 			tag = VMA
+			tag = WIN
 			tag = SFD
 			tag = SPV
 			tag = CUL
+			tag = RIP
 			tag = RAP
 			tag = WRT
-			tag = ROA
-			tag = BLK
+			tag = NNK
 		}
 	}
 	start = {
@@ -2009,15 +2241,15 @@ lesser_west_virginian_ideas = {
 
 	trigger = {
 		OR = {
+			tag = BLU
+			tag = HTT
+			tag = PKB
+			tag = WHG
+			tag = CHW
+			tag = BKY
 			tag = MGT
 			tag = HGT
 			tag = EKS
-			tag = BLU
-			tag = BKY
-			tag = HTT
-			tag = CHW
-			tag = PKB
-			tag = WHG
 		}
 	}
 	start = {
@@ -2067,14 +2299,14 @@ lesser_wisconsinite_ideas = {
 		OR = {
 			tag = MRT
 			tag = GBY
-			tag = MWK
-			tag = APT
-			tag = FDL
-			tag = SHE
-			tag = MDS
 			tag = WAU
 			tag = EAU
+			tag = MDS
+			tag = MWK
+			tag = APT
 			tag = LCS
+			tag = FDL
+			tag = SHE
 		}
 	}
 	start = {
@@ -2316,6 +2548,58 @@ mid_atlantic_ideas = {
 	}
 }
 
+minnesotan_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMN
+		}
+	}
+	start = {
+		republican_tradition = 0.25
+		legitimacy = 0.5
+		horde_unity = 0.5
+		meritocracy = 0.5
+		devotion = 0.5
+	}
+
+	minnesotan_land_of_ten_thousand_lakes = {
+		defensiveness = 0.1
+	}
+
+	minnesotan_investments_in_healthcare = {
+		manpower_recovery_speed = 0.05
+		land_attrition = -0.05
+	}
+
+	minnesotan_public_education = {
+		adm_tech_cost_modifier = -0.05
+		innovativeness_gain = 0.5
+	}
+
+	minnesotan_minnesota_nice = {
+		improve_relation_modifier = 0.2
+	}
+
+	minnesotan_county_fairs = {
+		global_unrest = -0.5
+	}
+
+	minnesotan_the_iron_range = {
+		production_efficiency = 0.05
+		build_cost = -0.05
+	}
+
+	minnesotan_scandinavian_roots = {
+		development_cost = -0.1
+	}
+
+	bonus = {
+		global_trade_power = 0.1
+	}
+}
+
 mississippian_ideas = {
 	free = yes
 
@@ -2366,6 +2650,54 @@ mississippian_ideas = {
 
 	bonus = {
 		artillery_power = 0.10
+	}
+}
+
+missourian_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = XMO
+		}
+	}
+	start = {
+		cavalry_cost = -0.1
+	}
+
+	missourian_ozarks_tourism = {
+		global_tax_modifier = 0.10
+	}
+
+	missourian_cultural_confluence = {
+		improve_relation_modifier = 0.25
+		culture_conversion_cost = -0.1
+	}
+
+	missourian_winemaking = {
+		global_unrest = -1
+	}
+
+	missourian_gateway_to_the_west = {
+		colonists = 1
+	}
+
+	missourian_financial_sector = {
+		interest = -0.5
+		development_cost = -0.05
+	}
+
+	missourian_legacy_of_mark_twain = {
+		prestige = 0.5
+	}
+
+	missourian_show_me = {
+		global_spy_defence = 0.2
+		institution_spread_from_true_faith = 0.1
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.10
 	}
 }
 

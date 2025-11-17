@@ -71,7 +71,7 @@ missions_ny_far_upstate_slot1 = {
 			OR = {
 				area = area_ny_albany
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -128,7 +128,7 @@ missions_ny_far_upstate_slot1 = {
 			OR = {
 				area = area_ny_hudson_valley
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -150,7 +150,7 @@ missions_ny_far_upstate_slot1 = {
 				area = area_ny_lower_hudson_valley
 				province_id = 755
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -330,7 +330,7 @@ missions_ny_far_upstate_slot3 = {
 			OR = {
 				area = area_ny_syracuse
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -394,7 +394,7 @@ missions_ny_far_upstate_slot3 = {
 				area = area_ny_rochester
 				area = area_ny_finger_lakes
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -426,7 +426,7 @@ missions_ny_far_upstate_slot3 = {
 			OR = {
 				area = area_ny_buffalo
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

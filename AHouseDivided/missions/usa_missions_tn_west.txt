@@ -90,7 +90,7 @@ missions_tn_west_slot3 = {
 				area = area_tn_jackson
 				area = area_tn_north_memphis
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			is_city = yes
 		}
 	}
@@ -159,7 +159,7 @@ missions_tn_west_slot3 = {
 				area = area_tn_southern
 				area = area_tn_hickman
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -201,7 +201,7 @@ missions_tn_west_slot3 = {
 				area = area_tn_south_nashville
 				area = area_tn_northern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -272,7 +272,7 @@ missions_tn_west_slot3 = {
 				area = area_tn_north_chattanooga
 				area = area_tn_rhea
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -311,7 +311,7 @@ missions_tn_west_slot3 = {
 			OR = {
 				area = area_tn_knoxville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

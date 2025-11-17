@@ -1,6 +1,7 @@
 technology_group = southeast
 government = republic
-add_government_reform = american_republic
+add_government_reform = dixie_republic
+set_country_flag = oldsouth
 government_rank = 1
 religion = methodist
 primary_culture = culture_myrtle

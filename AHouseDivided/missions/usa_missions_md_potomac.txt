@@ -5,6 +5,7 @@ missions_md_potomac_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
+			tag = WDC
 			tag = WGM
 			tag = PGE
 			tag = ANP
@@ -47,7 +48,7 @@ missions_md_potomac_slot3 = {
 				province_id = 496
 				province_id = 499
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -66,7 +67,7 @@ missions_md_potomac_slot3 = {
 			OR = {
 				area = area_md_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -85,7 +86,7 @@ missions_md_potomac_slot3 = {
 			OR = {
 				area = area_md_baltimore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -105,7 +106,7 @@ missions_md_potomac_slot3 = {
 				area = area_md_northeastern
 				area = area_md_southeast_chesapeake
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

@@ -1,0 +1,399 @@
+missions_ia_western_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SXC
+			tag = CRL
+			tag = SML
+			tag = SPT
+		}
+	}
+
+	mission_ia_western_shephard_of_spirit_lake = {
+		icon = prosperity_for_all
+		position = 2
+		required_missions = { mission_ia_western_fielding_an_army }
+		trigger = {
+
+            2204 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+
+		}
+
+	}
+
+	mission_ia_western_settle_in_clay_county = {
+		icon = mission_early_game_buildings
+		position = 3
+		required_missions = { mission_ia_western_shephard_of_spirit_lake mission_ia_western_steward_of_storm_lake }
+		trigger = {
+
+            2204 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+
+            2213 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+			2208 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			2209 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+
+            2204 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+
+            2213 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+			area_ia_east_sioux_city = { add_permanent_claim = ROOT }
+			area_ia_northwest = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ia_western_the_battle_for_sioux_city = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_ia_western_settle_in_clay_county }
+		trigger = {
+			area_ia_east_sioux_city = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			area_ia_northwest = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_dip_power = 50
+			add_prestige_or_monarch_power = { amount = 15 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_east_sioux_city
+				area = area_ia_northwest
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+}
+
+missions_ia_western_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SXC
+			tag = CRL
+			tag = SML
+			tag = SPT
+		}
+	}
+
+	mission_ia_western_fielding_an_army = {
+		icon = mission_build_up_to_force_limit
+		position = 1
+		required_missions = {  }
+		trigger = {
+            army_size_percentage = 1
+ 		}
+		effect = {
+			2251 = { add_core = ROOT }
+			2213 = { add_core = ROOT }
+			2204 = { add_core = ROOT }
+		}
+
+	}
+
+	mission_ia_western_steward_of_storm_lake = {
+		icon = prosperity_for_all
+		position = 2
+		required_missions = { mission_ia_western_fielding_an_army }
+		trigger = {
+
+            2213 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+
+		}
+
+	}
+}
+
+missions_ia_western_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		OR = {
+			tag = SXC
+			tag = CRL
+			tag = SML
+			tag = SPT
+		}
+	}
+
+	mission_ia_western_caretaker_of_carroll = {
+		icon = prosperity_for_all
+		position = 2
+		required_missions = { mission_ia_western_fielding_an_army }
+		trigger = {
+
+            2251 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+
+		}
+
+	}
+
+	mission_ia_western_colonize_calhoun = {
+		icon = mission_early_game_buildings
+		position = 3
+		required_missions = { mission_ia_western_caretaker_of_carroll mission_ia_western_steward_of_storm_lake }
+		trigger = {
+
+            2251 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+
+            2213 = {
+                is_prosperous = yes
+                base_tax = 2
+                base_production = 2
+                base_manpower = 2
+            }
+            treasury = 100
+
+ 		}
+		effect = {
+			2246 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+			2245 = {
+				if = {
+					limit = { is_empty = yes }
+					cede_province = ROOT
+				} else = { add_permanent_claim = ROOT }
+			}
+
+            2251 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+
+            2213 = {
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_treasury = -100
+
+			2244 = { add_permanent_claim = ROOT }
+			area_ia_central = { add_permanent_claim = ROOT }
+			area_ia_des_moines = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ia_western_dominate_des_moines = {
+		icon = mission_dmn
+		position = 4
+		required_missions = { mission_ia_western_colonize_calhoun }
+		trigger = {
+			area_ia_des_moines = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+			2254 = {
+				
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_des_moines
+				province_id = 2254
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_ia_western_incorporate_des_moines = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_ia_western_dominate_des_moines }
+		trigger = {
+			area_ia_des_moines = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+			2254 = {
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_adm_power = 50
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_des_moines
+				province_id = 2254
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_ia_western_accept_des_moines = {
+		icon = mission_diplomatic_relation
+		position = 6
+		required_missions = { mission_ia_western_incorporate_des_moines }
+		trigger = {
+			accepted_culture = culture_des_moines
+ 		}
+		effect = {
+			area_ia_east_des_moines = { add_permanent_claim = ROOT }
+			area_ia_cedar_rapids = { add_permanent_claim = ROOT }
+			area_ia_iowa_city = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_ia_western_comandeer_the_corridor = {
+		icon = mission_unite_home_region
+		position = 7
+		required_missions = { mission_ia_western_accept_des_moines }
+		trigger = {
+			area_ia_east_des_moines = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_cedar_rapids = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ia_iowa_city = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ia_east_des_moines
+				area = area_ia_cedar_rapids
+				area = area_ia_iowa_city
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}

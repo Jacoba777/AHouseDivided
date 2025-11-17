@@ -45,7 +45,7 @@ missions_sc_slot1 = {
 				area = area_ga_central_classic
 				area = area_ga_south_classic
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -112,7 +112,7 @@ missions_sc_slot1 = {
 				area = area_ga_east_high_country
 				area = area_ga_far_east_high_country
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -163,7 +163,7 @@ missions_sc_slot1 = {
 				area = area_ga_north_presidential
 				area = area_ga_west_high_country
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -259,7 +259,7 @@ missions_sc_slot1 = {
 				area = area_al_central
 				area = area_al_auburn
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -346,7 +346,7 @@ missions_sc_slot2 = {
 				area = area_nc_east_charlotte
 				area = area_nc_hickory
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -428,7 +428,7 @@ missions_sc_slot2 = {
 				area = area_nc_pinehurst
 				area = area_nc_fayetteville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -501,7 +501,7 @@ missions_sc_slot2 = {
 			OR = {
 				region = region_nc
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -584,7 +584,7 @@ missions_sc_slot2 = {
 			OR = {
 				region = region_ga
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -612,7 +612,7 @@ missions_sc_slot3 = {
 			OR = {
 				region = region_sc
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -639,7 +639,7 @@ missions_sc_slot3 = {
 				area = area_nc_greenville
 				area = area_nc_new_bern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -712,7 +712,7 @@ missions_sc_slot3 = {
 				area = area_nc_northern_coast
 				area = area_nc_central_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -762,7 +762,7 @@ missions_sc_slot3 = {
 				area = area_va_southeastern
 				area = area_va_virginia_beach
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1029,7 +1029,7 @@ missions_sc_slot5 = {
 				area = area_ga_hinesville
 				area = area_ga_coastal
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -1085,7 +1085,7 @@ missions_sc_slot5 = {
 				area = area_fl_jacksonville
 				area = area_fl_space_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

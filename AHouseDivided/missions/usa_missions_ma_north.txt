@@ -26,7 +26,7 @@ missions_ma_north_slot1 = {
 			OR = {
 				area = area_ma_boston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -47,7 +47,7 @@ missions_ma_north_slot1 = {
 			OR = {
 				area = area_ma_south_shore
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -111,7 +111,7 @@ missions_ma_north_slot3 = {
 				province_id = 478
 				province_id = 479
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -182,7 +182,7 @@ missions_ma_north_slot3 = {
 			OR = {
 				area = area_ma_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

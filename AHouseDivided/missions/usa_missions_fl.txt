@@ -5,100 +5,51 @@ missions_fl_slot1 = {
 	has_country_shield = yes
 	potential = { tag = XFL }
 
-	mission_fl_take_the_georgia_coast = {
-		icon = mission_unite_home_region
-		position = 4
-		required_missions = { mission_fl_the_jackson_compromise }
-		trigger = {
-			area_ga_coastal = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_ga_hinesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_ga_east_magenta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_ga_savannah = { type = all  country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			add_dip_power = 100
-			add_prestige_or_monarch_power = { amount = 10 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_ga_coastal
-				area = area_ga_hinesville
-				area = area_ga_east_magenta
-				area = area_ga_savannah
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_fl_stabilize_savannah = {
-		icon = mission_alliances
-		position = 5
-		required_missions = { mission_fl_take_the_georgia_coast }
-		trigger = {
-			area_ga_savannah = {
-				type = all  
-				AND {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { devastation = 1 }
-					NOT = { unrest = 10 }
-					NOT = { local_autonomy = 50 }
-				}
-			}
- 		}
-		effect = {
-			area_sc_lowcountry = { add_permanent_claim = ROOT }
-			area_sc_charleston = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_ga_savannah
-			}
-			OR = {
-				NOT { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 1
-				unrest = 10
-				local_autonomy = 50
-			}
-		}
-	}
-
-	mission_fl_the_jewel_of_the_south = {
-		icon = mission_cls
+	mission_fl_a_tale_of_two_castles = {
+		icon = mission_fort
 		position = 6
-		required_missions = { mission_fl_stabilize_savannah }
+		required_missions = {  }
 		trigger = {
-			area_sc_lowcountry = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_sc_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+            1927 = {
+                has_great_project = {
+                    type = disneyworld
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
+            1915 = {
+                has_great_project = {
+                    type = san_marcos
+                    tier = 3
+                }
+                owned_by = ROOT
+            }
  		}
 		effect = {
 			add_country_modifier = {
-				name = country_modifier_a_successful_conquest
-				duration = 730  # 2 years
+				name = country_modifier_a_tale_of_two_castles
+				duration = 9125  # 25 years
 			}
 		}
 		provinces_to_highlight = {
-			OR = {
-				area = area_sc_lowcountry
-				area = area_sc_charleston
-			}
-			NOT = { owned_by = ROOT }
+            OR = {
+                province_id = 1927
+                province_id = 1915
+            }
 		}
 	}
 
-	mission_fl_embrace_charlestonian = {
-		icon = mission_diplomatic_relation
+	mission_fl_fruits_of_sunshine = {
+		icon = mission_sugarcane
 		position = 7
-		required_missions = { mission_fl_the_jewel_of_the_south }
+		required_missions = { mission_fl_a_tale_of_two_castles }
 		trigger = {
-			accepted_culture = culture_charlestonian
+            production_leader = { trade_goods = tomato }
+            production_leader = { trade_goods = sugar }
  		}
 		effect = {
-			area_sc_olde_english_district = { add_permanent_claim = ROOT }
-			area_sc_florence = { add_permanent_claim = ROOT }
-
-			area_sc_myrtle_beach = { add_permanent_claim = ROOT }
-			area_nc_southern = { add_permanent_claim = ROOT }
-			805 = { add_permanent_claim = ROOT }
+			add_years_of_income = 1.5
+			add_prestige_or_monarch_power = { amount = 25 }
 		}
 
 	}
@@ -110,22 +61,6 @@ missions_fl_slot2 = {
 	ai = yes
 	has_country_shield = yes
 	potential = { tag = XFL }
-
-	mission_fl_the_jackson_compromise = {
-		icon = mission_jsv
-		position = 3
-		required_missions = { mission_fl_peace_in_paradise }
-		trigger = {
-			accepted_culture = culture_jacksonvillian
- 		}
-		effect = {
-			area_ga_coastal = { add_permanent_claim = ROOT }
-			area_ga_hinesville = { add_permanent_claim = ROOT }
-			area_ga_east_magenta = { add_permanent_claim = ROOT }
-			area_ga_savannah = { add_permanent_claim = ROOT }
-		}
-
-	}
 
 	mission_fl_develop_the_everglades = {
 		icon = mission_everglades
@@ -167,65 +102,38 @@ missions_fl_slot2 = {
 
 	}
 
-	mission_fl_pee_dee_subjugation = {
-		icon = mission_unite_home_region
+	mission_fl_the_thalassocracy = {
+		icon = imperial_navy
 		position = 8
-		required_missions = { mission_fl_embrace_charlestonian }
+		required_missions = { mission_fl_hurricane_preparations mission_fl_fruits_of_sunshine }
 		trigger = {
-			area_sc_olde_english_district = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_sc_florence = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-
-			area_sc_myrtle_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_nc_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			805 = { country_or_non_sovereign_subject_holds = ROOT }
- 		}
-		effect = {
-			area_nc_south_coast = { add_permanent_claim = ROOT }
-			area_nc_goldsboro = { add_permanent_claim = ROOT }
-			area_nc_new_bern = { add_permanent_claim = ROOT }
-			area_nc_greenville = { add_permanent_claim = ROOT }
-			area_nc_central_coast = { add_permanent_claim = ROOT }
-		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_sc_olde_english_district
-				area = area_sc_florence
-
-				area = area_sc_myrtle_beach
-				area = area_nc_southern
-				province_id = 805
-			}
-			NOT = { owned_by = ROOT }
-		}
-	}
-
-	mission_fl_turning_the_tides = {
-		icon = mission_unite_home_region
-		position = 9
-		required_missions = { mission_fl_pee_dee_subjugation }
-		trigger = {
-			area_nc_south_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_nc_goldsboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_nc_new_bern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_nc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
-			area_nc_central_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+            1924 = { highest_value_trade_node = yes }
  		}
 		effect = {
 			add_country_modifier = {
-				name = country_modifier_a_successful_conquest
-				duration = 730  # 2 years
+				name = country_modifier_the_thalassocracy
+				duration = -1  # PERMANENT
 			}
 		}
-		provinces_to_highlight = {
-			OR = {
-				area = area_nc_south_coast
-				area = area_nc_goldsboro
-				area = area_nc_new_bern
-				area = area_nc_greenville
-				area = area_nc_central_coast
+
+	}
+
+	mission_fl_the_legend_of_florida_man = {
+		icon = mission_florida_man
+		position = 9
+		required_missions = { mission_fl_the_thalassocracy }
+		trigger = {
+            NOT = { num_of_allies = 1 }
+            is_in_coalition_war = yes
+            war_score = 100
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_legend_of_florida_man
+				duration = -1  # PERMANENT
 			}
-			NOT = { owned_by = ROOT }
 		}
+
 	}
 }
 
@@ -235,71 +143,6 @@ missions_fl_slot3 = {
 	ai = yes
 	has_country_shield = yes
 	potential = { tag = XFL }
-
-	mission_fl_retake_florida = {
-		icon = mission_unite_home_region
-		position = 1
-		required_missions = {  }
-		trigger = {
-			region_fl = {
-				type = all  
-				OR = {
-					country_or_non_sovereign_subject_holds = ROOT
-					is_city = no
-				}
-			}
- 		}
-		effect = {
-			add_stability = 1
-
-			add_prestige_or_monarch_power = { amount = 10 }
-		}
-		provinces_to_highlight = {
-			OR = {
-				AND = { region = region_fl is_city = yes }
-			}
-			NOT = { owned_by = ROOT }
-			is_city = yes
-		}
-	}
-
-	mission_fl_peace_in_paradise = {
-		icon = mission_alliances
-		position = 2
-		required_missions = { mission_fl_retake_florida }
-		trigger = {
-			region_fl = {
-				type = all  
-				OR = {
-					AND {
-						country_or_non_sovereign_subject_holds = ROOT
-						NOT = { devastation = 1 }
-						NOT = { unrest = 10 }
-						NOT = { local_autonomy = 50 }
-					}
-					is_city = no
-				}
-			}
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_a_prosperous_state
-				duration = 7300  # 20 years
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				AND = { region = region_fl is_city = yes }
-			}
-			OR = {
-				NOT { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 1
-				unrest = 10
-				local_autonomy = 50
-			}
-			is_city = yes
-		}
-	}
 
 	mission_fl_resettle_florida = {
 		icon = mission_alliances
@@ -336,129 +179,6 @@ missions_fl_slot3 = {
 		}
 	}
 
-	mission_fl_a_tale_of_two_castles = {
-		icon = mission_fort
-		position = 6
-		required_missions = {  }
-		trigger = {
-            1927 = {
-                has_great_project = {
-                    type = disneyworld
-                    tier = 3
-                }
-                owned_by = ROOT
-            }
-            1915 = {
-                has_great_project = {
-                    type = san_marcos
-                    tier = 3
-                }
-                owned_by = ROOT
-            }
-            
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_a_tale_of_two_castles
-				duration = 9125  # 25 years
-			}
-		}
-		provinces_to_highlight = {
-            OR = {
-                province_id = 1927
-                province_id = 1915
-            }
-		}
-	}
-
-	mission_fl_fruits_of_sunshine = {
-		icon = mission_sugarcane
-		position = 7
-		required_missions = { mission_fl_a_tale_of_two_castles }
-		trigger = {
-            production_leader = { trade_goods = tomato }
-            production_leader = { trade_goods = sugar }
- 		}
-		effect = {
-			add_years_of_income = 1.5
-			add_prestige_or_monarch_power = { amount = 25 }
-		}
-
-	}
-
-	mission_fl_the_thalassocracy = {
-		icon = imperial_navy
-		position = 8
-		required_missions = { mission_fl_hurricane_preparations mission_fl_fruits_of_sunshine }
-		trigger = {
-            1924 = { highest_value_trade_node = yes }
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_the_thalassocracy
-				duration = -1  # PERMANENT
-			}
-		}
-
-	}
-
-	mission_fl_the_legend_of_florida_man = {
-		icon = mission_florida_man
-		position = 9
-		required_missions = { mission_fl_the_thalassocracy }
-		trigger = {
-            NOT = { num_of_allies = 1 }
-            is_in_coalition_war = yes
-            war_score = 100
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_the_legend_of_florida_man
-				duration = -1  # PERMANENT
-			}
-		}
-
-	}
-
-	mission_fl_the_sunshine_state = {
-		icon = mission_fl
-		position = 10
-		required_missions = { mission_fl_the_legend_of_florida_man mission_fl_mare_nostrum mission_fl_turning_the_tides }
-		trigger = {
-
- 		}
-		effect = {
-			add_country_modifier = {
-				name = country_modifier_the_sunshine_state
-				duration = -1  # PERMANENT
-			}
-		}
-
-	}
-}
-
-missions_fl_slot4 = {
-	slot = 4
-	generic = no
-	ai = yes
-	has_country_shield = yes
-	potential = { tag = XFL }
-
-	mission_fl_panhandle_harmony = {
-		icon = mission_diplomatic_relation
-		position = 3
-		required_missions = { mission_fl_peace_in_paradise }
-		trigger = {
-			accepted_culture = culture_panhandle
- 		}
-		effect = {
-			area_al_mobile = { add_permanent_claim = ROOT }
-			area_ms_coastal = { add_permanent_claim = ROOT }
-			area_ms_north_coast = { add_permanent_claim = ROOT }
-		}
-
-	}
-
 	mission_fl_invade_georgia = {
 		icon = mission_ga
 		position = 4
@@ -483,7 +203,7 @@ missions_fl_slot4 = {
 				area = area_ga_valdosta
 				area = area_ga_southeast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -496,7 +216,7 @@ missions_fl_slot4 = {
 			area_ga_southeast = { type = all  num_of_times_improved_by_owner = 4 }
  		}
 		effect = {
-			area_ga_northwest = { add_permanent_claim = ROOT }
+			area_ga_northwest_plantation = { add_permanent_claim = ROOT }
 			area_ga_albany = { add_permanent_claim = ROOT }
 			area_ga_fitzgerald = { add_permanent_claim = ROOT }
 			area_ga_southwest_magenta = { add_permanent_claim = ROOT }
@@ -526,7 +246,7 @@ missions_fl_slot4 = {
 		position = 6
 		required_missions = { mission_fl_improve_south_georgia }
 		trigger = {
-			area_ga_northwest = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_northwest_plantation = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_ga_albany = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_ga_fitzgerald = { type = all  country_or_non_sovereign_subject_holds = ROOT }
 			area_ga_southwest_magenta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
@@ -549,7 +269,7 @@ missions_fl_slot4 = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				area = area_ga_northwest
+				area = area_ga_northwest_plantation
 				area = area_ga_albany
 				area = area_ga_fitzgerald
 				area = area_ga_southwest_magenta
@@ -560,7 +280,7 @@ missions_fl_slot4 = {
 				area = area_ga_americus
 				area = area_ga_columbus
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -599,7 +319,7 @@ missions_fl_slot4 = {
 				province_id = 1576
 				province_id = 1577
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -632,7 +352,7 @@ missions_fl_slot4 = {
 				area = area_ms_hattiesburg
 				area = area_ms_southeastern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -683,17 +403,113 @@ missions_fl_slot4 = {
 				province_id = 2198
 				province_id = 2199
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
+	}
+
+	mission_fl_the_sunshine_state = {
+		icon = mission_fl
+		position = 10
+		required_missions = { mission_fl_the_legend_of_florida_man mission_fl_mare_nostrum mission_fl_turning_the_tides }
+		trigger = {
+
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_the_sunshine_state
+				duration = -1  # PERMANENT
+			}
+		}
+
 	}
 }
 
-missions_fl_slot5 = {
-	slot = 5
+missions_fl_slot4 = {
+	slot = 4
 	generic = no
 	ai = yes
 	has_country_shield = yes
 	potential = { tag = XFL }
+
+	mission_fl_retake_florida = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = {  }
+		trigger = {
+			region_fl = {
+				type = all  
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_stability = 1
+
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_fl is_city = yes }
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			is_city = yes
+		}
+	}
+
+	mission_fl_peace_in_paradise = {
+		icon = mission_alliances
+		position = 2
+		required_missions = { mission_fl_retake_florida }
+		trigger = {
+			region_fl = {
+				type = all  
+				OR = {
+					AND {
+						country_or_non_sovereign_subject_holds = ROOT
+						NOT = { devastation = 1 }
+						NOT = { unrest = 10 }
+						NOT = { local_autonomy = 50 }
+					}
+					is_city = no
+				}
+			}
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_prosperous_state
+				duration = 7300  # 20 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = { region = region_fl is_city = yes }
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+			is_city = yes
+		}
+	}
+
+	mission_fl_panhandle_harmony = {
+		icon = mission_diplomatic_relation
+		position = 3
+		required_missions = { mission_fl_peace_in_paradise }
+		trigger = {
+			accepted_culture = culture_panhandle
+ 		}
+		effect = {
+			area_al_mobile = { add_permanent_claim = ROOT }
+			area_ms_coastal = { add_permanent_claim = ROOT }
+			area_ms_north_coast = { add_permanent_claim = ROOT }
+		}
+
+	}
 
 	mission_fl_gulf_coast_conquest = {
 		icon = mission_unite_home_region
@@ -716,7 +532,7 @@ missions_fl_slot5 = {
 				area = area_ms_coastal
 				area = area_ms_north_coast
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -786,7 +602,7 @@ missions_fl_slot5 = {
 
 				area = area_la_baton_rouge
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -843,5 +659,188 @@ missions_fl_slot5 = {
 			2199 = { add_permanent_claim = ROOT }
 		}
 
+	}
+
+	mission_fl_turning_the_tides = {
+		icon = mission_unite_home_region
+		position = 9
+		required_missions = { mission_fl_pee_dee_subjugation }
+		trigger = {
+			area_nc_south_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_goldsboro = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_new_bern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_greenville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_central_coast = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_nc_south_coast
+				area = area_nc_goldsboro
+				area = area_nc_new_bern
+				area = area_nc_greenville
+				area = area_nc_central_coast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+}
+
+missions_fl_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = XFL }
+
+	mission_fl_the_jackson_compromise = {
+		icon = mission_jsv
+		position = 3
+		required_missions = { mission_fl_peace_in_paradise }
+		trigger = {
+			accepted_culture = culture_jacksonvillian
+ 		}
+		effect = {
+			area_ga_coastal = { add_permanent_claim = ROOT }
+			area_ga_hinesville = { add_permanent_claim = ROOT }
+			area_ga_east_magenta = { add_permanent_claim = ROOT }
+			area_ga_savannah = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_take_the_georgia_coast = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { mission_fl_the_jackson_compromise }
+		trigger = {
+			area_ga_coastal = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_hinesville = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_east_magenta = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_ga_savannah = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_dip_power = 100
+			add_prestige_or_monarch_power = { amount = 10 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_coastal
+				area = area_ga_hinesville
+				area = area_ga_east_magenta
+				area = area_ga_savannah
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_fl_stabilize_savannah = {
+		icon = mission_alliances
+		position = 5
+		required_missions = { mission_fl_take_the_georgia_coast }
+		trigger = {
+			area_ga_savannah = {
+				type = all  
+				AND {
+					country_or_non_sovereign_subject_holds = ROOT
+					NOT = { devastation = 1 }
+					NOT = { unrest = 10 }
+					NOT = { local_autonomy = 50 }
+				}
+			}
+ 		}
+		effect = {
+			area_sc_lowcountry = { add_permanent_claim = ROOT }
+			area_sc_charleston = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_ga_savannah
+			}
+			OR = {
+				NOT { country_or_non_sovereign_subject_holds = ROOT }
+				devastation = 1
+				unrest = 10
+				local_autonomy = 50
+			}
+		}
+	}
+
+	mission_fl_the_jewel_of_the_south = {
+		icon = mission_cls
+		position = 6
+		required_missions = { mission_fl_stabilize_savannah }
+		trigger = {
+			area_sc_lowcountry = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sc_charleston = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			add_country_modifier = {
+				name = country_modifier_a_successful_conquest
+				duration = 730  # 2 years
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_lowcountry
+				area = area_sc_charleston
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+	}
+
+	mission_fl_embrace_charlestonian = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = { mission_fl_the_jewel_of_the_south }
+		trigger = {
+			accepted_culture = culture_charlestonian
+ 		}
+		effect = {
+			area_sc_olde_english_district = { add_permanent_claim = ROOT }
+			area_sc_florence = { add_permanent_claim = ROOT }
+
+			area_sc_myrtle_beach = { add_permanent_claim = ROOT }
+			area_nc_southern = { add_permanent_claim = ROOT }
+			805 = { add_permanent_claim = ROOT }
+		}
+
+	}
+
+	mission_fl_pee_dee_subjugation = {
+		icon = mission_unite_home_region
+		position = 8
+		required_missions = { mission_fl_embrace_charlestonian }
+		trigger = {
+			area_sc_olde_english_district = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_sc_florence = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+
+			area_sc_myrtle_beach = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			area_nc_southern = { type = all  country_or_non_sovereign_subject_holds = ROOT }
+			805 = { country_or_non_sovereign_subject_holds = ROOT }
+ 		}
+		effect = {
+			area_nc_south_coast = { add_permanent_claim = ROOT }
+			area_nc_goldsboro = { add_permanent_claim = ROOT }
+			area_nc_new_bern = { add_permanent_claim = ROOT }
+			area_nc_greenville = { add_permanent_claim = ROOT }
+			area_nc_central_coast = { add_permanent_claim = ROOT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = area_sc_olde_english_district
+				area = area_sc_florence
+
+				area = area_sc_myrtle_beach
+				area = area_nc_southern
+				province_id = 805
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 	}
 }

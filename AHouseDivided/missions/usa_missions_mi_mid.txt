@@ -5,14 +5,14 @@ missions_mi_mid_slot1 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = LSG
-			tag = JKS
-			tag = HRN
 			tag = BAY
 			tag = GTT
+			tag = HRN
+			tag = LSG
 			tag = MDL
 			tag = MTP
 			tag = MBS
+			tag = JKS
 		}
 	}
 
@@ -47,6 +47,8 @@ missions_mi_mid_slot1 = {
 			area_mi_west_detroit = { type = all  country_or_non_sovereign_subject_holds = ROOT }
  		}
 		effect = {
+			add_prestige_or_monarch_power = { amount = 15 }
+			add_years_of_income = 1
 			area_mi_thumb = { add_permanent_claim = ROOT }
 			area_mi_north_saginaw_bay = { add_permanent_claim = ROOT }
 		}
@@ -89,14 +91,14 @@ missions_mi_mid_slot2 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = LSG
-			tag = JKS
-			tag = HRN
 			tag = BAY
 			tag = GTT
+			tag = HRN
+			tag = LSG
 			tag = MDL
 			tag = MTP
 			tag = MBS
+			tag = JKS
 		}
 	}
 
@@ -240,14 +242,14 @@ missions_mi_mid_slot3 = {
 	has_country_shield = yes
 	potential = {
 		OR = {
-			tag = LSG
-			tag = JKS
-			tag = HRN
 			tag = BAY
 			tag = GTT
+			tag = HRN
+			tag = LSG
 			tag = MDL
 			tag = MTP
 			tag = MBS
+			tag = JKS
 		}
 	}
 

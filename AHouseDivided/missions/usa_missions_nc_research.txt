@@ -30,7 +30,7 @@ missions_nc_research_slot1 = {
 				area = area_nc_pinehurst
 				area = area_nc_fayetteville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -86,7 +86,7 @@ missions_nc_research_slot1 = {
 				area = area_nc_south_coast
 				area = area_nc_southern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }
@@ -205,7 +205,7 @@ missions_nc_research_slot2 = {
 				province_id = 821
 				province_id = 822
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -287,7 +287,7 @@ missions_nc_research_slot3 = {
 				area = area_nc_winstone
 				area = area_nc_greensboro
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -353,7 +353,7 @@ missions_nc_research_slot3 = {
 				area = area_nc_north_charlotte
 				area = area_nc_east_charlotte
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -395,7 +395,7 @@ missions_nc_research_slot3 = {
 				area = area_nc_northwestern
 				area = area_nc_southwestern
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

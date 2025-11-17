@@ -48,7 +48,7 @@ missions_ma_western_slot3 = {
 			OR = {
 				area = area_ma_western
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -105,7 +105,7 @@ missions_ma_western_slot3 = {
 				area = area_ma_boston
 				province_id = 472
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 }

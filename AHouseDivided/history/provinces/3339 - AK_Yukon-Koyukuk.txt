@@ -9,6 +9,7 @@ native_ferocity=5
 native_hostileness=4
 religion=nondenominational
 culture=culture_alaskan
+add_province_triggered_modifier = triggered_modifier_ak_home_colonization_buff
 
 1444.11.12 = {
 	base_tax=0

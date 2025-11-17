@@ -47,7 +47,7 @@ missions_sc_peedee_slot3 = {
 				province_id = 546
 				province_id = 555
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -116,7 +116,7 @@ missions_sc_peedee_slot3 = {
 			OR = {
 				area = area_sc_charleston
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -178,7 +178,7 @@ missions_sc_peedee_slot3 = {
 			OR = {
 				area = area_sc_columbia
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
@@ -231,7 +231,7 @@ missions_sc_peedee_slot3 = {
 			OR = {
 				area = area_sc_greenville
 			}
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 	}
 
