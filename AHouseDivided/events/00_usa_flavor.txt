@@ -717,38 +717,3 @@ country_event = {
         }
     }
 }
-
-country_event = {
-    id = flavor_usa.001
-    title = flavor_usa.001.t
-    desc = flavor_usa.001.desc
-
-    trigger = {
-        is_date = 1444.11.11
-    }
-
-    option = {
-        name = flavor_usa.001.a
-        trigger = {
-            or = {
-                has_country_flag = newsouth
-                has_country_flag = oldsouth
-                has_reform = tanistry_reform                
-            }
-
-        }
-        
-    }
-
-    option = {
-        name = flavor_usa.001.b
-        trigger = {
-            not = {
-                has_country_flag = newsouth
-                has_country_flag = oldsouth
-                has_reform = tanistry_reform
-            }
-        }
-
-    }
-}
