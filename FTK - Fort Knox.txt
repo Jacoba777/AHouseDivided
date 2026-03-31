@@ -1,0 +1,12 @@
+technology_group = appalachia
+government = monarchy
+add_government_reform = proscriptive_trade_hub
+government_rank = 1
+religion = baptist
+primary_culture = culture_louisvillian
+capital = 890
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 30
+}

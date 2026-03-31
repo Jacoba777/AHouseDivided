@@ -1,0 +1,359 @@
+namespace = rising_horde
+
+
+#learning of the horde, panic rearmament and realizing woefully underprepared
+country_event = {
+    id = rising_horde.1
+    title = rising_horde.1.t
+    desc = rising_horde.1.d
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = rising_horde.1.a
+        add_stability = -1
+		set_country_flag = risinghordeone
+
+        add_country_modifier = {
+            name = rushed_rearmament
+            duration = 180
+        }
+    }
+
+	option = {
+        name = rising_horde.1.b
+		set_country_flag = risinghordeone
+
+        add_country_modifier = {
+            name = steady_rearmament
+            duration = 365
+        }
+    }
+}
+
+
+#heavy government contracts to rebuild the military
+country_event = {
+    id = rising_horde.2
+    title = rising_horde.2.t
+    desc = rising_horde.2.d
+    fire_only_once = yes
+
+	trigger = {
+		has_country_flag = risinghordeone
+		not = {	has_country_modifier = rushed_rearmament }
+		not = { has_country_modifier = steady_rearmament }
+	}
+
+    option = {
+        name = rising_horde.2.a
+		set_country_flag = risinghordetwo
+
+        add_treasury = -1000
+
+        add_country_modifier = {
+            name = reactivated_industry
+            duration = 180
+        }
+    }
+
+	option = {
+        name = rising_horde.2.b
+		set_country_flag = risinghordetwo
+
+        add_treasury = -100
+
+        add_country_modifier = {
+            name = revived_industry
+            duration = 365
+        }
+    }
+}
+
+
+#completely unprepared levies, structural malformations in the armies
+country_event = {
+    id = rising_horde.3
+    title = rising_horde.3.t
+    desc = rising_horde.3.d
+    fire_only_once = yes
+
+	trigger = {
+		has_country_flag = risinghordetwo
+		not = {	has_country_modifier = reactivated_industry }
+		not = { has_country_modifier = revived_industry }
+	}
+
+    option = {
+        name = rising_horde.3.a
+		set_country_flag = risinghordethree
+
+        add_army_tradition = -5
+
+        add_country_modifier = {
+            name = inexperienced_army
+            duration = 730
+        }
+    }
+
+	option = {
+        name = rising_horde.3.b
+		set_country_flag = risinghordethree
+
+        add_army_tradition = -5
+
+        add_country_modifier = {
+            name = green_army
+            duration = 1095
+        }
+    }
+
+}
+
+
+#emergency spending drains the budget, cut back or double down?
+country_event = {
+    id = rising_horde.4
+    title = rising_horde.4.t
+    desc = rising_horde.4.d
+    trigger = {
+		has_country_flag = risinghordethree
+		not = {	has_country_modifier = inexperienced_army }
+		not = { has_country_modifier = green_army }
+	}
+
+    option = {
+        name = rising_horde.4.a
+		set_country_flag = risinghordefour
+
+		add_country_modifier = {
+			name = emergency_war_funding
+			duration = -365
+		}
+
+        add_inflation = 2
+        add_treasury = -1500
+    }
+
+	option = {
+        name = rising_horde.4.b
+		set_country_flag = risinghordefour
+
+		add_country_modifier = {
+			name = military_auditing
+			duration = -730
+		}
+
+        add_inflation = 0.25
+        add_treasury = -200
+		add_corruption = 1
+    }
+}
+
+
+#merchantile class demands more protection, but the government is too weak to provide it
+country_event = {
+    id = rising_horde.5
+    title = rising_horde.5.t
+    desc = rising_horde.5.d
+	is_triggered_only = yes
+
+
+
+    option = {
+        name = rising_horde.5.a
+
+        random_owned_province = {
+            limit = {
+                development = 20
+            }
+            add_province_modifier = {
+                name = merchant_flight
+                duration = 720
+            }
+        }
+
+        add_prestige = -5
+    }
+
+    option = {
+        name = rising_horde.5.b
+
+        random_owned_province = {
+            limit = {
+                OR = {
+                    any_neighbor_province = {
+						owner = {
+							OR = {
+								has_reform = steppe_horde
+								has_reform = great_mongol_state_reform
+							}
+						}
+					}
+                    province_has_center_of_trade_of_level = 1
+                }
+            }
+            add_province_modifier = {
+                name = militarized_trade_corridor
+                duration = 720
+            }
+        }
+
+        add_mil_power = 25
+    }
+
+    option = {
+        name = rising_horde.5.c
+
+        random_owned_province = {
+            limit = {
+                province_has_center_of_trade_of_level = 1
+            }
+            add_province_modifier = {
+                name = merchant_protection_contracts
+                duration = 720
+            }
+        }
+
+        add_dip_power = -50
+        add_prestige = 5
+    }
+}
+
+
+#full wartime conversion to aggressive version of reform, only for those bordering the horde
+country_event = {
+    id = rising_horde.6
+    title = rising_horde.6.t
+    desc = rising_horde.6.d
+    trigger = {
+        has_country_flag = risinghordefour
+		not = { has_country_modifier = emergency_war_funding }
+		not = { has_country_modifier = military_auditing }
+
+        any_neighbor_country = {
+            OR = {
+				has_reform = steppe_horde
+				has_reform = great_mongol_state_reform
+			}
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+
+        modifier = {
+            factor = 0.5
+            any_neighbor_country = {
+                OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+				}
+                army_size = 20000
+            }
+        }
+
+        modifier = {
+            factor = 0.75
+            stability = 0
+        }
+    }
+
+    option = {
+        name = rising_horde.6.a
+
+        # Swap to aggressive reform
+		if = {
+			limit = {
+				has_reform = midwestern_trade_hub
+			}
+			add_government_reform = midwestern_trade_hub_agressive
+		}
+		if = {
+			limit = {
+				has_reform = proscriptive_trade_hub
+			}
+			add_government_reform = proscriptive_trade_hub_aggressive
+		}
+		if = {
+			limit = {
+				has_reform = chicago
+			}
+			add_government_reform = chicago_aggressive
+		}
+		if = {
+			limit = {
+				has_reform = midwest_chartered_company_government
+			}
+			add_government_reform = midwest_chartered_company_government_aggressive
+		}
+    }
+
+    option = {
+        name = rising_horde.6.b
+
+        add_stability = -1
+        add_prestige = -5
+
+        add_country_modifier = {
+            name = stubborn_commercialism
+            duration = 1825
+        }
+    }
+}
+
+
+#reversion of reform after the horde is defeated
+country_event = {
+    id = rising_horde.7
+    title = rising_horde.7.t
+    desc = rising_horde.7.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = rising_horde.7.a
+
+        # Government normalization
+        if = {
+			limit = {
+				has_reform = midwestern_trade_hub_agressive
+			}
+			add_government_reform = midwestern_trade_hub
+		}
+		if = {
+			limit = {
+				has_reform = proscriptive_trade_hub_aggressive
+			}
+			add_government_reform = proscriptive_trade_hub
+		}
+		if = {
+			limit = {
+				has_reform = chicago_aggressive
+			}
+			add_government_reform = chicago
+		}
+		if = {
+			limit = {
+				has_reform = midwest_chartered_company_government_aggressive
+			}
+			add_government_reform = midwest_chartered_company_government
+		}
+
+        # Economic rebound
+        add_country_modifier = {
+            name = postwar_boom
+            duration = 3650
+        }
+
+		add_country_modifier = {
+			name = postwar_structures
+			duration = 7300
+		}
+
+        # Stability + prestige recovery
+        add_stability = 1
+        add_prestige = 15
+    }
+}

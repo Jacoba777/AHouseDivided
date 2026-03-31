@@ -1,0 +1,12 @@
+technology_group = mid_atlantic
+government = monarchy
+add_government_reform = proscriptive_trade_hub
+government_rank = 1
+religion = methodist
+primary_culture = culture_allegheny
+capital = 222
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 28
+}

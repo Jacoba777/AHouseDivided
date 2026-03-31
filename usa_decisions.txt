@@ -1,0 +1,686 @@
+country_decisions = {
+	old_south_raid = {
+		# who can see the decision
+		potential = {
+			has_country_flag = oldsouth
+			any_neighbor_country = {
+				has_country_flag = newsouth
+			}
+			NOT = {
+				is_at_war = yes
+			}
+		}
+		# requirements to take the decision
+		allow = {
+			manpower = 1
+			has_estate = estate_cossacks
+			NOT = {
+				has_country_flag = recent_raid_cooldown
+			}			# local cooldown for the raider
+			any_neighbor_country = {
+				has_country_flag = newsouth
+				total_development = 10
+			}
+		}
+		effect = {
+			# apply a short cooldown on the raider so they can't spam
+			set_country_flag = recent_raid_cooldown
+			root = {
+				save_event_target_as = flavor_usa_raider
+			}
+			# choose a neighbor to raid
+			random_neighbor_country = {
+				limit = {
+					has_country_flag = newsouth
+					total_development = 10
+					not = {
+						war_with = root
+					}
+				}
+				# pick a border province in the target to mark and damage
+				random_owned_province = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = ROOT
+						}						# province borders the raider
+						is_city = yes
+						NOT = {
+							devastation = 100
+						}
+						not = {
+							has_province_flag = dixie_recently_raided_province
+						}
+					}
+					# mark province so it 'remembers' the raid (useful for other systems)
+					set_province_flag = dixie_recently_raided
+					add_province_modifier = {
+						name = dixie_recent_raid
+						duration = 1825						# 5 years
+					}
+					add_devastation = 15
+					# decrease base stats (similar to Cossack behavior)
+					random_list = {
+						1 = {
+							trigger = {
+								base_tax = 2
+							}
+							add_base_tax = -1
+						}
+						1 = {
+							trigger = {
+								base_production = 2
+							}
+							add_base_production = -1
+						}
+						1 = {
+							trigger = {
+								base_manpower = 2
+							}
+							add_base_manpower = -1
+						}
+					}
+					# loot the province (give raider money)
+					remove_loot = {
+						who = root
+						amount = 5
+					}
+					owner = {
+						# notify the owner country: store the flag that it was raided (non-unique global flag)
+						set_country_flag = dixie_raided_recently_tag
+					}
+					# save the province as an event target, and call an event on the victim with the raider in FROM
+					save_event_target_as = raided_province
+					owner = {
+						# fire the victim response event in the victim's scope; From = the raider
+						country_event = {
+							id = flavor_usa.50
+							days = 7
+						}
+					}
+				}
+				# end random_owned_province
+			}
+			# end random_neighbor_country
+			# also fire a small 'success' event for the raider itself (optional, hidden)
+			root = {
+				country_event = {
+					id = flavor_usa.60
+					days = 7
+				}
+			}
+		}
+		# end effect
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	# end decision
+	ns_fuck_os = {
+		major = yes
+		potential = {
+			has_country_flag = newsouth
+			or = {
+				NOT = {
+					has_country_modifier = dixie_embargoed
+				}
+				NOT = {
+					has_country_modifier = dixie_corruption
+				}
+			}
+		}
+		allow = {
+			or = {
+				NOT = {
+					has_country_modifier = dixie_embargoed
+				}
+				NOT = {
+					has_country_modifier = dixie_corruption
+				}
+			}
+			treasury = 500
+			any_neighbor_country = {
+				not = {
+					has_opinion = {
+						who = root
+						value = -25
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.1865
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	### vancouver corporation
+	#initial investment
+	vc_initial_invest = {
+		potential = {
+			has_country_flag = vancouver_corp_flag
+		}
+		allow = {
+			and = {
+				any_country = {
+					or = {
+						any_neighbor_country = {
+							is_subject_of = ROOT
+						}
+						is_neighbor_of = root
+					}
+					not = {
+						has_country_modifier = vancouver_corporation_investing
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.185190
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#up to tributary
+	vc_up_to_tributary = {
+		potential = {
+			has_country_flag = vancouver_corp_flag
+		}
+		allow = {
+			any_neighbor_country = {
+				and = {
+					has_country_modifier = vancouver_corporation_investing
+					not = {
+						has_country_modifier = vancouver_recent_investment
+					}
+					OR = {
+						is_neighbor_of = ROOT
+						any_neighbor_country = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.185180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#tributary to appanage (vassalization)
+	vc_tributary_to_appanage = {
+		potential = {
+			has_country_flag = vancouver_corp_flag
+		}
+		allow = {
+			any_neighbor_country = {
+				and = {
+					not = {
+						has_country_modifier = vancouver_recent_corporate_dependency
+					}
+					is_subject_of_type = vancouver_dependency
+					OR = {
+						is_neighbor_of = ROOT
+						any_neighbor_country = {
+							is_subject_of_type = appanage
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.185100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#annexation
+	vc_full_integration = {
+		potential = {
+			has_country_flag = vancouver_corp_flag
+		}
+		allow = {
+			not = {
+				has_country_modifier = vancouver_internal_investment
+			}
+			any_neighbor_country = {
+				and = {
+					not = {
+						has_country_modifier = vancouver_recent_integrated_market
+					}
+					is_subject_of_type = appanage
+					is_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.185200
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#become the new seat of the corporation 
+	assume_vancouver_corporation = {
+		potential = {
+			not = {
+				any_country = {
+					has_country_flag = vancouver_corp_flag
+				}
+			}
+			has_country_flag = vancouver_economic_system_check
+		}
+		allow = {
+			# Must be economically powerful
+			total_development = 300
+			trade_income_percentage = 0.45
+			# based near seattle
+			capital_scope = {
+				superregion = superregion_pacific_northwest
+			}
+		}
+		effect = {
+			add_government_reform = stadthalter_monarchy_reform
+			add_prestige = 25
+			every_country = {
+				add_aggressive_expansion = {
+					who = root
+					value = 25
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 2
+				total_development = 400
+			}
+			modifier = {
+				factor = 1.5
+				trade_income_percentage = 0.45
+			}
+		}
+	}
+	## Prospecting
+	prospecting_decision = {
+		potential = {
+			has_reform = corporatocracy
+			not = {
+				has_country_modifier = prospector_funding
+			}
+		}
+		allow = {
+			num_of_owned_provinces_with = {
+				value = 1
+				NOT = {
+					OR = {
+						trade_goods = gold
+						trade_goods = coal
+						trade_goods = copper
+						trade_goods = iron
+						trade_goods = gems
+					}
+				}
+			}
+			treasury = 10000
+			is_bankrupt = no
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.184901
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Integrate the American Territories
+	integrate_american_territories = {
+		potential = {
+			tag = XUS
+			any_subject_country = {
+				is_subject_of_type = core_eyalet
+			}
+		}
+		allow = {
+			tag = XUS
+			not = {
+				governing_capacity_percentage = 1
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					is_subject_of_type = core_eyalet
+					is_subject_of = ROOT
+				}
+			}
+			country_event = {
+				id = flavor_xus.1789
+				days = -1
+			}
+		}
+	}
+
+
+	#LA River Authority province checks
+	check_la_basin_control = {
+		potential = {
+			tag = XLA
+			has_reform = louisiana_empire_reform
+		}
+		allow = {
+			always = yes
+		}
+		provinces_to_highlight = {
+				or = {
+					has_province_flag = upper_missouri_river
+					has_province_flag = lower_missouri_river
+					has_province_flag = lower_miss_river
+					has_province_flag = upper_miss_river
+					has_province_flag = arkansas_river
+					has_province_flag = green_river
+					has_province_flag = cumberland_river
+					has_province_flag = tennessee_river
+					has_province_flag = ohio_river
+					has_province_flag = kanawha_river
+					has_province_flag = kentucky_river
+					has_province_flag = wabash_river
+					has_province_flag = illinois_river
+					has_province_flag = wisconsin_river
+					has_province_flag = minnesota_river
+					has_province_flag = ouachita_river
+				}
+			}
+		effect = {
+			country_event = {
+				id = flavor_usa.1200
+				days = -1
+			}
+		}
+	}
+
+	#stl version
+	check_la_basin_control = {
+		potential = {
+			tag = STL
+			has_reform = louisiana_empire_reform
+		}
+		allow = {
+			always = yes
+		}
+		provinces_to_highlight = {
+				or = {
+					has_province_flag = upper_missouri_river
+					has_province_flag = lower_missouri_river
+					has_province_flag = lower_miss_river
+					has_province_flag = upper_miss_river
+					has_province_flag = arkansas_river
+					has_province_flag = green_river
+					has_province_flag = cumberland_river
+					has_province_flag = tennessee_river
+					has_province_flag = ohio_river
+					has_province_flag = kanawha_river
+					has_province_flag = kentucky_river
+					has_province_flag = wabash_river
+					has_province_flag = illinois_river
+					has_province_flag = wisconsin_river
+					has_province_flag = minnesota_river
+					has_province_flag = ouachita_river
+				}
+			}
+		effect = {
+			country_event = {
+				id = flavor_usa.1200
+				days = -1
+			}
+		}
+	}
+
+
+
+	check_la_unwanted_provinces = {
+		potential = {
+			tag = XLA
+			has_reform = louisiana_empire_reform
+		}
+		allow = {
+			always = yes
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+				and = {
+					not = { has_province_flag = upper_missouri_river }
+					not = { has_province_flag = lower_missouri_river }
+					not = { has_province_flag = lower_miss_river }
+					not = { has_province_flag = upper_miss_river }
+					not = { has_province_flag = arkansas_river }
+					not = { has_province_flag = green_river }
+					not = { has_province_flag = cumberland_river }
+					not = { has_province_flag = tennessee_river }
+					not = { has_province_flag = ohio_river }
+					not = { has_province_flag = kanawha_river }
+					not = { has_province_flag = kentucky_river }
+					not = { has_province_flag = wabash_river }
+					not = { has_province_flag = illinois_river }
+					not = { has_province_flag = wisconsin_river }
+					not = { has_province_flag = minnesota_river }
+					not = { has_province_flag = ouachita_river }
+
+					not = { has_province_flag = la_state_flag }
+				}
+			}
+		effect = {
+			country_event = {
+				id = flavor_usa.1224
+				days = -1
+			}
+		}
+	}
+
+
+	#stl version
+	check_la_unwanted_provinces = {
+		potential = {
+			tag = STL
+			has_reform = louisiana_empire_reform
+		}
+		allow = {
+			always = yes
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+				and = {
+					not = { has_province_flag = upper_missouri_river }
+					not = { has_province_flag = lower_missouri_river }
+					not = { has_province_flag = lower_miss_river }
+					not = { has_province_flag = upper_miss_river }
+					not = { has_province_flag = arkansas_river }
+					not = { has_province_flag = green_river }
+					not = { has_province_flag = cumberland_river }
+					not = { has_province_flag = tennessee_river }
+					not = { has_province_flag = ohio_river }
+					not = { has_province_flag = kanawha_river }
+					not = { has_province_flag = kentucky_river }
+					not = { has_province_flag = wabash_river }
+					not = { has_province_flag = illinois_river }
+					not = { has_province_flag = wisconsin_river }
+					not = { has_province_flag = minnesota_river }
+					not = { has_province_flag = ouachita_river }
+
+					not = { has_province_flag = la_state_flag }
+				}
+			}
+		effect = {
+			country_event = {
+				id = flavor_usa.1224
+				days = -1
+			}
+		}
+	}
+
+	#create monetary standard
+	create_monetary_union = {
+		potential = {
+			has_government_mechanic = midwest_mercantilism
+			num_of_non_tributary_subjects = 10
+			not = {
+				has_country_flag = midwest_monetary_seat
+			}
+			not = { has_country_flag = midwest_monetary_market }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.1400
+				days = -1
+			}
+		}
+	}
+
+
+	#leave own bloc
+	leave_current_midwest_bloc = {
+		potential = {
+			has_government_mechanic = midwest_mercantilism
+			is_subject_of_type = midwest_bloc_subordinate
+		}
+		allow = {
+			midwest_subject_matches_or_exceeds_overlord = yes
+		}
+		effect = {
+			root = {
+				grant_independence = yes
+			}
+			if = {
+				limit = {
+					and = {
+						has_country_modifier = monetary_union_member
+					}
+				}
+				remove_country_modifier = monetary_union_member
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				overlord = {
+					not = {
+						reverse_has_opinion = {
+							who = root
+							value = 100
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1
+				midwest_subject_matches_or_exceeds_overlord = yes
+			}
+		}
+	}
+
+
+	#leave the midwestern compact
+	leave_midwest_compact = {
+		potential = {
+			has_government_mechanic = midwest_mercantilism
+			has_country_flag = midwest_compact_member
+			not = {
+				has_country_flag = midwest_economic_confederation
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			clr_country_flag = midwest_compact_member
+			add_country_modifier = {
+				name = former_compact_member_perm
+				duration = -1
+			}
+			add_country_modifier = {
+				name = former_compact_member
+				duration = 3650
+			}
+			
+			if = {
+				limit = {
+					has_reform = midwest_chartered_company_government
+				}
+				add_government_reform = midwest_chartered_company_government_aggressive
+			}
+			if = {
+				limit = {
+					has_reform = midwestern_trade_hub
+				}
+				add_government_reform = midwestern_trade_hub_agressive
+			}
+			if = {
+				limit = {
+					has_reform = proscriptive_trade_hub
+				}
+				add_government_reform = proscriptive_trade_hub_aggressive
+			}
+			if = {
+				limit = {
+					has_reform = chicago
+				}
+				add_government_reform = chicago_aggressive
+			}
+		}
+		ai_will_do = { #no reason the ai would
+			factor = 0
+			modifier = {
+				factor = 1
+				or = {
+					personality = ai_militarist
+				}
+			}
+		}
+	}
+
+	#urban blight modifier removal (throw money at the problem)
+	remove_urban_blight = {
+		potential = {
+			any_owned_province = {
+				has_province_modifier = urban_blight
+			}
+		}
+		allow = {
+			years_of_income = 0.1
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					has_province_modifier = urban_blight
+				}
+				remove_province_modifier = urban_blight
+				add_province_modifier = {
+					name = urban_acclimatization
+					duration = 14600
+				}
+			}
+			add_years_of_income = -0.09
+
+		}
+	}
+}

@@ -1,0 +1,7 @@
+technology_group = northern_plains
+government = republic
+add_government_reform = midwestern_ver_american_repub
+government_rank = 2
+religion = lutheran
+primary_culture = culture_minnea_paulite
+capital = 2480

@@ -1,0 +1,12 @@
+technology_group = central_plains
+government = republic
+add_government_reform = midwest_chartered_company_government
+government_rank = 1
+religion = baptist
+primary_culture = culture_missouri_rheinish
+capital = 1645
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 18
+}

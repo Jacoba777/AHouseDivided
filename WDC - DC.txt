@@ -1,0 +1,20 @@
+technology_group = mid_atlantic
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+religion = methodist
+primary_culture = culture_potomac
+capital = 505
+elector = yes
+set_country_flag = trifecta_emperor
+
+1435.5.31 = {
+	monarch = {
+		name = "Jonathan"
+		dynasty = "Hale"
+		adm = 4
+		dip = 4
+		mil = 3
+		birth_date = 1417.2.11
+	}
+}

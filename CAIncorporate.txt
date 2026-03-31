@@ -1,0 +1,2654 @@
+country_decisions = {
+
+    integrate_al = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XAL = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_al
+                        value = 46
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_al }
+        }
+        provinces_to_highlight = {
+            region = region_al
+        }
+        allow = {
+            XAL = {
+                num_of_owned_provinces_with = {
+                region = region_al
+                value = 14
+            }            
+        }
+        XAL = { development_of_overlord_fraction = .13 }
+        }
+        effect = {
+            set_country_flag = incorporated_al
+            XAL = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XAL
+			    subject_type = core_eyalet
+    		}
+	    	XAL = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+
+    integrate_ak = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XAK = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ak
+                        value = 14
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ak }
+        }
+        provinces_to_highlight = {
+            region = region_ak
+        }
+        allow = {
+            XAK = {
+                num_of_owned_provinces_with = {
+                region = region_ak
+                value = 14
+            }            
+        }
+        XAK = { development_of_overlord_fraction = .02 }
+        }
+        effect = {
+            set_country_flag = incorporated_ak
+            XAK = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XAK
+			    subject_type = core_eyalet
+    		}
+	    	XAK = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+
+    integrate_ar = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XAR = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ar
+                        value = 52 
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ar }
+        }
+        provinces_to_highlight = {
+            region = region_ar
+        }
+        allow = {
+            XAR = {
+                num_of_owned_provinces_with = {
+                region = region_ar
+                value = 52
+            }            
+        }
+        XAR = { development_of_overlord_fraction = .08 }
+        }
+        effect = {
+            set_country_flag = incorporated_ar
+            XAR = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XAR
+			    subject_type = core_eyalet
+    		}
+	    	XAR = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_az = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XAZ = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_az
+                        value = 12
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_az }
+        }
+        provinces_to_highlight = {
+            region = region_az
+        }
+        allow = {
+            XAZ = {
+                num_of_owned_provinces_with = {
+                region = region_az
+                value = 12
+            }            
+        }
+        XAZ = { development_of_overlord_fraction = .19 }
+        }
+        effect = {
+            set_country_flag = incorporated_az
+            XAZ = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XAZ
+			    subject_type = core_eyalet
+    		}
+	    	XAZ = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_co = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XCO = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_co
+                        value = 44
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_co }
+        }
+        provinces_to_highlight = {
+            region = region_co
+        }
+        allow = {
+            XCO = {
+                num_of_owned_provinces_with = {
+                region = region_co
+                value = 44
+            }            
+        }
+        XCO = { development_of_overlord_fraction = .15 }
+        }
+        effect = {
+            set_country_flag = incorporated_co
+            XCO = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XCO
+			    subject_type = core_eyalet
+    		}
+	    	XCO = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ct = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XCT = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ct
+                        value = 6
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ct }
+        }
+        provinces_to_highlight = {
+            region = region_ct
+        }
+        allow = {
+            XCT = {
+                num_of_owned_provinces_with = {
+                region = region_ct
+                value = 6
+            }            
+        }
+        XCT = { development_of_overlord_fraction = .09 }
+        }
+        effect = {
+            set_country_flag = incorporated_ct
+            XCT = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XCT
+			    subject_type = core_eyalet
+    		}
+	    	XCT = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_de = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XDE = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_de
+                        value = 3
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_de }
+        }
+        provinces_to_highlight = {
+            region = region_de
+        }
+        allow = {
+            XDE = {
+                num_of_owned_provinces_with = {
+                region = region_de
+                value = 3
+            }            
+        }
+        XDE = { development_of_overlord_fraction = .03 }
+        }
+        effect = {
+            set_country_flag = incorporated_de
+            XDE = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XDE
+			    subject_type = core_eyalet
+    		}
+	    	XDE = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_fl = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XFL = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_fl
+                        value = 46
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_fl }
+        }
+        provinces_to_highlight = {
+            region = region_fl
+        }
+        allow = {
+            XFL = {
+                num_of_owned_provinces_with = {
+                region = region_fl
+                value = 46
+            }            
+        }
+        XFL = { development_of_overlord_fraction = .59 }
+        }
+        effect = {
+            set_country_flag = incorporated_fl
+            XFL = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XFL
+			    subject_type = core_eyalet
+    		}
+	    	XFL = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ga = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XGA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ga
+                        value = 108
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ga }
+        }
+        provinces_to_highlight = {
+            region = region_ga
+        }
+        allow = {
+            XGA = {
+                num_of_owned_provinces_with = {
+                region = region_ga
+                value = 108
+            }            
+        }
+        XGA = { development_of_overlord_fraction = .28 }
+        }
+        effect = {
+            set_country_flag = incorporated_ga
+            XGA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XGA
+			    subject_type = core_eyalet
+    		}
+	    	XGA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_hi = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XHI = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_hi
+                        value = 4
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_hi }
+        }
+        provinces_to_highlight = {
+            region = region_hi
+        }
+        allow = {
+            XHI = {
+                num_of_owned_provinces_with = {
+                region = region_hi
+                value = 4
+            }            
+        }
+        XHI = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_hi
+            XHI = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XHI
+			    subject_type = core_eyalet
+    		}
+	    	XHI = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_id = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XID = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_id
+                        value = 30
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_id }
+        }
+        provinces_to_highlight = {
+            region = region_id
+        }
+        allow = {
+            XID = {
+                num_of_owned_provinces_with = {
+                region = region_id
+                value = 30
+            }            
+        }
+        XID = { development_of_overlord_fraction = .05 }
+        }
+        effect = {
+            set_country_flag = incorporated_id
+            XID = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XID
+			    subject_type = core_eyalet
+    		}
+	    	XID = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_il = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XIL = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_il
+                        value = 70
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_il }
+        }
+        provinces_to_highlight = {
+            region = region_il
+        }
+        allow = {
+            XIL = {
+                num_of_owned_provinces_with = {
+                region = region_il
+                value = 70
+            }            
+        }
+        XIL = { development_of_overlord_fraction = .32 }
+        }
+        effect = {
+            set_country_flag = incorporated_il
+            XIL = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XIL
+			    subject_type = core_eyalet
+    		}
+	    	XIL = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_in = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XIN = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_in
+                        value = 62
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_in }
+        }
+        provinces_to_highlight = {
+            region = region_in
+        }
+        allow = {
+            XIN = {
+                num_of_owned_provinces_with = {
+                region = region_in
+                value = 62
+            }            
+        }
+        XIN = { development_of_overlord_fraction = .18 }
+        }
+        effect = {
+            set_country_flag = incorporated_in
+            XIN = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XIN
+			    subject_type = core_eyalet
+    		}
+	    	XIN = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_rs = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XRS = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ok
+                        value = 14
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_rs }
+        }
+        provinces_to_highlight = {
+            region = region_ok
+        }
+        allow = {
+            XRS = {
+                num_of_owned_provinces_with = {
+                region = region_ok
+                value = 14
+            }            
+        }
+        XRS = { development_of_overlord_fraction = .06 }
+        }
+        effect = {
+            set_country_flag = incorporated_rs
+            XRS = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XRS
+			    subject_type = core_eyalet
+    		}
+	    	XRS = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ia = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XIA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ia
+                        value = 68
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ia }
+        }
+        provinces_to_highlight = {
+            region = region_ia
+        }
+        allow = {
+            XIA = {
+                num_of_owned_provinces_with = {
+                region = region_ia
+                value = 68
+            }            
+        }
+        XIA = { development_of_overlord_fraction = .08 }
+        }
+        effect = {
+            set_country_flag = incorporated_ia
+            XIA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XIA
+			    subject_type = core_eyalet
+    		}
+	    	XIA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ks = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XKS = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ks
+                        value = 72
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ks }
+        }
+        provinces_to_highlight = {
+            region = region_ks
+        }
+        allow = {
+            XKS = {
+                num_of_owned_provinces_with = {
+                region = region_ks
+                value = 72
+            }            
+        }
+        XKS = { development_of_overlord_fraction = .08 }
+        }
+        effect = {
+            set_country_flag = incorporated_ks
+            XKS = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XKS
+			    subject_type = core_eyalet
+    		}
+	    	XKS = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ky = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XKY = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ky
+                        value = 82
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ky }
+        }
+        provinces_to_highlight = {
+            region = region_ky
+        }
+        allow = {
+            XKY = {
+                num_of_owned_provinces_with = {
+                region = region_ky
+                value = 82
+            }            
+        }
+        XKY = { development_of_overlord_fraction = .12 }
+        }
+        effect = {
+            set_country_flag = incorporated_ky
+            XKY = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XKY
+			    subject_type = core_eyalet
+    		}
+	    	XKY = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_la = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XLA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_la
+                        value = 44
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_la }
+        }
+        provinces_to_highlight = {
+            region = region_la
+        }
+        allow = {
+            XLA = {
+                num_of_owned_provinces_with = {
+                region = region_la
+                value = 44
+            }            
+        }
+        XLA = { development_of_overlord_fraction = .12 }
+        }
+        effect = {
+            set_country_flag = incorporated_la
+            XLA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XLA
+			    subject_type = core_eyalet
+    		}
+	    	XLA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_me = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XME = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_me
+                        value = 12
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_me }
+        }
+        provinces_to_highlight = {
+            region = region_me
+        }
+        allow = {
+            XME = {
+                num_of_owned_provinces_with = {
+                region = region_me
+                value = 12
+            }            
+        }
+        XME = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_me
+            XME = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XME
+			    subject_type = core_eyalet
+    		}
+	    	XME = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_md = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMD = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_md
+                        value = 18
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_md }
+        }
+        provinces_to_highlight = {
+            region = region_md
+        }
+        allow = {
+            XMD = {
+                num_of_owned_provinces_with = {
+                region = region_md
+                value = 18
+            }            
+        }
+        XMD = { development_of_overlord_fraction = .16 }
+        }
+        effect = {
+            set_country_flag = incorporated_md
+            XMD = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMD
+			    subject_type = core_eyalet
+    		}
+	    	XMD = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ma = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ma
+                        value = 10
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ma }
+        }
+        provinces_to_highlight = {
+            region = region_ma
+        }
+        allow = {
+            XMA = {
+                num_of_owned_provinces_with = {
+                region = region_ma
+                value = 10
+            }            
+        }
+        XMA = { development_of_overlord_fraction = .18 }
+        }
+        effect = {
+            set_country_flag = incorporated_ma
+            XMA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMA
+			    subject_type = core_eyalet
+    		}
+	    	XMA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_mi = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMI = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_mi
+                        value = 56
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_mi }
+        }
+        provinces_to_highlight = {
+            region = region_mi
+        }
+        allow = {
+            XMI = {
+                num_of_owned_provinces_with = {
+                region = region_mi
+                value = 56
+            }            
+        }
+        XMI = { development_of_overlord_fraction = .26 }
+        }
+        effect = {
+            set_country_flag = incorporated_mi
+            XMI = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMI
+			    subject_type = core_eyalet
+    		}
+	    	XMI = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_mn = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMN = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_mn
+                        value = 60
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_mn }
+        }
+        provinces_to_highlight = {
+            region = region_mn
+        }
+        allow = {
+            XMN = {
+                num_of_owned_provinces_with = {
+                region = region_mn
+                value = 60
+            }            
+        }
+        XMN = { development_of_overlord_fraction = .15 }
+        }
+        effect = {
+            set_country_flag = incorporated_mn
+            XMN = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMN
+			    subject_type = core_eyalet
+    		}
+	    	XMN = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ms = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMS = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ms
+                        value = 56
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ms }
+        }
+        provinces_to_highlight = {
+            region = region_ms
+        }
+        allow = {
+            XMS = {
+                num_of_owned_provinces_with = {
+                region = region_ms
+                value = 56
+            }            
+        }
+        XMS = { development_of_overlord_fraction = .07 }
+        }
+        effect = {
+            set_country_flag = incorporated_ms
+            XMS = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMS
+			    subject_type = core_eyalet
+    		}
+	    	XMS = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_mo = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMO = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_mo
+                        value = 78
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_mo }
+        }
+        provinces_to_highlight = {
+            region = region_mo
+        }
+        allow = {
+            XMO = {
+                num_of_owned_provinces_with = {
+                region = region_mo
+                value = 78
+            }            
+        }
+        XMO = { development_of_overlord_fraction = .16 }
+        }
+        effect = {
+            set_country_flag = incorporated_mo
+            XMO = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMO
+			    subject_type = core_eyalet
+    		}
+	    	XMO = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_mt = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XMT = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_mt
+                        value = 38
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_mt }
+        }
+        provinces_to_highlight = {
+            region = region_mt
+        }
+        allow = {
+            XMT = {
+                num_of_owned_provinces_with = {
+                region = region_mt
+                value = 38
+            }            
+        }
+        XMT = { development_of_overlord_fraction = .03 }
+        }
+        effect = {
+            set_country_flag = incorporated_mt
+            XMT = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XMT
+			    subject_type = core_eyalet
+    		}
+	    	XMT = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ne = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNE = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ne
+                        value = 64
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ne }
+        }
+        provinces_to_highlight = {
+            region = region_ne
+        }
+        allow = {
+            XNE = {
+                num_of_owned_provinces_with = {
+                region = region_ne
+                value = 64
+            }            
+        }
+        XNE = { development_of_overlord_fraction = .05 }
+        }
+        effect = {
+            set_country_flag = incorporated_ne
+            XNE = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNE
+			    subject_type = core_eyalet
+    		}
+	    	XNE = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_nv = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNV = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_nv
+                        value = 12
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_nv }
+        }
+        provinces_to_highlight = {
+            region = region_nv
+        }
+        allow = {
+            XNV = {
+                num_of_owned_provinces_with = {
+                region = region_nv
+                value = 12
+            }            
+        }
+        XNV = { development_of_overlord_fraction = .08 }
+        }
+        effect = {
+            set_country_flag = incorporated_nv
+            XNV = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNV
+			    subject_type = core_eyalet
+    		}
+	    	XNV = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_nh = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNH = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_nh
+                        value = 8
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_nh }
+        }
+        provinces_to_highlight = {
+            region = region_nh
+        }
+        allow = {
+            XNH = {
+                num_of_owned_provinces_with = {
+                region = region_nh
+                value = 8
+            }            
+        }
+        XNH = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_nh
+            XNH = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNH
+			    subject_type = core_eyalet
+    		}
+	    	XNH = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_nj = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNJ = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_nj
+                        value = 16
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_nj }
+        }
+        provinces_to_highlight = {
+            region = region_nj
+        }
+        allow = {
+            XNJ = {
+                num_of_owned_provinces_with = {
+                region = region_nj
+                value = 16
+            }            
+        }
+        XNJ = { development_of_overlord_fraction = .24 }
+        }
+        effect = {
+            set_country_flag = incorporated_nj
+            XNJ = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNJ
+			    subject_type = core_eyalet
+    		}
+	    	XNJ = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_nm = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNM = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_nm
+                        value = 24
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_nm }
+        }
+        provinces_to_highlight = {
+            region = region_nm
+        }
+        allow = {
+            XNM = {
+                num_of_owned_provinces_with = {
+                region = region_nm
+                value = 24
+            }            
+        }
+        XNM = { development_of_overlord_fraction = .05 }
+        }
+        effect = {
+            set_country_flag = incorporated_nm
+            XNM = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNM
+			    subject_type = core_eyalet
+    		}
+	    	XNM = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ny = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNY = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ny
+                        value = 42
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ny }
+        }
+        provinces_to_highlight = {
+            region = region_ny
+        }
+        allow = {
+            XNY = {
+                num_of_owned_provinces_with = {
+                region = region_ny
+                value = 42
+            }            
+        }
+        XNY = { development_of_overlord_fraction = .50 }
+        }
+        effect = {
+            set_country_flag = incorporated_ny
+            XNY = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNY
+			    subject_type = core_eyalet
+    		}
+	    	XNY = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_nc = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XNC = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_nc
+                        value = 68
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_nc }
+        }
+        provinces_to_highlight = {
+            region = region_nc
+        }
+        allow = {
+            XNC = {
+                num_of_owned_provinces_with = {
+                    region = region_nc
+                    value = 68
+                }            
+            }
+        XNC = { development_of_overlord_fraction = .28 }
+        }
+        effect = {
+            set_country_flag = incorporated_nc
+            XNC = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XNC
+			    subject_type = core_eyalet
+    		}
+	    	XNC = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_dk = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XDK = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        superregion = superregion_dakota
+                        value = 82
+                    }
+                } 
+            }
+        NOT = { has_country_flag = incorporated_dk }
+        }
+        provinces_to_highlight = {
+            and = {
+                superregion = superregion_dakota
+            }
+        }
+        allow = {
+            XDK = {
+                num_of_owned_provinces_with = {
+                    superregion = superregion_dakota
+                    value = 82
+                }
+            }            
+        XDK = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_dk
+            XDK = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XDK
+			    subject_type = core_eyalet
+    		}
+	    	XDK = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_oh = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XOH = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_oh
+                        value = 60
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_oh }
+        }
+        provinces_to_highlight = {
+            region = region_oh
+        }
+        allow = {
+            XOH = {
+                num_of_owned_provinces_with = {
+                region = region_oh
+                value = 60
+            }            
+        }
+        XOH = { development_of_overlord_fraction = .30 }
+        }
+        effect = {
+            set_country_flag = incorporated_oh
+            XOH = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XOH
+			    subject_type = core_eyalet
+    		}
+	    	XOH = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ok = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XOK = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ok
+                        value = 14
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ok }
+        }
+        provinces_to_highlight = {
+            region = region_ok
+        }
+        allow = {
+            XOK = {
+                num_of_owned_provinces_with = {
+                region = region_ok
+                value = 14
+            }            
+        }
+        XOK = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_ok
+            XOK = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XOK
+			    subject_type = core_eyalet
+    		}
+	    	XOK = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_or = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XOR = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_or
+                        value = 26
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_or }
+        }
+        provinces_to_highlight = {
+            region = region_or
+        }
+        allow = {
+            XOR = {
+                num_of_owned_provinces_with = {
+                region = region_or
+                value = 26
+            }            
+        }
+        XOR = { development_of_overlord_fraction = .11 }
+        }
+        effect = {
+            set_country_flag = incorporated_or
+            XOR = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XOR
+			    subject_type = core_eyalet
+    		}
+	    	XOR = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_pa = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XPA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_pa
+                        value = 46
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_pa }
+        }
+        provinces_to_highlight = {
+            region = region_pa
+        }
+        allow = {
+            XPA = {
+                num_of_owned_provinces_with = {
+                region = region_pa
+                value = 46
+            }            
+        }
+        XPA = { development_of_overlord_fraction = .33 }
+        }
+        effect = {
+            set_country_flag = incorporated_pa
+            XPA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XPA
+			    subject_type = core_eyalet
+    		}
+	    	XPA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ri = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XRI = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ri
+                        value = 4
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ri }
+        }
+        provinces_to_highlight = {
+            region = region_ri
+        }
+        allow = {
+            XRI = {
+                num_of_owned_provinces_with = {
+                region = region_ri
+                value = 4
+            }            
+        }
+        XRI = { development_of_overlord_fraction = .03 }
+        }
+        effect = {
+            set_country_flag = incorporated_ri
+            XRI = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XRI
+			    subject_type = core_eyalet
+    		}
+	    	XRI = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_sc = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XSC = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_sc
+                        value = 32
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_sc }
+        }
+        provinces_to_highlight = {
+            region = region_sc
+        }
+        allow = {
+            XSC = {
+                num_of_owned_provinces_with = {
+                region = region_sc
+                value = 32
+            }            
+        }
+        XSC = { development_of_overlord_fraction = .14 }
+        }
+        effect = {
+            set_country_flag = incorporated_sc
+            XSC = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XSC
+			    subject_type = core_eyalet
+    		}
+	    	XSC = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_tn = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XTN = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_tn
+                        value = 64
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_tn }
+        }
+        provinces_to_highlight = {
+            region = region_tn
+        }
+        allow = {
+            XTN = {
+                num_of_owned_provinces_with = {
+                region = region_tn
+                value = 64
+            }            
+        }
+        XTN = { development_of_overlord_fraction = .18 }
+        }
+        effect = {
+            set_country_flag = incorporated_tn
+            XTN = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XTN
+			    subject_type = core_eyalet
+    		}
+	    	XTN = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_tx = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XTX = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_tx
+                        value = 178
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_tx }
+        }
+        provinces_to_highlight = {
+            region = region_tx
+        }
+        allow = {
+            XTX = {
+                num_of_owned_provinces_with = {
+                region = region_tx
+                value = 178
+            }            
+        }
+        XTX = { development_of_overlord_fraction = .79 }
+        }
+        effect = {
+            set_country_flag = incorporated_tx
+            XTX = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XTX
+			    subject_type = core_eyalet
+    		}
+	    	XTX = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_ut = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XUT = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_ut
+                        value = 2
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_ut }
+        }
+        provinces_to_highlight = {
+            region = region_ut
+        }
+        allow = {
+            XUT = {
+                num_of_owned_provinces_with = {
+                region = region_ut
+                value = 20
+            }            
+        }
+        XUT = { development_of_overlord_fraction = .09 }
+        }
+        effect = {
+            set_country_flag = incorporated_ut
+            XUT = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XUT
+			    subject_type = core_eyalet
+    		}
+	    	XUT = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_vt = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XVT = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_vt
+                        value = 10
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_vt }
+        }
+        provinces_to_highlight = {
+            region = region_vt
+        }
+        allow = {
+            XVT = {
+                num_of_owned_provinces_with = {
+                region = region_vt
+                value = 10
+            }            
+        }
+        XVT = { development_of_overlord_fraction = .02 }
+        }
+        effect = {
+            set_country_flag = incorporated_vt
+            XVT = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XVT
+			    subject_type = core_eyalet
+    		}
+	    	XVT = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_va = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XVA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_va
+                        value = 70
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_va }
+        }
+        provinces_to_highlight = {
+            region = region_va
+        }
+        allow = {
+            XVA = {
+                num_of_owned_provinces_with = {
+                region = region_va
+                value = 70
+            }            
+        }
+        XVA = { development_of_overlord_fraction = .22 }
+        }
+        effect = {
+            set_country_flag = incorporated_va
+            XVA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XVA
+			    subject_type = core_eyalet
+    		}
+	    	XVA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_wa = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XWA = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_wa
+                        value = 28
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_wa }
+        }
+        provinces_to_highlight = {
+            region = region_wa
+        }
+        allow = {
+            XWA = {
+                num_of_owned_provinces_with = {
+                region = region_wa
+                value = 28
+            }            
+        }
+        XWA = { development_of_overlord_fraction = .20 }
+        }
+        effect = {
+            set_country_flag = incorporated_wa
+            XWA = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XWA
+			    subject_type = core_eyalet
+    		}
+	    	XWA = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+
+    integrate_wv = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XWV = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_wv
+                        value = 38
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_wv }
+        }
+        provinces_to_highlight = {
+            region = region_wv
+        }
+        allow = {
+            XWV = {
+                num_of_owned_provinces_with = {
+                region = region_wv
+                value = 38
+            }            
+        }
+        XWV = { development_of_overlord_fraction = .04 }
+        }
+        effect = {
+            set_country_flag = incorporated_wv
+            XWV = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XWV
+			    subject_type = core_eyalet
+    		}
+	    	XWV = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_wisconsin = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XWI = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_wi
+                        value = 50
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_wi }
+        }
+        provinces_to_highlight = {
+            region = region_wi
+        }
+        allow = {
+            XWI = {
+                num_of_owned_provinces_with = {
+                region = region_wi
+                value = 50
+            }            
+        }
+        XWI = { development_of_overlord_fraction = .15 }
+        }
+        effect = {
+            set_country_flag = incorporated_wi
+            XWI = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XWI
+			    subject_type = core_eyalet
+    		}
+	    	XWI = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+    integrate_wy = {
+        potential = {
+            and = {
+                or = {
+                    tag = XUS
+                    tag = XCA
+                }
+                XWY = {
+                    is_subject_of = root
+                    has_reform = organized_territory_reform
+                    not = { is_subject_of_type = core_eyalet }
+                    num_of_owned_provinces_with = {
+                        region = region_wy
+                        value = 16
+                    }
+                } 
+            }
+            NOT = { has_country_flag = incorporated_wy }
+        }
+        provinces_to_highlight = {
+            region = region_wy
+        }
+        allow = {
+            XWY = {
+                num_of_owned_provinces_with = {
+                region = region_wy
+                value = 16
+            }            
+        }
+        XWY = { development_of_overlord_fraction = .01 }
+        }
+        effect = {
+            set_country_flag = incorporated_wy
+            XWY = {
+			    hidden_effect = {
+				    grant_independence = yes
+		    	}
+    		}
+	    	create_subject = {
+		    	who = XWY
+			    subject_type = core_eyalet
+    		}
+	    	XWY = {
+		    	if = {
+			    	limit = { NOT = { government = republic } }
+				    change_government = republic
+    			}
+	    		if = {
+		    		limit = { NOT = { has_reform = organized_territory_reform } }
+			    	add_government_reform = organized_territory_reform
+    			}
+	    	}
+        }     
+    }
+}
