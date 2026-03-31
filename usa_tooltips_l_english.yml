@@ -1,0 +1,9 @@
+﻿l_english:
+ tooltip_claim_capital_area_except_dc:0 "We gain a permanent claim on all provinces in the Capital area, except for DC"
+ tooltip_claim_by_primary_culture:0 "We gain a permanent claim on all provinces of §Y[Root.Culture.GetName]§! culture"
+ tooltip_claim_by_culture:0 " We will gain a permanent claim on all provinces of a nearby culture"
+ tooltip_own_all_provs_primary_culture:0 "We own all provinces of §Y[Root.Culture.GetName]§! culture"
+ ok_factions_keep_lead_tt:0 "This will anger the other factions, leading to them purposefully hampering the state where they can."
+ tooltip_dredge_the_rivers:0 "This will increase base production by one in every owned riverbound province."
+ tooltip_increase_our_tariffs:0 "This will grant 15 years of income, but for every province in a trade node we operate a merchant we will lose 15% trade efficiency for 15 years."
+ tooltip_fortify_the_river:0 "Enemies will experience a 100% increase in attrition in our riverbound lands, while we will have 15% less attrition, a 25% increase in supply limit, a 5% decrease in land maintenance, and a 25% increase in defensiveness."

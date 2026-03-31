@@ -1,0 +1,66 @@
+spriteTypes = {
+	spriteType = {
+		name = "government_reform_mountain_over_city"
+		texturefile = "gfx//interface//government_reform_icons//mountain_over_city.dds"
+	}
+	spriteType = {
+		name = "government_reform_northern_lights"
+		texturefile = "gfx//interface//government_reform_icons//northern_lights.dds"
+	}
+	spriteType = {
+		name = "government_reform_mile_high_city"
+		texturefile = "gfx//interface//government_reform_icons//mile_high_city.dds"
+	}
+	spriteType = {
+		name = "government_reform_texas_flag"
+		texturefile = "gfx//interface//government_reform_icons//texas_flag.dds"
+	}
+	spriteType = {
+		name = "government_reform_john_texas"
+		texturefile = "gfx//interface//government_reform_icons//john_texas.dds"
+	}
+	spriteType = {
+		name = "government_reform_cali_state_house"
+		texturefile = "gfx//interface//government_reform_icons//cali_state_house.dds"
+	}
+	spriteType = {
+		name = "government_reform_cowboy"
+		texturefile = "gfx//interface//government_reform_icons//cowboy.dds"
+	}
+	spriteType = {
+		name = "government_reform_california"
+		texturefile = "gfx//interface//government_reform_icons//california.dds"
+	}
+	spriteType = {
+		name = "government_reform_star_and_laurel"
+		texturefile = "gfx//interface//government_reform_icons//star_and_laurel.dds"
+	}
+	spriteType = {
+		name = "government_reform_cartels"
+		texturefile = "gfx//interface//government_reform_icons//cartels.dds"
+	}
+	spriteType = {
+		name = "government_reform_crossroads"
+		texturefile = "gfx//interface//government_reform_icons//crossroads.dds"
+	}
+	spriteType = {
+		name = "government_reform_deseret_torch"
+		texturefile = "gfx//interface//government_reform_icons//deseret_torch.dds"
+	}
+	spriteType = {
+		name = "government_reform_stripmining"
+		texturefile = "gfx//interface//government_reform_icons//stripmining.dds"
+	}
+	spriteType = {
+		name = "government_reform_vancouver_corp"
+		texturefile = "gfx//interface//government_reform_icons//vancouver_corp.dds"
+	}
+	spriteType = {
+		name = "government_reform_steamboat"
+		texturefile = "gfx//interface//government_reform_icons//steamboat.dds"
+	}
+	spriteType = {
+		name = "government_reform_unknown_man"
+		texturefile = "gfx//interface//government_reform_icons//unknown_man.dds"
+	}
+}

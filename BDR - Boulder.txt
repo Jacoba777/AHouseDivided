@@ -1,0 +1,7 @@
+technology_group = lower_rockies
+government = republic
+add_government_reform = united_cantons_reform
+government_rank = 1
+religion = atheist
+primary_culture = culture_denverite
+capital = 2835

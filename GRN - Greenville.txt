@@ -1,0 +1,8 @@
+technology_group = southeast
+government = monarchy
+add_government_reform = tanistry_reform
+set_country_flag = oldsouth
+government_rank = 1
+religion = baptist
+primary_culture = culture_upcountry
+capital = 512

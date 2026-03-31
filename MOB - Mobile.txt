@@ -1,0 +1,8 @@
+technology_group = southeast
+government = republic
+add_government_reform = pirate_republic_reform
+government_rank = 1
+religion = baptist
+primary_culture = culture_biloxi-mobilian
+capital = 1591
+set_country_flag = oldsouth

@@ -1,0 +1,8 @@
+technology_group = appalachia
+government = republic
+add_government_reform = dixie_republic
+government_rank = 1
+religion = baptist
+primary_culture = culture_hickory
+capital = 833
+set_country_flag = oldsouth

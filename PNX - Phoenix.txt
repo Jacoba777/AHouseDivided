@@ -1,0 +1,7 @@
+technology_group = southwest
+government = republic
+add_government_reform = cartel_republic_reform
+government_rank = 1
+religion = nondenominational
+primary_culture = culture_phoenecian
+capital = 3317

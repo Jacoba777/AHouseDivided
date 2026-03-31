@@ -1,0 +1,8 @@
+technology_group = miss_delta
+government = republic
+add_government_reform = merchants_reform
+set_country_flag = newsouth
+government_rank = 1
+religion = catholic
+primary_culture = culture_new_orleanian
+capital = 1228

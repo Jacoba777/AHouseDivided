@@ -1,0 +1,7 @@
+technology_group = lower_rockies
+government = theocracy
+add_government_reform = reformer_state_reform
+government_rank = 1
+religion = mormon
+primary_culture = culture_teton
+capital = 3169
