@@ -1,0 +1,739 @@
+# In my testing, the AI only seems to colonize if they have an income of at least 10 ducats.
+# This modifier intends to trick the AI into thinking its income is higher.
+triggered_modifier_ai_colonization_incentive = {
+    potential = {
+        ai = yes
+    }
+    
+	# Grant the bonus if the country is AI, has a colonist but no active colony, and has no neighbors
+    trigger = {
+        ai = yes
+		NOT = { any_owned_province = { is_colony = yes } }
+		NOT = { any_neighbor_country = { exists = yes } }
+		num_of_colonists = 1
+    }
+    
+    global_tax_income = 120
+}
+
+
+
+#LA Basin Control Modifiers
+wabash_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = wabash_river
+            value = 9
+        }
+    }
+    monthly_basin_control = 0.02
+}
+
+arkansas_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = arkansas_river
+            value = 20
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+tennessee_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = tennessee_river
+            value = 27
+        }
+    }
+    monthly_basin_control = 0.06
+}
+
+cumberland_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = cumberland_river
+            value = 12
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+illinois_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = illinois_river
+            value = 13
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+wisconsin_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = wisconsin_river
+            value = 8
+        }
+    }
+    monthly_basin_control = 0.02
+}
+
+minnesota_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = minnesota_river
+            value = 7
+        }
+    }
+    monthly_basin_control = 0.02
+}
+
+kentucky_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = kentucky_river
+            value = 11
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+green_river_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = green_river
+            value = 7
+        }
+    }
+    monthly_basin_control = 0.02
+}
+
+kanawha_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = kanawha_river
+            value = 3
+        }
+    }
+    monthly_basin_control = 0.01
+}
+
+ouachita_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ouachita_river
+            value = 5
+        }
+    }
+    monthly_basin_control = 0.02
+}
+
+lower_miss_20_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_miss_river
+            value = 12
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+lower_miss_40_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_miss_river
+            value = 24
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+lower_miss_60_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_miss_river
+            value = 36
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+lower_miss_80_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_miss_river
+            value = 48
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+lower_miss_100_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_miss_river
+            value = 59
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+ohio_20_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ohio_river
+            value = 13
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+ohio_40_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ohio_river
+            value = 26
+        }
+    }
+    monthly_basin_control = 0.05
+}
+
+ohio_60_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ohio_river
+            value = 39
+        }
+    }
+    monthly_basin_control = 0.05
+}
+
+ohio_80_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ohio_river
+            value = 52
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+ohio_100_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = ohio_river
+            value = 68
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+upper_miss_20_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_miss_river
+            value = 11
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+upper_miss_40_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_miss_river
+            value = 22
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_miss_60_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_miss_river
+            value = 33
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_miss_80_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_miss_river
+            value = 44
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_miss_100_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_miss_river
+            value = 54
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_missouri_20_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_missouri_river
+            value = 11
+        }
+    }
+    monthly_basin_control = 0.03
+}
+
+upper_missouri_40_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_missouri_river
+            value = 22
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_missouri_60_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_missouri_river
+            value = 33
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_missouri_80_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_missouri_river
+            value = 44
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+upper_missouri_100_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = upper_missouri_river
+            value = 52
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+lower_missouri_33_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_missouri_river
+            value = 12
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+lower_missouri_66_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_missouri_river
+            value = 24
+        }
+    }
+    monthly_basin_control = 0.035
+}
+
+lower_missouri_100_modifier = {
+    potential = { 
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = { 
+        num_of_owned_provinces_with = {
+            has_province_flag = lower_missouri_river
+            value = 35
+        }
+    }
+    monthly_basin_control = 0.04
+}
+
+keep_la_riverbound_modifier = {
+    potential = {
+        tag = XLA
+        has_country_flag = formed_the_empire_of_louisiana
+    }
+
+    trigger = {
+        num_of_owned_provinces_with = {
+            and = {
+                not = { has_province_flag = lower_miss_river }
+                not = { has_province_flag = upper_miss_river }
+                not = { has_province_flag = ohio_river }
+                not = { has_province_flag = upper_missouri_river }
+                not = { has_province_flag = lower_missouri_river }
+                not = { has_province_flag = wabash_river }
+                not = { has_province_flag = arkansas_river }
+                not = { has_province_flag = tennessee_river }
+                not = { has_province_flag = cumberland_river }
+                not = { has_province_flag = illinois_river }
+                not = { has_province_flag = wisconsin_river }
+                not = { has_province_flag = minnesota_river }
+                not = { has_province_flag = kentucky_river }
+                not = { has_province_flag = green_river }
+                not = { has_province_flag = kanawha_river }
+                not = { has_province_flag = ouachita_river }
+                not = { has_province_flag = la_state_flag }
+            }
+
+            value = 1
+        }
+    }
+
+    monthly_basin_control = -0.25
+}
+
+
+
+
+###midwest mercantilism modifiers
+#most trade power in home node
+node_num_1 = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        home_trade_node = {
+            has_merchant = root
+            is_strongest_trade_power = root
+        }
+    }
+
+    monthly_regional_influence = 0.3
+}
+
+#bloc size (num subjects) - static modifier per subject?
+
+
+#high trade income
+midwest_trade_income = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        trade_income_percentage = 0.66
+    }
+
+    monthly_regional_influence = 0.25
+}
+
+#in others bloc
+
+
+#steering to other - impossible  (ini)
+#midwest_steering = {
+#    potential = {
+#        has_government_mechanic = midwest_mercantilism
+#    }
+#
+#    trigger = {
+#        any_country = {
+#            
+#        }
+#    }
+#
+#    monthly_regional_influence = -0.0
+#}
+
+#holding tier 3 center
+midwest_tier_3_center = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        any_core_province = {
+            province_has_center_of_trade_of_level = 3
+        }
+    }
+
+    monthly_regional_influence = 0.25
+}
+
+#issue a midwest standard decision
+midwest_monetary_unification = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        has_country_flag = midwest_monetary_seat
+        not = { has_country_flag = midwest_monetary_market}
+    }
+
+    regional_influence_gain_modifier = 0.1
+}
+
+#midwest compact signatory
+miwest_compact_signatory = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        has_country_flag = midwest_compact_member
+    }
+
+    global_unrest = -1
+    improve_relation_modifier = 0.25
+    diplomatic_reputation = 1
+    development_cost_modifier = -0.05
+    trade_efficiency = 0.05
+    trade_steering = 0.05
+}
+
+#more powerful subordinate
+midwest_surpassed_by_subject = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+        has_country_modifier = leading_a_bloc
+    }
+
+    trigger = {
+        any_country = {
+            is_subject_of_type = midwest_bloc_subordinate
+            is_subject_of = ROOT
+            midwest_subject_matches_or_exceeds_overlord = yes
+        }
+    }
+
+    monthly_regional_influence = -0.5
+}
+
+#powerful subject in bloc
+midwest_powerful_subject = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+        has_country_modifier = leading_a_bloc
+    }
+
+    trigger = {
+        any_country = {
+            is_subject_of_type = midwest_bloc_subordinate
+            is_subject_of = ROOT
+            midwest_root_one_tier_below_from = yes
+        }
+    }
+
+    monthly_regional_influence = -0.2
+}
+
+#midwest intrabloc rivalry
+midwest_equivalent_subordinate = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+        has_country_modifier = leading_a_bloc
+    }
+
+    trigger = {
+        any_country = {
+            is_subject_of_type = midwest_bloc_subordinate
+            is_subject_of = ROOT
+            midwest_root_same_tier_as_from = yes
+        }
+    }
+
+    monthly_regional_influence = -0.35
+}
+
+#midwest bloc core member
+midwest_bloc_core_member = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+    }
+
+    trigger = {
+        any_country = {
+            is_subject_of_type = midwest_bloc_subordinate
+            years_in_vassalage_under = {
+                who = overlord
+                years = 5
+            }
+        }
+    }
+
+    
+}

@@ -1,0 +1,166 @@
+on_monthly_pulse = {
+    if = {
+        limit = {
+            has_government_mechanic = midwest_mercantilism
+        }
+        country_event = { #midwest tier assignments updater
+            id = flavor_usa.1401
+            days = -1
+        }
+        country_event = { #midwest core member updater
+            id = flavor_usa.1402
+            days = -1
+        }
+    }
+    if = {#chicago outfit assassination event
+        limit = {
+            has_reform = chicago_outfit
+        }
+        country_event = { 
+            id = flavor_usa.1451
+            days = -1
+        }
+    }
+    
+}
+
+
+on_new_monarch = {
+	events = { flavor_usa.3 }
+}
+
+on_new_term_election = {
+	events = { flavor_usa.3 }
+}
+
+
+#corporatocracy founding (and midwest flag setting)
+on_startup = {
+    every_country = {
+        limit = {
+            not = { has_reform = united_cantons_reform }
+            not = { has_reform = reformer_state_reform }
+            not = { num_of_cities = 2 }
+            not = { has_country_flag = corpo_freedom }
+            has_reform = steppe_horde
+            any_core_province = {
+                or = {
+                    trade_goods = coal
+                    trade_goods = copper
+                    trade_goods = gold
+                    trade_goods = gems
+                }
+            }
+            
+        }
+        change_government = republic
+        add_government_reform = corporatocracy
+    }
+    country_event = {
+        id = flavor_usa.1401
+        days = -1
+    }
+    FBT = {
+        country_event = {
+            id = flavor_usa.1405
+            days = 20
+        }
+    }
+    
+}
+
+#change clients to corporatocracies
+on_create_client_state = {
+    if = {
+        limit = {
+            overlord = {
+                has_reform = corporatocracy
+            }
+        }
+        change_government = republic
+        add_government_reform = corporatocracy
+    }
+}
+
+#force campbell to coal
+on_colony_finished = {
+    if = {
+        limit = {
+            province_id = 3148 #Campbell
+        }
+        change_trade_goods = coal #largest coal mine complex on the planet but wont do it in game unless hard coded this way????
+    }
+}
+
+#KC horde event
+on_province_owner_change = {
+    if = {
+        limit = {
+            province_id = 1649 #KC
+            owner = {
+                or = {
+                    has_reform = steppe_horde
+                    has_reform = great_mongol_state_reform
+                }
+            }
+        }
+        country_event = {
+            id = flavor_usa.1300
+            days = 7
+        }
+    }
+}
+
+
+
+#Midwest upgrade center of trade
+on_center_of_trade_upgrade = {
+    if = {
+        limit = {
+            has_government_mechanic = midwest_mercantilism
+        }
+        add_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 1
+        }
+    }
+}
+
+
+#compact violation - proved unfeasible, added stab into gov refrom with ability to change out between aggressive and non
+
+
+#lost center of trade - proving infeasible
+
+
+#midwest compact violation, on annex province
+on_province_owner_change = {
+    if = {
+        limit = {
+            has_government_mechanic = midwest_mercantilism
+            from = {
+                has_government_mechanic = midwest_mercantilism
+            }
+        }
+        root = {
+            country_event = {
+                id = flavor_usa.1403
+                days = -1
+            }
+        }
+        
+
+    }
+}
+
+#end of the trifecta
+on_monarch_death = {
+    if = {
+        limit = {
+            tag = WDC
+            has_country_flag = trifecta_emperor
+        }
+        clr_country_flag = trifecta_emperor
+    }
+}

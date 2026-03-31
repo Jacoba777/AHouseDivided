@@ -1,205 +1,112 @@
-namespace = better_together
-
-#starting event
-country_event = {
-    id = better_together.1
-    title = better_together.1.t
-    desc = better_together.1.d
-	is_triggered_only = yes
-    fire_only_once = yes
-
-    immediate = {
-        hidden_effect = {
-            add_stability = -1
-        }
-        
-    }
-
-    option = {
-        name = better_together.1.a
-        add_legitimacy = -10
-		add_country_modifier = {
-            name = stl_political_infighting
-            duration = -1
-        }
-    }
-}
-
-
-#unrest (from not controlling side)
-country_event = {
-    id = better_together.2
-    title = better_together.2.t
-    desc = better_together.2.d
-
-    is_triggered_only = yes
-
-    option = {
-        name = better_together.2.a
-        add_corruption = 1
-        add_prestige = -5
-		
-    }
-
-    option = {
-        name = better_together.2.b
-        add_adm_power = -75
-        change_government_reform_progress = -25
-    }
-}
-
-
-#assassination attempts
-country_event = {
-    id = better_together.3
-    title = better_together.3.t
-    desc = better_together.3.d
-
-    is_triggered_only = yes
-
-	immediate = {
-		kill_ruler = yes
+stl_better_together = {
+    potential = {
+        tag = STL
+		not = { has_country_flag = better_together_resolved }
+		owns = 1722 # St. Louis City
+		owns = 1661 # St. Louis County
 	}
 
-    option = {
-        name = better_together.3.a
-        random_owned_province = {
-            add_unrest = 2
-        }
-        add_legitimacy = -5
-    }
-
-    option = {
-        name = better_together.3.b
-        add_prestige = -10
-    }
-}
-
-
-#east stl breakaway
-country_event = {
-    id = better_together.4
-    title = better_together.4.t
-    desc = better_together.4.d
-    fire_only_once = yes
-
-    is_triggered_only = yes
-
-    immediate = {
-        hidden_effect = {
-            release = ESL
-            ESL = {
-                change_government = republic
-                add_government_reform = midwestern_trade_hub
-                adopt_reform_progress = root
-                capital_scope = {
-                    build_to_forcelimit = {
-                        infantry = 0.6
-                        cavalry = 0.1
-                        artillery = 0.3
-                    }
-                }
-            }
-        }
-        
-    }
-
-    option = {
-        name = better_together.4.a
-        add_prestige = -25
-        every_province = {
+	can_start = {
+		not = { stability = 2 }
+		if = {
             limit = {
-                owned_by = STL
-                region = region_mo
+                government = republic
             }
-            add_unrest = 2
+            not = { republican_tradition = 90 }
         }
-        add_power_projection = {
-            type = humiliated_by_rival
-            amount = -30
+        if = {
+            limit = {
+                government = monarchy
+            }
+            not = { legitimacy = 90 }
+        }
+	}
+	
+	can_stop = {
+        stability = 2
+        if = {
+            limit = {
+                government = republic
+            }
+            not = { republican_tradition = 85 }
+        }
+        if = {
+            limit = {
+                government = monarchy
+            }
+            not = { legitimacy = 85 }
         }
     }
 
-    option = {
-        name = better_together.4.b
-        switch_tag = ESL
-        STL = {
-            declare_war_with_cb = {
-                casus_belli = cb_annex
-                who = ESL
-            }
-        }
-    }    
+	can_end = {
+		all_owned_province = {
+			not = { unrest = 0 }
+		}
+		is_at_war = no
+	}
 
-    option = {
-        name = better_together.4.c
-        add_mil_power = -75
-        every_province = {
-            limit = {
-                owned_by = STL
-                region = region_mo
-            }
-            add_unrest = 1.5
+    progress = {
+        modifier = {
+            factor = 1.5
+            not = { stability = 2 }
         }
-        declare_war_with_cb = {
-			casus_belli = cb_annex
-			who = ESL
+        modifier = {
+            factor = 1.25
+            if = {
+	            limit = {
+    	            government = republic
+        	    }
+            	not = { republican_tradition = 80 }
+        	}
+	        if = {
+    	        limit = {
+        	        government = monarchy
+            	}
+            	not = { legitimacy = 80 }
+        	}
+        }
+        modifier = {
+            factor = 0.75
+            not = { stability = 3 }
+        }
+		modifier = {
+			factor = 1
+			capital = 1722 # St. Louis City
+		}
+		modifier = {
+			factor = 1
+			capital = 1661 # St. Louis County
+		}
+		modifier = {
+			factor = 3
+			and = {
+				not = { capital = 1722 } # St. Louis City
+				not = { capital = 1661 } # St. Louis County
+			}
+		}
+	}
+
+	modifier = {
+		global_tax_modifier = -0.25
+		global_unrest = 2
+		stability_cost_modifier = 0.25
+	}
+
+
+	on_start = better_together.1
+	on_end = better_together.5 #choose new capital
+
+
+    on_monthly = {
+		events = {
+			better_together.4 #east stl breakaway
+		}
+		random_events = {
+			100 = 0
+			10 = better_together.2
+			1 = better_together.3 #attempted assassination
 		}
     }
-}
 
-
-#ending - choose stlcity, stklcounty, or stcharles
-country_event = {
-    id = better_together.5
-    title = better_together.5.t
-    desc = better_together.5.d
-
-    is_triggered_only = yes
-
-	immediate = {
-        hidden_effect = {
-            set_country_flag = better_together_resolved
-        }
-		
-        remove_country_modifier = stl_political_infighting
-        add_prestige = 10
-	}
-
-    option = {
-        name = better_together.5.a
-        add_stability = 2
-        add_prestige = 10
-        set_capital = 1722
-        set_country_flag = stl_city_dominant
-        add_country_modifier = {
-            name = stlcity_seat
-            duration = -1
-        }
-    }
-
-    option = {
-        name = better_together.5.b
-        add_stability = 1
-        
-        set_capital = 1661
-        set_country_flag = stl_county_dominant
-        add_country_modifier = {
-            name = stlcounty_seat
-            duration = -1
-        }
-
-    }
-
-    option = {
-        name = better_together.5.c
-        add_stability = 1
-        
-        set_capital = 1660 # st charles county
-        set_country_flag = st_charles_compromise
-        add_country_modifier = {
-            name = stcharles_seat
-            duration = -1
-        }
-    }
+    
 }

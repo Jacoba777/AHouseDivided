@@ -1,205 +1,110 @@
-namespace = urban_decay
+midwest_urban_decay = {
 
-
-#starting event
-country_event = {
-    id = urban_decay.1
-    title = urban_decay.1.t
-    desc = urban_decay.1.d
-	is_triggered_only = yes
-
-
-    option = {
-        name = urban_decay.1.a
-        hidden_effect = {
-			every_owned_province = {
-				limit = {
-					development = 20
+    potential = {
+        any_owned_province = {
+            development = 30
+        }
+        NOT = { has_country_modifier = urban_acclimatization }
+		not = { has_government_mechanic = perfectionism_mechanic }
+		not = {
+			and = {
+				is_part_of_hre = yes
+				emperor = {
+					has_country_flag = trifecta_emperor
 				}
-				set_province_flag = urban_decay_province
-			}
-			
-		}
-
-        add_country_modifier = {
-            name = urban_decay
-            duration = -1
-        }
-    }
-}
-
-
-#urban flight
-country_event = {
-    id = urban_decay.2
-    title = urban_decay.2.t
-    desc = urban_decay.2.d
-	is_triggered_only = yes
-
-    option = {
-        name = urban_decay.2.a
-
-		random_owned_province = {
-			limit = {
-				development = 20
-			}
-			add_base_tax = -1
-			add_base_production = -1
-			add_base_manpower = -1
-			add_province_modifier = {
-				name = urban_blight
-				duration = -1
-			}
-
-			random_neighbor_province = {
-				add_base_tax = 1
-				add_base_manpower = 1
 			}
 		}
-	}
-}
-
-
-#infrastructure collapse
-country_event = {
-    id = urban_decay.3
-    title = urban_decay.3.t
-    desc = urban_decay.3.d
-
-    is_triggered_only = yes
-
-
-	option = {
-		name = urban_decay.3.a
-	
-		add_country_modifier = {
-			name = continued_infrastructure_repairs
-			duration = -1
-		}
-
-	}
-
-    option = {
-        name = urban_decay.3.b
-
-        random_owned_province = {
-            limit = {
-                not = { has_province_flag = urban_decay_province }	
-				not = { development = 18}
-            }
-            add_devastation = 15
-            add_local_autonomy = 5
-			add_trade_modifier = {
-				who = root
-				duration = -1
-				power = -10
-				key = trade_collapse
-			}
-        }
-
-    }
-}
-
-
-#capital flight
-country_event = {
-    id = urban_decay.4
-    title = urban_decay.4.t
-    desc = urban_decay.4.d
-
-    is_triggered_only = yes
-
-    immediate = {
-		hidden_effect = {
-	        random_owned_province = {
-    	        limit = {
-        	        development = 30
-            	}
-	            save_event_target_as = fleeing_city
-    	    }
-		}
-    }
-
-    option = {
-        name = urban_decay.4.a
-
-        # CITY STRIP (core mechanic)
-        event_target:fleeing_city = {
-            add_base_tax = -1
-            add_base_production = -1
-            add_devastation = 10
-			add_province_modifier = {
-	            name = capital_fragmentation
-    	        duration = -1
-        	}
-			random_neighbor_province = {
-	            add_base_tax = 1
-    	    }
-			random_neighbor_province = {
-	            add_base_production = 1
-				add_base_manpower = 1
-    	    }
+        num_of_owned_provinces_with = {
+            value = 3
+            has_province_modifier = merchant_flight
         }
     }
 
-	option = {
-		name = urban_decay.4.b
+    can_start = {
+        not = { stability = 0 }
+        OR = {
+            not = { treasury = 0 }
+            num_of_loans = 5
+        }
+        any_owned_province = {
+            development = 20
+            unrest = 2
+        }
+    }
 
-		event_target:fleeing_city = {
-			add_province_modifier = {
-				name = tax_reduction
-				duration = 3650
-			}
-		}
-	}
-}
+    can_stop = {
+        stability = 2
+        any_owned_province = {
+            development = 20
+            NOT = { unrest = 1 }
+        }
+    }
 
-
-
-#social unrest/unemployment/riots
-country_event = {
-    id = urban_decay.5
-    title = urban_decay.5.t
-    desc = urban_decay.5.d
-
-    is_triggered_only = yes
-
-    option = {
-        name = urban_decay.5.a
-
-        random_owned_province = {
-            limit = {
-                has_province_flag = urban_decay_province	
-				not = { development = 18}
-            }
-            add_unrest = 3
-            spawn_rebels = {
-                type = particularist_rebels
-                size = 1
+    progress = {
+        modifier = {
+            factor = 1.5
+            not = { stability = 0 }
+        }
+        modifier = {
+            factor = 1.25
+            num_of_loans = 10
+        }
+        modifier = {
+            factor = -0.75
+            years_of_income = 3
+        }
+        modifier = {
+            factor = 1.5
+            any_owned_province = {
+                development = 20
+                unrest = 3
             }
         }
     }
-}
 
-
-
-#ending
-country_event = {
-    id = urban_decay.6
-    title = urban_decay.6.t
-    desc = urban_decay.6.d
-
-    is_triggered_only = yes
-
-    option = {
-        name = urban_decay.6.a
-
-        add_country_modifier = {
-            name = urban_acclimatization
-            duration = 14600
-        }
-
-        add_prestige = 15
-        add_stability = 1
+    can_end = {
+        and = {
+			stability = 2
+	        years_of_income = 2
+			not = { num_of_loans = 3}
+		
+			or = {
+    	    	any_owned_province = {
+	    	        development = 20
+					or = {
+						NOT = { unrest = 1 }
+						not = { has_province_modifier = urban_blight }
+					}
+	        	}
+				not = {
+					any_owned_province = {
+						development = 17
+					}
+				}
+			}
+		}
     }
+
+    modifier = {
+        global_tax_modifier = -0.2
+        production_efficiency = -0.15
+        trade_efficiency = -0.15
+        global_unrest = 2
+        development_cost = 0.1
+    }
+
+    on_start = urban_decay.1
+    on_end = urban_decay.6
+
+    on_monthly = {
+        random_events = {
+            500 = 0
+            100 = urban_decay.2   # dev drain  = {}
+            10 = urban_decay.3   # infrastructure  = {}
+            35 = urban_decay.4   # capital flight = {}
+			40 = urban_decay.5   # social unrest = {}
+        }
+    }
+
+    ended_by_country_breaking_to_rebels = no
 }
