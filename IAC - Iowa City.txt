@@ -1,0 +1,13 @@
+technology_group = central_plains
+government = republic
+add_government_reform = midwestern_trade_hub 
+set_country_flag = midwest_compact_member
+government_rank = 1
+religion = atheist
+primary_culture = culture_corridor_iowan
+capital = 2259
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 52
+}
