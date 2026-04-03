@@ -99,14 +99,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -925,14 +917,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1051,14 +1035,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1175,14 +1151,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1365,14 +1333,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1493,14 +1453,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1701,14 +1653,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -1773,14 +1717,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -2077,14 +2013,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -2206,14 +2134,6 @@ country_decisions = {
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
 		}
 		ai_will_do = { factor = 1 }
 	}

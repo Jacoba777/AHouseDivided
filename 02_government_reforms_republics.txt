@@ -1660,6 +1660,9 @@ midwestern_ver_american_repub = {
 			blocked_call_diet = yes
 		}
 	}
+	government_abilities = {
+		midwest_mercantilism
+	}
 	duration = 4
 }
 

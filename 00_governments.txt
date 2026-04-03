@@ -684,6 +684,7 @@ republic = {
 				midwestern_trade_hub_agressive
 				midwest_chartered_company_government_aggressive
 				chicago_aggressive
+				midwestern_ver_american_repub
 			}
 		}
 		republican_virtues = {

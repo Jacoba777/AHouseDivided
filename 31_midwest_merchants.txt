@@ -63,7 +63,7 @@ midwest_mercantilism = {
 					power_type = regional_influence
 					value = 5
 				}
-				add_corruption = 2
+				add_corruption = 5
 			}
 			cooldown_years = 0
 			ai_chance = {

@@ -6313,8 +6313,25 @@ invite_to_midwest_bloc = {
 			}
 			multiply_variable = {
 				which = ai_value
-				value = 20
+				value = 15
 			}
+		}
+		add_entry = {
+    		name = MIDWEST_ALREADY_IN_BLOC
+   			limit = {
+				from = {
+					is_subject_of_type = midwest_bloc_subordinate
+				}
+       			
+		    }
+    		export_to_variable = {
+        		variable_name = ai_value
+		        value = 1
+    		}
+		    multiply_variable = {
+        		which = ai_value
+		        value = -30
+    		}
 		}
 		add_entry = {
     	    name = MIDWEST_HIGHER_TIER_THAN_ROOT
@@ -6333,14 +6350,15 @@ invite_to_midwest_bloc = {
 		add_entry = {
 			name = MIDWEST_OFFER_LOWER_THEN_OVERLORD
 			limit = {
-				is_subject = yes
-				overlord = {
-					not = {
-						root = {
-							midwest_root_higher_tier_than_from = yes
+				from = {
+					is_subject = yes
+					overlord = {
+						not = {
+							midwest_root_higher_tier_than_from = no
 						}
 					}
 				}
+				
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -6354,7 +6372,21 @@ invite_to_midwest_bloc = {
 		add_entry = {
 			name = MIDWEST_OFFER_HIGHER_THEN_OVERLORD
 			limit = {
-
+				from = {
+					is_subject = yes
+					overlord = {
+						midwest_root_higher_tier_than_from = no
+					}
+				}
+				
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 10
 			}
 		}
 		add_entry = {
@@ -6522,7 +6554,7 @@ petition_join_midwest_bloc = {
 		if = {
 			limit = {
 				root = {
-					has_country_modifier = midwest_monetary_seat 
+					has_country_modifier = monetary_union_leader
 				}
 			}
 			from = {
@@ -6565,7 +6597,7 @@ petition_join_midwest_bloc = {
 			}
 			multiply_variable = {
 				which = ai_value
-				value = 20
+				value = 10
 			}
 		}
 		add_entry = {
