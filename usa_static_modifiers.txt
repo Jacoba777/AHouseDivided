@@ -127,6 +127,16 @@ vancouver_integrated_market = {
     global_unrest = 1
 }
 
+
+anti_corp_stance = {
+    global_trade_power = 0.10
+    diplomatic_reputation = 0.5
+    yearly_corruption = -0.1
+}
+
+
+
+#la empire war mechanic modifier
 la_fortification = {
     attrition = -0.15
     supply_limit_modifier = 0.25

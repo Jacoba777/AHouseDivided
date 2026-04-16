@@ -163,8 +163,8 @@ country_decisions = {
 			has_country_flag = vancouver_corp_flag
 		}
 		allow = {
-			and = {
-				any_country = {
+			any_country = {
+				and = {
 					or = {
 						any_neighbor_country = {
 							is_subject_of = ROOT
@@ -172,7 +172,10 @@ country_decisions = {
 						is_neighbor_of = root
 					}
 					not = {
-						has_country_modifier = vancouver_corporation_investing
+						or = { 
+							has_country_modifier = vancouver_corporation_investing 
+							has_country_modifier = anti_corp_stance
+						}
 					}
 				}
 			}
@@ -183,7 +186,7 @@ country_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 	}
 	#up to tributary
@@ -201,7 +204,7 @@ country_decisions = {
 					OR = {
 						is_neighbor_of = ROOT
 						any_neighbor_country = {
-							is_subject_of = ROOT
+							is_subject_of_type = appanage
 						}
 					}
 				}
@@ -213,7 +216,7 @@ country_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 	}
 	#tributary to appanage (vassalization)
@@ -228,12 +231,7 @@ country_decisions = {
 						has_country_modifier = vancouver_recent_corporate_dependency
 					}
 					is_subject_of_type = vancouver_dependency
-					OR = {
-						is_neighbor_of = ROOT
-						any_neighbor_country = {
-							is_subject_of_type = appanage
-						}
-					}
+					is_neighbor_of = ROOT
 				}
 			}
 		}
@@ -243,7 +241,7 @@ country_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 100
 		}
 	}
 	#annexation
@@ -271,7 +269,7 @@ country_decisions = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 400
 		}
 	}
 	#become the new seat of the corporation 
@@ -336,7 +334,7 @@ country_decisions = {
 					}
 				}
 			}
-			treasury = 10000
+			treasury = 1000
 			is_bankrupt = no
 		}
 		effect = {
@@ -523,7 +521,6 @@ country_decisions = {
 					not = { has_province_flag = minnesota_river }
 					not = { has_province_flag = ouachita_river }
 
-					not = { has_province_flag = la_state_flag }
 				}
 			}
 		effect = {

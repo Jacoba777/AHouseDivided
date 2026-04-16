@@ -9,7 +9,7 @@ country_decisions = {
                 }
                 XAL = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_al
@@ -48,8 +48,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -64,7 +64,7 @@ country_decisions = {
                 }
                 XAK = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ak
@@ -103,8 +103,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -119,7 +119,7 @@ country_decisions = {
                 }
                 XAR = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ar
@@ -158,8 +158,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -173,7 +173,7 @@ country_decisions = {
                 }
                 XAZ = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_az
@@ -212,8 +212,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -227,7 +227,7 @@ country_decisions = {
                 }
                 XCO = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_co
@@ -266,8 +266,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -281,7 +281,7 @@ country_decisions = {
                 }
                 XCT = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ct
@@ -320,8 +320,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -335,7 +335,7 @@ country_decisions = {
                 }
                 XDE = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_de
@@ -374,8 +374,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -389,7 +389,7 @@ country_decisions = {
                 }
                 XFL = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_fl
@@ -428,8 +428,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -443,7 +443,7 @@ country_decisions = {
                 }
                 XGA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ga
@@ -482,8 +482,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -497,7 +497,7 @@ country_decisions = {
                 }
                 XHI = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_hi
@@ -536,8 +536,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -551,7 +551,7 @@ country_decisions = {
                 }
                 XID = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_id
@@ -590,8 +590,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -605,7 +605,7 @@ country_decisions = {
                 }
                 XIL = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_il
@@ -644,8 +644,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -659,7 +659,7 @@ country_decisions = {
                 }
                 XIN = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_in
@@ -698,8 +698,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -713,7 +713,7 @@ country_decisions = {
                 }
                 XRS = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ok
@@ -752,8 +752,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -767,7 +767,7 @@ country_decisions = {
                 }
                 XIA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ia
@@ -806,8 +806,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -821,7 +821,7 @@ country_decisions = {
                 }
                 XKS = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ks
@@ -860,8 +860,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -875,7 +875,7 @@ country_decisions = {
                 }
                 XKY = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ky
@@ -914,8 +914,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -929,7 +929,7 @@ country_decisions = {
                 }
                 XLA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_la
@@ -968,8 +968,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -983,7 +983,7 @@ country_decisions = {
                 }
                 XME = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_me
@@ -1022,8 +1022,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1037,7 +1037,7 @@ country_decisions = {
                 }
                 XMD = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_md
@@ -1076,8 +1076,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1091,7 +1091,7 @@ country_decisions = {
                 }
                 XMA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ma
@@ -1130,8 +1130,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1145,7 +1145,7 @@ country_decisions = {
                 }
                 XMI = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mi
@@ -1184,8 +1184,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1199,7 +1199,7 @@ country_decisions = {
                 }
                 XMN = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mn
@@ -1238,8 +1238,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1253,7 +1253,7 @@ country_decisions = {
                 }
                 XMS = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ms
@@ -1292,8 +1292,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1307,7 +1307,7 @@ country_decisions = {
                 }
                 XMO = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mo
@@ -1346,8 +1346,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1361,7 +1361,7 @@ country_decisions = {
                 }
                 XMT = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_mt
@@ -1400,8 +1400,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1415,7 +1415,7 @@ country_decisions = {
                 }
                 XNE = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ne
@@ -1454,8 +1454,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1469,7 +1469,7 @@ country_decisions = {
                 }
                 XNV = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nv
@@ -1508,8 +1508,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1523,7 +1523,7 @@ country_decisions = {
                 }
                 XNH = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nh
@@ -1562,8 +1562,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1577,7 +1577,7 @@ country_decisions = {
                 }
                 XNJ = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nj
@@ -1616,8 +1616,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1631,7 +1631,7 @@ country_decisions = {
                 }
                 XNM = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nm
@@ -1670,8 +1670,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1685,7 +1685,7 @@ country_decisions = {
                 }
                 XNY = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ny
@@ -1724,8 +1724,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1739,7 +1739,7 @@ country_decisions = {
                 }
                 XNC = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_nc
@@ -1778,8 +1778,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1793,7 +1793,7 @@ country_decisions = {
                 }
                 XDK = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         superregion = superregion_dakota
@@ -1834,8 +1834,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1849,7 +1849,7 @@ country_decisions = {
                 }
                 XOH = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_oh
@@ -1888,8 +1888,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1903,7 +1903,7 @@ country_decisions = {
                 }
                 XOK = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ok
@@ -1942,8 +1942,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -1957,7 +1957,7 @@ country_decisions = {
                 }
                 XOR = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_or
@@ -1996,8 +1996,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2011,7 +2011,7 @@ country_decisions = {
                 }
                 XPA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_pa
@@ -2050,8 +2050,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2065,7 +2065,7 @@ country_decisions = {
                 }
                 XRI = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ri
@@ -2104,8 +2104,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2119,7 +2119,7 @@ country_decisions = {
                 }
                 XSC = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_sc
@@ -2158,8 +2158,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2173,7 +2173,7 @@ country_decisions = {
                 }
                 XTN = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_tn
@@ -2212,8 +2212,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2227,7 +2227,7 @@ country_decisions = {
                 }
                 XTX = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_tx
@@ -2266,8 +2266,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2281,7 +2281,7 @@ country_decisions = {
                 }
                 XUT = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_ut
@@ -2320,8 +2320,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2335,7 +2335,7 @@ country_decisions = {
                 }
                 XVT = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_vt
@@ -2374,8 +2374,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2389,7 +2389,7 @@ country_decisions = {
                 }
                 XVA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_va
@@ -2428,8 +2428,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2443,7 +2443,7 @@ country_decisions = {
                 }
                 XWA = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wa
@@ -2482,8 +2482,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2498,7 +2498,7 @@ country_decisions = {
                 }
                 XWV = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wv
@@ -2537,8 +2537,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2552,7 +2552,7 @@ country_decisions = {
                 }
                 XWI = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wi
@@ -2591,8 +2591,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     
@@ -2606,7 +2606,7 @@ country_decisions = {
                 }
                 XWY = {
                     is_subject_of = root
-                    has_reform = organized_territory_reform
+                    has_reform = eyalet_government
                     not = { is_subject_of_type = core_eyalet }
                     num_of_owned_provinces_with = {
                         region = region_wy
@@ -2645,8 +2645,8 @@ country_decisions = {
 				    change_government = republic
     			}
 	    		if = {
-		    		limit = { NOT = { has_reform = organized_territory_reform } }
-			    	add_government_reform = organized_territory_reform
+		    		limit = { NOT = { has_reform = eyalet_government } }
+			    	add_government_reform = eyalet_government
     			}
 	    	}
         }     

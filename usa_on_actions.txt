@@ -21,6 +21,12 @@ on_monthly_pulse = {
             days = -1
         }
     }
+    if = {
+        limit = {
+            has_country_modifier = anti_corp_stance
+        }
+        remove_country_modifier = vancouver_corporation_investing
+    }
     
 }
 
@@ -163,4 +169,59 @@ on_monarch_death = {
         }
         clr_country_flag = trifecta_emperor
     }
+}
+
+#vancorp anti corpo stance flagging
+on_war_won = {
+    if = {
+        limit = {
+            from = {
+                has_reform = stadthalter_monarchy_reform
+            }
+        }
+        root = {
+            add_country_modifier = {
+                name = anti_corp_stance
+                duration = 7300
+            }
+            remove_country_modifier = vancouver_corporation_investing
+            remove_country_modifier = vancouver_begrudging_dependency
+            remove_country_modifier = vancouver_corporate_dependency
+            remove_country_modifier = vancouver_corporate_fear
+            remove_country_modifier = vancouver_integrated_market
+            remove_country_modifier = vancouver_recent_investment
+            remove_country_modifier = vancouver_recent_corporate_dependency
+            remove_country_modifier = vancouver_recent_integrated_market
+        }
+    }
+}
+
+#natural anti-corporate stance flagging, for flavor and to prevent abuse of vancorp
+on_yearly_pulse = {
+    if = {
+        limit = {
+            NOT = { has_country_modifier = anti_corp_stance }
+            any_neighbor_country = {
+                or = {
+                    has_country_flag = vancouver_corp_flag
+                    overlord = {
+                        has_country_flag = vancouver_corp_flag
+                    }
+                }
+                root = {
+                    not = {
+                        has_opinion = {
+                            who = prev
+                            value = -150
+                        }
+                    }
+                }
+            }
+        }
+        add_country_modifier = {
+            name = anti_corp_stance
+            duration = 7300
+        }
+    }
+    
 }

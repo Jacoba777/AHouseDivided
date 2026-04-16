@@ -77,6 +77,7 @@ elective_monarchy_reform = {
 ###ADH###
 
 dixie_autocracy_reform = {
+	lock_level_when_selected = yes
 	icon = "ballot_box"
 	potential = {
 		has_dlc = "Domination"
@@ -148,7 +149,8 @@ frontier_kingdom_reform = {
 #Midwestern 'kingdoms'
 proscriptive_trade_hub = {
 	icon = "asian_scripture"
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		any_neighbor_country = {
 			or = {
@@ -198,6 +200,8 @@ proscriptive_trade_hub = {
 proscriptive_trade_hub_aggressive = {
 	icon = "asian_scripture"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
+
 	potential = {
 		any_neighbor_country = {
 			or = {
@@ -246,9 +250,6 @@ proscriptive_trade_hub_aggressive = {
 		factor = 0.75 #generic
 	}
 }
-
-
-
 
 
 
@@ -2001,6 +2002,11 @@ stadthalter_monarchy_reform = { ##modified for vancouver corporation - SEATTLE
 					culture_group = culture_group_cascadian
 					culture_group = culture_group_californian
 				}
+				not = {
+					any_country = {
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
 			}
 		}
 	}
@@ -2019,6 +2025,7 @@ stadthalter_monarchy_reform = { ##modified for vancouver corporation - SEATTLE
     	advisor_cost = -0.10
     	yearly_corruption = 0.05
 		diplomatic_reputation = -3
+		ae_impact = 0.15
 		no_stability_loss_on_monarch_death = yes
 	}
 
@@ -2035,7 +2042,6 @@ stadthalter_monarchy_reform = { ##modified for vancouver corporation - SEATTLE
 		enables_aristocratic_idea_group = no
 		has_dutch_election = yes
 		has_appanages = yes
-		has_tributaries = yes
 	}
 	conditional = {
 		allow = {

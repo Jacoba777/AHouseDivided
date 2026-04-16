@@ -352,7 +352,7 @@ merchants_reform = {
 #Midwestern trading republic
 midwestern_trade_hub = {
 	icon = "politician"
-	allow_normal_conversion = yes
+	lock_level_when_selected = yes
 	modifiers = {
 		max_absolutism = -10
 		merchants = 1
@@ -431,6 +431,7 @@ midwestern_trade_hub = {
 midwestern_trade_hub_agressive = {
 	icon = "politician"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	modifiers = {
 		max_absolutism = -10
 		merchants = 1
@@ -512,6 +513,7 @@ midwestern_trade_hub_agressive = {
 louisiana_empire_reform = {
 	icon = "steamboat"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	modifiers = {
 		max_absolutism = -10
 		merchants = 1
@@ -1622,8 +1624,17 @@ american_republic = {
 midwestern_ver_american_repub = {
 	icon = "parliament"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	trigger = {
 		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+		capital_scope = {
+			or = {
+				continent = continent_midwest
+				region = region_ny
+				region = region_pa
+			}
+			
+		}
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 15
@@ -1669,7 +1680,8 @@ midwestern_ver_american_repub = {
 
 dixie_republic = {
 	icon = "parliament"
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		or = {
 			culture_group = culture_group_tidewater
@@ -1731,7 +1743,7 @@ dixie_republic = {
 
 frontier_republic = {
 	icon = "crossroads"
-	allow_normal_conversion =yes
+	allow_normal_conversion = yes
 	potential = {
 		culture_group = culture_group_southern_plains
 	}
@@ -1960,6 +1972,7 @@ corporatocracy = {
 	icon = "stripmining"
 	valid_for_nation_designer = no
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		not = { num_of_cities = 6 }
 	}
@@ -1971,7 +1984,7 @@ corporatocracy = {
 		production_efficiency = 1
 		max_absolutism = 40
 		global_unrest = 4
-		governing_capacity_modifier = -0.95
+		governing_capacity_modifier = -0.99
 		allow_client_states = yes
 	}
 
@@ -2063,6 +2076,7 @@ chicago = { #modified for chicago
 	icon = "private_enterprise_colony_government"
 	valid_for_nation_designer = no
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		tag = CCG
 	}
@@ -2117,6 +2131,7 @@ chicago_aggressive = { #agressive ver
 	icon = "private_enterprise_colony_government"
 	valid_for_nation_designer = no
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		tag = CCG
 	}
@@ -2233,6 +2248,7 @@ self_governing_colony_government = {
 midwest_chartered_company_government_aggressive = {
 	icon = "paper_with_seal"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		any_neighbor_country = {
 			or = {
@@ -2284,6 +2300,7 @@ midwest_chartered_company_government_aggressive = {
 midwest_chartered_company_government = {
 	icon = "paper_with_seal"
 	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		any_neighbor_country = {
 			or = {

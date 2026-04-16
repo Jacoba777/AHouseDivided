@@ -77,7 +77,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY1
@@ -173,7 +173,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY2
@@ -269,7 +269,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY3
@@ -366,7 +366,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY5
@@ -415,7 +415,7 @@ country_event = {
 		}
 		num_of_owned_provinces_with = {
 			and = {
-				superregion = superregion_dakota
+				superregion = superregion_dakotas
 			}
 			value = 40
 		}
@@ -472,7 +472,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY6
@@ -568,7 +568,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY7
@@ -664,7 +664,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY8
@@ -760,7 +760,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY9
@@ -911,7 +911,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E10
@@ -950,7 +950,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E46
@@ -993,7 +993,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E46
@@ -1089,7 +1089,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E11
@@ -1185,7 +1185,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E12
@@ -1281,7 +1281,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E13
@@ -1377,7 +1377,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E14
@@ -1473,7 +1473,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E15
@@ -1569,7 +1569,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E16
@@ -1665,7 +1665,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E17
@@ -1761,7 +1761,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E18
@@ -1857,7 +1857,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E19
@@ -1953,7 +1953,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E20
@@ -2050,7 +2050,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E21
@@ -2113,7 +2113,8 @@ country_event = {
 		}
 		num_of_owned_provinces_with = {
 			and = {
-				superregion = superregion_west
+				region = region_az
+				region = region_nm
 			}
 			value = 17
 		}
@@ -2124,14 +2125,14 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_nm
-						value = 12
-					}
-					limit = {
+				limit = {
+					and = {
 						NOT = {
 							exists = XNM
+						}
+						num_of_owned_provinces_with = {
+							region = region_nm
+							value = 12
 						}
 					}
 				}
@@ -2140,14 +2141,14 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_az
-						value = 6
-					}
-					limit = {
+				limit = {
+					and = {
 						NOT = {
 							exists = XAZ
+						}
+						num_of_owned_provinces_with = {
+							region = region_az
+							value = 6
 						}
 					}
 				}
@@ -2196,7 +2197,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E51
@@ -2220,7 +2221,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY4
@@ -2273,7 +2274,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E51
@@ -2351,12 +2352,12 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_id
-						value = 15
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_id
+							value = 15
+						}
 						NOT = {
 							exists = XID
 						}
@@ -2367,12 +2368,12 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_or
-						value = 13
-					}
-					limit = {
+				limit = { 
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_or
+							value = 13
+						}
 						NOT = {
 							exists = XOR
 						}
@@ -2383,12 +2384,12 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_wa
-						value = 14
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_wa
+							value = 14
+						}
 						NOT = {
 							exists = XWA
 						}
@@ -2444,7 +2445,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E49
@@ -2468,7 +2469,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
@@ -2492,7 +2493,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E50
@@ -2547,7 +2548,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E49
@@ -2574,7 +2575,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
@@ -2635,7 +2636,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
@@ -2731,7 +2732,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E23
@@ -2809,12 +2810,12 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_ky
-						value = 41
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_ky
+							value = 41
+						}
 						NOT = {
 							exists = XKY
 						}
@@ -2825,12 +2826,12 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_va
-						value = 35
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_va
+							value = 35
+						}
 						NOT = {
 							exists = XVA
 						}
@@ -2841,12 +2842,12 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_wv
-						value = 19
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_wv
+							value = 19
+						}
 						NOT = {
 							exists = XWV
 						}
@@ -2902,7 +2903,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E38
@@ -2926,7 +2927,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E24
@@ -2950,7 +2951,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
@@ -3005,7 +3006,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E38
@@ -3032,7 +3033,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
@@ -3093,7 +3094,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
@@ -3190,7 +3191,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E27
@@ -3286,7 +3287,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E28
@@ -3382,7 +3383,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E29
@@ -3478,7 +3479,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E30
@@ -3574,7 +3575,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E31
@@ -3670,7 +3671,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E32
@@ -3766,7 +3767,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E33
@@ -3862,7 +3863,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E34
@@ -3958,7 +3959,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E35
@@ -4054,7 +4055,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E36
@@ -4139,12 +4140,12 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_nc
-						value = 34
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_nc
+							value = 34
+						}
 						NOT = {
 							exists = XNC
 						}
@@ -4155,12 +4156,12 @@ country_event = {
 				}
 			}
 			if = {
-				and = {
-					num_of_owned_provinces_with = {
-						region = region_tn
-						value = 32
-					}
-					limit = {
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_tn
+							value = 32
+						}
 						NOT = {
 							exists = XTN
 						}
@@ -4211,7 +4212,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E39
@@ -4235,7 +4236,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E26
@@ -4288,7 +4289,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E39
@@ -4384,7 +4385,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E40
@@ -4480,7 +4481,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E41
@@ -4576,7 +4577,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E42
@@ -4672,7 +4673,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E43
@@ -4768,7 +4769,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E44
@@ -4864,7 +4865,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E47
@@ -4960,7 +4961,7 @@ country_event = {
 				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E48

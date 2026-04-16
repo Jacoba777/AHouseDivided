@@ -1065,6 +1065,7 @@ country_event = {
 ##############################################
 ###vancouver corporation
 ###############################################
+
 #initial investment 
 country_event = {
 	id = flavor_usa.185190
@@ -1074,26 +1075,37 @@ country_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				is_subject = no
-				NOT = {
-					has_country_modifier = vancouver_corporation_investing
-				}
-				# Country must neighbor Seattle (or a subject/appanage of Seattle)
-				OR = {
-					any_neighbor_country = {
-						has_country_flag = vancouver_corp_flag
-					}
-					any_neighbor_country = {
-						overlord = {
-							has_country_flag = vancouver_corp_flag
+				AND = {
+					is_subject = no
+					NOT = {
+						OR = {	
+							has_country_modifier = vancouver_corporation_investing 	
+							has_country_modifier = anti_corp_stance 
 						}
 					}
+				
+					# Country must neighbor Seattle (or a subject/appanage of Seattle)
+					OR = {
+						any_neighbor_country = {
+							has_country_flag = vancouver_corp_flag
+						}
+						any_neighbor_country = {
+							overlord = {
+								has_country_flag = vancouver_corp_flag
+							}
+						}
+					}	
 				}
+				
 			}
 			# Optional: trigger a follow-up event for this country
 			country_event = {
 				id = flavor_usa.1851902
 				days = -1
+			}
+			reverse_add_opinion = {
+				who = root
+				modifier = vancorp_investment_opinion
 			}
 		}
 	}
@@ -1194,6 +1206,7 @@ country_event = {
 			duration = 3650
 			hidden = yes
 		}
+		remove_country_modifier = vancouver_corporation_investing
 		ai_chance = {
 			factor = 1
 		}
@@ -1227,6 +1240,7 @@ country_event = {
 			duration = 3650
 			hidden = yes
 		}
+		remove_country_modifier = vancouver_corporation_investing
 		ai_chance = {
 			factor = 14
 		}
@@ -1250,12 +1264,8 @@ country_event = {
 					has_country_flag = vancouver_corp_flag
 				}
 				not = {
-					has_country_modifier = vancouver_recent_integrated_market
+					has_country_modifier = vancouver_recent_corporate_dependency
 				}
-			}
-			add_country_modifier = {
-				name = vancouver_integrated_market
-				duration = 3650
 			}
 			country_event = {
 				id = flavor_usa.185101
@@ -1268,7 +1278,7 @@ country_event = {
 	}
 }
 
-#upped to internal notification (accept with grace or malice)
+#upped to integrated notification (accept with grace or malice)
 country_event = {
 	id = flavor_usa.185101
 	title = flavor_usa.185101.t
@@ -1296,6 +1306,8 @@ country_event = {
 			duration = 9125
 			hidden = yes
 		}
+		remove_country_modifier = vancouver_corporate_dependency
+		remove_country_modifier = vancouver_begrudging_dependency
 		ai_chance = {
 			factor = 1
 		}
@@ -1326,6 +1338,8 @@ country_event = {
 			name = vancouver_corporate_fear
 			duration = 7300
 		}
+		remove_country_modifier = vancouver_corporate_dependency
+		remove_country_modifier = vancouver_begrudging_dependency
 		ai_chance = {
 			factor = 19
 		}
@@ -1551,7 +1565,7 @@ country_event = {
             name = prospector_funding
             duration = 1825
         }
-        add_treasury = -11000
+        add_treasury = -1100
 
         random_owned_province = {
             limit = {
@@ -2411,12 +2425,43 @@ country_event = {
         		    any_neighbor_country = {
                 		OR = {
 	    	                tag = overlord
-    	    	            has_country_modifier = core_bloc_member
-		                }
-        		    }
+							and = {
+								has_country_modifier = core_bloc_member
+								overlord = {
+            				        any_subject_country = {
+			                	        tag = ROOT
+                    				}
+            				    }
+							}
+						}
+				    }
       			}
 	    	}
     		remove_country_modifier = core_bloc_member
+		}
+		if = { #remove noncontiguous bloc members
+			limit = {
+				is_subject_of_type = midwest_bloc_subordinate
+				not = {
+					or = {
+						AND = {
+				            any_neighbor_country = {
+								overlord = {
+            				        any_subject_country = {
+			                	        tag = ROOT
+                    				}
+            				    }
+            				}
+    			    	}
+						any_neighbor_country = {
+							overlord_of = root
+						}
+					}
+					
+				}
+				
+			}
+			grant_independence = yes
 		}
 	}
 
@@ -2795,6 +2840,86 @@ country_event = { #chicago assassination event
 			modifier = {
 				average_unrest = 2
 				factor = -1
+			}
+		}
+	}
+}
+
+
+#horde province protection event
+country_event = {
+	id = flavor_usa.1905
+	title = flavor_usa.1905.t
+	desc = flavor_usa.1905.desc
+	mean_time_to_happen = {	months = 50 }
+
+	trigger = {
+		any_trade_node = {
+			any_province = {
+				has_colonist = yes
+			}
+			any_province = {
+				not = { has_colonist = yes }
+				is_city = no
+				any_neighbor_province = {
+					culture = prev
+					owner = {
+						or = {
+							has_reform = steppe_horde
+							has_reform = great_mongol_state_reform
+							has_reform = bismarck_steppe_horde
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = { #match to trigger to prevent blank options
+		random_province = {
+			limit = {
+				not = { has_colonist = yes }
+				is_city = no
+				any_neighbor_province = {
+					culture = prev
+					owner = {
+						and = {
+							tag = ROOT
+							or = {
+								has_reform = steppe_horde
+								has_reform = great_mongol_state_reform
+								has_reform = bismarck_steppe_horde
+							}
+						}
+						
+					}
+				}
+			}
+			save_event_target_as = threatened_province
+		}
+	}
+
+
+	option = { #protect the frontier
+		name = flavor_usa.1905.a
+		event_target:threatened_province = {
+			create_colony = 1000
+			add_territorial_core = ROOT
+		}	
+		add_manpower = -20
+		change_government_reform_progress = -15
+	}
+
+	option = { #we lack the resources
+		name = flavor_usa.1905.b
+		every_country = {
+			limit = {
+				has_reform = steppe_horde
+				has_reform = bismarck_steppe_horde
+			}
+			reverse_add_opinion = {
+				who = root
+				modifier = horde_refuse_aid
 			}
 		}
 	}

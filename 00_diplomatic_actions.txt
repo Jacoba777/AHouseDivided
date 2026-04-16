@@ -6224,11 +6224,15 @@ invite_to_midwest_bloc = {
 	is_allowed = {
 		and = {
 			or = {
-				hidden_trigger = {
-					midwest_subject_matches_or_exceeds_overlord = yes
-					
-				}
 				has_subject_of_type = midwest_bloc_subordinate
+				from = {
+					hidden_trigger = {
+						midwest_subject_matches_or_exceeds_overlord = yes
+					}
+				}
+				hidden_trigger = {
+					midwest_root_higher_tier_than_from = yes
+				}
 			}
 			from = {
 				has_government_mechanic = midwest_mercantilism
@@ -6295,7 +6299,11 @@ invite_to_midwest_bloc = {
 			limit = {
 				or = {
 					has_subject_of_type = midwest_bloc_subordinate
-					midwest_subject_matches_or_exceeds_overlord = yes
+					and = {
+						is_subject = yes
+						midwest_subject_matches_or_exceeds_overlord = yes
+					}
+					
 				}
 			}
 		}
@@ -6330,7 +6338,7 @@ invite_to_midwest_bloc = {
     		}
 		    multiply_variable = {
         		which = ai_value
-		        value = -30
+		        value = -50
     		}
 		}
 		add_entry = {
@@ -6366,7 +6374,7 @@ invite_to_midwest_bloc = {
 			}
 			multiply_variable = {
 				which = ai_value
-				value = -40
+				value = -50
 			}
 		}
 		add_entry = {
@@ -6406,6 +6414,32 @@ invite_to_midwest_bloc = {
 			}
 
 		}
+		add_entry = {
+			name = MIDWEST_NOT_CONTINUOUS_IF_JOINED
+			limit = {
+				not = { 
+					or = {
+						FROM = { is_neighbor_of = root }
+						from = {
+							any_neighbor_country = {
+								is_subject_of = root
+								has_country_modifier = core_bloc_member
+							} 
+						}
+						
+					}
+				}
+			}	
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -100
+			}
+
+		}
 	    add_entry = { #opinion
 			name = OPINION
 			export_to_variable = {
@@ -6432,6 +6466,20 @@ invite_to_midwest_bloc = {
 				value = 2
 			}
 		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#2 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
 		add_entry = { #trade power
 			name = RELATIVE_INCOME
 			limit = {
@@ -6454,6 +6502,12 @@ invite_to_midwest_bloc = {
 			limit = { FROM = { culture_group = ROOT } }
 			export_to_variable = { variable_name = ai_value value = 1 }
 			multiply_variable = { which = ai_value value = 5 }
+		}
+		add_entry = { #culture group different?
+			name = DIPLO_DIFFERENT_CULTURE_GROUP
+			limit = { FROM = { not = { culture_group = ROOT } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
 		}
 		add_entry = { #not signatory to the compact
 			name = MIDWEST_NOT_COMPACT_SIGNATORY
@@ -6509,11 +6563,15 @@ petition_join_midwest_bloc = {
 		and = {
 			root = {
 				or = {
-					and = {
+					root = {
 						is_subject = yes
 						hidden_trigger = {
 							midwest_subject_matches_or_exceeds_overlord = yes
 						}
+					}
+					hidden_trigger = {
+						not = { midwest_root_higher_tier_than_from = yes }
+						
 					}
 				}
 			}
@@ -6579,7 +6637,10 @@ petition_join_midwest_bloc = {
 			limit = {
 				or = {
 					not = {has_subject_of_type = midwest_bloc_subordinate}
-					midwest_subject_matches_or_exceeds_overlord = yes
+					and = {
+						midwest_subject_matches_or_exceeds_overlord = yes
+						is_subject = yes
+					}
 				}
 			}
 		}
@@ -6587,9 +6648,9 @@ petition_join_midwest_bloc = {
 
 	ai_acceptance = {
 	    add_entry = {#they must have smaller influence than you (or current bloc leader) to want to join your bloc
-			name = MIDWEST_LOWER_TIER_THAN_FROM
+			name = MIDWEST_HIGHER_TIER_THAN_FROM
 			limit = {
-				midwest_root_higher_tier_than_from = no
+				not = { midwest_root_higher_tier_than_from = no }
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -6601,9 +6662,9 @@ petition_join_midwest_bloc = {
 			}
 		}
 		add_entry = {
-    	    name = MIDWEST_HIGHER_TIER_THAN_FROM
+    	    name = MIDWEST_LOWER_TIER_THAN_FROM
 			limit = {
-				midwest_root_higher_tier_than_from = yes
+				midwest_root_higher_tier_than_from = no
 			}
 			export_to_variable = {
 				variable_name = ai_value
@@ -6617,6 +6678,7 @@ petition_join_midwest_bloc = {
 		add_entry = {
 			name = MIDWEST_LEADING_OWN_BLOC
 			limit = {
+				is_subject = no
 				has_subject_of_type = midwest_bloc_subordinate
 			}
 			export_to_variable = {
@@ -6626,6 +6688,31 @@ petition_join_midwest_bloc = {
 			multiply_variable = {
 				which = ai_value
 				value = 10
+			}
+
+		}
+		add_entry = {
+			name = MIDWEST_NOT_CONTINUOUS_IF_JOINED
+			limit = {
+				not = { 
+					or = {
+						root = { is_neighbor_of = from }
+						root = {
+							any_neighbor_country = {
+								is_subject_of = from
+								has_country_modifier = core_bloc_member
+							} 
+						}
+					}
+				}
+			}	
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -100
 			}
 
 		}
@@ -6672,11 +6759,31 @@ petition_join_midwest_bloc = {
 				value = 30
 			}
 		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#2 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
 		add_entry = { #culture group same?
 			name = DIPLO_SAME_CULTURE_GROUP
 			limit = { FROM = { culture_group = ROOT } }
 			export_to_variable = { variable_name = ai_value value = 1 }
 			multiply_variable = { which = ai_value value = 5 }
+		}
+		add_entry = { #culture group different?
+			name = DIPLO_DIFFERENT_CULTURE_GROUP
+			limit = { FROM = { not = { culture_group = ROOT } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
 		}
 		add_entry = { #not signatory to the compact
 			name = MIDWEST_NOT_COMPACT_SIGNATORY

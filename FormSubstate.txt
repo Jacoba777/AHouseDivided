@@ -37,6 +37,7 @@ country_decisions = {
 	form_niagara = {
 		major = yes
 		potential = {
+			always = no
 			OR = {
 				primary_culture = culture_buffalonian
 				primary_culture = culture_rochesterite
@@ -85,15 +86,7 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			add_prestige = 15
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
 			}
-		}
 		ai_will_do = { factor = 1 }
 	}
 	
