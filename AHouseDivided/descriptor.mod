@@ -1,4 +1,4 @@
-version="0.8.1"
+version="0.8.0"
 tags={
 	"Map"
 	"New Nations"
@@ -7,7 +7,7 @@ tags={
 	"Religion"
 	"Trade"
 }
-name="A House Divided"
+name="American Desert"
 replace_path="history/provinces"
 replace_path="history/diplomacy"
 replace_path="history/wars"

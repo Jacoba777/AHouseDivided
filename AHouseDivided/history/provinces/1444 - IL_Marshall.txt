@@ -15,6 +15,7 @@ is_city = yes
 owner=PEA
 add_core=PEA
 controller=PEA
+set_province_flag = illinois_river
 
 1444.11.12 = {
 	base_tax=0

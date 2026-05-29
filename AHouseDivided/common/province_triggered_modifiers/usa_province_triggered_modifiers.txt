@@ -24,3 +24,5 @@ triggered_modifier_ak_home_colonization_buff = {
 	local_colonist_placement_chance = 0.95
 	local_colony_cost_modifier = 0.2
 }
+
+

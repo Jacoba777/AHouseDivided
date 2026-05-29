@@ -1,8 +1,7 @@
 technology_group = appalachia
 government = republic
-add_government_reform = dixie_republic
-set_country_flag = oldsouth
+add_government_reform = american_republic
 government_rank = 1
 religion = methodist
-primary_culture = culture_shanondoah
+primary_culture = culture_north_shenandoah
 capital = 2708

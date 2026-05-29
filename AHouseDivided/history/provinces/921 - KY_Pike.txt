@@ -18,6 +18,7 @@ controller=PIK
 trade_goods=coal
 
 1444.11.12 = {
+	
 	base_tax=0
 	base_production=1
 	base_manpower=1

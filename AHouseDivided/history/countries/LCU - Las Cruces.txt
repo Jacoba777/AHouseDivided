@@ -1,6 +1,6 @@
 technology_group = southwest
 government = tribal
-add_government_reform = steppe_horde
+add_government_reform = feudal_tribe
 government_rank = 1
 religion = catholic
 primary_culture = culture_el_pasoan

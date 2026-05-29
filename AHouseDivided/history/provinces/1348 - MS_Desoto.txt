@@ -16,6 +16,7 @@ is_city = yes
 owner=MPS
 add_core=MPS
 controller=MPS
+set_province_flag = lower_miss_river
 
 1444.11.12 = {
 	base_tax=4

@@ -15,6 +15,7 @@ is_city = yes
 owner=NWO
 add_core=NWO
 controller=NWO
+set_province_flag = mississippi_lesser_la
 
 1444.11.12 = {
 	base_tax=0

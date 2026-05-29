@@ -3292,3 +3292,816 @@ raided_by_old_south = {
 		has_province_flag = dixie_recently_raided
 	}
 }
+
+
+#midwest tier flaggging
+midwest_tier1 = {
+	not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 5
+        }
+    }
+}
+
+midwest_tier2 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 5
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 10
+        }
+    }
+}
+
+midwest_tier3 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 10
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 15
+        }
+    }
+}
+
+midwest_tier4 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 15
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 20
+        }
+    }
+}
+
+midwest_tier5 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 20
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 25
+        }
+    }
+}
+
+midwest_tier6 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 25
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 30
+        }
+    }
+}
+
+midwest_tier7 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 30
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 35
+        }
+    }
+}
+
+midwest_tier8 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 35
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 40
+        }
+    }
+}
+
+midwest_tier9 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 40
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 45
+        }
+    }
+}
+
+midwest_tier10 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 45
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 50
+        }
+    }
+}
+
+midwest_tier11 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 50
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 55
+        }
+    }
+}
+
+midwest_tier12 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 55
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 60
+        }
+    }
+}
+
+midwest_tier13 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+		value = 60
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 65
+        }
+    }
+}
+
+midwest_tier14 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 65
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 70
+        }
+    }
+}
+
+midwest_tier15 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 70
+    }
+	not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 75
+        }
+    }
+}
+
+midwest_tier16 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 75
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 80
+        }
+    }
+}
+
+midwest_tier17 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 80
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 85
+        }
+    }
+}
+
+midwest_tier18 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 85
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 90
+        }
+    }
+}
+
+midwest_tier19 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 90
+    }
+    not = {
+        has_government_power = {
+            mechanic_type = midwest_mercantilism
+            power_type = regional_influence
+            value = 95
+        }
+    }
+}
+
+midwest_tier20 = {
+	has_government_power = {
+        mechanic_type = midwest_mercantilism
+        power_type = regional_influence
+        value = 95
+    }
+}
+
+#midwest tag exceeds target
+midwest_root_higher_tier_than_from = {
+    OR = {
+
+        AND = { has_country_flag = midwest_tier2 FROM = { has_country_flag = midwest_tier1 } }
+
+        AND = { has_country_flag = midwest_tier3 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 } } }
+
+        AND = { has_country_flag = midwest_tier4 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 } } }
+
+        AND = { has_country_flag = midwest_tier5 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 } } }
+
+        AND = { has_country_flag = midwest_tier6 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 } } }
+
+        AND = { has_country_flag = midwest_tier7 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 } } }
+
+        AND = { has_country_flag = midwest_tier8 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 } } }
+
+        AND = { has_country_flag = midwest_tier9 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 } } }
+
+        AND = { has_country_flag = midwest_tier10 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 } } }
+
+        AND = { has_country_flag = midwest_tier11 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 } } }
+
+        AND = { has_country_flag = midwest_tier12 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 } } }
+
+        AND = { has_country_flag = midwest_tier13 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 } } }
+
+        AND = { has_country_flag = midwest_tier14 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 } } }
+
+        AND = { has_country_flag = midwest_tier15 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 } } }
+
+        AND = { has_country_flag = midwest_tier16 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 has_country_flag = midwest_tier15 } } }
+
+        AND = { has_country_flag = midwest_tier17 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 has_country_flag = midwest_tier15 has_country_flag = midwest_tier16 } } }
+
+        AND = { has_country_flag = midwest_tier18 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 has_country_flag = midwest_tier15 has_country_flag = midwest_tier16 has_country_flag = midwest_tier17 } } }
+
+        AND = { has_country_flag = midwest_tier19 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 has_country_flag = midwest_tier15 has_country_flag = midwest_tier16 has_country_flag = midwest_tier17 has_country_flag = midwest_tier18 } } }
+
+        AND = { has_country_flag = midwest_tier20 FROM = { OR = { has_country_flag = midwest_tier1 has_country_flag = midwest_tier2 has_country_flag = midwest_tier3 has_country_flag = midwest_tier4 has_country_flag = midwest_tier5 has_country_flag = midwest_tier6 has_country_flag = midwest_tier7 has_country_flag = midwest_tier8 has_country_flag = midwest_tier9 has_country_flag = midwest_tier10 has_country_flag = midwest_tier11 has_country_flag = midwest_tier12 has_country_flag = midwest_tier13 has_country_flag = midwest_tier14 has_country_flag = midwest_tier15 has_country_flag = midwest_tier16 has_country_flag = midwest_tier17 has_country_flag = midwest_tier18 has_country_flag = midwest_tier19 } } }
+
+    }
+}
+#midwest tag one below target
+midwest_root_one_tier_below_from = {
+    OR = {
+        AND = { FROM = { has_country_flag = midwest_tier2 } ROOT = { has_country_flag = midwest_tier1 } }
+        AND = { FROM = { has_country_flag = midwest_tier3 } ROOT = { has_country_flag = midwest_tier2 } }
+        AND = { FROM = { has_country_flag = midwest_tier4 } ROOT = { has_country_flag = midwest_tier3 } }
+        AND = { FROM = { has_country_flag = midwest_tier5 } ROOT = { has_country_flag = midwest_tier4 } }
+        AND = { FROM = { has_country_flag = midwest_tier6 } ROOT = { has_country_flag = midwest_tier5 } }
+        AND = { FROM = { has_country_flag = midwest_tier7 } ROOT = { has_country_flag = midwest_tier6 } }
+        AND = { FROM = { has_country_flag = midwest_tier8 } ROOT = { has_country_flag = midwest_tier7 } }
+        AND = { FROM = { has_country_flag = midwest_tier9 } ROOT = { has_country_flag = midwest_tier8 } }
+        AND = { FROM = { has_country_flag = midwest_tier10 } ROOT = { has_country_flag = midwest_tier9 } }
+        AND = { FROM = { has_country_flag = midwest_tier11 } ROOT = { has_country_flag = midwest_tier10 } }
+        AND = { FROM = { has_country_flag = midwest_tier12 } ROOT = { has_country_flag = midwest_tier11 } }
+        AND = { FROM = { has_country_flag = midwest_tier13 } ROOT = { has_country_flag = midwest_tier12 } }
+        AND = { FROM = { has_country_flag = midwest_tier14 } ROOT = { has_country_flag = midwest_tier13 } }
+        AND = { FROM = { has_country_flag = midwest_tier15 } ROOT = { has_country_flag = midwest_tier14 } }
+        AND = { FROM = { has_country_flag = midwest_tier16 } ROOT = { has_country_flag = midwest_tier15 } }
+        AND = { FROM = { has_country_flag = midwest_tier17 } ROOT = { has_country_flag = midwest_tier16 } }
+        AND = { FROM = { has_country_flag = midwest_tier18 } ROOT = { has_country_flag = midwest_tier17 } }
+        AND = { FROM = { has_country_flag = midwest_tier19 } ROOT = { has_country_flag = midwest_tier18 } }
+        AND = { FROM = { has_country_flag = midwest_tier20 } ROOT = { has_country_flag = midwest_tier19 } }
+    }
+}
+
+#midwest tag matches target
+midwest_root_same_tier_as_from = {
+    OR = {
+        AND = { FROM = { has_country_flag = midwest_tier1 } ROOT = { has_country_flag = midwest_tier1 } }
+        AND = { FROM = { has_country_flag = midwest_tier2 } ROOT = { has_country_flag = midwest_tier2 } }
+        AND = { FROM = { has_country_flag = midwest_tier3 } ROOT = { has_country_flag = midwest_tier3 } }
+        AND = { FROM = { has_country_flag = midwest_tier4 } ROOT = { has_country_flag = midwest_tier4 } }
+        AND = { FROM = { has_country_flag = midwest_tier5 } ROOT = { has_country_flag = midwest_tier5 } }
+        AND = { FROM = { has_country_flag = midwest_tier6 } ROOT = { has_country_flag = midwest_tier6 } }
+        AND = { FROM = { has_country_flag = midwest_tier7 } ROOT = { has_country_flag = midwest_tier7 } }
+        AND = { FROM = { has_country_flag = midwest_tier8 } ROOT = { has_country_flag = midwest_tier8 } }
+        AND = { FROM = { has_country_flag = midwest_tier9 } ROOT = { has_country_flag = midwest_tier9 } }
+        AND = { FROM = { has_country_flag = midwest_tier10 } ROOT = { has_country_flag = midwest_tier10 } }
+        AND = { FROM = { has_country_flag = midwest_tier11 } ROOT = { has_country_flag = midwest_tier11 } }
+        AND = { FROM = { has_country_flag = midwest_tier12 } ROOT = { has_country_flag = midwest_tier12 } }
+        AND = { FROM = { has_country_flag = midwest_tier13 } ROOT = { has_country_flag = midwest_tier13 } }
+        AND = { FROM = { has_country_flag = midwest_tier14 } ROOT = { has_country_flag = midwest_tier14 } }
+        AND = { FROM = { has_country_flag = midwest_tier15 } ROOT = { has_country_flag = midwest_tier15 } }
+        AND = { FROM = { has_country_flag = midwest_tier16 } ROOT = { has_country_flag = midwest_tier16 } }
+        AND = { FROM = { has_country_flag = midwest_tier17 } ROOT = { has_country_flag = midwest_tier17 } }
+        AND = { FROM = { has_country_flag = midwest_tier18 } ROOT = { has_country_flag = midwest_tier18 } }
+        AND = { FROM = { has_country_flag = midwest_tier19 } ROOT = { has_country_flag = midwest_tier19 } }
+        AND = { FROM = { has_country_flag = midwest_tier20 } ROOT = { has_country_flag = midwest_tier20 } }
+	}
+}
+
+#midwest tag exceeds overlord
+midwest_subject_matches_or_exceeds_overlord = {
+    is_subject = yes
+
+    OR = {
+
+        # Tier 1 (only matches itself)
+        AND = {
+            has_country_flag = midwest_tier1
+            overlord = { has_country_flag = midwest_tier1 }
+        }
+
+        # Tier 2 >= 1–2
+        AND = {
+            has_country_flag = midwest_tier2
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                }
+            }
+        }
+
+        # Tier 3 >= 1–3
+        AND = {
+            has_country_flag = midwest_tier3
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                }
+            }
+        }
+
+        # Tier 4 >= 1–4
+        AND = {
+            has_country_flag = midwest_tier4
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                }
+            }
+        }
+
+        # Tier 5 >= 1–5
+        AND = {
+            has_country_flag = midwest_tier5
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                }
+            }
+        }
+
+        # Tier 6 >= 1–6
+        AND = {
+            has_country_flag = midwest_tier6
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                }
+            }
+        }
+
+        # Tier 7 >= 1–7
+        AND = {
+            has_country_flag = midwest_tier7
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                }
+            }
+        }
+
+        # Tier 8 >= 1–8
+        AND = {
+            has_country_flag = midwest_tier8
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                }
+            }
+        }
+
+        # Tier 9 >= 1–9
+        AND = {
+            has_country_flag = midwest_tier9
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                }
+            }
+        }
+
+        # Tier 10 >= 1–10
+        AND = {
+            has_country_flag = midwest_tier10
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+                }
+            }
+        }
+
+        AND = {
+            has_country_flag = midwest_tier11
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier12
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier13
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier14
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier15
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier16
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+					has_country_flag = midwest_tier16
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier17
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+					has_country_flag = midwest_tier16
+					has_country_flag = midwest_tier17
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier18
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+					has_country_flag = midwest_tier16
+					has_country_flag = midwest_tier17
+					has_country_flag = midwest_tier18
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier19
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+					has_country_flag = midwest_tier16
+					has_country_flag = midwest_tier17
+					has_country_flag = midwest_tier18
+					has_country_flag = midwest_tier19
+                }
+            }
+        }
+
+		AND = {
+            has_country_flag = midwest_tier20
+            overlord = {
+                OR = {
+                    has_country_flag = midwest_tier1
+                    has_country_flag = midwest_tier2
+                    has_country_flag = midwest_tier3
+                    has_country_flag = midwest_tier4
+                    has_country_flag = midwest_tier5
+                    has_country_flag = midwest_tier6
+                    has_country_flag = midwest_tier7
+                    has_country_flag = midwest_tier8
+                    has_country_flag = midwest_tier9
+                    has_country_flag = midwest_tier10
+					has_country_flag = midwest_tier11
+					has_country_flag = midwest_tier12
+					has_country_flag = midwest_tier13
+					has_country_flag = midwest_tier14
+					has_country_flag = midwest_tier15
+					has_country_flag = midwest_tier16
+					has_country_flag = midwest_tier17
+					has_country_flag = midwest_tier18
+					has_country_flag = midwest_tier19
+					has_country_flag = midwest_tier20
+                }
+            }
+        }
+    }
+}
+
+#blocs not continguous enough
+midwest_is_contiguous_to_bloc = {
+    any_neighbor_country = {
+		or = {
+			tag = ROOT
+			and = {
+				has_country_modifier = core_bloc_member
+				is_subject_of = ROOT
+			}
+		}
+    }
+}
+
+#sharing overlord
+shares_overlord = {
+    OR = {
+        # ROOT's overlord owns FROM
+        AND = {
+            is_subject = yes
+            FROM = { is_subject = yes }
+
+            overlord = {
+                any_subject_country = {
+                    tag = FROM
+                }
+            }
+        }
+
+        # FROM's overlord owns ROOT (redundant but safe)
+        AND = {
+            is_subject = yes
+            FROM = { is_subject = yes }
+
+            FROM = {
+                overlord = {
+                    any_subject_country = {
+                        tag = ROOT
+                    }
+                }
+            }
+        }
+    }
+}

@@ -170,7 +170,7 @@ parliamentary_republic_reform = {
 	}
 }
 
-prussian_republic_reform = {
+prussian_republic_reform = { #modified for dixieland - DIX in case of successful convention
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
@@ -244,7 +244,7 @@ prussian_republic_reform = {
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
 		government_abilities = {
-			militarization_mechanic
+			perfectionism_mechanic
 		}
 	}
 	
@@ -348,6 +348,271 @@ merchants_reform = {
 		}
 	}
 }
+
+#Midwestern trading republic
+midwestern_trade_hub = {
+	icon = "politician"
+	lock_level_when_selected = yes
+	modifiers = {
+		max_absolutism = -10
+		merchants = 1
+		stability_cost_to_declare_war = 1
+		stability_cost_modifier = -0.15
+
+		#peace dividend
+		land_morale = -0.20
+	    discipline = -0.05
+    	manpower_recovery_speed = -0.25
+    	land_forcelimit_modifier = -0.20
+    	mercenary_cost = -0.15
+    	mercenary_discipline = -0.05
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = midwestern_trade_hub
+			crown_stronger_than_estate = { estate = all }
+		}
+	}
+	boost_income = yes
+	duration = 4
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 0.75 #generic
+		
+		modifier = {
+			factor = 0
+			num_of_cities = 11
+		}
+		
+		modifier = {
+			factor = 0
+			capital_scope = { has_port = no }
+		}
+		
+		modifier = {
+			factor = 0
+			NOT = {
+				capital_scope = { province_has_center_of_trade_of_level = 1 }
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			is_subject = yes
+		}
+	}
+}
+
+#Midwestern trading republic - angy ver
+midwestern_trade_hub_agressive = {
+	icon = "politician"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	modifiers = {
+		max_absolutism = -10
+		merchants = 1
+
+		#remilitarization modifiers
+		mercenary_cost = -0.25
+	    mercenary_discipline = 0.10
+    	mercenary_manpower = 0.20
+	    land_morale = 0.05
+    	discipline = 0.05
+	    manpower_recovery_speed = -0.10
+    	land_forcelimit_modifier = -0.15
+    	trade_efficiency = -0.10
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+				has_reform = midwest_chartered_company_government
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = midwestern_trade_hub_agressive
+			crown_stronger_than_estate = { estate = all }
+		}
+	}
+	boost_income = yes
+	duration = 4
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 0.75 #generic
+		
+		modifier = {
+			factor = 0
+			num_of_cities = 11
+		}
+		
+		modifier = {
+			factor = 0
+			capital_scope = { has_port = no }
+		}
+		
+		modifier = {
+			factor = 0
+			NOT = {
+				capital_scope = { province_has_center_of_trade_of_level = 1 }
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			is_subject = yes
+		}
+	}
+}
+
+
+#Louisiana Empire Reform
+
+louisiana_empire_reform = {
+	icon = "steamboat"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	modifiers = {
+		max_absolutism = -10
+		merchants = 1
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	legacy_equivalent = merchant_republic
+	potential = {
+		or = {
+			and = {
+				tag = XLA
+				has_country_flag = louisiana_empire_reform_flag
+			}
+			and = {
+				tag = STL
+				has_country_flag = surpassed_chicago_flag
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = merchants_reform
+			crown_stronger_than_estate = { estate = all }
+		}
+	}
+	boost_income = yes
+	duration = 4
+
+	
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = { has_dlc = "King of Kings" }
+		government_abilities = {
+			la_river_authority_mechanic
+		}
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 0.75 #generic
+		
+		modifier = {
+			factor = 0
+			num_of_cities = 11
+		}
+		
+		modifier = {
+			factor = 0
+			capital_scope = { has_port = no }
+		}
+		
+		modifier = {
+			factor = 0
+			NOT = {
+				capital_scope = { province_has_center_of_trade_of_level = 1 }
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			is_subject = yes
+		}
+	}
+}
+
+
 
 venice_merchants_reform = {
 	icon = "trading_city"
@@ -500,6 +765,60 @@ pirate_republic_reform = {
 	}
 	
 }
+
+
+### ADH cartel gov
+
+cartel_republic_reform = {
+	icon = "cartels"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	modifiers = {
+		republican_tradition = -1
+		max_absolutism = 30
+		merchants = 2
+		global_unrest = 2
+		governing_capacity_modifier = -0.95
+		liberty_desire_from_subject_development = 0.15
+	}
+	trigger = {
+
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	can_form_trade_league = yes
+	
+	
+	potential = {
+		culture_group = culture_group_southwestern
+		OR = {
+			has_dlc = "Lions of the North"
+			has_dlc = "Golden Century"
+		}
+	}
+	
+	factions_frame = 9
+	factions = {
+		cartel_civies
+		cartel_dealers
+		cartel_smugglers
+	}
+	
+	duration = 4
+	
+	custom_attributes = {
+		locked_government_type = yes
+		generals_become_rulers = yes
+		elections_increase_factions_influence = yes
+		cannot_become_dictatorship = yes
+		has_tributaries = yes
+	}
+	
+}
+
+
+
+
 
 noble_elite_reform = {
 	icon = "nobleman"
@@ -1302,9 +1621,67 @@ american_republic = {
 
 ###ADH###
 
+midwestern_ver_american_repub = {
+	icon = "parliament"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	trigger = {
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+		capital_scope = {
+			or = {
+				continent = continent_midwest
+				region = region_ny
+				region = region_pa
+			}
+			
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	legacy_equivalent = american_republic_legacy
+	modifiers = {
+		war_exhaustion = -0.04
+		stability_cost_modifier = -0.1
+		max_absolutism = 20
+		trade_value_modifier = 0.15
+	}
+	factions = {
+		faction_progressives
+		faction_moderates
+		faction_conservatives
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		disables_estate_nobles = yes
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+		custom_attributes = {
+			blocked_call_diet = yes
+		}
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+	duration = 4
+}
+
+
 dixie_republic = {
 	icon = "parliament"
-	allow_normal_conversion = yes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
 	potential = {
 		or = {
 			culture_group = culture_group_tidewater
@@ -1315,6 +1692,8 @@ dixie_republic = {
 			culture_group = culture_group_eastern_deep_south
 			culture_group = culture_group_western_deep_south
 			culture_group = culture_group_gulf_coast
+			culture_group = culture_group_texas_triangle
+			culture_group = culture_group_floridian
 		}
 	}
 	trigger = {
@@ -1338,8 +1717,8 @@ dixie_republic = {
 	}
 
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		enables_plutocratic_idea_group = no
+		enables_aristocratic_idea_group = yes
 	}
 	conditional = {
 		allow = {
@@ -1361,6 +1740,59 @@ dixie_republic = {
 	}
 	duration = 4
 }
+
+frontier_republic = {
+	icon = "crossroads"
+	allow_normal_conversion = yes
+	potential = {
+		culture_group = culture_group_southern_plains
+	}
+	trigger = {
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	legacy_equivalent = american_republic_legacy
+	modifiers = {
+		war_exhaustion = -0.04
+		stability_cost_modifier = -0.1
+		max_absolutism = 20
+	}
+	factions = {
+		ok_frontier
+		ok_traders
+		ok_militia
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		disables_estate_nobles = yes
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+		custom_attributes = {
+			blocked_call_diet = yes
+		}
+	}
+	duration = 4
+}
+
+
+
+
+
+
+
 
 
 federal_republic = {
@@ -1535,6 +1967,53 @@ crown_colony_government = {
 	duration = 4
 }
 
+#corporatocracy - ADH
+corporatocracy = {
+	icon = "stripmining"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		not = { num_of_cities = 6 }
+	}
+
+	modifiers = {
+		gold_depletion_chance_modifier = 1
+		embracement_cost = -0.1
+		merchants = 1
+		production_efficiency = 1
+		max_absolutism = 40
+		global_unrest = 4
+		governing_capacity_modifier = -0.99
+		allow_client_states = yes
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+	}
+	heir = no
+	queen = no
+	effect = {
+		set_country_flag = corporatocracy_flag
+	}
+	removed_effect = {
+		clr_country_flag = corporatocracy_flag
+	}
+	duration = 10
+}
+
+
 private_enterprise_colony_government = {
 	icon = "private_enterprise_colony_government"
 	valid_for_nation_designer = no
@@ -1591,6 +2070,118 @@ private_enterprise_colony_government = {
 		}
 	}
 	duration = 4
+}
+
+chicago = { #modified for chicago
+	icon = "private_enterprise_colony_government"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		tag = CCG
+	}
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		
+	}
+	valid_for_nation_designer = yes
+	modifiers = {
+		num_of_parliament_issues = 1
+		republican_tradition = 0.25
+		max_absolutism = 5
+		stability_cost_to_declare_war = 1
+		stability_cost_modifier = -0.15
+
+		#peace dividend
+		naval_morale = 0.15
+	    naval_forcelimit_modifier = 0.15
+    	naval_maintenance_modifier = -0.10
+	    land_morale = -0.15
+    	manpower_recovery_speed = -0.10
+    	land_forcelimit_modifier = -0.10
+	}
+	duration = 5
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+			NOT = { has_dlc = "Domination" }
+		}
+		has_parliament = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Domination"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			english_parliament = yes
+		}
+	}
+}
+
+chicago_aggressive = { #agressive ver
+	icon = "private_enterprise_colony_government"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		tag = CCG
+	}
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		
+	}
+	valid_for_nation_designer = yes
+	modifiers = {
+		num_of_parliament_issues = 1
+		republican_tradition = 0.25
+		max_absolutism = 5
+		stability_cost_to_declare_war = 1
+		stability_cost_modifier = -0.15
+
+		#militarization
+		naval_morale = 0.20
+	    naval_forcelimit_modifier = 0.20
+    	naval_maintenance_modifier = -0.15
+	    sailors_recovery_speed = 0.20
+    	land_morale = 0.05
+	    land_forcelimit_modifier = 0.10
+    	manpower_recovery_speed = 0.10
+	    reinforce_speed = -0.05
+	}
+	duration = 5
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+			NOT = { has_dlc = "Domination" }
+		}
+		has_parliament = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Domination"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			english_parliament = yes
+		}
+	}
 }
 
 self_governing_colony_government = {
@@ -1652,6 +2243,112 @@ self_governing_colony_government = {
 	}
 	duration = 4
 }
+
+#modified fo midwest
+midwest_chartered_company_government_aggressive = {
+	icon = "paper_with_seal"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+				has_reform = midwest_chartered_company_government
+			}
+		}
+	}
+	modifiers = {
+		tolerance_heathen = 1
+		tolerance_of_heathens_capacity = 1
+		production_efficiency = 0.1
+		governing_capacity = 50
+
+		#militarization
+		manpower_recovery_speed = 0.25
+    	land_morale = 0.10
+		reinforce_speed = 0.15
+    	global_unrest = -1
+    	development_cost = 0.05
+		global_manpower_modifier = 0.1
+		naval_forcelimit_modifier = 0.1
+	}
+	nation_designer_cost = 60
+	valid_for_nation_designer = yes
+	boost_income = yes
+	duration = 4
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		enables_estate_burghers = yes
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+}
+
+#modified fo midwest
+midwest_chartered_company_government = {
+	icon = "paper_with_seal"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+				has_reform = midwest_chartered_company_government
+			}
+		}
+	}
+	modifiers = {
+		tolerance_heathen = 1
+		tolerance_of_heathens_capacity = 1
+		production_efficiency = 0.1
+		governing_capacity = 50
+		stability_cost_to_declare_war = 1
+		stability_cost_modifier = -0.15
+
+		#peace dividend
+		manpower_recovery_speed = 0.15
+    	land_forcelimit_modifier = 0.10
+	    land_morale = 0.05
+    	land_maintenance_modifier = 0.10
+		global_manpower_modifier = 0.1
+		naval_forcelimit_modifier = 0.1
+	}
+	nation_designer_cost = 60
+	valid_for_nation_designer = yes
+	boost_income = yes
+	duration = 4
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		enables_estate_burghers = yes
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+	}
+	government_abilities = {
+		midwest_mercantilism
+	}
+}
+
 
 trade_company_government = {
 	icon = "paper_with_seal"
@@ -4258,9 +4955,8 @@ american_government = {
 			}
 		}
 	}
-	legacy_equivalent = american_government_legacy
 	valid_for_nation_designer = yes
-	nation_designer_cost = 15
+	nation_designer_cost = 50
 	nation_designer_trigger = {
 		has_dlc = "American Dream"
 	}
@@ -4282,15 +4978,19 @@ american_government = {
 				has_dlc = "Common Sense"
 				has_dlc = "Domination"
 			}
-		allow = { has_dlc = "Domination" }
-			custom_attributes = {
-				has_eyalets = yes
-			}
 		}
 		has_parliament = yes
 		custom_attributes = {
 			blocked_call_diet = yes
 		}
+		
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			has_eyalets = yes
+		}
+		
 	}
 	duration = 4
 
@@ -4326,7 +5026,7 @@ american_government = {
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
 		culture_group_western_deep_south = {
-			heir_chance = 0.5
+			development_cost = -0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
@@ -4410,8 +5110,8 @@ american_government = {
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		southeastasian_group = {
-			development_cost = -0.05
+		culture_group_tidewater = {
+			republican_tradition = 0.1
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
@@ -4457,6 +5157,21 @@ american_government = {
 		}
 		culture_group_hawaiian = {
 			province_warscore_cost = -0.15
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_great_lakes = {
+			great_project_upgrade_cost = -0.15
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_upper_midwestern = {
+			governing_cost = -0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_atlantic_south = {
+			army_tradition_decay = -0.01
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}

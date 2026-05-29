@@ -66,6 +66,11 @@ culture_group_appalachian = {
 		province = { local_has_banners = yes}
 		primary = ASV
 	}
+	culture_south_shenandoah = {
+		country = { has_banners = yes}
+		province = { local_has_banners = yes}
+		primary = ROA
+	}
 	
 	male_names = { Noah Liam Jacob William Mason Ethan Michael Alexander James Elijah Benjamin Daniel Aiden Logan Jayden Matthew Lucas David Jackson Joseph Anthony Samuel Joshua Gabriel Andrew John Christopher }
 	female_names = { Scarlett Zoe Camila Samantha Brooklyn Layla Aubrey Zoey Lillian Hannah Lily Natalie Addison Victoria Grace Avery Sofia Chloe Harper Evelyn Ella Elizabeth Amelia Madison Charlotte Emily Abigail Mia Ava Isabella Sophia Olivia Emma }
@@ -131,7 +136,7 @@ culture_group_allegheny = {
 		province = { local_has_banners = yes}
 	}
 	culture_scrantonian = { primary = SCR }
-	culture_shanondoah = {}
+	culture_north_shenandoah = { primary = CSB }
 	culture_penn_dutch = { primary = HSB }
 	culture_allentonian = { primary = ALN }
 	culture_southern_tier = { primary = ITH }
@@ -426,7 +431,9 @@ culture_group_lower_midwestern = {
 	culture_forgottonian = { primary = QCY }
 	culture_springfielder = { primary = SPF }
 	culture_saint_louisian = { primary = STL }
-	culture_mid_missourian = { primary = JFC }
+	culture_mid_missourian = { primary = FLW }
+	culture_missouri_rheinish = { primary = JFC }
+	culture_upper_missourian = { primary = KKV }
 	culture_kc_missourian = {}
 	culture_south_iowan = { primary = BTM }
 	culture_omahan = { primary = OMH }

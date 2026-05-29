@@ -5,3 +5,4 @@ government_rank = 1
 religion = atheist
 primary_culture = culture_puget
 capital = 3064
+set_country_flag = vancouver_economic_system_check

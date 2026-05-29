@@ -1,0 +1,7 @@
+technology_group = southwest
+government = monarchy
+add_government_reform = aztec_empire_reform
+government_rank = 1
+religion = nahuatl
+primary_culture = culture_phoenecian
+capital = 3317

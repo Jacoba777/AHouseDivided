@@ -3,5 +3,5 @@ government = monarchy
 add_government_reform = tanistry_reform
 government_rank = 1
 religion = methodist
-primary_culture = culture_highlander
+primary_culture = culture_south_shenandoah
 capital = 569

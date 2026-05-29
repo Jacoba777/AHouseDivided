@@ -11,12 +11,13 @@ native_size=120
 native_ferocity=8
 native_hostileness=4
 religion=baptist
-culture=culture_mid_missourian
+culture=culture_missouri_rheinish
 center_of_trade=1
 is_city = yes
 owner=JFC
 add_core=JFC
 controller=JFC
+set_province_flag = lower_missouri_river
 
 1444.11.12 = {
 	base_tax=1

@@ -17,6 +17,7 @@ owner=HTV
 add_core=HTV
 controller=HTV
 fort_15th=yes
+set_province_flag = tennessee_river
 
 1444.11.12 = {
 	base_tax=8

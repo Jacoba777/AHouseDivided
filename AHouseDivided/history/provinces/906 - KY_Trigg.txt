@@ -15,6 +15,7 @@ is_city = yes
 owner=CKV
 add_core=CKV
 controller=CKV
+set_province_flag = cumberland_river
 
 1444.11.12 = {
 	base_tax=0

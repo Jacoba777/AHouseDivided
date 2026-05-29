@@ -12,6 +12,7 @@ native_ferocity=5
 native_hostileness=4
 religion=baptist
 culture=culture_little_dixie
+set_province_flag = arkansas_river
 
 1444.11.12 = {
 	base_tax=0

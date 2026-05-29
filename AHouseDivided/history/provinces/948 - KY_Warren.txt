@@ -16,6 +16,7 @@ is_city = yes
 owner=BWL
 add_core=BWL
 controller=BWL
+set_province_flag = green_river
 
 1444.11.12 = {
 	base_tax=2

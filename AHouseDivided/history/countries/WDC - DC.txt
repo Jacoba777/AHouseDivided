@@ -6,13 +6,15 @@ religion = methodist
 primary_culture = culture_potomac
 capital = 505
 elector = yes
+set_country_flag = trifecta_emperor
 
-1444.11.11 = {
+1435.5.31 = {
 	monarch = {
-		name = "Abraham"
-		dynasty = "Washington"
-		adm = 5
-		dip = 3
-		mil = 4
+		name = "Jonathan"
+		dynasty = "Hale"
+		adm = 4
+		dip = 4
+		mil = 3
+		birth_date = 1417.2.11
 	}
 }

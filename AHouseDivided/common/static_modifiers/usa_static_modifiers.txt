@@ -38,7 +38,7 @@ dixie_embargoed = {
 
 dixie_corruption = {
     global_tax_modifier = -0.05
-	burghers_influence_modifier = 5
+	burghers_influence_modifier = 0.05
 }
 
 new_south_trade_disruption = {
@@ -55,4 +55,460 @@ new_south_corruption = {
 
 dixie_recent_raid = {
 	development_cost_modifier = 0.05
+}
+
+syndicate_council_recently_convened = {
+
+}
+
+syndicate_council_recently_summoned = {
+
+}
+
+ok_frontier_pleased = {
+	colony_cost_modifier = -0.05
+    global_colonial_growth = 5
+}
+
+ok_militia_pleased = {
+    mercenary_discipline = 0.05
+    local_defensiveness = 0.5
+}
+
+ok_traders_pleased = {
+    trade_efficiency = 0.05
+    trade_value = 0.05
+}
+
+ok_frontier_pissed = {
+    colony_cost_modifier = 0.15
+    global_colonial_growth = -20
+}
+
+ok_traders_pissed = {
+    trade_efficiency = -0.2
+    trade_value = -0.1
+}
+
+ok_militia_pissed = {
+	mercenary_discipline = -0.05
+    local_defensiveness = -0.5
+}
+
+
+##vancouver corporation investments (poor sods never saw it coming)
+
+
+vancouver_corporation_investing = {
+    trade_goods_size = -0.10
+    global_tax_modifier = -0.05
+    global_spy_defence = -0.10
+    institution_growth = -0.05
+    yearly_corruption = 0.03
+}
+
+
+
+vancouver_corporate_dependency = {
+    trade_efficiency = -0.10
+    global_tax_modifier = -0.05
+    production_efficiency = -0.05
+    liberty_desire = -0.05
+}
+
+
+
+vancouver_integrated_market = {
+    global_tax_modifier = -0.20
+    production_efficiency = -0.20
+    global_trade_power = -0.15
+    manpower_recovery_speed = -0.10
+    development_cost = 0.10
+    global_unrest = 1
+}
+
+
+anti_corp_stance = {
+    global_trade_power = 0.10
+    diplomatic_reputation = 0.5
+    yearly_corruption = -0.1
+}
+
+
+
+#la empire war mechanic modifier
+la_fortification = {
+    attrition = -0.15
+    supply_limit_modifier = 0.25
+    land_maintenance_modifier = -0.05
+    defensiveness = 0.25
+    hostile_attrition = 1
+}
+
+
+#violated the compact
+midwest_compact_violator = {
+    diplomatic_reputation = -2
+    global_unrest = 1.5
+    improve_relation_modifier = -0.25
+    monthly_regional_influence = -0.15
+}
+
+#compact violator response
+midwest_compact_violator_response = {
+    manpower_recovery_speed = 0.1
+    manpower_in_accepted_culture_provinces = 0.1
+    morale_damage_received = -0.05
+}
+
+#left the compact
+former_compact_member = {
+    diplomatic_reputation = -3
+    improve_relation_modifier = -0.20
+    global_unrest = 1
+    prestige = -1
+    ae_impact = 0.15
+    trade_efficiency = -0.05
+    regional_influence_gain_modifier = -0.25
+}
+
+#left the compact perm
+former_compact_member_perm = {
+    regional_influence_gain_modifier = -0.5
+}
+
+#leading a bloc
+leading_a_bloc = {
+    monthly_regional_influence = 0.01
+}
+
+#being a subordinate in a bloc
+midwest_subordinate_member = {
+    monthly_regional_influence = -0.05
+}
+
+#midwest monetary union member
+monetary_union_member = {
+    trade_efficiency = 0.10
+    global_trade_power = 0.10
+    production_efficiency = 0.05
+
+    stability_cost_modifier = -0.10
+    inflation_reduction = 0.05
+
+    global_unrest = -1
+
+    diplomatic_reputation = 1
+
+    # cohesion effect
+    liberty_desire = -5
+
+    # makes them economically dependent
+    trade_steering = 0.05
+}
+
+#midwest monetary union leader
+monetary_union_leader = {
+    global_trade_power = 0.25
+    trade_efficiency = 0.15
+
+    diplomatic_reputation = 2
+    improve_relation_modifier = 0.25
+
+    yearly_absolutism = 0.5
+
+    # bloc cohesion
+    global_unrest = -1
+
+    # subject control
+    liberty_desire_from_subject_development = -0.10
+
+    # economic gravity
+    trade_steering = 0.15
+    caravan_power = 0.25
+}
+
+#midwest core member of bloc
+core_bloc_member = {
+    
+}
+
+#midwest trade disaster modifiers
+informal_economy = {
+    local_tax_modifier = -0.10
+    trade_efficiency = -0.10
+}
+
+peripheral_disengagement = {
+    local_autonomy = 0.15
+}
+
+economic_recovery = {
+    trade_efficiency = 0.08
+    global_trade_power = 0.08
+    stability_cost_modifier = -0.15
+    global_unrest = -1
+}
+
+#stl better together disaster modifiers
+stl_political_infighting = {
+    global_tax_modifier = -0.25
+    global_unrest = 2
+    stability_cost_modifier = 0.25
+}
+
+stlcity_seat = {
+    global_unrest = -1
+    stability_cost_modifier = -0.15
+    legitimacy = 0.5
+    republican_tradition = 0.5
+    reform_progress_growth = 0.1
+}
+
+stlcounty_seat = {
+    global_tax_modifier = 0.075
+    global_unrest = -0.5
+    stability_cost_modifier = -0.075
+    production_efficiency = 0.05
+}
+
+stcharles_seat = {
+    global_tax_modifier = 0.15
+    trade_efficiency = 0.1
+    production_efficiency = 0.1
+    development_cost = -0.05
+}
+
+#urban decay modifiers
+urban_decay = {
+    global_unrest = 1
+    global_tax_modifier = -0.10
+    global_trade_power = -0.10
+    production_efficiency = -0.10
+    development_cost = 0.10
+}
+
+capital_fragmentation = {
+    local_tax_modifier = -0.20
+    province_trade_power_value = -0.25
+    local_production_efficiency = -0.15
+
+    build_cost = 0.10
+    local_development_cost = 0.10
+
+    local_monthly_devastation = 0.05
+}
+
+urban_blight = {
+    local_tax_modifier = -0.25
+    trade_goods_size_modifier = -0.20
+    local_manpower_modifier = -0.15
+
+    local_unrest = 5
+    build_cost = 0.10
+    local_development_cost = 0.15
+
+    local_monthly_devastation = 0.05
+}
+
+urban_acclimatization = {
+    local_tax_modifier = -0.10
+    trade_goods_size_modifier = -0.05
+    local_manpower_modifier = -0.05
+
+    local_unrest = -1
+    build_cost = 0.05
+    development_cost = 0.05
+
+    local_monthly_devastation = -0.02
+}
+
+continued_infrastructure_repairs = {
+    build_cost = 0.25
+    development_cost = 0.10
+
+    global_unrest = 1
+    global_tax_modifier = -0.05
+    trade_steering = 0.1
+
+    build_time = 0.20
+}
+
+
+#rising horde remilitarization modifiers
+rushed_rearmament = {
+    land_morale = 0.10
+    manpower_recovery_speed = 0.10
+    reinforce_speed = 0.05
+    land_maintenance_modifier = 0.15
+    build_cost = 0.10
+}
+
+steady_rearmament = {
+    manpower_recovery_speed = 0.08
+    land_morale = 0.05
+    land_maintenance_modifier = 0.05
+    build_cost = 0.05
+    drill_gain_modifier = 0.25
+}
+
+reactivated_industry = {
+    land_maintenance_modifier = -0.10
+    regiment_recruit_speed = -0.10
+    trade_goods_size_modifier = -0.10
+    production_efficiency = -0.05
+}
+
+revived_industry = {
+    land_maintenance_modifier = -0.05
+    regiment_recruit_speed = -0.05
+    trade_goods_size_modifier = -0.03
+    production_efficiency = -0.02
+}
+
+inexperienced_army = {
+    manpower_recovery_speed = 0.15
+    land_morale = -0.10
+    discipline = -0.05
+}
+
+green_army = {
+    manpower_recovery_speed = 0.10
+    land_morale = -0.05
+    discipline = -0.02
+    drill_gain_modifier = 0.25
+}
+
+emergency_war_funding = {
+    manpower_recovery_speed = 0.15
+    reinforce_speed = 0.10
+    land_maintenance_modifier = 0.20
+    inflation_reduction = -0.10
+    interest = 1
+    yearly_corruption = 0.1
+}
+
+military_auditing = {
+    land_maintenance_modifier = -0.10
+    infantry_cost = -0.10
+    manpower_recovery_speed = -0.05
+    reinforce_speed = -0.05
+    yearly_corruption = -1
+    stability_cost_modifier = 0.05
+}
+
+merchant_flight = {
+    local_tax_modifier = -0.15
+    local_production_efficiency = -0.15
+    trade_steering = -0.20
+}
+
+militarized_trade_corridor = {
+    trade_goods_size_modifier = -0.15
+    local_manpower_modifier = 0.25
+    local_defensiveness = 0.15
+}
+
+merchant_protection_contracts = {
+    production_efficiency = 0.20
+    trade_goods_size_modifier = 0.10
+    local_manpower_modifier = -0.15
+}
+
+stubborn_commercialism = {
+    trade_efficiency = 0.10
+    trade_goods_size_modifier = 0.05
+    land_morale = -0.10
+    manpower_recovery_speed = -0.10
+    global_unrest = 1
+}
+
+postwar_boom = {
+    trade_efficiency = 0.15
+    trade_goods_size_modifier = 0.10
+    development_cost = -0.10
+    land_maintenance_modifier = -0.10
+    manpower_recovery_speed = -0.05
+}
+
+postwar_structures = {
+    land_morale = 0.05
+    land_maintenance_modifier = -0.05
+    global_regiment_recruit_speed = -0.1
+    reinforce_speed = 0.2
+    manpower_recovery_speed = 0.15
+    drill_gain_modifier = 0.1
+    land_attrition = -0.05
+}
+
+#chicago mob modifiers
+investigation_started = {
+    global_unrest = -0.5
+    stability_cost_modifier = 0.05
+    advisor_cost = 0.1
+}
+
+policing_disruption = {
+    global_unrest = 1.5
+    manpower_recovery_speed = -0.1
+    state_maintenance_modifier = 0.1
+}
+
+tolerated_enforcement_corruption = {
+    global_unrest = -0.5
+    yearly_corruption = 0.1
+    trade_efficiency = 0.05
+}
+
+informal_tax_capture = {
+    global_tax_modifier = 0.1
+    trade_efficiency = 0.1
+    yearly_corruption = 0.15
+    global_unrest = -0.5
+}
+
+purge_preparation = {
+    discipline = 0.05
+    land_morale = 0.1
+    stability_cost_modifier = 0.1
+    global_unrest = 1
+}
+
+institutionalized_corruption = {
+    global_tax_modifier = 0.15
+    trade_efficiency = 0.15
+    yearly_corruption = 0.2
+    global_unrest = -1
+    advisor_cost = -0.1
+}
+
+crackdown_operations = {
+    global_unrest = 1
+    stability_cost_modifier = 0.1
+    yearly_corruption = -0.05
+}
+
+widespread_violence = {
+    global_unrest = 2
+    trade_efficiency = -0.1
+    global_tax_modifier = -0.1
+    manpower_recovery_speed = -0.1
+}
+
+mob_violence = {
+    local_unrest = 3
+    local_tax_modifier = -0.1
+    trade_steering = -0.15
+}
+
+#trade corruption modifiers
+detrimental_corruption = {
+    global_trade_power = -0.005
+    trade_efficiency = -0.0025 
+    global_unrest = 0.05
+}
+
+beneficial_corruption = {
+    global_trade_power = 0.008
+    trade_efficiency = 0.005
 }

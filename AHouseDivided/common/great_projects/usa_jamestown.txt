@@ -27,7 +27,7 @@ jamestown = {
 
 	#can we build it?
 	build_trigger = {
-		culture_group = culture_group_atlantic_south
+		culture_group = culture_group_tidewater
 		province_is_or_accepts_culture = yes
 	}
 
@@ -41,13 +41,13 @@ jamestown = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = culture_group_atlantic_south
+		culture_group = culture_group_tidewater
 		province_is_or_accepts_culture = yes
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = culture_group_atlantic_south
+		culture_group = culture_group_tidewater
 		province_is_or_accepts_culture = yes
 	}
 

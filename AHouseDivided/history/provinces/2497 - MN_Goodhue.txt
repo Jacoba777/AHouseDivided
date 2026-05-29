@@ -15,6 +15,7 @@ is_city = yes
 owner=FBT
 add_core=FBT
 controller=FBT
+set_province_flag = upper_miss_river
 
 1444.11.12 = {
 	base_tax=1

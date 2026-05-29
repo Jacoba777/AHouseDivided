@@ -8,9 +8,11 @@ monarchy_mechanic = {
 	valid_for_nation_designer = no
 	custom_attributes = {
 		enables_aristocratic_idea_group = yes
+		
 	}
 	modifiers = {
 		nobles_influence_modifier = 0.05
+		
 	}
 }
 
@@ -73,7 +75,9 @@ elective_monarchy_reform = {
 }
 
 ###ADH###
+
 dixie_autocracy_reform = {
+	lock_level_when_selected = yes
 	icon = "ballot_box"
 	potential = {
 		has_dlc = "Domination"
@@ -88,6 +92,7 @@ dixie_autocracy_reform = {
 			culture_group = culture_group_eastern_deep_south
 			culture_group = culture_group_western_deep_south
 			culture_group = culture_group_gulf_coast
+			culture_group = culture_group_floridian
 		}
 	}
 	allow_normal_conversion = yes
@@ -115,24 +120,53 @@ dixie_autocracy_reform = {
 	}
 }
 
-plutocratic_reform = {
-	icon = "asian_scripture"
-	allow_normal_conversion = yes
-	legacy_equivalent = despotic_monarchy
+frontier_kingdom_reform = {
+	icon = "crossroads"
 	potential = {
-		OR = {
-			technology_group = indian
-			technology_group = muslim
-			technology_group = chinese
-			technology_group = east_african
+		has_dlc = "Domination"
+		culture_group = culture_group_southern_plains
+	}
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		defensiveness = 0.5
+		all_estate_influence_modifier = 0.1
+	}
+	custom_attributes = {
+		has_ruler_election = yes
+	}
+	factions = {
+		ok_frontier
+		ok_traders
+		ok_militia
+	}
+	ai = {
+		factor = 0.5
+	}
+}
+
+#Midwestern 'kingdoms'
+proscriptive_trade_hub = {
+	icon = "asian_scripture"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+				has_reform = midwest_chartered_company_government
+			}
+			
 		}
 	}
 	nation_designer_trigger = {
-		OR = {
-			technology_group = indian
-			technology_group = muslim
-			technology_group = chinese
-			technology_group = east_african
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+			}
 		}
 	}
 	valid_for_nation_designer = yes
@@ -142,6 +176,116 @@ plutocratic_reform = {
 		nobles_influence_modifier = -0.05
 		burghers_influence_modifier = 0.05
 		vaisyas_influence_modifier = 0.05
+		stability_cost_to_declare_war = 1
+		stability_cost_modifier = -0.15
+
+		
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		election_on_death = yes
+	}
+	boost_income = yes
+	government_abilities = {
+		midwest_mercantilism
+	}
+	ai = {
+		factor = 0.75 #generic
+	}
+}
+
+
+#Midwestern 'kingdoms' - aggressive
+proscriptive_trade_hub_aggressive = {
+	icon = "asian_scripture"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+
+	potential = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+				has_reform = midwest_chartered_company_government
+			}
+			
+		}
+	}
+	nation_designer_trigger = {
+		any_neighbor_country = {
+			or = {
+				has_reform = midwestern_trade_hub
+				has_reform = proscriptive_trade_hub
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		merchants = 1
+		nobles_influence_modifier = -0.05
+		burghers_influence_modifier = 0.05
+		vaisyas_influence_modifier = 0.05
+
+		#remilitarized
+		discipline = 0.10
+	    land_morale = 0.15
+    	manpower_recovery_speed = 0.20
+	    reinforce_speed = 0.15
+	    global_unrest = 1
+    	stability_cost_modifier = 0.10
+	    trade_efficiency = -0.05
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		election_on_death = yes
+	}
+	boost_income = yes
+	government_abilities = {
+		midwest_mercantilism
+	}
+	ai = {
+		factor = 0.75 #generic
+	}
+}
+
+
+
+
+plutocratic_reform = {
+	icon = "asian_scripture"
+	allow_normal_conversion = yes
+	legacy_equivalent = despotic_monarchy
+	potential = {
+		OR = {
+			technology_group = great_lakes
+			technology_group = northern_plains	
+			technology_group = central_plains
+		}
+	}
+	nation_designer_trigger = {
+		OR = {
+			technology_group = great_lakes
+			technology_group = northern_plains	
+			technology_group = central_plains
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		merchants = 1
+		nobles_influence_modifier = -0.05
+		burghers_influence_modifier = 0.05
+		vaisyas_influence_modifier = 0.05
+
+		#peace dividend
+		land_maintenance_modifier = -0.15
+	    manpower_recovery_speed = -0.15
+	    discipline = -0.05
+    	reinforce_speed = -0.10
+	    global_unrest = -1
 	}
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
@@ -273,7 +417,7 @@ indian_sultanate_reform = {
 }
 
 shogunate = {###reformatted for california
-	icon = "shogunate"
+	icon = "cali_state_house"
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_country_flag = formed_japan_flag }
@@ -464,7 +608,7 @@ absolutist_france_reform = {
 }
 
 indep_daimyo = { ## reformatted for california
-	icon = "samurai"
+	icon = "cowboy"
 	allow_normal_conversion = no
 	potential = {
 		NOT = { has_country_flag = formed_japan_flag }
@@ -505,7 +649,7 @@ indep_daimyo = { ## reformatted for california
 }
 
 celestial_empire = { ##reformatted for texas
-	icon = "celestial_empire"
+	icon = "john_texas"
 	allow_normal_conversion = no
 	potential = {
 		OR = {
@@ -558,7 +702,7 @@ celestial_empire = { ##reformatted for texas
 }
 
 chinese_warlord = { ##reformatted for texas
-	icon = "asian_scripture"
+	icon = "texas_flag"
 	allow_normal_conversion = no
 	potential = {
 		OR = {
@@ -979,10 +1123,10 @@ absolute_british_monarchy = {
 	}
 }
 
-ottoman_government = {
+ottoman_government = { # for california
 	lock_level_when_selected = yes
 	allow_normal_conversion = yes
-	icon = "ottoman_government"
+	icon = "california"
 	potential = {
 		religion_group = christian
 		OR = {
@@ -1178,7 +1322,7 @@ serbian_despotate_reform = {
 	}
 }
 
-bulgarian_tsardom_reform = {
+bulgarian_tsardom_reform = { 
 	icon = "king"
 	allow_normal_conversion = yes
 	potential = {
@@ -1216,13 +1360,52 @@ bulgarian_tsardom_reform = {
 	}
 }
 
-tanistry_reform = {
+chicago_outfit = { #modified for chicago mob
+	icon = "unknown_man"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		tag = CCG
+	}
+	trigger = {
+
+	}
+	nation_designer_trigger = {
+		tag = CCG
+	}
+	valid_for_nation_designer = no
+	modifiers = {
+		governing_capacity = 150 
+		can_claim_states = yes 
+		harsh_treatment_cost = -0.25
+
+		#mob effects
+		global_tax_modifier = 0.15
+        trade_efficiency = 0.15
+        global_trade_power = 0.2
+        advisor_cost = -0.1
+        yearly_corruption = 0.2
+        diplomatic_reputation = -2
+	}
+	government_abilities = {
+		corruption_scaling
+	}
+	heir = no
+	queen = no
+	fixed_rank = 3
+	ai = {
+		factor = 100
+	}
+}
+
+tanistry_reform = { #reformatted for appalachia
 	icon = "tanistry"
 	allow_normal_conversion = yes
 	potential = {
 		or = {
 			culture_group = culture_group_appalachian
 			culture_group = culture_group_allegheny
+			culture = culture_centralseean
 		}
 	}
 	nation_designer_trigger = {
@@ -1280,7 +1463,7 @@ tanistry_reform = {
 	}
 }
 
-irish_highkingdom_reform = {
+irish_highkingdom_reform = { #`reformatted for appalachia
 	icon = "irish_highkingdom"
 	allow_normal_conversion = yes
 	potential = {
@@ -1438,8 +1621,8 @@ sharifate_reform = {
 	}
 }
 
-caliphate_reform = {
-	icon = "caliphate"
+caliphate_reform = { #reformatted for deseret
+	icon = "deseret_torch"
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
@@ -1449,11 +1632,11 @@ caliphate_reform = {
 		}
 	}
 	trigger = {
-		religion_group = muslim
+		religion = mormon
 	}
 	lock_level_when_selected = yes
 	nation_designer_trigger = {
-		religion_group = muslim
+		religion = mormon
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 50
@@ -1809,22 +1992,21 @@ bohemian_elective_kingdom_reform = {
 	}
 }
 
-stadthalter_monarchy_reform = {
-	icon = "dutch_republic"
-	allow_normal_conversion = yes
+stadthalter_monarchy_reform = { ##modified for vancouver corporation - SEATTLE
+	icon = "vancouver_corp"
+	allow_normal_conversion = no
 	potential = {
 		OR = {
 			AND = {
 				OR = {
-					primary_culture = dutch
-					primary_culture = frisian
-					primary_culture = flemish
+					culture_group = culture_group_cascadian
+					culture_group = culture_group_californian
 				}
-				NOT = { map_setup = map_setup_random }
-			}
-			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = stadthalter_monarchy_reform
+				not = {
+					any_country = {
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
 			}
 		}
 	}
@@ -1835,11 +2017,15 @@ stadthalter_monarchy_reform = {
 	nation_designer_cost = 40
 
 	modifiers = {
-		heavy_ship_power = 0.1
-		trade_efficiency = 0.1
-		reduced_liberty_desire_on_other_continent = 10
-		has_voc_indiamen = yes
-		allowed_voc_indiamen_fraction = 0.2
+    	global_trade_power = 0.15
+    	trade_efficiency = 0.10
+    	trade_steering = 0.10
+    	vassal_income = 0.25
+    	liberty_desire_from_subject_development = -0.50
+    	advisor_cost = -0.10
+    	yearly_corruption = 0.05
+		diplomatic_reputation = -3
+		ae_impact = 0.15
 		no_stability_loss_on_monarch_death = yes
 	}
 
@@ -1848,12 +2034,14 @@ stadthalter_monarchy_reform = {
 			limit = { is_lesser_in_union = no }
 			country_event = { id = dutch_republic.33 }
 		}
+		clr_country_flag = vancouver_corp_flag
 	}
 
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
 		has_dutch_election = yes
+		has_appanages = yes
 	}
 	conditional = {
 		allow = {
@@ -1869,17 +2057,20 @@ stadthalter_monarchy_reform = {
 		is_eligible_for_hre_emperor = no
 		states_general_mechanic = {
 			statists = {
-				naval_forcelimit_modifier = 0.10
-				global_trade_power = 0.05
-				legitimacy = -0.5
+				global_tax_modifier = 0.10
+			    yearly_corruption = -0.05
+				diplomatic_reputation = 2
+    			global_autonomy = -0.05
 			}
 
 			orangists = {
-				land_forcelimit_modifier = 0.25
-				stability_cost_modifier = -0.10
-				legitimacy = 0.5
+    			production_efficiency = 0.15
+    			liberty_desire = 0.10
+    			global_unrest = 1
+    			legitimacy = 0.5
 			}
 		}
+		
 	}
 	conditional = {
 		allow = {
@@ -1890,6 +2081,10 @@ stadthalter_monarchy_reform = {
 		}
 		has_parliament = yes
 	}
+	effect = {
+		set_country_flag = vancouver_corp_flag
+	}
+	
 	ai = {
 		factor = 1
 	}
@@ -1998,7 +2193,7 @@ admiralty_regime_reform = {
 modernized_ottoman_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = yes
-	icon = "modernized_ottoman_government"
+	icon = "star_and_laurel"
 	potential = {
 		OR = {
 			has_reform = modernized_ottoman_government
@@ -2054,7 +2249,7 @@ modernized_ottoman_government = {
 reorganized_ottoman_government = {
 	lock_level_when_selected = yes
 	allow_normal_conversion = yes
-	icon = "ottoman_government"
+	icon = "california"
 	potential = {
 		OR = {
 			has_reform = reorganized_ottoman_government
@@ -2326,7 +2521,7 @@ al_andalusia_government = {
 	}
 }
 
-prussian_monarchy = {
+prussian_monarchy = { #modified for dixieland - DIX 
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
@@ -3654,22 +3849,35 @@ arabic_plutocracy_reform = {
 	allow_normal_conversion = no
 	potential = {
 		OR = {
-			primary_culture = omani_culture
-			primary_culture = gulf_arabic
+			culture_group = culture_group_great_lakes
+			culture_group = culture_group_ohio_river_valley
+			culture_group = culture_group_upper_midwestern
+			culture_group = culture_group_lower_midwestern
+			and = {
+				is_part_of_hre = no
+				or = {
+					culture_group = culture_group_upstate
+					culture_group = culture_group_allegheny
+				}
+			}
 		}
 	}
 	trigger = {
 		OR = {
-			primary_culture = omani_culture
-			primary_culture = gulf_arabic
+			culture_group = culture_group_great_lakes
+			culture_group = culture_group_ohio_river_valley
+			culture_group = culture_group_upper_midwestern
+			culture_group = culture_group_lower_midwestern
+			and = {
+				is_part_of_hre = no
+				or = {
+					culture_group = culture_group_upstate
+					culture_group = culture_group_allegheny
+				}
+			}
 		}
 	}
-	nation_designer_trigger = {
-		OR = {
-			primary_culture = omani_culture
-			primary_culture = gulf_arabic
-		}
-	}
+
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 
@@ -3719,6 +3927,7 @@ arabic_plutocracy_reform = {
 		trade_city_reform = trading_city
 	}
 	custom_attributes = {
+		election_on_death = yes
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
 	}
@@ -4723,7 +4932,7 @@ aztec_empire_reform = {
 	icon = "aztec_empire_reform"
 	allow_normal_conversion = no
 	potential = {
-		primary_culture = aztek
+		culture_group = culture_group_southwestern
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 60
@@ -4741,7 +4950,6 @@ aztec_empire_reform = {
 			remove_country_modifier = the_fifth_sun
 		}
 	}
-	
 	government_abilities = {
 		blood_gathering_mechanic
 	}

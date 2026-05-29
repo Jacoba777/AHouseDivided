@@ -413,14 +413,11 @@ reformer_state_reform = {
 	trigger = {
 		OR = {
 			is_playing_custom_nation = yes
-			religion = hussite
-			religion = protestant
-			religion = reformed
-			religion = anglican
+			religion = mormon
 		}
 	}
 	allow_normal_conversion = yes
-	icon = "reformer"
+	icon = "deseret_torch"
 	valid_for_nation_designer = yes
 	nation_designer_cost = 40
 	modifiers = {
@@ -612,7 +609,7 @@ tibetan_dual_government_reform = {
 	}
 }
 
-caliphate_theocracy_reform = {
+caliphate_theocracy_reform = { #modified for mormons
 	icon = "caliphate"
 	allow_normal_conversion = yes
 	potential = {
@@ -623,11 +620,11 @@ caliphate_theocracy_reform = {
 		}
 	}
 	trigger = {
-		religion_group = muslim
+		religion = mormon
 	}
 	lock_level_when_selected = yes
 	nation_designer_trigger = {
-		religion_group = muslim
+		religion = mormon
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 50
@@ -865,24 +862,23 @@ zoroastrian_theocracy_reform = {
 	#}
 }
 
-ajuuraan_theocracy_reform = {
+ajuuraan_theocracy_reform = { #modified for utah
 	icon = "stone_tablet"
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { tag = PAP }
-		religion_group = muslim
-		primary_culture = somali
+		religion = mormon
 	}
 	valid_for_nation_designer = yes
 	nation_designer_trigger = {
-		religion_group = muslim
-		primary_culture = somali
+		religion = mormon
 	}
 	nation_designer_cost = 0
 	modifiers = {
 		monarch_diplomatic_power = 1 
 		trade_efficiency = 0.05
 		global_missionary_strength = 0.01
+		promote_culture_cost = -0.25
 	}
 	royal_marriage = yes
 	queen = yes
@@ -898,7 +894,9 @@ ajuuraan_theocracy_reform = {
 		government_abilities = {
 			iqta_mechanic
 		}
+		has_parliament = yes
 	}
+	
 }
 
 bureaucratic_rule_reform = {

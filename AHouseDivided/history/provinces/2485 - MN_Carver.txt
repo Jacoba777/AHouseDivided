@@ -15,6 +15,7 @@ is_city = yes
 owner=MNP
 add_core=MNP
 controller=MNP
+set_province_flag = minnesota_river
 
 1444.11.12 = {
 	base_tax=5

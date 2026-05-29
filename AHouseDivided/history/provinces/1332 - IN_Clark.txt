@@ -16,6 +16,7 @@ owner=LVL
 add_core=LVL
 controller=LVL
 fort_15th=yes
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=1

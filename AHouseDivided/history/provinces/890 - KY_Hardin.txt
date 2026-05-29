@@ -17,6 +17,7 @@ owner=FTK
 add_core=FTK
 controller=FTK
 fort_15th=yes
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=1

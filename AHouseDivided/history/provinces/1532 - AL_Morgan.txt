@@ -15,6 +15,7 @@ is_city = yes
 owner=HTV
 add_core=HTV
 controller=HTV
+set_province_flag = tennessee_river
 
 1444.11.12 = {
 	base_tax=1

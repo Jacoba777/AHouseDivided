@@ -1,7 +1,13 @@
 technology_group = great_lakes
 government = republic
-add_government_reform = american_republic
+add_government_reform = chicago
+set_country_flag = midwest_compact_member
 government_rank = 1
 religion = catholic
 primary_culture = culture_chicagolander
 capital = 1429
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 70
+}

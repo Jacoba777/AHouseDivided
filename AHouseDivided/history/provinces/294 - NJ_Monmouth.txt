@@ -11,11 +11,11 @@ native_hostileness=3
 religion=catholic
 culture=culture_central_jersey
 is_city = yes
-owner=PA2
-add_core=PA2
+owner=MMH
+add_core=MMH
 add_core=MMH
 add_core=NYC
-controller=PA2
+controller=MMH
 fort_15th=yes
 
 1444.11.12 = {

@@ -1,4 +1,29 @@
-#manifesting_destiny = {
-#	opinion = -100
-#	yearly_decay = 0
-#}
+manifesting_destiny = {
+	opinion = -200
+	yearly_decay = 0
+}
+
+refused_vassalage = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+is_subsidiary = {
+	opinion = 100
+	yearly_decay = 0
+}
+
+left_the_compact = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+vancorp_investment_opinion = {
+	opinion = 75
+	yearly_decay = 1
+}
+
+horde_refuse_aid = {
+	opinion = -50
+	yearly_decay = 1
+}

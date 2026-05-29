@@ -1,0 +1,172 @@
+chicago_mob_disaster = {
+	potential = {
+		tag = CCG
+        not = { has_reform = chicago_outfit }
+        not = { check_variable = { which = chicago_mob_countdown    value = -1000 }
+        }
+	}
+	can_start = {
+        not = { stability = -2}
+		corruption = 3
+	}
+
+    can_stop = {
+        stability = 2
+        not = { corruption = 1.5 }
+    }
+
+    can_end = {
+        OR = {
+            check_variable = {
+                which = chicago_mob_countdown
+                value = 15
+            }
+            AND = {
+                stability = 2
+                not = { corruption = 2 }
+                NOT = { has_country_modifier = institutionalized_corruption }
+            }
+        }
+    }
+    
+    progress = {
+		modifier = {
+           factor = 1.5
+            corruption = 1
+        }
+        modifier = {
+            factor = 3
+            corruption = 5
+        }
+        modifier = {
+            factor = 1.5
+            average_unrest = 3
+        }
+        modifier = {
+            factor = 0.75
+            not = { stability = 1 }
+        }
+        modifier = {
+            factor = 0.5
+            not = { stability = 2 }
+        }
+	}
+
+	
+	modifier = {
+        yearly_corruption = 0.12
+        global_unrest = 3
+    }
+
+
+	on_start = chicago_mob.1 #set counter
+	on_end = chicago_mob.5 #fires at counter = 15
+    
+    
+    
+    
+    
+    on_monthly = {
+        events = {
+    		chicago_mob.2 #counter+2 (1 if purge police)
+	    	chicago_mob.3 #counter+2 (2.5 if exploit)
+		    chicago_mob.4 #counter+3
+    	}
+        random_events = {
+            100 = 0
+            12 = chicago_mob.6 #counter+1
+            12 = chicago_mob.7 #counter-0.5
+            12 = chicago_mob.8 #counter+2
+        }
+    }
+
+}
+
+
+
+
+chicago_civil_war = {
+	potential = {
+		num_of_cities = 5
+        tag = CCG
+        not = { has_reform = chicago_outfit }
+    }
+
+	
+	
+	can_start = {
+        hidden_trigger = {
+            has_country_flag = starting_chicago_civil_war
+         }
+		
+	}
+	
+	
+	can_stop = {
+		always = no
+	}
+		
+	
+	
+	progress = {
+		modifier = {
+			factor = 10
+			check_variable = {
+                which = chicago_mob_progress
+                value = 8
+            }
+		}
+		modifier = {
+			factor = 1
+			overextension_percentage = 0.10
+		}		
+		modifier = {
+			factor = 2
+			revolt_percentage = 0.10
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 0 }
+		}		
+	}
+	
+	
+	
+	can_end = {
+		not = { corruption = 1 }
+		NOT = { has_spawned_rebels = pretender_rebels }
+	}
+	
+
+	modifier = {
+		global_unrest = 10
+	}	
+	
+	
+	on_start = civil_war.1
+	on_end = civil_war.100
+	
+	on_monthly = {
+		events = {
+			flavor_lxa.1
+			flavor_lxa.2
+			flavor_lxa.3
+		}
+		random_events = { 
+			1000 = 0
+			100 = civil_war.2
+			100 = civil_war.3
+			100 = civil_war.5
+			100 = civil_war.6
+			100 = civil_war.7
+			100 = civil_war.8
+			100 = civil_war.9
+			100 = civil_war.10
+			100 = civil_war.11
+			100 = civil_war.12
+			100 = civil_war.13
+		
+		}
+	}
+}
+

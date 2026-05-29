@@ -11,6 +11,7 @@ native_ferocity=5
 native_hostileness=4
 religion=lutheran
 culture=culture_north_iowan
+set_province_flag = upper_miss_river
 
 1444.11.12 = {
 	base_tax=0

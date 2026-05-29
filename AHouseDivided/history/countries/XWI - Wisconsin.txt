@@ -1,6 +1,6 @@
 technology_group = great_lakes
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwestern_ver_american_repub
 government_rank = 2
 religion = lutheran
 primary_culture = culture_madisonian

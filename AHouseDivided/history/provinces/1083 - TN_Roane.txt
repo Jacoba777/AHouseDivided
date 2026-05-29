@@ -16,6 +16,7 @@ is_city = yes
 owner=KNX
 add_core=KNX
 controller=KNX
+set_province_flag = tennessee_river
 
 1444.11.12 = {
 	base_tax=0

@@ -1,7 +1,7 @@
 technology_group = central_plains
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwestern_ver_american_repub
 government_rank = 2
 religion = baptist
-primary_culture = culture_mid_missourian
+primary_culture = culture_missouri_rheinish
 capital = 1655

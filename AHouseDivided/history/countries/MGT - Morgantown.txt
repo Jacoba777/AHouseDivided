@@ -1,7 +1,6 @@
 technology_group = appalachia
-government = republic
-add_government_reform = dixie_republic
-set_country_flag = oldsouth
+government = monarchy
+add_government_reform = tanistry_reform
 government_rank = 1
 religion = methodist
 primary_culture = culture_morgantonian

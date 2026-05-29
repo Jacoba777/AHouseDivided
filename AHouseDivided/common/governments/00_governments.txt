@@ -6,9 +6,6 @@ monarchy = {
 				feudalism_reform
 				autocracy_reform
 				elective_monarchy_reform
-				###ADH###
-				dixie_autocracy_reform
-				
 				plutocratic_reform
 				indian_sultanate_reform
 				nayankara_reform
@@ -132,7 +129,12 @@ monarchy = {
 				austrian_absolute_monarchy
 				merchant_aristocracy_reform
 				gothic_monarchy_reform
-
+				###ADH###
+				dixie_autocracy_reform
+				frontier_kingdom_reform
+				proscriptive_trade_hub
+				proscriptive_trade_hub_aggressive
+				chicago_outfit
 
 			}
 		}
@@ -639,9 +641,6 @@ republic = {
 				veche_republic
 				great_veche_republic
 				american_republic
-				###ADH###
-				dixie_republic
-
 				federal_republic
 				american_government
 				colonial_government
@@ -674,6 +673,18 @@ republic = {
 				egyptian_government_reform
 				city_alliance_reform
 				turkoman_ottoman_institutions
+				###ADH###
+				dixie_republic
+				frontier_republic
+				cartel_republic_reform
+				corporatocracy
+				midwestern_trade_hub
+				midwest_chartered_company_government
+				chicago
+				midwestern_trade_hub_agressive
+				midwest_chartered_company_government_aggressive
+				chicago_aggressive
+				midwestern_ver_american_repub
 			}
 		}
 		republican_virtues = {
@@ -991,7 +1002,7 @@ republic = {
 		american_republic
 		#ADH additions
 		california_republic
-		
+
 		revolutionary_republic_reform
 		pirate_republic_reform
 		protectorate_parliament_reform

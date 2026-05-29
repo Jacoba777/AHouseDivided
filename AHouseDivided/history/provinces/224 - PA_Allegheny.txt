@@ -19,6 +19,7 @@ add_core=PIT
 controller=PIT
 fort_15th=yes
 trade_goods=steel
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=21

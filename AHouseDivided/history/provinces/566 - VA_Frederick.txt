@@ -10,11 +10,12 @@ native_size=160
 native_ferocity=4
 native_hostileness=3
 religion=methodist
-culture=culture_shanondoah
+culture=culture_north_shenandoah
 is_city = yes
 owner=WIN
 add_core=WIN
 controller=WIN
+trade_goods = apples
 
 1444.11.12 = {
 	base_tax=3

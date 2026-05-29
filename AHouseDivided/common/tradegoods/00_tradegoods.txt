@@ -114,11 +114,9 @@ grain = {
 				region = region_md
 				AND = {
 					region = region_wa
-					NOT = {
-						has_terrain = forest
-						has_terrain = mountain
-						has_terrain = hills
-					}
+					NOT = {	has_terrain = forest }
+					not = {	has_terrain = mountain }
+					not = {	has_terrain = hills	}
 				}
 			}
 		}
@@ -284,9 +282,9 @@ corn = {
 			factor = 0
 			has_terrain = drylands
 			OR = {
-				continent = region_nd
-				continent = region_sd
-				continent = region_ne
+				region = region_nd
+				region = region_sd
+				region = region_ne
 			}
 		}
 		modifier = {
@@ -602,14 +600,14 @@ copper = {
 		factor = 10
 		modifier = {
 			factor = 0
-			NOT = {
-				region = region_az
-				region = region_nm
-				region = region_ut
-				region = region_mt
-				region = region_id
-				region = region_mo
-				region = region_mi
+			or = {
+				not = { region = region_az }
+				not = { region = region_nm }
+				not = { region = region_ut }
+				not = { region = region_mt }
+				not = { region = region_id }
+				not = { region = region_mo }
+				not = { region = region_mi }
 			}
 		}
 		modifier = {
@@ -619,6 +617,7 @@ copper = {
 				area = area_nm_southwestern
 			}
 		}
+		
 		modifier = {
 			factor = 0.25
 			OR = {
@@ -626,6 +625,13 @@ copper = {
 				region = region_mi
 				region = region_ut
 				region = region_nm
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				province_id = 3312 #Graham AZ
+				province_id = 3311 #Greenlee AZ
 			}
 		}
 		modifier = {
@@ -660,6 +666,14 @@ gold = {
 		modifier = {
 			factor = 2
 			has_terrain = mountain
+		}
+		modifier = {
+			factor = 100
+			or = {
+				province_id = 2714 #Humbolt NV
+				province_id = 3035 #Jefferson Co MT
+				province_id = 3033 #Deer Lodge MT
+			}
 		}
 		modifier = {
 			factor = 2
@@ -703,13 +717,7 @@ iron = {
 				area = area_wi_northwestern
 			}
 		}
-		modifier = {
-			factor = 100
-			OR = {
-				area = area_mi_houghton
-				area = area_mn_duluth
-			}
-		}
+		
 		modifier = {
 			factor = 1.2
 			OR = {
@@ -720,6 +728,14 @@ iron = {
 		modifier = {
 			factor = 1.75
 			has_terrain = mountain
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				area = area_mi_houghton
+				area = area_mn_duluth
+				province_id  = 3193 #Iron Co UT
+			}
 		}
 		modifier = {
 			factor = 2
@@ -1429,7 +1445,7 @@ tobacco = {
 			factor = 0
 			OR = {
 				has_terrain = hills
-				has_terrain = mountains
+				has_terrain = mountain
 				culture = culture_atlantan
 				AND = {
 					OR = {
@@ -1446,7 +1462,7 @@ tobacco = {
 			OR = {
 				region = region_ky
 				region = region_nc
-				area = area_sc_myrtle
+				area = area_sc_myrtle_beach
 				area = area_sc_florence
 				area = area_sc_olde_english_district
 			}
@@ -1910,9 +1926,10 @@ coal = {
 			factor = 0.25
 			region = region_al
 		}
+		
 		modifier = {
 			factor = 0
-			NOT = { has_terrain = mountains }
+			NOT = { has_terrain = mountain }
 			NOT = { has_terrain = hills }
 			NOT = { has_terrain = highlands }
 			NOT = { has_terrain = forest }
@@ -1920,11 +1937,15 @@ coal = {
 		}
 		modifier = {
 			factor = 2
-			has_terrain = mountains
+			has_terrain = mountain
 		}
 		modifier = {
 			factor = 1.5
 			has_terrain = hills
+		}
+		modifier = {
+			factor = 100
+			province_id = 3148 #Campbell WY
 		}
 	}
 }

@@ -2249,3 +2249,94 @@ cb_unify_ca = {
 
 	war_goal = take_capital_eyalet_war
 }
+
+
+# Fairbault War
+
+cb_fairbault = {
+	
+	is_triggered_only = yes
+
+	war_goal = centralize_minnesota
+}
+
+
+#Vancouver Dissoslution War
+
+cb_dissolve_vancouver = {
+
+	prerequisites_self = {
+		or = {
+			any_neighbor_country = {
+				has_country_flag = vancouver_corp_flag
+			}
+			any_neighbor_country = {
+				has_country_modifier = vancouver_corporation_investing
+			}
+			any_neighbor_country = {
+				has_country_modifier = vancouver_corporate_dependency
+			}
+			any_neighbor_country = {
+				has_country_modifier = vancouver_integrated_market
+			}		
+			has_country_modifier = vancouver_corporation_investing
+		}
+
+	}
+
+	prerequisites = {
+		FROM = {
+			has_country_flag = vancouver_corp_flag
+		}
+	}
+
+	war_goal = dismantle_vancouver_corporation
+	
+}
+
+#midwest compact reinfoprcement war
+
+cb_midwest_compact = {
+
+	prerequisites_self = {
+		and = {
+			has_government_mechanic = midwest_mercantilism
+			has_country_modifier = midwest_compact_violator_response
+			any_neighbor_country = {
+				has_country_modifier = midwest_compact_violator
+				overlord = {
+					has_country_modifier = midwest_compact_violator
+				}
+			}
+		}
+	}
+
+	prerequisites = {
+		FROM = {
+			has_country_modifier = midwest_compact_violator
+		}
+	}
+
+	war_goal = reinforce_midwestern_compact
+}
+
+cb_purge_outfit = {
+	prerequisites_self = {
+		and = {
+			has_government_mechanic = midwest_mercantilism
+			any_active_trade_node = {
+				any_trade_node_member_country = {
+					has_reform = chicago_outfit
+				}
+			}
+		}
+	}
+
+	prerequisites = {
+		FROM = {
+			has_reform = chicago_outfit
+		}
+	}
+
+	war_goal = war_goal_change_government
+}

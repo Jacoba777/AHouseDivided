@@ -15,6 +15,7 @@ is_city = yes
 owner=SXF
 add_core=SXF
 controller=SXF
+set_province_flag = upper_missouri_river
 
 1444.11.12 = {
 	base_tax=0

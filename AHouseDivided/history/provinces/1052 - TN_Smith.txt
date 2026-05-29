@@ -16,6 +16,7 @@ is_city = yes
 owner=NSH
 add_core=NSH
 controller=NSH
+set_province_flag = cumberland_river
 
 1444.11.12 = {
 	base_tax=0

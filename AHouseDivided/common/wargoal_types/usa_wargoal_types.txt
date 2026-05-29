@@ -113,3 +113,132 @@ take_province_alaska = {
 
 	war_name = ALASKAN_UNIFICATION_WAR_NAME
 }
+
+dismantle_vancouver_corporation = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_countries = {
+			or = {
+				any_neighbor_country = {
+					has_country_flag = vancouver_corp_flag
+				}
+				any_neighbor_country = {
+					overlord = {
+						has_country_flag = vancouver_corp_flag
+					}
+				}
+				any_neighbor_country = {
+					has_country_modifier = vancouver_corporation_investing
+				}
+				has_country_modifier = vancouver_corporation_investing
+			}
+			
+		}
+			
+	
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_vancouver_dissolution
+		}
+
+
+		prov_desc = ALL_VANCOUVER_PROV
+	}
+
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_subjugate_tributary_state
+		}
+	}
+
+	war_name = VANCOUVER_DISMANTLEMENT_WAR_NAME
+}
+
+reinforce_midwestern_compact = {
+	type = take_capital
+
+
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_countries = {
+			has_government_mechanic = midwest_mercantilism
+			has_country_flag = midwest_compact_member
+			has_country_modifier = midwest_compact_violator_response
+		}
+			
+	
+		allowed_provinces_are_eligible = yes
+
+		peace_options = {
+			po_midwest_compact_reinforcement
+		}
+
+		prov_desc = ALL_MIDWEST_PROV
+
+	}
+
+	defender = {
+		badboy_factor = 1.5
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+
+	war_name = MIDWEST_COMPACT_REINFORCEMENT_WAR_NAME
+}
+
+centralize_minnesota = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_countries = {
+			or = {
+				tag = MNP
+				tag = STP
+				tag = FBT
+			}
+		}
+
+		required_treaty_to_take_provinces = {
+			po_subjugate_vassal
+		}
+
+		peace_options = {
+			po_unify_mn_market
+		}
+
+		prov_desc = ALL_MINNESOTA_PROV
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+
+		peace_options = {
+			po_unify_mn_market
+		}
+	}
+
+	war_name = FAIRBAULT_CRISIS_WAR_NAME
+}

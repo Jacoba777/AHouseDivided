@@ -15,6 +15,7 @@ owner=SVP
 add_core=SVP
 controller=SVP
 fort_15th=yes
+set_province_flag = la_state_flag
 
 1444.11.12 = {
 	base_tax=2

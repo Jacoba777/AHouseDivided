@@ -11,10 +11,11 @@ native_hostileness=4
 religion=catholic
 culture=culture_nyc
 is_city = yes
-owner=NYC
-add_core=NYC
+owner=PAP
+add_core=PAP
 add_core=STI
-controller=NYC
+add_core=NYC
+controller=PAP
 
 1444.11.12 = {
 	base_tax=21
