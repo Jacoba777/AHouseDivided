@@ -236,7 +236,9 @@ can_have_colonial_nations = {
 # Called by can_add_province_to_hre
 is_possible_hre_province = {
 	condition = {
-		OR = {
+		potential = {
+		}
+		allow = {
 			continent = continent_northeast
 			region = region_va
 			region = region_wv

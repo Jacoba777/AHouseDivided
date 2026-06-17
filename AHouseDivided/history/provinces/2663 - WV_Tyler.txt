@@ -12,6 +12,7 @@ native_ferocity=5
 native_hostileness=4
 religion=methodist
 culture=culture_hollerlander
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=0

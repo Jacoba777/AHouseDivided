@@ -17,6 +17,7 @@ owner=MUS
 add_core=MUS
 controller=MUS
 fort_15th=yes
+set_province_flag = arkansas_river
 
 1444.11.12 = {
 	base_tax=0

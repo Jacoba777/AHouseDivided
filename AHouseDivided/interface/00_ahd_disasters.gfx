@@ -1,0 +1,43 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_disaster_midwest_trade_collapse"
+		texturefile = "gfx//interface//disasters//trade_collapse.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_stl_better_together"
+		texturefile = "gfx//interface//disasters//better_together.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_midwest_urban_decay"
+		texturefile = "gfx//interface//disasters//urban_decay.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_rising_horde"
+		texturefile = "gfx//interface//disasters//horde_rising.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_chicago_mob_disaster"
+		texturefile = "gfx//interface//disasters//chicago_outfit.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_chicago_civil_war"
+		texturefile = "gfx//interface//disasters//civil_war.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+}

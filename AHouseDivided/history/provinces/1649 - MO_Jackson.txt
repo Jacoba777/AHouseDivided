@@ -18,6 +18,7 @@ owner=KSC
 add_core=KSC
 controller=KSC
 fort_15th=yes
+set_province_flag = lower_missouri_river
 
 1444.11.12 = {
 	base_tax=12

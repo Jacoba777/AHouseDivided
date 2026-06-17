@@ -54,24 +54,24 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1429  # Chicago
-			owns_core_province = 1871  # Detroit
-			owns_core_province = 1098  # Cleveland
-			owns_core_province = 2366  # Milwaukee
-			owns_core_province = 1848  # Grand Rapids
-			owns_core_province = 1102  # Toledo
+			1429 = { country_or_non_sovereign_subject_holds = ROOT }  # Chicago
+			1871 = { country_or_non_sovereign_subject_holds = ROOT }  # Detroit
+			1098 = { country_or_non_sovereign_subject_holds = ROOT }  # Cleveland
+			2366 = { country_or_non_sovereign_subject_holds = ROOT }  # Milwaukee
+			1848 = { country_or_non_sovereign_subject_holds = ROOT }  # Grand Rapids
+			1102 = { country_or_non_sovereign_subject_holds = ROOT }  # Toledo
 			# Toronto, Ottawa, Hamilton if I ever add Canada
 			OR = {
 				AND = {
-					owns_core_province = 706  # Rochester
-					owns_core_province = 709  # Buffalo
+					1429 = { country_or_non_sovereign_subject_holds = ROOT }  # Rochester
+					1871 = { country_or_non_sovereign_subject_holds = ROOT }  # Buffalo
 				}
 				AND = {
-					owns_core_province = 1812  # Mackinac
-					owns_core_province = 2435  # Duluth
+					1812 = { country_or_non_sovereign_subject_holds = ROOT }  # Mackinac
+					2435 = { country_or_non_sovereign_subject_holds = ROOT }  # Duluth
 				}
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				OR = {
 					region = region_mi
 					region = region_oh
@@ -128,6 +128,14 @@ country_decisions = {
 			}
 			add_prestige = 50
 			swap_non_generic_missions = yes
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_subject_of = ROOT
+					}
+					country_event = { id = flavor_xus.1789 }
+				}
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -409,15 +417,14 @@ country_decisions = {
 	form_deseret = {
 		major = yes
 		potential = {
-			OR = {
-				culture_group = culture_group_mormon_corridor
-				culture_group = culture_group_great_basin
-			}
 			religion = mormon
+			tag = XUT
+			
 			was_never_end_game_tag_trigger = yes
 			NOT = { has_country_flag = formed_a_megaregion }
 			NOT = { tag = PAP }
 			NOT = { exists = DST }
+			
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -478,6 +485,12 @@ country_decisions = {
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					religion = mormon
+				}
+				add_government_reform = caliphate_theocracy_reform
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -976,6 +989,9 @@ country_decisions = {
 			restore_country_name_effect = yes
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			set_country_flag = formed_a_megaregion
 			if = {
 				limit = {
@@ -1084,6 +1100,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_megaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -1215,6 +1234,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_megaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -1330,6 +1352,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_megaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -1434,6 +1459,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_megaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1561,6 +1589,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_gigaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1629,37 +1660,37 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1429  # Chicago
-			owns_core_province = 1871  # Detroit
-			owns_core_province = 1098  # Cleveland
-			owns_core_province = 2366  # Milwaukee
-			owns_core_province = 1848  # Grand Rapids
-			owns_core_province = 1102  # Toledo
-			owns_core_province = 2479  # Minneapolis
-			owns_core_province = 2779  # Omaha
-			owns_core_province = 2593  # Kansas City, KS
-			owns_core_province = 2270  # Des Moines
-			owns_core_province = 2997  # Sioux Falls
-			owns_core_province = 1722  # St Louis
-			owns_core_province = 1177  # Columbus
-			owns_core_province = 1113  # Cincinnati
-			owns_core_province = 1294  # Indianapolis
-			owns_core_province = 2363  # Madison
+			1429 = { country_or_non_sovereign_subject_holds = ROOT }  # Chicago
+			1871 = { country_or_non_sovereign_subject_holds = ROOT }  # Detroit
+			1098 = { country_or_non_sovereign_subject_holds = ROOT }  # Cleveland
+			2366 = { country_or_non_sovereign_subject_holds = ROOT }  # Milwaukee
+			1848 = { country_or_non_sovereign_subject_holds = ROOT }  # Grand Rapids
+			1102 = { country_or_non_sovereign_subject_holds = ROOT }  # Toledo
+			2479 = { country_or_non_sovereign_subject_holds = ROOT }  # Minneapolis
+			2779 = { country_or_non_sovereign_subject_holds = ROOT }  # Omaha
+			2593 = { country_or_non_sovereign_subject_holds = ROOT }  # Kansas City, KS
+			2270 = { country_or_non_sovereign_subject_holds = ROOT }  # Des Moines
+			2997 = { country_or_non_sovereign_subject_holds = ROOT }  # Sioux Falls
+			1722 = { country_or_non_sovereign_subject_holds = ROOT }  # St Louis
+			1177 = { country_or_non_sovereign_subject_holds = ROOT }  # Columbus
+			1113 = { country_or_non_sovereign_subject_holds = ROOT }  # Cincinnati
+			1294 = { country_or_non_sovereign_subject_holds = ROOT }  # Indianapolis
+			2363 = { country_or_non_sovereign_subject_holds = ROOT }  # Madison
 			OR = {
 				AND = {
-					owns_core_province = 2657  # Wichita
-					owns_core_province = 2914  # Fargo
-					owns_core_province = 2961  # Rapid City
-					owns_core_province = 1698  # Springfield, MO
+					2657 = { country_or_non_sovereign_subject_holds = ROOT }  # Wichita
+					2914 = { country_or_non_sovereign_subject_holds = ROOT }  # Fargo
+					2961 = { country_or_non_sovereign_subject_holds = ROOT }  # Rapid City
+					1698 = { country_or_non_sovereign_subject_holds = ROOT }  # Springfield, MO
 				}
 				AND = {
-					owns_core_province = 888  # Louisville
-					owns_core_province = 1339  # Evansville
-					owns_core_province = 2672  # Charleston, WV
-					owns_core_province = 215  # Erie
+					888 = { country_or_non_sovereign_subject_holds = ROOT }  # Louisville
+					1339 = { country_or_non_sovereign_subject_holds = ROOT }  # Evansville
+					2672 = { country_or_non_sovereign_subject_holds = ROOT }  # Charleston, WV
+					215 = { country_or_non_sovereign_subject_holds = ROOT }  # Erie
 				}
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				continent = continent_midwest
 				value = 600
 			}
@@ -1683,6 +1714,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_gigaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1818,6 +1852,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_gigaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1859,6 +1896,7 @@ country_decisions = {
 			NOT = { has_country_flag = formed_a_gigaregion }
 			NOT = { tag = PAP }
 			NOT = { exists = WDO }
+			not = { tag = AZT }
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -1940,6 +1978,9 @@ country_decisions = {
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			set_country_flag = formed_a_gigaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1953,6 +1994,248 @@ country_decisions = {
 		}
 		ai_will_do = { factor = 1 }
 	}
+
+	nebraska_empire_form = {
+		major = yes
+		potential = {
+			has_reform = steppe_horde
+			or = {
+				culture_group = culture_group_great_plains
+				culture_group = culture_group_upper_midwestern
+				culture_group = culture_group_northwoods
+			}
+			not = { exists = MGE }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2779  # Omaha
+				province_id = 2248  # Sioux City
+				province_id = 2997 # Sioux Falls
+				province_id = 2920  # Bismarck
+				province_id = 1633  # St. Joseph
+				province_id = 1649  # Kansas City
+				province_id = 2900  # Minot
+				province_id = 3053 # Billings
+				province_id = 2914  # Fargo
+			}
+		}
+		allow = {
+			if = {
+				limit = { 
+					has_reform = steppe_horde
+
+				}
+			}
+			and = {
+				num_of_owned_provinces_with = {
+					superregion = superregion_dakotas
+					value = 34 #roughly 2/3 of counties of least countied state
+				}
+				num_of_owned_provinces_with = {
+					superregion = superregion_central_plains
+					value = 62 #roughly 2/3 of counties of least countied state
+				}
+			}
+			owns_core_province = 2779  # Omaha
+			owns_core_province = 2248  # Sioux City
+			owns_core_province = 2997 # Sioux Falls
+			owns_core_province = 2920  # Bismarck
+			owns_core_province = 1633  # St. Joseph
+			owns_core_province = 1649  # Kansas City
+
+			calc_true_if = { #partial
+				2900 = { country_or_non_sovereign_subject_holds = ROOT } # minot
+				3053 = { country_or_non_sovereign_subject_holds = ROOT } # billings
+				2914 = { country_or_non_sovereign_subject_holds = ROOT } # fargo
+		
+				amount = 2
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			hidden_effect = {
+				set_country_flag = formed_a_megaregion
+				set_country_flag = formed_a_gigaregion
+			}
+			change_tag = MGE
+			on_change_tag_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			if = {
+				limit = { 
+					is_revolutionary = no
+					NOT = { has_reform = holy_horde_reform }
+				}
+				change_government = tribal
+				add_government_reform = great_mongol_state_reform
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+	}
+		
+	form_aztlan = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = culture_group_southwestern
+				culture_group = culture_group_navajo
+			}
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_a_megaregion }
+			NOT = { tag = PAP }
+			NOT = { exists = AZT }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3317  # Phoenix
+				province_id = 3286  # ABQ
+				province_id = 3319  # Tuscon
+				province_id = 2729  # Las Vegas
+				province_id = 2102  # El Paso
+				province_id = 2188  # Laredo
+				province_id = 2426  # San Diego
+			}
+		}
+		allow = {
+			owns_core_province = 3317  # Phoenix
+			owns_core_province = 3286  # ABQ
+			owns_core_province = 3319  # Tuscon
+			owns_core_province = 2729  # Las Vegas
+			owns_core_province = 2102  # El Paso
+			OR = {
+				owns_core_province = 2188  # Laredo
+				owns_core_province = 2426  # San Diego
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = region_az
+					region = region_nm
+					region = region_nv
+					culture_group = culture_group_southwestern
+				}
+				value = 40
+			}
+			adm_tech = 10
+			is_at_war = no
+		}
+		effect = {
+			change_tag = AZT
+			region_az = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = AZT
+			}
+			region_nm = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = AZT
+			}
+			region_ca = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = AZT
+			}
+			region_tx = {
+				limit = { NOT = { owned_by = ROOT } }
+				add_permanent_claim = AZT
+			}
+			every_province = {
+				limit = { 
+					culture_group = culture_group_southwestern
+					NOT = { owned_by = ROOT }
+				}
+				add_core = AZT
+			}
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+			
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	
+	form_louisiana_empire = {
+		major = yes
+		potential = {
+			tag = XLA
+			tag = STL
+			not = {
+				has_country_flag = formed_the_empire_of_louisiana
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					or = {
+						and = {
+							tag = STL
+							CCG = {
+								not = {
+									total_development = root
+								}
+							}
+						}
+						and = {
+							tag = XLA
+							HTN = {
+								not = {
+									total_development = root
+								}
+							}
+						}
+					}				
+				}
+			}
+			
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = formed_the_empire_of_louisiana
+			add_government_reform = louisiana_empire_reform
+			restore_country_name_effect = yes
+			custom_tooltip = become_an_empire_tt
+			hidden_effect = { set_government_rank = 3 }
+			set_country_flag = formed_a_megaregion
+
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+
 	
 	form_united_states = {
 		major = yes
@@ -1962,7 +2245,7 @@ country_decisions = {
 					value = 250
 				}
 				num_of_subjects = 37
-				country_or_non_sovereign_subject_holds = 505
+				505 = { country_or_non_sovereign_subject_holds = ROOT }
 				tag = HLR
 			}
 			was_never_end_game_tag_trigger = yes
@@ -2073,6 +2356,9 @@ country_decisions = {
 			}
 			set_country_flag = formed_america
 			set_country_flag = formed_a_megaregion
+			country_event = {
+				id = flavor_usa.10708090
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas

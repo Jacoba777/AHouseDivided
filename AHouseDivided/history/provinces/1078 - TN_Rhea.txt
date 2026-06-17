@@ -16,6 +16,7 @@ is_city = yes
 owner=CTN
 add_core=CTN
 controller=CTN
+set_province_flag = mississippi_greater_la
 
 1444.11.12 = {
 	base_tax=0

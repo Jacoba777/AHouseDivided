@@ -16,6 +16,7 @@ owner=STC
 add_core=STC
 controller=STC
 fort_15th=yes
+set_province_flag = upper_miss_river
 
 1444.11.12 = {
 	base_tax=0

@@ -1,24 +1,519 @@
-##prevent large country kahoots
-#every_known_country = {
-#	limit = { 
-#		NOT = { tag = WDO } 
-#		NOT = { tag = NAU } 
-#		NOT = { tag = XUS } 
-#		NOT = { tag = HLE } 
-#		NOT = { tag = GSW } 
-#		NOT = { tag = DIX }
-#	}
-#	add_opinion = {
-#		who = {
-#			and = {
-#				tag = WDO
-#				tag = NAU
-#				tag = XUS
-#				tag = HLE
-#				tag = GSW
-#				tag = DIX
-#			}
-#		}
-#		modifier = manifesting_destiny
-#	}
-#}
+#chicago mob corruption setting update
+update_corruption_scaling = {
+	if = {
+		limit = { corruption = 100}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 100 }
+	}
+	else_if = {
+		limit = { corruption = 99}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 99 }
+	}
+	else_if = {
+		limit = { corruption = 98}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 98 }
+	}
+	else_if = {
+		limit = { corruption = 97}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 97 }
+	}
+	else_if = {
+		limit = { corruption = 96}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 96 }
+	}
+	else_if = {
+		limit = { corruption = 95}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 95 }
+	}
+	else_if = {
+		limit = { corruption = 94}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 94 }
+	}
+	else_if = {
+		limit = { corruption = 93}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 93 }
+	}
+	else_if = {
+		limit = { corruption = 92}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 92 }
+	}
+	else_if = {
+		limit = { corruption = 91}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 91 }
+	}
+	else_if = {
+		limit = { corruption = 90}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 90 }
+	}
+	else_if = {
+		limit = { corruption = 89}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 89 }
+	}
+	else_if = {
+		limit = { corruption = 88}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 88 }
+	}
+	else_if = {
+		limit = { corruption = 87}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 87 }
+	}
+	else_if = {
+		limit = { corruption = 86}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 86 }
+	}
+	else_if = {
+		limit = { corruption = 85}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 85 }
+	}
+	else_if = {
+		limit = { corruption = 84}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 84 }
+	}
+	else_if = {
+		limit = { corruption = 83}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 83 }
+	}
+	else_if = {
+		limit = { corruption = 82}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 82 }
+	}
+	else_if = {
+		limit = { corruption = 81}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 81 }
+	}
+	else_if = {
+		limit = { corruption = 80}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 80 }
+	}
+	else_if = {
+		limit = { corruption = 79}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 79 }
+	}
+	else_if = {
+		limit = { corruption = 78}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 78 }
+	}
+	else_if = {
+		limit = { corruption = 77}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 77 }
+	}
+	else_if = {
+		limit = { corruption = 76}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 76 }
+	}
+	else_if = {
+		limit = { corruption = 75}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 75 }
+	}
+	else_if = {
+		limit = { corruption = 74}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 74 }
+	}
+	else_if = {
+		limit = { corruption = 73}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 73 }
+	}
+	else_if = {
+		limit = { corruption = 72}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 72 }
+	}
+	else_if = {
+		limit = { corruption = 71}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 71 }
+	}
+	else_if = {
+		limit = { corruption = 70}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 70 }
+	}
+	else_if = {
+		limit = { corruption = 69}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 69 }
+	}
+	else_if = {
+		limit = { corruption = 68}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 68 }
+	}
+	else_if = {
+		limit = { corruption = 67}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 67 }
+	}
+	else_if = {
+		limit = { corruption = 66}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 66 }
+	}
+	else_if = {
+		limit = { corruption = 65}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 65 }
+	}
+	else_if = {
+		limit = { corruption = 64}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 64 }
+	}
+	else_if = {
+		limit = { corruption = 63}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 63 }
+	}
+	else_if = {
+		limit = { corruption = 62}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 62 }
+	}
+	else_if = {
+		limit = { corruption = 62}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 62 }
+	}
+	else_if = {
+		limit = { corruption = 61}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 61 }
+	}
+	else_if = {
+		limit = { corruption = 60}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 60 }
+	}
+	else_if = {
+		limit = { corruption = 59}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 59 }
+	}
+	else_if = {
+		limit = { corruption = 58}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 58 }
+	}
+	else_if = {
+		limit = { corruption = 57}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 57 }
+	}
+	else_if = {
+		limit = { corruption = 56}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 56 }
+	}
+	else_if = {
+		limit = { corruption = 55}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 55 }
+	}
+	else_if = {
+		limit = { corruption = 54}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 54 }
+	}
+	else_if = {
+		limit = { corruption = 53}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 53 }
+	}
+	else_if = {
+		limit = { corruption = 52}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 52 }
+	}
+	else_if = {
+		limit = { corruption = 51}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 51 }
+	}
+	else_if = {
+		limit = { corruption = 50}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 50 }
+	}
+	else_if = {
+		limit = { corruption = 49}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 49 }
+	}
+	else_if = {
+		limit = { corruption = 48}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 48 }
+	}
+	else_if = {
+		limit = { corruption = 47}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 47 }
+	}
+	else_if = {
+		limit = { corruption = 46}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 46 }
+	}
+	else_if = {
+		limit = { corruption = 45}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 45 }
+	}
+	else_if = {
+		limit = { corruption = 44}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 44 }
+	}
+	else_if = {
+		limit = { corruption = 43}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 43 }
+	}
+	else_if = {
+		limit = { corruption = 42}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 42 }
+	}
+	else_if = {
+		limit = { corruption = 41}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 41 }
+	}
+	else_if = {
+		limit = { corruption = 40}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 40 }
+	}
+	else_if = {
+		limit = { corruption = 39}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 39 }
+	}
+	else_if = {
+		limit = { corruption = 38}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 38 }
+	}
+	else_if = {
+		limit = { corruption = 37}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 37 }
+	}
+	else_if = {
+		limit = { corruption = 36}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 36 }
+	}
+	else_if = {
+		limit = { corruption = 35}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 35 }
+	}
+	else_if = {
+		limit = { corruption = 34}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 34 }
+	}
+	else_if = {
+		limit = { corruption = 33}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 33 }
+	}
+	else_if = {
+		limit = { corruption = 32}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 32 }
+	}
+	else_if = {
+		limit = { corruption = 31}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 31 }
+	}
+	else_if = {
+		limit = { corruption = 30}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 30 }
+	}
+	else_if = {
+		limit = { corruption = 29}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 29 }
+	}
+	else_if = {
+		limit = { corruption = 28}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 28 }
+	}
+	else_if = {
+		limit = { corruption = 27}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 27 }
+	}
+	else_if = {
+		limit = { corruption = 26}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 26 }
+	}
+	else_if = {
+		limit = { corruption = 25}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 25 }
+	}
+	else_if = {
+		limit = { corruption = 24}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 24 }
+	}
+	else_if = {
+		limit = { corruption = 23}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 23 }
+	}
+	else_if = {
+		limit = { corruption = 22}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 22 }
+	}
+	else_if = {
+		limit = { corruption = 21}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 21 }
+	}
+	else_if = {
+		limit = { corruption = 20}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 20 }
+	}
+	else_if = {
+		limit = { corruption = 19}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 19 }
+	}
+	else_if = {
+		limit = { corruption = 18}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 18 }
+	}
+	else_if = {
+		limit = { corruption = 17}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 17 }
+	}
+	else_if = {
+		limit = { corruption = 16}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 16 }
+	}
+	else_if = {
+		limit = { corruption = 15}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 15 }
+	}
+	else_if = {
+		limit = { corruption = 14}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 14 }
+	}
+	else_if = {
+		limit = { corruption = 13}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 13 }
+	}
+	else_if = {
+		limit = { corruption = 12}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 12 }
+	}
+	else_if = {
+		limit = { corruption = 11}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 11 }
+	}
+	else_if = {
+		limit = { corruption = 10}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 10 }
+	}
+	else_if = {
+		limit = { corruption = 9}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 9 }
+	}
+	else_if = {
+		limit = { corruption = 8}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 8 }
+	}
+	else_if = {
+		limit = { corruption = 7}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 7 }
+	}
+	else_if = {
+		limit = { corruption = 6}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 6 }
+	}
+	else_if = {
+		limit = { corruption = 5}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 5 }
+	}
+	else_if = {
+		limit = { corruption = 4}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 4 }
+	}
+	else_if = {
+		limit = { corruption = 3}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 3 }
+	}
+	else_if = {
+		limit = { corruption = 2}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 2 }
+	}
+	else_if = {
+		limit = { corruption = 1}
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 1 }
+	}
+	else = {
+		set_government_power = { mechanic_type = corruption_scaling power_type = inverted_corruption value = 0 }
+	}
+
+}
+
+#spread corruption through trade
+on_monthly_pulse = {
+	if = {
+		limit = {
+			all_country = {
+				any_active_trade_node = {
+					any_trade_node_member_country = {
+						has_government_mechanic = corruption_scaling
+					}
+				}
+			}
+		}
+		add_corruption = 0.03
+	}
+}
+
+
+
+#corrupted center of trade victim activate
+on_monthly_pulse = {
+	if = {
+		limit = {
+			any_active_trade_node = {
+	    		all_trade_node_member_province = {
+					and = {
+						or = {
+							province_has_center_of_trade_of_level = 1
+					    	is_trade_node_province = yes
+						}
+						not = { has_province_modifier = detrimental_corruption }
+
+		    			owner = {
+			    			and = {
+				    			not = { has_government_mechanic = corruption_scaling }
+					    		corruption = 3
+						    }
+		    			}
+					}
+	    		}
+    		}
+		}
+		remove_province_modifier = beneficial_corruption
+		add_province_modifier = {
+			name = detrimental_corruption
+			duration = -1
+		}
+	}
+}
+
+#corrupted center of trade switch for chicago activate
+on_monthly_pulse = {
+	if = {
+		limit = {
+			any_active_trade_node = {
+	    		all_trade_node_member_province = {
+					and = {
+						or = {
+							province_has_center_of_trade_of_level = 1
+					    	is_trade_node_province = yes
+						}
+						not = { has_province_modifier = beneficial_corruption }
+
+		    			owner = {
+			    			has_government_mechanic = corruption_scaling
+		    			}
+					}
+	    		}
+    		}
+		}
+		remove_province_modifier = detrimental_corruption
+		add_province_modifier = {
+			name = beneficial_corruption
+			duration = -1
+		}
+	}
+}
+
+#corrupted center of trade switch off
+on_monthly_pulse = {
+	if = {
+		limit = {
+			any_active_trade_node = {
+	    		all_trade_node_member_province = {
+					and = {
+						or = {
+							province_has_center_of_trade_of_level = 1
+					    	is_trade_node_province = yes
+						}
+						or = {
+							has_province_modifier = beneficial_corruption
+							has_province_modifier = detrimental_corruption
+						}
+
+		    			owner = {
+			    			and = {
+				    			not = { has_government_mechanic = corruption_scaling }
+					    		not = { corruption = 3 }
+						    }
+		    			}
+					}
+	    		}
+    		}
+		}
+		remove_province_modifier = detrimental_corruption
+		remove_province_modifier = beneficial_corruption
+	}
+}

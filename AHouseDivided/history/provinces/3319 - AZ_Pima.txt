@@ -17,6 +17,7 @@ owner=TSN
 add_core=TSN
 controller=TSN
 fort_15th=yes
+trade_goods = copper
 
 1444.11.12 = {
 	base_tax=16

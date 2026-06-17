@@ -1,0 +1,112 @@
+stl_better_together = {
+    potential = {
+        tag = STL
+		not = { has_country_flag = better_together_resolved }
+		owns = 1722 # St. Louis City
+		owns = 1661 # St. Louis County
+	}
+
+	can_start = {
+		not = { stability = 2 }
+		if = {
+            limit = {
+                government = republic
+            }
+            not = { republican_tradition = 90 }
+        }
+        if = {
+            limit = {
+                government = monarchy
+            }
+            not = { legitimacy = 90 }
+        }
+	}
+	
+	can_stop = {
+        stability = 2
+        if = {
+            limit = {
+                government = republic
+            }
+            not = { republican_tradition = 85 }
+        }
+        if = {
+            limit = {
+                government = monarchy
+            }
+            not = { legitimacy = 85 }
+        }
+    }
+
+	can_end = {
+		all_owned_province = {
+			not = { unrest = 0 }
+		}
+		is_at_war = no
+	}
+
+    progress = {
+        modifier = {
+            factor = 1.5
+            not = { stability = 2 }
+        }
+        modifier = {
+            factor = 1.25
+            if = {
+	            limit = {
+    	            government = republic
+        	    }
+            	not = { republican_tradition = 80 }
+        	}
+	        if = {
+    	        limit = {
+        	        government = monarchy
+            	}
+            	not = { legitimacy = 80 }
+        	}
+        }
+        modifier = {
+            factor = 0.75
+            not = { stability = 3 }
+        }
+		modifier = {
+			factor = 1
+			capital = 1722 # St. Louis City
+		}
+		modifier = {
+			factor = 1
+			capital = 1661 # St. Louis County
+		}
+		modifier = {
+			factor = 3
+			and = {
+				not = { capital = 1722 } # St. Louis City
+				not = { capital = 1661 } # St. Louis County
+			}
+		}
+	}
+
+	modifier = {
+		global_tax_modifier = -0.25
+		global_unrest = 2
+		stability_cost_modifier = 0.25
+	}
+
+
+	on_start = better_together.1
+	on_end = better_together.5 #choose new capital
+
+
+    on_monthly = {
+		events = {
+			better_together.4 #east stl breakaway
+		}
+		random_events = {
+			100 = 0
+			10 = better_together.2
+			1 = better_together.3 #attempted assassination
+		}
+    }
+
+    
+}

@@ -17,6 +17,7 @@ add_core=OWB
 controller=OWB
 fort_15th=yes
 trade_goods=livestock
+set_province_flag = green_river
 
 1444.11.12 = {
 	base_tax=0

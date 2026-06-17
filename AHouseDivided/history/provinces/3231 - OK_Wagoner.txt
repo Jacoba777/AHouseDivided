@@ -16,6 +16,7 @@ is_city = yes
 owner=TSA
 add_core=TSA
 controller=TSA
+set_province_flag = arkansas_river
 
 1444.11.12 = {
 	base_tax=1

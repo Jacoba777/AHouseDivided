@@ -1,5 +1,5 @@
 spriteTypes = {
-	# American Republic (Progressives/oderates/Conservatives)
+	# American Republic (Progressives/Moderates/Conservatives)
 	spriteType = {
 		name = "GFX_faction_bg_faction_progressives"	
 		texturefile = "gfx//interface//faction_blue_frame.tga"
@@ -28,6 +28,34 @@ spriteTypes = {
 		texturefile = "gfx//interface//faction_conservatives_icon.tga"
 	}
 
+	#OK Factions
+	spriteType = {
+		name = "GFX_faction_bg_ok_frontier"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_ok_frontier"	
+		texturefile = "gfx//interface//faction_progressives_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_ok_traders"	
+		texturefile = "gfx//interface//faction_purple_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_ok_traders"	
+		texturefile = "gfx//interface//faction_moderates_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_ok_militia"	
+		texturefile = "gfx//interface//faction_red_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_ok_militia"	
+		texturefile = "gfx//interface//faction_conservatives_icon.tga"
+	}	
 	spriteType = {
 		name = "GFX_faction_window_bg"	
 		texturefile = "gfx//interface//china_bg.tga"

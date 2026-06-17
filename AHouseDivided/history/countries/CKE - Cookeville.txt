@@ -1,6 +1,6 @@
 technology_group = appalachia
 government = monarchy
-add_government_reform = dixie_autocracy_reform
+add_government_reform = tanistry_reform
 set_country_flag = oldsouth
 government_rank = 1
 religion = baptist

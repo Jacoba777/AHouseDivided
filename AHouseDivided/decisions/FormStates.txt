@@ -64,10 +64,10 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 224  # Pittsburgh
-			owns_core_province = 273  # Philadelphia
-			owns_core_province = 265  # Harrisburg
-			num_of_owned_provinces_with = {
+			224 = { country_or_non_sovereign_subject_holds = ROOT }  # Pittsburgh
+			273 = { country_or_non_sovereign_subject_holds = ROOT }  # Philadelphia
+			265 = { country_or_non_sovereign_subject_holds = ROOT }  # Harrisburg
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_pa
 				value = 41
 			}
@@ -881,14 +881,14 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1098  # Cleveland
-			owns_core_province = 1143  # Dayton
-			owns_core_province = 1177  # Columbus
+			1098 = { country_or_non_sovereign_subject_holds = ROOT } # Cleveland
+			1143 = { country_or_non_sovereign_subject_holds = ROOT } # Dayton
+			1177 = { country_or_non_sovereign_subject_holds = ROOT } # Columbus
 			OR = {
-				owns_core_province = 1113  # Cincinnati
-				owns_core_province = 1102  # Toldeo
+				1113 = { country_or_non_sovereign_subject_holds = ROOT } # Cincinnati
+				1102 = { country_or_non_sovereign_subject_holds = ROOT } # Toldeo
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_oh
 				value = 53
 			}
@@ -1003,11 +1003,11 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1294  # Indianapolis
-			owns_core_province = 1263  # Fort Wayne
-			owns_core_province = 1310  # Bloomington
-			owns_core_province = 1339  # Evansville
-			num_of_owned_provinces_with = {
+			1294 = { country_or_non_sovereign_subject_holds = ROOT } # Indianapolis
+			1263 = { country_or_non_sovereign_subject_holds = ROOT } # Fort Wayne
+			1310 = { country_or_non_sovereign_subject_holds = ROOT } # Bloomington
+			1339 = { country_or_non_sovereign_subject_holds = ROOT } # Evansville
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_in
 				value = 56
 			}
@@ -1119,11 +1119,11 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1429  # Chicago
-			owns_core_province = 1474  # Springfield
-			owns_core_province = 1454  # Peoria
-			owns_core_province = 1425  # Rockford
-			num_of_owned_provinces_with = {
+			1429 = { country_or_non_sovereign_subject_holds = ROOT } # Chicago
+			1474 = { country_or_non_sovereign_subject_holds = ROOT } # Springfield
+			1454 = { country_or_non_sovereign_subject_holds = ROOT } # Peoria
+			1425 = { country_or_non_sovereign_subject_holds = ROOT } # Rockford
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_il
 				value = 54
 			}
@@ -1294,14 +1294,14 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1645  # Columbia
-			owns_core_province = 1698  # Springfield
-			owns_core_province = 1655  # Jefferson City
+			1645 = { country_or_non_sovereign_subject_holds = ROOT } # Columbia
+			1698 = { country_or_non_sovereign_subject_holds = ROOT } # Springfield
+			1655 = { country_or_non_sovereign_subject_holds = ROOT } # Jefferson City
 			OR = {
-				owns_core_province = 1591  # St Louis
-				owns_core_province = 1649  # Kansas City
+				1591 = { country_or_non_sovereign_subject_holds = ROOT } # St Louis
+				1649 = { country_or_non_sovereign_subject_holds = ROOT } # Kansas City
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_mo
 				value = 37
 			}
@@ -1418,10 +1418,10 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 1867  # Lansing
-			owns_core_province = 1871  # Detroit
-			owns_core_province = 1848  # Grand Rapids
-			num_of_owned_provinces_with = {
+			1867 = { country_or_non_sovereign_subject_holds = ROOT } # Lansing
+			1871 = { country_or_non_sovereign_subject_holds = ROOT } # Detroit
+			1848 = { country_or_non_sovereign_subject_holds = ROOT } # Grand Rapids
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_mi
 				value = 39
 			}
@@ -1618,13 +1618,13 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 2270  # Des Moines
-			owns_core_province = 2238  # Cedar Rapids
+			2270 = { country_or_non_sovereign_subject_holds = ROOT } # Des Moines
+			2238 = { country_or_non_sovereign_subject_holds = ROOT } # Cedar Rapids
 			OR = {
-				owns_core_province = 2262  # Davenport
-				owns_core_province = 2248  # Sioux City
+				2262 = { country_or_non_sovereign_subject_holds = ROOT } # Davenport
+				2248 = { country_or_non_sovereign_subject_holds = ROOT } # Sioux City
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_ia
 				value = 27
 			}
@@ -1681,14 +1681,14 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 2366  # Milwaukee
-			owns_core_province = 2363  # Madison
-			owns_core_province = 2324  # Green Bay
+			2366 = { country_or_non_sovereign_subject_holds = ROOT } # Milwaukee
+			2363 = { country_or_non_sovereign_subject_holds = ROOT } # Madison
+			2324 = { country_or_non_sovereign_subject_holds = ROOT } # Green Bay
 			OR = {
-				owns_core_province = 2368  # Kenosha
-				owns_core_province = 2329  # Appleton
+				2368 = { country_or_non_sovereign_subject_holds = ROOT } # Kenosha
+				2329 = { country_or_non_sovereign_subject_holds = ROOT } # Appleton
 			}
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_wi
 				value = 32
 			}
@@ -1980,11 +1980,11 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 2479  # Minneapolis
-			owns_core_province = 2480  # St Paul
-			owns_core_province = 2435  # Duluth
-			owns_core_province = 2500  # Rochester
-			num_of_owned_provinces_with = {
+			2479 = { country_or_non_sovereign_subject_holds = ROOT } # Minneapolis
+			2480 = { country_or_non_sovereign_subject_holds = ROOT } # St Paul
+			2435 = { country_or_non_sovereign_subject_holds = ROOT } # Duluth
+			2500 = { country_or_non_sovereign_subject_holds = ROOT } # Rochester
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_mn
 				value = 25
 			}
@@ -2103,10 +2103,10 @@ country_decisions = {
 			}
 		}
 		allow = {
-			owns_core_province = 2657  # Wichita
-			owns_core_province = 2590  # Topeka
-			owns_core_province = 2593  # Kansas City, KS
-			num_of_owned_provinces_with = {
+			2657 = { country_or_non_sovereign_subject_holds = ROOT } # Wichita
+			2590 = { country_or_non_sovereign_subject_holds = ROOT } # Topeka
+			2593 = { country_or_non_sovereign_subject_holds = ROOT } # Kansas City, KS
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = region_ks
 				value = 18
 			}
@@ -2721,6 +2721,17 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = XUT
+			if = {
+				limit = {
+					religion = mormon
+				}
+				add_government_reform = ajuuraan_theocracy_reform
+			}
+			else_if = {
+				limit = { not = { religion = mormon } }
+				add_government_reform = american_republic
+			}
+			
 			region_ut = {
 				limit = { NOT = { owned_by = ROOT } }
 				add_permanent_claim = XUT

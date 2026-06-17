@@ -16,6 +16,7 @@ is_city = yes
 owner=COS
 add_core=COS
 controller=COS
+trade_goods = gold
 
 1444.11.12 = {
 	base_tax=1

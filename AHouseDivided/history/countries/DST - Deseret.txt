@@ -1,7 +1,7 @@
-technology_group = appalachia
-government = republic
-add_government_reform = american_republic
+technology_group = lower_rockies
+government = theocracy
+add_government_reform = caliphate_theocracy_reform
 government_rank = 1
 religion = baptist
-primary_culture = culture_knoxvillian
+primary_culture = culture_salt_laker
 capital = 3174

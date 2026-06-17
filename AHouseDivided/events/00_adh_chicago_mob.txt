@@ -1,0 +1,290 @@
+namespace = chicago_mob
+
+#tip of the iceberg
+country_event = {
+    id = chicago_mob.1
+    title = chicago_mob.1.t
+    desc = chicago_mob.1.d
+    fire_only_once = yes
+
+    immediate = {
+        hidden_effect = {
+            set_variable = {
+                which = chicago_mob_countdown
+                value = 0
+            }
+        }
+            set_country_flag = chicago_mob_investigation_progress
+    }
+
+
+    option = {
+        name = chicago_mob.1.a
+        add_country_modifier = {
+            name = investigation_started
+            duration = 3650
+        }
+        
+    }
+
+    option = {
+        name = chicago_mob.1.b
+        add_stability = -1
+        add_corruption = 1
+    }
+}
+
+
+#police have been demonstrated to be corrupted
+country_event = {
+    id = chicago_mob.2
+    title = chicago_mob.2.t
+    desc = chicago_mob.2.d
+    fire_only_once = yes
+
+    trigger = {
+        check_variable = {
+            which = chicago_mob_countdown
+            value = 3
+        }
+    }
+
+    option = {
+        name = chicago_mob.2.a
+        add_stability = -2
+        add_country_modifier = {
+            name = policing_disruption
+            duration = 1825
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = 1
+        }
+    }
+
+    option = {
+        name = chicago_mob.2.b
+        add_corruption = 2
+        add_country_modifier = {
+            name = tolerated_enforcement_corruption
+            duration = 1825
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = 2
+        }
+    }
+}
+
+
+
+#a secondary taxation system in the form of protection rackets has been fully mapped, and is being exploited to the fullest extent possible
+country_event = {
+    id = chicago_mob.3
+    title = chicago_mob.3.t
+    desc = chicago_mob.3.d
+    fire_only_once = yes
+
+
+    trigger = {
+        check_variable = {
+            which = chicago_mob_countdown
+            value = 6
+        }
+    }
+
+    option = {
+        name = chicago_mob.3.a
+        every_core_province = {
+            limit = {
+                development = 27
+            }
+            add_named_unrest = {
+                name = mob_violence
+                value = 3
+            }
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = 2
+        }
+    }
+
+    option = {
+        name = chicago_mob.3.b
+        add_treasury = 500
+        add_corruption = 3
+        add_country_modifier = {
+            name = informal_tax_capture
+            duration = 1825
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = 2.5
+        }
+    }
+}
+
+
+
+#the investigation has unvcovered damning evidence that the mob has permeated into the highest levels of government - go along with it or rip it out entirely and fall to civil war?
+country_event = {
+    id = chicago_mob.4
+    title = chicago_mob.4.t
+    desc = chicago_mob.4.d
+    fire_only_once = yes
+
+    trigger = {
+        check_variable = {
+            which = chicago_mob_countdown
+            value = 10
+        }
+    }
+
+    option = {
+        name = chicago_mob.4.a
+        set_country_flag = chicago_mob_final_stage_unlocked
+        add_country_modifier = {
+            name = purge_preparation
+            duration = 1095
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = -2
+        }
+    }
+
+    option = {
+        name = chicago_mob.4.b
+        add_corruption = 3
+        add_country_modifier = {
+            name = institutionalized_corruption
+            duration = 1825
+        }
+        change_variable = {
+            which = chicago_mob_countdown
+            value = 3
+        }
+    }
+}
+
+
+#civil war or submission?
+country_event = {
+    id = chicago_mob.5
+    title = chicago_mob.5.t
+    desc = chicago_mob.5.d
+    fire_only_once = yes
+
+    trigger = {
+        check_variable = {
+            which = chicago_mob_countdown
+            value = 15
+        }
+    }
+
+    option = {
+        name = chicago_mob.5.a
+        add_stability = -3
+        remove_country_modifier = institutionalized_corruption
+        set_country_flag = starting_chicago_civil_war
+        ai_chance = {
+            factor = 100
+        }
+    }
+
+    option = {
+        name = chicago_mob.5.b
+        change_government = monarchy
+        add_government_reform = chicago_outfit
+        add_corruption = 5
+        add_treasury = 1000
+    }
+}
+
+
+#random chance events of mob violence
+country_event = {
+    id = chicago_mob.6
+    title = chicago_mob.6.t
+    desc = chicago_mob.6.d
+
+    is_triggered_only = yes
+
+
+    option = {
+        name = chicago_mob.6.a
+
+        add_stability = -1
+        random_owned_province = {
+            limit = {
+                development = 27
+            }
+             add_named_unrest = {
+                name = mob_violence
+                value = 1
+            }
+        }
+
+        change_variable = { which = chicago_mob_countdown value = 1 }
+    }
+}
+
+
+
+#random chance events of police crackdowns
+country_event = {
+    id = chicago_mob.7
+    title = chicago_mob.7.t
+    desc = chicago_mob.7.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = chicago_mob.7.a
+
+        add_stability = -1
+        add_corruption = -0.25
+
+        add_country_modifier = {
+            name = crackdown_operations
+            duration = 365
+        }
+
+        change_variable = { which = chicago_mob_countdown value = -0.5 }
+    }
+}
+
+
+
+#more random chance events of mob violence
+country_event = {
+    id = chicago_mob.8
+    title = chicago_mob.8.t
+    desc = chicago_mob.8.d
+
+    is_triggered_only = yes
+
+    
+
+    option = {
+        name = chicago_mob.8.a
+
+        every_core_province = {
+            limit = {
+                development = 27
+            }
+            spawn_rebels = {
+                type = particularist_rebels
+                size = 0.5
+            }
+        }
+
+        add_country_modifier = {
+            name = widespread_violence
+            duration = 730
+        }
+
+        change_variable = { which = chicago_mob_countdown value = 2 }
+    }
+}

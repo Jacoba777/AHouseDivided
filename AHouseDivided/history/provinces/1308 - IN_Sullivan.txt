@@ -14,6 +14,7 @@ is_city = yes
 owner=THT
 add_core=THT
 controller=THT
+set_province_flag = wabash_river
 
 1444.11.12 = {
 	base_tax=0

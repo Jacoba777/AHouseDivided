@@ -16,6 +16,7 @@ is_city = yes
 owner=CIN
 add_core=CIN
 controller=CIN
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=3

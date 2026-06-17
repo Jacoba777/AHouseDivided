@@ -17,6 +17,7 @@ owner=KSC
 add_core=KSC
 add_core=KSC
 controller=KSC
+set_province_flag = lower_missouri_river
 
 1444.11.12 = {
 	base_tax=1

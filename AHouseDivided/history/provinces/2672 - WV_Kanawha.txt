@@ -19,6 +19,7 @@ add_core=CHW
 controller=CHW
 fort_15th=yes
 trade_goods=tropical_wood
+set_province_flag = kanawha_river
 
 1444.11.12 = {
 	base_tax=1

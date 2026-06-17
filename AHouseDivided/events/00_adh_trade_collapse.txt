@@ -1,0 +1,144 @@
+namespace = trade_collapse
+
+country_event = {
+    id = trade_collapse.1
+    title = trade_collapse.1.t
+    desc = trade_collapse.1.desc
+    fire_only_once = yes
+    is_triggered_only = yes
+    
+
+    option = {
+        name = trade_collapse.1.a
+		random_core_province = {
+			add_unrest = 2
+		}
+        
+    }
+
+    option = {
+        name = trade_collapse.1.b
+		random_core_province = {
+			add_province_modifier = {
+	            name = informal_economy
+    	        duration = 730
+        	}
+		}
+        
+    }
+}
+
+country_event = {
+    id = trade_collapse.2
+    title = trade_collapse.2.t
+    desc = trade_collapse.2.desc
+        is_triggered_only = yes
+
+    option = {
+        name = trade_collapse.2.a
+        add_prestige = -5
+        add_stability = -1
+    }
+
+    option = {
+        name = trade_collapse.2.b
+        every_subject_country = {
+            add_liberty_desire = 50
+        }
+        random_owned_province = {
+            limit = {
+                has_owner_accepted_culture = no
+            }
+            add_province_modifier = {
+                name = peripheral_disengagement
+                duration = 730
+            }
+            
+        }
+    }
+}
+
+country_event = {
+	id = trade_collapse.3
+	title = trade_collapse.3.t
+	desc = trade_collapse.3.desc
+
+    is_triggered_only = yes
+
+
+	option = {
+		name = trade_collapse.3.a
+        random_active_trade_node = {
+            add_trade_modifier = {
+                who = Root
+                duration = 365
+                power = 15
+                key = trade_efficiency
+            }
+        }
+		add_treasury = -1000
+	}
+
+	option = {
+		name = trade_collapse.3.b
+        random_active_trade_node = {
+            add_trade_modifier = {
+                who = Root
+                duration = 730
+                power = -150
+                key = trade_collapse
+            }
+        }
+	}
+}
+
+country_event = {
+    id = trade_collapse.4
+    title = trade_collapse.4.t
+    desc = trade_collapse.4.desc
+    is_triggered_only = yes
+
+    option = {
+        name = trade_collapse.4.a
+        random_owned_province = {
+            add_unrest = 5
+            add_province_modifier = {
+                name = tax_reduction
+                duration = 1926
+            }
+        }
+    }
+
+    option = {
+        name = trade_collapse.4.b
+        every_owned_province = {
+            add_province_modifier = {
+                name = tax_reduction
+                duration = 1926
+            }
+        }
+    }
+}
+
+country_event = {
+    id = trade_collapse.5
+    title = trade_collapse.5.t
+    desc = trade_collapse.5.desc
+    is_triggered_only = yes
+
+    option = {
+        name = trade_collapse.5.a
+        add_stability = 1
+        every_owned_province = {
+            remove_province_modifier = informal_economy
+            remove_province_modifier = peripheral_disengagement
+            remove_province_modifier = tax_reduction
+            remove_province_modifier = trade_collapse
+        }
+        add_country_modifier = {
+            name = economic_recovery
+            duration = 14600
+        }
+        
+    }
+}

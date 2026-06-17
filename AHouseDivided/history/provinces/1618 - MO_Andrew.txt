@@ -16,6 +16,7 @@ is_city = yes
 owner=STJ
 add_core=STJ
 controller=STJ
+set_province_flag = lower_missouri_river
 
 1444.11.12 = {
 	base_tax=0

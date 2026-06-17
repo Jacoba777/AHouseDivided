@@ -14,6 +14,7 @@ is_city = yes
 owner=IDP
 add_core=IDP
 controller=IDP
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=0

@@ -17,6 +17,7 @@ owner=OMH
 add_core=OMH
 controller=OMH
 fort_15th=yes
+set_province_flag = upper_missouri_river
 
 1444.11.12 = {
 	base_tax=4

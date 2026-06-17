@@ -17,6 +17,7 @@ owner=PEA
 add_core=PEA
 controller=PEA
 fort_15th=yes
+set_province_flag = illinois_river
 
 1444.11.12 = {
 	base_tax=2

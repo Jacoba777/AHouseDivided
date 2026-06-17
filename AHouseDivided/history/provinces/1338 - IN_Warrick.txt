@@ -14,6 +14,7 @@ is_city = yes
 owner=EVN
 add_core=EVN
 controller=EVN
+set_province_flag = ohio_river
 
 1444.11.12 = {
 	base_tax=1

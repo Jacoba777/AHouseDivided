@@ -1,0 +1,109 @@
+midwest_trade_collapse = {
+    potential = {
+        has_government_mechanic = midwest_mercantilism
+        NOT = { has_country_modifier = economic_recovery }
+    }
+
+    can_start = {
+        not = { stability = 1 }
+        not = { trade_efficiency = 0.3 }
+        if = {
+            limit = {
+                government = republic
+            }
+            not = { republican_tradition = 60 }
+        }
+        if = {
+            limit = {
+                government = monarchy
+            }
+            not = { legitimacy = 60 }
+        }
+        not = {
+            or = {
+                has_country_modifier = midwest_subordinate_member
+                has_subject_of_type = midwest_bloc_subordinate
+            }
+        }
+    }
+    can_stop = {
+        stability = 3
+        trade_efficiency = 0.2
+    }
+
+    progress = {
+        modifier = {
+            factor = 1.5
+            not = { stability = 0 }
+        }
+        modifier = {
+            factor = 0.75
+            not = { stability = 1 }
+        }
+        modifier = {
+            factor = 1.5
+            if = {
+                limit = {
+                    government = republic
+                }
+                not = { republican_tradition = 40 }
+            }
+            if = {
+                limit = {
+                    government = monarchy
+                }
+                not = { legitimacy = 40 }
+            }
+        }
+    }
+    
+    can_end = {
+        stability = 2
+        if = {
+            limit = {
+                government = republic
+            }
+            republican_tradition = 70
+        }
+        if = {
+            limit = {
+                government = monarchy
+            }
+            legitimacy = 70
+        }
+        num_of_centers_of_trade = 3
+        
+    }
+
+    modifier = {
+        global_trade_power = -0.15
+        trade_efficiency = -0.20
+        global_tax_modifier = -0.15
+        tolerance_heretic = -1
+        tolerance_heathen = -1
+        global_unrest = 1
+        monthly_regional_influence = -0.05
+    }
+
+    
+
+    on_start = trade_collapse.1
+    on_end = trade_collapse.5
+
+    
+
+    on_monthly = {
+        events = { 
+            
+        }
+        random_events = {
+            100 = 0
+            10 = trade_collapse.2
+            10 = trade_collapse.3
+            10 = trade_collapse.4
+        }
+
+    }
+
+    ended_by_country_breaking_to_rebels = no
+}

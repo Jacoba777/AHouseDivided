@@ -16,6 +16,7 @@ owner=LXG
 add_core=LXG
 controller=LXG
 fort_15th=yes
+set_province_flag = kentucky_river
 
 1444.11.12 = {
 	base_tax=1

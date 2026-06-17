@@ -1,7 +1,13 @@
 technology_group = mid_atlantic
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwestern_trade_hub 
+set_country_flag = midwest_compact_member
 government_rank = 1
 religion = catholic
 primary_culture = culture_phittsburgher
 capital = 224
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 64
+}

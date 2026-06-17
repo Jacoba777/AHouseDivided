@@ -17,6 +17,7 @@ is_city = yes
 owner=SLC
 add_core=SLC
 controller=SLC
+trade_goods = copper
 
 1444.11.12 = {
 	base_tax=39

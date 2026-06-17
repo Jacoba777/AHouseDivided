@@ -16,6 +16,7 @@ is_city = yes
 owner=LRK
 add_core=LRK
 controller=LRK
+set_province_flag = arkansas_river
 
 1444.11.12 = {
 	base_tax=1

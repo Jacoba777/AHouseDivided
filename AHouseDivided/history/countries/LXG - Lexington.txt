@@ -1,7 +1,12 @@
 technology_group = appalachia
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwestern_trade_hub
 government_rank = 1
 religion = baptist
 primary_culture = culture_bluegrass
 capital = 989
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 26
+}

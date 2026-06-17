@@ -15,6 +15,7 @@ owner=IMT
 add_core=IMT
 add_core=MRT
 controller=IMT
+trade_goods = iron
 
 1444.11.12 = {
 	base_tax=0

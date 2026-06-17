@@ -1,0 +1,194 @@
+rising_horde = {
+	potential = {
+		has_government_mechanic = midwest_mercantilism
+		any_neighbor_country = {
+			has_disaster = rising_horde
+		}
+		any_neighbor_country = {
+			is_subject = no
+			NOT = { truce_with = ROOT }
+			NOT = { alliance_with = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = rising_horde_tt
+				OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+				}
+				total_own_and_non_tributary_subject_development = 300
+			}
+			NOT = { is_subject_of = ROOT }
+		}
+	}
+
+	can_start = {
+		has_any_disaster = no
+		any_neighbor_country = {
+			has_disaster = rising_horde
+		}
+		any_neighbor_country = {
+			is_subject = no
+			NOT = { truce_with = ROOT }
+			NOT = { alliance_with = ROOT }
+			custom_trigger_tooltip = {
+				tooltip = rising_horde_tt
+				OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+				}
+				total_own_and_non_tributary_subject_development = 300
+			}
+			NOT = { is_subject_of = ROOT }
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			NOT = {
+				any_neighbor_country = {
+					NOT = { truce_with = ROOT }
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+					custom_trigger_tooltip = {
+						tooltip = rising_horde_tt
+						OR = {
+							has_reform = steppe_horde
+							has_reform = great_mongol_state_reform
+							hidden_trigger = {
+								has_global_flag = is_forming_the_mongol_empire
+							}
+						}
+						total_own_and_non_tributary_subject_development = 300
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = { has_global_flag = is_forming_the_mongol_empire }
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			any_neighbor_country = {
+				custom_trigger_tooltip = {
+					tooltip = rising_horde_tt
+					OR = {
+						has_reform = steppe_horde
+						has_reform = great_mongol_state_reform
+					}
+					total_own_and_non_tributary_subject_development = 300
+				}
+				is_subject = no
+				NOT = { truce_with = ROOT }
+				NOT = { alliance_with = ROOT }
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			any_neighbor_country = {
+				custom_trigger_tooltip = {
+					tooltip = rising_horde_tt
+					OR = {
+						has_reform = steppe_horde
+						has_reform = great_mongol_state_reform
+					}
+					total_own_and_non_tributary_subject_development = 300
+				}
+				war_with = ROOT
+				war_score_against = {
+					who = ROOT
+					value = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			any_neighbor_country = {
+				custom_trigger_tooltip = {
+					tooltip = rising_horde_tt
+					OR = {
+						has_reform = steppe_horde
+						has_reform = great_mongol_state_reform
+					}
+					total_own_and_non_tributary_subject_development = 300
+				}
+				war_with = ROOT
+				war_score_against = {
+					who = ROOT
+					value = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			any_neighbor_country = {
+				has_disaster = rising_horde
+			}
+		}
+	}
+	
+
+	
+	can_end = {
+		OR = {
+			NOT = {
+				any_neighbor_country = {
+					NOT = { alliance_with = ROOT }
+					is_subject = no
+					custom_trigger_tooltip = {
+						tooltip = rising_horde_tt
+						OR = {
+							has_reform = steppe_horde
+							has_reform = great_mongol_state_reform
+							hidden_trigger = {
+								has_global_flag = is_forming_the_mongol_empire
+							}
+						}
+						total_own_and_non_tributary_subject_development = 300
+					}
+				}
+			}
+		}
+		hidden_trigger = {
+			NOT = { has_global_flag = is_forming_the_mongol_empire }
+		}
+	}
+	
+
+	modifier = {
+	    global_unrest = 1
+
+    	land_morale = -0.20
+    	manpower_recovery_speed = -0.25
+ 	    reinforce_speed = -0.20
+
+	    build_cost = 0.15
+    	land_maintenance_modifier = 0.20
+
+	    trade_efficiency = -0.10
+    	trade_goods_size_modifier = -0.05
+	}
+	
+	
+	on_start = rising_horde.1
+	on_end = rising_horde.7
+	
+	on_monthly = {
+		events = {
+			rising_horde.2
+			rising_horde.3
+			rising_horde.4
+			rising_horde.6
+		}
+		random_events = { 
+			1290 = 0
+			10 = rising_horde.5
+		}
+	}
+
+}
+

@@ -1,0 +1,205 @@
+namespace = urban_decay
+
+
+#starting event
+country_event = {
+    id = urban_decay.1
+    title = urban_decay.1.t
+    desc = urban_decay.1.d
+	is_triggered_only = yes
+
+
+    option = {
+        name = urban_decay.1.a
+        hidden_effect = {
+			every_owned_province = {
+				limit = {
+					development = 20
+				}
+				set_province_flag = urban_decay_province
+			}
+			
+		}
+
+        add_country_modifier = {
+            name = urban_decay
+            duration = -1
+        }
+    }
+}
+
+
+#urban flight
+country_event = {
+    id = urban_decay.2
+    title = urban_decay.2.t
+    desc = urban_decay.2.d
+	is_triggered_only = yes
+
+    option = {
+        name = urban_decay.2.a
+
+		random_owned_province = {
+			limit = {
+				development = 20
+			}
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_province_modifier = {
+				name = urban_blight
+				duration = -1
+			}
+
+			random_neighbor_province = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+}
+
+
+#infrastructure collapse
+country_event = {
+    id = urban_decay.3
+    title = urban_decay.3.t
+    desc = urban_decay.3.d
+
+    is_triggered_only = yes
+
+
+	option = {
+		name = urban_decay.3.a
+	
+		add_country_modifier = {
+			name = continued_infrastructure_repairs
+			duration = -1
+		}
+
+	}
+
+    option = {
+        name = urban_decay.3.b
+
+        random_owned_province = {
+            limit = {
+                not = { has_province_flag = urban_decay_province }	
+				not = { development = 18}
+            }
+            add_devastation = 15
+            add_local_autonomy = 5
+			add_trade_modifier = {
+				who = root
+				duration = -1
+				power = -10
+				key = trade_collapse
+			}
+        }
+
+    }
+}
+
+
+#capital flight
+country_event = {
+    id = urban_decay.4
+    title = urban_decay.4.t
+    desc = urban_decay.4.d
+
+    is_triggered_only = yes
+
+    immediate = {
+		hidden_effect = {
+	        random_owned_province = {
+    	        limit = {
+        	        development = 30
+            	}
+	            save_event_target_as = fleeing_city
+    	    }
+		}
+    }
+
+    option = {
+        name = urban_decay.4.a
+
+        # CITY STRIP (core mechanic)
+        event_target:fleeing_city = {
+            add_base_tax = -1
+            add_base_production = -1
+            add_devastation = 10
+			add_province_modifier = {
+	            name = capital_fragmentation
+    	        duration = -1
+        	}
+			random_neighbor_province = {
+	            add_base_tax = 1
+    	    }
+			random_neighbor_province = {
+	            add_base_production = 1
+				add_base_manpower = 1
+    	    }
+        }
+    }
+
+	option = {
+		name = urban_decay.4.b
+
+		event_target:fleeing_city = {
+			add_province_modifier = {
+				name = tax_reduction
+				duration = 3650
+			}
+		}
+	}
+}
+
+
+
+#social unrest/unemployment/riots
+country_event = {
+    id = urban_decay.5
+    title = urban_decay.5.t
+    desc = urban_decay.5.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = urban_decay.5.a
+
+        random_owned_province = {
+            limit = {
+                has_province_flag = urban_decay_province	
+				not = { development = 18}
+            }
+            add_unrest = 3
+            spawn_rebels = {
+                type = particularist_rebels
+                size = 1
+            }
+        }
+    }
+}
+
+
+
+#ending
+country_event = {
+    id = urban_decay.6
+    title = urban_decay.6.t
+    desc = urban_decay.6.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = urban_decay.6.a
+
+        add_country_modifier = {
+            name = urban_acclimatization
+            duration = 14600
+        }
+
+        add_prestige = 15
+        add_stability = 1
+    }
+}

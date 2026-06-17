@@ -15,6 +15,7 @@ is_city = yes
 owner=STL
 add_core=STL
 controller=STL
+add_core = ESL
 
 1444.11.12 = {
 	base_tax=0

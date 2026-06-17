@@ -16,6 +16,7 @@ owner=WAU
 add_core=WAU
 controller=WAU
 fort_15th=yes
+set_province_flag = wisconsin_river
 
 1444.11.12 = {
 	base_tax=1

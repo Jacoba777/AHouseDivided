@@ -18,6 +18,7 @@ owner=CKV
 add_core=CKV
 controller=CKV
 fort_15th=yes
+set_province_flag = cumberland_river
 
 1444.11.12 = {
 	base_tax=1

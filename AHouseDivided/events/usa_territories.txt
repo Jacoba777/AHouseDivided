@@ -1,9 +1,7 @@
 namespace = flavor_xca
-
 ########################################
 # CA Organized Territories Events (1/3 counties required for territory, 2/3 for incorporation)
 ########################################
-
 # Department of Alaska
 country_event = {
 	id = flavor_xca.100
@@ -13,10 +11,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XAK }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XAK
+		}
 		capital_scope = {
-			NOT = { region = region_ak }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ak
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ak
@@ -26,17 +31,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XAK } }
-				XAK = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XAK
+					}
+				}
+				XAK = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the ak territory
+	option = {
+		# Create the ak territory
 		name = flavor_xca.100.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -54,28 +64,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY1
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.210.d
 		add_adm_power = 100
 		ai_chance = {
@@ -85,7 +99,6 @@ country_event = {
 }
 
 # Alabama Territory (state)
-
 country_event = {
 	id = flavor_xca.101
 	title = flavor_xca.101.t
@@ -94,10 +107,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XAL }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XAL
+		}
 		capital_scope = {
-			NOT = { region = region_al }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_al
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_al
@@ -107,17 +127,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XAL } }
-				XAL = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XAL
+					}
+				}
+				XAL = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the al territory
+	option = {
+		# Create the al territory
 		name = flavor_xca.101.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -135,28 +160,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY2
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.211.d
 		add_adm_power = 100
 		ai_chance = {
@@ -166,7 +195,6 @@ country_event = {
 }
 
 # Arkansas Territory (state)
-
 country_event = {
 	id = flavor_xca.102
 	title = flavor_xca.102.t
@@ -175,10 +203,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XAR }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XAR
+		}
 		capital_scope = {
-			NOT = { region = region_ar }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ar
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ar
@@ -188,17 +223,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XAR } }
-				XAR = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XAR
+					}
+				}
+				XAR = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the ar territory
+	option = {
+		# Create the ar territory
 		name = flavor_xca.102.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -216,28 +256,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY3
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.212.d
 		add_adm_power = 100
 		ai_chance = {
@@ -247,10 +291,7 @@ country_event = {
 }
 
 # Arizona Territory (state - combined into NM territory? - yes)
-
-
 # Colorado Territory (state)
-
 country_event = {
 	id = flavor_xca.103
 	title = flavor_xca.103.t
@@ -259,10 +300,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XCO }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XCO
+		}
 		capital_scope = {
-			NOT = { region = region_co }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_co
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_co
@@ -272,17 +320,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XCO } }
-				XCO = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XCO
+					}
+				}
+				XCO = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the co territory
+	option = {
+		# Create the co territory
 		name = flavor_xca.103.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -300,28 +353,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY5
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.213.d
 		add_adm_power = 100
 		ai_chance = {
@@ -331,7 +388,6 @@ country_event = {
 }
 
 # Dakota Territory (1884)
-
 country_event = {
 	id = flavor_xca.106
 	title = flavor_xca.106.t
@@ -340,35 +396,49 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XDK }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XDK
+		}
 		capital_scope = {
 			or = {
-                NOT = { region = region_nd }	#Why Eyalets when you can practically rule the stuff yourself?
-                not = { region = region_sd }           
-            }
+				NOT = {
+					region = region_nd
+				}				#Why Eyalets when you can practically rule the stuff yourself?
+				not = {
+					region = region_sd
+				}
+			}
 		}
 		num_of_owned_provinces_with = {
-            and = {
-    			superregion = superregion_dakota         
-            }
+			and = {
+				superregion = superregion_dakotas
+			}
 			value = 40
 		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XDK } }
-				XDK = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XDK
+					}
+				}
+				XDK = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the dk territory
+	option = {
+		# Create the dk territory
 		name = flavor_xca.106.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -389,28 +459,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY6
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.216.d
 		add_adm_power = 100
 		ai_chance = {
@@ -420,7 +494,6 @@ country_event = {
 }
 
 # Florida Territory (state)
-
 country_event = {
 	id = flavor_xca.107
 	title = flavor_xca.107.t
@@ -429,10 +502,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XFL }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XFL
+		}
 		capital_scope = {
-			NOT = { region = region_fl }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_fl
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_fl
@@ -442,17 +522,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XFL } }
-				XFL = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XFL
+					}
+				}
+				XFL = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the fl territory
+	option = {
+		# Create the fl territory
 		name = flavor_xca.107.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -470,28 +555,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY7
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.217.d
 		add_adm_power = 100
 		ai_chance = {
@@ -501,7 +590,6 @@ country_event = {
 }
 
 # Territory of Hawaii (state)
-
 country_event = {
 	id = flavor_xca.108
 	title = flavor_xca.108.t
@@ -510,10 +598,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XHI }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XHI
+		}
 		capital_scope = {
-			NOT = { region = region_hi }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_hi
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_hi
@@ -523,17 +618,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XHI } }
-				XHI = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XHI
+					}
+				}
+				XHI = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the hi territory
+	option = {
+		# Create the hi territory
 		name = flavor_xca.108.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -551,28 +651,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY8
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.218.d
 		add_adm_power = 100
 		ai_chance = {
@@ -582,7 +686,6 @@ country_event = {
 }
 
 # Illinois Territory (state)
-
 country_event = {
 	id = flavor_xca.109
 	title = flavor_xca.109.t
@@ -591,10 +694,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XIL }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XIL
+		}
 		capital_scope = {
-			NOT = { region = region_il }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_il
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_il
@@ -604,17 +714,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XIL } }
-				XIL = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XIL
+					}
+				}
+				XIL = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create the il territory
+	option = {
+		# Create the il territory
 		name = flavor_xca.109.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -632,28 +747,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY9
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.219.d
 		add_adm_power = 100
 		ai_chance = {
@@ -663,7 +782,6 @@ country_event = {
 }
 
 # Indian Territory (Separate from OK)
-
 country_event = {
 	id = flavor_xca.110
 	title = flavor_xca.110.t
@@ -672,11 +790,20 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XRS }
-        not = { exists = XOK }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XRS
+		}
+		not = {
+			exists = XOK
+		}
 		capital_scope = {
-			NOT = { region = region_ok }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ok
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ok
@@ -686,23 +813,34 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XRS } }
-				XRS = { save_event_target_as = first_potential_eyalet }
-                limit = { NOT = { exists = XOK } }
-				XOK = { save_event_target_as = second_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XRS
+					}
+				}
+				XRS = {
+					save_event_target_as = first_potential_eyalet
+				}
+				limit = {
+					NOT = {
+						exists = XOK
+					}
+				}
+				XOK = {
+					save_event_target_as = second_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create both territories
+	option = {
+		# Create both territories
 		name = flavor_xca.110.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
-            has_saved_event_target = second_potential_eyalet
+			has_saved_event_target = second_potential_eyalet
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -710,7 +848,7 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-        		limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
@@ -719,57 +857,61 @@ country_event = {
 		area_ok_southeastern = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_eastern = {
+		area_ok_eastern = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_tahlequah = {
+		area_ok_tahlequah = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_northeastern = {
+		area_ok_northeastern = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_durant = {
+		area_ok_durant = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_south_central = {
+		area_ok_south_central = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_southern = {
+		area_ok_southern = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_east_tulsa = {
+		area_ok_east_tulsa = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_tulsa = {
+		area_ok_tulsa = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_blaine = {
+		area_ok_blaine = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_south_oklahoma_city = {
+		area_ok_south_oklahoma_city = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_southwestern = {
+		area_ok_southwestern = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_west_central = {
+		area_ok_west_central = {
 			add_core = event_target:first_potential_eyalet
 		}
-        area_ok_shawnee = {
+		area_ok_shawnee = {
 			add_core = event_target:first_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E10
@@ -778,45 +920,49 @@ country_event = {
 		area_ok_western = {
 			add_core = event_target:second_potential_eyalet
 		}
-        area_ok_oklahoma_city = {
+		area_ok_oklahoma_city = {
 			add_core = event_target:second_potential_eyalet
 		}
-        area_ok_northern = {
+		area_ok_northern = {
 			add_core = event_target:second_potential_eyalet
 		}
-        area_ok_northwestern = {
+		area_ok_northwestern = {
 			add_core = event_target:second_potential_eyalet
 		}
-        area_ok_woodward = {
+		area_ok_woodward = {
 			add_core = event_target:second_potential_eyalet
 		}
-        area_ok_panhandle = {
+		area_ok_panhandle = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E46
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create oklahoma territory
+	option = {
+		# Create oklahoma territory
 		name = flavor_xca.110.b
 		trigger = {
 			has_saved_event_target = second_potential_eyalet
@@ -834,28 +980,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E46
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2110.d
 		add_adm_power = 100
 		ai_chance = {
@@ -865,7 +1015,6 @@ country_event = {
 }
 
 # Indiana Territory (state)
-
 country_event = {
 	id = flavor_xca.1118
 	title = flavor_xca.1118.t
@@ -874,10 +1023,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XIN }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XIN
+		}
 		capital_scope = {
-			NOT = { region = region_in }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_in
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_in
@@ -887,17 +1043,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XIN } }
-				XIN = { save_event_target_as = fourth_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XIN
+					}
+				}
+				XIN = {
+					save_event_target_as = fourth_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create indiana territory
+	option = {
+		# Create indiana territory
 		name = flavor_xca.1118.a
 		trigger = {
 			has_saved_event_target = fourth_potential_eyalet
@@ -915,28 +1076,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:fourth_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:fourth_potential_eyalet
 		}
 		event_target:fourth_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E11
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.21118.d
 		add_adm_power = 100
 		ai_chance = {
@@ -946,7 +1111,6 @@ country_event = {
 }
 
 # Iowa Territory (state)
-
 country_event = {
 	id = flavor_xca.112
 	title = flavor_xca.112.t
@@ -955,10 +1119,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XIA }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XIA
+		}
 		capital_scope = {
-			NOT = { region = region_ia }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ia
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ia
@@ -968,17 +1139,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XIA } }
-				XIA = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XIA
+					}
+				}
+				XIA = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create iowa territory
+	option = {
+		# Create iowa territory
 		name = flavor_xca.112.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -996,28 +1172,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E12
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2112.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1026,9 +1206,7 @@ country_event = {
 	}
 }
 
-
 # Kansas Territory (state)
-
 country_event = {
 	id = flavor_xca.113
 	title = flavor_xca.113.t
@@ -1037,10 +1215,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XKS }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XKS
+		}
 		capital_scope = {
-			NOT = { region = region_ks }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ks
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ks
@@ -1050,17 +1235,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XKS } }
-				XKS = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XKS
+					}
+				}
+				XKS = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create kansas territory
+	option = {
+		# Create kansas territory
 		name = flavor_xca.113.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1078,28 +1268,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E13
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2113.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1108,9 +1302,7 @@ country_event = {
 	}
 }
 
-
 # District of Maine (state)
-
 country_event = {
 	id = flavor_xca.114
 	title = flavor_xca.114.t
@@ -1119,10 +1311,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XME }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XME
+		}
 		capital_scope = {
-			NOT = { region = region_me }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_me
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_me
@@ -1132,17 +1331,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XME } }
-				XME = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XME
+					}
+				}
+				XME = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create dept maine
+	option = {
+		# Create dept maine
 		name = flavor_xca.114.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1160,28 +1364,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E14
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2114.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1191,7 +1399,6 @@ country_event = {
 }
 
 # Michigan Territory (state)
-
 country_event = {
 	id = flavor_xca.115
 	title = flavor_xca.115.t
@@ -1200,10 +1407,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMI }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMI
+		}
 		capital_scope = {
-			NOT = { region = region_mi }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_mi
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_mi
@@ -1213,17 +1427,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMI } }
-				XMI = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMI
+					}
+				}
+				XMI = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create michigan territory
+	option = {
+		# Create michigan territory
 		name = flavor_xca.115.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1241,28 +1460,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E15
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2115.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1272,7 +1495,6 @@ country_event = {
 }
 
 # Minnesota Territory
-
 country_event = {
 	id = flavor_xca.116
 	title = flavor_xca.116.t
@@ -1281,10 +1503,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMN }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMN
+		}
 		capital_scope = {
-			NOT = { region = region_mn }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_mn
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_mn
@@ -1294,17 +1523,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMN } }
-				XMN = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMN
+					}
+				}
+				XMN = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create minnesota territory
+	option = {
+		# Create minnesota territory
 		name = flavor_xca.116.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1322,28 +1556,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E16
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2116.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1353,7 +1591,6 @@ country_event = {
 }
 
 # Mississippi Territory
-
 country_event = {
 	id = flavor_xca.117
 	title = flavor_xca.117.t
@@ -1362,10 +1599,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMS }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMS
+		}
 		capital_scope = {
-			NOT = { region = region_ms }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ms
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ms
@@ -1375,17 +1619,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMS } }
-				XMS = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMS
+					}
+				}
+				XMS = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create Mississippi territory
+	option = {
+		# Create Mississippi territory
 		name = flavor_xca.117.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1403,28 +1652,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E17
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2117.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1434,7 +1687,6 @@ country_event = {
 }
 
 # Missouri Territory
-
 country_event = {
 	id = flavor_xca.118
 	title = flavor_xca.118.t
@@ -1443,10 +1695,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMO }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMO
+		}
 		capital_scope = {
-			NOT = { region = region_mo }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_mo
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_mo
@@ -1456,17 +1715,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMO } }
-				XMO = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMO
+					}
+				}
+				XMO = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create missouri territory
+	option = {
+		# Create missouri territory
 		name = flavor_xca.118.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1484,28 +1748,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E18
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2118.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1514,9 +1782,7 @@ country_event = {
 	}
 }
 
-
 # Montana Territory
-
 country_event = {
 	id = flavor_xca.119
 	title = flavor_xca.119.t
@@ -1525,10 +1791,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMT }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMT
+		}
 		capital_scope = {
-			NOT = { region = region_mt }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_mt
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_mt
@@ -1538,17 +1811,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMT } }
-				XMT = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMT
+					}
+				}
+				XMT = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create montana territory
+	option = {
+		# Create montana territory
 		name = flavor_xca.119.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1566,28 +1844,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E19
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2119.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1597,7 +1879,6 @@ country_event = {
 }
 
 # Nebraska Territory
-
 country_event = {
 	id = flavor_xca.120
 	title = flavor_xca.120.t
@@ -1606,10 +1887,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNE }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XNE
+		}
 		capital_scope = {
-			NOT = { region = region_ne }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ne
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ne
@@ -1619,17 +1907,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XNE } }
-				XNE = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XNE
+					}
+				}
+				XNE = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create nebraska territory
+	option = {
+		# Create nebraska territory
 		name = flavor_xca.120.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1647,28 +1940,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E20
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2120.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1678,7 +1975,6 @@ country_event = {
 }
 
 # Nevada Territory (include option to annex region outright - CA 'it shouldn't have been separated at all')
-
 country_event = {
 	id = flavor_xca.121
 	title = flavor_xca.121.t
@@ -1687,12 +1983,19 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNV }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XNV
+		}
 		capital_scope = {
-			NOT = { region = region_nv }	#Why Eyalets when you can practically rule the stuff yourself?
-            region = region_ca
-        }
+			NOT = {
+				region = region_nv
+			}			#Why Eyalets when you can practically rule the stuff yourself?
+			region = region_ca
+		}
 		num_of_owned_provinces_with = {
 			region = region_nv
 			value = 6
@@ -1701,17 +2004,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XNV } }
-				XNV = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XNV
+					}
+				}
+				XNV = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create nevada territory
+	option = {
+		# Create nevada territory
 		name = flavor_xca.121.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -1729,37 +2037,42 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E21
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# no, this land is rightfully ca's
+	option = {
+		# no, this land is rightfully ca's
 		name = flavor_xca.2121.c
 		region_nv = {
-            add_core = XCA
-        }
+			add_core = XCA
+		}
 		ai_chance = {
 			factor = 0
 		}
 	}
-    	option = {	# fallback
+	option = {
+		# fallback
 		name = flavor_xca.2121.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1769,7 +2082,6 @@ country_event = {
 }
 
 # New Mexico Territory (combined with AZ?)
-
 country_event = {
 	id = flavor_xca.151
 	title = flavor_xca.151.t
@@ -1778,58 +2090,82 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XAZ }
-        not = { exists = XNM }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XAZ
+		}
+		not = {
+			exists = XNM
+		}
 		capital_scope = {
-            and = {
-    			NOT = { region = region_ar }
-                not = { region = region_nm }            
-            }
-	#Why Eyalets when you can practically rule the stuff yourself?
+			and = {
+				NOT = {
+					region = region_ar
+				}
+				not = {
+					region = region_nm
+				}
+			}
+			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
-            and = {
-    			superregion = superregion_west    
-            }
+			and = {
+				region = region_az
+				region = region_nm
+			}
 			value = 17
 		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_nm 
-                        value = 12
-                    }
-				    limit = { NOT = { exists = XNM } }
-                }
-				XNM = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					and = {
+						NOT = {
+							exists = XNM
+						}
+						num_of_owned_provinces_with = {
+							region = region_nm
+							value = 12
+						}
+					}
+				}
+				XNM = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_az 
-                        value = 6
-                    }
-				    limit = { NOT = { exists = XAZ } }
-                }
-				XAZ = { save_event_target_as = second_potential_eyalet }
+				limit = {
+					and = {
+						NOT = {
+							exists = XAZ
+						}
+						num_of_owned_provinces_with = {
+							region = region_az
+							value = 6
+						}
+					}
+				}
+				XAZ = {
+					save_event_target_as = second_potential_eyalet
+				}
 			}
 		}
 	}
-	option = {	# az, nm
+	option = {
+		# az, nm
 		name = flavor_xca.151.b
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet        
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -1837,7 +2173,7 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
@@ -1848,16 +2184,20 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E51
@@ -1868,34 +2208,38 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = EY4
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create greater nm
+	option = {
+		# Create greater nm
 		name = flavor_xca.151.c
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet         
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -1903,7 +2247,7 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
@@ -1917,28 +2261,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E51
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2151.d
 		add_adm_power = 100
 		ai_chance = {
@@ -1947,9 +2295,7 @@ country_event = {
 	}
 }
 
-
 # Oregon Country 
-
 country_event = {
 	id = flavor_xca.122
 	title = flavor_xca.122.t
@@ -1958,80 +2304,112 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XID }
-        not = { exists = XOR }
-        not = { exists = XWA }
-		capital_scope = {
-            and = {
-    			NOT = { region = region_id }
-                not = { region = region_or }
-                not = { region = region_wa }                
-            }
-	#Why Eyalets when you can practically rule the stuff yourself?
+		or = {
+			tag = XUS
+			tag = XCA
 		}
-        and = {
-		    num_of_owned_provinces_with = {
-    			region = region_id
-                value = 15
-            }
-            num_of_owned_provinces_with = {
-                region = region_or
-                value = 13
-            }
-            num_of_owned_provinces_with = {
-                region = region_wa
-			    value = 14
-            }
+		not = {
+			exists = XID
+		}
+		not = {
+			exists = XOR
+		}
+		not = {
+			exists = XWA
+		}
+		capital_scope = {
+			and = {
+				NOT = {
+					region = region_id
+				}
+				not = {
+					region = region_or
+				}
+				not = {
+					region = region_wa
+				}
+			}
+			#Why Eyalets when you can practically rule the stuff yourself?
+		}
+		and = {
+			num_of_owned_provinces_with = {
+				region = region_id
+				value = 15
+			}
+			num_of_owned_provinces_with = {
+				region = region_or
+				value = 13
+			}
+			num_of_owned_provinces_with = {
+				region = region_wa
+				value = 14
+			}
 		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_id 
-                        value = 15
-                    }
-				    limit = { NOT = { exists = XID } }
-                }
-				XID = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_id
+							value = 15
+						}
+						NOT = {
+							exists = XID
+						}
+					}
+				}
+				XID = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_or 
-                        value = 13
-                    }
-				    limit = { NOT = { exists = XOR } }
-                }
-				XOR = { save_event_target_as = second_potential_eyalet }
+				limit = { 
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_or
+							value = 13
+						}
+						NOT = {
+							exists = XOR
+						}
+					}
+				}
+				XOR = {
+					save_event_target_as = second_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_wa 
-                        value = 14
-                    }
-				    limit = { NOT = { exists = XWA } }
-                }
-				XWA = { save_event_target_as = third_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_wa
+							value = 14
+						}
+						NOT = {
+							exists = XWA
+						}
+					}
+				}
+				XWA = {
+					save_event_target_as = third_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create id, wa, or
+	option = {
+		# Create id, wa, or
 		name = flavor_xca.122.a
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2039,11 +2417,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2054,76 +2432,87 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E49
 			}
 		}
-        region_or = {
+		region_or = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
 			}
 		}
-        region_wa = {
+		region_wa = {
 			add_core = event_target:third_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:third_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:third_potential_eyalet
 		}
 		event_target:third_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E50
 			}
 		}
-
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create id, big or
+	option = {
+		# Create id, big or
 		name = flavor_xca.122.b
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2131,11 +2520,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2146,16 +2535,20 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E49
@@ -2164,40 +2557,44 @@ country_event = {
 		region_or = {
 			add_core = event_target:second_potential_eyalet
 		}
-        region_wa = {
+		region_wa = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create oregon country
+	option = {
+		# Create oregon country
 		name = flavor_xca.122.c
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2205,11 +2602,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2221,33 +2618,37 @@ country_event = {
 		region_or = {
 			add_core = event_target:second_potential_eyalet
 		}
-        region_wa = {
+		region_wa = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E22
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2122.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2257,7 +2658,6 @@ country_event = {
 }
 
 # Ohio Territory
-
 country_event = {
 	id = flavor_xca.123
 	title = flavor_xca.123.t
@@ -2266,10 +2666,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XOH }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XOH
+		}
 		capital_scope = {
-			NOT = { region = region_oh }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_oh
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_oh
@@ -2279,17 +2686,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XOH } }
-				XOH = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XOH
+					}
+				}
+				XOH = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create ohio territory
+	option = {
+		# Create ohio territory
 		name = flavor_xca.123.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -2307,28 +2719,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E23
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2123.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2338,10 +2754,7 @@ country_event = {
 }
 
 # Restored Government of Virginia
-
-
 # Commonwealth Territory of Virginia (greater VA - incl WV)
-
 country_event = {
 	id = flavor_xca.125
 	title = flavor_xca.125.t
@@ -2350,79 +2763,111 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XKY }
-        not = { exists = XVA }
-        not = { exists = XWV }
-		capital_scope = {
-            and = {
-    			NOT = { region = region_ky }
-                not = { region = region_wv }
-                not = { region = region_va }                #Why Eyalets when you can practically rule the stuff yourself?
-            }
+		or = {
+			tag = XUS
+			tag = XCA
 		}
-        and = {
-            num_of_owned_provinces_with = {
-                region = region_ky 
-                value = 41
-                }
-            num_of_owned_provinces_with = {
-                region = region_va 
-                value = 35
-            }
-            num_of_owned_provinces_with = {
-                region = region_wv 
-                value = 19
-            }
-        }
+		not = {
+			exists = XKY
+		}
+		not = {
+			exists = XVA
+		}
+		not = {
+			exists = XWV
+		}
+		capital_scope = {
+			and = {
+				NOT = {
+					region = region_ky
+				}
+				not = {
+					region = region_wv
+				}
+				not = {
+					region = region_va
+				}				#Why Eyalets when you can practically rule the stuff yourself?
+			}
+		}
+		and = {
+			num_of_owned_provinces_with = {
+				region = region_ky
+				value = 41
+			}
+			num_of_owned_provinces_with = {
+				region = region_va
+				value = 35
+			}
+			num_of_owned_provinces_with = {
+				region = region_wv
+				value = 19
+			}
+		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_ky 
-                        value = 41
-                    }
-				    limit = { NOT = { exists = XKY } }
-                }
-				XKY = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_ky
+							value = 41
+						}
+						NOT = {
+							exists = XKY
+						}
+					}
+				}
+				XKY = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_va 
-                        value = 35
-                    }
-				    limit = { NOT = { exists = XVA } }
-                }
-				XVA = { save_event_target_as = second_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_va
+							value = 35
+						}
+						NOT = {
+							exists = XVA
+						}
+					}
+				}
+				XVA = {
+					save_event_target_as = second_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_wv 
-                        value = 19
-                    }
-				    limit = { NOT = { exists = XWV } }
-                }
-				XWV = { save_event_target_as = third_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_wv
+							value = 19
+						}
+						NOT = {
+							exists = XWV
+						}
+					}
+				}
+				XWV = {
+					save_event_target_as = third_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create ky, wv, va
+	option = {
+		# Create ky, wv, va
 		name = flavor_xca.125.a
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2430,11 +2875,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2445,16 +2890,20 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E38
@@ -2465,55 +2914,63 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:third_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:third_potential_eyalet
 		}
 		event_target:third_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E24
 			}
 		}
-        region_va = {
+		region_va = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create ky, big va
+	option = {
+		# Create ky, big va
 		name = flavor_xca.125.b
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2521,11 +2978,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2536,16 +2993,20 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E38
@@ -2554,40 +3015,44 @@ country_event = {
 		region_wv = {
 			add_core = event_target:second_potential_eyalet
 		}
-        region_va = {
+		region_va = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create super va
+	option = {
+		# Create super va
 		name = flavor_xca.125.c
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet
-                has_saved_event_target = third_potential_eyalet            
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+				has_saved_event_target = third_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -2595,11 +3060,11 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:third_potential_eyalet
 				}
 				remove_core = event_target:third_potential_eyalet
@@ -2611,33 +3076,37 @@ country_event = {
 		region_wv = {
 			add_core = event_target:second_potential_eyalet
 		}
-        region_va = {
+		region_va = {
 			add_core = event_target:second_potential_eyalet
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E25
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2125.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2647,10 +3116,7 @@ country_event = {
 }
 
 # Southwest Territory (TN - optional into NC) merged into NC decision
-
-
 # Territory of Orleans
-
 country_event = {
 	id = flavor_xca.127
 	title = flavor_xca.127.t
@@ -2659,10 +3125,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XLA }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XLA
+		}
 		capital_scope = {
-			NOT = { region = region_la }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_la
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_la
@@ -2672,17 +3145,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XLA } }
-				XLA = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XLA
+					}
+				}
+				XLA = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create orleans territory
+	option = {
+		# Create orleans territory
 		name = flavor_xca.127.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -2700,28 +3178,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E27
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2127.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2731,7 +3213,6 @@ country_event = {
 }
 
 # Utah Territory
-
 country_event = {
 	id = flavor_xca.128
 	title = flavor_xca.128.t
@@ -2740,10 +3221,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XUT }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XUT
+		}
 		capital_scope = {
-			NOT = { region = region_ut }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ut
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ut
@@ -2753,17 +3241,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XUT } }
-				XUT = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XUT
+					}
+				}
+				XUT = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create utah territory
+	option = {
+		# Create utah territory
 		name = flavor_xca.128.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -2781,28 +3274,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E28
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2128.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2812,7 +3309,6 @@ country_event = {
 }
 
 # Wyoming Territory
-
 country_event = {
 	id = flavor_xca.129
 	title = flavor_xca.129.t
@@ -2821,10 +3317,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XWY }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XWY
+		}
 		capital_scope = {
-			NOT = { region = region_wy }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_wy
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_wy
@@ -2834,17 +3337,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XWY } }
-				XWY = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XWY
+					}
+				}
+				XWY = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create wyoming territory
+	option = {
+		# Create wyoming territory
 		name = flavor_xca.129.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -2862,28 +3370,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E29
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2129.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2893,7 +3405,6 @@ country_event = {
 }
 
 # Provisional Territory of NH
-
 country_event = {
 	id = flavor_xca.130
 	title = flavor_xca.130.t
@@ -2902,10 +3413,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNH }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XNH
+		}
 		capital_scope = {
-			NOT = { region = region_nh }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_nh
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_nh
@@ -2915,17 +3433,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XNH } }
-				XNH = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XNH
+					}
+				}
+				XNH = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create new hampshire
+	option = {
+		# Create new hampshire
 		name = flavor_xca.130.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -2943,28 +3466,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E30
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2130.d
 		add_adm_power = 100
 		ai_chance = {
@@ -2974,7 +3501,6 @@ country_event = {
 }
 
 # Provisional Territory of VT
-
 country_event = {
 	id = flavor_xca.131
 	title = flavor_xca.131.t
@@ -2983,10 +3509,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XVT }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XVT
+		}
 		capital_scope = {
-			NOT = { region = region_vt }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_vt
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_vt
@@ -2996,17 +3529,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XVT } }
-				XVT = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XVT
+					}
+				}
+				XVT = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create vermont
+	option = {
+		# Create vermont
 		name = flavor_xca.131.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3024,28 +3562,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E31
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2131.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3055,7 +3597,6 @@ country_event = {
 }
 
 # Provisional Territory of NY
-
 country_event = {
 	id = flavor_xca.132
 	title = flavor_xca.132.t
@@ -3064,10 +3605,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNY }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XNY
+		}
 		capital_scope = {
-			NOT = { region = region_ny }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ny
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ny
@@ -3077,17 +3625,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XNY } }
-				XNY = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XNY
+					}
+				}
+				XNY = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create new york
+	option = {
+		# Create new york
 		name = flavor_xca.132.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3105,28 +3658,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E32
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2132.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3136,7 +3693,6 @@ country_event = {
 }
 
 # Provisional Territory of RI
-
 country_event = {
 	id = flavor_xca.133
 	title = flavor_xca.133.t
@@ -3145,10 +3701,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XRI }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XRI
+		}
 		capital_scope = {
-			NOT = { region = region_ri }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ri
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ri
@@ -3158,17 +3721,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XRI } }
-				XRI = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XRI
+					}
+				}
+				XRI = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create rhode island
+	option = {
+		# Create rhode island
 		name = flavor_xca.133.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3186,28 +3754,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E33
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2133.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3217,7 +3789,6 @@ country_event = {
 }
 
 # Provisional Territory of CT
-
 country_event = {
 	id = flavor_xca.134
 	title = flavor_xca.134.t
@@ -3226,10 +3797,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XCT }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XCT
+		}
 		capital_scope = {
-			NOT = { region = region_ct }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ct
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ct
@@ -3239,17 +3817,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XCT } }
-				XCT = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XCT
+					}
+				}
+				XCT = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create connecticut
+	option = {
+		# Create connecticut
 		name = flavor_xca.134.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3267,28 +3850,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E34
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2134.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3298,7 +3885,6 @@ country_event = {
 }
 
 # Provisional Territory of PA
-
 country_event = {
 	id = flavor_xca.135
 	title = flavor_xca.135.t
@@ -3307,10 +3893,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XPA }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XPA
+		}
 		capital_scope = {
-			NOT = { region = region_pa }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_pa
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_pa
@@ -3320,17 +3913,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XPA } }
-				XPA = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XPA
+					}
+				}
+				XPA = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create pennsylvania
+	option = {
+		# Create pennsylvania
 		name = flavor_xca.135.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3348,28 +3946,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E35
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2135.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3379,7 +3981,6 @@ country_event = {
 }
 
 # Provisional Territory of MD (do by states - region annexes DC)
-
 country_event = {
 	id = flavor_xca.136
 	title = flavor_xca.136.t
@@ -3388,30 +3989,42 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMD }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMD
+		}
 		capital_scope = {
-			NOT = { region = region_md }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_md
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
-            region = region_md
+			region = region_md
 			value = 9
 		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMD } }
-				XMD = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMD
+					}
+				}
+				XMD = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create maryland
+	option = {
+		# Create maryland
 		name = flavor_xca.136.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3429,28 +4042,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E36
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 3
 		}
 	}
-    option = {	# begin process for america
+	option = {
+		# begin process for america
 		name = flavor_xca.136.b
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3458,13 +4075,14 @@ country_event = {
 		region_md = {
 			add_core = XCA
 		}
-        set_capital = 505
+		set_capital = 505
 		custom_tooltip = capital_relocated_wdc_tt
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2136.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3474,13 +4092,8 @@ country_event = {
 }
 
 # Provisional Territory of Virginia (modern border) - added to virgina decision
-
-
 # Provisional Territory of KY (added to virginia decision)
-
-
 # Provisional Territory of NC
-
 country_event = {
 	id = flavor_xca.139
 	title = flavor_xca.139.t
@@ -3489,62 +4102,85 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNC }
-        not = { exists = XTN }
-		capital_scope = {
-            and = {
-    			NOT = { region = region_nc }
-                not = { region = region_tn }            
-            }
-	#Why Eyalets when you can practically rule the stuff yourself?
+		or = {
+			tag = XUS
+			tag = XCA
 		}
-        and = {
-		    num_of_owned_provinces_with = {
-    			region = region_nc
-                value = 34
-            }
-            num_of_owned_provinces_with = {    
-                region = region_tn
-                value = 32
-            }
+		not = {
+			exists = XNC
+		}
+		not = {
+			exists = XTN
+		}
+		capital_scope = {
+			and = {
+				NOT = {
+					region = region_nc
+				}
+				not = {
+					region = region_tn
+				}
+			}
+			#Why Eyalets when you can practically rule the stuff yourself?
+		}
+		and = {
+			num_of_owned_provinces_with = {
+				region = region_nc
+				value = 34
+			}
+			num_of_owned_provinces_with = {
+				region = region_tn
+				value = 32
+			}
 		}
 	}
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_nc 
-                        value = 34
-                    }
-				    limit = { NOT = { exists = XNC } }
-                }
-				XNC = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_nc
+							value = 34
+						}
+						NOT = {
+							exists = XNC
+						}
+					}
+				}
+				XNC = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 			if = {
-                and = {
-                    num_of_owned_provinces_with = {
-                        region = region_tn 
-                        value = 32
-                    }
-				    limit = { NOT = { exists = XTN } }
-                }
-				XTN = { save_event_target_as = second_potential_eyalet }
+				limit = {
+					and = {
+						num_of_owned_provinces_with = {
+							region = region_tn
+							value = 32
+						}
+						NOT = {
+							exists = XTN
+						}
+					}
+				}
+				XTN = {
+					save_event_target_as = second_potential_eyalet
+				}
 			}
 		}
 	}
-	option = {	# Create tn, nc
+	option = {
+		# Create tn, nc
 		name = flavor_xca.139.b
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet        
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -3552,7 +4188,7 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
@@ -3563,16 +4199,20 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E39
@@ -3583,34 +4223,38 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:second_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:second_potential_eyalet
 		}
 		event_target:second_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E26
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-    option = {	# Create big nc
+	option = {
+		# Create big nc
 		name = flavor_xca.139.c
 		trigger = {
-            and = {
-    			has_saved_event_target = first_potential_eyalet
-                has_saved_event_target = second_potential_eyalet         
-            }
+			and = {
+				has_saved_event_target = first_potential_eyalet
+				has_saved_event_target = second_potential_eyalet
+			}
 		}
 		hidden_effect = {
 			every_owned_province = {
@@ -3618,7 +4262,7 @@ country_event = {
 					is_core = event_target:first_potential_eyalet
 				}
 				remove_core = event_target:first_potential_eyalet
-   				limit = {
+				limit = {
 					is_core = event_target:second_potential_eyalet
 				}
 				remove_core = event_target:second_potential_eyalet
@@ -3632,28 +4276,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E39
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2139.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3663,7 +4311,6 @@ country_event = {
 }
 
 # Provisional Territory of SC
-
 country_event = {
 	id = flavor_xca.140
 	title = flavor_xca.140.t
@@ -3672,10 +4319,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XSC }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XSC
+		}
 		capital_scope = {
-			NOT = { region = region_sc }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_sc
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_sc
@@ -3685,17 +4339,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XSC } }
-				XSC = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XSC
+					}
+				}
+				XSC = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create south carolina
+	option = {
+		# Create south carolina
 		name = flavor_xca.140.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3713,28 +4372,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E40
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2140.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3744,7 +4407,6 @@ country_event = {
 }
 
 # Provisional Territory of GA
-
 country_event = {
 	id = flavor_xca.141
 	title = flavor_xca.141.t
@@ -3753,10 +4415,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XGA }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XGA
+		}
 		capital_scope = {
-			NOT = { region = region_ga }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ga
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ga
@@ -3766,17 +4435,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XGA } }
-				XGA = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XGA
+					}
+				}
+				XGA = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create georgia
+	option = {
+		# Create georgia
 		name = flavor_xca.141.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3794,28 +4468,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E41
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2141.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3825,7 +4503,6 @@ country_event = {
 }
 
 # Provisional Territory of TX
-
 country_event = {
 	id = flavor_xca.142
 	title = flavor_xca.142.t
@@ -3834,10 +4511,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XTX }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XTX
+		}
 		capital_scope = {
-			NOT = { region = region_tx }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_tx
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_tx
@@ -3847,17 +4531,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XTX } }
-				XTX = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XTX
+					}
+				}
+				XTX = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create texas
+	option = {
+		# Create texas
 		name = flavor_xca.142.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3875,28 +4564,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E42
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2142.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3906,7 +4599,6 @@ country_event = {
 }
 
 # Provisional Territory of DE
-
 country_event = {
 	id = flavor_xca.143
 	title = flavor_xca.143.t
@@ -3915,10 +4607,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XDE }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XDE
+		}
 		capital_scope = {
-			NOT = { region = region_de }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_de
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_de
@@ -3928,17 +4627,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XDE } }
-				XDE = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XDE
+					}
+				}
+				XDE = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create delaware
+	option = {
+		# Create delaware
 		name = flavor_xca.143.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -3956,28 +4660,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E43
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2143.d
 		add_adm_power = 100
 		ai_chance = {
@@ -3987,7 +4695,6 @@ country_event = {
 }
 
 # Provisional Territory of NJ
-
 country_event = {
 	id = flavor_xca.144
 	title = flavor_xca.144.t
@@ -3996,10 +4703,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XNJ }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XNJ
+		}
 		capital_scope = {
-			NOT = { region = region_nj }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_nj
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_nj
@@ -4009,17 +4723,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XNJ } }
-				XNJ = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XNJ
+					}
+				}
+				XNJ = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# Create new jersey
+	option = {
+		# Create new jersey
 		name = flavor_xca.144.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -4037,28 +4756,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E44
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2144.d
 		add_adm_power = 100
 		ai_chance = {
@@ -4068,7 +4791,6 @@ country_event = {
 }
 
 # Wisconsin Territory
-
 country_event = {
 	id = flavor_xca.147
 	title = flavor_xca.147.t
@@ -4077,10 +4799,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XWI }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XWI
+		}
 		capital_scope = {
-			NOT = { region = region_wi }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_wi
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_wi
@@ -4090,17 +4819,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XWI } }
-				XWI = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XWI
+					}
+				}
+				XWI = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# wisconsin territory
+	option = {
+		# wisconsin territory
 		name = flavor_xca.147.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -4118,28 +4852,32 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E47
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2147.d
 		add_adm_power = 100
 		ai_chance = {
@@ -4149,7 +4887,6 @@ country_event = {
 }
 
 # WProvisional Territory of Massachusetts
-
 country_event = {
 	id = flavor_xca.148
 	title = flavor_xca.148.t
@@ -4158,10 +4895,17 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_dlc = "Domination"
-		tag = XCA
-		not = { exists = XMA }
+		or = {
+			tag = XUS
+			tag = XCA
+		}
+		not = {
+			exists = XMA
+		}
 		capital_scope = {
-			NOT = { region = region_ma }	#Why Eyalets when you can practically rule the stuff yourself?
+			NOT = {
+				region = region_ma
+			}			#Why Eyalets when you can practically rule the stuff yourself?
 		}
 		num_of_owned_provinces_with = {
 			region = region_ma
@@ -4171,17 +4915,22 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
-
 	immediate = {
 		hidden_effect = {
 			if = {
-				limit = { NOT = { exists = XMA } }
-				XMA = { save_event_target_as = first_potential_eyalet }
+				limit = {
+					NOT = {
+						exists = XMA
+					}
+				}
+				XMA = {
+					save_event_target_as = first_potential_eyalet
+				}
 			}
 		}
 	}
-	
-	option = {	# create massachusetts
+	option = {
+		# create massachusetts
 		name = flavor_xca.148.a
 		trigger = {
 			has_saved_event_target = first_potential_eyalet
@@ -4199,35 +4948,38 @@ country_event = {
 		}
 		custom_tooltip = territory_claims_tt
 		release = event_target:first_potential_eyalet
-		create_subject = { 
+		create_subject = {
 			subject_type = eyalet
 			who = event_target:first_potential_eyalet
 		}
 		event_target:first_potential_eyalet = {
 			if = {
-				limit = { NOT = { government = republic } }
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
 				change_government = republic
 			}
-			add_government_reform = organized_territory_reform
+			add_government_reform = eyalet_government
 			add_liberty_desire = -25
 			eyalet_effect = {
 				tag = E48
 			}
 		}
 		add_dip_power = 75
-		
 		ai_chance = {
 			factor = 1
 		}
 	}
-	option = {	# Fallback
+	option = {
+		# Fallback
 		name = flavor_xca.2148.d
 		add_adm_power = 100
 		ai_chance = {
 			factor = 0
 		}
 	}
-	
 }
 
 country_event = {
@@ -4235,9 +4987,7 @@ country_event = {
 	title = flavor_xus.1789.t
 	desc = flavor_xus.1789.d
 	picture = HRE_eventPicture
-
 	is_triggered_only = yes
-
 	option = {
 		name = flavor_xus.1789.b
 		XUS = {

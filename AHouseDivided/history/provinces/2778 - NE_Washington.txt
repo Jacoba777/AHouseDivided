@@ -16,6 +16,7 @@ is_city = yes
 owner=OMH
 add_core=OMH
 controller=OMH
+set_province_flag = upper_missouri_river
 
 1444.11.12 = {
 	base_tax=0

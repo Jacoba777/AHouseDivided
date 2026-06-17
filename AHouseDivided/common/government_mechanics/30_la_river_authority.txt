@@ -1,0 +1,184 @@
+la_river_authority_mechanic = {
+	available = {
+		has_dlc = "King of Kings"
+	}
+	powers = {
+		basin_control = {
+			gui = egyptian_westernization_gov_mech
+			show_before_interactions = yes
+			max = 100
+			reset_on_new_ruler = no
+			base_monthly_growth = 0
+			development_scaled_monthly_growth = 0
+			scaled_modifier = {
+				modifier = {
+					trade_efficiency = 0.2
+					trade_goods_size = 0.1
+					movement_speed = 0.1
+					supply_limit_modifier = 0.25
+					land_attrition = -0.1
+				}
+			}
+			reverse_scaled_modifier = {
+				modifier = {
+					global_trade_power = -0.05
+					land_attrition = 0.05
+				}
+				start_value = 0
+				end_value = 50
+			}
+			is_good = yes
+			
+		}
+	}
+	interactions = {
+		dredge_the_rivers = {
+			icon = GFX_study_western_administration
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = basin_control
+			cost = 30
+			cooldown_years = 20
+			trigger = {
+				has_country_flag = formed_the_empire_of_louisiana
+			}
+			effect = {
+				custom_tooltip = tooltip_dredge_the_rivers
+				hidden_effect = {
+					if = {
+					limit = {
+						any_core_province = {
+							or = {
+								has_province_flag = upper_missouri_river
+								has_province_flag = lower_missouri_river
+								has_province_flag = lower_miss_river
+								has_province_flag = upper_miss_river
+								has_province_flag = arkansas_river
+								has_province_flag = green_river
+								has_province_flag = cumberland_river
+								has_province_flag = tennessee_river
+								has_province_flag = ohio_river
+								has_province_flag = kanawha_river
+								has_province_flag = kentucky_river
+								has_province_flag = wabash_river
+								has_province_flag = illinois_river
+								has_province_flag = wisconsin_river
+								has_province_flag = minnesota_river
+								has_province_flag = ouachita_river
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							or = {
+								has_province_flag = upper_missouri_river
+								has_province_flag = lower_missouri_river
+								has_province_flag = lower_miss_river
+								has_province_flag = upper_miss_river
+								has_province_flag = arkansas_river
+								has_province_flag = green_river
+								has_province_flag = cumberland_river
+								has_province_flag = tennessee_river
+								has_province_flag = ohio_river
+								has_province_flag = kanawha_river
+								has_province_flag = kentucky_river
+								has_province_flag = wabash_river
+								has_province_flag = illinois_river
+								has_province_flag = wisconsin_river
+								has_province_flag = minnesota_river
+								has_province_flag = ouachita_river
+							}
+						}
+						add_base_production = 1
+					}
+				}
+				}
+				
+			}
+			ai_chance = {
+				factor = 0.75
+			}
+		}
+		increase_our_tariffs = {
+			icon = GFX_study_western_manufacturing
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = basin_control
+			cost = 30
+			cooldown_years = 20
+			trigger = {
+				has_country_flag = formed_the_empire_of_louisiana
+			}
+			
+			effect = {
+				custom_tooltip = tooltip_increase_our_tariffs
+				every_trade_node = {
+					limit = {
+						has_merchant = ROOT
+					}
+					every_province = {
+						add_trade_modifier = {
+							who = THIS
+							duration = 5475
+							power = -0.15
+							key = merchant_recalled
+						}
+					}
+					
+				}
+				add_years_of_income = 15
+			}
+			ai_chance = {
+				factor = 1.5
+			}
+		}
+		fortify_the_river = {
+			icon = GFX_study_western_military
+			gui = "egyptian_westernization_interaction_button"
+			cost_type = basin_control
+			cost = 75
+			trigger = {
+				has_country_flag = formed_the_empire_of_louisiana
+				is_at_war = yes
+			}
+			
+			effect = {	
+				custom_tooltip = tooltip_fortify_the_river
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							or = {
+								has_province_flag = upper_missouri_river
+								has_province_flag = lower_missouri_river
+								has_province_flag = lower_miss_river
+								has_province_flag = upper_miss_river
+								has_province_flag = arkansas_river
+								has_province_flag = green_river
+								has_province_flag = cumberland_river
+								has_province_flag = tennessee_river
+								has_province_flag = ohio_river
+								has_province_flag = kanawha_river
+								has_province_flag = kentucky_river
+								has_province_flag = wabash_river
+								has_province_flag = illinois_river
+								has_province_flag = wisconsin_river
+								has_province_flag = minnesota_river
+								has_province_flag = ouachita_river
+							}
+						}
+						add_province_modifier = {
+							name = la_fortification
+							duration = 3650
+						}
+					}		
+				}
+			}			
+		
+			ai_chance = {
+				factor = 0
+				modifier = {
+					factor = 100
+					is_at_war = yes
+				}
+			}
+		}
+	}
+}

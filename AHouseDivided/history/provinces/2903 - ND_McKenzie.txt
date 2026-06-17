@@ -10,6 +10,7 @@ native_ferocity=10
 native_hostileness=2
 religion=lutheran
 culture=culture_northern_plains
+set_province_flag = upper_missouri_river
 
 1444.11.12 = {
 	base_tax=0

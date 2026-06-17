@@ -16,6 +16,7 @@ owner=BTM
 add_core=BTM
 controller=BTM
 fort_15th=yes
+set_province_flag = upper_miss_river
 
 1444.11.12 = {
 	base_tax=0

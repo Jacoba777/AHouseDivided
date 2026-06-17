@@ -57,3 +57,90 @@ harmonized_nonreligious = {
 	technology_cost = -0.075
 	religion = yes
 }
+
+
+### Vancouver Modifiers
+
+vancouver_recent_investment = {
+
+}
+
+
+vancouver_recent_corporate_dependency = {
+
+}
+
+
+vancouver_recent_integrated_market = {
+
+}
+
+
+vancouver_internal_investment = {
+	
+}
+
+vancouver_corporate_investment_stack = {
+    improve_relation_modifier = -0.05
+    global_tax_modifier = -0.03
+    yearly_corruption = 0.2
+}
+
+vancouver_corporate_dependency_stack = {
+    diplomatic_reputation = -0.5
+    ae_impact = 0.05
+    liberty_desire_from_subject_development = 0.05
+}
+
+vancouver_corporate_appanage_stack = {
+    diplomatic_reputation = -1
+    ae_impact = 0.10
+    global_unrest = 0.5
+    liberty_desire_from_subject_development = 0.10
+}
+
+vancouver_corporate_absorption_stack = {
+    diplomatic_reputation = -1.5
+    ae_impact = 0.15
+    global_unrest = 1
+    stability_cost_modifier = 0.10
+}
+
+vancouver_investment_backlash = {
+    global_unrest = 1
+    liberty_desire_from_subject_development = 0.05
+    trade_efficiency = -0.05
+}
+
+vancouver_begrudging_dependency = {
+    liberty_desire = 20
+    global_unrest = 3
+}
+
+vancouver_corporate_fear = {
+    ae_impact = 0.05
+    diplomatic_reputation = -1
+    improve_relation_modifier = -0.10
+}
+
+prospector_funding = {
+    build_cost = 0.05
+    development_cost = 0.05
+    global_trade_goods_size = 0.05
+}
+
+midwestern_disarray = {
+    global_trade_power = -0.05
+    global_tax_modifier = -0.05
+    stability_cost_modifier = 0.05
+    defensiveness = 0.1
+    fort_maintenance_modifier = 0.1
+    morale_damage_received = 0.05
+    monthly_regional_influence = -0.25
+}
+
+horde_jubilation = {
+    land_forcelimit_modifier = 0.05
+    morale_damage_received = -0.05
+}
+

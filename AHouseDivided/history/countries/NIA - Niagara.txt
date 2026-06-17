@@ -1,6 +1,6 @@
 technology_group = mid_atlantic
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwest_chartered_company_government_aggressive
 government_rank = 1
 religion = catholic
 primary_culture = culture_buffalonian

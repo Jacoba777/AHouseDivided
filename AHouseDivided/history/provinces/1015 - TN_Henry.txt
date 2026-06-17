@@ -16,6 +16,7 @@ is_city = yes
 owner=PDC
 add_core=PDC
 controller=PDC
+set_province_flag = tennessee_river
 
 1444.11.12 = {
 	base_tax=0

@@ -132,6 +132,8 @@
  culture_michanian:0 "Michanian"
  culture_mid_michigander:0 "Mid-Michigander"
  culture_mid_missourian:0 "Mid-Missourian"
+ culture_upper_missourian:0 "Upper-Missourian"
+ culture_missouri_rheinish:0 "Missouri Rheinish"
  culture_mid_nebraskan:0 "Mid-Nebraskan"
  culture_mid_trianglian:0 "Mid-Trianglian"
  culture_middle_tidewater:0 "Mid-Tidewater"
@@ -247,6 +249,8 @@
  culture_wichitan:0 "Wichitan"
  culture_yooper:0 "Yooper"
  culture_yuman:0 "Yuman"
+ culture_north_shenandoah:0 "Mountaineer"
+ culture_south_shenandoah:0 "Shenandoah"
 # Culture Groups
  culture_group_alaskan:0 "Alaskan"
  culture_group_allegheny:0 "Allegheny"

@@ -1,7 +1,12 @@
 technology_group = northern_plains
 government = republic
-add_government_reform = american_republic
+add_government_reform = midwest_chartered_company_government
 government_rank = 1
 religion = lutheran
 primary_culture = culture_iron_range
 capital = 2453
+set_government_power = {
+	mechanic_type = midwest_mercantilism
+	power_type = regional_influence
+	value = 12
+}

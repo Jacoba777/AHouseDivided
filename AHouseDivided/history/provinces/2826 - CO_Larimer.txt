@@ -16,6 +16,7 @@ is_city = yes
 owner=FTC
 add_core=FTC
 controller=FTC
+trade_goods = gems
 
 1444.11.12 = {
 	base_tax=10

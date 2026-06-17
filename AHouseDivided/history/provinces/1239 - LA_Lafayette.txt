@@ -15,6 +15,7 @@ is_city = yes
 owner=LFT
 add_core=LFT
 controller=LFT
+set_province_flag = la_state_flag
 
 1444.11.12 = {
 	base_tax=3

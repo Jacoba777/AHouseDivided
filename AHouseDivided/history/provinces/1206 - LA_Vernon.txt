@@ -15,6 +15,7 @@ owner=RPD
 add_core=RPD
 controller=RPD
 fort_15th=yes
+set_province_flag = la_state_flag
 
 1444.11.12 = {
 	base_tax=0

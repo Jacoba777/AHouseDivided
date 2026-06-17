@@ -16,6 +16,7 @@ is_city = yes
 owner=TAL
 add_core=TAL
 controller=TAL
+set_province_flag = mississippi_lesser_la
 
 1444.11.12 = {
 	base_tax=0

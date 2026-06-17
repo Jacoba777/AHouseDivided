@@ -3439,3 +3439,150 @@ wisconsinite_ideas = {
 		manpower_in_true_faith_provinces = 0.10
 	}
 }
+
+four_corners_ideas = {
+	free = yes
+
+	trigger = {
+		OR = {
+			tag = TFC
+		}
+	}
+	start = {
+		yearly_absolutism = 0.4
+		global_trade_power = 0.4
+	}
+
+	four_fold_foundation = {
+        stability_cost_modifier = -0.04
+        idea_cost = -0.04
+    }
+
+    quadripoint_administration = {
+        governing_capacity_modifier = 0.4
+        state_maintenance_modifier = -0.04
+    }
+
+    cardinal_roads = {
+        movement_speed = 0.04
+        land_attrition = -0.04
+    }
+
+    equal_quadrant_development = {
+        development_cost = -0.04
+        build_cost = -0.04
+    }
+
+    four_corners_trade_grid = {
+        trade_efficiency = 0.04
+        goods_produced_modifier = 0.04
+    }
+
+    quadrilateral_defense = {
+        fort_defense = 0.04
+        defensiveness = 0.4
+    }
+
+    artificial_unity = {
+        tolerance_own = 4
+        tolerance_heretic = 4
+    }
+
+	bonus = {
+		discipline = 0.04
+	}
+}
+
+aztlan_ideas = {
+	start = {
+		infantry_power = 0.1
+		idea_cost = -0.1
+	}
+
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	
+	trigger = {
+		tag = AZT
+	}
+	free = yes		#wibe added at load.
+	
+	flower_wars = {
+		war_exhaustion = -0.03
+	}
+	sustaining_the_gods = {
+		tolerance_own = 1
+		legitimacy = 1
+		devotion = 1
+		republican_tradition = 0.3
+		meritocracy = 1
+		horde_unity = 1
+	}
+	telpochcalli = {
+		manpower_recovery_speed = 0.1
+	}
+	eagles_and_jaguars = {
+		land_morale = 0.10
+	}
+	imperial_tribute = {
+		monarch_power_tribute = 1
+		reduced_liberty_desire = 10
+	}
+	floating_gardens = {
+		production_efficiency = 0.1
+	}
+	pochtecayotl = {
+		spy_offence = 0.2
+		burghers_loyalty_modifier = 0.1
+	}
+}
+
+conch_republic_ideas = {
+
+    trigger = {
+        tag = KEY
+    }
+
+    free = yes
+	
+	start = {
+        global_trade_power = 0.10
+        naval_morale = 0.10
+    }
+
+    sovereign_by_protest = {
+        stability_cost_modifier = -0.10
+    }
+
+    tourism_economy = {
+        global_tax_modifier = 0.10
+        production_efficiency = 0.10
+    }
+
+    conch_navy = {
+
+        naval_forcelimit_modifier = 0.20
+    }
+
+    island_resilience = {
+        defensiveness = 0.15
+        hostile_attrition = 1
+    }
+
+    smuggling_traditions = {
+        trade_efficiency = 0.15
+    }
+
+    laid_back_governance = {
+        global_unrest = -2
+    }
+
+    gateway_to_the_caribbean = {
+        trade_steering = 0.15
+    }
+	
+	bonus = {
+        sailors_recovery_speed = 0.15
+    }
+}

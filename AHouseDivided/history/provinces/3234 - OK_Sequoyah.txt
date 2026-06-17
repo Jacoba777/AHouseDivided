@@ -16,6 +16,7 @@ is_city = yes
 owner=FTS
 add_core=FTS
 controller=FTS
+set_province_flag = arkansas_river
 
 1444.11.12 = {
 	base_tax=0

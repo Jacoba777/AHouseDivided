@@ -4,5 +4,5 @@ add_government_reform = dixie_autocracy_reform
 set_country_flag = oldsouth
 government_rank = 1
 religion = baptist
-primary_culture = culture_ridge_virginian
+primary_culture = culture_south_shenandoah
 capital = 629

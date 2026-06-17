@@ -1,0 +1,75 @@
+midwest_mercantilism = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 10
+	available = {
+		has_dlc = "Domination"
+	}
+
+	powers = {
+		regional_influence = {
+			max = 100
+			base_monthly_growth = -0.2
+			scaled_modifier = {
+				modifier = {
+					trade_efficiency = 0.15
+					global_trade_power = 0.2
+					diplomatic_reputation = 3
+					mercantilism_cost = -0.2
+					trade_steering = 0.25
+					liberty_desire_from_subject_development = -0.1
+				}
+				start_value = 50
+				end_value = 100
+			}
+			scaled_modifier = {
+				modifier = {
+					stability_cost_modifier = 0.1
+					advisor_cost = 0.1
+					idea_cost = -0.05
+				}
+				start_value = 80
+				end_value = 100
+			}
+			reverse_scaled_modifier = {
+				modifier = {
+					trade_efficiency = -0.1
+					global_trade_power = -0.05
+					diplomatic_reputation = -1
+					stability_cost_modifier = 0.1
+				}
+				start_value = 0
+				end_value = 50
+			}
+		}
+	}
+	
+	interactions = {
+		force_influence = {
+			gui = prussian_militarization_gov_mech_1_2
+			cost_type = regional_influence
+			center = no
+			trigger = {
+				not = {
+					has_government_power = {
+						mechanic_type = midwest_mercantilism
+						power_type = regional_influence
+						value = 100
+					}
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = midwest_mercantilism
+					power_type = regional_influence
+					value = 5
+				}
+				add_corruption = 5
+			}
+			cooldown_years = 0
+			ai_chance = {
+				factor = 0
+				
+			}
+		}
+	}
+}
