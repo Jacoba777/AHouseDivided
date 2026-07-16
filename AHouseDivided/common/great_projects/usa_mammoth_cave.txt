@@ -85,7 +85,7 @@ mammoth_cave = {
 			tolerance_own = 0.5
 			tolerance_heretic = 0.5
 			tolerance_heathen = 0.5
-			land_maintenance_modifier = -0.5
+			land_maintenance_modifier = -0.05
 		}
 		on_upgraded = {
 		}

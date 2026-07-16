@@ -3484,8 +3484,8 @@ four_corners_ideas = {
     }
 
     artificial_unity = {
-        tolerance_own = 4
-        tolerance_heretic = 4
+        global_unrest = -0.4
+		all_estate_loyalty_equilibrium = 0.04
     }
 
 	bonus = {

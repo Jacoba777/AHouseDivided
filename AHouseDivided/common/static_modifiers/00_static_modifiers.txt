@@ -29,6 +29,7 @@ difficulty_very_easy_player = {
 	improve_relation_modifier = 0.10
 	ae_impact = -0.33
 	yearly_corruption = -1.0
+	monthly_regional_influence = 2.5
 }
 
 difficulty_easy_player = {
@@ -37,6 +38,7 @@ difficulty_easy_player = {
 	interest = -2
 	ae_impact = -0.33
 	yearly_corruption = -1.0
+	monthly_regional_influence = 1
 }
 
 difficulty_normal_player = {
@@ -491,7 +493,7 @@ unrest = {
 	ship_recruit_speed = 0.1
 	local_tax_modifier = -0.02
 	#ADH Midwest
-	monthly_regional_influence = -0.05
+	monthly_regional_influence = -0.01
 }
 
 nationalism = {
