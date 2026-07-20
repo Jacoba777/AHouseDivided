@@ -1,7 +1,5 @@
 la_river_authority_mechanic = {
-	available = {
-		has_dlc = "King of Kings"
-	}
+
 	powers = {
 		basin_control = {
 			gui = egyptian_westernization_gov_mech

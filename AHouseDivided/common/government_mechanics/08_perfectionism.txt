@@ -1,9 +1,7 @@
 perfectionism_mechanic = { ##wanted the very rare success of dixie consititution so gave this mechanic, changed references so that they wouldnt be liable to expand/decalre
 	alert_icon_gfx = GFX_alerticons_government_mechanics
 	alert_icon_index = 8
-	available = {
-		has_dlc = "Domination"
-	}
+
 	
 	interactions = {
 		inward_focus = {
