@@ -96,7 +96,7 @@ cartel_civies = {
 
 	modifier = {
 		advisor_cost = -0.05
-		technology_cost = -10
+		technology_cost = -0.10
 	}
 }
 
