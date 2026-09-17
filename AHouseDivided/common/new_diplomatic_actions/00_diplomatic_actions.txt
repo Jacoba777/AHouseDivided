@@ -6219,12 +6219,12 @@ invite_to_midwest_bloc = {
 
 	is_visible = {
 		has_government_mechanic = midwest_mercantilism
+		from =  { has_government_mechanic = midwest_mercantilism }
 	}
 
 	is_allowed = {
 		and = {
 			or = {
-				has_subject_of_type = midwest_bloc_subordinate
 				from = {
 					hidden_trigger = {
 						midwest_subject_matches_or_exceeds_overlord = yes
@@ -6237,22 +6237,24 @@ invite_to_midwest_bloc = {
 			from = {
 				has_government_mechanic = midwest_mercantilism
 			}
-			or = {
-				is_neighbor_of = from
-				any_subject_country = {
-					is_subject_of = root
-					is_neighbor_of = from
-					has_country_modifier = core_bloc_member
-				}
-				
+			from = {
+				midwest_contiguous_bloc = yes
 			}
 			from = {
 				not = {
 					is_subject_of = root
 				}
 			}
-			
-		}		
+		}	
+		not = {
+			is_subject_of_type = midwest_core_bloc_member
+		}
+		not = {
+			is_subject_of_type = midwest_federal_governorship
+		}
+		not = {
+			is_subject_of_type = midwest_bloc_constituent
+		}
 	}
 
 	on_accept = {
@@ -6265,10 +6267,33 @@ invite_to_midwest_bloc = {
 		if = {
 			limit = {
 				from = {
-					has_country_modifier = core_bloc_member
+					all_subject_country = {
+						has_opinion = {
+							who = root
+							value = 50
+						}
+					}
 				}
 			}
-			remove_country_modifier = core_bloc_member
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = root
+			}
+		}
+		if = {
+			limit = {
+				from = {
+					all_subject_country = {
+						not = {
+							has_opinion = {
+								who = root
+								value = 50
+							}
+						}
+					}
+				}
+			}
+			grant_independence = yes
 		}
 		if = {
 			limit = {
@@ -6283,6 +6308,12 @@ invite_to_midwest_bloc = {
 				subject_type = midwest_bloc_subordinate
 				subject = FROM
 			}	
+		}
+		from = {
+			add_country_modifier = {
+				name = economic_bloc_transition
+				duration = 1825
+			}
 		}
 	}
 
@@ -6417,18 +6448,7 @@ invite_to_midwest_bloc = {
 		add_entry = {
 			name = MIDWEST_NOT_CONTINUOUS_IF_JOINED
 			limit = {
-				not = { 
-					or = {
-						FROM = { is_neighbor_of = root }
-						from = {
-							any_neighbor_country = {
-								is_subject_of = root
-								has_country_modifier = core_bloc_member
-							} 
-						}
-						
-					}
-				}
+				midwest_contiguous_bloc = no
 			}	
 			export_to_variable = {
 				variable_name = ai_value
@@ -6532,7 +6552,7 @@ invite_to_midwest_bloc = {
 			name = MIDWEST_CORE_BLOC_MEMBER
 			limit = {
 				from = {
-					has_country_modifier = core_bloc_member
+					is_subject_of_type = midwest_core_bloc_member
 				}
 			}
 			export_to_variable = {
@@ -6557,6 +6577,7 @@ petition_join_midwest_bloc = {
 
 	is_visible = {
 		has_government_mechanic = midwest_mercantilism
+		from = { has_government_mechanic = midwest_mercantilism }
 	}
 
 	is_allowed = {
@@ -6576,14 +6597,22 @@ petition_join_midwest_bloc = {
 				}
 			}
 			has_government_mechanic = midwest_mercantilism
-			or = {
-				is_neighbor_of = from
-				any_neighbor_country = {
-					is_subject_of = from
-					has_country_modifier = core_bloc_member
+			midwest_contiguous_bloc = yes
+			not = {
+				from = {
+					is_subject_of = root
 				}
 			}
-		}		
+		}
+		not = {
+			is_subject_of_type = midwest_core_bloc_member
+		}
+		not = {
+			is_subject_of_type = midwest_federal_governorship
+		}
+		not = {
+			is_subject_of_type = midwest_bloc_constituent
+		}
 	}
 
 	on_accept = {
@@ -6620,6 +6649,12 @@ petition_join_midwest_bloc = {
 					name = monetary_union_member
 					duration = -1
 				}
+			}
+		}
+		root = {
+			add_country_modifier = {
+				name = economic_bloc_transition
+				duration = 1825
 			}
 		}
 	}
@@ -6694,17 +6729,7 @@ petition_join_midwest_bloc = {
 		add_entry = {
 			name = MIDWEST_NOT_CONTINUOUS_IF_JOINED
 			limit = {
-				not = { 
-					or = {
-						root = { is_neighbor_of = from }
-						root = {
-							any_neighbor_country = {
-								is_subject_of = from
-								has_country_modifier = core_bloc_member
-							} 
-						}
-					}
-				}
+				midwest_contiguous_bloc = no
 			}	
 			export_to_variable = {
 				variable_name = ai_value
@@ -6803,6 +6828,288 @@ petition_join_midwest_bloc = {
 				value = -20
 			}
 		}	
+	}
+
+}
+
+#midwest expanding the federation peacefully
+invite_to_fed_charter = {
+	category = influence
+	require_acceptance = yes
+
+	is_visible = {
+		has_government_mechanic = chartered_legitimacy_mechanic
+	}
+
+	is_allowed = {
+		and = {
+			from = { is_neighbor_of = root }
+			from = { is_subject = no }
+		}		
+	}
+
+	on_accept = {
+		from = {
+			if = {
+				limit = {
+					government = republic
+				}
+				add_government_reform = midwestern_trade_hub
+			}
+			if = {
+				limit = { 
+					government = monarchy
+				}
+				add_government_reform = proscriptive_trade_hub
+			}
+		}
+		root = {
+			create_subject = {
+				subject_type = midwest_bloc_constituent
+				subject = from
+			}	
+		}
+		root = {
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = 20
+			}
+		}
+	}
+
+	on_decline = {
+		
+	}
+	
+	ai_will_do = { 
+		always = yes
+	}
+
+	ai_acceptance = {
+	    add_entry = { #opinion
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = { #diplomatic reputation
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 2
+			multiply_variable = {
+				which = ai_value
+				value = 2
+			}
+		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#2 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = { #trade power
+			name = RELATIVE_INCOME
+			limit = {
+				FROM = {
+					years_of_income = 10
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			
+			multiply_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+		add_entry = { #culture group same?
+			name = DIPLO_SAME_CULTURE_GROUP
+			limit = { FROM = { culture_group = ROOT } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 5 }
+		}
+		add_entry = { #culture group different?
+			name = DIPLO_DIFFERENT_CULTURE_GROUP
+			limit = { FROM = { not = { culture_group = ROOT } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		
+	}
+
+}
+
+
+#midwest petition to join federation
+petition_join_fed_charter = {
+	category = influence
+	require_acceptance = yes
+
+	is_visible = {
+		any_neighbor_country = {
+			or = {
+				has_government_mechanic = chartered_legitimacy_mechanic
+				overlord = {
+					has_government_mechanic = chartered_legitimacy_mechanic
+				}
+			}
+		}
+		hidden_trigger = {
+			not = {
+				has_reform = chartered_federation
+			}
+		}
+		
+	}
+
+	is_allowed = {
+		and = {
+			root = { is_neighbor_of = from }
+			root = { is_subject = no }
+		}			
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = midwestern_trade_hub
+		}
+		if = {
+			limit = { 
+				government = monarchy
+			}
+			add_government_reform = proscriptive_trade_hub
+		}
+		root = {
+			create_subject = {
+				subject_type = midwest_bloc_constituent
+				subject = from
+			}	
+		}
+		root = {
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = 20
+			}
+		}
+	}
+
+	on_decline = {
+		add_opinion = {
+			who = from
+			modifier = refused_vassalage
+		}
+	}
+	
+	ai_will_do = {
+		has_opinion = {
+			who = root
+			value = 150
+		}
+		not = {
+			is_rival = root
+		}
+		not = {
+			total_development = 300
+		}
+	}
+
+	ai_acceptance = {
+
+	    add_entry = { #opinion
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.1
+			}
+		}
+		add_entry = { #diplomatic reputation
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 2
+			multiply_variable = {
+				which = ai_value
+				value = 2
+			}
+		}
+		add_entry = { #trade power 
+			name = RELATIVE_INCOME
+			limit = {
+				ROOT = {
+					years_of_income = 10
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			
+			multiply_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#2 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.5
+			}
+		}
+		add_entry = { #culture group same?
+			name = DIPLO_SAME_CULTURE_GROUP
+			limit = { FROM = { culture_group = ROOT } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 5 }
+		}
+		add_entry = { #culture group different?
+			name = DIPLO_DIFFERENT_CULTURE_GROUP
+			limit = { FROM = { not = { culture_group = ROOT } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
 	}
 
 }

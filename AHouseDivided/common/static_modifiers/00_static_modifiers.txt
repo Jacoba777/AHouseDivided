@@ -29,7 +29,6 @@ difficulty_very_easy_player = {
 	improve_relation_modifier = 0.10
 	ae_impact = -0.33
 	yearly_corruption = -1.0
-	monthly_regional_influence = 2.5
 }
 
 difficulty_easy_player = {
@@ -38,7 +37,6 @@ difficulty_easy_player = {
 	interest = -2
 	ae_impact = -0.33
 	yearly_corruption = -1.0
-	monthly_regional_influence = 1
 }
 
 difficulty_normal_player = {
@@ -493,7 +491,7 @@ unrest = {
 	ship_recruit_speed = 0.1
 	local_tax_modifier = -0.02
 	#ADH Midwest
-	monthly_regional_influence = -0.01
+	monthly_regional_influence = -0.05
 }
 
 nationalism = {
@@ -650,6 +648,8 @@ positive_stability = {
 	yearly_harmony = 0.25
 	monthly_ottoman_decadence = -0.05
 	monthly_authority_power = -0.01
+	#ADH Chartered Legitimacy
+	monthly_chartered_legitimacy = 0.025
 }
 
 privateering = {
@@ -669,6 +669,7 @@ negative_stability = {
 	monthly_authority_power = 0.05
 	#ADH Midwest
 	monthly_regional_influence = -0.25
+	monthly_chartered_legitimacy = -0.05
 }
 
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
@@ -707,6 +708,9 @@ cancelled_loan = {
 
 bank_loan = {
 	#no effects
+
+	#ADH midwest
+	monthly_chartered_legitimacy = -0.025
 }
 
 inflation = {
@@ -788,7 +792,8 @@ peace = {
 	monthly_blood = -0.05
 	monthly_authority_power = 0.1
 	#ADH Midwest
-	monthly_regional_influence = 0.15
+	monthly_regional_influence = 0.025
+	monthly_chartered_legitimacy = 0.025
 }
 
 unconditional_surrender = {
@@ -799,6 +804,8 @@ unconditional_surrender = {
 
 call_for_peace = {
 	war_exhaustion = 0.005
+	#ADH midwest
+	monthly_chartered_legitimacy = -0.03
 }
 
 war_exhaustion = {
@@ -1381,7 +1388,7 @@ is_great_power = {						#Only works with Rights of Man DLC enabled
 	embracement_cost = -0.1
 	max_absolutism = 5
 	#ADH Midwest
-	monthly_regional_influence = 0.2
+	monthly_regional_influence = 0.1
 }
 
 in_golden_era = {
@@ -1393,7 +1400,7 @@ in_golden_era = {
 	max_revolutionary_zeal = 10
 	monthly_arabic_trade_influence_power = 0.25
 	#ADH Midwest
-	monthly_regional_influence = 0.25
+	monthly_regional_influence = 0.05
 }
 
 absolutism = {
@@ -1573,7 +1580,6 @@ subject_nation = {
 	global_tax_income = -6
 	land_forcelimit	= -3
 	naval_forcelimit = -6
-	monthly_regional_influence = -0.02
 }
 
 vassal_nation = {

@@ -1,4 +1,3 @@
-
 monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
@@ -685,6 +684,7 @@ republic = {
 				midwest_chartered_company_government_aggressive
 				chicago_aggressive
 				midwestern_ver_american_repub
+				chartered_federation
 			}
 		}
 		republican_virtues = {

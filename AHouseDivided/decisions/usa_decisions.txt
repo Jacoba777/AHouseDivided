@@ -560,6 +560,9 @@ country_decisions = {
 			is_subject_of_type = midwest_bloc_subordinate
 		}
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = leave_current_midwest_bloc_tooltip
+			}
 			midwest_subject_matches_or_exceeds_overlord = yes
 		}
 		effect = {
@@ -680,4 +683,304 @@ country_decisions = {
 
 		}
 	}
+
+	#midwest constituent market establishment
+	establish_constituent_market = {
+		potential = {
+			has_government_mechanic = midwest_mercantilism
+			has_subject_of_type = midwest_bloc_subordinate
+		}
+		allow = {
+			any_subject_country = {
+				is_subject_of_type = midwest_bloc_subordinate
+				not = { has_country_modifier = economic_bloc_transition }
+				midwest_contiguous_bloc = yes
+				has_opinion = {
+					who = root
+					value = 150
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_usa.1764
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	hold_federation_talks = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			not = { has_global_flag = federation_talks_held }
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			every_country = {
+				limit = {
+					has_government_mechanic = midwest_mercantilism
+				}
+
+				if = {
+					limit = { is_rival = root }
+					force_remove_rival = root
+				}
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = root
+							modifier = opinion_annex_vassal
+						}
+					}
+					remove_opinion = {
+						who = root
+						modifier = opinion_annex_vassal
+					}
+				}
+
+				add_historical_friend = root
+			}
+
+			every_subject_country = {
+				limit = {
+					or = {
+						is_subject_of_type_with_overlord = {
+							who = root
+							type = midwest_bloc_subordinate
+						}
+						is_subject_of_type_with_overlord = {
+							who = root
+							type = midwest_bloc_constituent
+						}
+					}
+				}
+				country_event = {
+					id = flavor_usa.40
+					days = -1
+				}
+			}
+
+			set_global_flag = federation_talks_held
+		}
+	}
+
+	convert_vassal_to_midwest_system = {
+		potential = {
+			or = {
+				has_government_mechanic = midwest_mercantilism
+				has_government_mechanic = chartered_legitimacy_mechanic
+			}
+			any_subject_country = {
+				is_subject_of_type = vassal
+			}
+		}
+
+		allow = {
+			any_subject_country = {
+				is_subject_of_type = vassal
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = vassal
+					}
+					country_event = {
+						id = flavor_usa.40
+						days = -1
+					}
+				}
+			}
+			
+		}
+	}
+
+	federation_health_10_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			check_variable = {
+				which = lakes_federation_health
+				value = 10
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}
+
+	federation_health_9_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 9
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}
+	
+	federation_health_8_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 8
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_7_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 7
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_6_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 6
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_5_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 5
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_4_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 4
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_3_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 3
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_2_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 2
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
+	federation_health_1_marker = {
+		potential = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+			is_variable_equal = {
+				which = lakes_federation_health
+				value = 1
+			}
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+		
+		}
+	}	
+
 }

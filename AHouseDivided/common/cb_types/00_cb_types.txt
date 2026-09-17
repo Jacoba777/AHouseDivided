@@ -2340,3 +2340,23 @@ cb_purge_outfit = {
 
 	war_goal = war_goal_change_government
 }
+
+cb_federation_expand = {
+	prerequisites_self = {
+		has_government_mechanic = chartered_legitimacy_mechanic
+	}
+
+	prerequisites = {
+		FROM = {
+			is_neighbor_of = root
+		}
+		from = {
+			any_owned_province = {
+				is_permanent_claim = root
+			}
+		}
+		
+	}
+
+	war_goal = federation_expansion
+}

@@ -80,7 +80,7 @@ dixie_autocracy_reform = {
 	lock_level_when_selected = yes
 	icon = "ballot_box"
 	potential = {
-		has_dlc = "Domination"
+
 		or = {
 			culture_group = culture_group_texas_triangle
 			culture_group = culture_group_appalachian

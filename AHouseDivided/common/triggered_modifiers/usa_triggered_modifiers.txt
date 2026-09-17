@@ -17,7 +17,6 @@ triggered_modifier_ai_colonization_incentive = {
 }
 
 
-
 #LA Basin Control Modifiers
 wabash_modifier = {
     potential = { 
@@ -843,3 +842,94 @@ horde_colonist_added = {
     manpower_recovery_speed = 0.05
     movement_speed = 0.05
 }
+
+
+#chartered legitimacy crisis modifier(s)
+ignoring_the_charter_pain1 = {
+    potential = {
+        has_reform = chartered_federation
+    }
+
+    trigger = {
+        num_of_owned_provinces_with = {
+            not = {
+                is_core = root
+            }
+            value = 1
+        }
+    }
+
+    monthly_chartered_legitimacy = -0.05
+}
+
+ignoring_the_charter_pain2 = {
+    potential = {
+        has_reform = chartered_federation
+    }
+
+    trigger = {
+        num_of_owned_provinces_with = {
+            not = {
+                is_core = root
+            }
+            value = 11
+        }
+    }
+
+    monthly_chartered_legitimacy = -0.1
+}
+
+ignoring_the_charter_pain3 = {
+    potential = {
+        has_reform = chartered_federation
+    }
+
+    trigger = {
+        num_of_owned_provinces_with = {
+            not = {
+                is_core = root
+            }
+            value = 21
+        }
+    }
+
+    monthly_chartered_legitimacy = -0.15
+}
+
+ignoring_the_charter_pain4 = {
+    potential = {
+        has_reform = chartered_federation
+    }
+
+    trigger = {
+        num_of_owned_provinces_with = {
+            not = {
+                is_core = root
+            }
+            value = 31
+        }
+    }
+
+    monthly_chartered_legitimacy = -0.2
+}
+
+
+
+#chartered legitimacy state legitimacy
+
+charterfed_midwest = {
+    potential = {
+        has_reform = chartered_federation
+    }
+
+    trigger = {
+        num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+            continent = continent_midwest
+            is_core = root
+            value = 950
+        }
+    }
+
+    monthly_chartered_legitimacy = 2.5
+}
+

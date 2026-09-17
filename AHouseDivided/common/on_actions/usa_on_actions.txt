@@ -27,7 +27,47 @@ on_monthly_pulse = {
         }
         remove_country_modifier = vancouver_corporation_investing
     }
-    
+    if = {
+        limit = {
+            or = {
+                is_subject_of_type = midwest_bloc_subordinate
+                is_subject_of_type = midwest_core_bloc_member
+            }
+            overlord = {
+                is_subject_of_type = midwest_bloc_subordinate
+            }
+        }
+        grant_independence = yes
+    }
+    if = {#lakes federation health tracker
+        limit = {
+            has_government_mechanic = chartered_legitimacy_mechanic
+            not = {
+                has_country_modifier = fed_health_buffer
+            }
+            
+        }
+        country_event = {
+            id = fed_health.1
+            days = -1
+        }
+        country_event = {
+            id = fed_health.11
+        }
+    }
+    if = {#lakes federation stats resetter
+        limit = {
+            has_government_mechanic = chartered_legitimacy_mechanic            
+        }
+        country_event = {
+            id = fed_health.11
+            days = -1
+        }
+        country_event = {
+            id = fed_health.111
+        }
+    }
+
 }
 
 
@@ -72,7 +112,6 @@ on_startup = {
             days = 20
         }
     }
-    
 }
 
 #change clients to corporatocracies
@@ -132,13 +171,6 @@ on_center_of_trade_upgrade = {
         }
     }
 }
-
-
-#compact violation - proved unfeasible, added stab into gov refrom with ability to change out between aggressive and non
-
-
-#lost center of trade - proving infeasible
-
 
 #midwest compact violation, on annex province
 on_province_owner_change = {

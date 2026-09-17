@@ -15,7 +15,7 @@ country_decisions = {
 				capital_scope = {
 					OR = {
 						superregion = superregion_upper_great_lakes
-						superregion = superregion_lower_great_lakes
+						superregion = superregion_ohio_river_valley
 						superregion = superregion_midatlantic
 					}
 				}
@@ -38,6 +38,7 @@ country_decisions = {
 			NOT = { has_country_flag = formed_a_megaregion }
 			NOT = { tag = PAP }
 			NOT = { exists = GTL }
+			has_government_mechanic = midwest_mercantilism
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -122,20 +123,51 @@ country_decisions = {
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			if = {
+				limit = {
+					has_government_mechanic = midwest_mercantilism
+				}
+				add_government_reform = chartered_federation
+				set_government_power = {
+					mechanic_type = chartered_legitimacy_mechanic
+					power_type = chartered_legitimacy
+					value = 50
+				}
+
+				hidden_effect = {
+					every_country = {
+						limit = {
+							has_government_mechanic = midwest_mercantilism
+						}
+						country_event = { id = flavor_usa.1796 }
+					}
+					every_owned_province = {
+						set_province_flag = federation_lands
+					}
+					every_subject_country = {
+						limit = {
+							is_subject_of = root
+						}
+						
+						grant_independence = yes
+						create_subject = {
+							subject_type = midwest_bloc_constituent
+							who = GTL
+						}
+					}
+					set_variable = { #scale of 1-10
+						which = lakes_federation_health
+						value = 9
+					}
+				}
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
 			add_prestige = 50
 			swap_non_generic_missions = yes
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
-					country_event = { id = flavor_xus.1789 }
-				}
-			}
+			
 		}
 		ai_will_do = { factor = 1 }
 	}
