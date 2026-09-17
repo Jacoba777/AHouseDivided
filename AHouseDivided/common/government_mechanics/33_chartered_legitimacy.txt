@@ -1,0 +1,208 @@
+chartered_legitimacy_mechanic = {
+
+	powers = {
+
+		chartered_legitimacy = {
+
+			gui = egyptian_westernization_gov_mech
+			show_before_interactions = yes
+
+			max = 100
+
+			reset_on_new_ruler = no
+
+			base_monthly_growth = 0.05
+			development_scaled_monthly_growth = 0.001
+
+			# ==================================================
+			# EFFECTS OF CHARTERED LEGITIMACY
+			# ==================================================
+
+			scaled_modifier = {
+				modifier = {
+					diplomatic_reputation = 1
+					trade_efficiency = 0.05
+					global_trade_power = 0.05
+					improve_relation_modifier = 0.1
+				}
+
+				start_value = 50
+				end_value = 100
+			}
+
+			# ==================================================
+			# LOW LEGITIMACY PENALTIES
+			# ==================================================
+
+			reverse_scaled_modifier = {
+
+				modifier = {
+					diplomatic_reputation = -0.5
+					global_trade_power = -0.05
+					global_unrest = 2
+					improve_relation_modifier = -0.10
+				}
+
+				start_value = 0
+				end_value = 50
+			}
+
+			is_good = yes
+		}
+	}
+
+
+	interactions = {
+
+
+		# ======================================================
+		# EXTEND THE CHARTER
+		# ======================================================
+
+		extend_the_charter = {
+
+			icon = GFX_study_western_administration
+			gui = "egyptian_westernization_interaction_button"
+
+			cost_type = chartered_legitimacy
+			#cost = 15
+
+			#cooldown_years = 10
+
+			trigger = {
+				has_government_power = {
+					mechanic_type = chartered_legitimacy_mechanic
+					power_type = chartered_legitimacy
+					value = 15
+				}
+				any_neighbor_country = {
+					AND = {
+						is_subject = no
+						total_development = 500
+						hidden_trigger = {
+							was_player = no
+						}
+						has_opinion = {
+							who = root
+							value = 0
+						}
+					}
+				}
+				
+			}
+
+			effect = {
+				hidden_effect = {
+					root = {
+						country_event = {
+							id = flavor_usa.230001
+							days = -1
+						}
+					}
+				}
+			}
+
+			ai_chance = {
+				factor = 1
+			}
+		}
+
+
+		# ======================================================
+		# Internal Investment/Governorship stabilization
+		# ======================================================
+
+		governorships_to_civil_admin = {
+
+			icon = GFX_study_western_manufacturing
+			gui = "egyptian_westernization_interaction_button"
+
+			cost_type = chartered_legitimacy
+			#cost = 20
+
+			cooldown_years = 10
+
+			trigger = {
+				any_subject_country = {
+					is_subject_of_type = midwest_federal_governorship
+					has_opinion = {
+						who = overlord
+						value = 150
+					}
+					not = {
+						num_of_rebel_controlled_provinces = 1
+					}
+					not = {
+						has_country_modifier = recent_governorship
+					}
+				}
+			}
+
+			effect = {
+				hidden_effect = {
+					root = {
+						country_event = {
+							id = flavor_usa.2301
+							days = -1
+						}
+					}
+				}
+				
+				
+			}
+
+			ai_chance = {
+				factor = 1
+			}
+		}
+
+
+		# ======================================================
+		# ESTABLISH TRANSITIONAL ADMINISTRATION
+		# ======================================================
+
+		establish_transitional_administration = {
+
+			icon = GFX_study_western_administration
+			gui = "egyptian_westernization_interaction_button"
+
+			cost_type = chartered_legitimacy
+			#cost = 20
+
+			cooldown_years = 15
+
+			trigger = {
+				any_subject_country = {
+					years_in_vassalage_under = {
+						who = root
+						years = 20
+					}
+					is_subject_of_type = midwest_bloc_constituent
+					has_opinion = {
+						who = root
+						value = 175
+					}
+				}
+			}
+
+			effect = {
+				hidden_effect = {
+					root = {
+						country_event = {
+							id = flavor_usa.2205
+							days = -1
+						}
+					}
+				}
+				
+				
+			}
+
+			ai_chance = {
+				factor = 0.75
+			}
+		}
+
+
+	}
+}

@@ -1,16 +1,13 @@
 namespace = flavor_usa
-
 # Blue Crab Boom
 country_event = {
 	id = flavor_usa.1
 	title = flavor_usa.1.title
 	desc = flavor_usa.1.desc
 	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
-	
 	mean_time_to_happen = {
 		months = 360
 	}
-	
 	trigger = {
 		num_of_owned_provinces_with = {
 			value = 1
@@ -21,10 +18,8 @@ country_event = {
 			trade_goods = fish
 		}
 	}
-
 	option = {
 		name = flavor_usa.1.a
-
 		every_owned_province = {
 			limit = {
 				OR = {
@@ -38,19 +33,19 @@ country_event = {
 				duration = 730
 			}
 		}
-		
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+		}
 	}
-
 	option = {
 		name = flavor_usa.1.b
-
 		add_country_modifier = {
 			name = "country_modifier_blue_crab_handouts"
 			duration = 1825
 		}
-		
-		ai_chance = { factor = 0 }
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -60,24 +55,21 @@ country_event = {
 	title = flavor_usa.2.title
 	desc = flavor_usa.2.desc
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
 	is_triggered_only = yes
-
 	option = {
 		name = flavor_usa.2.a
-
 		change_government = monarchy
-		
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+		}
 	}
-
 	option = {
 		name = flavor_usa.2.b
-
 		add_stability = 1
 		add_republican_tradition = 25
-		
-		ai_chance = { factor = 0 }
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 
@@ -88,11 +80,8 @@ country_event = {
 	desc = flavor_usa.3.desc
 	picture = CIVIL_WAR_eventPicture
 	goto = rebel_province
-	
 	major = yes
-	
 	is_triggered_only = yes
-	
 	trigger = {
 		OR = {
 			has_reform = dixie_republic
@@ -104,616 +93,6097 @@ country_event = {
 		}
 		crown_land_share = 5
 	}
-
 	option = {
 		name = flavor_usa.3.a
-		
 		add_years_of_income = -0.5
 		add_yearly_manpower = -1.5
-		kill_leader = { type = general }
-		
-		ai_chance = { factor = 1 }
+		kill_leader = {
+			type = general
+		}
+		ai_chance = {
+			factor = 1
+		}
 	}
-
 	option = {
 		name = flavor_usa.3.b
-		
 		hidden_effect = {
 			set_saved_name = {
 				key = upstart_pretender
 				type = leader
 			}
 		}
-		
 		random_owned_province = {
 			limit = {
 				is_core = ROOT
 				is_capital = no
 			}
 			spawn_rebels = {
-				type = 	pretender_rebels
+				type = pretender_rebels
 				leader = upstart_pretender
 				religion = ROOT
 				size = 2
 				win = yes
 			}
 			add_local_autonomy = 25
-
-			hidden_effect = { save_event_target_as = rebel_province }
+			hidden_effect = {
+				save_event_target_as = rebel_province
+			}
 		}
-		
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
-
 ##New/Old South Rivalry
-
-
-
 #old wants kick out new - raids
 #see usa decisions
-
 #new response to raids - demand recompense (kill mercenary group, or mil advisor) [blame mercs or the gov?(gov gives ae)]
 #see below
-
 #old nobility demands liberation of new province
 #see noble agendas
-
 #new oligarch demands subjugation of old troublemaker (very small nations comparatively)
 #see noble agendas
-
 #new to old destabilization - either assassin, economic lockout, manpower siphoning, or estate disloyalty/corruption increase
 #see usa decisions
-
 #old to new destabilize - estate disloyalty (oligarch), terrorize merchants
-
 # ========================
 #  Fund Corruption
 # ========================
 country_event = {
-    id = flavor_usa.301
-    title = flavor_usa.301.t
-    desc = flavor_usa.301.desc
-    picture = GFX_event_corruption
-
-    is_triggered_only = yes
-    
-    trigger = {
-        has_country_flag = newsouth
-    }
-
-    immediate = {
-        root = {
-            add_country_modifier = {
-                name = dixie_corruption
-                duration = 600
-            }
-        }
-
-        # Find up to 4 qualifying Old South targets
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_1_1
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_1 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_2_1
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_1 }
-                NOT = { tag = event_target:flavor_usa_target_2_1 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_3_1
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_1 }
-                NOT = { tag = event_target:flavor_usa_target_2_1 }
-                NOT = { tag = event_target:flavor_usa_target_3_1 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_4_1
-        }
-    }
-
-    option = {
-        name = "Fund corruption in [flavor_usa_target_1_1.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_1_1 }
-        hidden_effect = {
-            event_target:flavor_usa_target_1_1 = {
-                country_event = {
-                    id = flavor_usa.45
-                    days = -1
-                }
-            }
-            ROOT = { add_treasury = -500 }
-        }
-    }
-    option = {
-        name = "Fund corruption in [flavor_usa_target_2_1.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_2_1 }
-        hidden_effect = {
-            event_target:flavor_usa_target_2_1 = {
-                country_event = {
-                    id = flavor_usa.45
-                    days = -1
-                }
-            }
-            ROOT = { add_treasury = -500 }
-        }
-    }
-    option = {
-        name = "Fund corruption in [flavor_usa_target_3_1.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_3_1 }
-        hidden_effect = {
-            event_target:flavor_usa_target_3_1 = {
-                country_event = {
-                    id = flavor_usa.45
-                    days = -1
-                }
-            }
-            ROOT = { add_treasury = -500 }
-        }
-    }
-    option = {
-        name = "Fund corruption in [flavor_usa_target_4_1.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_4_1 }
-        hidden_effect = {
-            event_target:flavor_usa_target_4_1 = {
-                country_event = {
-                    id = flavor_usa.45
-                    days = -1
-                }
-            }
-            ROOT = { add_treasury = -500 }
-        }
-    }
+	id = flavor_usa.301
+	title = flavor_usa.301.t
+	desc = flavor_usa.301.desc
+	picture = GFX_event_corruption
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = newsouth
+	}
+	immediate = {
+		root = {
+			add_country_modifier = {
+				name = dixie_corruption
+				duration = 600
+			}
+		}
+		# Find up to 4 qualifying Old South targets
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_1_1
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_1
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_2_1
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_1
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_2_1
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_3_1
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_1
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_2_1
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_3_1
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_4_1
+		}
+	}
+	option = {
+		name = "Fund corruption in [flavor_usa_target_1_1.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_1_1
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_1_1 = {
+				country_event = {
+					id = flavor_usa.45
+					days = -1
+				}
+			}
+			ROOT = {
+				add_treasury = -500
+			}
+		}
+	}
+	option = {
+		name = "Fund corruption in [flavor_usa_target_2_1.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_2_1
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_2_1 = {
+				country_event = {
+					id = flavor_usa.45
+					days = -1
+				}
+			}
+			ROOT = {
+				add_treasury = -500
+			}
+		}
+	}
+	option = {
+		name = "Fund corruption in [flavor_usa_target_3_1.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_3_1
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_3_1 = {
+				country_event = {
+					id = flavor_usa.45
+					days = -1
+				}
+			}
+			ROOT = {
+				add_treasury = -500
+			}
+		}
+	}
+	option = {
+		name = "Fund corruption in [flavor_usa_target_4_1.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_4_1
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_4_1 = {
+				country_event = {
+					id = flavor_usa.45
+					days = -1
+				}
+			}
+			ROOT = {
+				add_treasury = -500
+			}
+		}
+	}
 }
 
 # ========================
 #  Shut Out Merchants
 # ========================
 country_event = {
-    id = flavor_usa.311
-    title = flavor_usa.311.t
-    desc = flavor_usa.311.desc
-    picture = GFX_event_trade_embargo
-
-    is_triggered_only = yes
-
-    trigger = {
-        has_country_flag = newsouth
-    }
-
-    immediate = {
-        root = {
-            add_country_modifier = {
-                name = dixie_embargoed
-                duration = 600
-            }
-        }
-        # same selection logic as above
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_1_2
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_2 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_2_2
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_2 }
-                NOT = { tag = event_target:flavor_usa_target_2_2 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_3_2
-        }
-        random_neighbor_country = {
-            limit = {
-                has_country_flag = oldsouth
-                NOT = { tag = event_target:flavor_usa_target_1_2 }
-                NOT = { tag = event_target:flavor_usa_target_2_2 }
-                NOT = { tag = event_target:flavor_usa_target_3_2 }
-                OR = {
-                    not = {
-                        has_opinion = {
-                            who = ROOT 
-                            value = -50 
-                        }
-                    }
-                    is_rival = ROOT
-                    ROOT = { is_rival = PREV }
-                }
-            }
-            save_event_target_as = flavor_usa_target_4_2
-        }
-    }
-
-    option = {
-        name = "Shut out merchants from [flavor_usa_target_1_2.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_1_2 }
-        hidden_effect = {
-            event_target:flavor_usa_target_1_2 = {
-                add_country_modifier = {
-                    name = new_south_trade_disruption
-                    duration = 1825
-                }
-            }
-            ROOT = { add_treasury = -250 }
-        }
-    }
-    option = {
-        name = "Shut out merchants from [flavor_usa_target_2_2.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_2_2 }
-        hidden_effect = {
-            event_target:flavor_usa_target_2_2 = {
-                add_country_modifier = {
-                    name = new_south_trade_disruption
-                    duration = 1825
-                }
-            }
-            ROOT = { add_treasury = -250 }
-        }
-    }
-    option = {
-        name = "Shut out merchants from [flavor_usa_target_3_2.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_3_2 }
-        hidden_effect = {
-            event_target:flavor_usa_target_3_2 = {
-                add_country_modifier = {
-                    name = new_south_trade_disruption
-                    duration = 1825
-                }
-            }
-            ROOT = { add_treasury = -250 }
-        }
-    }
-    option = {
-        name = "Shut out merchants from [flavor_usa_target_4_2.GetName]"
-        trigger = { has_saved_event_target = flavor_usa_target_4_2 }
-        hidden_effect = {
-            event_target:flavor_usa_target_4_2 = {
-                add_country_modifier = {
-                    name = new_south_trade_disruption
-                    duration = 1825
-                }
-            }
-            ROOT = { add_treasury = -250 }
-        }
-    }
+	id = flavor_usa.311
+	title = flavor_usa.311.t
+	desc = flavor_usa.311.desc
+	picture = GFX_event_trade_embargo
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = newsouth
+	}
+	immediate = {
+		root = {
+			add_country_modifier = {
+				name = dixie_embargoed
+				duration = 600
+			}
+		}
+		# same selection logic as above
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_1_2
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_2
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_2_2
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_2
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_2_2
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_3_2
+		}
+		random_neighbor_country = {
+			limit = {
+				has_country_flag = oldsouth
+				NOT = {
+					tag = event_target:flavor_usa_target_1_2
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_2_2
+				}
+				NOT = {
+					tag = event_target:flavor_usa_target_3_2
+				}
+				OR = {
+					not = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					is_rival = ROOT
+					ROOT = {
+						is_rival = PREV
+					}
+				}
+			}
+			save_event_target_as = flavor_usa_target_4_2
+		}
+	}
+	option = {
+		name = "Shut out merchants from [flavor_usa_target_1_2.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_1_2
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_1_2 = {
+				add_country_modifier = {
+					name = new_south_trade_disruption
+					duration = 1825
+				}
+			}
+			ROOT = {
+				add_treasury = -250
+			}
+		}
+	}
+	option = {
+		name = "Shut out merchants from [flavor_usa_target_2_2.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_2_2
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_2_2 = {
+				add_country_modifier = {
+					name = new_south_trade_disruption
+					duration = 1825
+				}
+			}
+			ROOT = {
+				add_treasury = -250
+			}
+		}
+	}
+	option = {
+		name = "Shut out merchants from [flavor_usa_target_3_2.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_3_2
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_3_2 = {
+				add_country_modifier = {
+					name = new_south_trade_disruption
+					duration = 1825
+				}
+			}
+			ROOT = {
+				add_treasury = -250
+			}
+		}
+	}
+	option = {
+		name = "Shut out merchants from [flavor_usa_target_4_2.GetName]"
+		trigger = {
+			has_saved_event_target = flavor_usa_target_4_2
+		}
+		hidden_effect = {
+			event_target:flavor_usa_target_4_2 = {
+				add_country_modifier = {
+					name = new_south_trade_disruption
+					duration = 1825
+				}
+			}
+			ROOT = {
+				add_treasury = -250
+			}
+		}
+	}
 }
-
 
 ###Dixie Corruption event
-
 country_event = {
-    id = flavor_usa.45
-    title = flavor_usa.45.t
-    desc = flavor_usa.45.desc
-    picture = GFX_event_corruption
-
-    is_triggered_only = yes
-
-    option = {
-        name = flavor_usa.45.a
-        add_country_modifier = {
-            name = new_south_corruption
-            duration = 600
-        }
-        add_corruption = 2
-    }
+	id = flavor_usa.45
+	title = flavor_usa.45.t
+	desc = flavor_usa.45.desc
+	picture = GFX_event_corruption
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.45.a
+		add_country_modifier = {
+			name = new_south_corruption
+			duration = 600
+		}
+		add_corruption = 2
+	}
 }
-
 
 ###Raiding Response
+country_event = {
+	id = flavor_usa.50
+	title = flavor_usa.50.t
+	desc = flavor_usa.50.desc
+	picture = gfx_event_village_raided
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.50.a		# "Demand the perpetrators be handed over"
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:flavor_usa_raider = {
+						exists = yes
+					}
+				}
+				event_target:flavor_usa_raider = {
+					country_event = {
+						id = flavor_usa.70
+						days = 7
+					}
+				}
+			}
+		}
+		add_power_projection = {
+			type = insulted_rival
+			amount = 5
+		}
+	}
+	option = {
+		name = flavor_usa.50.b		# "Demand a government official be turned over"
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:flavor_usa_raider = {
+						exists = yes
+					}
+				}
+				event_target:flavor_usa_raider = {
+					country_event = {
+						id = flavor_usa.80
+						days = 7
+					}
+				}
+			}
+		}
+		add_dip_power = -50
+		add_legitimacy = 5
+	}
+	option = {
+		name = flavor_usa.50.c		# "Drop the issue"
+		ai_chance = {
+			factor = 0.5
+		}
+		add_power_projection = {
+			type = insulted_rival
+			amount = -15
+		}
+		add_prestige = -5
+	}
+	option = {
+		trigger = {
+			ruler_has_personality = fierce_negotiator_personality
+		}
+		name = flavor_usa.50.d		# "Demand full accountability"
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:flavor_usa_raider = {
+						exists = yes
+					}
+				}
+				event_target:flavor_usa_raider = {
+					country_event = {
+						id = flavor_usa.90
+						days = 7
+					}
+				}
+			}
+		}
+		add_legitimacy = 10
+		add_power_projection = {
+			type = insulted_rival
+			amount = 10
+		}
+		add_prestige = 10
+	}
+}
 
 country_event = {
-    id = flavor_usa.50
-    title =  flavor_usa.50.t
-    desc =  flavor_usa.50.desc
-    picture = gfx_event_village_raided
+	id = flavor_usa.60
+	title = flavor_usa.60.t
+	desc = flavor_usa.60.desc
+	picture = GFX_event_village_burning
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.60.a
+		add_treasury = 200
+		add_prestige = 10
+	}
+}
 
+country_event = {
+	id = flavor_usa.70
+	title = flavor_usa.70.t
+	desc = flavor_usa.70.desc
+	picture = GFX_event_village_burning
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.70.a
+		add_country_modifier = {
+			name = raid_punished
+			duration = 9125
+		}
+		add_prestige = -15
+	}
+	option = {
+		name = flavor_usa.70.b
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = dixie_raided_recently_tag
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_humiliate
+				who = root
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_usa.80
+	title = flavor_usa.80.t
+	desc = flavor_usa.80.desc
+	picture = GFX_event_village_burning
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.80.a
+		kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+		add_legitimacy = -15
+	}
+	option = {
+		name = flavor_usa.80.b
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = dixie_raided_recently_tag
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_humiliate
+				who = root
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_usa.90
+	title = flavor_usa.90.t
+	desc = flavor_usa.90.desc
+	picture = GFX_event_village_burning
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.90.a
+		kill_advisor_by_category_effect = {
+			MIL = yes
+		}
+		add_legitimacy = -25
+		add_country_modifier = {
+			name = raid_punished
+			duration = 1825
+		}
+		add_prestige = -30
+	}
+	option = {
+		name = flavor_usa.90.b
+		every_neighbor_country = {
+			limit = {
+				has_country_flag = dixie_raided_recently_tag
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_humiliate
+				who = root
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_usa.1865
+	title = flavor_usa.1865.t
+	desc = flavor_usa.1865.desc
+	picture = GFX_event_village_burning
+	is_triggered_only = yes
+	option = {
+		name = flavor_usa.1865.a
+		trigger = {
+			not = {
+				has_country_modifier = dixie_embargoed
+			}
+			treasury = 250
+		}
+		country_event = {
+			id = flavor_usa.311
+		}
+	}
+	option = {
+		name = flavor_usa.1865.b
+		trigger = {
+			not = {
+				has_country_modifier = dixie_corruption
+			}
+			treasury = 500
+		}
+		country_event = {
+			id = flavor_usa.301
+		}
+	}
+}
+
+
+
+######################
+#OK Councils
+######################
+country_event = {
+	id = flavor_usa.46
+	title = flavor_usa.46.t
+	desc = flavor_usa.46.d
+	trigger = {
+		or = {
+			faction_influence = {
+				faction = ok_militia
+				influence = 70
+			}
+			faction_influence = {
+				faction = ok_frontier
+				influence = 70
+			}
+			faction_influence = {
+				faction = ok_traders
+				influence = 70
+			}
+		}
+		not = {
+			has_country_modifier = syndicate_council_recently_convened
+		}
+	}
+	option = {
+		#Stay with the leading militia
+		name = flavor_usa.46.a
+		custom_tooltip = ok_factions_keep_lead_tt
+		trigger = {
+			faction_influence = {
+				faction = ok_militia
+				influence = 70
+			}
+		}
+		add_country_modifier = {
+			name = ok_militia_pleased
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_frontier_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_traders_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+	option = {
+		#Stay with the leading frontier
+		name = flavor_usa.46.b
+		custom_tooltip = ok_factions_keep_lead_tt
+		trigger = {
+			faction_influence = {
+				faction = ok_frontier
+				influence = 70
+			}
+		}
+		add_country_modifier = {
+			name = ok_militia_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_frontier_pleased
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_traders_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+	option = {
+		#Stay with the leading traders
+		name = flavor_usa.46.c
+		custom_tooltip = ok_factions_keep_lead_tt
+		trigger = {
+			faction_influence = {
+				faction = ok_traders
+				influence = 70
+			}
+		}
+		add_country_modifier = {
+			name = ok_militia_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_frontier_pissed
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = ok_traders_pleased
+			duration = 3650
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+	option = {
+		#Change support to the militia
+		name = flavor_usa.46.d
+		trigger = {
+			or = {
+				faction_influence = {
+					faction = ok_traders
+					influence = 70
+				}
+				faction_influence = {
+					faction = ok_frontier
+					influence = 70
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_traders
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = 20
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_frontier
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = 20
+			}
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+	option = {
+		#Change support to the frontiers
+		name = flavor_usa.46.e
+		trigger = {
+			or = {
+				faction_influence = {
+					faction = ok_traders
+					influence = 70
+				}
+				faction_influence = {
+					faction = ok_militia
+					influence = 70
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_traders
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = 20
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_militia
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = 20
+			}
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+	option = {
+		#Change support to the traders
+		name = flavor_usa.46.f
+		trigger = {
+			or = {
+				faction_influence = {
+					faction = ok_militia
+					influence = 70
+				}
+				faction_influence = {
+					faction = ok_frontier
+					influence = 70
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_militia
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = 20
+			}
+		}
+		if = {
+			limit = {
+				faction_influence = {
+					faction = ok_frontier
+					influence = 70
+				}
+			}
+			add_faction_influence = {
+				faction = ok_frontier
+				influence = -30
+			}
+			add_faction_influence = {
+				faction = ok_militia
+				influence = -5
+			}
+			add_faction_influence = {
+				faction = ok_traders
+				influence = 20
+			}
+		}
+		add_country_modifier = {
+			name = syndicate_council_recently_convened
+			duration = 3650
+			hidden = yes
+		}
+	}
+}
+
+##############################################
+###vancouver corporation
+###############################################
+
+#initial investment 
+country_event = {
+	id = flavor_usa.185190
+	title = flavor_usa.185190.t
+	desc = flavor_usa.185190.desc
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = {
+				AND = {
+					is_subject = no
+					NOT = {
+						OR = {	
+							has_country_modifier = vancouver_corporation_investing 	
+							has_country_modifier = anti_corp_stance 
+						}
+					}
+				
+					# Country must neighbor Seattle (or a subject/appanage of Seattle)
+					OR = {
+						any_neighbor_country = {
+							has_country_flag = vancouver_corp_flag
+						}
+						any_neighbor_country = {
+							overlord = {
+								has_country_flag = vancouver_corp_flag
+							}
+						}
+					}	
+				}
+				
+			}
+			# Optional: trigger a follow-up event for this country
+			country_event = {
+				id = flavor_usa.1851902
+				days = -1
+			}
+			reverse_add_opinion = {
+				who = root
+				modifier = vancorp_investment_opinion
+			}
+		}
+	}
+	option = {
+		name = vc_corp_invest_self
+	}
+}
+
+#initial invest notification
+country_event = {
+	id = flavor_usa.1851902
+	title = flavor_usa.1851902.t
+	desc = flavor_usa.1851902.desc
+	picture = TRADE_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = vc_corp_invest_target
+		add_country_modifier = {
+			name = vancouver_corporation_investing
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_recent_investment
+			duration = 3650
+		}
+		hidden_effect = {
+			set_country_flag = vancouver_economic_system_check
+		}
+	}
+}
+
+#upped to dependency
+country_event = {
+	id = flavor_usa.185180
+	title = flavor_usa.185180.t
+	desc = flavor_usa.185180.desc
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = {
+				is_subject = no
+				has_country_modifier = vancouver_corporation_investing
+				not = {
+					has_country_modifier = vancouver_recent_investment
+				}
+				# Country must neighbor Seattle (or a subject/appanage of Seattle)
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = vancouver_corp_flag
+					}
+					any_neighbor_country = {
+						overlord = {
+							has_country_flag = vancouver_corp_flag
+						}
+					}
+				}
+			}
+			# Optional: trigger a follow-up event for this country
+			country_event = {
+				id = flavor_usa.1851802
+				days = -1
+			}
+		}
+	}
+	option = {
+		name = vc_corp_trib_self
+	}
+}
+
+#upped to dependency notification (accept with grace or malice)
+country_event = {
+	id = flavor_usa.1851802
+	title = "Seattle Offer"
+	desc = flavor_usa.1851802.desc
+	is_triggered_only = yes
+	option = {
+		#grace
+		name = vc_response_grace
+		random_country = {
+			limit = {
+				has_country_flag = vancouver_corp_flag
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = vancouver_dependency
+			}
+			add_country_modifier = {
+				name = vancouver_corporate_dependency_stack
+				duration = 7300
+			}
+		}
+		add_country_modifier = {
+			name = vancouver_corporate_dependency
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_recent_corporate_dependency
+			duration = 3650
+			hidden = yes
+		}
+		remove_country_modifier = vancouver_corporation_investing
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		#malice
+		name = vc_response_malice
+		random_country = {
+			limit = {
+				has_country_flag = vancouver_corp_flag
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = vancouver_dependency
+			}
+			add_country_modifier = {
+				name = vancouver_corporate_dependency_stack
+				duration = 7300
+			}
+		}
+		add_country_modifier = {
+			name = vancouver_corporate_dependency
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_begrudging_dependency
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_recent_corporate_dependency
+			duration = 3650
+			hidden = yes
+		}
+		remove_country_modifier = vancouver_corporation_investing
+		ai_chance = {
+			factor = 14
+		}
+	}
+}
+
+#upped to integrated
+country_event = {
+	id = flavor_usa.185100
+	title = flavor_usa.185100.t
+	desc = flavor_usa.185100.desc
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = {
+				is_subject_of_type = vancouver_dependency
+				overlord = {
+					has_country_flag = vancouver_corp_flag
+				}
+				any_neighbor_country = {
+					has_country_flag = vancouver_corp_flag
+				}
+				not = {
+					has_country_modifier = vancouver_recent_corporate_dependency
+				}
+			}
+			country_event = {
+				id = flavor_usa.185101
+				days = -1
+			}
+		}
+	}
+	option = {
+		name = corp_invest_notif
+	}
+}
+
+#upped to integrated notification (accept with grace or malice)
+country_event = {
+	id = flavor_usa.185101
+	title = flavor_usa.185101.t
+	desc = flavor_usa.185101.desc
+	is_triggered_only = yes
+	option = {
+		#grace
+		name = vc_response_grace
+		overlord = {
+			create_subject = {
+				who = ROOT
+				subject_type = appanage
+			}
+			add_country_modifier = {
+				name = vancouver_corporate_appanage_stack
+				duration = 7300
+			}
+		}
+		add_country_modifier = {
+			name = vancouver_integrated_market
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_recent_integrated_market
+			duration = 9125
+			hidden = yes
+		}
+		remove_country_modifier = vancouver_corporate_dependency
+		remove_country_modifier = vancouver_begrudging_dependency
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		#malice
+		name = vc_response_malice
+		overlord = {
+			create_subject = {
+				who = ROOT
+				subject_type = appanage
+			}
+			add_country_modifier = {
+				name = vancouver_corporate_appanage_stack
+				duration = 7300
+			}
+		}
+		add_country_modifier = {
+			name = vancouver_integrated_market
+			duration = -1
+		}
+		add_country_modifier = {
+			name = vancouver_recent_integrated_market
+			duration = 9125
+			hidden = yes
+		}
+		add_country_modifier = {
+			name = vancouver_corporate_fear
+			duration = 7300
+		}
+		remove_country_modifier = vancouver_corporate_dependency
+		remove_country_modifier = vancouver_begrudging_dependency
+		ai_chance = {
+			factor = 19
+		}
+	}
+}
+
+#annexation
+country_event = {
+	id = flavor_usa.185200
+	title = flavor_usa.185200.t
+	desc = flavor_usa.185200.desc
+	is_triggered_only = yes
+	immediate = {
+		########################################
+		# Pick 1
+		########################################
+		random_country = {
+			limit = {
+				is_subject_of_type = appanage
+				has_country_modifier = vancouver_integrated_market
+				not = {
+					has_country_modifier = vancouver_recent_integrated_market
+				}
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = vancouver_corp_flag
+					}
+				}
+			}
+			save_event_target_as = vc_pick_1_annex
+		}
+		########################################
+		# Pick 2
+		########################################
+		random_country = {
+			limit = {
+				is_subject_of_type = appanage
+				has_country_modifier = vancouver_integrated_market
+				not = {
+					has_country_modifier = vancouver_recent_integrated_market
+				}
+				NOT = {
+					tag = event_target:vc_pick_1_annex
+				}
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = vancouver_corp_flag
+					}
+				}
+			}
+			save_event_target_as = vc_pick_2_annex
+		}
+		########################################
+		# Pick 3
+		########################################
+		random_country = {
+			limit = {
+				is_subject_of_type = appanage
+				has_country_modifier = vancouver_integrated_market
+				not = {
+					has_country_modifier = vancouver_recent_integrated_market
+				}
+				NOT = {
+					tag = event_target:vc_pick_1_annex
+				}
+				NOT = {
+					tag = event_target:vc_pick_2_annex
+				}
+				OR = {
+					any_neighbor_country = {
+						has_country_flag = vancouver_corp_flag
+					}
+				}
+			}
+			save_event_target_as = vc_pick_3_annex
+		}
+	}
+	########################################
+	# Options
+	########################################
+	option = {
+		name = vc_pick_1_annex_name
+		trigger = {
+			has_saved_event_target = vc_pick_1_annex
+		}
+		inherit = event_target:vc_pick_1_annex
+		add_country_modifier = {
+			name = vancouver_corporate_absorption_stack
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = vancouver_internal_investment
+			duration = 1825
+		}
+		every_country = {
+			reverse_add_aggressive_expansion = {
+				who = root
+				value = 40
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = vc_pick_2_annex_name
+		trigger = {
+			has_saved_event_target = vc_pick_2_annex
+		}
+		inherit = event_target:vc_pick_2_annex
+		add_country_modifier = {
+			name = vancouver_corporate_absorption_stack
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = vancouver_internal_investment
+			duration = 1825
+		}
+		every_country = {
+			reverse_add_aggressive_expansion = {
+				who = root
+				value = 40
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+
+	}
+	option = {
+		name = vc_pick_3_annex_name
+		trigger = {
+			has_saved_event_target = vc_pick_3_annex
+		}
+		inherit = event_target:vc_pick_3_annex
+		add_country_modifier = {
+			name = vancouver_corporate_absorption_stack
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = vancouver_internal_investment
+			duration = 1825
+		}
+		every_country = {
+			reverse_add_aggressive_expansion = {
+				who = root
+				value = 40
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+### Vancouver Dissolution announcement (to  clear flags/modifiers)
+country_event = {
+	id = flavor_usa.185250
+	title = flavor_usa.185250.t
+	desc = flavor_usa.185250.desc
+	is_triggered_only = yes
+	immediate = {
+		# Clear all Vancouver Corporation related flags and modifiers
+		every_country = {
+			clr_country_flag = vancouver_corp_flag
+			remove_country_modifier = vancouver_corporation_investing
+			remove_country_modifier = vancouver_recent_corporate_dependency
+			remove_country_modifier = vancouver_internal_investment
+			remove_country_modifier = vancouver_recent_integrated_market
+		}
+	}
+	option = {
+		name = vc_dissolution_notif
+	}
+}
+
+#Reestablishment of the Corporation
+country_event = {
+	id = flavor_usa.185251
+	title = flavor_usa.185251.t
+	desc = flavor_usa.185251.desc
+	is_triggered_only = yes
+	immediate = {
+		# Reestablish the Vancouver Corporation flag and modifiers
+		change_government_to_monarchy = yes
+		add_government_reform = stadthalter_monarchy_reform
+	}
+	option = {
+		name = vc_reestablished_notif
+	}
+}
+
+#### USA big boys no collusion
+country_event = {
+    id = flavor_usa.10708090
+    hidden = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        every_country = {
+            reverse_add_opinion = {
+                who = THIS
+                modifier = manifesting_destiny
+            }
+        }
+    }
+    option = {
+        name = manifesting_destiny_option
+    }
+}
+
+
+###Corporatocracy Prospecting
+country_event = {
+    id = flavor_usa.184901
+    title = flavor_usa.184901.t
+    desc = flavor_usa.184901.desc
+    hidden = yes
     is_triggered_only = yes
 
-     option = {
-        name = flavor_usa.50.a # "Demand the perpetrators be handed over"
-        ai_chance = { factor = 1 }
-        hidden_effect = {
-            if = {
-                limit = { event_target:flavor_usa_raider = { exists = yes } }
-                event_target:flavor_usa_raider = {
-                    country_event = {
-                        id = flavor_usa.70
-                        days = 7
-                    }
-                }
-            }
+    immediate = {
+        add_country_modifier = {
+            name = prospector_funding
+            duration = 1825
         }
-        add_power_projection = {
-            type = insulted_rival
-            amount = 5
-        } 
-    }
+        add_treasury = -1100
 
-    option = {
-        name = flavor_usa.50.b # "Demand a government official be turned over"
-        ai_chance = { factor = 1 }
-        hidden_effect = {
-            if = {
-                limit = { event_target:flavor_usa_raider = { exists = yes } }
-                event_target:flavor_usa_raider = {
-                    country_event = {
-                        id = flavor_usa.80
-                        days = 7
-                    }
-                }
+        random_owned_province = {
+            limit = {
+                not = { trade_goods = gold }
+                not = { trade_goods = coal }
+                not = { trade_goods = copper }
+                not = { trade_goods = iron }
+                not = { trade_goods = gems }
             }
+            save_event_target_as = prospecting_province
         }
-        add_dip_power = -50
-        add_legitimacy = 5
     }
-
     option = {
-        name = flavor_usa.50.c # "Drop the issue"
-        ai_chance = { factor = 0.5 }
-        add_power_projection = {
-            type = insulted_rival
-            amount = -10
-        } 
-        add_prestige = -5
-    }
-
-    option = {
-        trigger = {
-            ruler_has_personality = fierce_negotiator_personality
+        name = flavor_usa.184901.a
+        ai_chance = {
+            factor = 10
         }
-        name = flavor_usa.50.d # "Demand full accountability"
-        ai_chance = { factor = 5 }
-        hidden_effect = {
-            if = {
-                limit = { event_target:flavor_usa_raider = { exists = yes } }
-                event_target:flavor_usa_raider = {
-                    country_event = {
-                        id = flavor_usa.90
-                        days = 7
-                
-                    }
-                }
-            }
+        event_target:prospecting_province = {
+            change_trade_goods = coal
         }
-        add_legitimacy = 10
-        add_power_projection = {
-            type = insulted_rival
-            amount = 10
-        }
-        add_prestige = 10
         
     }
-}
-
-country_event = {
-    id = flavor_usa.60
-    title = flavor_usa.60.t
-    desc = flavor_usa.60.desc
-    picture = GFX_event_village_burning
-
-    is_triggered_only = yes
-
     option = {
-        name = flavor_usa.60.a
-        add_treasury = 200
-        add_prestige = 10
-    }
-}
-
-country_event = {
-    id = flavor_usa.70
-    title = flavor_usa.70.t
-    desc = flavor_usa.70.desc
-    picture = GFX_event_village_burning
-
-    is_triggered_only = yes
-
-    option = {
-        name = flavor_usa.70.a
-        add_country_modifier = {
-            name = raid_punished
-                duration = 9125
-            }
-        add_prestige = -10
-    }
-
-    option = {
-        name = flavor_usa.70.b
-        every_neighbor_country  = {
-            limit = {
-                has_country_flag = dixie_raided_recently_tag
-            }
-            declare_war_with_cb = {
-                casus_belli = cb_humiliate
-                who = root
-            }
+        name = flavor_usa.184901.b
+        ai_chance = {
+            factor = 18
         }
+        event_target:prospecting_province = {
+            change_trade_goods = copper
+        }
+        
+    }
+    option = {
+        name = flavor_usa.184901.c
+        ai_chance = {
+            factor = 22
+        }
+        event_target:prospecting_province = {
+            change_trade_goods = iron
+        }
+        
+    }
+    option = {
+        name = flavor_usa.184901.d
+        ai_chance = {
+            factor = 3
+        }
+        event_target:prospecting_province = {
+            change_trade_goods = gems
+        }
+        
+    }
+    option = {
+        name = flavor_usa.184901.e
+        ai_chance = {
+            factor = 7
+        }
+        event_target:prospecting_province = {
+            change_trade_goods = gold
+        }
+        
+    }
+    option = { #no change
+        name = flavor_usa.184901.f
+        ai_chance = {
+            factor = 40
+        }        
     }
 }
 
+
+#Confederation Convention event chain
+
+#calling the convention (hidden on game start)
 country_event = {
-    id = flavor_usa.80
-    title = flavor_usa.80.t
-    desc = flavor_usa.80.desc
-    picture = GFX_event_village_burning
+	id = flavor_usa.1100
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
 
-    is_triggered_only = yes
 
-    option = {
-        name = flavor_usa.80.a
-        kill_advisor_by_category_effect = {
-			MIL = yes
+	option = { #convention successful
+		name = flavor_usa.1100.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1
+				any_country = { 
+					or = {
+						has_country_flag = newsouth
+						has_country_flag = oldsouth
+					}
+					was_player = no
+				} 
+			}
 		}
-        add_legitimacy = -10
-    }
-
-    option = {
-        name = flavor_usa.80.b
-        every_neighbor_country  = {
-            limit = {
-                has_country_flag = dixie_raided_recently_tag
-            }
-            declare_war_with_cb = {
-                casus_belli = cb_humiliate
-                who = root
-            }
-        }       
-    }
-}
-
-country_event = {
-    id = flavor_usa.90
-    title = flavor_usa.90.t
-    desc = flavor_usa.90.desc
-    picture = GFX_event_village_burning
-
-    is_triggered_only = yes
-
-    option = {
-        name = flavor_usa.90.a
-        kill_advisor_by_category_effect = {
-			MIL = yes
+		every_country = {
+			country_event = {
+				id = flavor_usa.1101
+				days = 7
+			}
 		}
-        add_legitimacy = -25
-        add_country_modifier = {
-            name = raid_punished
-                duration = 1825
-            }
-        add_prestige = -20
-    }
+	}
 
-    option = {
-        name = flavor_usa.90.b
-        every_neighbor_country  = {
-            limit = {
-                has_country_flag = dixie_raided_recently_tag
-            }
-            declare_war_with_cb = {
-                casus_belli = cb_humiliate
-                who = root
-            }
-        }
-    }
+	option = { #convention failure
+		name = flavor_usa.1100.b
+		ai_chance = {
+			factor = 299
+		}
+		every_country = {
+			country_event = {
+				id = flavor_usa.1102
+				days = 7
+			}
+		}
+	}
 }
 
+#convention successful, unification/inheritance via DIX (localize to Confederation - perfectionism mechanic to prevent expansion via prussian_republic_reform)
 country_event = {
-    id = flavor_usa.1865
-    title = flavor_usa.1865.t
-    desc = flavor_usa.1865.desc
-    picture = GFX_event_village_burning
+	id = flavor_usa.1101
+	title = flavor_usa.1101.t
+	desc = flavor_usa.1101.desc
+	picture = GFX_event_generic_unification
+	is_triggered_only = yes
 
+	option = {
+		name = flavor_usa.1101.a
+		trigger = {
+			and = {
+				or = {
+					has_country_flag = newsouth
+					has_country_flag = oldsouth
+				}
+				not = { has_reform = tanistry_reform }
+			}
+			
+		}
+		DIX = {
+			inherit = root
+			inherit = DBN
+			inherit = CVI
+			inherit = MRR
+			inherit = NCZ
+		}
+	}
+
+	option = {
+		name = flavor_usa.1101.b
+		trigger = {
+			and = {
+				not = { has_country_flag = newsouth }
+				not = {	has_country_flag = oldsouth }
+			}
+		}
+		if = {
+			limit = {
+				or = {
+					is_emperor_of_china = yes
+					is_emperor = yes
+				}
+			}
+			add_historical_rival = DIX
+		}
+		add_opinion = {
+			who = DIX
+			modifier = manifesting_destiny
+		}
+	}
+}
+
+
+
+
+
+#convention failure
+country_event = {
+	id = flavor_usa.1102
+	title = flavor_usa.1102.t
+	desc = flavor_usa.1102.desc
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_usa.1102.a
+		trigger = {
+			or = {
+				has_country_flag = newsouth
+				has_country_flag = oldsouth
+			}
+		}
+	}
+
+	option = {
+		name = flavor_usa.1102.b
+		trigger = {
+			and = {
+				not = {
+					has_country_flag = newsouth
+				}
+				not = {
+					has_country_flag = oldsouth
+				}
+			}
+		}
+	}
+}
+
+
+###Louisiana Empire
+
+#River check event overall
+country_event = {
+	id = flavor_usa.1200
+	title = flavor_usa.1200.t
+	desc = flavor_usa.1200.desc #explanation of htf this is intended to work for players, no doubt they'll be confused
+	is_triggered_only = yes
+
+	option = { #big three river check
+		name = flavor_usa.1200.a
+		country_event = {
+			id = flavor_usa.1201
+		}
+	}
+	option = { #tributary path check
+		name = flavor_usa.1200.b
+		country_event = {
+			id = flavor_usa.1205
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1200.c
+	}
+}
+
+#show me the major rivers
+country_event = {
+	id = flavor_usa.1201
+	title = flavor_usa.1201.t
+	desc = flavor_usa.1201.desc
+	is_triggered_only = yes
+
+	option = { #mississippi check
+		name = flavor_usa.1201.a
+		country_event = {
+			id = flavor_usa.1202
+		}
+	}
+
+	option = { #missouri check
+		name = flavor_usa.1201.b
+		country_event = {
+			id = flavor_usa.1203
+		}
+	}
+
+	option = { #ohio check
+		name = flavor_usa.1201.c
+		country_event = {
+			id = flavor_usa.1204
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1201.d
+	}
+}
+
+#tributaries of the major rivers
+country_event = {
+	id = flavor_usa.1205
+	title = flavor_usa.1205.t
+	desc = flavor_usa.1205.desc
+	is_triggered_only = yes
+
+	option = { #mississippi check
+		name = flavor_usa.1205.a
+		country_event = {
+			id = flavor_usa.1206
+		}
+	}
+
+	option = { #missouri check
+		name = flavor_usa.1205.b
+		country_event = {
+			id = flavor_usa.1214
+		}
+	}
+
+	option = { #ohio check
+		name = flavor_usa.1205.c
+		country_event = {
+			id = flavor_usa.1215
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1205.d
+	}
+}
+
+#mississippi major/minor split
+country_event = {
+	id = flavor_usa.1206
+	title = flavor_usa.1206.t
+	desc = flavor_usa.1206.desc
+	is_triggered_only = yes
+
+	option = { #major tributaries
+		name = flavor_usa.1206.a
+		country_event = {
+			id = flavor_usa.1207
+		}
+	}
+
+	option = { #minor tributaries
+		name = flavor_usa.1206.b
+		country_event = {
+			id = flavor_usa.1211
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1206.c
+	}
+}
+
+#missouri major/minor split
+country_event = {
+	id = flavor_usa.1214
+	title = flavor_usa.1214.t
+	desc = flavor_usa.1214.desc #note that missouri has no tributaries that were navigable
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1214.c
+	}
+
+}
+
+#ohio major/minor split
+country_event = {
+	id = flavor_usa.1215
+	title = flavor_usa.1215.t
+	desc = flavor_usa.1215.desc
+	is_triggered_only = yes
+
+	option = { #ohio 'major' tributaries (kanawha, kentucky, green, wabash)
+		name = flavor_usa.1215.a
+		country_event = {
+			id = flavor_usa.1216
+		}
+	}
+
+	option = { #ohio 'minor' tributaries (muskingum, tennessee, cumberland)
+		name = flavor_usa.1215.b
+		country_event = {
+			id = flavor_usa.1219
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1215.c
+	}
+}
+
+#Mississippi 'minor' tributaries (minnesota, wisconsin, illinois)
+country_event = {
+	id = flavor_usa.1207
+	title = flavor_usa.1207.t
+	desc = flavor_usa.1207.desc
+	is_triggered_only = yes
+
+	option = { #minnesota check
+		name = flavor_usa.1207.a
+		country_event = {
+			id = flavor_usa.1208
+		}
+	}
+
+	option = { #wisconsin
+		name = flavor_usa.1207.b
+		country_event = {
+			id = flavor_usa.1209
+		}
+	}
+
+	option = { #illinois
+		name = flavor_usa.1207.c
+		country_event = {
+			id = flavor_usa.1210
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1207.d
+	}
+}
+
+#minnesota check event
+country_event = {
+	id = flavor_usa.1208
+	title = flavor_usa.1208.t
+	desc = flavor_usa.1208.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1208.a
+	}
+}
+
+#wisconsin check event
+country_event = {
+	id = flavor_usa.1209
+	title = flavor_usa.1209.t
+	desc = flavor_usa.1209.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1209.a
+	}
+}
+
+#illinois check event
+country_event = {
+	id = flavor_usa.1210
+	title = flavor_usa.1210.t
+	desc = flavor_usa.1210.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1210.a
+	}
+}
+
+#mississippi 'major' tributaries (ouachita, arkansas)
+country_event = {
+	id = flavor_usa.1211
+	title = flavor_usa.1211.t
+	desc = flavor_usa.1211.desc
+	is_triggered_only = yes
+
+	option = { #ouachita
+		name = flavor_usa.1211.a
+		country_event = {
+			id = flavor_usa.1212
+		}
+	}
+
+	option = { #arkansas
+		name = flavor_usa.1211.b
+		country_event = {
+			id = flavor_usa.1213
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1211.c
+	}
+}
+
+#ouachita check event
+country_event = {
+	id = flavor_usa.1212
+	title = flavor_usa.1212.t
+	desc = flavor_usa.1212.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1212.a
+	}
+}
+
+#arkansas check event
+country_event = {
+	id = flavor_usa.1213
+	title = flavor_usa.1213.t
+	desc = flavor_usa.1213.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1213.a
+	}
+}
+
+#river check event mississippi (upper/lower)
+country_event = {
+	id = flavor_usa.1202
+	title = flavor_usa.1202.t
+	desc = flavor_usa.1202.desc
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_usa.1202.a
+	}
+
+}
+
+#river check event missouri (upper/lower)
+country_event = {
+	id = flavor_usa.1203
+	title = flavor_usa.1203.t
+	desc = flavor_usa.1203.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1203.a
+	}
+}
+
+#river check event ohio 
+country_event = {
+	id = flavor_usa.1204
+	title = flavor_usa.1204.t
+	desc = flavor_usa.1204.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1204.a
+	}
+}
+
+#river check ohio 'minor' tributaries (kanawha, kentucky, green, wabash)
+country_event = {
+	id = flavor_usa.1219
+	title = flavor_usa.1219.t
+	desc = flavor_usa.1219.desc
+	is_triggered_only = yes
+
+	option = { #kanawha
+		name = flavor_usa.1219.a
+		country_event = {
+			id = flavor_usa.1220
+		}
+	}
+
+	option = { #kentucky
+		name = flavor_usa.1219.b
+		country_event = {
+			id = flavor_usa.1221
+		}
+	}
+
+	option = { #green
+		name = flavor_usa.1219.c
+		country_event = {
+			id = flavor_usa.1222
+		}
+	}
+
+	option = { #wabash
+		name = flavor_usa.1219.d
+		country_event = {
+			id = flavor_usa.1223
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1219.e
+	}
+}
+
+#kanawha check event
+country_event = {
+	id = flavor_usa.1220
+	title = flavor_usa.1220.t
+	desc = flavor_usa.1220.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1220.a
+	}
+}
+
+#kentucky check event
+country_event = {
+	id = flavor_usa.1221
+	title = flavor_usa.1221.t
+	desc = flavor_usa.1221.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1221.a
+	}
+}
+
+#green check event
+country_event = {
+	id = flavor_usa.1222
+	title = flavor_usa.1222.t
+	desc = flavor_usa.1222.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1222.a
+	}
+}
+
+#wabash check event
+country_event = {
+	id = flavor_usa.1223
+	title = flavor_usa.1223.t
+	desc = flavor_usa.1223.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1223.a
+	}
+}
+
+#ohio 'major' tributaries (tennessee, cumberland)
+country_event = {
+	id = flavor_usa.1216
+	title = flavor_usa.1216.t
+	desc = flavor_usa.1216.desc
+	is_triggered_only = yes
+
+	option = { #tennessee
+		name = flavor_usa.1216.a
+		country_event = {
+			id = flavor_usa.1217
+		}
+	}
+
+	option = { #cumberland
+		name = flavor_usa.1216.b
+		country_event = {
+			id = flavor_usa.1218
+		}
+	}
+
+	option = { #nvm
+		name = flavor_usa.1216.c
+	}
+}
+
+#tennessee check event
+country_event = {
+	id = flavor_usa.1217
+	title = flavor_usa.1217.t
+	desc = flavor_usa.1217.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1217.a
+	}
+}
+
+#cumberland check event
+country_event = {
+	id = flavor_usa.1218
+	title = flavor_usa.1218.t
+	desc = flavor_usa.1218.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1218.a
+	}
+}
+
+#unwanted provinces check
+country_event = {
+	id = flavor_usa.1224
+	title = flavor_usa.1224.t
+	desc = flavor_usa.1224.desc
+	is_triggered_only = yes
+
+	option = { #nvm
+		name = flavor_usa.1224.a
+	}
+}
+
+#midwestern Events
+
+#KC fell to the hordes
+country_event = {
+	id = flavor_usa.1300
+	title = flavor_usa.1300.t
+	desc = flavor_usa.1300.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #for the hordes
+		name = flavor_usa.1300.a
+		if = {
+			limit = {
+				or = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+				}
+			}
+			add_country_modifier = {
+				name = horde_jubilation
+				duration = 1825
+			}
+		}
+		
+	}
+
+	option = { #for midwesterners
+		name = flavor_usa.1300.b
+		if = {
+			limit = {
+				all_country = {
+					all_capital_provinces = {
+						or = {
+							superregion = superregion_central_plains
+							superregion = superregion_upper_great_lakes
+							superregion = superregion_interriviera
+							superregion = superregion_ohio_river_valley
+							superregion = superregion_dakotas
+						}
+					}
+					or = {	
+						not = { has_reform = steppe_horde }
+						not = { has_reform = great_mongol_state_reform }
+					}
+				}
+			}
+			add_country_modifier = {
+				name = midwestern_disarray
+				duration = 1825
+			}
+		}
+		
+	}
+}
+
+#created monetary union
+country_event = {
+	id = flavor_usa.1400
+	title = flavor_usa.1400.t
+	desc = flavor_usa.1400.desc
+	is_triggered_only = yes
+
+	immediate = {
+		root = {
+			set_country_flag = midwest_monetary_seat
+		}
+		if = {
+			limit = {
+				is_subject_of = root
+			}
+			add_country_modifier = {
+				name = monetary_union_member
+				duration = 3650
+			}
+			set_country_flag = stuck_as_subordinate_monetary_union
+			set_country_flag = midwest_monetary_seat
+			add_country_modifier = {
+				name = core_bloc_member
+				duration = -1
+			}
+		}
+		
+	}
+
+	option = {
+		name = flavor_usa.1400.a
+		add_country_modifier = {
+			name = monetary_union_leader
+			duration = -1
+		}
+		set_country_flag = midwest_monetary_seat
+	}
+
+}
+
+#midwest tier system
+country_event = {
+    id = flavor_usa.1401
+    hidden = yes
     is_triggered_only = yes
 
-    option = {
-        name = flavor_usa.1865.a
-        trigger = {
-            not = { has_country_modifier = dixie_embargoed }
-            treasury = 250
-        }
-        country_event = {
-            id = flavor_usa.311
-        }
+    immediate = {
+
+        # Clear all tier flags
+        clr_country_flag = midwest_tier1
+        clr_country_flag = midwest_tier2
+        clr_country_flag = midwest_tier3
+        clr_country_flag = midwest_tier4
+        clr_country_flag = midwest_tier5
+        clr_country_flag = midwest_tier6
+        clr_country_flag = midwest_tier7
+        clr_country_flag = midwest_tier8
+        clr_country_flag = midwest_tier9
+        clr_country_flag = midwest_tier10
+        clr_country_flag = midwest_tier11
+        clr_country_flag = midwest_tier12
+        clr_country_flag = midwest_tier13
+        clr_country_flag = midwest_tier14
+        clr_country_flag = midwest_tier15
+        clr_country_flag = midwest_tier16
+        clr_country_flag = midwest_tier17
+        clr_country_flag = midwest_tier18
+        clr_country_flag = midwest_tier19
+        clr_country_flag = midwest_tier20
+
+        # Assign tier using scripted triggers
+
+        if = { limit = { midwest_tier1 = yes } set_country_flag = midwest_tier1 }
+        else_if = { limit = { midwest_tier2 = yes } set_country_flag = midwest_tier2 }
+        else_if = { limit = { midwest_tier3 = yes } set_country_flag = midwest_tier3 }
+        else_if = { limit = { midwest_tier4 = yes } set_country_flag = midwest_tier4 }
+        else_if = { limit = { midwest_tier5 = yes } set_country_flag = midwest_tier5 }
+        else_if = { limit = { midwest_tier6 = yes } set_country_flag = midwest_tier6 }
+        else_if = { limit = { midwest_tier7 = yes } set_country_flag = midwest_tier7 }
+        else_if = { limit = { midwest_tier8 = yes } set_country_flag = midwest_tier8 }
+        else_if = { limit = { midwest_tier9 = yes } set_country_flag = midwest_tier9 }
+        else_if = { limit = { midwest_tier10 = yes } set_country_flag = midwest_tier10 }
+        else_if = { limit = { midwest_tier11 = yes } set_country_flag = midwest_tier11 }
+        else_if = { limit = { midwest_tier12 = yes } set_country_flag = midwest_tier12 }
+        else_if = { limit = { midwest_tier13 = yes } set_country_flag = midwest_tier13 }
+        else_if = { limit = { midwest_tier14 = yes } set_country_flag = midwest_tier14 }
+        else_if = { limit = { midwest_tier15 = yes } set_country_flag = midwest_tier15 }
+        else_if = { limit = { midwest_tier16 = yes } set_country_flag = midwest_tier16 }
+        else_if = { limit = { midwest_tier17 = yes } set_country_flag = midwest_tier17 }
+        else_if = { limit = { midwest_tier18 = yes } set_country_flag = midwest_tier18 }
+        else_if = { limit = { midwest_tier19 = yes } set_country_flag = midwest_tier19 }
+        else = { set_country_flag = midwest_tier20 }
     }
 
-    option = {
-        name = flavor_usa.1865.b
-        trigger = {
-            not = { has_country_modifier = dixie_corruption }
-            treasury = 500
-        }
-        country_event = {
-            id = flavor_usa.301
-        }
-    }
+	option = {
+		name = "ok whatevs"
+	}
+}
+
+
+
+#violating compact
+country_event = {
+	id = flavor_usa.1403
+	title = flavor_usa.1403.t
+	desc = flavor_usa.1403.desc
+	is_triggered_only = yes
+
+	immediate = {
+		if  = {
+			limit = {
+				has_country_flag = midwest_compact_member
+				not = {
+					tag = ROOT
+				}
+			}
+			add_country_modifier = {
+				name = midwest_compact_violator_response
+				duration = -1
+			}
+			root = {
+				add_stability = -1
+				add_country_modifier = {
+					name = midwest_compact_violator
+					duration = -1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = flavor_usa.1403.a
+		
+	}
+}
+
+#midwest compact war successful
+country_event = {
+	id = flavor_usa.1404
+	title = flavor_usa.1404.t
+	desc = flavor_usa.1404.desc
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = midwest_compact_member
+			}
+			set_country_flag = midwest_economic_confederation
+		}
+	}
+
+	option = {
+		name = flavor_usa.1404.a
+	}
+}
+
+#fairbault decision
+country_event = {
+	id = flavor_usa.1405
+	title = flavor_usa.1405.t
+	desc = flavor_usa.1405.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+
+	option = { #minneapolis, stp angy
+		name = flavor_usa.1405.a
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+		STP = {
+			declare_war_with_cb = {
+				casus_belli = cb_fairbault
+				who = MNP
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+
+	option = { #stp, minneapolis angry
+		name = flavor_usa.1405.b
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+		MNP = {
+			declare_war_with_cb = {
+				casus_belli = cb_fairbault
+				who = STP
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+
+	option = {	#neither, both angy
+		name = flavor_usa.1405.c
+		MNP = {
+			declare_war_with_cb = {
+				casus_belli = cb_fairbault
+				who = FBT
+			}
+		}
+		STP = {
+			declare_war_with_cb = {
+				casus_belli = cb_fairbault
+				who = FBT
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+}
+
+#fairbault war conclusion
+country_event = {
+	id = flavor_usa.1406
+	title = flavor_usa.1406.t
+	desc = flavor_usa.1406.desc
+	is_triggered_only = yes
+
+	
+
+	option = { #we desire only fairbault - MNP
+		name = flavor_usa.1406.a
+		trigger = {
+			tag = MNP
+		}
+		FBT = {
+			grant_independence = yes
+		}
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+	}
+
+	option = { #minnesota is ripe for the taking - MNP
+		name = flavor_usa.1406.b
+		trigger = {
+			tag = MNP
+		}
+		FBT = {
+			grant_independence = yes
+		}
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = STP
+			}
+		}
+		EAU = {
+			grant_independence = yes
+		}
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = EAU
+			}
+		}
+		RCA = {
+			grant_independence = yes
+		}
+		MNP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = RCA
+			}
+		}
+		add_aggressive_expansion = {
+			who = MNP
+			value = 20
+		}
+	}
+
+	option = { #we desire only fairbault - STP
+		name = flavor_usa.1406.c
+		trigger = {
+			tag = STP
+		}
+		FBT = {
+			grant_independence = yes
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+	}
+
+	option = { #minnesota is ripe for the taking - stp
+		name = flavor_usa.1406.d
+		trigger = {
+			tag = STP
+		}
+		FBT = {
+			grant_independence = yes
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = FBT
+			}
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = MNP
+			}
+		}
+		STC = {
+			grant_independence = yes
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = STC
+			}
+		}
+		BAI = {
+			grant_independence = yes
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = BAI
+			}
+		}
+		MKT = {
+			grant_independence = yes
+		}
+		STP = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = MKT
+			}
+		}
+		add_aggressive_expansion = {
+			who = STP
+			value = 20
+		}
+	}
+
+	option = { #fairbault winner??
+		name = flavor_usa.1406.e
+		trigger = {
+			tag = FBT
+		}
+
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = MNP
+			}
+		}
+		STC = {
+			grant_independence = yes
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = STC
+			}
+		}
+		BAI = {
+			grant_independence = yes
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = BAI
+			}
+		}
+		MKT = {
+			grant_independence = yes
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = MKT
+			}
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = STP
+			}
+		}
+		EAU = {
+			grant_independence = yes
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = EAU
+			}
+		}
+		RCA = {
+			grant_independence = yes
+		}
+		FBT = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = RCA
+			}
+		}
+		add_aggressive_expansion = {
+			who = FBT
+			value = 40
+		}
+		FBT = {
+			set_government_power = {
+				mechanic_type = midwest_mercantilism
+				power_type = regional_influence
+				value = 65
+			}
+		}
+		
+	}
+	
+}
+
+country_event = { #chicago assassination event
+	id = flavor_usa.1451
+	title = flavor_usa.1451.t
+	desc = flavor_usa.1451.desc
+	is_triggered_only = yes
+	hidden = yes
+
+	option = { #dies
+		name = flavor_usa.1451.a
+		kill_ruler = yes
+		ai_chance = {
+			factor = 2
+			modifier = {
+				average_unrest = 2
+				factor = 1
+			}
+		}
+	}
+
+	option = { #lives
+		name = flavor_usa.1451.b
+		ai_chance = {
+			factor = 98
+			modifier = {
+				average_unrest = 2
+				factor = -1
+			}
+		}
+	}
+}
+
+
+#horde province protection event
+country_event = {
+	id = flavor_usa.1905
+	title = flavor_usa.1905.t
+	desc = flavor_usa.1905.desc
+	mean_time_to_happen = {	months = 5000 }
+
+	trigger = {
+
+		is_institution_enabled = new_world_i
+
+		or = {
+			has_reform = steppe_horde
+			has_reform = great_mongol_state_reform
+			has_reform = bismarck_steppe_horde
+		}
+
+		any_trade_node = {
+			any_province = {
+				and = {
+					has_colonist = yes
+					owner = {
+						not = {
+							or = {
+								has_reform = steppe_horde
+								has_reform = great_mongol_state_reform
+								has_reform = bismarck_steppe_horde
+							}
+						}
+						
+					}
+				}
+				
+			}
+			any_province = {
+				not = { has_colonist = yes }
+				is_city = no
+				any_neighbor_province = {
+					culture = prev
+					owner = {
+						or = {
+							has_reform = steppe_horde
+							has_reform = great_mongol_state_reform
+							has_reform = bismarck_steppe_horde
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = { #match to trigger to prevent blank options
+		random_province = {
+			limit = {
+				not = { has_colonist = yes }
+				is_city = no
+				any_neighbor_province = {
+					culture = prev
+					owner = {
+						and = {
+							tag = ROOT
+							or = {
+								has_reform = steppe_horde
+								has_reform = great_mongol_state_reform
+								has_reform = bismarck_steppe_horde
+							}
+						}
+						
+					}
+				}
+			}
+			save_event_target_as = threatened_province
+		}
+	}
+
+
+	option = { #protect the frontier
+		name = flavor_usa.1905.a
+		trigger = { manpower = 15 }
+		event_target:threatened_province = {
+			create_colony = 1000
+			add_territorial_core = ROOT
+		}	
+		add_manpower = -5
+		change_government_reform_progress = -25
+
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = { #we lack the resources
+		name = flavor_usa.1905.b
+		every_country = {
+			limit = {
+				has_reform = steppe_horde
+				has_reform = bismarck_steppe_horde
+			}
+			reverse_add_opinion = {
+				who = root
+				modifier = horde_refuse_aid
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				any_neighbor_country = {
+					is_rival = root
+				}
+				factor = 25
+			}
+			modifier = {
+				any_neighbor_province = {
+					is_colony = yes
+				}
+				factor = 10
+			}
+		}
+	}
+}
+
+
+#midwest give offer to increase from secondary to integral market
+country_event = {
+	id = flavor_usa.1764
+	title = flavor_usa.1764.t
+	desc = flavor_usa.1764.desc
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = midwest_bloc_subordinate
+				is_subject_of = root
+				has_opinion = {
+					who = root
+					value = 150
+				}
+				not = {
+					has_country_modifier = economic_bloc_transition
+				}
+				was_player = no
+				hidden_trigger = {
+					midwest_contiguous_bloc = yes
+				}
+			}
+			country_event = {
+				id = flavor_usa.176401
+				days = -1
+			}
+		}
+	}
+	option = {
+		name = midwest_integration_offer
+	}
+}
+
+#midwest notify to integrated
+country_event = {
+	id = flavor_usa.176401
+	title = flavor_usa.176401.t
+	desc = flavor_usa.176401.desc
+	is_triggered_only = yes
+	option = {
+		
+		name = integral_member_accept
+		overlord = {
+			create_subject = {
+				who = ROOT
+				subject_type = midwest_core_bloc_member
+			}
+		}
+	}
+}
+
+#midwest chartered legitimacy target mapping event (choose peace or war)
+country_event = {
+	id = flavor_usa.230001
+	title = flavor_usa.230001.t
+	desc = flavor_usa.230001.desc
+	is_triggered_only = yes
+	option = { #peaceful
+		name = flavor_usa.230001.a
+		trigger = {
+			has_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = 5
+			}
+		}
+		country_event = {
+			id = flavor_usa.2300011
+			days = -1
+		}
+	}
+
+	option = { #state claim
+		name = flavor_usa.230001.b
+		trigger = {
+			has_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = 30
+			}
+		}
+		country_event = {
+			id = flavor_usa.2300012
+			days = -1
+		}
+	}
+}
+
+#midwest chartered legitimacy peaceful selection
+country_event = {
+	id = flavor_usa.2300011
+	title = flavor_usa.2300011.t
+	desc = flavor_usa.2300011.d
+	is_triggered_only = yes
+	immediate = {
+		random_country = {
+			limit = {
+				AND = {
+					is_subject = no
+					total_development = 500
+					hidden_trigger = {
+						was_player = no
+					}
+					has_opinion = {
+						who = root
+						value = 0
+					}
+				
+					# Country must neighbor federation
+					any_neighbor_country = {
+						has_government_mechanic = chartered_legitimacy_mechanic
+					}
+				}
+				
+			}
+			# Optional: trigger a follow-up event for this country
+			hidden_effect = {
+				country_event = {
+					id = flavor_usa.23000111
+					days = -1
+				}
+			}
+			
+		}
+
+		add_government_power = {
+			mechanic_type = chartered_legitimacy_mechanic
+			power_type = chartered_legitimacy
+			value = -5
+		}
+	}
+	option = {
+		name = chartfedresponse
+	}
+
+}
+
+#peaceful response
+
+country_event = {
+	id = flavor_usa.23000111
+	title = flavor_usa.23000111.t
+	desc = flavor_usa.23000111.desc
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		name = chartfedresponseresponse
+		if = {
+			limit = {
+				not = {
+					government = republic
+				}
+			}
+			change_government = republic
+			add_government_reform = midwestern_trade_hub
+		}
+		if = {
+			limit = {
+				government = republic
+			}
+			add_government_reform = midwestern_trade_hub
+		}
+		GTL = {
+			create_subject = {
+				subject_type = midwest_bloc_constituent
+				who = root
+			}
+		}
+		GTL = {
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = 5
+			}
+		}
+	}
+}
+
+
+# ============================================================
+# MIDWEST CHARTER WAR CLAIMS
+# ============================================================
+
+country_event = {
+	id = flavor_usa.2300012
+	title = flavor_usa.2300012.t
+	desc = flavor_usa.2300012.d
+	is_triggered_only = yes
+
+
+	# ============================================================
+	# IOWA
+	# Formation core -> Iowa
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.a
+
+		trigger = {
+			any_neighbor_province = {
+				region = region_ia
+			}
+
+			any_province = {
+				region = region_ia
+				or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+			}
+
+			not = { 
+				any_province = {
+					region_ia = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ia = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+		add_government_power = {
+			mechanic_type = chartered_legitimacy_mechanic
+			power_type = chartered_legitimacy
+			value = -15
+		}
+	}
+
+
+	# ============================================================
+	# MISSOURI
+	# Formation core -> Missouri
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.b
+
+		trigger = {
+			any_neighbor_province = {
+				region = region_mo
+			}
+
+			any_province = {
+				region = region_mo
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_mo = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_mo = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+		add_government_power = {
+			mechanic_type = chartered_legitimacy_mechanic
+			power_type = chartered_legitimacy
+			value = -15
+		}
+	}
+
+
+	# ============================================================
+	# KENTUCKY
+	# Formation core -> Kentucky
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.c
+
+		trigger = {
+			any_neighbor_province = {
+				region = region_ky
+			}
+
+			any_province = {
+				region = region_ky
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ky = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ky = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# PENNSYLVANIA
+	# Formation core -> Pennsylvania
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.dx
+
+		trigger = {
+			any_neighbor_province = {
+				region = region_pa
+			}
+
+			any_province = {
+				region = region_pa
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_pa = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_pa = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NEBRASKA
+	# Iowa -> Nebraska
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.e
+
+		trigger = {
+
+			# Iowa fully controlled
+			NOT = {
+				any_province = {
+					region = region_ia
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			# Nebraska borders federation
+			any_neighbor_province = {
+				region = region_ne
+			}
+
+			# Nebraska not fully controlled
+			any_province = {
+				region = region_ne
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ne = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ne = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# ARKANSAS
+	# Missouri -> Arkansas
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.f
+
+		trigger = {
+
+			# Missouri fully controlled
+			NOT = {
+				any_province = {
+					region = region_mo
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ar
+			}
+
+			any_province = {
+				region = region_ar
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ar = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ar = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# TENNESSEE
+	# Kentucky -> Tennessee
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.g
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ky
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_tn
+			}
+
+			any_province = {
+				region = region_tn
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_tn = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_tn = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# WEST VIRGINIA
+	# Kentucky -> West Virginia
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.h
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ky
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_wv
+			}
+
+			any_province = {
+				region = region_wv
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_wv = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_wv = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NEW YORK
+	# Pennsylvania -> New York
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.i
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_pa
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ny
+			}
+
+			any_province = {
+				region = region_ny
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ny = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ny = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NEW JERSEY
+	# Pennsylvania -> New Jersey
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.j
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_pa
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_nj
+			}
+
+			any_province = {
+				region = region_nj
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_nj = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_nj = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# SOUTH DAKOTA
+	# Iowa + Nebraska -> South Dakota
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.k
+
+		trigger = {
+
+			# Iowa fully controlled
+			NOT = {
+				any_province = {
+					region = region_ia
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			# Nebraska fully controlled
+			NOT = {
+				any_province = {
+					region = region_ne
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_sd
+			}
+
+			any_province = {
+				region = region_sd
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_sd = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_sd = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# KANSAS
+	# Missouri + Iowa -> Kansas
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.l
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_mo
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			NOT = {
+				any_province = {
+					region = region_ia
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ks
+			}
+
+			any_province = {
+				region = region_ks
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ks = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ks = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# WEST VIRGINIA -> VIRGINIA
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.m
+
+		trigger = {
+
+			OR = {
+
+				# West Virginia route
+				NOT = {
+					any_province = {
+						region = region_wv
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+
+			}
+
+			any_neighbor_province = {
+				region = region_va
+			}
+
+			any_province = {
+				region = region_va
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_va = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_va = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# DELAWARE
+	# New Jersey -> Delaware
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.n
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_nj
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_de
+			}
+
+			any_province = {
+				region = region_de
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_de = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_de = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# CONNECTICUT
+	# New York -> New England
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.o
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ny
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				or = {
+					region = region_ct
+					region = region_ma
+					region = region_ri
+					region = region_vt
+					region = region_nh
+					region = region_me
+				}
+				
+			}
+
+			any_province = {
+				or = {
+					region = region_ct
+					region = region_ma
+					region = region_ri
+					region = region_vt
+					region = region_nh
+					region = region_me
+				}
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = {
+				and = {
+					any_province = {
+						region_ct = {
+							is_permanent_claim = root
+						}
+					}
+					any_province = {
+						region_ma = {
+							is_permanent_claim = root
+						}
+					}
+					any_province = {
+						region_ri = {
+							is_permanent_claim = root
+						}
+					}
+					any_province = {
+						region_vt = {
+							is_permanent_claim = root
+						}
+					}
+					any_province = {
+						region_nh = {
+							is_permanent_claim = root
+						}
+					}
+					any_province = {
+						region_me = {
+							is_permanent_claim = root
+						}
+					}
+				}
+				
+			}
+		}
+
+		region_ct = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+		region_ma = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+		region_ri = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+		region_vt = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+		region_nh = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+		region_me = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NORTH DAKOTA
+	# South Dakota -> North Dakota
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.p
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_sd
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_nd
+			}
+
+			any_province = {
+				region = region_nd
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_nd = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_nd = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# OKLAHOMA
+	# Kansas -> Oklahoma
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.q
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ks
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ok
+			}
+
+			any_province = {
+				region = region_ok
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ks = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ok = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# COLORADO
+	# Kansas + (Nebraska OR Oklahoma) -> Colorado
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.r
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ks
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			OR = {
+
+				NOT = {
+					any_province = {
+						region = region_ne
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+
+				NOT = {
+					any_province = {
+						region = region_ok
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_co
+			}
+
+			any_province = {
+				region = region_co
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_co = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_co = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# LOUISIANA
+	# Arkansas OR Mississippi -> Louisiana
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.s
+
+		trigger = {
+
+			OR = {
+
+				NOT = {
+					any_province = {
+						region = region_ar
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+
+				NOT = {
+					any_province = {
+						region = region_ms
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_la
+			}
+
+			any_province = {
+				region = region_la
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_la = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_la = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# MISSISSIPPI
+	# Tennessee -> Mississippi
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ttt
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_tn
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ms
+			}
+
+			any_province = {
+				region = region_ms
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ms = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ms = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NORTH CAROLINA
+	# Tennessee -> North Carolina
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.u
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_tn
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			NOT = {
+				any_province = {
+					region = region_va
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_nc
+			}
+
+			any_province = {
+				region = region_nc
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_nc = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_nc = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# SOUTH CAROLINA
+	# North Carolina -> South Carolina
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.v
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_nc
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_sc
+			}
+
+			any_province = {
+				region = region_sc
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_sc = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_sc = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# GEORGIA
+	# Alabama OR South Carolina -> Georgia
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.w
+
+		trigger = {
+
+			OR = {
+
+				NOT = {
+					any_province = {
+						region = region_al
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+
+				NOT = {
+					any_province = {
+						region = region_sc
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ga
+			}
+
+			any_province = {
+				region = region_ga
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ga = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ga = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# ALABAMA
+	# Mississippi -> Alabama
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.x
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ms
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_al
+			}
+
+			any_province = {
+				region = region_al
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_al = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_al = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# MARYLAND
+	# Virginia -> Maryland
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.y
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_va
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_md
+			}
+
+			any_province = {
+				region = region_md
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_md = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_md = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# MONTANA
+	# North Dakota + South Dakota -> Montana
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.z
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_nd
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			NOT = {
+				any_province = {
+					region = region_sd
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_mt
+			}
+
+			any_province = {
+				region = region_mt
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_mt = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_mt = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# UTAH
+	# Colorado -> Utah
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.aa
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_co
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ut
+			}
+
+			any_province = {
+				region = region_ut
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ut = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ut = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NEW MEXICO
+	# Colorado -> New Mexico
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ab
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_co
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_nm
+			}
+
+			any_province = {
+				region = region_nm
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_nm = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_nm = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# WYOMING
+	# Colorado -> Wyoming
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ac
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_co
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_wy
+			}
+
+			any_province = {
+				region = region_wy
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_wy = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_wy = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# OKLAHOMA -> TEXAS
+	# Texas requires two strategic approaches.
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ad
+
+		trigger = {
+
+			OR = {
+
+				# Oklahoma + Arkansas
+				AND = {
+					NOT = {
+						any_province = {
+							region = region_ok
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+
+					NOT = {
+						any_province = {
+							region = region_ar
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+				}
+
+				# Louisiana + New Mexico
+				AND = {
+					NOT = {
+						any_province = {
+							region = region_la
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+
+					NOT = {
+						any_province = {
+							region = region_nm
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+				}
+
+				# Oklahoma + Louisiana
+				AND = {
+					NOT = {
+						any_province = {
+							region = region_ok
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+
+					NOT = {
+						any_province = {
+							region = region_la
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_tx
+			}
+
+			any_province = {
+				region = region_tx
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_tx = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_tx = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# IDAHO
+	# Montana -> Idaho
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ae
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_mt
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_id
+			}
+
+			any_province = {
+				region = region_id
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_id = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_id = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# OREGON
+	# Idaho -> Oregon
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.af
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_id
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_or
+			}
+
+			any_province = {
+				region = region_or
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_or = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_or = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# WASHINGTON
+	# Oregon -> Washington
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ag
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_or
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_wa
+			}
+
+			any_province = {
+				region = region_wa
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_wa = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_wa = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# NEVADA
+	# Utah -> Nevada
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ah
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_ut
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_nv
+			}
+
+			any_province = {
+				region = region_nv
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_nv = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_nv = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# ARIZONA
+	# New Mexico -> Arizona
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ai
+
+		trigger = {
+
+			NOT = {
+				any_province = {
+					region = region_nm
+					or = {
+					NOT = { owned_by = ROOT }
+					NOT = { owned_by_subject_of = ROOT }
+				}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_az
+			}
+
+			any_province = {
+				region = region_az
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_az = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_az = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# CALIFORNIA
+	# Nevada + Arizona OR Nevada + Oregon -> California
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.aj
+
+		trigger = {
+
+			OR = {
+
+				# Nevada + Arizona
+				AND = {
+
+					NOT = {
+						any_province = {
+							region = region_nv
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+
+					NOT = {
+						any_province = {
+							region = region_az
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+				}
+
+				# Nevada + Oregon
+				AND = {
+
+					NOT = {
+						any_province = {
+							region = region_nv
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+
+					NOT = {
+						any_province = {
+							region = region_or
+							NOT = { owned_by = ROOT }
+							NOT = { owned_by_subject_of = ROOT }
+						}
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_ca
+			}
+
+			any_province = {
+				region = region_ca
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_ca = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_ca = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# GEORGIA
+	# Alabama and Georgia -> Florida
+	# ============================================================
+
+	option = {
+		name = flavor_usa.2300012.ak
+
+		trigger = {
+
+			and = {
+
+				NOT = {
+					any_province = {
+						region = region_al
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+
+				NOT = {
+					any_province = {
+						region = region_ga
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+				}
+			}
+
+			any_neighbor_province = {
+				region = region_fl
+			}
+
+			any_province = {
+				region = region_fl
+				NOT = { owned_by = ROOT }
+				NOT = { owned_by_subject_of = ROOT }
+			}
+
+			not = { 
+				any_province = {
+					region_fl = {
+						is_permanent_claim = root
+					}
+				} 
+			}
+		}
+
+		region_fl = {
+			limit = { or = { NOT = { owned_by = ROOT } not = { owned_by_subject_of = root } } }
+			add_permanent_claim = root
+		}
+
+			add_government_power = {
+				mechanic_type = chartered_legitimacy_mechanic
+				power_type = chartered_legitimacy
+				value = -15
+			}
+	}
+
+
+	# ============================================================
+	# CANCEL
+	# ============================================================
+
+	option = { #nevermind
+		name = flavor_usa.2300012.al
+	}
+}
+
+
+#midwest integration selection formulation
+country_event = {
+	id = flavor_usa.2205
+	title = flavor_usa.2205.t
+	desc = flavor_usa.2205.d
+	is_triggered_only = yes
+
+	immediate = {
+
+		# First eligible state
+		random_subject_country = {
+			limit = {
+				years_in_vassalage_under = {
+					who = root
+					years = 20
+				}
+				is_subject_of_type = midwest_bloc_constituent
+				has_opinion = {
+					who = root
+					value = 175
+				}
+			}
+
+			save_event_target_as = midwestintegratetarget1
+		}
+
+
+		# Second eligible state
+		random_subject_country = {
+			limit = {
+				years_in_vassalage_under = {
+					who = root
+					years = 20
+				}
+				is_subject_of_type = midwest_bloc_constituent
+				has_opinion = {
+					who = root
+					value = 175
+				}
+			}
+
+			save_event_target_as = midwestintegratetarget2
+		}
+
+
+		# Third eligible state
+		random_subject_country = {
+			limit = {
+				years_in_vassalage_under = {
+					who = root
+					years = 20
+				}
+				is_subject_of_type = midwest_bloc_constituent
+				has_opinion = {
+					who = root
+					value = 175
+				}
+			}
+
+			save_event_target_as = midwestintegratetarget3
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2205.a
+
+		trigger = {
+			has_saved_event_target = midwestintegratetarget1
+		}
+
+		event_target:midwestintegratetarget1 = {
+			country_event = {
+				id = flavor_usa.2206
+				days = -1
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2205.b
+
+		trigger = {
+			has_saved_event_target = midwestintegratetarget2
+		}
+
+		event_target:midwestintegratetarget2 = {
+			country_event = {
+				id = flavor_usa.2206
+				days = -1
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2205.c
+
+		trigger = {
+			has_saved_event_target = midwestintegratetarget3
+		}
+
+		event_target:midwestintegratetarget3 = {
+			country_event = {
+				id = flavor_usa.2206
+				days = -1
+			}
+		}
+	}
+
+	option = {
+		name = flavor_usa.2205.e
+	}
+}
+
+
+
+#midwest charter begin integration
+country_event = { #event 1
+	id = flavor_usa.2206
+	title = flavor_usa.2206.t
+	desc = flavor_usa.2206.d
+	is_triggered_only = yes
+	hidden = yes
+
+	option = { #ASAP
+		name = flavor_usa.2206.a
+		trigger = { 
+			has_opinion = {
+				who = overlord
+				value = 200
+			} 
+		}
+
+		set_country_flag = charter_integration_asap 
+		set_country_flag = chartintegratestart
+
+		add_country_modifier = {
+			name = charterintegrateasap
+			duration = 4380
+		}
+
+		#next in chain
+		country_event = {
+			id = flavor_usa.2207
+			days = 540
+		}
+	}
+
+	option = { #Joint administration where possible
+		name = flavor_usa.2206.b
+		trigger = { 
+			has_opinion = {
+				who = overlord
+				value = 175
+			} 
+		}
+
+		set_country_flag = charter_integration_joint 
+		set_country_flag = chartintegratestart
+
+		add_country_modifier = {
+			name = charterintegratejoint
+			duration = 7300
+		}
+
+		#next in chain
+		country_event = {
+			id = flavor_usa.2207
+			days = 900
+		}
+	}
+
+	option = { #defer to local governance for juristictional delegation
+		name = flavor_usa.2206.c
+
+		set_country_flag = charter_integration_devolved 
+		set_country_flag = chartintegratestart
+
+		add_country_modifier = {
+			name = charterintegratedevolve
+			duration = 10050
+		}
+
+		#next in chain
+		country_event = {
+			id = flavor_usa.2207
+			days = 1350
+		}
+	}
+
+}
+
+country_event = { 
+	id = flavor_usa.2207 
+	title = flavor_usa.2207.t 
+	desc = flavor_usa.2207.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { # Notify the federation that this chapter has begun. 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2207.a 
+		# Accelerated 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2208 
+				days = 540 
+			} 
+		} 
+		# Joint 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint 
+			} 
+			country_event = { 
+				id = flavor_usa.2208 
+				days = 900 
+			} 
+		} 
+		# Delegated 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2208 
+				days = 1350 
+			}
+		} 
+	} 
+}
+
+country_event = { 
+	id = flavor_usa.2208 
+	title = flavor_usa.2208.t 
+	desc = flavor_usa.2208.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2208.a 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2209 
+				days = 900 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint
+			} 
+			country_event = { 
+				id = flavor_usa.2209 
+				days = 1440 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2209 
+				days = 2160 
+			} 
+		} 
+	} 
+}
+
+country_event = { 
+	id = flavor_usa.2209 
+	title = flavor_usa.2209.t 
+	desc = flavor_usa.2209.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2209.a 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2210 
+				days = 1080 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint 
+			} 
+			country_event = { 
+				id = flavor_usa.2210 
+				days = 1620 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2210 
+				days = 2430 
+			} 
+		} 
+	} 
+}
+
+country_event = { 
+	id = flavor_usa.2210 
+	title = flavor_usa.2210.t 
+	desc = flavor_usa.2210.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2210.a 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2211 
+				days = 900 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint 
+			} 
+			country_event = { 
+				id = flavor_usa.2211 
+				days = 1440 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2211 
+				days = 2160 
+			} 
+		} 
+	} 
+}
+
+country_event = { 
+	id = flavor_usa.2211 
+	title = flavor_usa.2211.t 
+	desc = flavor_usa.2211.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2211.a 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2212 
+				days = 540 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint 
+			} 
+			country_event = { 
+				id = flavor_usa.2212 
+				days = 900 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2212 
+				days = 1350 
+			} 
+		} 
+	} 
+}
+
+country_event = { 
+	id = flavor_usa.2212 
+	title = flavor_usa.2212.t 
+	desc = flavor_usa.2212.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2215 
+				days = 1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2212.a 
+		# Final waiting period before normalization. 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_asap 
+			} 
+			country_event = { 
+				id = flavor_usa.2213 
+				days = 365 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_joint 
+			} 
+			country_event = { 
+				id = flavor_usa.2213 
+				days = 540 
+			} 
+		} 
+		if = { 
+			limit = { 
+				has_country_flag = charter_integration_devolved 
+			} 
+			country_event = { 
+				id = flavor_usa.2213 
+				days = 900 
+			} 
+		} 
+	} 
+}
+
+
+country_event = { 
+	id = flavor_usa.2213 
+	title = flavor_usa.2213.t 
+	desc = flavor_usa.2213.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.2216 
+				days = -1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.2213.a 
+		# Remove integration-state flags. 
+		clr_country_flag = charter_integration_asap 
+		clr_country_flag = charter_integration_joint 
+		clr_country_flag = charter_integration_devolved 
+		clr_country_flag = chartintegratestart
+		remove_country_modifier = charterintegrateasap
+		remove_country_modifier = charterintegratejoint
+		remove_country_modifier = charterintegratedevolve
+		
+		set_country_flag = federation_member
+
+		overlord = {
+			inherit = root
+		}
+
+	} 
+}
+
+#next phase of integration notification
+country_event = { 
+	id = flavor_usa.2215 
+	title = flavor_usa.2215.t 
+	desc = flavor_usa.2215.d 
+	is_triggered_only = yes 
+	option = { 
+		name = flavor_usa.2215.a 
+
+		add_government_power = {
+			mechanic_type = chartered_legitimacy_mechanic
+			power_type = chartered_legitimacy
+			value = 2
+		}
+	} 
+}
+
+
+#annexation notification
+country_event = { 
+	id = flavor_usa.2216 
+	title = flavor_usa.2216.t 
+	desc = flavor_usa.2216.d 
+	is_triggered_only = yes 
+	option = { 
+		name = flavor_usa.2216.a 
+	} 
+}
+
+
+
+
+#governorships to civil admin
+country_event = {
+	id = flavor_usa.2301
+	title = flavor_usa.2301.t
+	desc = flavor_usa.2301.d
+	is_triggered_only = yes
+
+	immediate = {
+
+		# First eligible governorship
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = midwest_federal_governorship
+
+				has_opinion = {
+					who = overlord
+					value = 150
+				}
+
+				not = {
+					num_of_rebel_controlled_provinces = 1
+				}
+
+				NOT = {
+					has_country_modifier = recent_governorship
+				}
+			}
+
+			save_event_target_as = governorship_target_1
+		}
+
+
+		# Second eligible governorship
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = midwest_federal_governorship
+
+				has_opinion = {
+					who = overlord
+					value = 150
+				}
+
+				not = {
+					num_of_rebel_controlled_provinces = 1
+				}
+
+				NOT = {
+					has_country_modifier = recent_governorship
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_1
+				}
+			}
+
+			save_event_target_as = governorship_target_2
+		}
+
+
+		# Third eligible governorship
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = midwest_federal_governorship
+
+				has_opinion = {
+					who = overlord
+					value = 150
+				}
+
+				not = {
+					num_of_rebel_controlled_provinces = 1
+				}
+
+				NOT = {
+					has_country_modifier = recent_governorship
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_1
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_2
+				}
+			}
+
+			save_event_target_as = governorship_target_3
+		}
+
+
+		# Fourth eligible governorship
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = midwest_federal_governorship
+
+				has_opinion = {
+					who = overlord
+					value = 150
+				}
+
+				not = {
+					num_of_rebel_controlled_provinces = 1
+				}
+
+				NOT = {
+					has_country_modifier = recent_governorship
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_1
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_2
+				}
+
+				NOT = {
+					tag = event_target:governorship_target_3
+				}
+			}
+
+			save_event_target_as = governorship_target_4
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2301.a
+
+		trigger = {
+			has_saved_event_target = governorship_target_1
+		}
+
+		event_target:governorship_target_1 = {
+			hidden_effect = {
+				event_target:governorship_target_1 = {
+					grant_independence = yes
+				}
+			}
+			root = {
+				create_subject = {
+					who = event_target:governorship_target_1
+					subject_type = midwest_bloc_constituent
+				}
+			}
+			
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2301.b
+
+		trigger = {
+			has_saved_event_target = governorship_target_2
+		}
+
+		event_target:governorship_target_2 = {
+			hidden_effect = {
+				event_target:governorship_target_2 = {
+					grant_independence = yes
+				}
+			}
+			root = {
+				create_subject = {
+					who = event_target:governorship_target_2
+					subject_type = midwest_bloc_constituent
+				}
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2301.c
+
+		trigger = {
+			has_saved_event_target = governorship_target_3
+		}
+
+		event_target:governorship_target_3 = {
+			hidden_effect = {
+				event_target:governorship_target_3 = {
+					grant_independence = yes
+				}
+			}
+			root = {
+				create_subject = {
+					who = event_target:governorship_target_3
+					subject_type = midwest_bloc_constituent
+				}
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2301.d
+
+		trigger = {
+			has_saved_event_target = governorship_target_4
+		}
+
+		event_target:governorship_target_4 = {
+			hidden_effect = {
+				event_target:governorship_target_4 = {
+					grant_independence = yes
+				}
+			}
+			root = {
+				create_subject = {
+					who = event_target:governorship_target_4
+					subject_type = midwest_bloc_constituent
+				}
+			}
+		}
+	}
+
+
+	option = {
+		name = flavor_usa.2301.e
+	}
+}
+
+
+#midwest what to do with others after charter foundation?
+country_event = {
+	id = flavor_usa.1796
+	title = flavor_usa.1796.t
+	desc = flavor_usa.1796.d
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {#join the federation (annexation)
+		name = "We joyously accede"
+		trigger = {
+			has_opinion = {
+				who = GTL
+				value = 50
+			}
+		}
+		set_country_flag = federation_member
+		GTL = {
+			inherit = ROOT
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_opinion = {
+					who = GTL
+					value = 50
+				}
+				factor = 1
+			}
+			modifier = {
+				has_opinion = {
+					who = GTL
+					value = 75
+				}
+				factor = 1
+			}
+			modifier = {
+				alliance_with = GTL
+				factor = 1
+			}
+			modifier = {
+				trade_income_percentage = 0.50
+				factor = 0.5
+			}
+			modifier = {
+				is_subject_of = GTL
+				factor = 100
+			}
+		}
+	}
+
+	option = {#join the bloc but not ready for immediate federation
+		name = "This is notably better then the status quo."
+		trigger = {
+			not = {
+				has_opinion = {
+					who = GTL
+					value = 50
+				}
+			}
+			has_opinion = {
+				who = GTL
+				value = 15
+			}
+		}
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			grant_independence = yes
+		}
+		create_subject = {
+			who = GTL
+			subject_type = midwest_bloc_constituent
+		}
+
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = {#no interest in new system
+		name = "This is a farce and spit in the face."
+
+		ai_chance = {
+			factor = 10
+			modifier = {
+				is_rival = GTL
+				factor = 100
+			}
+			modifier = {
+				not = {
+					has_opinion = {
+						who = GTL
+						value = 15
+					}
+				}
+				factor = 5
+			}
+			modifier = {
+				not = {
+					has_opinion = {
+						who = GTL
+						value = 0
+					}
+				}
+				factor = 50
+			}
+		}
+	}
+}
+
+#midwest vassal fix
+country_event = {
+	id = flavor_usa.40
+	title = flavor_usa.40.t
+	desc = flavor_usa.40.d
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			overlord = {
+				has_government_mechanic = midwest_mercantilism
+			}
+		}
+		grant_independence = yes
+		GTL = {
+			create_subject = {
+				subject_type = midwest_bloc_subordinate
+				who = root
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			overlord = {
+				has_government_mechanic = chartered_legitimacy_mechanic
+			}
+		}
+		grant_independence = yes
+		GTL = {
+			create_subject = {
+				subject_type = midwest_federal_governorship
+				who = root
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			overlord = {
+				has_government_mechanic = chartered_legitimacy_mechanic
+			}
+			or = {
+				is_subject_of_type = midwest_bloc_subordinate
+				is_subject_of_type = midwest_core_bloc_member
+			}
+			
+		}
+		grant_independence = yes
+		GTL = {
+			create_subject = {
+				subject_type = midwest_bloc_constituent
+				who = root
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = flavor_usa.221311
+	title = flavor_usa.221311.t 
+	desc = flavor_usa.221311.d 
+	is_triggered_only = yes 
+	hidden = yes
+	immediate = { 
+		overlord = { 
+			country_event = { 
+				id = flavor_usa.221611 
+				days = -1 
+			} 
+		} 
+	} 
+	option = { 
+		name = flavor_usa.221311.a 
+		
+		set_country_flag = federation_member
+
+		overlord = {
+			inherit = root
+		}
+
+	} 
+}
+
+#annexation notification
+country_event = { 
+	id = flavor_usa.221611
+	title = flavor_usa.221611.t 
+	desc = flavor_usa.221611.d 
+	is_triggered_only = yes 
+	option = { 
+		name = flavor_usa.221611.a 
+	} 
 }

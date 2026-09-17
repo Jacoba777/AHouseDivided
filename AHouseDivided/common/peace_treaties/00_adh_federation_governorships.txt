@@ -1,0 +1,90 @@
+# Establish a Federal Governorship
+po_establish_federal_governorship = {
+	category = 6
+	power_projection = vassalized_rival
+	power_cost_base = 0.75
+	prestige_base = 0.75
+	ae_base = 0.35
+
+	warscore_cost = {
+		# The defeated state's territorial size determines the cost of establishing a governorship.
+		all_provinces = 0
+		no_provinces = 10.0		# No cost from provinces the loser retains.
+		owner_keeps = 0.0		# Scale primarily from provinces selected for conquest.
+		conquered = 0.50
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+
+	warscore_cap = 70
+	requires_demand_independence = no
+	is_make_subject = yes
+	requires_is_allowed = yes
+
+	is_visible = {
+		root = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+		}
+		is_subject = no
+	}
+
+	is_allowed = {
+		always = yes
+	}
+
+	effect = {
+		if = {
+			limit = {
+				from = {
+					not = {
+						has_country_flag = federation_member
+					}
+				}
+			}
+			root = {
+				create_subject = {
+					who = from
+					subject_type = midwest_federal_governorship
+				}
+			
+				from = {
+					add_country_modifier = {
+						name = recent_governorship
+						duration = 3650
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				from = {
+					has_country_flag = federation_member
+				}
+			}
+
+			root = {
+				create_subject = {
+					who = from
+					subject_type = midwest_federal_governorship
+				}
+			}
+			from = {
+				country_event = {
+					id = flavor_usa.221311
+				}
+			}
+			
+		}  
+		
+	}
+
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 5000
+		}
+	}
+}
