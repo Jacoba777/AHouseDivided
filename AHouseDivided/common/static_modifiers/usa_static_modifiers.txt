@@ -138,11 +138,11 @@ anti_corp_stance = {
 
 #la empire war mechanic modifier
 la_fortification = {
-    attrition = -0.05
-    supply_limit_modifier = 0.05
+    attrition = -0.15
+    supply_limit_modifier = 0.25
     land_maintenance_modifier = -0.05
-    defensiveness = 0.05
-    hostile_attrition = 0.1
+    defensiveness = 0.25
+    hostile_attrition = 1
 }
 
 
@@ -184,7 +184,7 @@ leading_a_bloc = {
 
 #being a subordinate in a bloc
 midwest_subordinate_member = {
-    monthly_regional_influence = -0.05
+    monthly_regional_influence = -0.02
 }
 
 #midwest monetary union member
@@ -230,8 +230,19 @@ monetary_union_leader = {
 
 #midwest core member of bloc
 core_bloc_member = {
-    
+    trade_efficiency = 0.05
+    production_efficiency = 0.01
+    development_cost_modifier = -0.05
+    global_prosperity_growth = 0.01
 }
+
+#midwest transition modifier
+economic_bloc_transition = {
+    trade_efficiency = -0.05
+    global_prosperity_growth = -0.01
+    development_cost = 0.03
+}
+
 
 #midwest trade disaster modifiers
 informal_economy = {
@@ -511,4 +522,132 @@ detrimental_corruption = {
 beneficial_corruption = {
     global_trade_power = 0.008
     trade_efficiency = 0.005
+}
+
+#midwest chartered federation governorships
+overseeing_federal_governorship = {
+	governing_capacity_modifier = -0.01
+}
+
+midwest_federal_governorship_subject = {
+	global_tax_modifier = -0.05
+	production_efficiency = -0.025
+	global_unrest = 0.5
+}
+
+recent_governorship = {
+    
+}
+
+charterintegrateasap = {
+    global_tax_modifier = -0.05
+    production_efficiency = -0.05
+}
+
+charterintegratejoint = {
+    advisor_cost = 0.025
+}
+
+charterintegratedevolve = {
+    governing_cost = 0.05
+}
+
+fed_health_buffer = {
+
+}
+
+fed_tax_reduction = {
+    local_tax_modifier = -0.5
+}
+
+mild_fed_manpower_reduction = {
+    local_manpower_modifier = -0.25
+    local_governing_cost = 0.15
+}
+
+fed_manpower_reduction = {
+    local_manpower_modifier = -0.75
+}
+
+fed_delegate_1_side = {
+    local_production_efficiency = -0.1
+}
+
+fed_delegate_2_side = {
+    local_production_efficiency = 0.1
+}
+
+fed_secession_concession = {
+    global_unrest = 2
+    stability_cost_modifier = 0.25
+    global_tax_modifier = -0.1
+    global_manpower_modifier = -0.1
+    diplomatic_reputation = -3
+    diplomatic_annexation_cost = 0.15
+}
+
+federation_dissolution_prevention = {
+    global_unrest = 10
+    stability_cost_modifier = 0.5
+    global_tax_modifier = -0.33
+    global_manpower_modifier = -0.33
+    diplomatic_reputation = -2
+}
+
+federation_health_10 = {
+    production_efficiency = 0.05
+    diplomatic_reputation = 1
+    liberty_desire = -5
+}
+
+federation_health_9 = {
+    production_efficiency = 0.025
+    liberty_desire = -2.5
+}
+
+federation_health_8 = {
+}
+
+federation_health_7 = {
+}
+
+federation_health_6 = {
+    production_efficiency = -0.025
+    global_unrest = 1
+    liberty_desire = 5
+}
+
+federation_health_5 = {
+    production_efficiency = -0.05
+    global_unrest = 1
+    diplomatic_reputation = -1
+    liberty_desire = 10
+}
+
+federation_health_4 = {
+    global_tax_modifier = -0.05
+    global_unrest = 1
+    diplomatic_reputation = -1
+    liberty_desire = 15
+}
+
+federation_health_3 = {
+    global_tax_modifier = -0.05
+    global_unrest = 2
+    diplomatic_reputation = -1
+    liberty_desire = 20
+}
+
+federation_health_2 = {
+    global_tax_modifier = -0.10
+    global_unrest = 2
+    diplomatic_reputation = -2
+    liberty_desire = 30
+}
+
+federation_health_1 = {
+    global_tax_modifier = -0.10
+    global_unrest = 3
+    diplomatic_reputation = -2
+    liberty_desire = 50
 }

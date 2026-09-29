@@ -4062,18 +4062,33 @@ midwest_subject_matches_or_exceeds_overlord = {
     }
 }
 
-#blocs not continguous enough
-midwest_is_contiguous_to_bloc = {
-    any_neighbor_country = {
+#blocs not continguous enough member
+midwest_contiguous_bloc = {
+    from = {
 		or = {
-			tag = ROOT
-			and = {
-				has_country_modifier = core_bloc_member
-				is_subject_of = ROOT
+			any_owned_province = {
+				any_neighbor_province = {
+					or = {
+						owned_by = root
+						owner = {
+							is_subject_of = root
+							is_subject_of_type = midwest_core_bloc_member
+						}
+					}
+				}
+			}
+			any_subject_country = {
+				is_subject_of_type = midwest_core_bloc_member
+				any_owned_province = {
+					any_neighbor_province = {
+						owned_by = root
+					}
+				}
 			}
 		}
-    }
+	}
 }
+
 
 #sharing overlord
 shares_overlord = {
@@ -4105,3 +4120,5 @@ shares_overlord = {
         }
     }
 }
+
+
