@@ -1,0 +1,2338 @@
+namespace = fed_health
+
+
+country_event = { #lake federation tracker
+    id = fed_health.1
+    title = fed_health.1.t
+    desc = fed_health.1.d
+    hidden = yes
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+        not = {
+            has_country_modifier = fed_health_buffer
+        }
+    }
+
+    
+    option = { #growing when above 80
+        trigger = {
+            not = {
+                check_variable = {
+                    which = lakes_federation_health
+                    value = 10
+                }
+            }
+            hidden_trigger = {
+                not = { has_country_modifier = fed_health_buffer }
+            }
+            has_government_power = {
+                mechanic_type = chartered_legitimacy_mechanic
+                power_type = chartered_legitimacy
+                value = 80
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = fed_health_buffer
+                duration = 730
+            }
+            if = {
+                limit = {
+                    not = {
+                        check_variable = {
+                            which = lakes_federation_health
+                            value = 10
+                        }
+                    }
+                }
+                change_variable = {
+                    which = lakes_federation_health
+                    value = 1
+                }
+            }
+        }
+    }
+
+    option = { #steady legitimacy 80-60
+        trigger = {
+            hidden_trigger = {
+                not = { has_country_modifier = fed_health_buffer }
+            }
+            and = {
+                not = {
+                    has_government_power = {
+                        mechanic_type = chartered_legitimacy_mechanic
+                        power_type = chartered_legitimacy
+                        value = 80
+                    }
+                }
+                
+                has_government_power = {
+                    mechanic_type = chartered_legitimacy_mechanic
+                    power_type = chartered_legitimacy
+                    value = 60
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = fed_health_buffer
+                duration = 1080
+            }
+            if = {
+                limit = {
+                    not = {
+                        check_variable = {
+                            which = lakes_federation_health
+                            value = 10
+                        }
+                    }
+                }
+                change_variable = {
+                    which = lakes_federation_health
+                    value = 1
+                }
+            }
+            
+        }
+    }
+    
+    option = { #steady legitimacy 60-40
+        trigger = {
+            hidden_trigger = {
+                not = { has_country_modifier = fed_health_buffer }
+            }
+            and = {
+                not = {
+                    has_government_power = {
+                        mechanic_type = chartered_legitimacy_mechanic
+                        power_type = chartered_legitimacy
+                        value = 60
+                    }
+                }
+                
+                has_government_power = {
+                    mechanic_type = chartered_legitimacy_mechanic
+                    power_type = chartered_legitimacy
+                    value = 40
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = fed_health_buffer
+                duration = 1080
+            }
+            if = {
+                limit = {
+                    not = {
+                        check_variable = {
+                            which = lakes_federation_health
+                            value = 10
+                        }
+                    }
+                }
+                change_variable = {
+                    which = lakes_federation_health
+                    value = 0
+                }
+            }
+            
+        }
+    }
+
+    option = { #falling legitimacy 40-20
+        trigger = {
+            hidden_trigger = {
+                not = { has_country_modifier = fed_health_buffer }
+            }
+            and = {
+                not = {
+                    has_government_power = {
+                        mechanic_type = chartered_legitimacy_mechanic
+                        power_type = chartered_legitimacy
+                        value = 40
+                    }
+                }
+                
+                has_government_power = {
+                    mechanic_type = chartered_legitimacy_mechanic
+                    power_type = chartered_legitimacy
+                    value = 20
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = fed_health_buffer
+                duration = 730
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        which = lakes_federation_health
+                        value = 1
+                    }
+                }
+                change_variable = {
+                    which = lakes_federation_health
+                    value = -1
+                }
+            }
+            
+        }
+    }
+
+    option = { #falling legitimacy 20-0
+        trigger = {
+            hidden_trigger = {
+                not = { has_country_modifier = fed_health_buffer }
+            }
+            not = {
+                has_government_power = {
+                    mechanic_type = chartered_legitimacy_mechanic
+                    power_type = chartered_legitimacy
+                    value = 20
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = fed_health_buffer
+                duration = 365
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        which = lakes_federation_health
+                        value = 1
+                    }
+                }
+                change_variable = {
+                    which = lakes_federation_health
+                    value = -1
+                }
+            }
+        }
+    }
+}
+
+
+country_event = { #lake federation resetting negative value
+    id = fed_health.111
+    title = fed_health.111.t
+    desc = fed_health.111.d
+    hidden = yes
+
+    trigger = {
+
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        hidden_trigger = {
+            or = {
+                not = { 
+                    check_variable = {
+                        which = lakes_federation_health
+                        value = 0
+                    } 
+                }
+                check_variable = {
+                    which = lakes_federation_health
+                    value = 10
+                }
+            }
+            
+        }
+    }
+
+    option = { #ensuring above 0 setter
+
+        trigger = {
+            not = { 
+                check_variable = {
+                    which = lakes_federation_health
+                    value = 0
+                } 
+            }
+        }
+
+        hidden_effect = {
+            set_variable = {
+                which = lakes_federation_health
+                value = 0
+            }
+            
+        }
+    }
+
+    option = { #ensuring below 10 setter
+        trigger = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 10
+            }    
+        }
+
+
+        hidden_effect = {
+            set_variable = {
+                which = lakes_federation_health
+                value = 10
+            }
+            
+        }
+    }
+
+}
+
+
+country_event = { #lake federation modifiers
+    id = fed_health.11
+    title = fed_health.11.t
+    desc = fed_health.11.d
+    hidden = yes
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+    }
+
+    immediate = {
+        remove_country_modifier = federation_health_1
+        remove_country_modifier = federation_health_2
+        remove_country_modifier = federation_health_3
+        remove_country_modifier = federation_health_4
+        remove_country_modifier = federation_health_5
+        remove_country_modifier = federation_health_6
+        remove_country_modifier = federation_health_7
+        remove_country_modifier = federation_health_8
+        remove_country_modifier = federation_health_9
+        remove_country_modifier = federation_health_10
+    }
+
+    
+    option = { #level 10
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 10
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_10
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 9
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 9
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_9
+                duration = -1
+            }
+        }
+    }
+    
+    option = { #level 8
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 8
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_8
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 7
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 7
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_7
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 6
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 6
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_6
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 5
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 5
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_5
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 4
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 4
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_4
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 3
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 3
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_3
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 2
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 2
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_2
+                duration = -1
+            }
+        }
+    }
+
+    option = { #level 1
+        trigger = {
+            hidden_trigger = {
+                is_variable_equal = {
+                    which = lakes_federation_health
+                    value = 1
+                }
+            }
+        }
+        hidden_effect = {
+            add_country_modifier = {
+                name = federation_health_1
+                duration = -1
+            }
+        }
+    }
+
+}
+
+
+country_event = { #withholding contributions
+    id = fed_health.2
+    title = fed_health.2.t
+    desc = fed_health.2.desc
+    mean_time_to_happen = { months = 18 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+        
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 7
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                has_country_flag = federation_member
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstaterebeltax
+			set_country_flag = fedstaterebeltax
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						has_country_flag = federation_member
+					}
+				}
+				random_core_country = {
+					limit = {
+						has_country_flag = federation_member
+					}
+					save_event_target_as = fedtaxwithholder_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:fedtaxwithholder_owner
+				}
+				save_event_target_as = federation_tax_event_state
+			}
+		}
+    }
+
+
+
+    option = { #acquiesce
+        name = fed_health.2.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -2
+        }
+        event_target:federation_tax_event_state = {
+            add_province_modifier = {
+                name = fed_tax_reduction
+                duration = 1825
+            }
+            add_local_autonomy = 25
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_province_modifier = {
+                    name = fed_tax_reduction
+                    duration = 1825
+                }
+                add_local_autonomy = 25
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #respect mai authoritay
+        name = fed_health.2.b
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -5
+        }
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+        event_target:federation_tax_event_state = {
+            add_unrest = 5
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_unrest = 5
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #reach an agreement
+        name = fed_health.2.c
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 2
+        }
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}
+
+
+country_event = { #refuse conscription
+    id = fed_health.3
+    title = fed_health.3.t
+    desc = fed_health.3.d
+    mean_time_to_happen = { months = 18 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 4
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                not = { total_development = 1 }
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstaterebelconscript
+			set_country_flag = fedstaterebelconscript
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						not = { total_development = 1 }
+					}
+				}
+				random_core_country = {
+					limit = {
+						not = { total_development = 1 }
+					}
+					save_event_target_as = conscriptwithholder_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:conscriptwithholder_owner
+				}
+				save_event_target_as = federation_conscript_event_state
+			}
+		}
+    }
+
+    
+    option = { #acquiesce
+        name = fed_health.3.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -2
+        }
+
+        event_target:federation_conscript_event_state = {
+            add_province_modifier = {
+                name = fed_manpower_reduction
+                duration = 1825
+            }
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_province_modifier = {
+                    name = fed_manpower_reduction
+                    duration = 1825
+                }
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #respect mai authoritay - sent in federation agents for recruitment
+        name = fed_health.3.b
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        event_target:federation_conscript_event_state = {
+            add_unrest = 5
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_unrest = 5
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #reach an agreement
+        name = fed_health.3.c
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 2
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+        event_target:federation_conscript_event_state = {
+            add_province_modifier = {
+                name = mild_fed_manpower_reduction
+                duration = 1825
+            }
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_province_modifier = {
+                    name = mild_fed_manpower_reduction
+                    duration = 1825
+                }
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+
+    }
+}
+
+
+country_event = { #challenge federal law in court
+    id = fed_health.4
+    title = fed_health.4.t
+    desc = fed_health.4.d
+    mean_time_to_happen = { months = 18 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 6
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                not = { total_development = 1 }
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstatelawchallenge
+			set_country_flag = fedstatelawchallenge
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						not = { total_development = 1 }
+					}
+				}
+				random_core_country = {
+					limit = {
+						not = { total_development = 1 }
+					}
+					save_event_target_as = fedlawchallenge_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:fedlawchallenge_owner
+				}
+				save_event_target_as = federation_lawchallenge_event_state
+			}
+		}
+    }
+
+    
+    option = { #acquiesce
+        name = fed_health.4.a
+
+        
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 2
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+
+        event_target:federation_lawchallenge_event_state = {
+            add_local_autonomy = 15
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_local_autonomy = 15
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #respect mai authoritay
+        name = fed_health.4.b
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        
+        event_target:federation_lawchallenge_event_state = {
+            add_local_autonomy = -10
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_local_autonomy = -10
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #reach an agreement
+        name = fed_health.4.c
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 3
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+        
+        event_target:federation_lawchallenge_event_state = {
+            add_local_autonomy = 10
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_local_autonomy = 10
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}
+
+
+country_event = { #delegate infighting
+    id = fed_health.5
+    title = fed_health.5.t
+    desc = fed_health.5.desc
+    mean_time_to_happen = { months = 24 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 6
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                not = { total_development = 1 }
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstatedelegatedispute
+			set_country_flag = fedstatedelegatedispute
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						not = { total_development = 1 }
+					}
+				}
+				random_core_country = {
+					limit = {
+						not = { total_development = 1 }
+					}
+					save_event_target_as = feddelegatedispute_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:feddelegatedispute_owner
+				}
+				save_event_target_as = federation_delegatedispute_event_state
+			}
+		}
+    }
+
+    
+    option = { #favor neither
+        name = fed_health.5.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 1
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        
+        event_target:federation_delegatedispute_event_state = {
+            add_local_autonomy = 10
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_local_autonomy = 10
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #favor one
+        name = fed_health.5.b
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -2
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        
+        event_target:federation_delegatedispute_event_state = {
+            add_province_modifier = {
+                name = fed_delegate_1_side
+                duration = 365
+            }
+            add_unrest = 2
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_province_modifier = {
+                    name = fed_delegate_1_side
+                    duration = 365
+                }
+                add_unrest = 2
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #favor two (this district)
+        name = fed_health.5.c
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -2
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        
+        event_target:federation_delegatedispute_event_state = {
+            add_province_modifier = {
+                name = fed_delegate_2_side
+                duration = 365
+            }
+            add_unrest = -1
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_province_modifier = {
+                    name = fed_delegate_2_side
+                    duration = 365
+                }
+                add_unrest = -1
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #compromise
+        name = fed_health.5.d
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 4
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}
+
+
+country_event = { #nullification crisis
+    id = fed_health.6
+    title = fed_health.6.t
+    desc = fed_health.6.d
+    mean_time_to_happen = { months = 18 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+        
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 4
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                not = { total_development = 1 }
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstatenullify
+			set_country_flag = fedstatenullify
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						not = { total_development = 1 }
+					}
+				}
+				random_core_country = {
+					limit = {
+						not = { total_development = 1 }
+					}
+					save_event_target_as = fednullify_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:fednullify_owner
+				}
+				save_event_target_as = federation_nullify_event_state
+			}
+		}
+    }
+
+    
+    option = { #acquiesce
+        name = fed_health.6.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -10
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+        
+        event_target:federation_nullify_event_state = {
+            add_local_autonomy = 50
+            add_unrest = -5
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_unrest = -5
+                add_local_autonomy = 50
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #respect mai authoritay
+        name = fed_health.6.b
+
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -2
+        }
+
+        
+        event_target:federation_nullify_event_state = {
+            add_local_autonomy = 25
+            add_unrest = 10
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_unrest = 10
+                add_local_autonomy = 25
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #reach an agreement
+        name = fed_health.6.c
+
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 6
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 2
+        }
+
+        
+        event_target:federation_nullify_event_state = {
+            add_local_autonomy = 10
+            add_unrest = -5
+            every_neighbor_province = {
+                limit = {
+                    owned_by = root
+                }
+                add_unrest = -5
+                add_local_autonomy = 10
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}
+
+
+country_event = { #secession crisis
+    id = fed_health.7
+    title = fed_health.7.t
+    desc = fed_health.7.d
+    mean_time_to_happen = { months = 30 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 2
+            }
+        }
+        any_owned_province = {
+            any_core_country = {
+                not = { total_development = 1 }
+            }
+        }
+    }
+
+    immediate = {
+        hidden_effect = {
+			clr_country_flag = fedstatesecession
+			set_country_flag = fedstatesecession
+			random_owned_province = {
+				limit = {
+					any_core_country = {
+						has_country_flag = federation_member
+					}
+				}
+				random_core_country = {
+					limit = {
+						has_country_flag = federation_member
+					}
+					save_event_target_as = fedsecession_owner
+				}
+			}
+			random_core_province = {
+                limit = {
+					is_core = event_target:fedsecession_owner
+				}
+				save_event_target_as = federation_secession_event_state
+			}
+		}
+    }
+
+    
+    option = { #acquiesce
+        name = fed_health.7.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 0
+        }
+
+        release = event_target:fedsecession_owner
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #respect mai authoritay (independence and declare war, leading to dissolution)
+        name = fed_health.7.b
+        custom_tooltip = federation_warning_dissolution_tt
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -3
+        }
+
+        release = event_target:fedsecession_owner
+        declare_war_with_cb = {
+            casus_belli = cb_federation_expand
+            who = event_target:fedsecession_owner
+        }
+
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #reach an agreement
+        name = fed_health.7.c
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 2
+        }
+
+        add_country_modifier = {
+            name = fed_secession_concession
+            duration = 3650
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}
+
+
+country_event = { #dissolution event
+    id = fed_health.8
+    title = fed_health.8.t
+    desc = fed_health.8.d
+    mean_time_to_happen = { months = 52 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 1
+            }
+        }
+    }
+
+    
+    option = { #acquiesce
+        name = fed_health.8.a
+        
+
+        release_all_possible_countries = yes
+        release_all_subjects = yes
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #respect mai authoritay
+        name = fed_health.8.b
+
+        release_all_possible_countries = yes
+        release_all_subjects = yes
+
+        every_country = {
+            limit = {
+                or = {
+                    has_country_flag = federation_member
+                    any_owned_province = {
+                        has_province_flag = federation_lands
+                    }
+                }
+                
+
+            }
+            root = {
+                declare_war_with_cb = {
+                    casus_belli = cb_federation_expand
+                    who = prev
+                }
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+    }
+
+    option = { #reach an agreement - severe constraints on gameplay (not an option if happens again)
+        name = fed_health.8.c
+
+        trigger = {
+            not = {
+                has_country_modifier = federation_dissolution_prevention
+            }
+        }
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -1
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 2
+        }
+
+        add_country_modifier = {
+            name = federation_dissolution_prevention
+            duration = -1
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+
+    }
+}
+
+country_event = { #dissolution event
+    id = fed_health.9
+    title = fed_health.9.t
+    desc = fed_health.9.d
+    hidden = yes
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        has_country_modifier = federation_dissolution_prevention
+        check_variable = {
+            which = lakes_federation_health
+            value = 9
+        }
+    }
+    
+    option = { #acquiesce
+        name = fed_health.9.a
+        
+        remove_country_modifier = federation_dissolution_prevention #freedom
+    }
+
+}
+
+
+country_event = { #federal appointment dispute (taking shots at advisors)
+    id = fed_health.10
+    title = fed_health.10.t
+    desc = fed_health.10.d
+    mean_time_to_happen = { months = 18 }
+
+    trigger = {
+        has_government_mechanic = chartered_legitimacy_mechanic
+
+        not = {
+            check_variable = {
+                which = lakes_federation_health
+                value = 7
+            }
+        }
+		OR = {
+			has_adm_advisor = yes
+			has_dip_advisor = yes
+			has_mil_advisor = yes
+		}
+	}
+
+    
+    option = { #acquiesce
+        name = fed_health.10.a
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -1
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 0
+        }
+
+
+        random_list = {
+			1 = {
+				trigger = {
+					has_adm_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					ADM = yes
+				}
+			}
+			1 = {
+				trigger = {
+					has_dip_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					DIP = yes
+				}
+			}
+			1 = {
+				trigger = {
+					has_mil_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					MIL = yes
+				}
+			}
+		}
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 1.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 1.25
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.0
+                ADM = 2
+            }
+            modifier = {
+                factor = 0.9
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.8
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.6
+                ADM = 6
+            }
+        }
+
+    }
+
+    option = { #respect mai authoritay
+        name = fed_health.10.b
+
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = -2
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = -1
+        }
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2.5
+                ADM = 0
+            }
+            modifier = {
+                factor = 2
+                ADM = 1
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 0.75
+                ADM = 4
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 5
+            }
+            modifier = {
+                factor = 0.35
+                ADM = 6
+            }
+        }
+
+
+    }
+
+    option = { #reach an agreement
+        name = fed_health.10.c
+
+
+        add_government_power = {
+            mechanic_type = chartered_legitimacy_mechanic
+            power_type = chartered_legitimacy
+            value = 5
+        }
+
+        change_variable = {
+            which = lakes_federation_health
+            value = 1
+        }
+
+
+        random_list = {
+			1 = {
+				trigger = {
+					has_adm_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					ADM = yes
+				}
+			}
+			1 = {
+				trigger = {
+					has_dip_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					DIP = yes
+				}
+			}
+			1 = {
+				trigger = {
+					has_mil_advisor = yes
+				}
+				kill_advisor_by_category_effect = {
+					MIL = yes
+				}
+			}
+		}
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 0.35
+                ADM = 0
+            }
+            modifier = {
+                factor = 0.5
+                ADM = 1
+            }
+            modifier = {
+                factor = 0.7
+                ADM = 2
+            }
+            modifier = {
+                factor = 1
+                ADM = 3
+            }
+            modifier = {
+                factor = 1.5
+                ADM = 4
+            }
+            modifier = {
+                factor = 2
+                ADM = 5
+            }
+            modifier = {
+                factor = 2.5
+                ADM = 6
+            }
+        }
+    }
+}

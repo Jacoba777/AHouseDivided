@@ -114,6 +114,7 @@ take_province_alaska = {
 	war_name = ALASKAN_UNIFICATION_WAR_NAME
 }
 
+
 dismantle_vancouver_corporation = {
 	type = take_capital
 	
@@ -241,4 +242,40 @@ centralize_minnesota = {
 	}
 
 	war_name = FAIRBAULT_CRISIS_WAR_NAME
+}
+
+federation_expansion = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_countries = {
+			has_government_mechanic = chartered_legitimacy_mechanic
+		}
+
+		required_treaty_to_take_provinces = {
+			po_subjugate_vassal
+		}
+
+		peace_options = {
+			po_establish_federal_governorship
+		}
+
+		prov_desc = FED_CONQUESTS
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+
+		peace_options = {
+			po_demand_provinces
+		}
+	}
+
+	war_name = FEDERATION_EXPANSION_WAR_NAME
 }
