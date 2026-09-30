@@ -1636,6 +1636,49 @@ country_event = {
     }
 }
 
+#corporatocracy expansion
+country_event = {
+	id = flavor_usa.184910
+	title = flavor_usa.184910.t
+	desc = flavor_usa.184910.desc
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			has_province_flag = clientstateflagcheck
+			is_city = yes
+		}
+	}
+
+	option = { #thanks for headsup
+		name = flavor_usa.184910.a
+	}
+
+	option = { #dont actually want the gov cap hit - decolonize for me
+		name = flavor_usa.184910.b
+		trigger = {
+			governing_capacity_percentage = 1
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = clientstateflagcheck
+					is_city = yes
+				}
+			}
+			every_province = {
+				limit = {
+					has_province_flag = clientstateflagcheck
+				}
+				decolonize = yes
+				clr_province_flag = clientstateflagcheck
+			}
+			
+		}
+		
+	}
+}
+
 
 #Confederation Convention event chain
 

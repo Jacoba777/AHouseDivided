@@ -769,3 +769,8 @@
  flavor_usa.221611.t:0 "Reincorporation of Seceeding Member"
  flavor_usa.221611.d:0 "Victory over the rebellion has allowed up to restore order in our member state. They shall begin receiving the benefits and obligations of membership upon completion of snap elections to fill their vacant seats."
  flavor_usa.221611.a:0 "Now to begin reintegration."
+#corporatocracy corrections
+ flavor_usa.184910.t:0 "Authority Delegation"
+ flavor_usa.184910.desc:0 "The region has been settled by our workers and miners ahve begun to look into what resources can be extracted from the ground. The issue is now that of state capacity. We lack the means for extensive expansion and ruling over people. Should we undo this action?"
+ flavor_usa.184910.a:0 "Thank you for the concern, but I have plans for this region."
+ flavor_usa.184910.b:0 "Indeed we lack the logisitical capacity for this. Call them back."

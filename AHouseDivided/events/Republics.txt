@@ -111,6 +111,7 @@ country_event = {
 				has_government_attribute = cannot_become_dictatorship
 			}
 		}
+		not = { has_reform = corporatocracy }
 	}
 	
 	mean_time_to_happen = {

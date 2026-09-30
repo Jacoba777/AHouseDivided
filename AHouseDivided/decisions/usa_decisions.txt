@@ -347,6 +347,40 @@ country_decisions = {
 		}
 	}
 
+	##found subsidiary companies
+	found_subsidiary = {
+		potential = {
+			has_reform = corporatocracy
+			any_neighbor_province = {
+				is_city = no
+			}
+		}
+		alloW = {
+			any_neighbor_province = {
+				is_city = no
+			}
+			not = {
+				governing_capacity_percentage = 1
+			}
+			years_of_income = 3
+		}
+		effect = {
+			random_owned_province = {
+				random_empty_neighbor_province = {
+					set_province_flag = clientstateflagcheck
+					add_colonysize = 1000
+				}
+			}
+			country_event = {
+				id = flavor_usa.184910
+				days = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	#Integrate the American Territories
 	integrate_american_territories = {
 		potential = {
