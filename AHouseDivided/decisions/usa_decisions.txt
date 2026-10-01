@@ -164,18 +164,19 @@ country_decisions = {
 		}
 		allow = {
 			any_country = {
-				and = {
-					or = {
-						any_neighbor_country = {
-							is_subject_of = ROOT
-						}
-						is_neighbor_of = root
+				is_subject = no
+				NOT = {
+					OR = {	
+						has_country_modifier = vancouver_corporation_investing 	
+						has_country_modifier = anti_corp_stance 
 					}
-					not = {
-						or = { 
-							has_country_modifier = vancouver_corporation_investing 
-							has_country_modifier = anti_corp_stance
-						}
+				}
+
+				or = {
+					is_neighbor_of = root
+
+					any_neighbor_country = {
+						is_subject_of = root
 					}
 				}
 			}
