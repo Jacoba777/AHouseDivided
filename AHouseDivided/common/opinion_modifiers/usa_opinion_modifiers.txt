@@ -23,6 +23,16 @@ vancorp_investment_opinion = {
 	yearly_decay = 1
 }
 
+vancorp_dependent_market = {
+	opinion = -10
+	yearly_decay = 0
+}
+
+vancorp_integrated_market = {
+	opinion = -25
+	yearly_decay = 0
+}
+
 horde_refuse_aid = {
 	opinion = -50
 	yearly_decay = 1

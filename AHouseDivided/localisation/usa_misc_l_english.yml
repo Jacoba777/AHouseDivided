@@ -215,6 +215,9 @@
  corporate_inefficiency:0 "Corporate Inefficiency"
  corporate_overextension:0 "Corporate Overextension"
  corporate_infighting:0 "Corporate Infighting"
+ anti_corp_stance:0 "Corporate Outrage"
+ vancorp_dependent_market:0 "Dependent Market"
+ vancorp_integrated_market:0 "Integrated Market"
  colonist_added:0 "Manifest Destiny"
  horde_colonist_added:0 "Self-Determination"
 #corrections to midwestern update
