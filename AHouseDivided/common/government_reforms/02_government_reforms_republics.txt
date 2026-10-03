@@ -171,7 +171,6 @@ parliamentary_republic_reform = {
 }
 
 prussian_republic_reform = { #modified for dixieland - DIX in case of successful convention
-prussian_republic_reform = { #modified for dixieland - DIX in case of successful convention
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
