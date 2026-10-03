@@ -1459,7 +1459,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
@@ -1483,7 +1483,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
@@ -1508,7 +1508,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
