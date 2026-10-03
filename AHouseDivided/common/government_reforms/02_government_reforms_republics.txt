@@ -1616,8 +1616,10 @@ midwestern_ver_american_repub = {
 				continent = continent_midwest
 				region = region_ny
 				region = region_pa
-			}
-			
+			}	
+		}
+		hidden_trigger = {
+			has_country_flag = formed_a_state
 		}
 	}
 	valid_for_nation_designer = yes

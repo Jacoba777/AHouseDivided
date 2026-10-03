@@ -278,7 +278,11 @@ country_decisions = {
 		potential = {
 			not = {
 				any_country = {
-					has_country_flag = vancouver_corp_flag
+					or = {
+						has_country_flag = vancouver_corp_flag
+						has_reform = stadthalter_monarchy_reform
+					}
+					
 				}
 			}
 			has_country_flag = vancouver_economic_system_check
