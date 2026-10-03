@@ -7,7 +7,7 @@ tags={
 	"Religion"
 	"Trade"
 }
-name="American Desert"
+name="A House Divided"
 replace_path="history/provinces"
 replace_path="history/diplomacy"
 replace_path="history/wars"
