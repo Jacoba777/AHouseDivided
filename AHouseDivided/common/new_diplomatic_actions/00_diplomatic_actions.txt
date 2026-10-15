@@ -6219,7 +6219,11 @@ invite_to_midwest_bloc = {
 
 	is_visible = {
 		has_government_mechanic = midwest_mercantilism
-		from =  { has_government_mechanic = midwest_mercantilism }
+    NOT = { is_subject_of = FROM }
+		FROM =  {
+      has_government_mechanic = midwest_mercantilism
+      NOT = { is_subject_of = ROOT }
+    }
 	}
 
 	is_allowed = {
@@ -6577,7 +6581,11 @@ petition_join_midwest_bloc = {
 
 	is_visible = {
 		has_government_mechanic = midwest_mercantilism
-		from = { has_government_mechanic = midwest_mercantilism }
+    NOT = { is_subject_of = FROM }
+		FROM = {
+      has_government_mechanic = midwest_mercantilism
+      NOT = { is_subject_of = ROOT }
+    }
 	}
 
 	is_allowed = {
@@ -6586,13 +6594,14 @@ petition_join_midwest_bloc = {
 				or = {
 					root = {
 						is_subject = yes
-						hidden_trigger = {
+						custom_trigger_tooltip = {
+              tooltip = MIDWEST_OFFER_HIGHER_THEN_OVERLORD
 							midwest_subject_matches_or_exceeds_overlord = yes
 						}
 					}
-					hidden_trigger = {
+					custom_trigger_tooltip = {
+            tooltip = MIDWEST_LOWER_TIER_THAN_ROOT
 						not = { midwest_root_higher_tier_than_from = yes }
-						
 					}
 				}
 			}
@@ -6830,6 +6839,50 @@ petition_join_midwest_bloc = {
 		}	
 	}
 
+}
+
+# Remove a subject from your midwest bloc
+remove_them_from_midwest_bloc = {
+	category = influence
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+      OR = {
+        is_subject_of_type = midwest_core_bloc_member
+        is_subject_of_type = midwest_bloc_subordinate
+        is_subject_of_type = midwest_federal_governorship
+      }
+		}
+	}
+	is_allowed = {
+	}
+	on_accept = {
+		FROM = {
+			grant_independence = yes
+			add_country_modifier = {
+				name = just_left_sphere_of_cultural_influence_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+		reverse_add_opinion = {
+			who = from
+			modifier = was_removed_from_our_sphere_of_influence
+		}
+		add_opinion = {
+			who = from
+			modifier = removed_from_our_sphere_of_influence
+		}
+		add_truce_with = from
+	}
+	on_decline = {
+	}
+
+	ai_will_do = { # Overlords will never want to break the relationship
+		always = no
+	}
 }
 
 #midwest expanding the federation peacefully
