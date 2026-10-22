@@ -6245,6 +6245,9 @@ invite_to_midwest_bloc = {
 				midwest_contiguous_bloc = yes
 			}
 			from = {
+				is_at_war = no
+			}
+			from = {
 				not = {
 					is_subject_of = root
 				}
@@ -6605,6 +6608,7 @@ petition_join_midwest_bloc = {
 					}
 				}
 			}
+			is_at_war = no
 			has_government_mechanic = midwest_mercantilism
 			midwest_contiguous_bloc = yes
 			not = {
@@ -6857,6 +6861,7 @@ remove_them_from_midwest_bloc = {
 		}
 	}
 	is_allowed = {
+    is_at_war = no
 	}
 	on_accept = {
 		FROM = {
@@ -6895,6 +6900,7 @@ invite_to_fed_charter = {
 	}
 
 	is_allowed = {
+    from = { is_at_war = no }
 		and = {
 			from = { is_neighbor_of = root }
 			from = { is_subject = no }
@@ -7039,6 +7045,7 @@ petition_join_fed_charter = {
 
 	is_allowed = {
 		and = {
+      is_at_war = no
 			root = { is_neighbor_of = from }
 			root = { is_subject = no }
 		}			
