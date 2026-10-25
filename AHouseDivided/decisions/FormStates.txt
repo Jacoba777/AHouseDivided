@@ -37,6 +37,14 @@ country_decisions = {
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 10
 			swap_non_generic_missions = yes
 		}
@@ -104,6 +112,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -148,6 +163,14 @@ country_decisions = {
 			region_nj = {
 				limit = { NOT = { owned_by = ROOT } }
 				add_permanent_claim = XNJ
+			}
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
 			}
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -206,6 +229,14 @@ country_decisions = {
 				}
 				add_permanent_claim = XGA
 			}
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			custom_tooltip = become_an_empire_tt
@@ -261,6 +292,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -306,6 +345,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -361,6 +408,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -423,6 +478,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -471,6 +534,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = {
 					has_custom_ideas = no
@@ -534,6 +605,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -583,17 +662,7 @@ country_decisions = {
 			adm_tech = 8
 			is_at_war = no
 		}
-		if = {
-				limit = {
-					has_government_mechanic = midwest_mercantilism
-				}
-				add_government_reform = midwestern_ver_american_repub
-				add_government_power = {
-					mechanic_type = midwest_mercantilism
-					power_type = regional_influence
-					value = 85
-				}
-			}
+		
 		effect = {
 			change_tag = XNY
 			region_ny = {
@@ -605,6 +674,24 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			if = {
+				limit = {
+					has_government_mechanic = midwest_mercantilism
+				}
+				add_government_reform = midwestern_ver_american_repub
+				add_government_power = {
+					mechanic_type = midwest_mercantilism
+					power_type = regional_influence
+					value = 85
+				}
+			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -665,6 +752,15 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -750,6 +846,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -826,6 +930,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -878,6 +989,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -961,6 +1080,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -1012,6 +1138,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1090,6 +1224,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -1137,6 +1278,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1217,6 +1366,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -1270,6 +1426,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1321,6 +1485,14 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1405,6 +1577,13 @@ country_decisions = {
 					power_type = regional_influence
 					value = 85
 				}
+			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -1539,6 +1718,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -1596,6 +1782,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -1755,6 +1949,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -1829,6 +2030,13 @@ country_decisions = {
 					power_type = regional_influence
 					value = 85
 				}
+			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
 			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
@@ -2137,6 +2345,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -2191,6 +2406,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2269,6 +2492,13 @@ country_decisions = {
 					value = 85
 				}
 			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_prestige = 25
 			swap_non_generic_missions = yes
 		}
@@ -2316,6 +2546,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2371,6 +2609,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2425,6 +2671,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2484,6 +2738,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2538,6 +2800,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2592,6 +2862,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2644,6 +2922,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2761,6 +3047,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2811,6 +3105,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -2862,10 +3164,12 @@ country_decisions = {
 				limit = {
 					religion = mormon
 				}
+				change_government = theocracy
 				add_government_reform = ajuuraan_theocracy_reform
 			}
 			else_if = {
 				limit = { not = { religion = mormon } }
+				change_government = republic
 				add_government_reform = american_republic
 			}
 			
@@ -2937,6 +3241,24 @@ country_decisions = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			if = {
+				limit = {
+					has_government_mechanic = midwest_mercantilism
+				}
+				add_government_reform = midwestern_ver_american_repub
+				add_government_power = {
+					mechanic_type = midwest_mercantilism
+					power_type = regional_influence
+					value = 85
+				}
+			}
+			else_if = {
+				limit = {
+					not = { has_government_mechanic = midwest_mercantilism }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -2987,6 +3309,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -3045,6 +3375,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -3108,6 +3446,14 @@ country_decisions = {
 			set_country_flag = formed_a_state
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
@@ -3151,10 +3497,16 @@ country_decisions = {
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			set_country_flag = formed_a_state
+			add_government_reform = american_republic
 			if = {
 				limit = {
-					has_custom_ideas = no
+					not = { government = republic }
 				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
+			if = {
+				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 			add_prestige = 15
@@ -3211,6 +3563,14 @@ country_decisions = {
 			}
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
+			add_government_reform = american_republic
+			if = {
+				limit = {
+					not = { government = republic }
+				}
+				change_government = republic
+				add_government_reform = american_republic
+			}
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas

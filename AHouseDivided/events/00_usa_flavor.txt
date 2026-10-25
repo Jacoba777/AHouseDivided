@@ -1206,6 +1206,10 @@ country_event = {
 			duration = 3650
 			hidden = yes
 		}
+		add_opinion = {
+			who = overlord
+			modifier = vancorp_dependent_market
+		}
 		remove_country_modifier = vancouver_corporation_investing
 		ai_chance = {
 			factor = 1
@@ -1239,6 +1243,10 @@ country_event = {
 			name = vancouver_recent_corporate_dependency
 			duration = 3650
 			hidden = yes
+		}
+		add_opinion = {
+			who = overlord
+			modifier = vancorp_dependent_market
 		}
 		remove_country_modifier = vancouver_corporation_investing
 		ai_chance = {
@@ -1306,6 +1314,14 @@ country_event = {
 			duration = 9125
 			hidden = yes
 		}
+		remove_opinion = {
+			who = overlord
+			modifier = vancorp_dependent_market
+		}
+		add_opinion = {
+			who = overlord
+			modifier = vancorp_integrated_market
+		}
 		remove_country_modifier = vancouver_corporate_dependency
 		remove_country_modifier = vancouver_begrudging_dependency
 		ai_chance = {
@@ -1337,6 +1353,14 @@ country_event = {
 		add_country_modifier = {
 			name = vancouver_corporate_fear
 			duration = 7300
+		}
+		remove_opinion = {
+			who = overlord
+			modifier = vancorp_dependent_market
+		}
+		add_opinion = {
+			who = overlord
+			modifier = vancorp_integrated_market
 		}
 		remove_country_modifier = vancouver_corporate_dependency
 		remove_country_modifier = vancouver_begrudging_dependency
@@ -1435,7 +1459,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
@@ -1459,7 +1483,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
@@ -1484,7 +1508,7 @@ country_event = {
 			duration = 1825
 		}
 		every_country = {
-			reverse_add_aggressive_expansion = {
+			add_aggressive_expansion = {
 				who = root
 				value = 40
 			}
@@ -1634,6 +1658,49 @@ country_event = {
             factor = 40
         }        
     }
+}
+
+#corporatocracy expansion
+country_event = {
+	id = flavor_usa.184910
+	title = flavor_usa.184910.t
+	desc = flavor_usa.184910.desc
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			has_province_flag = clientstateflagcheck
+			is_city = yes
+		}
+	}
+
+	option = { #thanks for headsup
+		name = flavor_usa.184910.a
+	}
+
+	option = { #dont actually want the gov cap hit - decolonize for me
+		name = flavor_usa.184910.b
+		trigger = {
+			governing_capacity_percentage = 1
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = clientstateflagcheck
+					is_city = yes
+				}
+			}
+			every_province = {
+				limit = {
+					has_province_flag = clientstateflagcheck
+				}
+				decolonize = yes
+				clr_province_flag = clientstateflagcheck
+			}
+			
+		}
+		
+	}
 }
 
 

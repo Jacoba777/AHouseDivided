@@ -281,3 +281,6 @@
  federation_health_2_marker_desc:0 "The Federation is weakening to the point of collapse, with her states beginning to assume plans for if they find themselves once again independent. More independent minded states have begun talks of secession itself. The Convene and Head Council must act carefully to begin work on restoring not only confidence but also constitutional norms."
  federation_health_1_marker_title:0 "(1) Union under Dissolution"
  federation_health_1_marker_desc:0 "The Federation has come to be seen as another failure in American Democracy, yet another warning tale in trying to rule a vast constituency. Member States have either begun not sending delegates, or entered into international politics as separate units from us. Recovery may be possible, but the Federation in this form will no longer exist."
+#corporatocracy fx
+ found_subsidiary_title:0 "Found Subsidiary"
+ found_subsidiary_desc:0 "We've reached our maximun extraction ability for this area, but regions areound us still have the potential for further resource extraction. Doing so may make the logisitcs of running the state more difficult, requiring a local subsidiary to run those local operations however."

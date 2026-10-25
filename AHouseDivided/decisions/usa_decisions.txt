@@ -164,18 +164,19 @@ country_decisions = {
 		}
 		allow = {
 			any_country = {
-				and = {
-					or = {
-						any_neighbor_country = {
-							is_subject_of = ROOT
-						}
-						is_neighbor_of = root
+				is_subject = no
+				NOT = {
+					OR = {	
+						has_country_modifier = vancouver_corporation_investing 	
+						has_country_modifier = anti_corp_stance 
 					}
-					not = {
-						or = { 
-							has_country_modifier = vancouver_corporation_investing 
-							has_country_modifier = anti_corp_stance
-						}
+				}
+
+				or = {
+					is_neighbor_of = root
+
+					any_neighbor_country = {
+						is_subject_of = root
 					}
 				}
 			}
@@ -277,7 +278,11 @@ country_decisions = {
 		potential = {
 			not = {
 				any_country = {
-					has_country_flag = vancouver_corp_flag
+					or = {
+						has_country_flag = vancouver_corp_flag
+						has_reform = stadthalter_monarchy_reform
+					}
+					
 				}
 			}
 			has_country_flag = vancouver_economic_system_check
@@ -340,6 +345,40 @@ country_decisions = {
 		effect = {
 			country_event = {
 				id = flavor_usa.184901
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	##found subsidiary companies
+	found_subsidiary = {
+		potential = {
+			has_reform = corporatocracy
+			any_neighbor_province = {
+				is_city = no
+			}
+		}
+		alloW = {
+			any_neighbor_province = {
+				is_city = no
+			}
+			not = {
+				governing_capacity_percentage = 1
+			}
+			years_of_income = 3
+		}
+		effect = {
+			random_owned_province = {
+				random_empty_neighbor_province = {
+					set_province_flag = clientstateflagcheck
+					add_colonysize = 1000
+				}
+			}
+			country_event = {
+				id = flavor_usa.184910
+				days = -1
 			}
 		}
 		ai_will_do = {
