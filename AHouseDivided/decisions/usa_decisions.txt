@@ -276,13 +276,12 @@ country_decisions = {
 	#become the new seat of the corporation 
 	assume_vancouver_corporation = {
 		potential = {
-			not = {
-				any_country = {
+			all_countries_including_self = {
+				not = {
 					or = {
 						has_country_flag = vancouver_corp_flag
 						has_reform = stadthalter_monarchy_reform
 					}
-					
 				}
 			}
 			has_country_flag = vancouver_economic_system_check
@@ -294,6 +293,14 @@ country_decisions = {
 			# based near seattle
 			capital_scope = {
 				superregion = superregion_pacific_northwest
+			}
+			all_countries_including_self = {
+				not = {
+					or = {
+						has_country_flag = vancouver_corp_flag
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
 			}
 		}
 		effect = {
