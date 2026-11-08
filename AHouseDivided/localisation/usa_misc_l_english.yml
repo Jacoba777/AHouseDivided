@@ -309,3 +309,6 @@
  federation_health_2:0 "Failing Federation"
  federation_health_1:0 "Dying Federation"
  lakes_federation_health:0 "Federation Operational Health"
+
+# fixes for midwest update
+ OVERLORD_PLAYER_CHECK_NOT_MIDWEST:0 "Their Overlord would not Permit this Action!"

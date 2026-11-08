@@ -390,6 +390,8 @@
  # Mississippi Basin Rivers Explanations
  check_la_basin_control_title:0 "What is the Mississippi Basin?"
  check_la_basin_control_desc:0 "The Mississippi Basin has a multitude of rivers and tributaries, multiple of which are navigable and where use historically by colonial powers and Americans. This decision helps give a layout of the system and a listing of the tributaries that offer Basin Influence when controlled."
+ check_la_basin_control_stlver_title:0 "What is the Mississippi Basin?"
+ check_la_basin_control_stlver_desc:0 "The Mississippi Basin has a multitude of rivers and tributaries, multiple of which are navigable and where use historically by colonial powers and Americans. This decision helps give a layout of the system and a listing of the tributaries that offer Basin Influence when controlled."
  flavor_usa.1218.t:0 "The Cumberland River"
  flavor_usa.1218.desc:0 "Rising in the mountains of eastern Kentucky, the Cumberland River flows through Nashville, Tennessee, before turning northwest toward the Ohio Valley. It joins the Ohio River near Smithland, Kentucky, providing a vital route between the Appalachian interior and the Mississippi Basin."
  flavor_usa.1218.a:0 "I see."
@@ -490,6 +492,8 @@
  flavor_usa.1224.a:0 "Understood."
  check_la_unwanted_provinces_title:0 "Highlight Unwanted Counties"
  check_la_unwanted_provinces_desc:0 "This decision exists to allow players to see which counties they have that are providing the 'Unwanted Province' penalty, and has no effects."
+ check_la_unwanted_provinces_stlver_title:0 "Highlight Unwanted Counties"
+ check_la_unwanted_provinces_stlver_desc:0 "This decision exists to allow players to see which counties they have that are providing the 'Unwanted Province' penalty, and has no effects."
 
 #generic stuff
  manifesting_destiny:0 "Manifesting Destiny"

@@ -512,14 +512,8 @@ louisiana_empire_reform = {
 	legacy_equivalent = merchant_republic
 	potential = {
 		or = {
-			and = {
-				tag = XLA
-				has_country_flag = louisiana_empire_reform_flag
-			}
-			and = {
-				tag = STL
-				has_country_flag = surpassed_chicago_flag
-			}
+			tag = XLA
+			tag = STL
 		}
 	}
 	boost_income = yes
@@ -5036,183 +5030,183 @@ american_government = {
 	duration = 4
 
 	assimilation_cultures = {
-		culture_group_northwoods = {
-			naval_forcelimit_modifier = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_maritime_new_england = {
-			ship_durability = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_upper_piedmontese = {
-			free_leader_pool = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_appalachian = {
-			shock_damage = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_ozark = {
-			land_attrition = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_texas_triangle = {
-			state_maintenance_modifier = -0.2
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_western_deep_south = {
-			development_cost = -0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_californian = {
-			global_trade_goods_size_modifier = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_woodlands_new_england = {
-			global_tax_income = 10
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_southern_plains = {
-			land_forcelimit_modifier = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_cascadian = {
-			production_efficiency = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_front_range = {
-			cavalry_flanking = 0.2
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_great_plains = {
-			diplomats = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_upstate = {
-			global_institution_spread = 0.15
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_ohio_river_valley = {
-			core_creation = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_alaskan = {
+		culture_group_alaskan = { ##colonization
 			global_colonial_growth = 10
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_allegheny = {
-			land_morale = 0.1
+		culture_group_allegheny = { ##cannon cost
+			artillery_cost = -0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_columbian = {
-			hostile_attrition = 1
+		culture_group_appalachian = { ##shock damage
+			shock_damage = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_mid_atlantic = {
-			idea_cost = -0.05
+		culture_group_atlantic_south = { ##coastal defense
+			hostile_disembark_speed = -0.1
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_navajo = {
-			discipline = 0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_cajun = {
+		culture_group_cajun = { ##merchant
 			merchants = 1
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_lower_midwestern = {
-			movement_speed = 0.1
+		culture_group_californian = { ## goods produced modifier
+			global_trade_goods_size_modifier = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_lower_piedmontese = {
-			mil_advisor_cost = -0.1
+		culture_group_columbian = { ##self sufficiency and regional logisitics
+			global_supply_limit_modifier = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_tidewater = {
-			republican_tradition = 0.1
+		culture_group_cascadian = { ##production efficiceny
+			production_efficiency = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_mormon_corridor = {
-			warscore_cost_vs_other_religion = -0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_gulf_coast = {
-			caravan_power = 0.1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_southwestern = {
-			cavalry_cost = -0.15
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_great_basin = {
-			build_cost = -0.05
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_eastern_deep_south = {
+		culture_group_eastern_deep_south = { ##slavery induced southern gentry outlasting slavery itself
 			prestige_decay = -0.01
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_rockies = {
-			global_autonomy = -0.01
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_upland_south = {
-			leader_land_fire = 1
-			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
-			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
-		}
-		culture_group_floridian = {
+		culture_group_floridian = { ##trading ability
 			trade_efficiency = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_hawaiian = {
-			province_warscore_cost = -0.15
+		culture_group_front_range = { ##horsemen/cattle drives
+			cavalry_flanking = 0.2
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_great_lakes = {
+		culture_group_great_basin = { ##infrastructure and boom towns
+			expand_infrastructure_cost_modifier = -0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_great_lakes = { ###public works history
 			great_project_upgrade_cost = -0.15
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_upper_midwestern = {
+		culture_group_great_plains = { ##small town communities
+			improve_relation_modifier = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_gulf_coast = { ##heavy regional trading
+			caravan_power = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_hawaiian = { ###naval projection
+			recover_navy_morale_speed = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_lower_midwestern = { ###river transport/amry corp of engineers
+			movement_speed = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_lower_piedmontese = { ##southern military schools
+			mil_advisor_cost = -0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_maritime_new_england = { ##shipbuilding and trading
+			ship_durability = 0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_mid_atlantic = { ##american enlightenment and education
+			idea_cost = -0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_mormon_corridor = { ##communal religious cohesion
+			religious_unity = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_navajo = { ##K’é tradition
+			global_unrest = -1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_northwoods = { ##timber stores
+			naval_forcelimit_modifier = 0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_ohio_river_valley = { ##Northwest Ordinance
+			core_creation = -0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_ozark = { ##overlooked part of state and country, self reliant
+			land_attrition = -0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_rockies = { ##communal governance and self government
+			global_autonomy = -0.01
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_southern_plains = { ##oil industry financing
+			global_trade_power = 0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_southwestern = { ##vaquero impact on culture (ranching)
+			cavalry_cost = -0.15
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_texas_triangle = { ###texan muniicipalities governance
+			state_maintenance_modifier = -0.2
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_tidewater = { ##enlightened republican aristocracy
+			republican_tradition = 0.1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_upland_south = { ##reginoalm propensity for firearms and military service
+			leader_land_fire = 1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_upper_midwestern = { ##midwestern hands-off governance, communal cooperation
 			governing_cost = -0.1
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
-		culture_group_atlantic_south = {
-			army_tradition_decay = -0.01
+		culture_group_upper_piedmontese = { ##dixie propensity for generals and military service
+			free_leader_pool = 1
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_upstate = { ##historical reform societies
+			global_institution_spread = 0.15
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_western_deep_south = { ##planter class and heavy federal investment into region 
+			development_cost = -0.05
+			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
+			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
+		}
+		culture_group_woodlands_new_england = { ##county/townhall governments
+			global_tax_income = 0.05
 			effect = { hidden_effect = { change_variable = { which = cultures_assimilated value = 1 } } }
 			removed_effect = { hidden_effect = { subtract_variable = { which = cultures_assimilated value = 1 } } }
 		}
