@@ -686,6 +686,7 @@ republic = {
 				chicago_aggressive
 				midwestern_ver_american_repub
 				chartered_federation
+				louisiana_empire_reform
 			}
 		}
 		republican_virtues = {

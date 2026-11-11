@@ -1151,19 +1151,19 @@ valid_for_personal_unions_trigger = {
     }
 }
 
-is_shadow_kingdom_eligible_trigger = {
-	is_emperor = no
-	is_part_of_hre = yes
-	OR = {
-		capital_scope = { region = region_virginia }
-		AND = {
-			culture_group = culture_potomac
-			any_owned_province = {
-				region = region_virgina
-			}
-		}
-	}
-}
+#is_shadow_kingdom_eligible_trigger = {
+#	is_emperor = no
+#	is_part_of_hre = yes
+#	OR = {
+#		capital_scope = { region = region_virginia }
+#		AND = {
+#			culture_group = culture_potomac
+#			any_owned_province = {
+#				region = region_virgina
+#			}
+#		}
+#	}
+#}
 
 
 will_leave_for_shadow_kingdom_trigger = {

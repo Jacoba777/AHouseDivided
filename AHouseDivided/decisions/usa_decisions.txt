@@ -276,13 +276,12 @@ country_decisions = {
 	#become the new seat of the corporation 
 	assume_vancouver_corporation = {
 		potential = {
-			not = {
-				any_country = {
+			all_countries_including_self = {
+				not = {
 					or = {
 						has_country_flag = vancouver_corp_flag
 						has_reform = stadthalter_monarchy_reform
 					}
-					
 				}
 			}
 			has_country_flag = vancouver_economic_system_check
@@ -294,6 +293,14 @@ country_decisions = {
 			# based near seattle
 			capital_scope = {
 				superregion = superregion_pacific_northwest
+			}
+			all_countries_including_self = {
+				not = {
+					or = {
+						has_country_flag = vancouver_corp_flag
+						has_reform = stadthalter_monarchy_reform
+					}
+				}
 			}
 		}
 		effect = {
@@ -406,11 +413,12 @@ country_decisions = {
 					is_subject_of_type = core_eyalet
 					is_subject_of = ROOT
 				}
+				country_event = {
+					id = flavor_xus.1789
+					days = -1
+				}
 			}
-			country_event = {
-				id = flavor_xus.1789
-				days = -1
-			}
+			
 		}
 	}
 
@@ -425,25 +433,25 @@ country_decisions = {
 			always = yes
 		}
 		provinces_to_highlight = {
-				or = {
-					has_province_flag = upper_missouri_river
-					has_province_flag = lower_missouri_river
-					has_province_flag = lower_miss_river
-					has_province_flag = upper_miss_river
-					has_province_flag = arkansas_river
-					has_province_flag = green_river
-					has_province_flag = cumberland_river
-					has_province_flag = tennessee_river
-					has_province_flag = ohio_river
-					has_province_flag = kanawha_river
-					has_province_flag = kentucky_river
-					has_province_flag = wabash_river
-					has_province_flag = illinois_river
-					has_province_flag = wisconsin_river
-					has_province_flag = minnesota_river
-					has_province_flag = ouachita_river
-				}
+			or = {
+				has_province_flag = upper_missouri_river
+				has_province_flag = lower_missouri_river
+				has_province_flag = lower_miss_river
+				has_province_flag = upper_miss_river
+				has_province_flag = arkansas_river
+				has_province_flag = green_river
+				has_province_flag = cumberland_river
+				has_province_flag = tennessee_river
+				has_province_flag = ohio_river
+				has_province_flag = kanawha_river
+				has_province_flag = kentucky_river
+				has_province_flag = wabash_river
+				has_province_flag = illinois_river
+				has_province_flag = wisconsin_river
+				has_province_flag = minnesota_river
+				has_province_flag = ouachita_river
 			}
+		}
 		effect = {
 			country_event = {
 				id = flavor_usa.1200
@@ -453,7 +461,7 @@ country_decisions = {
 	}
 
 	#stl version
-	check_la_basin_control = {
+	check_la_basin_control_stlver = {
 		potential = {
 			tag = STL
 			has_reform = louisiana_empire_reform
@@ -462,25 +470,25 @@ country_decisions = {
 			always = yes
 		}
 		provinces_to_highlight = {
-				or = {
-					has_province_flag = upper_missouri_river
-					has_province_flag = lower_missouri_river
-					has_province_flag = lower_miss_river
-					has_province_flag = upper_miss_river
-					has_province_flag = arkansas_river
-					has_province_flag = green_river
-					has_province_flag = cumberland_river
-					has_province_flag = tennessee_river
-					has_province_flag = ohio_river
-					has_province_flag = kanawha_river
-					has_province_flag = kentucky_river
-					has_province_flag = wabash_river
-					has_province_flag = illinois_river
-					has_province_flag = wisconsin_river
-					has_province_flag = minnesota_river
-					has_province_flag = ouachita_river
-				}
+			or = {
+				has_province_flag = upper_missouri_river
+				has_province_flag = lower_missouri_river
+				has_province_flag = lower_miss_river
+				has_province_flag = upper_miss_river
+				has_province_flag = arkansas_river
+				has_province_flag = green_river
+				has_province_flag = cumberland_river
+				has_province_flag = tennessee_river
+				has_province_flag = ohio_river
+				has_province_flag = kanawha_river
+				has_province_flag = kentucky_river
+				has_province_flag = wabash_river
+				has_province_flag = illinois_river
+				has_province_flag = wisconsin_river
+				has_province_flag = minnesota_river
+				has_province_flag = ouachita_river
 			}
+		}
 		effect = {
 			country_event = {
 				id = flavor_usa.1200
@@ -532,7 +540,7 @@ country_decisions = {
 
 
 	#stl version
-	check_la_unwanted_provinces = {
+	check_la_unwanted_provinces_stlver = {
 		potential = {
 			tag = STL
 			has_reform = louisiana_empire_reform

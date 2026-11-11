@@ -6572,6 +6572,30 @@ invite_to_midwest_bloc = {
 			}	
 			
 		}
+
+		#check that wont steal non-midwestern countries subjects
+		add_entry = {
+			name = OVERLORD_NOT_MIDWEST_COMPACT_MEMBER
+			limit = {
+				from = {
+					overlord = {
+						not = {
+							has_government_mechanic = midwest_mercantilism
+						}
+						monthly_income = root
+						total_development = root
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -1000
+			}
+		}
 	}
 
 }
@@ -7015,6 +7039,27 @@ invite_to_fed_charter = {
 			export_to_variable = { variable_name = ai_value value = 1 }
 			multiply_variable = { which = ai_value value = -10 }
 		}
+
+		#check that wont steal non-midwestern countries subjects
+		add_entry = {
+			name = OVERLORD_NOT_MIDWEST_COMPACT_MEMBER
+			limit = {
+				from = {
+					overlord = {
+						monthly_income = root
+						total_development = root
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -1000
+			}
+		}
 		
 	}
 
@@ -7169,6 +7214,44 @@ petition_join_fed_charter = {
 			limit = { FROM = { not = { culture_group = ROOT } } }
 			export_to_variable = { variable_name = ai_value value = 1 }
 			multiply_variable = { which = ai_value value = -10 }
+		}
+
+		#check against stealing subjects for players
+		add_entry = {
+			name = OVERLORD_PLAYER_CHECK_NOT_MIDWEST
+			limit = {
+				from = {
+					or = {
+						not = {
+							has_opinion = {
+								who = overlord
+								value = -150
+							}
+						}
+						and = {
+							not = {
+								liberty_desire = 85
+							}
+							not = {
+								has_opinion = {
+									who = overlord
+									value = -50
+								}
+							}
+						}
+						
+					}
+					not = { truce_with = overlord }
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			multiply_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 	}
 

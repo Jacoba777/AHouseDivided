@@ -239,15 +239,17 @@ is_possible_hre_province = {
 		potential = {
 		}
 		allow = {
-			continent = continent_northeast
-			region = region_va
-			region = region_wv
-			region = region_nc
-			region = region_sc
-			region = region_ga
+			or = {
+				continent = continent_northeast
+				region = region_va
+				region = region_wv
+				region = region_nc
+				region = region_sc
+				region = region_ga
+			}
+			
 		}
 	}
-	 
 }
 
 will_demand_annexation = {
