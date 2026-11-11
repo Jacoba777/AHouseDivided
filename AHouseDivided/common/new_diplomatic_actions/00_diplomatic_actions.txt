@@ -7222,20 +7222,26 @@ petition_join_fed_charter = {
 			limit = {
 				from = {
 					or = {
-						has_opinion = {
-							who = overlord
-							value = -150
-						}
-						and = {
-							liberty_desire = 85
+						not = {
 							has_opinion = {
 								who = overlord
-								value = -50
+								value = -150
+							}
+						}
+						and = {
+							not = {
+								liberty_desire = 85
+							}
+							not = {
+								has_opinion = {
+									who = overlord
+									value = -50
+								}
 							}
 						}
 						
 					}
-					
+					not = { truce_with = overlord }
 				}
 			}
 			export_to_variable = {

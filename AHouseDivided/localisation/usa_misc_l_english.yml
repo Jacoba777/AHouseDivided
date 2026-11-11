@@ -312,3 +312,4 @@
 
 # fixes for midwest update
  OVERLORD_PLAYER_CHECK_NOT_MIDWEST:0 "Their Overlord would not Permit this Action!"
+ OVERLORD_NOT_MIDWEST_COMPACT_MEMBER:0 "Switching to your market provides no benefit for them."
