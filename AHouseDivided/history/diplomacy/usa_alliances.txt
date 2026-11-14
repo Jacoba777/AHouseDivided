@@ -1023,7 +1023,7 @@ dependency = {
 dependency = {
 	subject_type = midwest_bloc_subordinate
 	first = KSC
-	second = mhk
+	second = MHK
 	start_date = 1444.1.1
 }
 

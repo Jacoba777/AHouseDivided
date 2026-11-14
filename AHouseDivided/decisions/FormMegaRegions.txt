@@ -2211,8 +2211,11 @@ country_decisions = {
 	form_louisiana_empire = {
 		major = yes
 		potential = {
-			tag = XLA
-			tag = STL
+			or = {
+				tag = XLA
+				tag = STL
+			}
+			
 			not = {
 				has_country_flag = formed_the_empire_of_louisiana
 			}
@@ -2220,24 +2223,22 @@ country_decisions = {
 		allow = {
 			if = {
 				limit = {
-					or = {
-						and = {
-							tag = STL
-							CCG = {
-								not = {
-									total_development = root
-								}
-							}
-						}
-						and = {
-							tag = XLA
-							HTN = {
-								not = {
-									total_development = root
-								}
-							}
-						}
-					}				
+					tag = STL
+				}
+				CCG = {
+					not = {
+						total_development = root
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = XLA
+				}
+				HTN = {
+					not = {
+						total_development = root
+					}
 				}
 			}
 			
